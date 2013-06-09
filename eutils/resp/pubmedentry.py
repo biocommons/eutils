@@ -1,6 +1,8 @@
 import lxml.etree as le
 
-class PubMedEntry(object):
+import eutils.resp
+
+class PubMedEntry(eutils.resp.Resp):
     def __init__(self,xml):
         self.xml = xml
         self.doc = le.fromstring(xml)
@@ -84,13 +86,7 @@ class PubMedEntry(object):
             'abstract': self.abstract,
             }
 
-    ######################################################################
-    ## INTERNAL CLASS FUNCTIONS
-    def _get_node(self,tag):
-        return self.doc.find(tag)
-    def _get_text(self,tag):
-        n = self._get_node(tag)
-        return None if n is None else n.text
+
     def __str__(self):
         return( '%s (%s. %s, %s:%s)'.format(
             self.title, self.authors_str, self.jrnl, self.voliss, self.pages) )
