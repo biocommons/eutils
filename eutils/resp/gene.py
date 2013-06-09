@@ -1,71 +1,7 @@
-import collections
-from lxml.etree import XML
+import lxml.etree as le
 
 from eutils.exceptions import NCBIError
-
-class GeneCommentaryGC(collections.namedtuple('GeneCommentaryGC', ['gcgc'])):
-    """This class provides a rudimentary interface for dealing with
-    "Gene-commentary_products" that have genomic coords. That is, nodes at
-    this xpath:
-
-    /Entrezgene-Set/Entrezgene/Entrezgene_locus/Gene-commentary/Gene-commentary_products/Gene-commentary/Gene-commentary_genomic-coords
-                                                ^ gcr                                    ^ gct           ^ gcgc
-    gcr children contain reference sequence info
-    gct children contain target sequence info
-    gcgc contains the actual coordinates
-                                                
-    gcs = self._root.xpath('/Entrezgene-Set/Entrezgene/Entrezgene_locus/Gene-commentary/Gene-commentary_products/Gene-commentary/Gene-commentary_genomic-coords')
-    """
-
-    def __init__(self,*args,**kwargs):
-        super(GeneCommentaryGC,self).__init__(*args,**kwargs)
-        self._ancestors = list( self.gcgc.iterancestors() )
-        self._gct = self.ancestors[0]
-        self._gcr = self.ancestors[2]
-
-    @property
-    def ref_heading(self):
-        return _gc_heading(self.gcr)
-    @property
-    def ref_label(self):
-        return _gc_label(self.gcr)
-    @property
-    def ref_accession(self):
-        return _gc_accession(self.gcr)
-    @property
-    def ref_version(self):
-        return _gc_version(self.gcr)
-    @property
-    def ref_acv(self):
-        return _gc_acv(self.gcr)
-
-    @property
-    def target_heading(self):
-        return _gc_heading(self.gct)
-    @property
-    def target_label(self):
-        return _gc_label(self.gct)
-    @property
-    def target_accession(self):
-        return _gc_accession(self.gct)
-    @property
-    def target_version(self):
-        return _gc_version(self.gct)
-    @property
-    def target_acv(self):
-        return _gc_acv(self.gct)
-
-def _gc_heading(gc):
-    return gc.find('Gene-commentary_heading').text
-def _gc_label(gc):
-    return gc.find('Gene-commentary_label').text
-def _gc_accession(gc):
-    return gc.find('Gene-commentary_accession').text
-def _gc_version(gc):
-    return gc.find('Gene-commentary_version').text
-def _gc_acv(gc):
-    return _gc_accession(gc) + '.' + _gc_version(gc)
-
+from eutils.utils import xml_get_text, xml_get_text_or_none
 
 class Gene(object):
     def __init__(self,xml):
@@ -73,30 +9,22 @@ class Gene(object):
             raise NCBIError("Gene XML is empty")
         if ('<Entrezgene-Set>' not in xml or '</Entrezgene-Set>' not in xml):
             raise NCBIError("Gene XML doesn't contain <Entrezgene-Set>..</Entrezgene-Set>")
-        self._root = XML(xml)
+        self._xml = xml
+        self._root = le.fromstring(self._xml)
         self._gene_commentaries_gcs = None
 
     @property
-    def gene(self):
-        return self._root.xpath('/Entrezgene-Set/Entrezgene/Entrezgene_gene/Gene-ref/Gene-ref_locus/text()')[0]
-
-    @property
-    def hgnc(self):
-        return self.gene
-
-    @property
     def desc(self):
-        try:
-            return self._root.xpath('/Entrezgene-Set/Entrezgene/Entrezgene_gene/Gene-ref/Gene-ref_desc/text()')[0]
-        except:
-            return None
+        return xml_get_text_or_none(self._root,'/Entrezgene-Set/Entrezgene/Entrezgene_gene/Gene-ref/Gene-ref_desc')
+
+    @property
+    def gene(self):
+        return xml_get_text_or_none(self._root,'/Entrezgene-Set/Entrezgene/Entrezgene_gene/Gene-ref/Gene-ref_locus')
+    hgnc = gene                 # alias for gene method
 
     @property
     def maploc(self):
-        try:
-            return self._root.xpath('/Entrezgene-Set/Entrezgene/Entrezgene_gene/Gene-ref/Gene-ref_maploc/text()')[0]
-        except:
-            return None
+        return xml_get_text_or_none(self._root,'/Entrezgene-Set/Entrezgene/Entrezgene_gene/Gene-ref/Gene-ref_maploc')
 
     @property
     def summary(self):
@@ -200,3 +128,68 @@ class Gene(object):
             return self._root.xpath(xpath)[0]
         except IndexError:
             raise NCBIError("Didn't find Gene-commentary_heading = %s (may be in a patch)"%(heading))
+
+
+
+class GeneCommentaryGC(object):
+    """This class provides a rudimentary interface for dealing with
+    "Gene-commentary_products" that have genomic coords. That is, nodes at
+    this xpath:
+
+    /Entrezgene-Set/Entrezgene/Entrezgene_locus/Gene-commentary/Gene-commentary_products/Gene-commentary/Gene-commentary_genomic-coords
+                                                ^ gcr                                    ^ gct           ^ gcgc
+    gcr children contain reference sequence info
+    gct children contain target sequence info
+    gcgc contains the actual coordinates
+                                                
+    gcs = self._root.xpath('/Entrezgene-Set/Entrezgene/Entrezgene_locus/Gene-commentary/Gene-commentary_products/Gene-commentary/Gene-commentary_genomic-coords')
+    """
+
+    def __init__(self,gcgc):
+        self._gcgc = gcgc
+        self._ancestors = list( self._gcgc.iterancestors() )
+        self._gct = self.ancestors[0]
+        self._gcr = self.ancestors[2]
+
+    @property
+    def ref_heading(self):
+        return _gc_heading(self.gcr)
+    @property
+    def ref_label(self):
+        return _gc_label(self.gcr)
+    @property
+    def ref_accession(self):
+        return _gc_accession(self.gcr)
+    @property
+    def ref_version(self):
+        return _gc_version(self.gcr)
+    @property
+    def ref_acv(self):
+        return _gc_acv(self.gcr)
+
+    @property
+    def target_heading(self):
+        return _gc_heading(self.gct)
+    @property
+    def target_label(self):
+        return _gc_label(self.gct)
+    @property
+    def target_accession(self):
+        return _gc_accession(self.gct)
+    @property
+    def target_version(self):
+        return _gc_version(self.gct)
+    @property
+    def target_acv(self):
+        return _gc_acv(self.gct)
+
+def _gc_heading(gc):
+    return gc.find('Gene-commentary_heading').text
+def _gc_label(gc):
+    return gc.find('Gene-commentary_label').text
+def _gc_accession(gc):
+    return gc.find('Gene-commentary_accession').text
+def _gc_version(gc):
+    return gc.find('Gene-commentary_version').text
+def _gc_acv(gc):
+    return _gc_accession(gc) + '.' + _gc_version(gc)
