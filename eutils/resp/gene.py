@@ -4,9 +4,9 @@ from lxml.etree import XML
 from eutils.exceptions import NCBIError
 
 class GeneCommentaryGC(collections.namedtuple('GeneCommentaryGC', ['gcgc'])):
-    """The NCBI XML schema is heinous. This class provides a rudimentary
-    interface for dealing with "Gene-commentary_products" that have
-    genomic coords. That is, nodes at this xpath:
+    """This class provides a rudimentary interface for dealing with
+    "Gene-commentary_products" that have genomic coords. That is, nodes at
+    this xpath:
 
     /Entrezgene-Set/Entrezgene/Entrezgene_locus/Gene-commentary/Gene-commentary_products/Gene-commentary/Gene-commentary_genomic-coords
                                                 ^ gcr                                    ^ gct           ^ gcgc
@@ -19,9 +19,9 @@ class GeneCommentaryGC(collections.namedtuple('GeneCommentaryGC', ['gcgc'])):
 
     def __init__(self,*args,**kwargs):
         super(GeneCommentaryGC,self).__init__(*args,**kwargs)
-        self.ancestors = list( self.gcgc.iterancestors() )
-        self.gct = self.ancestors[0]
-        self.gcr = self.ancestors[2]
+        self._ancestors = list( self.gcgc.iterancestors() )
+        self._gct = self.ancestors[0]
+        self._gcr = self.ancestors[2]
 
     @property
     def ref_heading(self):
@@ -70,7 +70,7 @@ def _gc_acv(gc):
 class Gene(object):
     def __init__(self,xml):
         if (xml is None or len(xml) == 0):
-            raise NCBIError("Gene XML is empty. Invalid gene name?")
+            raise NCBIError("Gene XML is empty")
         if ('<Entrezgene-Set>' not in xml or '</Entrezgene-Set>' not in xml):
             raise NCBIError("Gene XML doesn't contain <Entrezgene-Set>..</Entrezgene-Set>")
         self._root = XML(xml)
