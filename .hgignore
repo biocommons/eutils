@@ -1,0 +1,9 @@
+syntax: glob
+
+*.bak
+*.orig
+*.pyc
+*.pyo
+*.sqlite3
+*~
+tmp
