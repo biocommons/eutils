@@ -1,10 +1,10 @@
-from lxml.etree import XML
+import lxml.etree as le
 
-from locus.core.exceptions import LocusNCBIError
+from eutils.exceptions import NCBIError
 
 class RefSeq(object):
     def __init__(self,xml):
-        self._root = XML(xml)
+        self._root = le.fromstring(xml)
 
     @property
     def acv(self):
@@ -22,13 +22,6 @@ class RefSeq(object):
         s,e = self.cds_start_end
         return s-1,e
 
-    #@property
-    #def cds_start(self):
-    #    return self.cds_start_end[0]
-    #@property
-    #def cds_end(self):
-    #    return self.cds_start_end[1]
-
     @property
     def chr(self):
         return self._root.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature['
@@ -42,29 +35,26 @@ class RefSeq(object):
         return [ (s-1,e) for s,e in [ _feature_se(n) for n in exon_nodes ] ]
 
     @property
+    def exon_names(self):
+        return self._root.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key="exon"]'
+                                '/GBFeature_quals/GBQualifier[GBQualifier_name="number"]'
+                                '/GBQualifier_value/text()')
+    @property
     def gene(self):
         return [ str(e)
                  for e in list(set(self._root.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature'
                                                     '/GBFeature_quals/GBQualifier[GBQualifier_name/text()="gene"]'
                                                     '/GBQualifier_value/text()'))) ]
-    @property
-    def hgnc(self):
-        return self.gene
-
-
-    @property
-    def exon_names(self):
-        return self._root.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key="exon"]'
-                                '/GBFeature_quals/GBQualifier[GBQualifier_name="number"]'
-                                '/GBQualifier_value/text()')
+    hgnc = gene                 # alias for gene method
 
     @property
     def seq(self):
         return self._root.xpath('/GBSet/GBSeq/GBSeq_sequence')[0].text
 
+
 def _feature_se(gbf):
     loc = gbf.find('GBFeature_location').text
     if 'join' in loc:
-        raise LocusNCBIError('discontiguous genbank feature')
+        raise EutilsError('discontiguous genbank feature')
     s,e = loc.split('..')
     return int(s),int(e)
