@@ -1,10 +1,7 @@
-import collections,logging
+import collections
 from lxml.etree import XML
 
-from locus.core.exceptions import LocusNCBIError
-
-# N.B. NCBI uses 0-based, LR-closed coordinates in XML
-
+from eutils.exceptions import NCBIError
 
 class GeneCommentaryGC(collections.namedtuple('GeneCommentaryGC', ['gcgc'])):
     """The NCBI XML schema is heinous. This class provides a rudimentary
@@ -12,13 +9,12 @@ class GeneCommentaryGC(collections.namedtuple('GeneCommentaryGC', ['gcgc'])):
     genomic coords. That is, nodes at this xpath:
 
     /Entrezgene-Set/Entrezgene/Entrezgene_locus/Gene-commentary/Gene-commentary_products/Gene-commentary/Gene-commentary_genomic-coords
-                                                gcr                                      gct             gcgc
+                                                ^ gcr                                    ^ gct           ^ gcgc
     gcr children contain reference sequence info
     gct children contain target sequence info
     gcgc contains the actual coordinates
                                                 
     gcs = self._root.xpath('/Entrezgene-Set/Entrezgene/Entrezgene_locus/Gene-commentary/Gene-commentary_products/Gene-commentary/Gene-commentary_genomic-coords')
-
     """
 
     def __init__(self,*args,**kwargs):
@@ -71,16 +67,12 @@ def _gc_acv(gc):
     return _gc_accession(gc) + '.' + _gc_version(gc)
 
 
-   
-
-                                        
-
 class Gene(object):
     def __init__(self,xml):
         if (xml is None or len(xml) == 0):
-            raise LocusNCBIError("Gene XML is empty. Invalid gene name?")
+            raise NCBIError("Gene XML is empty. Invalid gene name?")
         if ('<Entrezgene-Set>' not in xml or '</Entrezgene-Set>' not in xml):
-            raise LocusNCBIError("Gene XML doesn't contain <Entrezgene-Set>..</Entrezgene-Set>")
+            raise NCBIError("Gene XML doesn't contain <Entrezgene-Set>..</Entrezgene-Set>")
         self._root = XML(xml)
         self._gene_commentaries_gcs = None
 
@@ -120,13 +112,21 @@ class Gene(object):
                                                                       '/Gene-commentary/Gene-commentary_genomic-coords') ]
         return self._gene_commentaries_gcs
 
+
+
+
+
+
+
+############################################################################
+## below here needs werious thinking about refactoring
     def grch37p10_mapping(self):
         gc = self._grch37p10_gc()
         si = gc.find('Gene-commentary_seqs/Seq-loc/Seq-loc_int/Seq-interval')
         ac = gc.find('Gene-commentary_accession').text
         v = gc.find('Gene-commentary_version').text
         if not ac.startswith('NC_'):
-            raise LocusNCBIError('mapping data not aligned to a chromosome?!')
+            raise NCBIError('mapping data not aligned to a chromosome?!')
         return { 
             'chr': _NC_to_chr(ac),
             'accession': ac,
@@ -174,7 +174,7 @@ class Gene(object):
         xpath = 'Gene-commentary_products/Gene-commentary[%s]' % (pred)
         nodes = gc.xpath(xpath)
         if len(nodes) != 1:
-            raise LocusNCBIError("Got %d Gene-commentary_products for %s"%(len(nodes),acv))
+            raise NCBIError("Got %d Gene-commentary_products for %s"%(len(nodes),acv))
         return nodes[0]
         
     def _grch37p10_product_intervals(self,acv):
@@ -187,7 +187,7 @@ class Gene(object):
         ints = gc.findall('Gene-commentary_genomic-coords/Seq-loc/Seq-loc_int/Seq-interval')
         if len(ints) > 0:
             return ints
-        raise LocusNCBIError('No product intervals for '+acv)
+        raise NCBIError('No product intervals for '+acv)
 
     def _grch37p10_gc(self):
         gcgcs = self.gene_commentaries_gcs
@@ -199,21 +199,4 @@ class Gene(object):
         try:
             return self._root.xpath(xpath)[0]
         except IndexError:
-            raise LocusNCBIError("Didn't find Gene-commentary_heading = %s (may be in a patch)"%(heading))
-
-
-def _feature_se(gbf):
-    s,e = gbf.find('GBFeature_location').text.split('..')
-    return int(s),int(e)
-
-def _NC_to_chr(ac):
-    return {
-        'NC_000001': '1',        'NC_000002': '2',        'NC_000003': '3',
-        'NC_000004': '4',        'NC_000005': '5',        'NC_000006': '6',
-        'NC_000007': '7',        'NC_000008': '8',        'NC_000009': '9',
-        'NC_000010': '10',       'NC_000011': '11',       'NC_000012': '12',
-        'NC_000013': '13',       'NC_000014': '14',       'NC_000015': '15',
-        'NC_000016': '16',       'NC_000017': '17',       'NC_000018': '18',
-        'NC_000019': '19',       'NC_000020': '20',       'NC_000021': '21',
-        'NC_000022': '22',       'NC_000023': 'X',        'NC_000024': 'Y',
-        }[ac]
+            raise NCBIError("Didn't find Gene-commentary_heading = %s (may be in a patch)"%(heading))

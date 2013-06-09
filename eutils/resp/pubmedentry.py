@@ -1,3 +1,5 @@
+import lxml.etree as le
+
 class PubMedEntry(object):
     def __init__(self,xml):
         self.xml = xml
