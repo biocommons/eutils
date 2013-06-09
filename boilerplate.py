@@ -12,5 +12,5 @@ pubmed_xml = open(os.path.join(data_dir,'efetch.fcgi?rettype=xml&db=pubmed&id=20
 rs_xml = open(os.path.join(data_dir,'efetch.fcgi?db=nuccore&id=148536845&retmode=xml.xml')).read()
 
 g = eutils.resp.gene.Gene(gene_xml)
-pm = eutils.resp.pubmed.PubMedArticle(pubmed_xml)
+pma = eutils.resp.pubmed.PubMedArticle(pubmed_xml)
 rs = eutils.resp.refseq.RefSeq(rs_xml)

@@ -1,13 +1,13 @@
 import os,unittest
 
-import eutils.resp.pubmedarticle
+import eutils.resp.pubmed
 
 data_dir = os.path.realpath(os.path.realpath( os.path.join(__file__,'../data')))
 
-class Test_eutils_resp_pubmedarticle_PubMedArticle(unittest.TestCase):
+class Test_eutils_resp_pubmed_PubMedArticle(unittest.TestCase):
     def test_20412080(self):
         xml = open(os.path.join(data_dir,'efetch.fcgi?rettype=xml&db=pubmed&id=20412080.xml')).read()
-        pma = eutils.resp.pubmedarticle.PubMedArticle(xml)
+        pma = eutils.resp.pubmed.PubMedArticle(xml)
 
         print(pma)
 
