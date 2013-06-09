@@ -5,6 +5,9 @@ README.html: README.rst
 develop:
 	python setup.py develop
 
+test:
+	python setup.py nosetests
+
 
 .PHONY: clean cleaner cleanest distclean
 clean:
