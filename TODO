@@ -1,0 +1,12 @@
+-*-outline-*-
+
+* write client interface
+
+* add client to response objects (for hopping)
+
+* move xml _root to Resp from subobjects
+
+* change resp name to something meaningful
+
+* add elink functionality to resp objects
+
