@@ -1,0 +1,2 @@
+class EutilsError(Exception):
+    pass
