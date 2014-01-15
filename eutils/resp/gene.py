@@ -42,10 +42,6 @@ class Gene(object):
 
 
 
-
-
-
-
 ############################################################################
 ## below here needs werious thinking about refactoring
     def grch37p10_mapping(self):
@@ -106,8 +102,10 @@ class Gene(object):
         return nodes[0]
         
     def _grch37p10_product_intervals(self,acv):
-        """NCBI makes me yak. This time because the XML is not consistent (and undocumented). e.g., see NM_000014.4
-        and NM_005634.2 have different structures for seq intervals"""
+        """NCBI's XML is inconsistent and undocumented, which means that
+        we have to resort to reverse engineering questions like why
+        NM_000014.4 and NM_005634.2 have different structures for seq
+        intervals.  I'm sure it means something..."""
         gc = self._grch37p10_product_gc(acv)
         ints = gc.findall('Gene-commentary_genomic-coords/Seq-loc/Seq-loc_mix/Seq-loc-mix/Seq-loc/Seq-loc_int/Seq-interval')
         if len(ints) > 0:
@@ -119,7 +117,6 @@ class Gene(object):
 
     def _grch37p10_gc(self):
         gcgcs = self.gene_commentaries_gcs
-        import IPython; IPython.embed()
         return self._gc(heading='Reference GRCh37.p10 Primary Assembly')
 
     def _gc(self,heading):
@@ -148,40 +145,40 @@ class GeneCommentaryGC(object):
     def __init__(self,gcgc):
         self._gcgc = gcgc
         self._ancestors = list( self._gcgc.iterancestors() )
-        self._gct = self.ancestors[0]
-        self._gcr = self.ancestors[2]
+        self._gct = self._ancestors[0]
+        self._gcr = self._ancestors[2]
 
     @property
     def ref_heading(self):
-        return _gc_heading(self.gcr)
+        return _gc_heading(self._gcr)
     @property
     def ref_label(self):
-        return _gc_label(self.gcr)
+        return _gc_label(self._gcr)
     @property
     def ref_accession(self):
-        return _gc_accession(self.gcr)
+        return _gc_accession(self._gcr)
     @property
     def ref_version(self):
-        return _gc_version(self.gcr)
+        return _gc_version(self._gcr)
     @property
     def ref_acv(self):
-        return _gc_acv(self.gcr)
+        return _gc_acv(self._gcr)
 
     @property
     def target_heading(self):
-        return _gc_heading(self.gct)
+        return _gc_heading(self._gct)
     @property
     def target_label(self):
-        return _gc_label(self.gct)
+        return _gc_label(self._gct)
     @property
     def target_accession(self):
-        return _gc_accession(self.gct)
+        return _gc_accession(self._gct)
     @property
     def target_version(self):
-        return _gc_version(self.gct)
+        return _gc_version(self._gct)
     @property
     def target_acv(self):
-        return _gc_acv(self.gct)
+        return _gc_acv(self._gct)
 
 def _gc_heading(gc):
     return gc.find('Gene-commentary_heading').text

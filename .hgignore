@@ -8,3 +8,4 @@ syntax: glob
 *.sqlite3
 *~
 tmp
+distribute-*
