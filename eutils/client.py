@@ -8,9 +8,12 @@ Yoder RS
 default_tool =  __package__
 default_email = 'reecehart+eutils@gmail.com'
 
-import eutils.clients.pubmed
-import eutils.clients.refseq
-import eutils.clients.gene
+
+# http://www.ncbi.nlm.nih.gov/books/NBK25499/table/chapter4.chapter4_table1/?report=objectonly
+
+#import eutils.clients.pubmed
+#import eutils.clients.refseq
+#import eutils.clients.gene
 
 class Client(object):
     def __init__(self, tool = default_tool, email = default_email):
