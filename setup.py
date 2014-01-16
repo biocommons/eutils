@@ -1,17 +1,39 @@
+import os
+
+from ez_setup import use_setuptools
+use_setuptools()
 
 from setuptools import setup, find_packages
 
 setup(
-    name = "eutils",
+    author = 'Reece Hart',
+    author_email='reecehart+eutils@gmail.com',
     description = """Structured Python interface to NCBI E-Utilities.""",
-    license = 'MIT',
-    version = "0.0.0",
-    author_email='reecehart@gmail.com',
+    license = 'Apache',
+    long_description = open('README.rst','r').read(),
+    name = "eutils",
     packages = find_packages(),
+    url = 'https://bitbucket.org/reece/rcore',
+    use_hg_version = True,
     zip_safe = True,
-    #test_suite = 'nose.collector',
+
+    classifiers = [
+        "License :: OSI Approved :: MIT License",
+        ],
+
+    keywords = [
+        ],
+
     install_requires = [
         'lxml',
+        ],
+
+    setup_requires = [
+        'hgtools',
         'nose',
         ],    
+
+    tests_require = [
+        'nose',
+    ]
 )

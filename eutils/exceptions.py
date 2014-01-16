@@ -1,6 +1,9 @@
 class EutilsError(Exception):
     pass
 
-class NCBIError(Exception):
+class EutilsRequestError(Exception):
+    pass
+
+class EutilsNCBIError(EutilsError):
     pass
 
