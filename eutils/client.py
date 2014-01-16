@@ -10,6 +10,8 @@ http://www.ncbi.nlm.nih.gov/books/NBK25499/
 # Don't cache search results
 # Fetch & compare
 
+import hashlib
+import cPickle
 import logging
 import os
 import requests
@@ -25,69 +27,68 @@ default_email = 'reecehart+eutils@gmail.com'
 default_request_interval = 0.333
 default_cache_path = os.path.join('/tmp',default_tool+'-'+str(os.getuid())+'.db')
 
-logging.basicConfig()
+logging.basicConfig(level=logging.DEBUG)
 
-class Client(object):
+class EutilsClient(object):
     url_base = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils'
-    def __init__(self,tool=default_tool,email=default_email,
+    def __init__(self,
+                 cache_path=default_cache_path,
+                 default_args={},
+                 email=default_email,
                  request_interval=default_request_interval,
-                 cache_path=default_cache_path):
-        self.tool = tool
+                 tool=default_tool,
+                 ):
+        self.default_args = default_args
         self.email = email
         self.request_interval = request_interval
+        self.tool = tool
 
         self._logger = logging.getLogger(__name__)
         self._logger.setLevel(logging.DEBUG)
         self._last_request_clock = 0
-        self._request_count = 0
         self._cache = SQLiteCache(cache_path) if cache_path else None
+        self._ident_args = { 'tool': tool, 'email': email }
+        self._request_count = 0
 
 
-    def einfo_url(self,qa={}):
-        return self._make_url('/einfo.fcgi',qa)
+    def fetch(self,path,args={},skip_cache=False,skip_sleep=False):
+        # cache key: the key associated with this endpoint and args The
+        # key intentionally excludes the identifying args (tool and email)
+        # and is independent of the request method (GET/POST) args are
+        # sorted for canonicalization
 
-    def einfo(self,qa={}):
-        return self._get(self.einfo_url(qa))
+        url = self.url_base + path
+        defining_args = dict( self.default_args.items() + args.items() )
+        full_args = (self._ident_args.items() + defining_args.items())
+        cache_key = hashlib.md5( cPickle.dumps((url,sorted(defining_args.items()))) ).hexdigest()
 
-
-    def esearch(self,db,term):
-        # URL encode, space->'+',use post
-        pass
-
-    def efetch(self):
-        pass
-
-
-
-    def _make_url(self,path,qa):
-        # TODO: url encode
-        return self.url_base + path + '?' + '&'.join([
-            k + '=' + v
-            for k,v in sorted(qa.iteritems())])
-
-    def _get(self,url,skip_cache=False,skip_sleep=False):
         if self._cache:
+            sqas = ';'.join([k+'='+v for k,v in sorted(args.items())])
             try:
-                v = self._cache[url]
-                logging.debug('cache hit for '+url)
+                v = self._cache[cache_key]
+                logging.debug('cache hit for key {cache_key} ({url}, {sqas}) '.format(
+                    cache_key=cache_key, url=url, sqas=sqas))
                 return v
             except KeyError:
-                logging.debug('cache miss for '+url)
+                logging.debug('cache miss for key {cache_key} ({url}, {sqas}) '.format(
+                    cache_key=cache_key, url=url, sqas=sqas))
                 pass
 
         sleep_time = 0 if skip_sleep else min( self.request_interval, time.clock()-self._last_request_clock )
         self._logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
         time.sleep(sleep_time)
-        r = requests.get(url) 
-        self._logger.debug('fetched {url}'.format(url=url))
+        r = requests.post(url,full_args) 
         self._last_request_clock = time.clock()
+        self._logger.debug('fetched {url}'.format(url=url))
 
         if not r.ok:
             # TODO: inspect an error response to construct a useful message
             raise EutilsRequestError(r)
 
         if self._cache:
-            self._cache[url] = r.content
+            self._cache[cache_key] = r.content
+            logging.debug('cached results for key {cache_key} ({url}, {sqas}) '.format(
+                cache_key=cache_key, url=url, sqas=sqas))
 
         return r.content
 

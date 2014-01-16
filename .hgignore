@@ -9,3 +9,4 @@ syntax: glob
 *~
 tmp
 distribute-*
+*.egg

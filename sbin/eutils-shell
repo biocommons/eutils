@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+
+import eutils.client
+
+ec = eutils.client.EutilsClient()
+
+import IPython; IPython.embed()
+
