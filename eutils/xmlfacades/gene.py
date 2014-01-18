@@ -1,6 +1,6 @@
 import lxml.etree as le
 
-from eutils.exceptions import NCBIError
+from eutils.exceptions import *
 from eutils.utils import xml_get_text, xml_get_text_or_none
 
 class Gene(object):

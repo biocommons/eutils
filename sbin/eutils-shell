@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
 import eutils.client
+import eutils.xmlfacades.einfo
 
-ec = eutils.client.EutilsClient()
+c = eutils.client.Client()
 
 import IPython; IPython.embed()
 
