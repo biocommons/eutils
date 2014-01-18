@@ -6,9 +6,9 @@
 http://www.ncbi.nlm.nih.gov/books/NBK25499/
 """
 
-# TODO: per-request cache and throttle settings?
-# Don't cache search results
+# TODO:
 # Fetch & compare
+# TTL support in cache, request-specific TTLs?
 
 import hashlib
 import cPickle
@@ -22,10 +22,10 @@ from rcore.sqlitecache import SQLiteCache
 
 from eutils.exceptions import *
 
-default_tool = __package__
+default_tool = __package__ or 'interactive'
 default_email = 'reecehart+eutils@gmail.com'
 default_request_interval = 0.333
-default_cache_path = os.path.join('/tmp',default_tool+'-'+str(os.getuid())+'.db')
+default_cache_path = os.path.join(os.path.expanduser('~'),'.cache','eutils-cache.db')
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -51,6 +51,13 @@ class EutilsClient(object):
         self._request_count = 0
 
 
+    def einfo(self,args={}):
+        return self.fetch('/einfo.fcgi',args,skip_cache=True)
+    def esearch(self,args={}):
+        return self.fetch('/efetch.fcgi',args,skip_cache=True)
+    def efetch(self,args={}):
+        return self.fetch('/efetch.fcgi',args)
+
     def fetch(self,path,args={},skip_cache=False,skip_sleep=False):
         # cache key: the key associated with this endpoint and args The
         # key intentionally excludes the identifying args (tool and email)
@@ -74,9 +81,11 @@ class EutilsClient(object):
                     cache_key=cache_key, url=url, sqas=sqas))
                 pass
 
-        sleep_time = 0 if skip_sleep else min( self.request_interval, time.clock()-self._last_request_clock )
-        self._logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
-        time.sleep(sleep_time)
+        if not skip_sleep:
+            sleep_time = min( self.request_interval,
+                              time.clock()-self._last_request_clock )
+            self._logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
+            time.sleep(sleep_time)
         r = requests.post(url,full_args) 
         self._last_request_clock = time.clock()
         self._logger.debug('fetched {url}'.format(url=url))
@@ -92,6 +101,10 @@ class EutilsClient(object):
 
         return r.content
 
+
+if __name__ == '__main__':
+    ec = EutilsClient()
+    r = ec.fetch('/einfo.fcgi',{'db':'protein'})
 
 
 # <LICENSE>
