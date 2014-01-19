@@ -31,7 +31,7 @@ default_cache_path = os.path.join(os.path.expanduser('~'),'.cache','eutils-cache
 
 logging.basicConfig(level=logging.DEBUG)
 
-class EutilsClient(object):
+class QueryService(object):
     url_base = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils'
     def __init__(self,
                  cache_path=default_cache_path,
