@@ -1,10 +1,10 @@
-from eutils.eutilsclient import EutilsClient
+from eutils.queryservice import QueryService
 from eutils.xmlfacades.einfo import EInfo, EInfoDB
 from eutils.xmlfacades.esearchresults import ESearchResults
 
 class Client(object):
     def __init__(self):
-        self._ec = EutilsClient()
+        self._ec = QueryService()
         self.databases = self.einfo().databases()
 
     def einfo(self,db=None):
