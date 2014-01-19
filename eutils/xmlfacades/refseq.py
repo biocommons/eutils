@@ -1,7 +1,5 @@
 import lxml.etree as le
 
-from eutils.exceptions import NCBIError
-
 class RefSeq(object):
     def __init__(self,xml):
         self._root = le.fromstring(xml)

@@ -23,7 +23,7 @@ from rcore.sqlitecache import SQLiteCache
 
 from eutils.exceptions import *
 
-default_default_args = {'retmode': 'xml', 'usehistory': 'y'}
+default_default_args = {'retmode': 'xml', 'usehistory': 'y', 'retmax': 250}
 default_tool = __package__ or 'interactive'
 default_email = 'reecehart+eutils@gmail.com'
 default_request_interval = 0.333
@@ -53,14 +53,43 @@ class EutilsClient(object):
         self._request_count = 0
 
 
-    def einfo(self,args={}):
-        return self.fetch('/einfo.fcgi',args,skip_cache=True)
-    def esearch(self,args={}):
-        return self.fetch('/esearch.fcgi',args,skip_cache=True)
     def efetch(self,args={}):
-        return self.fetch('/efetch.fcgi',args)
+        return self._fetch('/efetch.fcgi',args)
 
-    def fetch(self,path,args={},skip_cache=False,skip_sleep=False):
+    def egquery(self,args={}):
+        return self._fetch('/egquery.fcgi',args,skip_cache=True)
+
+    def einfo(self,args={}):
+        return self._fetch('/einfo.fcgi',args,skip_cache=True)
+
+    def elink(self,args={}):
+        return self._fetch('/elink.fcgi',args)
+
+    def epost(self,args={}):
+        return self._fetch('/epost.fcgi',args,skip_cache=True)
+
+    def esearch(self,args={}):
+        return self._fetch('/esearch.fcgi',args,skip_cache=True)
+
+    def esummary(self,args={}):
+        return self._fetch('/esummary.fcgi',args,skip_cache=True)
+
+
+    ############################################################################
+    ## Internals
+    def _fetch(self,path,args={},skip_cache=False,skip_sleep=False):
+        """return results for a NCBI query, possibly from the cache
+
+        :param: path: relative query path (e.g., 'einfo.fcgi')
+        :param: args: dictionary of query args
+        :param: skip_cache: whether to bypass the cache on reading
+        :param: skip_sleep: whether to bypass query throttling
+        :rtype: xml string
+
+        The args are joined with args required by NCBI (tool and email
+        address) and with the default args declared when instantiating
+        the client.
+        """
         # cache key: the key associated with this endpoint and args The
         # key intentionally excludes the identifying args (tool and email)
         # and is independent of the request method (GET/POST) args are
@@ -70,9 +99,9 @@ class EutilsClient(object):
         defining_args = dict( self.default_args.items() + args.items() )
         full_args = (self._ident_args.items() + defining_args.items())
         cache_key = hashlib.md5( cPickle.dumps((url,sorted(defining_args.items()))) ).hexdigest()
+        sqas = ';'.join([k+'='+v for k,v in sorted(args.items())])
 
-        if self._cache:
-            sqas = ';'.join([k+'='+v for k,v in sorted(args.items())])
+        if not skip_cache and self._cache:
             try:
                 v = self._cache[cache_key]
                 logging.debug('cache hit for key {cache_key} ({url}, {sqas}) '.format(
@@ -99,6 +128,7 @@ class EutilsClient(object):
                 r=r, error=xml.find('ERROR').text))
 
         if self._cache:
+            # N.B. we cache the read even if skip_cache is true
             self._cache[cache_key] = r.content
             logging.debug('cached results for key {cache_key} ({url}, {sqas}) '.format(
                 cache_key=cache_key, url=url, sqas=sqas))
@@ -108,7 +138,7 @@ class EutilsClient(object):
 
 if __name__ == '__main__':
     ec = EutilsClient()
-    r = ec.fetch('/einfo.fcgi',{'db':'protein'})
+    r = ec._fetch('/einfo.fcgi',{'db':'protein'})
 
 
 # <LICENSE>
