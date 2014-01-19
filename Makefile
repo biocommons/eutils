@@ -13,7 +13,6 @@ test:
 clean:
 	find . -name \*~ -print0 | xargs -0r rm -f
 cleaner: clean
-	rm -f distribute-*
-cleanest distclean: cleaner
 	find . -name \*.pyc -print0 | xargs -0r rm -f
-	rm -fr eutils.egg-info
+cleanest distclean: cleaner
+	rm -fr *.egg *.egg-info
