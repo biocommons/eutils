@@ -1,12 +1,16 @@
 syntax: glob
 
 *.bak
+*.egg
 *.egg-info
 *.orig
 *.pyc
 *.pyo
 *.sqlite3
 *~
-tmp
+archive
+.coverage
+cover
 distribute-*
-*.egg
+nosetests.xml
+tmp
