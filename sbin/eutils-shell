@@ -3,7 +3,7 @@
 import eutils.client
 import eutils.xmlfacades.einfo
 
-c = eutils.client.Client()
+ec = eutils.client.Client()
 
 import IPython; IPython.embed()
 

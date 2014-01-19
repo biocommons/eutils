@@ -1,21 +1,49 @@
+from eutils.exceptions import *
 from eutils.queryservice import QueryService
 from eutils.xmlfacades.einfo import EInfo, EInfoDB
 from eutils.xmlfacades.esearchresults import ESearchResults
+from eutils.xmlfacades.gene import Gene
+from eutils.xmlfacades.refseq import RefSeq
+from eutils.xmlfacades.pubmed import PubMedArticle
+
 
 class Client(object):
     def __init__(self):
         self._ec = QueryService()
-        self.databases = self.einfo().databases()
+        self.databases = self.einfo().databases
 
     def einfo(self,db=None):
+        """query the einfo endpoint
+
+        :param db: string (optional)
+        :rtype: EInfo or EInfoDB object
+
+        If db is None, the reply is a list of databases, which is returned
+        in an EInfo object (which has a databases() method).
+
+        If db is not None, the reply is information about the specified
+        database, which is returned in an EInfoDB object.  (Version 2.0
+        data is automatically requested.)
+        """
+
         if db is None:
             return EInfo( self._ec.einfo() )
-        return EInfoDB( self._ec.einfo({'db':db}) )
+        return EInfoDB( self._ec.einfo({'db':db, 'version':'2.0'}) )
         
+
     def esearch(self,db,term):
+        """query the esearch endpoint
+        """
         return ESearchResults( self._ec.esearch({'db':db,'term':term}) )
 
 
+    def efetch(self,db,id):
+        """query the efetch endpoint
+        """
+        xml = self._ec.efetch({'db':db,'id':id})
+        if db in ['gene']:
+            return Gene(xml)
+        raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))
 
 
     ############################################################################
