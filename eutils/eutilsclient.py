@@ -18,10 +18,12 @@ import requests
 import time
 import urllib2
 
+import lxml
 from rcore.sqlitecache import SQLiteCache
 
 from eutils.exceptions import *
 
+default_default_args = {'retmode': 'xml', 'usehistory': 'y'}
 default_tool = __package__ or 'interactive'
 default_email = 'reecehart+eutils@gmail.com'
 default_request_interval = 0.333
@@ -33,7 +35,7 @@ class EutilsClient(object):
     url_base = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils'
     def __init__(self,
                  cache_path=default_cache_path,
-                 default_args={},
+                 default_args=default_default_args,
                  email=default_email,
                  request_interval=default_request_interval,
                  tool=default_tool,
@@ -54,7 +56,7 @@ class EutilsClient(object):
     def einfo(self,args={}):
         return self.fetch('/einfo.fcgi',args,skip_cache=True)
     def esearch(self,args={}):
-        return self.fetch('/efetch.fcgi',args,skip_cache=True)
+        return self.fetch('/esearch.fcgi',args,skip_cache=True)
     def efetch(self,args={}):
         return self.fetch('/efetch.fcgi',args)
 
@@ -91,8 +93,10 @@ class EutilsClient(object):
         self._logger.debug('fetched {url}'.format(url=url))
 
         if not r.ok:
-            # TODO: inspect an error response to construct a useful message
-            raise EutilsRequestError(r)
+            # TODO: discriminate between types of errors
+            xml = lxml.etree.fromstring(r.text.encode('utf-8'))
+            raise EutilsRequestError( '{r.reason} ({r.status_code}): {error}'.format(
+                r=r, error=xml.find('ERROR').text))
 
         if self._cache:
             self._cache[cache_key] = r.content
