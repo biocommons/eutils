@@ -34,6 +34,7 @@ setup(
         ],    
 
     tests_require = [
+        'coverage',
         'nose',
     ]
 )
