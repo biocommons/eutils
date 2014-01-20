@@ -113,10 +113,10 @@ class QueryService(object):
                 pass
 
         if not skip_sleep:
-            sleep_time = min( self.request_interval,
-                              time.clock()-self._last_request_clock )
-            self._logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
-            time.sleep(sleep_time)
+            sleep_time = self.request_interval - (time.clock()-self._last_request_clock)
+            if sleep_time > 0:
+                self._logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
+                time.sleep(sleep_time)
         r = requests.post(url,full_args) 
         self._last_request_clock = time.clock()
         self._logger.debug('fetched {url}'.format(url=url))
