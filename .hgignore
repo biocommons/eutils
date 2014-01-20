@@ -9,8 +9,10 @@ syntax: glob
 *.sqlite3
 *~
 archive
+build
 .coverage
 cover
+dist
 distribute-*
 nosetests.xml
 tmp

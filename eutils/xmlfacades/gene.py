@@ -115,7 +115,7 @@ class GeneCommentary(object):
         
     @property
     def genomic_coords(self):
-        return [ GeneCommentaryGenomicCoords(gcgc) for gcgc in self._n.xpath('Gene-commentary_genomic-coords') ]
+        return GeneCommentaryGenomicCoords(self._n.xpath('Gene-commentary_genomic-coords')[0])
     
 
 
