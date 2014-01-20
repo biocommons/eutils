@@ -11,7 +11,7 @@ class Gene(eutils.xmlfacades.base.Base):
         return xml_get_text_or_none(self._xmlroot,'/Entrezgene-Set/Entrezgene/Entrezgene_gene/Gene-ref/Gene-ref_desc')
 
     @property
-    def locus(self):
+    def hgnc(self):
         return xml_get_text_or_none(self._xmlroot,'/Entrezgene-Set/Entrezgene/Entrezgene_gene/Gene-ref/Gene-ref_locus')
 
     @property
