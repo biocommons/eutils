@@ -4,13 +4,15 @@ from eutils.xmlfacades.einfo import EInfo, EInfoDB
 from eutils.xmlfacades.esearchresults import ESearchResults
 from eutils.xmlfacades.gene import Gene
 from eutils.xmlfacades.pubmed import PubMedArticle
-from eutils.xmlfacades.refseq import RefSeq
+from eutils.xmlfacades.gbset import GBSet
 
 
 class Client(object):
+
     def __init__(self):
-        self._ec = QueryService()
+        self._qs = QueryService()
         self.databases = self.einfo().databases
+
 
     def einfo(self,db=None):
         """query the einfo endpoint
@@ -27,22 +29,24 @@ class Client(object):
         """
 
         if db is None:
-            return EInfo( self._ec.einfo() )
-        return EInfoDB( self._ec.einfo({'db':db, 'version':'2.0'}) )
+            return EInfo( self._qs.einfo() )
+        return EInfoDB( self._qs.einfo({'db':db, 'version':'2.0'}) )
         
 
     def esearch(self,db,term):
         """query the esearch endpoint
         """
-        return ESearchResults( self._ec.esearch({'db':db,'term':term}) )
+        return ESearchResults( self._qs.esearch({'db':db,'term':term}) )
 
 
     def efetch(self,db,id):
         """query the efetch endpoint
         """
-        xml = self._ec.efetch({'db':db,'id':str(id)})
+        xml = self._qs.efetch({'db':db,'id':str(id)})
         if db in ['gene']:
             return Gene(xml)
+        if db in ['nuccore']:
+            return GBSet(xml)
         raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))
 
 

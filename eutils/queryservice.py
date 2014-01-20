@@ -9,6 +9,8 @@ http://www.ncbi.nlm.nih.gov/books/NBK25499/
 # TODO:
 # Fetch & compare
 # TTL support in cache, request-specific TTLs?
+# optional db -> options map (esp. for rettype & retmode)
+
 
 import hashlib
 import cPickle
@@ -119,9 +121,10 @@ class QueryService(object):
                 time.sleep(sleep_time)
         r = requests.post(url,full_args) 
         self._last_request_clock = time.clock()
-        self._logger.debug('fetched {url}'.format(url=url))
+        self._logger.debug('post({url}, {sqas}): {r.status_code} {r.reason}, {len})'.format(
+            url=url,sqas=sqas,r=r,len=len(r.text)))
 
-        if not r.ok:
+        if not r.ok or '<ERROR>' in r.text:
             # TODO: discriminate between types of errors
             xml = lxml.etree.fromstring(r.text.encode('utf-8'))
             raise EutilsRequestError( '{r.reason} ({r.status_code}): {error}'.format(

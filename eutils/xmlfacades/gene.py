@@ -79,6 +79,12 @@ class GeneCommentary(object):
         assert gc.tag == 'Gene-commentary'
         self._n = gc
 
+    def __unicode__(self):
+        return '{type}(acv={self.acv},type={self.type},heading={self.heading},label={self.label})'.format(type=type(self).__name__,self=self)
+
+    def __str__(self):
+        return unicode(self).encode('utf-8')
+
     @property
     def heading(self):
         return self._n.find('Gene-commentary_heading').text
