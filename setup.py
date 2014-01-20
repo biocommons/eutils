@@ -13,17 +13,28 @@ setup(
     long_description = open('README.rst','r').read(),
     name = "eutils",
     packages = find_packages(),
-    url = 'https://bitbucket.org/reece/rcore',
+    url = 'https://bitbucket.org/invitae/eutils',
     use_hg_version = True,
     zip_safe = True,
 
-    classifiers = [
-        "License :: OSI Approved :: MIT License",
+     classifiers = [
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Healthcare Industry",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: Apache Software License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python",
+        "Topic :: Database :: Front-Ends",
+        "Topic :: Scientific/Engineering :: Bio-Informatics",
+        "Topic :: Scientific/Engineering :: Medical Science Apps.",
         ],
 
     keywords = [
+        'bioinformatics',
         ],
-
+ 
     install_requires = [
         'lxml',
         ],
