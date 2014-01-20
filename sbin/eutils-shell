@@ -4,6 +4,9 @@ import eutils.client
 import eutils.xmlfacades.einfo
 
 ec = eutils.client.Client()
+g = ec.efetch(db='gene',id=4747)
+#p = g.products[0]
+#gcs = p.genomic_coords[0]
 
 import IPython; IPython.embed()
 

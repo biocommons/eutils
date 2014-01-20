@@ -57,22 +57,22 @@ class QueryService(object):
         return self._fetch('/efetch.fcgi',args)
 
     def egquery(self,args={}):
-        return self._fetch('/egquery.fcgi',args,skip_cache=True)
+        return self._fetch('/egquery.fcgi',args)
 
     def einfo(self,args={}):
-        return self._fetch('/einfo.fcgi',args,skip_cache=True)
+        return self._fetch('/einfo.fcgi',args)
 
     def elink(self,args={}):
         return self._fetch('/elink.fcgi',args)
 
     def epost(self,args={}):
-        return self._fetch('/epost.fcgi',args,skip_cache=True)
+        return self._fetch('/epost.fcgi',args)
 
     def esearch(self,args={}):
-        return self._fetch('/esearch.fcgi',args,skip_cache=True)
+        return self._fetch('/esearch.fcgi',args)
 
     def esummary(self,args={}):
-        return self._fetch('/esummary.fcgi',args,skip_cache=True)
+        return self._fetch('/esummary.fcgi',args)
 
 
     ############################################################################

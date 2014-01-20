@@ -1,5 +1,6 @@
 import lxml.etree
 
+from eutils.exceptions import *
 from eutils.xmlfacades.base import Base
 
 class ESearchResults(Base):
@@ -24,3 +25,11 @@ class ESearchResults(Base):
     def webenv(self):
         return self._xmlroot.find('WebEnv').text
 
+
+    ############################################################################
+    ## Internals
+    @classmethod
+    def _validate_xml(xml):
+        """See Base.__init__ for explanation"""
+        if '</eSearchResult>' not in xml:
+            raise EutilsNCBIError("received malformed ESearchResult reply")

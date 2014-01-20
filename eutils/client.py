@@ -3,8 +3,8 @@ from eutils.queryservice import QueryService
 from eutils.xmlfacades.einfo import EInfo, EInfoDB
 from eutils.xmlfacades.esearchresults import ESearchResults
 from eutils.xmlfacades.gene import Gene
-from eutils.xmlfacades.refseq import RefSeq
 from eutils.xmlfacades.pubmed import PubMedArticle
+from eutils.xmlfacades.refseq import RefSeq
 
 
 class Client(object):
@@ -40,10 +40,11 @@ class Client(object):
     def efetch(self,db,id):
         """query the efetch endpoint
         """
-        xml = self._ec.efetch({'db':db,'id':id})
+        xml = self._ec.efetch({'db':db,'id':str(id)})
         if db in ['gene']:
             return Gene(xml)
         raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))
+
 
 
     ############################################################################
@@ -54,8 +55,6 @@ class Client(object):
         if '<ErrorList><PhraseNotFound>' in xml:
             logging.debug("'%s[accn]' not found; trying unqualified search for unqualified query to pick up obsolete accession" % (ac))
             xml = self.esearch(db='nuccore',term=ac)
-        if '</eSearchResult>' not in xml:
-            raise LocusNCBIError("received malformed reply from NCBI for db=nuccore, ac="+ac)
         return ESearchResults(xml)
 
     def efetch_nuccore_by_id(self,id):
