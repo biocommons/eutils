@@ -21,7 +21,7 @@ import time
 import urllib2
 
 import lxml
-from rcore.sqlitecache import SQLiteCache
+from eutils.sqlitecache import SQLiteCache
 
 from eutils.exceptions import *
 
