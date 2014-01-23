@@ -101,7 +101,7 @@ class QueryService(object):
         defining_args = dict( self.default_args.items() + args.items() )
         full_args = (self._ident_args.items() + defining_args.items())
         cache_key = hashlib.md5( cPickle.dumps((url,sorted(defining_args.items()))) ).hexdigest()
-        sqas = ';'.join([k+'='+v for k,v in sorted(args.items())])
+        sqas = ';'.join([k+'='+str(v) for k,v in sorted(args.items())])
 
         if not skip_cache and self._cache:
             try:
@@ -124,7 +124,7 @@ class QueryService(object):
         self._logger.debug('post({url}, {sqas}): {r.status_code} {r.reason}, {len})'.format(
             url=url,sqas=sqas,r=r,len=len(r.text)))
 
-        if not r.ok or '<ERROR>' in r.text:
+        if not r.ok or any(bad_word in r.text for bad_word in ['<error>','<ERROR>']):
             # TODO: discriminate between types of errors
             xml = lxml.etree.fromstring(r.text.encode('utf-8'))
             raise EutilsRequestError( '{r.reason} ({r.status_code}): {error}'.format(

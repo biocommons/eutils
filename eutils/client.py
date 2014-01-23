@@ -46,6 +46,7 @@ class Client(object):
         if db in ['gene']:
             return Gene(xml)
         if db in ['nuccore']:
+            # TODO: GBSet is misnamed; it should be GBSeq and get the GBSeq XML node as root (see gbset.py)
             return GBSet(xml)
         raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))
 
@@ -53,6 +54,39 @@ class Client(object):
 
     ############################################################################
     ## specific helpers
+
+    def fetch_gene_by_hgnc(self,hgnc):
+        query = 'human[orgn] AND {hgnc}[preferred symbol] "current only"[Filter]'.format(hgnc=hgnc)
+        esr = self.esearch(db='gene',term=query)
+        if esr.count != 1:
+            raise EutilsError("Received {n} search replies for gene {hgnc} (query: '{query}')".format(
+                n=esr.count, hgnc=hgnc, query=query))
+        gene = self.efetch(db='gene',id=esr.ids[0])
+        if hgnc != gene.hgnc:
+            raise EutilsError("Queried for {q_hgnc}, got reply for gene {r_hgnc}".format(
+                q_hgnc=hgnc, r_hgnc=gene.hgnc))
+        return gene
+
+    def fetch_gbseq_by_ac(self,acv):
+        query = acv
+        db = 'nuccore'
+        esr = self.esearch(db=db,term=query)
+        if esr.count > 1:
+            raise EutilsError("Received {n} replies for {acv} in database {db}".format(
+                n=esr.count, acv=acv, db=db))
+        if esr.count == 0:
+            raise EutilsNotFoundError("No results for {query} in database {db}".format(
+                query=query, db=db))
+        gbseq = self.efetch(db=db,id=esr.ids[0])
+        if acv != gbseq.acv:
+            raise EutilsNCBIError("Queried for {q_acv}, got reply for {r_acv}".format(
+                q_acv=acv, r_acv=gbseq.acv))
+        return gbseq
+
+
+    ############################################################################
+    ## graveyard
+
     def esearch_nuccore_by_ac(self,ac):
         # N.B. [accn] only works for current accessions
         xml = self.esearch(db='nuccore',term='%s[accn]' % (ac))
@@ -74,13 +108,6 @@ class Client(object):
         if esr.Count > 1:
             raise LocusNCBIError("received %d replies for %s" % (esr.Count,ac))
         return efetch_nuccore_by_id( esr.IdList[0] )
-
-    def esearch_gene_by_hgnc_name(self,name):
-        query = 'human[orgn] AND {name}[symbol] AND {name}[titl] AND "current only"[Filter]'.format(name=name)
-        xml = es.read(rettype='uilist',db='gene',term=query)
-        if '</eSearchResult>' not in xml:
-            raise LocusNCBIError("received malformed reply from NCBI for db=gene, query="+query)
-        return xml
 
     def efetch_gene_by_id(self,id):
         xml = ef.read(db='gene',id=id)
