@@ -3,6 +3,17 @@ import lxml.etree
 from eutils.exceptions import *
 from eutils.xmlfacades.base import Base
 
+# TODO: implement results iterator
+# once these objects contain a reference to the client,
+# we'll be able to iterate using the webenv history
+# See here:
+# http://www.ncbi.nlm.nih.gov/books/NBK25500/#chapter1.Demonstration_Programs
+# for($retstart = 0; $retstart < $Count; $retstart += $retmax) {
+#   my $efetch = "$utils/efetch.fcgi?" .
+#                "rettype=$report&retmode=text&retstart=$retstart&retmax=$retmax&" .
+#                "db=$db&query_key=$QueryKey&WebEnv=$WebEnv";
+
+
 class ESearchResults(Base):
 
     @property

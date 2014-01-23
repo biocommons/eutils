@@ -6,6 +6,9 @@ class Base(object):
         self._xml = xml
         self._xmlroot = lxml.etree.XML(xml)
 
+    def __str__(self):
+        return unicode(self).encode('utf-8')
+
     @classmethod
     def _validate_xml(xml):
         """validate the xml during initialization. Subclasses override this

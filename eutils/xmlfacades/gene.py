@@ -6,9 +6,16 @@ import eutils.xmlfacades.base
 
 class Gene(eutils.xmlfacades.base.Base):
 
+    def __unicode__(self):
+        return '{type}({self.hgnc}; {self.description})'.format(type=type(self).__name__,self=self)
+
     @property
     def description(self):
         return xml_get_text_or_none(self._xmlroot,'/Entrezgene-Set/Entrezgene/Entrezgene_gene/Gene-ref/Gene-ref_desc')
+
+    @property
+    def gene_id(self):
+        return int(xml_get_text_or_none(self._xmlroot,'/Entrezgene-Set/Entrezgene/Entrezgene_track-info/Gene-track/Gene-track_geneid'))
 
     @property
     def hgnc(self):
@@ -41,6 +48,10 @@ class Gene(eutils.xmlfacades.base.Base):
     @property
     def common_tax(self):
         return self._xmlroot.xpath('/Entrezgene-Set/Entrezgene/Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_common/text()')[0]
+
+    @property
+    def tax_id(self):
+        return self._xmlroot.xpath('/Entrezgene-Set/Entrezgene/Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_db/Dbtag[Dbtag_db/text()="taxon"]/Dbtag_tag/Object-id/Object-id_id/text()')[0]
 
 
     ############################################################################
@@ -115,8 +126,10 @@ class GeneCommentary(object):
         
     @property
     def genomic_coords(self):
-        return GeneCommentaryGenomicCoords(self._n.xpath('Gene-commentary_genomic-coords')[0])
-    
+        try:
+            return GeneCommentaryGenomicCoords(self._n.xpath('Gene-commentary_genomic-coords')[0])
+        except IndexError:
+            raise EutilsError("genomic coords are not defined for {self.acv}".format(self=self))
 
 
 class GeneCommentaryGenomicCoords(object):

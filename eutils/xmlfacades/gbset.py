@@ -3,6 +3,7 @@ import lxml.etree
 import eutils.xmlfacades.base
 
 class GBSet(eutils.xmlfacades.base.Base):
+    # TODO: GBSet is misnamed; it should be GBSeq and get the GBSeq XML node as root (see client.py)
 
     @property
     def acv(self):
@@ -22,6 +23,10 @@ class GBSet(eutils.xmlfacades.base.Base):
     @property
     def created(self):
         return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_create-date/text()')[0]
+
+    @property
+    def definition(self):
+        return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_definition/text()')[0]
 
     @property
     def exons(self):
@@ -64,8 +69,9 @@ class GBSet(eutils.xmlfacades.base.Base):
                      for t,_,l in [ si.partition('|') for si in seqids ] )
 
     @property
-    def sequence(self):
+    def seq(self):
         return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_sequence')[0].text.upper()
+    sequence = seq
 
     @property
     def type(self):
