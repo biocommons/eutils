@@ -1,9 +1,14 @@
 import lxml.etree
 
+from eutils.exceptions import *
 import eutils.xmlfacades.base
 
 class GBSet(eutils.xmlfacades.base.Base):
     # TODO: GBSet is misnamed; it should be GBSeq and get the GBSeq XML node as root (see client.py)
+
+    def __unicode__(self):
+        return "GBSet({self.acv})".format(self=self)
+
 
     @property
     def acv(self):

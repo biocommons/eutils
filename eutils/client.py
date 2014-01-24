@@ -48,6 +48,8 @@ class Client(object):
         if db in ['nuccore']:
             # TODO: GBSet is misnamed; it should be GBSeq and get the GBSeq XML node as root (see gbset.py)
             return GBSet(xml)
+        if db in ['pubmed']:
+            return PubMedArticle(xml)
         raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))
 
 
@@ -56,7 +58,7 @@ class Client(object):
     ## specific helpers
 
     def fetch_gene_by_hgnc(self,hgnc):
-        query = 'human[orgn] AND {hgnc}[preferred symbol] "current only"[Filter]'.format(hgnc=hgnc)
+        query = 'human[orgn] AND {hgnc}[preferred symbol] AND "current only"[Filter]'.format(hgnc=hgnc)
         esr = self.esearch(db='gene',term=query)
         if esr.count != 1:
             raise EutilsError("Received {n} search replies for gene {hgnc} (query: '{query}')".format(
@@ -67,7 +69,7 @@ class Client(object):
                 q_hgnc=hgnc, r_hgnc=gene.hgnc))
         return gene
 
-    def fetch_gbseq_by_ac(self,acv):
+    def fetch_nuccore_by_ac(self,acv):
         query = acv
         db = 'nuccore'
         esr = self.esearch(db=db,term=query)
@@ -82,6 +84,8 @@ class Client(object):
             raise EutilsNCBIError("Queried for {q_acv}, got reply for {r_acv}".format(
                 q_acv=acv, r_acv=gbseq.acv))
         return gbseq
+
+    fetch_gbseq_by_ac = fetch_nuccore_by_ac
 
 
     ## ############################################################################
