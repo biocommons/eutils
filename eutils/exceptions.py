@@ -10,5 +10,3 @@ class EutilsNotFoundError(EutilsError):
 
 class EutilsNCBIError(EutilsError):
     pass
-
-

@@ -1,20 +1,18 @@
 import lxml.etree as le
 
+from eutils.exceptions import *
 from eutils.utils import xml_get_text, xml_get_text_or_none
+import eutils.xmlfacades.base
 
-class PubMedArticle(object):
-    def __init__(self,xml):
-        # TODO: sanity check xml
-        self._xml = xml
-        self._root = le.fromstring(xml)
-
-    def __repr__(self):
+class PubMedArticle(eutils.xmlfacades.base.Base):
+    def __unicode__(self):
         return( '{pma.__class__.__name__}({pma.pmid}; {pma.jrnl}; {pma.title}; {pma.authors})'.format(
                 pma = self) )
 
+
     @property
     def abstract(self):
-        return xml_get_text_or_none(self._root,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Abstract/AbstractText')
+        return xml_get_text_or_none(self._xmlroot,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Abstract/AbstractText')
 
     @property
     def authors(self):
@@ -22,56 +20,56 @@ class PubMedArticle(object):
         def _Last_FI(au):
             return au.find('LastName').text + ' ' + au.find('Initials').text
         return [ _Last_FI(au) for au
-                 in self._root.xpath('/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/AuthorList/Author') ]
+                 in self._xmlroot.xpath('/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/AuthorList/Author') ]
 
     @property
     def doi(self):
-        return xml_get_text_or_none(self._root,'/PubmedArticleSet/PubmedData/ArticleIdList/ArticleId[@IdType="doi"]')
+        return xml_get_text_or_none(self._xmlroot,'/PubmedArticleSet/PubmedData/ArticleIdList/ArticleId[@IdType="doi"]')
 
     @property
     def issue(self):
-        return xml_get_text_or_none(self._root,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Journal/JournalIssue/Issue')
+        return xml_get_text_or_none(self._xmlroot,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Journal/JournalIssue/Issue')
 
     @property
     def jrnl(self):
-        return ( xml_get_text_or_none(self._root,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Journal/ISOAbbreviation')
-                 or xml_get_text_or_none(self._root,'/PubmedArticleSetPubmedArticle/MedlineCitation/Article/Journal/Title') )
+        return ( xml_get_text_or_none(self._xmlroot,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Journal/ISOAbbreviation')
+                 or xml_get_text_or_none(self._xmlroot,'/PubmedArticleSetPubmedArticle/MedlineCitation/Article/Journal/Title') )
         return j
 
     @property
     def mesh_headings(self):
-        return self._root.xpath('/PubmedArticleSet/PubmedArticle/MedlineCitation/MeshHeadingList/MeshHeading/DescriptorName/text()')
+        return self._xmlroot.xpath('/PubmedArticleSet/PubmedArticle/MedlineCitation/MeshHeadingList/MeshHeading/DescriptorName/text()')
 
     @property
     def pages(self):
-        return( xml_get_text_or_none(self._root,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Pagination/MedlinePgn') )
+        return( xml_get_text_or_none(self._xmlroot,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Pagination/MedlinePgn') )
 
     @property
     def pii(self):
-        return xml_get_text_or_none(self._root,'PubmedData/ArticleIdList/ArticleId[@IdType="pii"]')
+        return xml_get_text_or_none(self._xmlroot,'PubmedData/ArticleIdList/ArticleId[@IdType="pii"]')
 
     @property
     def pmc(self):
-        pmc = xml_get_text_or_none(self._root,'PubmedData/ArticleIdList/ArticleId[@IdType="pmc"]')
+        pmc = xml_get_text_or_none(self._xmlroot,'PubmedData/ArticleIdList/ArticleId[@IdType="pmc"]')
         return None if pmc is None else pmc[3:]
 
     @property
     def pmid(self):
-        return xml_get_text_or_none(self._root,'/PubmedArticleSet/PubmedArticle/MedlineCitation/PMID')
+        return xml_get_text_or_none(self._xmlroot,'/PubmedArticleSet/PubmedArticle/MedlineCitation/PMID')
 
     @property
     def title(self):
-        return xml_get_text_or_none(self._root,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/ArticleTitle')
+        return xml_get_text_or_none(self._xmlroot,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/ArticleTitle')
 
     @property
     def volume(self):
-        return xml_get_text_or_none(self._root,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Journal/JournalIssue/Volume')
+        return xml_get_text_or_none(self._xmlroot,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Journal/JournalIssue/Volume')
     
     @property
     def year(self):
         return (
-            xml_get_text_or_none(self._root,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Journal/JournalIssue/PubDate/Year')
-            or xml_get_text(self._root,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Journal/JournalIssue/PubDate/MedlineDate')[0:4]
+            xml_get_text_or_none(self._xmlroot,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Journal/JournalIssue/PubDate/Year')
+            or xml_get_text(self._xmlroot,'/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/Journal/JournalIssue/PubDate/MedlineDate')[0:4]
             )
 
     def as_dict(self):
