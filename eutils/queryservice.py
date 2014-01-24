@@ -12,18 +12,22 @@ http://www.ncbi.nlm.nih.gov/books/NBK25499/
 # optional db -> options map (esp. for rettype & retmode)
 
 
+import datetime
 import hashlib
 import cPickle
 import logging
 import os
-import requests
 import time
 import urllib2
 
 import lxml
-from eutils.sqlitecache import SQLiteCache
+import pytz
+import requests
 
+from eutils.sqlitecache import SQLiteCache
 from eutils.exceptions import *
+
+logging.basicConfig(level=logging.DEBUG)
 
 default_default_args = {'retmode': 'xml', 'usehistory': 'y', 'retmax': 250}
 default_tool = __package__ or 'interactive'
@@ -31,7 +35,18 @@ default_email = 'reecehart+eutils@gmail.com'
 default_request_interval = 0.333
 default_cache_path = os.path.join(os.path.expanduser('~'),'.cache','eutils-cache.db')
 
-logging.basicConfig(level=logging.DEBUG)
+eastern_tz = pytz.timezone('US/Eastern')
+def time_dep_request_interval(utc_dt=None):
+    # From http://www.ncbi.nlm.nih.gov/books/NBK25497/:
+    # "In order not to overload the E-utility servers, NCBI recommends that
+    # users post no more than three URL requests per second and limit
+    # large jobs to either weekends or between 9:00 PM and 5:00 AM Eastern
+    # time during weekdays."
+    # Translation: Weekdays 0500-2100 => 0.333s between requests; no throttle otherwise
+    if utc_dt is None:
+        utc_dt = datetime.datetime.utcnow()
+    eastern_dt = eastern_tz.fromutc( utc_dt )
+    return default_request_interval if (0<=eastern_dt.weekday()<=4 and 5<=eastern_dt.hour<21) else 0
 
 class QueryService(object):
     url_base = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils'
@@ -39,7 +54,7 @@ class QueryService(object):
                  cache_path=default_cache_path,
                  default_args=default_default_args,
                  email=default_email,
-                 request_interval=default_request_interval,
+                 request_interval=time_dep_request_interval,
                  tool=default_tool,
                  ):
         self.default_args = default_args
@@ -48,7 +63,6 @@ class QueryService(object):
         self.tool = tool
 
         self._logger = logging.getLogger(__name__)
-        self._logger.setLevel(logging.DEBUG)
         self._last_request_clock = 0
         self._cache = SQLiteCache(cache_path) if cache_path else None
         self._ident_args = { 'tool': tool, 'email': email }
@@ -106,18 +120,19 @@ class QueryService(object):
         if not skip_cache and self._cache:
             try:
                 v = self._cache[cache_key]
-                logging.debug('cache hit for key {cache_key} ({url}, {sqas}) '.format(
+                self._logger.info('cache hit for key {cache_key} ({url}, {sqas}) '.format(
                     cache_key=cache_key, url=url, sqas=sqas))
                 return v
             except KeyError:
-                logging.debug('cache miss for key {cache_key} ({url}, {sqas}) '.format(
+                self._logger.info('cache miss for key {cache_key} ({url}, {sqas}) '.format(
                     cache_key=cache_key, url=url, sqas=sqas))
                 pass
 
         if not skip_sleep:
-            sleep_time = self.request_interval - (time.clock()-self._last_request_clock)
+            req_int = self.request_interval() if callable(self.request_interval) else self.request_interval
+            sleep_time = req_int - (time.clock()-self._last_request_clock)
             if sleep_time > 0:
-                self._logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
+                self._logger.info('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
                 time.sleep(sleep_time)
         r = requests.post(url,full_args) 
         self._last_request_clock = time.clock()
@@ -133,7 +148,7 @@ class QueryService(object):
         if self._cache:
             # N.B. we cache the read even if skip_cache is true
             self._cache[cache_key] = r.content
-            logging.debug('cached results for key {cache_key} ({url}, {sqas}) '.format(
+            self._logger.info('cached results for key {cache_key} ({url}, {sqas}) '.format(
                 cache_key=cache_key, url=url, sqas=sqas))
 
         return r.content

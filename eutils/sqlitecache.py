@@ -28,7 +28,7 @@ class SQLiteCache(object):
     def __init__(self,db_path,compress_values=True):
         self.compress_values = compress_values
         self._con = None
-        self._logger = logging.getLogger()
+        self._logger = logging.getLogger(__name__)
         self._connect(db_path)
 
     def expire(self,age):
@@ -81,7 +81,7 @@ class SQLiteCache(object):
         self._con = sqlite3.connect(db_path,isolation_level=None)
         self._con.text_factory = str
         self._db_path = db_path
-        self._logger.debug('opened '+db_path)
+        self._logger.info('opened '+db_path)
         sver = self._get_schema_version()
         self._logger.debug('schema version is '+str(sver))
         if sver is None:
