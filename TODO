@@ -1,12 +1,14 @@
 -*-outline-*-
 
-* write client interface
+* initialize facades with xml node, not text
+...then, GBSet -> GBSeq and initialize with correct root
 
-* add client to response objects (for hopping)
+* initialize facade with client object too
 
-* move xml _root to Resp from subobjects
+* assert expected node tag on initialization
 
-* change resp name to something meaningful
+* add functionality to facades objects
 
-* add elink functionality to resp objects
+* add additional mehods to objects (like linking)
 
+* chained searching -- iterate
