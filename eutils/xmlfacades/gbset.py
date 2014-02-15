@@ -38,6 +38,14 @@ class GBSet(eutils.xmlfacades.base.Base):
         return [ ExonFeature(n) for n in self._exon_feature_nodes ]
 
     @property
+    def exons_se_i(self):
+        return [ (e.start_i,e.end_i) for e in self.exons ]
+
+    @property
+    def cds_se_i(self):
+        return (self.cds.start_i,self.cds.end_i)
+
+    @property
     def genes(self):
         return [ str(e)
                  for e in list(set(self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature'
