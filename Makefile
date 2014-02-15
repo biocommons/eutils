@@ -36,10 +36,13 @@ build_sphinx: develop
 upload:
 	python setup.py bdist_egg sdist upload
 
-#=> upload to pypi and invitae (internal) pypi
+#=> upload_iv: upload to invitae (internal) pypi
 # This requires an invitae config stanza in ~/.pypirc
-uploadi:
+upload_iv:
 	python setup.py bdist_egg sdist upload upload -r invitae
+
+#=> upload_all: upload, upload_iv, and upload_docs
+upload_all: upload upload_iv upload_docs
 
 #=> develop, build_sphinx, sdist, upload_sphinx
 bdist bdist_egg build build_sphinx develop install sdist upload_sphinx upload_docs: %:
@@ -104,7 +107,7 @@ cleaner: clean
 #=> cleanest: above, and remove the virtualenv, .orig, and .bak files
 cleanest: cleaner
 	find . \( -name \*.orig -o -name \*.bak \) -print0 | xargs -0r /bin/rm -v
-	/bin/rm -fr distribute-* *.egg *.egg-info *.tar.gz nosetests.xml
+	/bin/rm -fr distribute-* *.egg *.egg-info *.tar.gz nosetests.xml cover
 #=> pristine: above, and delete anything unknown to mercurial
 pristine: cleanest
 	hg st -un0 | xargs -0r echo /bin/rm -fv
