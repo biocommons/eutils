@@ -91,30 +91,45 @@ class GeneCommentary(object):
         self._n = gc
 
     def __unicode__(self):
-        return '{type}(acv={self.acv},type={self.type},heading={self.heading},label={self.label})'.format(type=type(self).__name__,self=self)
+        return '{type}(acv={self.acv},type={self.type})'.format(type=type(self).__name__,self=self)
 
     def __str__(self):
         return unicode(self).encode('utf-8')
 
     @property
     def heading(self):
-        return self._n.find('Gene-commentary_heading').text
+        try:
+            return self._n.find('Gene-commentary_heading').text
+        except AttributeError:
+            raise EutilsNCBIError("Gene commentary has no heading.")
 
     @property
     def label(self):
-        return self._n.find('Gene-commentary_label').text
+        try:
+            return self._n.find('Gene-commentary_label').text
+        except AttributeError:
+            raise EutilsNCBIError("Gene commentary has no label.")
 
     @property
     def accession(self):
-        return self._n.find('Gene-commentary_accession').text
+        try:
+            return self._n.find('Gene-commentary_accession').text
+        except AttributeError:
+            raise EutilsNCBIError("Gene commentary has no accession.")
 
     @property
     def version(self):
-        return self._n.find('Gene-commentary_version').text
+        try:
+            return self._n.find('Gene-commentary_version').text
+        except AttributeError:
+            raise EutilsNCBIError("Gene commentary has no version.")
 
     @property
     def type(self):
-        return self._n.find('Gene-commentary_type').get('value')
+        try:
+            return self._n.find('Gene-commentary_type').get('value')
+        except AttributeError:
+            raise EutilsNCBIError("Gene commentary has no type.")
 
     @property
     def acv(self):
@@ -156,4 +171,9 @@ class GeneCommentaryGenomicCoords(object):
         return [ (int(n.find('.//Seq-interval_from').text),int(n.find('.//Seq-interval_to').text)+1) 
                  for n in self._n.findall('.//Seq-interval') ]
 
+    @property
+    def exons_se_i(self,transcript_order=False):
+        """return exon [start_i,end_i) pairs in reference sequence order, or transcript order if requested"""
+        rev = transcript_order and self.strand == -1
+        return sorted(self.intervals, reverse=rev)
 
