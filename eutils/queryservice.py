@@ -120,11 +120,11 @@ class QueryService(object):
         if not skip_cache and self._cache:
             try:
                 v = self._cache[cache_key]
-                self._logger.info('cache hit for key {cache_key} ({url}, {sqas}) '.format(
+                self._logger.debug('cache hit for key {cache_key} ({url}, {sqas}) '.format(
                     cache_key=cache_key, url=url, sqas=sqas))
                 return v
             except KeyError:
-                self._logger.info('cache miss for key {cache_key} ({url}, {sqas}) '.format(
+                self._logger.debug('cache miss for key {cache_key} ({url}, {sqas}) '.format(
                     cache_key=cache_key, url=url, sqas=sqas))
                 pass
 
@@ -132,7 +132,7 @@ class QueryService(object):
             req_int = self.request_interval() if callable(self.request_interval) else self.request_interval
             sleep_time = req_int - (time.clock()-self._last_request_clock)
             if sleep_time > 0:
-                self._logger.info('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
+                self._logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
                 time.sleep(sleep_time)
         r = requests.post(url,full_args) 
         self._last_request_clock = time.clock()
