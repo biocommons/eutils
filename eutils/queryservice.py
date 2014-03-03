@@ -113,9 +113,10 @@ class QueryService(object):
 
         url = self.url_base + path
         defining_args = dict( self.default_args.items() + args.items() )
-        full_args = (self._ident_args.items() + defining_args.items())
+        full_args = dict(self._ident_args.items() + defining_args.items())
         cache_key = hashlib.md5( cPickle.dumps((url,sorted(defining_args.items()))) ).hexdigest()
         sqas = ';'.join([k+'='+str(v) for k,v in sorted(args.items())])
+        full_args_str = ';'.join([k+'='+str(v) for k,v in sorted(full_args.items())])
 
         if not skip_cache and self._cache:
             try:
@@ -136,8 +137,8 @@ class QueryService(object):
                 time.sleep(sleep_time)
         r = requests.post(url,full_args) 
         self._last_request_clock = time.clock()
-        self._logger.debug('post({url}, {sqas}): {r.status_code} {r.reason}, {len})'.format(
-            url=url,sqas=sqas,r=r,len=len(r.text)))
+        self._logger.debug('post({url}, {fas}): {r.status_code} {r.reason}, {len})'.format(
+            url=url,fas=full_args_str,r=r,len=len(r.text)))
 
         if not r.ok or any(bad_word in r.text for bad_word in ['<error>','<ERROR>']):
             # TODO: discriminate between types of errors
