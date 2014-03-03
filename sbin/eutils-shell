@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
 import eutils.client
+import eutils.clientx
 import eutils.xmlfacades.einfo
 
-ec = eutils.client.Client()
+ec = eutils.clientx.ClientX()
 gene = ec.fetch_gene_by_hgnc('VHL')
 gc = gene.references[0].products[0].genomic_coords
 gbseq = ec.fetch_gbseq_by_ac(gene.references[0].products[0].acv)

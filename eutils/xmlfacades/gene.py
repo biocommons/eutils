@@ -171,7 +171,6 @@ class GeneCommentaryGenomicCoords(object):
         return [ (int(n.find('.//Seq-interval_from').text),int(n.find('.//Seq-interval_to').text)+1) 
                  for n in self._n.findall('.//Seq-interval') ]
 
-    @property
     def exons_se_i(self,transcript_order=False):
         """return exon [start_i,end_i) pairs in reference sequence order, or transcript order if requested"""
         rev = transcript_order and self.strand == -1
