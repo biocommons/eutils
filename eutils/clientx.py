@@ -1,4 +1,5 @@
 import eutils.client
+from eutils.exceptions import *
 
 class ClientX(eutils.client.Client):
     """
@@ -37,12 +38,12 @@ class ClientX(eutils.client.Client):
 
     fetch_gbseq_by_ac = fetch_nuccore_by_ac
 
-    def fetch_snps_for_gene(self,hgnc):
+    def fetch_snps_for_gene(self,hgnc,organism='human'):
         db = 'snp'
-        esr = self.esearch(db=db,term='%s[gene name]' % hgnc)
+        esr = self.esearch(db=db,term='%s[gene name] AND %s[organism]' % (hgnc,organism))
         if esr.count == 0:
-            raise EutilsNotFoundError("No results for {query} in database {db}".format(
-                query=query, db=db))
+            raise EutilsNotFoundError("No results for gene {hgnc} and organism {o} in database {db}".format(
+                hgnc=hgnc, o=organism, db=db))
         return self.efetch(db=db,id=','.join(map(str,esr.ids)))
 
 
