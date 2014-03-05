@@ -44,6 +44,8 @@ setup(
  
     install_requires = [
         'lxml',
+        'pytz',
+        'requests',
         ],
 
     setup_requires = [
