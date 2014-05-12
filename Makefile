@@ -22,8 +22,7 @@ help: config
 #= SETUP, INSTALLATION, PACKAGING
 
 # => setup
-setup: requirements.txt #build
-	pip install -r $<
+setup: develop
 
 #=> docs -- make sphinx docs
 docs: setup build_sphinx
@@ -32,21 +31,23 @@ docs: setup build_sphinx
 # sphinx docs needs to be able to import packages
 build_sphinx: develop
 
-#=> upload
-upload:
-	python setup.py bdist_egg sdist upload -r pypi
-
-#=> upload_iv: upload to invitae (internal) pypi
-# This requires an invitae config stanza in ~/.pypirc
-upload_iv:
-	python setup.py bdist_egg sdist upload -r invitae
-
-#=> upload_all: upload, upload_iv, and upload_docs
-upload_all: upload upload_iv upload_docs
-
-#=> develop, build_sphinx, sdist, upload_sphinx
-bdist bdist_egg build build_sphinx develop install sdist upload_sphinx upload_docs: %:
+#=> develop, build_sphinx, sdist, upload_docs, etc
+develop: %:
+	pip install --upgrade setuptools
 	python setup.py $*
+#bdist bdist_egg build build_sphinx install sdist upload_sphinx upload_docs: %:
+install upload_docs: %:
+	python setup.py $* -r pypi
+
+#=> upload
+upload: upload_pypi
+
+#=> upload_all: upload_pypi, upload_invitae, and upload_docs
+upload_all: upload_pypi upload_docs
+
+#=> upload_*: upload to named pypi service (requires config in ~/.pypirc)
+upload_%:
+	python setup.py bdist_egg sdist upload -r $*
 
 
 ############################################################################
@@ -56,15 +57,18 @@ bdist bdist_egg build build_sphinx develop install sdist upload_sphinx upload_do
 test-setup: develop
 
 #=> test, test-with-coverage -- per-commit test target for CI
-test test-with-coverage: test-setup
-	python setup.py nosetests --with-xunit --with-coverage --cover-erase --cover-html 
+# see test configuration in setup.cfg
+test test-with-coverage:
+	python setup.py nosetests
 
-#=> ci-test-nightly -- per-commit test target for CI
-ci-test jenkins:
-	make ve \
-	&& source ve/bin/activate \
-	&& make install \
-	&& make test
+#=> ci-test -- per-commit test target for CI
+ci-test: test
+
+#=> ci-test-ve -- test in virtualenv
+ci-test-ve: ve
+	source ve/bin/activate; \
+	make ci-test
+
 
 
 ############################################################################
