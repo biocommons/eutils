@@ -21,7 +21,7 @@ help: config
 ############################################################################
 #= SETUP, INSTALLATION, PACKAGING
 
-# => setup
+#=> setup
 setup: develop
 
 #=> docs -- make sphinx docs
@@ -31,13 +31,13 @@ docs: setup build_sphinx
 # sphinx docs needs to be able to import packages
 build_sphinx: develop
 
-#=> develop, build_sphinx, sdist, upload_docs, etc
+#=> develop, bdist, bdist_egg, sdist, upload_docs, etc
 develop: %:
 	pip install --upgrade setuptools
 	python setup.py $*
-#bdist bdist_egg build build_sphinx install sdist upload_sphinx upload_docs: %:
-install upload_docs: %:
-	python setup.py $* -r pypi
+
+bdist bdist_egg build build_sphinx install sdist: %:
+	python setup.py $*
 
 #=> upload
 upload: upload_pypi
