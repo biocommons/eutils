@@ -78,7 +78,7 @@ class SQLiteCache(object):
 
     def _connect(self,db_path):
         assert self._con is None, 'already connected'
-        self._con = sqlite3.connect(db_path,isolation_level=None)
+        self._con = sqlite3.connect(db_path,isolation_level=None,check_same_thread=False)
         self._con.text_factory = str
         self._db_path = db_path
         self._logger.info('opened '+db_path)
