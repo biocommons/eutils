@@ -26,7 +26,7 @@ setup(
     description = """Structured Python interface to NCBI E-Utilities.""",
     name = "eutils",
     packages = find_packages(),
-    url = 'https://bitbucket.org/uta/eutils',
+    url = 'https://bitbucket.org/biocommons/eutils',
 
      classifiers = [
         "Development Status :: 3 - Alpha",
@@ -64,7 +64,7 @@ setup(
 )
 
 ## <LICENSE>
-## Copyright 2014 Eutils Contributors (https://bitbucket.org/uta/eutils)
+## Copyright 2014 Eutils Contributors (https://bitbucket.org/biocommons/eutils)
 ## 
 ## Licensed under the Apache License, Version 2.0 (the "License");
 ## you may not use this file except in compliance with the License.
