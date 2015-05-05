@@ -1,0 +1,19 @@
+syntax: glob
+
+*.egg
+*.egg-info
+*.enc
+*.ini
+*.ipynb
+*.json
+*.pyc
+*.pyo
+*.so
+*.txt
+.DS_Store
+.coverage
+.keys/
+build
+dist
+tmp
+ve

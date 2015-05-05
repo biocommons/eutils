@@ -1,0 +1,14 @@
+-*-outline-*-
+
+* initialize facades with xml node, not text
+...then, GBSet -> GBSeq and initialize with correct root
+
+* initialize facade with client object too
+
+* assert expected node tag on initialization
+
+* add functionality to facades objects
+
+* add additional mehods to objects (like linking)
+
+* chained searching -- iterate

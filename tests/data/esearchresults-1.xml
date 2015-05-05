@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<!DOCTYPE eSearchResult PUBLIC "-//NLM//DTD eSearchResult, 11 May 2002//EN" "http://www.ncbi.nlm.nih.gov/entrez/query/DTD/eSearch_020511.dtd">
+<eSearchResult><Count>3</Count><RetMax>3</RetMax><RetStart>0</RetStart><QueryKey>1</QueryKey><WebEnv>NCID_1_124189605_130.14.22.215_9001_1390058153_2095662266</WebEnv><IdList>
+<Id>19209718</Id>
+<Id>11108480</Id>
+<Id>6067859</Id>
+</IdList><TranslationSet><Translation>     <From>hart rk</From>     <To>hart rk[Author]</To>    </Translation></TranslationSet><TranslationStack>   <TermSet>    <Term>hart rk[Author]</Term>    <Field>Author</Field>    <Count>3</Count>    <Explode>N</Explode>   </TermSet>   <OP>GROUP</OP>  </TranslationStack><QueryTranslation>hart rk[Author]</QueryTranslation></eSearchResult>
