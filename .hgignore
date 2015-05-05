@@ -1,19 +1,19 @@
 syntax: glob
 
-*.pyc
-*.pyo
 *.egg
-.DS_Store
 *.egg-info
-tmp
-ve
-dist
-*.egg-info
-build
-.keys/
-*.so
-*.txt
+*.enc
+*.ini
 *.ipynb
 *.json
-*.ini
-*.enc
+*.pyc
+*.pyo
+*.so
+*.txt
+.DS_Store
+.coverage
+.keys/
+build
+dist
+tmp
+ve
