@@ -12,7 +12,7 @@ class Base(object):
             self._xml = None
             self._xmlroot = xml
         else:
-            raise RuntimeError("Cannot create object from type "+type(xml))
+            raise RuntimeError("Cannot create object from type "+type(xml).__name__)
 
         if self._root_tag is None:
             #TODO: Raise deprecation warning
