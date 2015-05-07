@@ -8,7 +8,7 @@ class Entrezgene(Base):
     _root_tag = 'Entrezgene'
 
     def __unicode__(self):
-        return '{type}({self.hgnc}; {self.description})'.format(type=type(self).__name__,self=self)
+        return "TODO"
 
     @property
     def description(self):
@@ -28,7 +28,8 @@ class Entrezgene(Base):
 
     @property
     def locus(self):
-        return EntrezgeneLocus(self._xmlroot.find('Entrezgene_locus'))
+        n = self._xmlroot.find('Entrezgene_locus')
+        return None if n is None else EntrezgeneLocus(n)
 
     @property
     def summary(self):
@@ -40,7 +41,7 @@ class Entrezgene(Base):
 
     @property
     def type(self):
-        return self._xmlroot.xpath('Entrezgene_type/@value')[0]
+        return self._xmlroot.find('Entrezgene_type').get("value")
 
     @property
     def genus_species(self):

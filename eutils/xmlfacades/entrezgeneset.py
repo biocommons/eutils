@@ -12,7 +12,11 @@ class EntrezgeneSet(Base):
 
     @property
     def entrezgenes(self):
-        return [Entrezgene(n) for n in self._entrezgene_nodes()]
+        try:
+            return self._entrezgenes
+        except AttributeError:
+            self._entrezgenes = [Entrezgene(n) for n in self._entrezgene_nodes()]
+            return self._entrezgenes
 
     def _entrezgene_nodes(self):
         return self._xmlroot.iterfind('Entrezgene')
