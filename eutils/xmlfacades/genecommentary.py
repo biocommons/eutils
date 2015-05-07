@@ -18,7 +18,7 @@ class GeneCommentary(Base):
 
     @property
     def type(self):
-        return self._xmlroot.findtext('Gene-commentary_type')
+        return self._xmlroot.find('Gene-commentary_type').get("value")
 
     @property
     def heading(self):
@@ -38,6 +38,8 @@ class GeneCommentary(Base):
 
     @property
     def acv(self):
+        if self.accession is None or self.version is None:
+            return None
         return self.accession + '.' + self.version
 
     @property
