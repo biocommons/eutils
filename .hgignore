@@ -1,15 +1,19 @@
 syntax: glob
 
+*.bak
 *.egg
 *.egg-info
 *.enc
 *.ini
 *.ipynb
 *.json
+*.orig
 *.pyc
 *.pyo
 *.so
+*.sqlite3
 *.txt
+*~
 .DS_Store
 .coverage
 .keys/
