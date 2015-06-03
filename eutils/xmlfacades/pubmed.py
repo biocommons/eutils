@@ -21,8 +21,10 @@ class PubMedArticle(eutils.xmlfacades.base.Base):
         def _format_author(au):
             if au.find('CollectiveName') is not None:
                 return au.find('CollectiveName').text
-            else:
+            elif au.find('LastName') is not None and au.find('Initials') is not None:
                 return au.find('LastName').text + ' ' + au.find('Initials').text
+            else:
+                return au.find('LastName').text
         return [ _format_author(au) for au
                  in self._xmlroot.xpath('/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/AuthorList/Author') ]
 
