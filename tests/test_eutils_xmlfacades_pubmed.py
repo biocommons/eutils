@@ -51,6 +51,11 @@ class Test_eutils_xmlfacades_pubmed_PubMedArticle(unittest.TestCase):
                 'year': '2010'}
                          )
 
+    def test_23121403(self):
+        xml = open(os.path.join(data_dir,'efetch.fcgi?db=pubmed&id=23121403&retmode=xml.xml')).read()
+        pma = eutils.xmlfacades.pubmed.PubMedArticle(xml)
+
+        self.assertIn('ASPIRE Investigators', pma.authors)
 
 if __name__ == '__main__':
     unittest.main()
