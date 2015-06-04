@@ -17,9 +17,15 @@ class PubMedArticle(eutils.xmlfacades.base.Base):
     @property
     def authors(self):
         # N.B. Citations may have 0 authors. e.g., pmid:7550356
-        def _Last_FI(au):
-            return au.find('LastName').text + ' ' + au.find('Initials').text
-        return [ _Last_FI(au) for au
+        # Citations may also have a 'CollectiveName' author instead of one with a forename, lastname, and initials
+        def _format_author(au):
+            if au.find('CollectiveName') is not None:
+                return au.find('CollectiveName').text
+            elif au.find('LastName') is not None and au.find('Initials') is not None:
+                return au.find('LastName').text + ' ' + au.find('Initials').text
+            else:
+                return au.find('LastName').text
+        return [ _format_author(au) for au
                  in self._xmlroot.xpath('/PubmedArticleSet/PubmedArticle/MedlineCitation/Article/AuthorList/Author') ]
 
     @property
