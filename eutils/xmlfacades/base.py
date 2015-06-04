@@ -18,16 +18,16 @@ class Base(object):
             # raise DeprecationWarning("Initializing instances with strings is deprecated; "
             #                          "please initialize with lxml _Element objects")
             self._xml = xml_elem
-            self._xmlroot = lxml.etree.XML(xml_elem)
+            self._xml_elem = lxml.etree.XML(xml_elem)
         elif isinstance(xml_elem, lxml.etree._Element):
             self._xml = None
-            self._xmlroot = xml_elem
+            self._xml_elem = xml_elem
         else:
             raise RuntimeError("Cannot create object from type "+type(xml_elem).__name__)
 
-        if self._root_tag is not None and self._root_tag != self._xmlroot.tag:
+        if self._root_tag is not None and self._root_tag != self._xml_elem.tag:
             raise EutilsError("XML for {} object must be a {} element (got {})".format(
-                type(self).__name__, self._root_tag, self._xmlroot.tag))
+                type(self).__name__, self._root_tag, self._xml_elem.tag))
 
     def __str__(self):
         return unicode(self).encode('utf-8')
