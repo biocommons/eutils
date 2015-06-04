@@ -18,7 +18,7 @@ class Test_eutils_xmlfacades_entrezgeneset(unittest.TestCase):
         gcgc_e = self.egs_doc.findall('.//Gene-commentary_genomic-coords')[0]
         gcgc = GeneCommentaryGenomicCoords(gcgc_e)
         assert gcgc.strand == 1
-        assert gcgc.gi == 
+        # assert gcgc.gi == 
 
 if __name__ == '__main__':
     unittest.main()
