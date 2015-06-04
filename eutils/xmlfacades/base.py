@@ -1,18 +1,25 @@
+import logging
+
 import lxml.etree
 
 from eutils.exceptions import EutilsError
+
+
+logger = logging.getLogger(__name__)
+
 
 class Base(object):
 
     """
     Root class for all xmlfacade classes.
 
-    
+    This class is instantiated only by subclasses.
+
     """
     
     _root_tag = None
 
-    def __init__(self,xml_elem):
+    def __init__(self, xml_elem):
         if isinstance(xml_elem, str):
             # Eventually, we'll do this...
             # raise DeprecationWarning("Initializing instances with strings is deprecated; "
@@ -23,18 +30,37 @@ class Base(object):
             self._xml = None
             self._xml_elem = xml_elem
         else:
-            raise RuntimeError("Cannot create object from type "+type(xml_elem).__name__)
+            raise EutilsError("Cannot create object from type " + type(xml_elem).__name__)
 
-        if self._root_tag is not None and self._root_tag != self._xml_elem.tag:
-            raise EutilsError("XML for {} object must be a {} element (got {})".format(
-                type(self).__name__, self._root_tag, self._xml_elem.tag))
+        self._validate_xml_elem()
 
     def __str__(self):
         return unicode(self).encode('utf-8')
 
-    @classmethod
-    def _validate_xml(xml):
-        """validate the xml during initialization. Subclasses override this
-        to apply any __init__-time validation of the incoming XML"""
-        pass
+    def _validate_xml_elem(self):
+        """Validate the xml during initialization.
 
+        Returns True if the XML is valid.
+        Returns False or throws `EutilsError`s on failure.
+
+        By default, this method will check whether an
+        _root_tag, if any, matches the xml tag of the element.
+
+        At a minimum, subclasses should define _root_tag. 
+
+        Alternatively, subclasses mayh override this method to apply
+        more complex __init__-time validation of the incoming XML.
+
+        """
+
+        if self._root_tag is None:
+            # Eventually, raise error:
+            # raise EutilsError("_root_tag not defined for class {}".format(type(self).__name__))
+            logger.warn("_root_tag not defined for class {}".format(type(self).__name__))
+            return False
+
+        if self._root_tag != self._xml_elem.tag:
+            raise EutilsError("XML for {} object must be a {} element (got {})".format(
+                type(self).__name__, self._root_tag, self._xml_elem.tag))
+
+        return True
