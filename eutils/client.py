@@ -6,7 +6,7 @@ from eutils.xmlfacades.dbsnp import ExchangeSet
 from eutils.xmlfacades.einfo import EInfo, EInfoDB
 from eutils.xmlfacades.esearchresults import ESearchResults
 from eutils.xmlfacades.gbset import GBSet
-from eutils.xmlfacades.gene import Gene
+#from eutils.xmlfacades.gene import Gene
 from eutils.xmlfacades.pubmed import PubMedArticle
 
 default_cache_path = os.path.join(os.path.expanduser('~'),'.cache','eutils-cache.db')
