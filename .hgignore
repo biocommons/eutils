@@ -1,23 +1,48 @@
-syntax: glob
+syntax: regexp
+(.*/)?\#[^/]*\#$
 
+syntax: glob
 *.bak
+*.bck
+*.cache
 *.egg
 *.egg-info
 *.enc
-*.ini
-*.ipynb
-*.json
+*.err
+*.fai
+*.gzi
+*.log
 *.orig
+*.pgd.gz
 *.pyc
+*.pylint
 *.pyo
+*.sha1
+*.md5
 *.so
+*.sql.gz
 *.sqlite3
+*.tar.gz
+*.tmp
 *.txt
+*.xml
+*.zip
 *~
+.*.mk
+.*.swp
 .DS_Store
 .coverage
-.keys/
+.eggs
+.idea
+.keys
+archive
+bdist
 build
+cover
 dist
+nosetests.xml
+patches
+sdist
 tmp
 ve
+workspace
