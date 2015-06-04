@@ -8,7 +8,7 @@ class EntrezgeneSet(Base):
 
     def __unicode__(self):
         return '{type} ({chillin} children)'.format(
-            type=type(self).__name__, chillin=len(self._xmlroot.getchildren()))
+            type=type(self).__name__, chillin=len(self._xml_elem.getchildren()))
 
     @property
     def entrezgenes(self):
@@ -19,4 +19,4 @@ class EntrezgeneSet(Base):
             return self._entrezgenes
 
     def _entrezgene_nodes(self):
-        return self._xmlroot.iterfind('Entrezgene')
+        return self._xml_elem.iterfind('Entrezgene')

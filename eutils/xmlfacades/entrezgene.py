@@ -12,48 +12,48 @@ class Entrezgene(Base):
 
     @property
     def description(self):
-        return self._xmlroot.findtext('Entrezgene_gene/Gene-ref/Gene-ref_desc')
+        return self._xml_elem.findtext('Entrezgene_gene/Gene-ref/Gene-ref_desc')
 
     @property
     def gene_id(self):
-        return int(self._xmlroot.findtext('Entrezgene_track-info/Gene-track/Gene-track_geneid'))
+        return int(self._xml_elem.findtext('Entrezgene_track-info/Gene-track/Gene-track_geneid'))
 
     @property
     def hgnc(self):
-        return self._xmlroot.findtext('Entrezgene_gene/Gene-ref/Gene-ref_locus')
+        return self._xml_elem.findtext('Entrezgene_gene/Gene-ref/Gene-ref_locus')
 
     @property
     def maploc(self):
-        return self._xmlroot.findtext('Entrezgene_gene/Gene-ref/Gene-ref_maploc')
+        return self._xml_elem.findtext('Entrezgene_gene/Gene-ref/Gene-ref_maploc')
 
     @property
     def locus(self):
-        n = self._xmlroot.find('Entrezgene_locus')
+        n = self._xml_elem.find('Entrezgene_locus')
         return None if n is None else EntrezgeneLocus(n)
 
     @property
     def summary(self):
-        return self._xmlroot.findtext('Entrezgene_summary')
+        return self._xml_elem.findtext('Entrezgene_summary')
 
     @property
     def synonyms(self):
-        return self._xmlroot.xpath('Entrezgene_gene/Gene-ref/Gene-ref_syn/Gene-ref_syn_E/text()')
+        return self._xml_elem.xpath('Entrezgene_gene/Gene-ref/Gene-ref_syn/Gene-ref_syn_E/text()')
 
     @property
     def type(self):
-        return self._xmlroot.find('Entrezgene_type').get("value")
+        return self._xml_elem.find('Entrezgene_type').get("value")
 
     @property
     def genus_species(self):
-        return self._xmlroot.xpath('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_taxname/text()')[0]
+        return self._xml_elem.xpath('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_taxname/text()')[0]
 
     @property
     def common_tax(self):
-        return self._xmlroot.xpath('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_common/text()')[0]
+        return self._xml_elem.xpath('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_common/text()')[0]
 
     @property
     def tax_id(self):
-        return int(self._xmlroot.xpath('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_db/Dbtag[Dbtag_db/text()="taxon"]/Dbtag_tag/Object-id/Object-id_id/text()')[0])
+        return int(self._xml_elem.xpath('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_db/Dbtag[Dbtag_db/text()="taxon"]/Dbtag_tag/Object-id/Object-id_id/text()')[0])
 
 
 

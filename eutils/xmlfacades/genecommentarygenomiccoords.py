@@ -11,16 +11,16 @@ class GeneCommentaryGenomicCoords(Base):
 
     @property
     def strand(self):
-        nastrand = self._xmlroot.find('.//Na-strand').get('value')
+        nastrand = self._xml_elem.find('.//Na-strand').get('value')
         return 1 if nastrand == 'plus' else -1 if nastrand == 'minus' else None
     
     @property
     def gi(self):
-        return self._xmlroot.findtext('.//Seq-id_gi')
+        return self._xml_elem.findtext('.//Seq-id_gi')
 
     @property
     def intervals(self):
-        return [SeqInterval(n) for n in self._xmlroot.findall('.//Seq-interval')]
+        return [SeqInterval(n) for n in self._xml_elem.findall('.//Seq-interval')]
 
 
 if __name__ == "__main__":
