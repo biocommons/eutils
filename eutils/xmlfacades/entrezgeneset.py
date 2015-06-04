@@ -14,8 +14,6 @@ class EntrezgeneSet(Base):
     >> len(egs.entrezgenes)
     4
 
-    
-
     """
 
     _root_tag = 'Entrezgene-Set'
