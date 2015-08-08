@@ -3,8 +3,8 @@ import os
 from eutils.exceptions import *
 from eutils.queryservice import QueryService
 from eutils.xmlfacades.dbsnp import ExchangeSet
-from eutils.xmlfacades.einfo import EInfo, EInfoDB
-from eutils.xmlfacades.esearchresults import ESearchResults
+from eutils.xmlfacades.einforesult import EInfoResult
+from eutils.xmlfacades.esearchresult import ESearchResult
 from eutils.xmlfacades.gbset import GBSet
 #from eutils.xmlfacades.gene import Gene
 from eutils.xmlfacades.pubmed import PubMedArticle
@@ -18,7 +18,7 @@ class Client(object):
                  cache_path=default_cache_path,
                  ):
         self._qs = QueryService(cache_path=cache_path)
-        self.databases = self.einfo().databases
+        self.databases = self.einfo().dblist.databases
 
 
     def einfo(self,db=None):
@@ -36,14 +36,14 @@ class Client(object):
         """
 
         if db is None:
-            return EInfo( self._qs.einfo() )
-        return EInfoDB( self._qs.einfo({'db':db, 'version':'2.0'}) )
-        
+            return EInfoResult(self._qs.einfo()).dblist
+        return EInfoResult(self._qs.einfo({'db': db, 'version': '2.0'})).dbinfo
+
 
     def esearch(self,db,term):
         """query the esearch endpoint
         """
-        return ESearchResults( self._qs.esearch({'db':db,'term':term}) )
+        return ESearchResult( self._qs.esearch({'db':db,'term':term}) )
 
 
     def efetch(self,db,id):
