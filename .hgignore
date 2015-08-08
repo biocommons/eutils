@@ -11,6 +11,7 @@ syntax: glob
 *.pyo
 *.so
 *.txt
+*~
 .DS_Store
 .coverage
 .keys
