@@ -21,9 +21,7 @@ class Base(object):
 
     def __init__(self, xml_elem):
         if isinstance(xml_elem, str):
-            # Eventually, we'll do this...
-            # raise DeprecationWarning("Initializing instances with strings is deprecated; "
-            #                          "please initialize with lxml _Element objects")
+            # We're being called with a string in the old-school way
             self._xml = xml_elem
             self._xml_elem = lxml.etree.XML(xml_elem)
         elif isinstance(xml_elem, lxml.etree._Element):
@@ -54,7 +52,6 @@ class Base(object):
         """
 
         if self._root_tag is None:
-            # Eventually, raise error:
             # raise EutilsError("_root_tag not defined for class {}".format(type(self).__name__))
             logger.warn("_root_tag not defined for class {}".format(type(self).__name__))
             return False
