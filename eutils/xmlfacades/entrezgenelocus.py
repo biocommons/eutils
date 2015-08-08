@@ -8,7 +8,7 @@ class EntrezgeneLocus(Base):
     _root_tag = 'Entrezgene_locus'
 
     def __unicode__(self):
-        return 'TODO'
+        return "TODO: implement __unicode__ for " + __name__
 
     @property
     def references(self):

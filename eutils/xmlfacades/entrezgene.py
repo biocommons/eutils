@@ -8,7 +8,7 @@ class Entrezgene(Base):
     _root_tag = 'Entrezgene'
 
     def __unicode__(self):
-        return "TODO"
+        return "{self.gene_id} ({self.hgnc}; {self.description})".format(self=self)
 
     @property
     def description(self):
