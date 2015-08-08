@@ -12,3 +12,10 @@
 * add additional mehods to objects (like linking)
 
 * chained searching -- iterate
+
+
+
+* bigger stuff
+separate caching, throttling, querying, parsing/facades
+use web history + iterators
+

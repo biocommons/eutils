@@ -12,7 +12,7 @@ class GBSet(eutils.xmlfacades.base.Base):
 
     @property
     def acv(self):
-        return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_accession-version/text()')[0]
+        return self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_accession-version/text()')[0]
 
     @property
     def cds(self):
@@ -23,15 +23,15 @@ class GBSet(eutils.xmlfacades.base.Base):
 
     @property
     def comment(self):
-        return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_comment/text()')[0]
+        return self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_comment/text()')[0]
 
     @property
     def created(self):
-        return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_create-date/text()')[0]
+        return self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_create-date/text()')[0]
 
     @property
     def definition(self):
-        return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_definition/text()')[0]
+        return self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_definition/text()')[0]
 
     @property
     def exons(self):
@@ -48,7 +48,7 @@ class GBSet(eutils.xmlfacades.base.Base):
     @property
     def genes(self):
         return [ str(e)
-                 for e in list(set(self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature'
+                 for e in list(set(self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature'
                                                     '/GBFeature_quals/GBQualifier[GBQualifier_name/text()="gene"]'
                                                     '/GBQualifier_value/text()'))) ]
     @property
@@ -68,31 +68,31 @@ class GBSet(eutils.xmlfacades.base.Base):
 
     @property
     def length(self):
-        return int(self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_length/text()')[0])
+        return int(self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_length/text()')[0])
 
     @property
     def organism(self):
-        return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_organism/text()')[0]
+        return self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_organism/text()')[0]
 
     @property
     def seqids(self):
         """returns a dictionary of sequence ids, like {'gi': ['319655736'], 'ref': ['NM_000551.3']}"""
-        seqids = self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_other-seqids/GBSeqid/text()')
+        seqids = self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_other-seqids/GBSeqid/text()')
         return dict( (t,l.rstrip('|').split('|'))
                      for t,_,l in [ si.partition('|') for si in seqids ] )
 
     @property
     def seq(self):
-        return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_sequence')[0].text.upper()
+        return self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_sequence')[0].text.upper()
     sequence = seq
 
     @property
     def type(self):
-        return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_moltype/text()')[0]
+        return self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_moltype/text()')[0]
 
     @property
     def updated(self):
-        return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_update-date/text()')[0]
+        return self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_update-date/text()')[0]
 
 
     ############################################################################
@@ -100,14 +100,14 @@ class GBSet(eutils.xmlfacades.base.Base):
 
     @property
     def _cds_feature_node(self):
-        cds_nodes = self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key/text()="CDS"]')
+        cds_nodes = self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key/text()="CDS"]')
         if len(cds_nodes) > 1:
             raise EutilsError('More than 1 CDS feature for {self.acv}?!'.format(self=self))
         return None if len(cds_nodes) == 0 else cds_nodes[0]
 
     @property
     def _exon_feature_nodes(self):
-        return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key="exon"]')
+        return self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key="exon"]')
 
 
 class Feature(object):
@@ -122,7 +122,7 @@ class Feature(object):
 
     # @property
     # def exon_names(self):
-    #     return self._xmlroot.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key="exon"]'
+    #     return self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key="exon"]'
     #                             '/GBFeature_quals/GBQualifier[GBQualifier_name="number"]'
     #                             '/GBQualifier_value/text()')
 
