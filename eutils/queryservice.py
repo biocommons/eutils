@@ -6,6 +6,14 @@
 http://www.ncbi.nlm.nih.gov/books/NBK25499/
 """
 
+# TODO: Fetch & compare
+# TODO: TTL support in cache, request-specific TTLs?
+# TODO: optional db -> options map (esp. for rettype & retmode)
+# TODO: deal with caching status 200 replies that are bogus (e.g., truncated xml) -- callbacks?
+# TODO: provide uncached access
+# TODO: support history
+
+
 import datetime
 import hashlib
 import cPickle
