@@ -2,20 +2,20 @@ syntax: glob
 
 *.egg
 *.egg-info
-*.egg-info
 *.enc
 *.ini
 *.ipynb
 *.json
+*.orig
 *.pyc
 *.pyo
 *.so
 *.txt
 .DS_Store
 .coverage
-.keys/
+.keys
 archive
 build
+cover
 dist
 tmp
-ve
