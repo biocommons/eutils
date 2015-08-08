@@ -14,7 +14,9 @@ from eutils.xmlfacades.base import Base
 #                "db=$db&query_key=$QueryKey&WebEnv=$WebEnv";
 
 
-class ESearchResults(Base):
+class ESearchResult(Base):
+
+    _root_tag = 'eSearchResult'
 
     @property
     def count(self):
@@ -34,7 +36,10 @@ class ESearchResults(Base):
 
     @property
     def webenv(self):
-        return self._xml_elem.find('WebEnv').text
+        try:
+            return self._xml_elem.find('WebEnv').text
+        except AttributeError:
+            return None
 
 
     ############################################################################

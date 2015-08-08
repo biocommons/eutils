@@ -1,4 +1,6 @@
-import os,unittest
+import gzip
+import os
+import unittest
 
 import eutils.xmlfacades.pubmed
 
@@ -6,7 +8,8 @@ data_dir = os.path.realpath(os.path.realpath( os.path.join(__file__,'../data')))
 
 class Test_eutils_xmlfacades_pubmed_PubMedArticle(unittest.TestCase):
     def test_20412080(self):
-        xml = open(os.path.join(data_dir,'efetch.fcgi?rettype=xml&db=pubmed&id=20412080.xml')).read()
+        path = os.path.join(data_dir,'efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml')
+        xml = open(path).read()
         pma = eutils.xmlfacades.pubmed.PubMedArticle(xml)
 
         print(pma)

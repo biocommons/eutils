@@ -10,6 +10,7 @@ import eutils.client
 import eutils.clientx
 
 # new style
+from eutils.xmlfacades.esearchresult import ESearchResult
 from eutils.xmlfacades.entrezgeneset import EntrezgeneSet
 
 # old style
@@ -22,14 +23,21 @@ logging.basicConfig(level=logging.DEBUG)
 data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)),'..','tests','data')
 
 
-xml = gzip.open(os.path.join(data_dir,'entrezgeneset.xml.gz')).read()
-doc = lxml.etree.XML(xml)
-egs = EntrezgeneSet(doc)
+if True:
+    xml = gzip.open(os.path.join(data_dir,'esearch.fcgi?term=hart%20rk[author].xml.gz')).read()
+    doc = lxml.etree.XML(xml)
+    esr = ESearchResult(doc)
 
-print("{} genes in EntrezgeneSet".format(len(egs.entrezgenes)))
-for eg in egs:
-    print("\t".join(map(str,[eg.gene_id,eg.maploc,eg.hgnc,
-                             eg.summary[:30] + "..." if eg.summary else None])))
+
+if False:
+    xml = gzip.open(os.path.join(data_dir,'entrezgeneset.xml.gz')).read()
+    doc = lxml.etree.XML(xml)
+    egs = EntrezgeneSet(doc)
+
+    print("{} genes in EntrezgeneSet".format(len(egs.entrezgenes)))
+    for eg in egs:
+        print("\t".join(map(str,[eg.gene_id,eg.maploc,eg.hgnc,
+                                eg.summary[:30] + "..." if eg.summary else None])))
 
 
 #ec = eutils.clientx.ClientX()
