@@ -17,7 +17,7 @@ def version_handler(mgr, options):
 setup(
     license = 'Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)',
     long_description = long_description,
-    use_vcs_version = {'version_handler': version_handler},
+    use_scm_version = True,
     zip_safe = True,
 
     author = 'Reece Hart',
@@ -52,7 +52,7 @@ setup(
         ],
 
     setup_requires = [
-        'hgtools',
+        'setuptools_scm',
         'nose',
         ],
 

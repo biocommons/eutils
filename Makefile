@@ -25,6 +25,7 @@ help: config
 setup: develop
 
 #=> docs -- make sphinx docs
+.PHONY: docs
 docs: setup build_sphinx
 
 #=> build_sphinx
@@ -32,26 +33,33 @@ docs: setup build_sphinx
 build_sphinx: develop
 
 #=> develop, bdist, bdist_egg, sdist, upload_docs, etc
-develop: %:
+# On Ubuntu 14.04 w/Python 2.7.8, upgrading setuptools (from 2.2 to
+# 7.0) is essential for sphinxcontrib-fulltoc 1.1.
+develop:
 	pip install --upgrade setuptools
-	python setup.py $*
+	python setup.py $@
 
 bdist bdist_egg build build_sphinx install sdist: %:
-	python setup.py $*
+	python setup.py $@
 
 #=> upload
 upload: upload_pypi
 
 #=> upload_all: upload_pypi, upload_invitae, and upload_docs
-upload_all: upload_pypi upload_docs
+upload_all: upload_pypi upload_docs;
 
 #=> upload_*: upload to named pypi service (requires config in ~/.pypirc)
 upload_%:
-	python setup.py bdist_egg sdist upload -r $*
+	python setup.py bdist_egg bdist_wheel sdist upload -r $*
+
+#=> upload_docs: upload documentation to pythonhosted
+upload_docs: %:
+	python setup.py $* -r pypi
 
 
 ############################################################################
 #= TESTING
+# see test configuration in setup.cfg
 
 #=> test -- run tests
 test-setup: develop
@@ -115,6 +123,7 @@ cleanest: cleaner
 #=> pristine: above, and delete anything unknown to mercurial
 pristine: cleanest
 	hg st -un0 | xargs -0r echo /bin/rm -fv
+
 
 ## <LICENSE>
 ## Copyright 2014 eutils Contributors (https://bitbucket.org/biocommons/eutils)
