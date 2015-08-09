@@ -3,7 +3,7 @@
 * doc, docstrings
 * tag + push
 * arrow for dates
-
+* Gene?
 
 * #120: "Documentation" is unclear eutils
 
@@ -22,5 +22,3 @@ separate caching, throttling, querying, parsing/facades
 use web history + iterators for chained searching
 
 * #126: IndexError retrieving "comment" field from GBSeq object eutils
-
-* #127: sqlite3 fails if directory ~/.cache is not previously created eutils

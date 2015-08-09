@@ -2,6 +2,7 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
+import logging
 import os
 
 import lxml.etree as le
@@ -15,12 +16,19 @@ from eutils.xmlfacades.gbset import GBSet
 #from eutils.xmlfacades.gene import Gene
 from eutils.xmlfacades.pubmedarticleset import PubmedArticleSet
 
-# TODO: eutils-127: cache creation fails if ~/.cache doesn't already exist
 default_cache_path = os.path.join(os.path.expanduser('~'), '.cache', 'eutils-cache.db')
 
+logger = logging.getLogger(__name__)
 
 class Client(object):
-    def __init__(self, cache_path=default_cache_path, ):
+    def __init__(self, cache_path=default_cache_path):
+        cache_dir = os.path.dirname(cache_path)
+        if not os.path.exists(cache_dir):
+            try:
+                os.mkdir(cache_dir)
+                logger.info("Made cache directory " + cache_dir)
+            except OSError:
+                raise EutilsError("Failed to make cache directory " + cache_dir)
         self._qs = QueryService(cache_path=cache_path)
         self.databases = self.einfo().dblist.databases
 
@@ -63,6 +71,7 @@ class Client(object):
         if db in ['snp']:
             return ExchangeSet(xml)
         raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
