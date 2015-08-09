@@ -2,24 +2,27 @@
 eutils -- a simplified interface to NCBI E-Utilities
 ====================================================
 
-eutils is a Python package dedicated to searching for, fetching, and
+eutils is a Python package to simplify searching, fetching, and
 parsing records from NCBI using their E-utilities_ interface.
 
 STATUS: This code is alpha. There are no known bugs, but the code supports
-only a limited subset of E-Utilities replies
-
+only a limited subset of E-Utilities replies.
 
 Features
 --------
-* optional sqlite-based caching of compressed replies
-* automatic throttling
 * simple Pythonic interface for searching and fetching
-* "façades" over XML from replies provide access to essential attributes
+* automatic query rate throttling per NCBI guidelines
+* optional sqlite-based caching of compressed replies
+* "façades" that facilitate access to essential attributes in replies
+
 
 A Quick Example
 ---------------
 
 ::
+  $ pip install eutils
+  
+  $ ipython
 
   In [1]: import eutils.client
   
@@ -60,6 +63,36 @@ A Quick Example
    (7573926, 7574033),
    (7571719, 7573008)]
   
-  
+
+
+Important Notes
+---------------
+
+* **You are encouraged to** `browse issues
+  <https://bitbucket.org/biocommons/eutils/issues>`_. Please report any
+  issues you find.
+* **Use a pip package specification to ensure stay within minor
+  releases for API stability.** For example, ``eutils >=0.1,<0.2``.
+
+
+Developing and Contributing
+---------------------------
+
+Contributions of bug reports, code patches, and documentation are
+welcome!
+
+Development occurs in the default branch. Please work in feature
+branches or bookmarks from the default branch. Feature branches should
+be named for the eutils issue they fix, as in
+`121-update-xml-facades`.  When merging, use a commit message like
+"closes #121: update xml facades to new-style interface". ("closes #n"
+is recognized automatically and closes the ticket upon pushing.)
+
+The included Makefile automates many tasks.  In particular, `make
+develop` prepares a development environment and `make test` runs
+unittests. (Please run tests before committing!)
+
+Again, thanks for your contributions.
+
 
 .. _E-utilities: http://www.ncbi.nlm.nih.gov/books/NBK25499/
