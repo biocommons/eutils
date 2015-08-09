@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+
+from __future__ import absolute_import, division, print_function, unicode_literals
+
 # -*- encoding: utf-8 -*-
 # License appears at end of file
 """provides XML access to NCBI E-utilities
@@ -169,7 +173,7 @@ if __name__ == '__main__':
     r = ec._fetch('/einfo.fcgi', {'db': 'protein'})
 
 # <LICENSE>
-# Copyright 2014 eutils Contributors
+# Copyright 2015 eutils Committers
 # 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

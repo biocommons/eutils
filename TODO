@@ -1,21 +1,30 @@
 -*-outline-*-
 
-* initialize facades with xml node, not text
-...then, GBSet -> GBSeq and initialize with correct root
+* from future
+* XML -> parse, drop gzip
+* reformat
 
-* initialize facade with client object too
-
-* assert expected node tag on initialization
-
-* add functionality to facades objects
-
-* add additional mehods to objects (like linking)
-
-* chained searching -- iterate
+* doc, docstrings
+* tag + push
+* arrow for dates
 
 
+* #120: "Documentation" is unclear eutils
 
-* bigger stuff
+* #121: update xmlfacades to better match xml tags and cardinality
+
+* #122: implement TTL support in cache
+
+* #123: refactor queryservice to separate querying, throttling, and caching
+queryservice implements too much functionality. It should be refactored into:
+a basic query service that executes queries, period
+a thin throttling service based on the basic query service
+a caching service on the throttled service (since that's all the caching service should use)
 separate caching, throttling, querying, parsing/facades
-use web history + iterators
 
+* #124: support webenv history
+use web history + iterators for chained searching
+
+* #126: IndexError retrieving "comment" field from GBSeq object eutils
+
+* #127: sqlite3 fails if directory ~/.cache is not previously created eutils
