@@ -23,6 +23,11 @@ class Base(object):
         if isinstance(xml_elem, lxml.etree._Element):
             self._xml = None
             self._xml_elem = xml_elem
+        elif isinstance(xml_elem, str):
+            logger.info("instantiating eutils xmlfacade with an xml string is deprecated; "
+                        "consider passing the xml root instead (e.g., `lxml.etree.parse(xml).getroot()`)")
+            self._xml = xml_elem
+            self._xml_elem = lxml.etree.XML(xml_elem)
         else:
             raise EutilsError("Cannot create object from type " + type(xml_elem).__name__)
 
