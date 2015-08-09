@@ -31,7 +31,7 @@ class Base(object):
             logger.info("instantiating eutils xmlfacade with an xml string is deprecated; "
                         "consider passing the xml root instead (e.g., `lxml.etree.parse(xml).getroot()`)")
             self._xml = xml_elem
-            self._xml_elem = lxml.etree.XML(xml_elem)
+            self._xml_elem = lxml.etree.XML(self._xml)
         else:
             raise EutilsError("Cannot create object from type " + type(xml_elem).__name__)
 
