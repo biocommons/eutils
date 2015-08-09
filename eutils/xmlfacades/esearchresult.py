@@ -14,27 +14,32 @@ from eutils.xmlfacades.base import Base
 #                "db=$db&query_key=$QueryKey&WebEnv=$WebEnv";
 
 
-class ESearchResults(Base):
+class ESearchResult(Base):
+
+    _root_tag = 'eSearchResult'
 
     @property
     def count(self):
-        return int( self._xmlroot.find('Count').text )
+        return int( self._xml_elem.find('Count').text )
 
     @property
     def retmax(self):
-        return int( self._xmlroot.find('RetMax').text )
+        return int( self._xml_elem.find('RetMax').text )
 
     @property
     def retstart(self):
-        return int( self._xmlroot.find('RetStart').text )
+        return int( self._xml_elem.find('RetStart').text )
 
     @property
     def ids(self):
-        return [ int(id) for id in self._xmlroot.xpath('/eSearchResult/IdList/Id/text()') ]
+        return [ int(id) for id in self._xml_elem.xpath('/eSearchResult/IdList/Id/text()') ]
 
     @property
     def webenv(self):
-        return self._xmlroot.find('WebEnv').text
+        try:
+            return self._xml_elem.find('WebEnv').text
+        except AttributeError:
+            return None
 
 
     ############################################################################

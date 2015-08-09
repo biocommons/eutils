@@ -1,3 +1,12 @@
+QueryService -- provides eutils web requests
+CachingQueryService -- subclass of above, with selectable caching
+Client -- uses QS to 
+EasyClient -- combine esearch + efetch
+
+
+
+* make cache key less opaque
+
 * central client interface -- single config point
 
 * rich objects with dot notation access to elements

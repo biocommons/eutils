@@ -1,14 +1,17 @@
 import os
 
+import lxml.etree as le
+
 from eutils.exceptions import *
 from eutils.queryservice import QueryService
 from eutils.xmlfacades.dbsnp import ExchangeSet
-from eutils.xmlfacades.einfo import EInfo, EInfoDB
-from eutils.xmlfacades.esearchresults import ESearchResults
+from eutils.xmlfacades.einforesult import EInfoResult
+from eutils.xmlfacades.esearchresult import ESearchResult
 from eutils.xmlfacades.gbset import GBSet
-from eutils.xmlfacades.gene import Gene
-from eutils.xmlfacades.pubmed import PubMedArticle
+#from eutils.xmlfacades.gene import Gene
+from eutils.xmlfacades.pubmedarticleset import PubmedArticleSet
 
+# TODO: eutils-127: cache creation fails if ~/.cache doesn't already exist
 default_cache_path = os.path.join(os.path.expanduser('~'),'.cache','eutils-cache.db')
 
 
@@ -18,7 +21,7 @@ class Client(object):
                  cache_path=default_cache_path,
                  ):
         self._qs = QueryService(cache_path=cache_path)
-        self.databases = self.einfo().databases
+        self.databases = self.einfo().dblist.databases
 
 
     def einfo(self,db=None):
@@ -36,14 +39,14 @@ class Client(object):
         """
 
         if db is None:
-            return EInfo( self._qs.einfo() )
-        return EInfoDB( self._qs.einfo({'db':db, 'version':'2.0'}) )
-        
+            return EInfoResult(self._qs.einfo()).dblist
+        return EInfoResult(self._qs.einfo({'db': db, 'version': '2.0'})).dbinfo
+
 
     def esearch(self,db,term):
         """query the esearch endpoint
         """
-        return ESearchResults( self._qs.esearch({'db':db,'term':term}) )
+        return ESearchResult( self._qs.esearch({'db':db,'term':term}) )
 
 
     def efetch(self,db,id):
@@ -51,13 +54,14 @@ class Client(object):
         """
         db = db.lower()
         xml = self._qs.efetch({'db':db,'id':str(id)})
+        doc = le.parse(xml).getroot()
         if db in ['gene']:
-            return Gene(xml)
+            return Gene(doc)
         if db in ['nuccore']:
             # TODO: GBSet is misnamed; it should be GBSeq and get the GBSeq XML node as root (see gbset.py)
-            return GBSet(xml)
+            return GBSet(doc)
         if db in ['pubmed']:
-            return PubMedArticle(xml)
+            return iter(PubmedArticleSet(doc)).next()
         if db in ['snp']:
             return ExchangeSet(xml)
         raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))

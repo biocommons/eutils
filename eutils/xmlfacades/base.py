@@ -1,16 +1,62 @@
+import logging
+
 import lxml.etree
+
+from eutils.exceptions import EutilsError
+
+
+logger = logging.getLogger(__name__)
+
 
 class Base(object):
 
-    def __init__(self,xml):
-        self._xml = xml
-        self._xmlroot = lxml.etree.XML(xml)
+    """
+    Root class for all xmlfacade classes.
+
+    This class is instantiated only by subclasses.
+
+    """
+    
+    _root_tag = None
+
+    def __init__(self, xml_elem):
+        if isinstance(xml_elem, str):
+            logger.warn("instantiating eutils xmlfacades with an xml string is deprecated")
+            self._xml = xml_elem
+            self._xml_elem = lxml.etree.XML(xml_elem)
+        elif isinstance(xml_elem, lxml.etree._Element):
+            self._xml = None
+            self._xml_elem = xml_elem
+        else:
+            raise EutilsError("Cannot create object from type " + type(xml_elem).__name__)
+
+        if self._root_tag is None:
+            # raise EutilsError("_root_tag not defined for class {}".format(type(self).__name__))
+            logger.warn("_root_tag not defined for class {}; strict enforcement is coming soon".format(type(self).__name__))
+        elif self._root_tag != self._xml_elem.tag:
+            raise EutilsError("XML for {} object must be a {} element (got {})".format(
+                type(self).__name__, self._root_tag, self._xml_elem.tag))
+
 
     def __str__(self):
         return unicode(self).encode('utf-8')
 
-    @classmethod
-    def _validate_xml(xml):
-        """validate the xml during initialization. Subclasses override this
-        to apply any __init__-time validation of the incoming XML"""
-        pass
+
+    def _validate_xml_elem(self):
+        """Validate the xml during initialization.
+
+        Returns True if the XML is valid.
+        Returns False or throws `EutilsError`s on failure.
+
+        By default, this method will check whether an
+        _root_tag, if any, matches the xml tag of the element.
+
+        At a minimum, subclasses should define _root_tag. 
+
+        Alternatively, subclasses mayh override this method to apply
+        more complex __init__-time validation of the incoming XML.
+
+        """
+
+
+        return True
