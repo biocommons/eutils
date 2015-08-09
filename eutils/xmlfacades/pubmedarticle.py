@@ -2,13 +2,13 @@ from eutils.utils import xml_get_text, xml_get_text_or_none
 import eutils.xmlfacades.base
 import eutils.xmlfacades.medlinecitation
 
+
 class PubmedArticle(eutils.xmlfacades.base.Base):
 
     _root_tag = 'PubmedArticle'
 
     def __unicode__(self):
-        return('{self.__class__.__name__}({self.pmid}; {self.jrnl}; {self.title}; {self.authors})'.format(
-            pma = self))
+        return ('{self.__class__.__name__}({self.pmid}; {self.jrnl}; {self.title}; {self.authors})'.format(pma=self))
 
     @property
     def abstract(self):
@@ -45,26 +45,23 @@ class PubmedArticle(eutils.xmlfacades.base.Base):
     @property
     def volume(self):
         return self._medline_citation.volume
-    
+
     @property
     def year(self):
         return self._medline_citation.year
 
-
     @property
     def doi(self):
-        return xml_get_text_or_none(self._xml_elem,'PubmedData/ArticleIdList/ArticleId[@IdType="doi"]')
+        return xml_get_text_or_none(self._xml_elem, 'PubmedData/ArticleIdList/ArticleId[@IdType="doi"]')
 
     @property
     def pii(self):
-        return xml_get_text_or_none(self._xml_elem,'PubmedData/ArticleIdList/ArticleId[@IdType="pii"]')
+        return xml_get_text_or_none(self._xml_elem, 'PubmedData/ArticleIdList/ArticleId[@IdType="pii"]')
 
     @property
     def pmc(self):
-        pmc = xml_get_text_or_none(self._xml_elem,'PubmedData/ArticleIdList/ArticleId[@IdType="pmc"]')
+        pmc = xml_get_text_or_none(self._xml_elem, 'PubmedData/ArticleIdList/ArticleId[@IdType="pmc"]')
         return None if pmc is None else pmc[3:]
-
-
 
     @property
     def _medline_citation(self):
@@ -77,10 +74,9 @@ if __name__ == "__main__":
     import os
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
     relpaths = [
-        'efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml',
-        'efetch.fcgi?db=pubmed&id=22351513&retmode=xml.xml',
+        'efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml', 'efetch.fcgi?db=pubmed&id=22351513&retmode=xml.xml',
         'efetch.fcgi?db=pubmed&id=23121403&retmode=xml.xml'
-        ]
+    ]
     path = os.path.join(data_dir, relpaths[0])
     pas = PubmedArticleSet(le.parse(path).getroot())
     pa = iter(pas).next()

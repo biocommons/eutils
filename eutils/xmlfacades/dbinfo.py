@@ -16,7 +16,6 @@ reply.
 import eutils.xmlfacades.base
 
 
-
 class DbInfo(eutils.xmlfacades.base.Base):
 
     _root_tag = 'DbInfo'

@@ -19,6 +19,7 @@ import eutils.xmlfacades.einforesult
 import eutils.xmlfacades.dbinfo
 import eutils.xmlfacades.dblist
 
+
 class EInfoResult(eutils.xmlfacades.base.Base):
 
     _root_tag = 'eInfoResult'
@@ -48,14 +49,15 @@ class EInfoResult(eutils.xmlfacades.base.Base):
             return n
         raise EutilsError("EInfoResult does not contain a " + tag + " child node")
 
+
 if __name__ == "__main__":
     import gzip
     import os
     import lxml.etree as le
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
 
-    dir_path = os.path.join(data_dir,'einfo.fcgi?db=protein&retmode=xml.xml.gz')
-    dlr_path = os.path.join(data_dir,'einfo.fcgi?retmode=xml.xml.gz')
+    dir_path = os.path.join(data_dir, 'einfo.fcgi?db=protein&retmode=xml.xml.gz')
+    dlr_path = os.path.join(data_dir, 'einfo.fcgi?retmode=xml.xml.gz')
 
     eiinfo = eutils.xmlfacades.einforesult.EInfoResult(le.XML(gzip.open(dir_path).read()))
     eilist = eutils.xmlfacades.einforesult.EInfoResult(le.XML(gzip.open(dlr_path).read()))

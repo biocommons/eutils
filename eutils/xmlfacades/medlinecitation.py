@@ -1,6 +1,7 @@
 from eutils.utils import xml_get_text, xml_get_text_or_none
 import eutils.xmlfacades.base
 
+
 class MedlineCitation(eutils.xmlfacades.base.Base):
 
     _root_tag = 'MedlineCitation'
@@ -20,8 +21,8 @@ class MedlineCitation(eutils.xmlfacades.base.Base):
                 return au.find('LastName').text + ' ' + au.find('Initials').text
             else:
                 return au.find('LastName').text
-        return [ _format_author(au) for au
-                 in self._xml_elem.xpath('Article/AuthorList/Author') ]
+
+        return [_format_author(au) for au in self._xml_elem.xpath('Article/AuthorList/Author')]
 
     @property
     def issue(self):
@@ -29,7 +30,8 @@ class MedlineCitation(eutils.xmlfacades.base.Base):
 
     @property
     def jrnl(self):
-        return self._xml_elem.findtext('Article/Journal/ISOAbbreviation') or self._xml_elem.findtext('Article/Journal/Title')
+        return self._xml_elem.findtext('Article/Journal/ISOAbbreviation') or self._xml_elem.findtext(
+            'Article/Journal/Title')
 
     @property
     def mesh_headings(self):
@@ -50,7 +52,7 @@ class MedlineCitation(eutils.xmlfacades.base.Base):
     @property
     def volume(self):
         return self._xml_elem.findtext('Article/Journal/JournalIssue/Volume')
-    
+
     @property
     def year(self):
         return self._xml_elem.findtext('Article/Journal/JournalIssue/PubDate/Year') \

@@ -4,19 +4,17 @@ import lxml.etree
 
 from eutils.exceptions import EutilsError
 
-
 logger = logging.getLogger(__name__)
 
 
 class Base(object):
-
     """
     Root class for all xmlfacade classes.
 
     This class is instantiated only by subclasses.
 
     """
-    
+
     _root_tag = None
 
     def __init__(self, xml_elem):
@@ -32,15 +30,14 @@ class Base(object):
 
         if self._root_tag is None:
             # raise EutilsError("_root_tag not defined for class {}".format(type(self).__name__))
-            logger.warn("_root_tag not defined for class {}; strict enforcement is coming soon".format(type(self).__name__))
+            logger.warn(
+                "_root_tag not defined for class {}; strict enforcement is coming soon".format(type(self).__name__))
         elif self._root_tag != self._xml_elem.tag:
             raise EutilsError("XML for {} object must be a {} element (got {})".format(
                 type(self).__name__, self._root_tag, self._xml_elem.tag))
 
-
     def __str__(self):
         return unicode(self).encode('utf-8')
-
 
     def _validate_xml_elem(self):
         """Validate the xml during initialization.
@@ -57,6 +54,5 @@ class Base(object):
         more complex __init__-time validation of the incoming XML.
 
         """
-
 
         return True

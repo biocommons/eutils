@@ -1,12 +1,12 @@
 import eutils.xmlfacades.base
 
+
 class GBSeq(eutils.xmlfacades.base.Base):
 
     _root_tag = 'GBSeq'
 
     def __unicode__(self):
         return "GBSeq({self.acv})".format(self=self)
-
 
     @property
     def acv(self):
@@ -33,7 +33,7 @@ class GBSeq(eutils.xmlfacades.base.Base):
 
     @property
     def exons(self):
-        return [ ExonFeature(n) for n in self._exon_feature_nodes ]
+        return [ExonFeature(n) for n in self._exon_feature_nodes]
 
     @property
     def genes(self):
@@ -68,8 +68,7 @@ class GBSeq(eutils.xmlfacades.base.Base):
     def seqids(self):
         """returns a dictionary of sequence ids, like {'gi': ['319655736'], 'ref': ['NM_000551.3']}"""
         seqids = self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_other-seqids/GBSeqid/text()')
-        return dict( (t,l.rstrip('|').split('|'))
-                     for t,_,l in [ si.partition('|') for si in seqids ] )
+        return dict((t, l.rstrip('|').split('|')) for t, _, l in [si.partition('|') for si in seqids])
 
     @property
     def sequence(self):
@@ -78,8 +77,6 @@ class GBSeq(eutils.xmlfacades.base.Base):
     @property
     def updated(self):
         return self._xml_elem.findtext('GBSeq_update-date')
-
-
 
     ############################################################################
     # Internals
@@ -110,13 +107,16 @@ class Feature(object):
 class CDSFeature(Feature):
     @property
     def translation(self):
-        return self._n.xpath('GBFeature_quals/GBQualifier[GBQualifier_name/text()="translation"]/GBQualifier_value/text()')[0]
+        return self._n.xpath(
+            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="translation"]/GBQualifier_value/text()')[0]
 
 
 class ExonFeature(Feature):
     @property
     def inference(self):
-        return self._n.xpath('GBFeature_quals/GBQualifier[GBQualifier_name/text()="inference"]/GBQualifier_value/text()')[0].replace('alignment:','')
+        return self._n.xpath(
+            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="inference"]/GBQualifier_value/text()')[0].replace(
+                'alignment:', '')
 
 
 if __name__ == "__main__":

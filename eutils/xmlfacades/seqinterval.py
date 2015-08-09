@@ -1,5 +1,6 @@
 from eutils.xmlfacades.base import Base
 
+
 class SeqInterval(Base):
 
     _root_tag = 'Seq-interval'

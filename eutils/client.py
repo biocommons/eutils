@@ -12,19 +12,15 @@ from eutils.xmlfacades.gbset import GBSet
 from eutils.xmlfacades.pubmedarticleset import PubmedArticleSet
 
 # TODO: eutils-127: cache creation fails if ~/.cache doesn't already exist
-default_cache_path = os.path.join(os.path.expanduser('~'),'.cache','eutils-cache.db')
+default_cache_path = os.path.join(os.path.expanduser('~'), '.cache', 'eutils-cache.db')
 
 
 class Client(object):
-
-    def __init__(self,
-                 cache_path=default_cache_path,
-                 ):
+    def __init__(self, cache_path=default_cache_path, ):
         self._qs = QueryService(cache_path=cache_path)
         self.databases = self.einfo().dblist.databases
 
-
-    def einfo(self,db=None):
+    def einfo(self, db=None):
         """query the einfo endpoint
 
         :param db: string (optional)
@@ -42,18 +38,16 @@ class Client(object):
             return EInfoResult(self._qs.einfo()).dblist
         return EInfoResult(self._qs.einfo({'db': db, 'version': '2.0'})).dbinfo
 
-
-    def esearch(self,db,term):
+    def esearch(self, db, term):
         """query the esearch endpoint
         """
-        return ESearchResult( self._qs.esearch({'db':db,'term':term}) )
+        return ESearchResult(self._qs.esearch({'db': db, 'term': term}))
 
-
-    def efetch(self,db,id):
+    def efetch(self, db, id):
         """query the efetch endpoint
         """
         db = db.lower()
-        xml = self._qs.efetch({'db':db,'id':str(id)})
+        xml = self._qs.efetch({'db': db, 'id': str(id)})
         doc = le.parse(xml).getroot()
         if db in ['gene']:
             return Gene(doc)

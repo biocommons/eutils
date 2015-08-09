@@ -3,6 +3,7 @@ import lxml.etree as le
 from eutils.xmlfacades.base import Base
 from eutils.xmlfacades.genecommentary import GeneCommentary
 
+
 class EntrezgeneLocus(Base):
 
     _root_tag = 'Entrezgene_locus'
@@ -24,4 +25,3 @@ if __name__ == "__main__":
     doc = lxml.etree.parse(gzip.open(data_file))
     n = doc.findall('.//Entrezgene')[0]
     o = Entrezgene(n)
-

@@ -3,6 +3,7 @@ import lxml.etree as le
 from eutils.xmlfacades.base import Base
 from eutils.xmlfacades.entrezgenelocus import EntrezgeneLocus
 
+
 class Entrezgene(Base):
 
     _root_tag = 'Entrezgene'
@@ -53,8 +54,10 @@ class Entrezgene(Base):
 
     @property
     def tax_id(self):
-        return int(self._xml_elem.xpath('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_db/Dbtag[Dbtag_db/text()="taxon"]/Dbtag_tag/Object-id/Object-id_id/text()')[0])
-
+        return int(self._xml_elem.xpath(
+            'Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_db/Dbtag[Dbtag_db/text()="taxon"]/Dbtag_tag/Object-id/Object-id_id/text()')[
+                0
+            ])
 
 
 if __name__ == "__main__":
@@ -66,4 +69,3 @@ if __name__ == "__main__":
     doc = lxml.etree.parse(gzip.open(data_file))
     n = doc.findall('.//Entrezgene')[0]
     o = Entrezgene(n)
-

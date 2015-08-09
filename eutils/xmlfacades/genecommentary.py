@@ -1,6 +1,7 @@
 from eutils.xmlfacades.base import Base
 from eutils.xmlfacades.genecommentarygenomiccoords import GeneCommentaryGenomicCoords
 
+
 class GeneCommentary(Base):
     """This class  a rudimentary interface for using "Gene-commentary" XML
     nodes in NCBI efetch replies.
@@ -45,7 +46,7 @@ class GeneCommentary(Base):
     @property
     def products(self):
         return [GeneCommentary(gc) for gc in self._xml_elem.xpath('Gene-commentary_products/Gene-commentary')]
-        
+
     @property
     def genomic_coords(self):
         gcgcs = self._xml_elem.xpath('Gene-commentary_genomic-coords')
@@ -53,5 +54,3 @@ class GeneCommentary(Base):
             return None
         assert len(gcgcs) == 1
         return GeneCommentaryGenomicCoords(gcgcs[0])
-
-

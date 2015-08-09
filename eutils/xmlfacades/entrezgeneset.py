@@ -19,8 +19,7 @@ class EntrezgeneSet(Base):
     _root_tag = 'Entrezgene-Set'
 
     def __unicode__(self):
-        return '{type} ({chillin} children)'.format(
-            type=type(self).__name__, chillin=len(self._xml_elem.getchildren()))
+        return '{type} ({chillin} children)'.format(type=type(self).__name__, chillin=len(self._xml_elem.getchildren()))
 
     @property
     def entrezgenes(self):
