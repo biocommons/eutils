@@ -1,0 +1,1270 @@
+<?xml version="1.0"?>
+ <!DOCTYPE GBSet PUBLIC "-//NCBI//NCBI GBSeq/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_GBSeq.dtd">
+ <GBSet>
+<GBSeq>
+  <GBSeq_locus>NM_000551</GBSeq_locus>
+  <GBSeq_length>4560</GBSeq_length>
+  <GBSeq_strandedness>single</GBSeq_strandedness>
+  <GBSeq_moltype>mRNA</GBSeq_moltype>
+  <GBSeq_topology>linear</GBSeq_topology>
+  <GBSeq_division>PRI</GBSeq_division>
+  <GBSeq_update-date>18-JAN-2014</GBSeq_update-date>
+  <GBSeq_create-date>19-MAR-1999</GBSeq_create-date>
+  <GBSeq_definition>Homo sapiens von Hippel-Lindau tumor suppressor, E3 ubiquitin protein ligase (VHL), transcript variant 1, mRNA</GBSeq_definition>
+  <GBSeq_primary-accession>NM_000551</GBSeq_primary-accession>
+  <GBSeq_accession-version>NM_000551.3</GBSeq_accession-version>
+  <GBSeq_other-seqids>
+    <GBSeqid>ref|NM_000551.3|</GBSeqid>
+    <GBSeqid>gi|319655736</GBSeqid>
+  </GBSeq_other-seqids>
+  <GBSeq_keywords>
+    <GBKeyword>RefSeq</GBKeyword>
+  </GBSeq_keywords>
+  <GBSeq_source>Homo sapiens (human)</GBSeq_source>
+  <GBSeq_organism>Homo sapiens</GBSeq_organism>
+  <GBSeq_taxonomy>Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini; Catarrhini; Hominidae; Homo</GBSeq_taxonomy>
+  <GBSeq_references>
+    <GBReference>
+      <GBReference_reference>1</GBReference_reference>
+      <GBReference_position>1..4560</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Chen S</GBAuthor>
+        <GBAuthor>Chen K</GBAuthor>
+        <GBAuthor>Zhang Q</GBAuthor>
+        <GBAuthor>Cheng H</GBAuthor>
+        <GBAuthor>Zhou R</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Regulation of the transcriptional activation of the androgen receptor by the UXT-binding protein VHL</GBReference_title>
+      <GBReference_journal>Biochem. J. 456 (1), 55-66 (2013)</GBReference_journal>
+      <GBReference_xref>
+        <GBXref>
+          <GBXref_dbname>doi</GBXref_dbname>
+          <GBXref_id>10.1042/BJ20121711</GBXref_id>
+        </GBXref>
+      </GBReference_xref>
+      <GBReference_pubmed>23961993</GBReference_pubmed>
+      <GBReference_remark>GeneRIF: VHL-UXT interaction and VHL-induced ubiquitination of androgen receptor(AR) regulate transcriptional activation of the AR.</GBReference_remark>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>2</GBReference_reference>
+      <GBReference_position>1..4560</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Chien W</GBAuthor>
+        <GBAuthor>Lee KL</GBAuthor>
+        <GBAuthor>Ding LW</GBAuthor>
+        <GBAuthor>Wuensche P</GBAuthor>
+        <GBAuthor>Kato H</GBAuthor>
+        <GBAuthor>Doan NB</GBAuthor>
+        <GBAuthor>Poellinger L</GBAuthor>
+        <GBAuthor>Said JW</GBAuthor>
+        <GBAuthor>Koeffler HP</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>PIAS4 is an activator of hypoxia signalling via VHL suppression during growth of pancreatic cancer cells</GBReference_title>
+      <GBReference_journal>Br. J. Cancer 109 (7), 1795-1804 (2013)</GBReference_journal>
+      <GBReference_xref>
+        <GBXref>
+          <GBXref_dbname>doi</GBXref_dbname>
+          <GBXref_id>10.1038/bjc.2013.531</GBXref_id>
+        </GBXref>
+      </GBReference_xref>
+      <GBReference_pubmed>24002598</GBReference_pubmed>
+      <GBReference_remark>GeneRIF: PIAS4 interacts with the tumour suppressor von Hippel-Lindau (VHL) and leads to VHL sumoylation, oligomerization, and impaired function.</GBReference_remark>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>3</GBReference_reference>
+      <GBReference_position>1..4560</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Merlo A</GBAuthor>
+        <GBAuthor>de Quiros SB</GBAuthor>
+        <GBAuthor>de Santa-Maria IS</GBAuthor>
+        <GBAuthor>Pitiot AS</GBAuthor>
+        <GBAuthor>Balbin M</GBAuthor>
+        <GBAuthor>Astudillo A</GBAuthor>
+        <GBAuthor>Scola B</GBAuthor>
+        <GBAuthor>Aristegui M</GBAuthor>
+        <GBAuthor>Quer M</GBAuthor>
+        <GBAuthor>Suarez C</GBAuthor>
+        <GBAuthor>Chiara MD</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Identification of somatic VHL gene mutations in sporadic head and neck paragangliomas in association with activation of the HIF-1alpha/miR-210 signaling pathway</GBReference_title>
+      <GBReference_journal>J. Clin. Endocrinol. Metab. 98 (10), E1661-E1666 (2013)</GBReference_journal>
+      <GBReference_xref>
+        <GBXref>
+          <GBXref_dbname>doi</GBXref_dbname>
+          <GBXref_id>10.1210/jc.2013-1636</GBXref_id>
+        </GBXref>
+      </GBReference_xref>
+      <GBReference_pubmed>23902947</GBReference_pubmed>
+      <GBReference_remark>GeneRIF: VHL, involved in tumorigenesis of paragangliomas and clear cell renal cell carcinomas, may be an important player in the pathogenesis of sporadic Head and neck paragangliomas via activation of an HIF-1alpha/miR-210 pHx pathway</GBReference_remark>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>4</GBReference_reference>
+      <GBReference_position>1..4560</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Desimone MC</GBAuthor>
+        <GBAuthor>Rathmell WK</GBAuthor>
+        <GBAuthor>Threadgill DW</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Pleiotropic effects of the trichloroethylene-associated P81S VHL mutation on metabolism, apoptosis, and ATM-mediated DNA damage response</GBReference_title>
+      <GBReference_journal>J. Natl. Cancer Inst. 105 (18), 1355-1364 (2013)</GBReference_journal>
+      <GBReference_xref>
+        <GBXref>
+          <GBXref_dbname>doi</GBXref_dbname>
+          <GBXref_id>10.1093/jnci/djt226</GBXref_id>
+        </GBXref>
+      </GBReference_xref>
+      <GBReference_pubmed>23990666</GBReference_pubmed>
+      <GBReference_remark>GeneRIF: The TCE-associated P81S VHL mutation can initiate a unique adaptive response required for selective tumor growth through pleiotropic effects on metabolic diversification, apoptosis suppression, and alteration of the DNA damage response.</GBReference_remark>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>5</GBReference_reference>
+      <GBReference_position>1..4560</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Neumann HP</GBAuthor>
+        <GBAuthor>Eng C</GBAuthor>
+        <GBAuthor>Mulligan LM</GBAuthor>
+        <GBAuthor>Glavac D</GBAuthor>
+        <GBAuthor>Zauner I</GBAuthor>
+        <GBAuthor>Ponder BA</GBAuthor>
+        <GBAuthor>Crossey PA</GBAuthor>
+        <GBAuthor>Maher ER</GBAuthor>
+        <GBAuthor>Brauch H</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Consequences of direct genetic testing for germline mutations in the clinical management of families with multiple endocrine neoplasia, type II</GBReference_title>
+      <GBReference_journal>JAMA 274 (14), 1149-1151 (1995)</GBReference_journal>
+      <GBReference_pubmed>7563486</GBReference_pubmed>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>6</GBReference_reference>
+      <GBReference_position>1..4560</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Adams MD</GBAuthor>
+        <GBAuthor>Kerlavage AR</GBAuthor>
+        <GBAuthor>Fleischmann RD</GBAuthor>
+        <GBAuthor>Fuldner RA</GBAuthor>
+        <GBAuthor>Bult CJ</GBAuthor>
+        <GBAuthor>Lee NH</GBAuthor>
+        <GBAuthor>Kirkness EF</GBAuthor>
+        <GBAuthor>Weinstock KG</GBAuthor>
+        <GBAuthor>Gocayne JD</GBAuthor>
+        <GBAuthor>White O</GBAuthor>
+      </GBReference_authors>
+      <GBReference_consortium>et al</GBReference_consortium>
+      <GBReference_title>Initial assessment of human gene diversity and expression patterns based upon 83 million nucleotides of cDNA sequence</GBReference_title>
+      <GBReference_journal>Nature 377 (6547 SUPPL), 3-174 (1995)</GBReference_journal>
+      <GBReference_pubmed>7566098</GBReference_pubmed>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>7</GBReference_reference>
+      <GBReference_position>1..4560</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Duan DR</GBAuthor>
+        <GBAuthor>Humphrey JS</GBAuthor>
+        <GBAuthor>Chen DY</GBAuthor>
+        <GBAuthor>Weng Y</GBAuthor>
+        <GBAuthor>Sukegawa J</GBAuthor>
+        <GBAuthor>Lee S</GBAuthor>
+        <GBAuthor>Gnarra JR</GBAuthor>
+        <GBAuthor>Linehan WM</GBAuthor>
+        <GBAuthor>Klausner RD</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Characterization of the VHL tumor suppressor gene product: localization, complex formation, and the effect of natural inactivating mutations</GBReference_title>
+      <GBReference_journal>Proc. Natl. Acad. Sci. U.S.A. 92 (14), 6459-6463 (1995)</GBReference_journal>
+      <GBReference_pubmed>7604013</GBReference_pubmed>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>8</GBReference_reference>
+      <GBReference_position>1..4560</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Latif F</GBAuthor>
+        <GBAuthor>Tory K</GBAuthor>
+        <GBAuthor>Gnarra J</GBAuthor>
+        <GBAuthor>Yao M</GBAuthor>
+        <GBAuthor>Duh FM</GBAuthor>
+        <GBAuthor>Orcutt ML</GBAuthor>
+        <GBAuthor>Stackhouse T</GBAuthor>
+        <GBAuthor>Kuzmin I</GBAuthor>
+        <GBAuthor>Modi W</GBAuthor>
+        <GBAuthor>Geil L</GBAuthor>
+      </GBReference_authors>
+      <GBReference_consortium>et al</GBReference_consortium>
+      <GBReference_title>Identification of the von Hippel-Lindau disease tumor suppressor gene</GBReference_title>
+      <GBReference_journal>Science 260 (5112), 1317-1320 (1993)</GBReference_journal>
+      <GBReference_pubmed>8493574</GBReference_pubmed>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>9</GBReference_reference>
+      <GBReference_position>1..4560</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Frantzen,C.</GBAuthor>
+        <GBAuthor>Links,T.P.</GBAuthor>
+        <GBAuthor>Giles,R.H.</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Von Hippel-Lindau Disease</GBReference_title>
+      <GBReference_journal>(in) Pagon RA, Adam MP, Bird TD, Dolan CR, Fong CT and Stephens K (Eds.); GENEREVIEWS; (1993)</GBReference_journal>
+      <GBReference_pubmed>20301636</GBReference_pubmed>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>10</GBReference_reference>
+      <GBReference_position>1..4560</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Neumann HP</GBAuthor>
+        <GBAuthor>Wiestler OD</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Clustering of features of von Hippel-Lindau syndrome: evidence for a complex genetic locus</GBReference_title>
+      <GBReference_journal>Lancet 337 (8749), 1052-1054 (1991)</GBReference_journal>
+      <GBReference_pubmed>1673491</GBReference_pubmed>
+      <GBReference_remark>Review article</GBReference_remark>
+    </GBReference>
+  </GBSeq_references>
+  <GBSeq_comment>REVIEWED REFSEQ: This record has been curated by NCBI staff. The reference sequence was derived from AC034193.5, L15409.1, AK315799.1, BC058831.1 and D58014.1.; This sequence is a reference standard in the RefSeqGene project.; On Jan 19, 2011 this sequence version replaced gi:38045904.; ~Summary: Von Hippel-Lindau syndrome (VHL) is a dominantly inherited familial cancer syndrome predisposing to a variety of malignant and benign tumors. A germline mutation of this gene is the basis of familial inheritance of VHL syndrome. The protein encoded by this gene is a component of the protein complex that includes elongin B, elongin C, and cullin-2, and possesses ubiquitin ligase E3 activity. This protein is involved in the ubiquitination and degradation of hypoxia-inducible-factor (HIF), which is a transcription factor that plays a central role in the regulation of gene expression by oxygen. RNA polymerase II subunit POLR2G/RPB7 is also reported to be a target of this protein. Alternatively spliced transcript variants encoding distinct isoforms have been observed. [provided by RefSeq, Jul 2008]; ~Transcript Variant: This variant (1) represents the longer transcript and encodes the longer isoform (1).; ~Sequence Note: This RefSeq record was created from transcript and genomic sequence data to make the sequence consistent with the reference genome assembly. The genomic coordinates used for the transcript record were based on transcript alignments.; ~Publication Note: This RefSeq record includes a subset of the publications that are available for this gene. Please see the Gene record to access additional publications.; ##Evidence-Data-START## Transcript exon combination L15409.1, BQ893536.1 [ECO:0000332] RNAseq introns single sample supports all introns ERS025081, ERS025082 [ECO:0000348] ##Evidence-Data-END##; COMPLETENESS: complete on the 3&apos; end.</GBSeq_comment>
+  <GBSeq_primary>REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP~1-19                AC034193.5         22461-22479         c~20-141              L15409.1           20-141              ~142-855             AK315799.1         1-714               ~856-1953            AC034193.5         13051-14148         c~1954-2016           BC058831.1         1682-1744           ~2017-4509           AC034193.5         10495-12987         c~4510-4560           D58014.1           180-230             </GBSeq_primary>
+  <GBSeq_feature-table>
+    <GBFeature>
+      <GBFeature_key>source</GBFeature_key>
+      <GBFeature_location>1..4560</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1</GBInterval_from>
+          <GBInterval_to>4560</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>organism</GBQualifier_name>
+          <GBQualifier_value>Homo sapiens</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>mol_type</GBQualifier_name>
+          <GBQualifier_value>mRNA</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>taxon:9606</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>chromosome</GBQualifier_name>
+          <GBQualifier_value>3</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>map</GBQualifier_name>
+          <GBQualifier_value>3p25.3</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>gene</GBFeature_key>
+      <GBFeature_location>1..4560</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1</GBInterval_from>
+          <GBInterval_to>4560</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>von Hippel-Lindau tumor suppressor, E3 ubiquitin protein ligase</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>GeneID:7428</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>HGNC:12687</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>HPRD:01905</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>MIM:608537</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>exon</GBFeature_key>
+      <GBFeature_location>1..553</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1</GBInterval_from>
+          <GBInterval_to>553</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>alignment:Splign:1.39.8</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>177..454</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>177</GBInterval_from>
+          <GBInterval_to>454</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>GDB:532951</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:157557</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>177..322</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>177</GBInterval_from>
+          <GBInterval_to>322</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>GDB:361141</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:156738</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>CDS</GBFeature_key>
+      <GBFeature_location>214..855</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>214</GBInterval_from>
+          <GBInterval_to>855</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>isoform 1 is encoded by transcript variant 1; elongin binding protein; von Hippel-Lindau disease tumor suppressor; protein G7</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>codon_start</GBQualifier_name>
+          <GBQualifier_value>1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>transl_table</GBQualifier_name>
+          <GBQualifier_value>1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>product</GBQualifier_name>
+          <GBQualifier_value>von Hippel-Lindau disease tumor suppressor isoform 1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>protein_id</GBQualifier_name>
+          <GBQualifier_value>NP_000542.1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>GI:4507891</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>CCDS:CCDS2597.1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>GeneID:7428</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>HGNC:12687</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>HPRD:01905</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>MIM:608537</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>translation</GBQualifier_name>
+          <GBQualifier_value>MPRRAENWDEAEVGAEEAGVEEYGPEEDGGEESGAEESGPEESGPEELGAEEEMEAGRPRPVLRSVNSREPSQVIFCNRSPRVVLPVWLNFDGEPQPYPTLPPGTGRRIHSYRGHLWLFRDAGTHDGLLVNQTELFVPSLNVDGQPIFANITLPVYTLKERCLQVVRSLVKPENYRRLDIVRSLYEDLEDHPNVQKDLERLTQERIAHQRMGD</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>misc_feature</GBFeature_key>
+      <GBFeature_location>253..372</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>253</GBInterval_from>
+          <GBInterval_to>372</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>experiment</GBQualifier_name>
+          <GBQualifier_value>experimental evidence, no additional details recorded</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>propagated from UniProtKB/Swiss-Prot (P40337.2); Region: 8 X 5 AA tandem repeats of G-[PAVG]-E-E-[DAYSLE]</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>misc_feature</GBFeature_key>
+      <GBFeature_location>373..375</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>373</GBInterval_from>
+          <GBInterval_to>375</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>Region: alternative start codon</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>misc_feature</GBFeature_key>
+      <GBFeature_location>511..678</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>511</GBInterval_from>
+          <GBInterval_to>678</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>experiment</GBQualifier_name>
+          <GBQualifier_value>experimental evidence, no additional details recorded</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>propagated from UniProtKB/Swiss-Prot (P40337.2); Region: Involved in binding to CCT complex</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>misc_feature</GBFeature_key>
+      <GBFeature_location>682..711</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>682</GBInterval_from>
+          <GBInterval_to>711</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>experiment</GBQualifier_name>
+          <GBQualifier_value>experimental evidence, no additional details recorded</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>propagated from UniProtKB/Swiss-Prot (P40337.2); Region: Interaction with Elongin BC complex</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>262..454</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>262</GBInterval_from>
+          <GBInterval_to>454</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>GDB:361144</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:156739</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>364..488</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>364</GBInterval_from>
+          <GBInterval_to>488</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>RH71303</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:44639</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>exon</GBFeature_key>
+      <GBFeature_location>554..676</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>554</GBInterval_from>
+          <GBInterval_to>676</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>alignment:Splign:1.39.8</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>exon</GBFeature_key>
+      <GBFeature_location>677..4560</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>677</GBInterval_from>
+          <GBInterval_to>4560</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>alignment:Splign:1.39.8</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>1062..1171</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1062</GBInterval_from>
+          <GBInterval_to>1171</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>GDB:270439</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:156352</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>1323..1561</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1323</GBInterval_from>
+          <GBInterval_to>1561</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>STS-L15409</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:69168</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>2020..3523</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>2020</GBInterval_from>
+          <GBInterval_to>3523</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>L17688</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:74509</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>2219..2343</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>2219</GBInterval_from>
+          <GBInterval_to>2343</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>SHGC-33879</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:69217</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>2282..2837</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>2282</GBInterval_from>
+          <GBInterval_to>2837</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>VHL__5065</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:463929</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>2471..2570</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>2471</GBInterval_from>
+          <GBInterval_to>2570</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>RH16642</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:12631</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>2920..3998</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>2920</GBInterval_from>
+          <GBInterval_to>3998</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>L17971</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:43966</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>2997..3658</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>2997</GBInterval_from>
+          <GBInterval_to>3658</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>GDB:631802</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:158429</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>3051..3179</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>3051</GBInterval_from>
+          <GBInterval_to>3179</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>D15S1477</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:474482</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>3153..3928</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>3153</GBInterval_from>
+          <GBInterval_to>3928</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>GDB:434012</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:157204</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>3226..3931</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>3226</GBInterval_from>
+          <GBInterval_to>3931</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>L17705</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:66091</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>3228..3998</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>3228</GBInterval_from>
+          <GBInterval_to>3998</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>L17971</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:43966</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>3602..3923</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>3602</GBInterval_from>
+          <GBInterval_to>3923</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>RH79802</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:88688</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>3637..3927</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>3637</GBInterval_from>
+          <GBInterval_to>3927</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>GDB:631813</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:158430</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>3637..3793</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>3637</GBInterval_from>
+          <GBInterval_to>3793</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>GDB:631813</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:158430</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>4040..4273</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>4040</GBInterval_from>
+          <GBInterval_to>4273</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>L18426</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:34648</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>4041..4271</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>4041</GBInterval_from>
+          <GBInterval_to>4271</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>D5S1597E</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:151019</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>4044..4264</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>4044</GBInterval_from>
+          <GBInterval_to>4264</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>D1S1423</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:149619</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>4410..4558</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>4410</GBInterval_from>
+          <GBInterval_to>4558</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>SHGC-31692</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:82991</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>polyA_signal</GBFeature_key>
+      <GBFeature_location>4533..4538</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>4533</GBInterval_from>
+          <GBInterval_to>4538</GBInterval_to>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>polyA_site</GBFeature_key>
+      <GBFeature_location>4557</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_point>4557</GBInterval_point>
+          <GBInterval_accession>NM_000551.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>VHL</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>HRCA1; pVHL; RCA1; VHL1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>The 3&apos;-most polyA site has not been determined. This is an internal polyA site.</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+  </GBSeq_feature-table>
+  <GBSeq_sequence>cctcgcctccgttacaacggcctacggtgctggaggatccttctgcgcacgcgcacagcctccggccggctatttccgcgagcgcgttccatcctctaccgagcgcgcgcgaagactacggaggtcgactcgggagcgcgcacgcagctccgccccgcgtccgacccgcggatcccgcggcgtccggcccgggtggtctggatcgcggagggaatgccccggagggcggagaactgggacgaggccgaggtaggcgcggaggaggcaggcgtcgaagagtacggccctgaagaagacggcggggaggagtcgggcgccgaggagtccggcccggaagagtccggcccggaggaactgggcgccgaggaggagatggaggccgggcggccgcggcccgtgctgcgctcggtgaactcgcgcgagccctcccaggtcatcttctgcaatcgcagtccgcgcgtcgtgctgcccgtatggctcaacttcgacggcgagccgcagccctacccaacgctgccgcctggcacgggccgccgcatccacagctaccgaggtcacctttggctcttcagagatgcagggacacacgatgggcttctggttaaccaaactgaattatttgtgccatctctcaatgttgacggacagcctatttttgccaatatcacactgccagtgtatactctgaaagagcgatgcctccaggttgtccggagcctagtcaagcctgagaattacaggagactggacatcgtcaggtcgctctacgaagatctggaagaccacccaaatgtgcagaaagacctggagcggctgacacaggagcgcattgcacatcaacggatgggagattgaagatttctgttgaaacttacactgtttcatctcagcttttgatggtactgatgagtcttgatctagatacaggactggttccttccttagtttcaaagtgtctcattctcagagtaaaataggcaccattgcttaaaagaaagttaactgacttcactaggcattgtgatgtttaggggcaaacatcacaaaatgtaatttaatgcctgcccattagagaagtatttatcaggagaaggtggtggcatttttgcttcctagtaagtcaggacagcttgtatgtaaggaggtttgtataagtaattcagtgggaattgcagcatatcgtttaattttaagaaggcattggcatctgcttttaatggatgtataatacatccattctacatccgtagcggttggtgacttgtctgcctcctgctttgggaagactgaggcatccgtgaggcagggacaagtctttctcctctttgagaccccagtgcctgcacatcatgagccttcagtcagggtttgtcagaggaacaaaccaggggacactttgttagaaagtgcttagaggttctgcctctatttttgttggggggtgggagaggggaccttaaaatgtgtacagtgaacaaatgtcttaaagggaatcatttttgtaggaagcattttttataattttctaagtcgtgcactttctcggtccactcttgttgaagtgctgttttattactgtttctaaactaggattgacattctacagttgtgataatagcatttttgtaacttgccatccgcacagaaaatacgagaaaatctgcatgtttgattatagtattaatggacaaataagtttttgctaaatgtgagtatttctgttcctttttgtaaatatgtgacattcctgattgatttgggtttttttgttgttgttgttttgttttgttttgtttttttgagatggagtctcactcttgtcacccaggctggagtgcagtggcgccatctcggctcactgcaacctctgcctcctgggttcacgtaatcctcctgagtagctgggattacaggcgcctgccaccacgctggccaatttttgtacttttagtagagacagtgtttcgccatgttggccaggctggtttcaaactcctgacctcaggtgatccgcccacctcagcctcccaaaatggtgggattacaggtgtgtgggccaccgtgcctggctgattcagcattttttatcaggcaggaccaggtggcacttccacctccagcctctggtcctaccaatggattcatggagtagcctggactgtttcatagttttctaaatgtacaaattcttataggctagacttagattcattaactcaaattcaatgcttctatcagactcagttttttgtaactaatagatttttttttccacttttgttctactccttccctaatagctttttaaaaaaatctccccagtagagaaacatttggaaaagacagaaaactaaaaaggaagaaaaaagatccctattagatacacttcttaaatacaatcacattaacattttgagctatttccttccagcctttttagggcagattttggttggtttttacatagttgagattgtactgttcatacagttttataccctttttcatttaactttataacttaaatattgctctatgttagtataagcttttcacaaacattagtatagtctcccttttataattaatgtttgtgggtatttcttggcatgcatctttaattccttatcctagcctttgggcacaattcctgtgctcaaaaatgagagtgacggctggcatggtggctcccgcctgtaatcccagtactttggaaagccaaggtaagaggattgcttgagcccagaacttcaagatgagcctgggctcatagtgagaacccatctatacaaaaaatttttaaaaattagcatggcggcacacatctgtaatcctagctacttggcaggctgaggtgagaagatcattggagtttaggaattggaggctgcagtgagccatgagtatgccactgcactccagcctgggggacagagcaagaccctgcctcaaaaaaaaaaaaaaaaaaaaaatcaggccgggcatggtggctcacgcctgtaatcccagcactttgggaggtcgaggtgggcagatcacctgaggtcaggagttcgagaccagcctggccaacatggtaaaaccccatttctactaaaaaatacaagaattagctgggtgtggtggcgcatgcctgtaatcctagctactcaggaggctgaggcaggagaatcacttgaacccaggaggcgaagattgcagtgagctgatatcgcaccattgtactccagcctgtgtgacagagcaatactcttgtctcaaaaaaaaaaaaaaattcaaatcagagtgaagtgaatgagacactccagttttccttctactccgaatttcaactgattttagctcctcctttcaacattcaacaaatagtctttttttttttttttttttttttttttttgagatggagtctcactctgttgcccaggctggagtgcagtggtgcgatctctgctcactacaagctctgcctcccgagttcaagtgattctcctggctcaccctcctgagtagctgggattacaggcgcctgccaccatgcctggctaattttgtgtttttagtggagacggggtttcaccatgttgtccaggatggtcttgatctcctgaccttgtgatccacccacctcagcctcccaaagtgctgggattacaggtgtgagccaccgcgtccagccagctttattattttttttaagctgtctttgtgtcaaaatgatagttcatgctcctcttgttaaaacctgcaggccgagcacagtggctcatgcctgtaatcccagcattttgggagaccaaggcggatggatcacctgaggtcaggagctgaagaccagcctggctaacatggtgaaacctcatctccacttaaaatacaaaaattgccggccgcggcggctcatgcctgtaatcccagcactttgggaggcctaggcgggtggatcacgaggtcaggaaatcgagaccatcctggctaacacgggtgaaaccccgtctctattaaaaaatagaaaaaattaggcgggcgtggtggtgagcgcctgtagtcccagctactcgagagcctgaggcaggagaatggcatgaacctggaaggcggagcttgcagtgagctgagatggtgccactgcactctaacctgggcgacagagtgagacaccgtctcaaaaaaaaaaacaaaaaacaaaaattatccaggtgtggcggtgggcgcctgtgaggcaggcgaatctcttgaacccgggaggcggaggttgcagtgagccaagatcacaccattgcactccagcctgggcaacaagagtgaaattccatctcaaaaagaaaccaaaaaaacaaaaaaaaaacatgccgtttgagtactgtgtttttggtgttgtccaaggaaaattaaaaacctgtagcatgaataatgtttgtttttcatttcgaatcttgtgaatgtattaaatatatcgctcttaagagacggtgaagttcctatttcaagtttttttttttttttttttttttaaagctgttttttaatacattaaatggtgctgagtaaaggaaatag</GBSeq_sequence>
+</GBSeq>
+
+</GBSet>
+

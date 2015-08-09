@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2015//EN" "http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_150101.dtd">
+<PubmedArticleSet>
+<PubmedArticle>
+    <MedlineCitation Owner="NLM" Status="MEDLINE">
+        <PMID Version="1">22351513</PMID>
+        <DateCreated>
+            <Year>2012</Year>
+            <Month>07</Month>
+            <Day>18</Day>
+        </DateCreated>
+        <DateCompleted>
+            <Year>2012</Year>
+            <Month>12</Month>
+            <Day>21</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2013</Year>
+            <Month>11</Month>
+            <Day>21</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1097-0010</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>92</Volume>
+                    <Issue>11</Issue>
+                    <PubDate>
+                        <Year>2012</Year>
+                        <Month>Aug</Month>
+                        <Day>30</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Journal of the science of food and agriculture</Title>
+                <ISOAbbreviation>J. Sci. Food Agric.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Variation in oil content and fatty acid composition of the seed oil of Acacia species collected from the northwest zone of India.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>2310-5</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1002/jsfa.5627</ELocationID>
+            <Abstract>
+                <AbstractText Label="BACKGROUND" NlmCategory="BACKGROUND">The oil content and fatty acid composition of the mature seeds of Acacia species collected from natural habitat of the northwest zone of the Indian subcontinent (Rajasthan) were analyzed in order to determine their potential for human or animal consumption.</AbstractText>
+                <AbstractText Label="RESULTS" NlmCategory="RESULTS">Oil content varied between 40 and 102 g kg⁻¹. The highest oil content was obtained in Acacia bivenosa DC. (102 g kg⁻¹) among the nine Acacia species. The fatty acid composition showed higher levels of unsaturated fatty acids, especially linoleic acid (~757.7 g kg⁻¹ in A. bivenosa), oleic acid (~525.0 g kg⁻¹ in A. nubica) and dominant saturated fatty acids were found to be 192.5 g kg⁻¹ palmitic acid and 275.6 g kg⁻¹ stearic acid in A. leucophloea and A. nubica respectively. Seed oils of Acacia species can thus be classified in the linoleic-oleic acid group. Significant variations were observed in oil content and fatty acid composition of Acacia species.</AbstractText>
+                <AbstractText Label="CONCLUSION" NlmCategory="CONCLUSIONS">The present study revealed that the seed oil of Acacia species could be a new source of high linoleic-oleic acid-rich edible oil and its full potential should be exploited. The use of oil from Acacia seed is of potential economic benefit to the poor native population of the areas where it is cultivated. The fatty acid composition of Acacia seed oils is very similar to that reported for commercially available edible vegetable oils like soybean, mustard, sunflower, groundnut and olive. Hence the seed oil of Acacia species could be a new source of edible vegetable oil after toxicological studies.</AbstractText>
+                <CopyrightInformation>Copyright © 2012 Society of Chemical Industry.</CopyrightInformation>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Khan</LastName>
+                    <ForeName>Riyazuddeen</ForeName>
+                    <Initials>R</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Botany, Jamia Hamdard, Hamdard Nagar, New Delhi 110062, India.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Srivastava</LastName>
+                    <ForeName>Ruchi</ForeName>
+                    <Initials>R</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Khan</LastName>
+                    <ForeName>Mather Ali</ForeName>
+                    <Initials>MA</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Alam</LastName>
+                    <ForeName>Pravej</ForeName>
+                    <Initials>P</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Abdin</LastName>
+                    <ForeName>Malik Zainul</ForeName>
+                    <Initials>MZ</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Mahmooduzzafar</LastName>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2012</Year>
+                <Month>02</Month>
+                <Day>20</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>England</Country>
+            <MedlineTA>J Sci Food Agric</MedlineTA>
+            <NlmUniqueID>0376334</NlmUniqueID>
+            <ISSNLinking>0022-5142</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D004041">Dietary Fats</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D005227">Fatty Acids</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D010938">Plant Oils</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>2UMI9U37CP</RegistryNumber>
+                <NameOfSubstance UI="D019301">Oleic Acid</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>9KJL21T0QJ</RegistryNumber>
+                <NameOfSubstance UI="D019787">Linoleic Acid</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D000045">Acacia</DescriptorName>
+                <QualifierName MajorTopicYN="Y" UI="Q000737">chemistry</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000254">growth &amp; development</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D004041">Dietary Fats</DescriptorName>
+                <QualifierName MajorTopicYN="N" UI="Q000032">analysis</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000191">economics</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000302">isolation &amp; purification</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000600">supply &amp; distribution</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D005227">Fatty Acids</DescriptorName>
+                <QualifierName MajorTopicYN="Y" UI="Q000032">analysis</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D005410">Flame Ionization</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" Type="Geographic" UI="D007194">India</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D019787">Linoleic Acid</DescriptorName>
+                <QualifierName MajorTopicYN="N" UI="Q000032">analysis</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D019301">Oleic Acid</DescriptorName>
+                <QualifierName MajorTopicYN="N" UI="Q000032">analysis</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D010938">Plant Oils</DescriptorName>
+                <QualifierName MajorTopicYN="Y" UI="Q000737">chemistry</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000191">economics</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000302">isolation &amp; purification</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000600">supply &amp; distribution</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D012639">Seeds</DescriptorName>
+                <QualifierName MajorTopicYN="Y" UI="Q000737">chemistry</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000254">growth &amp; development</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D013045">Species Specificity</DescriptorName>
+            </MeshHeading>
+        </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2011</Year>
+                <Month>8</Month>
+                <Day>7</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="revised">
+                <Year>2012</Year>
+                <Month>1</Month>
+                <Day>14</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="accepted">
+                <Year>2012</Year>
+                <Month>1</Month>
+                <Day>19</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="aheadofprint">
+                <Year>2012</Year>
+                <Month>2</Month>
+                <Day>20</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2012</Year>
+                <Month>2</Month>
+                <Day>22</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2012</Year>
+                <Month>2</Month>
+                <Day>22</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2012</Year>
+                <Month>12</Month>
+                <Day>22</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="doi">10.1002/jsfa.5627</ArticleId>
+            <ArticleId IdType="pubmed">22351513</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+</PubmedArticleSet>

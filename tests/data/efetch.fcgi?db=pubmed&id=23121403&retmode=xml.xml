@@ -1,0 +1,1007 @@
+<?xml version="1.0"?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2015//EN" "http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_150101.dtd">
+<PubmedArticleSet>
+<PubmedArticle>
+    <MedlineCitation Owner="NLM" Status="MEDLINE">
+        <PMID Version="1">23121403</PMID>
+        <DateCreated>
+            <Year>2012</Year>
+            <Month>11</Month>
+            <Day>22</Day>
+        </DateCreated>
+        <DateCompleted>
+            <Year>2012</Year>
+            <Month>12</Month>
+            <Day>05</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2014</Year>
+            <Month>11</Month>
+            <Day>20</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1533-4406</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>367</Volume>
+                    <Issue>21</Issue>
+                    <PubDate>
+                        <Year>2012</Year>
+                        <Month>Nov</Month>
+                        <Day>22</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>The New England journal of medicine</Title>
+                <ISOAbbreviation>N. Engl. J. Med.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Low-dose aspirin for preventing recurrent venous thromboembolism.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>1979-87</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1056/NEJMoa1210384</ELocationID>
+            <Abstract>
+                <AbstractText Label="BACKGROUND" NlmCategory="BACKGROUND">Patients who have had a first episode of unprovoked venous thromboembolism have a high risk of recurrence after anticoagulants are discontinued. Aspirin may be effective in preventing a recurrence of venous thromboembolism.</AbstractText>
+                <AbstractText Label="METHODS" NlmCategory="METHODS">We randomly assigned 822 patients who had completed initial anticoagulant therapy after a first episode of unprovoked venous thromboembolism to receive aspirin, at a dose of 100 mg daily, or placebo for up to 4 years. The primary outcome was a recurrence of venous thromboembolism.</AbstractText>
+                <AbstractText Label="RESULTS" NlmCategory="RESULTS">During a median follow-up period of 37.2 months, venous thromboembolism recurred in 73 of 411 patients assigned to placebo and in 57 of 411 assigned to aspirin (a rate of 6.5% per year vs. 4.8% per year; hazard ratio with aspirin, 0.74; 95% confidence interval [CI], 0.52 to 1.05; P=0.09). Aspirin reduced the rate of the two prespecified secondary composite outcomes: the rate of venous thromboembolism, myocardial infarction, stroke, or cardiovascular death was reduced by 34% (a rate of 8.0% per year with placebo vs. 5.2% per year with aspirin; hazard ratio with aspirin, 0.66; 95% CI, 0.48 to 0.92; P=0.01), and the rate of venous thromboembolism, myocardial infarction, stroke, major bleeding, or death from any cause was reduced by 33% (hazard ratio, 0.67; 95% CI, 0.49 to 0.91; P=0.01). There was no significant between-group difference in the rates of major or clinically relevant nonmajor bleeding episodes (rate of 0.6% per year with placebo vs. 1.1% per year with aspirin, P=0.22) or serious adverse events.</AbstractText>
+                <AbstractText Label="CONCLUSIONS" NlmCategory="CONCLUSIONS">In this study, aspirin, as compared with placebo, did not significantly reduce the rate of recurrence of venous thromboembolism but resulted in a significant reduction in the rate of major vascular events, with improved net clinical benefit. These results substantiate earlier evidence of a therapeutic benefit of aspirin when it is given to patients after initial anticoagulant therapy for a first episode of unprovoked venous thromboembolism. (Funded by National Health and Medical Research Council [Australia] and others; Australian New Zealand Clinical Trials Registry number, ACTRN12605000004662.).</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Brighton</LastName>
+                    <ForeName>Timothy A</ForeName>
+                    <Initials>TA</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Haematology, South Eastern Area Laboratory Services (SEALS), Prince of Wales Hospital, Sydney, Australia. aspire@ctc.usyd.edu.au</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Eikelboom</LastName>
+                    <ForeName>John W</ForeName>
+                    <Initials>JW</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Mann</LastName>
+                    <ForeName>Kristy</ForeName>
+                    <Initials>K</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Mister</LastName>
+                    <ForeName>Rebecca</ForeName>
+                    <Initials>R</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Gallus</LastName>
+                    <ForeName>Alexander</ForeName>
+                    <Initials>A</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Ockelford</LastName>
+                    <ForeName>Paul</ForeName>
+                    <Initials>P</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Gibbs</LastName>
+                    <ForeName>Harry</ForeName>
+                    <Initials>H</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Hague</LastName>
+                    <ForeName>Wendy</ForeName>
+                    <Initials>W</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Xavier</LastName>
+                    <ForeName>Denis</ForeName>
+                    <Initials>D</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Diaz</LastName>
+                    <ForeName>Rafael</ForeName>
+                    <Initials>R</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Kirby</LastName>
+                    <ForeName>Adrienne</ForeName>
+                    <Initials>A</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Simes</LastName>
+                    <ForeName>John</ForeName>
+                    <Initials>J</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <CollectiveName>ASPIRE Investigators</CollectiveName>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D016448">Multicenter Study</PublicationType>
+                <PublicationType UI="D016449">Randomized Controlled Trial</PublicationType>
+                <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2012</Year>
+                <Month>11</Month>
+                <Day>04</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>N Engl J Med</MedlineTA>
+            <NlmUniqueID>0255562</NlmUniqueID>
+            <ISSNLinking>0028-4793</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D010975">Platelet Aggregation Inhibitors</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>R16CO5Y76E</RegistryNumber>
+                <NameOfSubstance UI="D001241">Aspirin</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>AIM</CitationSubset>
+        <CitationSubset>IM</CitationSubset>
+        <CommentsCorrectionsList>
+            <CommentsCorrections RefType="CommentIn">
+                <RefSource>Dtsch Med Wochenschr. 2013 Feb;138(6):244</RefSource>
+                <PMID Version="1">23479792</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="CommentIn">
+                <RefSource>Rev Clin Esp (Barc). 2013 May;213(4):212</RefSource>
+                <PMID Version="1">23814790</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="CommentIn">
+                <RefSource>Nat Rev Cardiol. 2013 Jan;10(1):4</RefSource>
+                <PMID Version="1">23165071</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="CommentIn">
+                <RefSource>N Engl J Med. 2013 Feb 21;368(8):773</RefSource>
+                <PMID Version="1">23425172</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="CommentIn">
+                <RefSource>Ann Intern Med. 2013 Mar 19;158(6):JC2</RefSource>
+                <PMID Version="1">23552619</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="CommentIn">
+                <RefSource>N Engl J Med. 2013 Feb 21;368(8):772-3</RefSource>
+                <PMID Version="1">23425174</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="CommentIn">
+                <RefSource>N Engl J Med. 2013 Feb 21;368(8):772</RefSource>
+                <PMID Version="1">23425173</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="CommentIn">
+                <RefSource>N Engl J Med. 2012 Nov 22;367(21):2039-41</RefSource>
+                <PMID Version="1">23121404</PMID>
+            </CommentsCorrections>
+        </CommentsCorrectionsList>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D001241">Aspirin</DescriptorName>
+                <QualifierName MajorTopicYN="Y" UI="Q000008">administration &amp; dosage</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000009">adverse effects</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000627">therapeutic use</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D004311">Double-Blind Method</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D005260">Female</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D005500">Follow-Up Studies</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D006470">Hemorrhage</DescriptorName>
+                <QualifierName MajorTopicYN="N" UI="Q000139">chemically induced</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000453">epidemiology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D006801">Humans</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D015994">Incidence</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D008297">Male</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D008875">Middle Aged</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D010975">Platelet Aggregation Inhibitors</DescriptorName>
+                <QualifierName MajorTopicYN="Y" UI="Q000008">administration &amp; dosage</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000009">adverse effects</QualifierName>
+                <QualifierName MajorTopicYN="N" UI="Q000627">therapeutic use</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D012306">Risk</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D055502">Secondary Prevention</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N" UI="D054556">Venous Thromboembolism</DescriptorName>
+                <QualifierName MajorTopicYN="N" UI="Q000453">epidemiology</QualifierName>
+                <QualifierName MajorTopicYN="Y" UI="Q000517">prevention &amp; control</QualifierName>
+            </MeshHeading>
+        </MeshHeadingList>
+        <InvestigatorList>
+            <Investigator ValidYN="Y">
+                <LastName>Brighton</LastName>
+                <ForeName>T</ForeName>
+                <Initials>T</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Eikelboom</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Hague</LastName>
+                <ForeName>W</ForeName>
+                <Initials>W</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Kirby</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Mister</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Simes</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Gallus</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Ockelford</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Baker</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Gibbs</LastName>
+                <ForeName>H</ForeName>
+                <Initials>H</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Coughlin</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Xavier</LastName>
+                <ForeName>D</ForeName>
+                <Initials>D</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Diaz</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Agnelli</LastName>
+                <ForeName>G</ForeName>
+                <Initials>G</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Gibbs</LastName>
+                <ForeName>H</ForeName>
+                <Initials>H</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Karplus</LastName>
+                <ForeName>T</ForeName>
+                <Initials>T</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Fletcher</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>van Rij</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Rogers</LastName>
+                <ForeName>Anthony</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Hayward</LastName>
+                <ForeName>C</ForeName>
+                <Initials>C</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Young</LastName>
+                <ForeName>Graham</ForeName>
+                <Initials>G</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Crispin</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Slade</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Ward</LastName>
+                <ForeName>C</ForeName>
+                <Initials>C</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Tadayon</LastName>
+                <ForeName>N</ForeName>
+                <Initials>N</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Koutts</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Fisher</LastName>
+                <ForeName>L</ForeName>
+                <Initials>L</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Brighton</LastName>
+                <ForeName>T</ForeName>
+                <Initials>T</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>McCardie</LastName>
+                <ForeName>K</ForeName>
+                <Initials>K</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Bianchi</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Trinh</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Joseph</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Plenge</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Chong</LastName>
+                <ForeName>B</ForeName>
+                <Initials>B</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Davidson</LastName>
+                <ForeName>S</ForeName>
+                <Initials>S</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Waites</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Cahill</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Tiley</LastName>
+                <ForeName>C</ForeName>
+                <Initials>C</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Lacey</LastName>
+                <ForeName>M</ForeName>
+                <Initials>M</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Jackson</LastName>
+                <ForeName>D</ForeName>
+                <Initials>D</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Boys</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Seldon</LastName>
+                <ForeName>M</ForeName>
+                <Initials>M</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Gambrill</LastName>
+                <ForeName>M</ForeName>
+                <Initials>M</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Nandurkar</LastName>
+                <ForeName>H</ForeName>
+                <Initials>H</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Worland</LastName>
+                <ForeName>H</ForeName>
+                <Initials>H</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Salem</LastName>
+                <ForeName>H</ForeName>
+                <Initials>H</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Gollogly</LastName>
+                <ForeName>C</ForeName>
+                <Initials>C</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Campbell</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Marshall</LastName>
+                <ForeName>I</ForeName>
+                <Initials>I</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Hamilton</LastName>
+                <ForeName>K</ForeName>
+                <Initials>K</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Goss</LastName>
+                <ForeName>C</ForeName>
+                <Initials>C</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Salem</LastName>
+                <ForeName>H</ForeName>
+                <Initials>H</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Poulton</LastName>
+                <ForeName>L</ForeName>
+                <Initials>L</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Jackson</LastName>
+                <ForeName>M</ForeName>
+                <Initials>M</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>de Man</LastName>
+                <ForeName>T</ForeName>
+                <Initials>T</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Gan</LastName>
+                <ForeName>E</ForeName>
+                <Initials>E</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Cummins</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Leyden</LastName>
+                <ForeName>M</ForeName>
+                <Initials>M</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Sturtz</LastName>
+                <ForeName>C</ForeName>
+                <Initials>C</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Kubler</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Sansome</LastName>
+                <ForeName>X</ForeName>
+                <Initials>X</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>McCann</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Downey</LastName>
+                <ForeName>C</ForeName>
+                <Initials>C</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Carroll</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Duroux</LastName>
+                <ForeName>M</ForeName>
+                <Initials>M</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Hamwood</LastName>
+                <ForeName>S</ForeName>
+                <Initials>S</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Styles</LastName>
+                <ForeName>G</ForeName>
+                <Initials>G</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Buckmaster</LastName>
+                <ForeName>N</ForeName>
+                <Initials>N</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Schmidt</LastName>
+                <ForeName>T</ForeName>
+                <Initials>T</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Colquhoun</LastName>
+                <ForeName>D</ForeName>
+                <Initials>D</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Jardim</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Gallus</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Osmond</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Jeffries</LastName>
+                <ForeName>W</ForeName>
+                <Initials>W</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Trezona</LastName>
+                <ForeName>B</ForeName>
+                <Initials>B</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>McRae</LastName>
+                <ForeName>S</ForeName>
+                <Initials>S</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>King</LastName>
+                <ForeName>D</ForeName>
+                <Initials>D</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Baker</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Courtley</LastName>
+                <ForeName>K</ForeName>
+                <Initials>K</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Kimber</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Oliver</LastName>
+                <ForeName>L</ForeName>
+                <Initials>L</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>MacDonald</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Shepherd</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Ockelford</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Hulton</LastName>
+                <ForeName>M</ForeName>
+                <Initials>M</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Royle</LastName>
+                <ForeName>G</ForeName>
+                <Initials>G</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Haycock</LastName>
+                <ForeName>L</ForeName>
+                <Initials>L</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Simpson</LastName>
+                <ForeName>D</ForeName>
+                <Initials>D</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Yap</LastName>
+                <ForeName>K</ForeName>
+                <Initials>K</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Baker</LastName>
+                <ForeName>B</ForeName>
+                <Initials>B</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>McQuilkin</LastName>
+                <ForeName>H</ForeName>
+                <Initials>H</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Carter</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Body</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Heng</LastName>
+                <ForeName>L Lai</ForeName>
+                <Initials>LL</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Tan</LastName>
+                <ForeName>M</ForeName>
+                <Initials>M</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Tay</LastName>
+                <ForeName>J Chin</ForeName>
+                <Initials>JC</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Zou</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Pandharpurkar</LastName>
+                <ForeName>H Kumar</ForeName>
+                <Initials>HK</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>G</LastName>
+                <ForeName>Remya</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Stephen</LastName>
+                <ForeName>E</ForeName>
+                <Initials>E</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Benjamin</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Desai</LastName>
+                <ForeName>S C</ForeName>
+                <Initials>SC</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Singh</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Suresh</LastName>
+                <ForeName>K R</ForeName>
+                <Initials>KR</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>R</LastName>
+                <ForeName>Girija K</ForeName>
+                <Initials>GK</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Natarajan</LastName>
+                <ForeName>S</ForeName>
+                <Initials>S</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Goel</LastName>
+                <ForeName>D</ForeName>
+                <Initials>D</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Gupta</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Mishra</LastName>
+                <ForeName>B S</ForeName>
+                <Initials>BS</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Sidhu</LastName>
+                <ForeName>G</ForeName>
+                <Initials>G</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Sidhu</LastName>
+                <ForeName>R Singh</ForeName>
+                <Initials>RS</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Parakh</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Sharma</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Joshi</LastName>
+                <ForeName>S</ForeName>
+                <Initials>S</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Mahajan</LastName>
+                <ForeName>M</ForeName>
+                <Initials>M</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Grover</LastName>
+                <ForeName>T</ForeName>
+                <Initials>T</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Sharma</LastName>
+                <ForeName>K</ForeName>
+                <Initials>K</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Patel</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Kothurkar</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Ranade</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Fedele</LastName>
+                <ForeName>J L</ForeName>
+                <Initials>JL</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Cristófaro</LastName>
+                <ForeName>A C</ForeName>
+                <Initials>AC</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Gelersztein</LastName>
+                <ForeName>E</ForeName>
+                <Initials>E</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Gelersztein</LastName>
+                <ForeName>M</ForeName>
+                <Initials>M</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Sánchez</LastName>
+                <ForeName>A S</ForeName>
+                <Initials>AS</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Bowen</LastName>
+                <ForeName>L C</ForeName>
+                <Initials>LC</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Durán</LastName>
+                <ForeName>R O García</ForeName>
+                <Initials>RO</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Cámpora</LastName>
+                <ForeName>F</ForeName>
+                <Initials>F</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Ferro</LastName>
+                <ForeName>H Héctor</ForeName>
+                <Initials>HH</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Casais</LastName>
+                <ForeName>M V</ForeName>
+                <Initials>MV</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Mister</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Kirby</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Mann</LastName>
+                <ForeName>K</ForeName>
+                <Initials>K</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Van Holst Pellekaan</LastName>
+                <ForeName>C</ForeName>
+                <Initials>C</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Chinchen</LastName>
+                <ForeName>S</ForeName>
+                <Initials>S</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Lucas</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Hague</LastName>
+                <ForeName>W</ForeName>
+                <Initials>W</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Simes</LastName>
+                <ForeName>J</ForeName>
+                <Initials>J</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Xavier</LastName>
+                <ForeName>D</ForeName>
+                <Initials>D</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Pais</LastName>
+                <ForeName>P</ForeName>
+                <Initials>P</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Sigamani</LastName>
+                <ForeName>A</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Mathur</LastName>
+                <ForeName>N</ForeName>
+                <Initials>N</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>M</LastName>
+                <ForeName>Anupama</ForeName>
+                <Initials>A</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>B</LastName>
+                <ForeName>Deepthi K</ForeName>
+                <Initials>DK</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Diaz</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Chacon</LastName>
+                <ForeName>C</ForeName>
+                <Initials>C</Initials>
+            </Investigator>
+            <Investigator ValidYN="Y">
+                <LastName>Rucci</LastName>
+                <ForeName>R</ForeName>
+                <Initials>R</Initials>
+            </Investigator>
+        </InvestigatorList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="aheadofprint">
+                <Year>2012</Year>
+                <Month>11</Month>
+                <Day>4</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2012</Year>
+                <Month>11</Month>
+                <Day>6</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2012</Year>
+                <Month>11</Month>
+                <Day>6</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2012</Year>
+                <Month>12</Month>
+                <Day>10</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="doi">10.1056/NEJMoa1210384</ArticleId>
+            <ArticleId IdType="pubmed">23121403</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+</PubmedArticleSet>
