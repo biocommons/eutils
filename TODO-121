@@ -1,0 +1,16 @@
+In:
+
+* XML -> parse
+
+* update xmlfacades/README
+
+
+
+Post:
+* from future
+* XML -> parse, drop gzip
+* reformat
+* doc, docstrings
+* tag + push
+* other bugs?
+* arrow for dates

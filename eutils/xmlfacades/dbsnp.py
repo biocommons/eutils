@@ -12,14 +12,20 @@ protein_ac_re = re.compile('^(?:ENSP|NP)_')
 
 
 class ExchangeSet(eutils.xmlfacades.base.Base):
+
+    _root_tag = '{http://www.ncbi.nlm.nih.gov/SNP/docsum}ExchangeSet'
+
     def __iter__(self):
-        return ( Rs(n)
-                 for n in self._xmlroot.iterfind('docsum:Rs',namespaces={'docsum': self._xmlroot.nsmap[None]}) )
+        return (Rs(n)
+                 for n in self._xml_elem.iterfind('docsum:Rs',namespaces={'docsum': self._xml_elem.nsmap[None]}))
     def __len__(self):
-        return len( self._xmlroot.findall('docsum:Rs',namespaces={'docsum': self._xmlroot.nsmap[None]}) )
+        return len(self._xml_elem.findall('docsum:Rs',namespaces={'docsum': self._xml_elem.nsmap[None]}))
 
 
 class Rs(object):
+
+    _root_tag = 'Rs'
+
     def __init__(self,rs_node):
         assert rs_node.tag == '{http://www.ncbi.nlm.nih.gov/SNP/docsum}Rs'
         self._n = rs_node
