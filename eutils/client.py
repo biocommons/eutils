@@ -64,7 +64,6 @@ class Client(object):
             return ExchangeSet(xml)
         raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

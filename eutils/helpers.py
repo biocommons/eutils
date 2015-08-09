@@ -82,7 +82,6 @@ def elink_gene_to_nuccore(id):
         raise LocusNCBIError("received malformed elink reply from NCBI, dbfrom=gene, dbto=nuccore, id=" + id)
     return xml
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import absolute_import, division, print_function, unicode_literals
-
 """Provides support for parsing NCBI einfo queries as described here:
 
 http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo
@@ -27,7 +26,6 @@ class DbList(eutils.xmlfacades.base.Base):
     @property
     def databases(self):
         return sorted(self._xml_elem.xpath('DbName/text()'))
-
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

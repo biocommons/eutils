@@ -26,7 +26,6 @@ if __name__ == "__main__":
 
     pmasets = [PubmedArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot()) for relpath in relpaths]
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

@@ -85,7 +85,6 @@ if __name__ == "__main__":
     pas = PubmedArticleSet(le.parse(path).getroot())
     pa = iter(pas).next()
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

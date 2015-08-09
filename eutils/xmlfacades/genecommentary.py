@@ -59,7 +59,6 @@ class GeneCommentary(Base):
         assert len(gcgcs) == 1
         return GeneCommentaryGenomicCoords(gcgcs[0])
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

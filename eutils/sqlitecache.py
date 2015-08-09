@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import absolute_import, division, print_function, unicode_literals
-
 """simple key-value cache with transparent payload compression and expiration
 
 Taken from http://bitbucket.org/reece/rcore/
@@ -119,7 +118,6 @@ class SQLiteCache(object):
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
     c = SQLiteCache('/tmp/SQLiteCache-test.db')
-
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

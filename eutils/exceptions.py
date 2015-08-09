@@ -2,6 +2,7 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
+
 class EutilsError(Exception):
     pass
 
@@ -19,7 +20,6 @@ class EutilsNotFoundError(EutilsError):
 
 class EutilsNCBIError(EutilsError):
     pass
-
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

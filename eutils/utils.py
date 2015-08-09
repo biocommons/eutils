@@ -2,6 +2,7 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
+
 def xml_get1(node, xpath):
     return node.xpath(xpath)[0]
 
@@ -40,7 +41,6 @@ def arglist_to_dict(**args):
 
 
 a2d = arglist_to_dict
-
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
