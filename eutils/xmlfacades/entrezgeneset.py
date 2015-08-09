@@ -12,8 +12,7 @@ class EntrezgeneSet(Base):
 
     This object supports iteration, like this:
 
-    >> xml = gzip.open(os.path.join("entrezgeneset.xml.gz")).read()
-    >> doc = lxml.etree.XML(xml)
+    >> doc = lxml.etree.parse("entrezgeneset.xml.gz").getroot()
     >> egs = EntrezgeneSet(doc)
     >> len(egs.entrezgenes)
     4

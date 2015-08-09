@@ -55,7 +55,6 @@ class EInfoResult(eutils.xmlfacades.base.Base):
 
 
 if __name__ == "__main__":
-    import gzip
     import os
     import lxml.etree as le
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
@@ -63,8 +62,8 @@ if __name__ == "__main__":
     dir_path = os.path.join(data_dir, 'einfo.fcgi?db=protein&retmode=xml.xml.gz')
     dlr_path = os.path.join(data_dir, 'einfo.fcgi?retmode=xml.xml.gz')
 
-    eiinfo = eutils.xmlfacades.einforesult.EInfoResult(le.XML(gzip.open(dir_path).read()))
-    eilist = eutils.xmlfacades.einforesult.EInfoResult(le.XML(gzip.open(dlr_path).read()))
+    eiinfo = eutils.xmlfacades.einforesult.EInfoResult(le.parse(dir_path).getroot())
+    eilist = eutils.xmlfacades.einforesult.EInfoResult(le.parse(dlr_path).getroot())
 
     dbinfo = eiinfo.dbinfo
     dblist = eilist.dblist

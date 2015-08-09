@@ -1,7 +1,6 @@
 -*-outline-*-
 
-* from future
-* XML -> parse, drop gzip
+* xpath -> findtext where possible
 * reformat
 
 * doc, docstrings

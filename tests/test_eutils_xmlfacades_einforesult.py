@@ -13,7 +13,7 @@ class Test_eutils_xmlfacades_einforesult(unittest.TestCase):
     @staticmethod
     def _read_file(fn):
         path = os.path.join(data_dir, fn)
-        return EInfoResult(lxml.etree.XML(gzip.open(path).read()))
+        return EInfoResult(lxml.etree.parse(path).getroot())
 
     def setUp(self):
         self.eilist = self._read_file('einfo.fcgi?retmode=xml.xml.gz')

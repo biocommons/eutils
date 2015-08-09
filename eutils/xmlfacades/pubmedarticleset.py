@@ -15,7 +15,6 @@ class PubmedArticleSet(eutils.xmlfacades.base.Base):
 
 
 if __name__ == "__main__":
-    import gzip
     import os
     import lxml.etree as le
 
