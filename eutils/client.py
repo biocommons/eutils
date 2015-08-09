@@ -1,5 +1,7 @@
 import os
 
+import lxml.etree as le
+
 from eutils.exceptions import *
 from eutils.queryservice import QueryService
 from eutils.xmlfacades.dbsnp import ExchangeSet
@@ -7,8 +9,9 @@ from eutils.xmlfacades.einforesult import EInfoResult
 from eutils.xmlfacades.esearchresult import ESearchResult
 from eutils.xmlfacades.gbset import GBSet
 #from eutils.xmlfacades.gene import Gene
-from eutils.xmlfacades.pubmed import PubMedArticle
+from eutils.xmlfacades.pubmedarticleset import PubmedArticleSet
 
+# TODO: eutils-127: cache creation fails if ~/.cache doesn't already exist
 default_cache_path = os.path.join(os.path.expanduser('~'),'.cache','eutils-cache.db')
 
 
@@ -51,13 +54,14 @@ class Client(object):
         """
         db = db.lower()
         xml = self._qs.efetch({'db':db,'id':str(id)})
+        doc = le.parse(xml).getroot()
         if db in ['gene']:
-            return Gene(xml)
+            return Gene(doc)
         if db in ['nuccore']:
             # TODO: GBSet is misnamed; it should be GBSeq and get the GBSeq XML node as root (see gbset.py)
-            return GBSet(xml)
+            return GBSet(doc)
         if db in ['pubmed']:
-            return PubMedArticle(xml)
+            return iter(PubmedArticleSet(doc)).next()
         if db in ['snp']:
             return ExchangeSet(xml)
         raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))
