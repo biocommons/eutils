@@ -68,7 +68,6 @@ class Rs(object):
     def hgvs_protein_tags(self):
         return [t for t in self.hgvs_tags if protein_ac_re.match(t)]
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

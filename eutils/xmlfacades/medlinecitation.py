@@ -73,7 +73,6 @@ if __name__ == "__main__":
 
     mc = MedlineCitation(le.parse(path).getroot())
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

@@ -36,7 +36,6 @@ if __name__ == "__main__":
     gcgc_e = doc.findall('.//Gene-commentary_genomic-coords')[0]
     gcgc = GeneCommentaryGenomicCoords(gcgc_e)
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

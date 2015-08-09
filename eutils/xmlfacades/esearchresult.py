@@ -53,7 +53,6 @@ class ESearchResult(Base):
         if '</eSearchResult>' not in xml:
             raise EutilsNCBIError("received malformed ESearchResult reply")
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

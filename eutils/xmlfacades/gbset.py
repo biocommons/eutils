@@ -28,7 +28,6 @@ if __name__ == "__main__":
     path = os.path.join(data_dir, relpath)
     gbset = GBSet(le.parse(path).getroot())
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

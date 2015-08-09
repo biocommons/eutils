@@ -44,7 +44,6 @@ class Base(object):
     def __str__(self):
         return unicode(self).encode('utf-8')
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

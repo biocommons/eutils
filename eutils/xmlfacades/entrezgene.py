@@ -73,7 +73,6 @@ if __name__ == "__main__":
     n = doc.findall('.//Entrezgene')[0]
     o = Entrezgene(n)
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

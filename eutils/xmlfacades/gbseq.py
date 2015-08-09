@@ -134,7 +134,6 @@ if __name__ == "__main__":
     gbset = GBSet(le.parse(path).getroot())
     gbseq = iter(gbset).next()
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 

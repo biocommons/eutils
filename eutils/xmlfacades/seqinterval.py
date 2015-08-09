@@ -29,7 +29,6 @@ class SeqInterval(Base):
     def gi(self):
         return int(self._xml_elem.findtext('Seq-interval_id/Seq-id/Seq-id_gi'))
 
-
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 
