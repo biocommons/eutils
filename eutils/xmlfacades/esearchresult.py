@@ -35,13 +35,6 @@ class ESearchResult(Base):
         except AttributeError:
             return None
 
-    ############################################################################
-    ## Internals
-    @classmethod
-    def _validate_xml(xml):
-        """See Base.__init__ for explanation"""
-        if '</eSearchResult>' not in xml:
-            raise EutilsNCBIError("received malformed ESearchResult reply")
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
