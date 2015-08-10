@@ -21,7 +21,7 @@ class ClientX(eutils.client.Client):
                 n=esr.count,
                 hgnc=hgnc,
                 query=query))
-        gene = self.efetch(db='gene', id=esr.ids[0])
+        gene = iter(self.efetch(db='gene', id=esr.ids[0])).next()
         if hgnc != gene.hgnc:
             raise EutilsError("Queried for {q_hgnc}, got reply for gene {r_hgnc}".format(q_hgnc=hgnc, r_hgnc=gene.hgnc))
         return gene
@@ -34,7 +34,7 @@ class ClientX(eutils.client.Client):
             raise EutilsError("Received {n} replies for {acv} in database {db}".format(n=esr.count, acv=acv, db=db))
         if esr.count == 0:
             raise EutilsNotFoundError("No results for {query} in database {db}".format(query=query, db=db))
-        gbseq = self.efetch(db=db, id=esr.ids[0])
+        gbseq = iter(self.efetch(db=db, id=esr.ids[0])).next()
         if acv != gbseq.acv:
             raise EutilsNCBIError("Queried for {q_acv}, got reply for {r_acv}".format(q_acv=acv, r_acv=gbseq.acv))
         return gbseq
@@ -49,7 +49,7 @@ class ClientX(eutils.client.Client):
                 hgnc=hgnc,
                 o=organism,
                 db=db))
-        return self.efetch(db=db, id=','.join(map(str, esr.ids)))
+        return iter(self.efetch(db=db, id=','.join(map(str, esr.ids)))).next()
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
