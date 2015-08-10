@@ -13,7 +13,7 @@ class Entrezgene(Base):
     _root_tag = 'Entrezgene'
 
     def __unicode__(self):
-        return "{self.gene_id} ({self.hgnc}; {self.description})".format(self=self)
+        return "Entrezgene(id={self.gene_id};hgnc={self.hgnc};description={self.description};type={self.type})".format(self=self)
 
     @property
     def common_tax(self):
@@ -51,6 +51,9 @@ class Entrezgene(Base):
     @property
     def maploc(self):
         return self._xml_root.findtext('Entrezgene_gene/Gene-ref/Gene-ref_maploc')
+
+    # references is a synonym for gene_commentaries
+    references = gene_commentaries
 
     @property
     def tax_id(self):

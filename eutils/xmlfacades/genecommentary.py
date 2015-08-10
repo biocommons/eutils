@@ -20,6 +20,9 @@ class GeneCommentary(eutils.xmlfacades.base.Base):
 
     _root_tag = 'Gene-commentary'
 
+    def __unicode__(self):
+        return 'GeneCommentary(acv={self.acv},type={self.type},heading={self.heading},label={self.label})'.format(self=self)
+
     @property
     def accession(self):
         return self._xml_root.findtext('Gene-commentary_accession')
