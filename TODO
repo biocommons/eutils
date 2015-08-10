@@ -1,7 +1,5 @@
 -*-outline-*-
 
-* remove validate_xml methods
-
 * doc, docstrings
 * tag + push
 * Gene?
