@@ -13,13 +13,6 @@
 Net tests need to not use cache (easier when these are separated! -- #123)
 But... commit cache into repo for non-net tests
 
-* #120: "Documentation" is unclear eutils
-
-* #121: update xmlfacades to better match xml tags and cardinality
-
-* #126: IndexError retrieving "comment" field from GBSeq object eutils
-
-
 
 * #122: implement TTL support in cache
 
@@ -30,6 +23,8 @@ a thin throttling service based on the basic query service
 a caching service on the throttled service (since that's all the caching service should use)
 separate caching, throttling, querying, parsing/facades
 
-* #124: support webenv history
+* #124: Support large search result sets
+support webenv history
 use web history + iterators for chained searching
 
+* #126: IndexError retrieving "comment" field from GBSeq object eutils

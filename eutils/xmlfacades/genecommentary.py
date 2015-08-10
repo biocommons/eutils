@@ -82,7 +82,8 @@ class GeneCommentaryGenomicCoords(eutils.xmlfacades.base.Base):
 
     @property
     def intervals(self):
-        return [SeqInterval(n) for n in self._xml_root.findall('.//Seq-interval')]
+        return [(i.interval_from, i.interval_to)
+                for i in (SeqInterval(n) for n in self._xml_root.findall('.//Seq-interval'))]
 
     @property
     def _interval_str(self):
