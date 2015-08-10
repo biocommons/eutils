@@ -1,18 +1,8 @@
-import os
-
-from ez_setup import use_setuptools
-use_setuptools()
-
 from setuptools import setup, find_packages
 
 with open('doc/description.txt') as f:
     long_description = f.read()
 
-def version_handler(mgr, options):
-    version = mgr.get_current_version()
-    if version.endswith('dev'):
-        version += '-' + mgr._invoke('log','-l1','-r.','--template','{node|short}').strip()
-    return version
 
 setup(
     license = 'Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)',
@@ -63,7 +53,7 @@ setup(
 )
 
 ## <LICENSE>
-## Copyright 2014 Eutils Contributors (https://bitbucket.org/biocommons/eutils)
+## Copyright 2015 eutils Committers (https://bitbucket.org/biocommons/eutils)
 ## 
 ## Licensed under the Apache License, Version 2.0 (the "License");
 ## you may not use this file except in compliance with the License.
