@@ -21,12 +21,8 @@ class EntrezgeneSet(Base):
 
     _root_tag = 'Entrezgene-Set'
 
-    def __unicode__(self):
-        return '{type} ({chillin} children)'.format(type=type(self).__name__, chillin=len(self._xml_root.getchildren()))
-
     @property
     def entrezgenes(self):
-        # TODO: use cache decorator rather than homebrew
         try:
             return self._entrezgenes
         except AttributeError:

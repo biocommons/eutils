@@ -11,9 +11,9 @@ from eutils.exceptions import *
 from eutils.queryservice import QueryService
 from eutils.xmlfacades.dbsnp import ExchangeSet
 from eutils.xmlfacades.einforesult import EInfoResult
+from eutils.xmlfacades.entrezgeneset import EntrezgeneSet
 from eutils.xmlfacades.esearchresult import ESearchResult
 from eutils.xmlfacades.gbset import GBSet
-#from eutils.xmlfacades.gene import Gene
 from eutils.xmlfacades.pubmedarticleset import PubmedArticleSet
 
 default_cache_path = os.path.join(os.path.expanduser('~'), '.cache', 'eutils-cache.db')
@@ -30,7 +30,7 @@ class Client(object):
             except OSError:
                 raise EutilsError("Failed to make cache directory " + cache_dir)
         self._qs = QueryService(cache_path=cache_path)
-        self.databases = self.einfo().dblist.databases
+        self.databases = self.einfo().databases
 
     def einfo(self, db=None):
         """query the einfo endpoint
@@ -53,16 +53,20 @@ class Client(object):
     def esearch(self, db, term):
         """query the esearch endpoint
         """
-        return ESearchResult(self._qs.esearch({'db': db, 'term': term}))
+        esr = ESearchResult(self._qs.esearch({'db': db, 'term': term}))
+        if esr.count > esr.retmax:
+            logger.warn("NCBI found {esr.count} results, but we truncated the reply at {esr.retmax}"
+                        " results; see https://bitbucket.org/biocommons/eutils/issues/124/".format(esr=esr))
+        return esr
 
     def efetch(self, db, id):
         """query the efetch endpoint
         """
         db = db.lower()
         xml = self._qs.efetch({'db': db, 'id': str(id)})
-        doc = le.parse(xml).getroot()
+        doc = le.XML(xml)
         if db in ['gene']:
-            return Gene(doc)
+            return EntrezgeneSet(doc)
         if db in ['nuccore']:
             # TODO: GBSet is misnamed; it should be GBSeq and get the GBSeq XML node as root (see gbset.py)
             return GBSet(doc)

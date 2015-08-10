@@ -2,11 +2,10 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-from eutils.xmlfacades.base import Base
-from eutils.xmlfacades.genecommentarygenomiccoords import GeneCommentaryGenomicCoords
+from eutils.exceptions import EutilsError
+import eutils.xmlfacades.base
 
-
-class GeneCommentary(Base):
+class GeneCommentary(eutils.xmlfacades.base.Base):
     """This class  a rudimentary interface for using "Gene-commentary" XML
     nodes in NCBI efetch replies.
 
@@ -14,16 +13,29 @@ class GeneCommentary(Base):
     "reference", which is higher in the XML tree, and the "product",
     which is a descendant of the reference.
 
+    IMO, Gene-commentary and friends stand out as examples of fatuous
+    overdesign in the great trainwreck that is NCBI's XML.
+
     """
 
     _root_tag = 'Gene-commentary'
 
-    def __unicode__(self):
-        return "TODO"
+    @property
+    def accession(self):
+        return self._xml_root.findtext('Gene-commentary_accession')
 
     @property
-    def type(self):
-        return self._xml_root.find('Gene-commentary_type').get("value")
+    def acv(self):
+        if self.accession is None or self.version is None:
+            return None
+        return self.accession + '.' + self.version
+
+    @property
+    def genomic_coords(self):
+        n = self._xml_root.find("Gene-commentary_genomic-coords")
+        if n is None:
+            raise EutilsError("this object (type={self.type}) does not have genomic coordinates defined (mRNA and peptide typically do)".format(self=self))
+        return GeneCommentaryGenomicCoords(n)
 
     @property
     def heading(self):
@@ -34,30 +46,61 @@ class GeneCommentary(Base):
         return self._xml_root.findtext('Gene-commentary_label')
 
     @property
-    def accession(self):
-        return self._xml_root.findtext('Gene-commentary_accession')
+    def products(self):
+        return [GeneCommentary(gc) for gc in self._xml_root.findall('Gene-commentary_products/Gene-commentary')]
+
+    @property
+    def type(self):
+        return self._xml_root.find('Gene-commentary_type').get("value")
 
     @property
     def version(self):
         return self._xml_root.findtext('Gene-commentary_version')
 
-    @property
-    def acv(self):
-        if self.accession is None or self.version is None:
-            return None
-        return self.accession + '.' + self.version
+
+class GeneCommentaryGenomicCoords(eutils.xmlfacades.base.Base):
+    """This class  a rudimentary interface for using "Gene-commentary_genomic-coords" XML
+    nodes in NCBI eutilities (efetch) responses.
+    """
+
+    _root_tag = 'Gene-commentary_genomic-coords'
+
+    def __unicode__(self):
+        return "{self.gi}:{self.strand}:{self._interval_str}".format(self=self)
 
     @property
-    def products(self):
-        return [GeneCommentary(gc) for gc in self._xml_root.xpath('Gene-commentary_products/Gene-commentary')]
+    def strand(self):
+        nastrand = self._xml_root.find('.//Na-strand').get('value')
+        return 1 if nastrand == 'plus' else -1 if nastrand == 'minus' else None
 
     @property
-    def genomic_coords(self):
-        gcgcs = self._xml_root.xpath('Gene-commentary_genomic-coords')
-        if len(gcgcs) == 0:
-            return None
-        assert len(gcgcs) == 1
-        return GeneCommentaryGenomicCoords(gcgcs[0])
+    def gi(self):
+        return self._xml_root.findtext('.//Seq-id_gi')
+
+    @property
+    def intervals(self):
+        return [SeqInterval(n) for n in self._xml_root.findall('.//Seq-interval')]
+
+    @property
+    def _interval_str(self):
+        return ';'.join(str(i) for i in self.intervals)
+
+
+class SeqInterval(eutils.xmlfacades.base.Base):
+
+    _root_tag = 'Seq-interval'
+
+    def __unicode__(self):
+        return "[{self.interval_from},{self.interval_to}]".format(self=self)
+
+    @property
+    def interval_from(self):
+        return int(self._xml_root.findtext('Seq-interval_from'))
+
+    @property
+    def interval_to(self):
+        return int(self._xml_root.findtext('Seq-interval_to'))
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
