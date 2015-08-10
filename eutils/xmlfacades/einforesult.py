@@ -30,7 +30,7 @@ class EInfoResult(eutils.xmlfacades.base.Base):
     @property
     def type(self):
         "return 'dblist' or 'dbinfo' corresponding to the two major kinds of EInfoResult replies"
-        childtag = self._xml_elem[0].tag
+        childtag = self._xml_root[0].tag
         if childtag == 'DbInfo':
             return 'dbinfo'
         elif childtag == 'DbList':
@@ -47,7 +47,7 @@ class EInfoResult(eutils.xmlfacades.base.Base):
 
     # Internal Methods
     def _child(self, tag):
-        n = self._xml_elem[0]
+        n = self._xml_root[0]
         if n.tag == tag:
             return n
         raise EutilsError("EInfoResult does not contain a " + tag + " child node")

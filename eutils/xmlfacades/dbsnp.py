@@ -19,10 +19,10 @@ class ExchangeSet(eutils.xmlfacades.base.Base):
     _root_tag = '{http://www.ncbi.nlm.nih.gov/SNP/docsum}ExchangeSet'
 
     def __iter__(self):
-        return (Rs(n) for n in self._xml_elem.iterfind('docsum:Rs', namespaces={'docsum': self._xml_elem.nsmap[None]}))
+        return (Rs(n) for n in self._xml_root.iterfind('docsum:Rs', namespaces={'docsum': self._xml_root.nsmap[None]}))
 
     def __len__(self):
-        return len(self._xml_elem.findall('docsum:Rs', namespaces={'docsum': self._xml_elem.nsmap[None]}))
+        return len(self._xml_root.findall('docsum:Rs', namespaces={'docsum': self._xml_root.nsmap[None]}))
 
 
 class Rs(object):

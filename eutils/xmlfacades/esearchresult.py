@@ -24,24 +24,24 @@ class ESearchResult(Base):
 
     @property
     def count(self):
-        return int(self._xml_elem.find('Count').text)
+        return int(self._xml_root.find('Count').text)
 
     @property
     def retmax(self):
-        return int(self._xml_elem.find('RetMax').text)
+        return int(self._xml_root.find('RetMax').text)
 
     @property
     def retstart(self):
-        return int(self._xml_elem.find('RetStart').text)
+        return int(self._xml_root.find('RetStart').text)
 
     @property
     def ids(self):
-        return [int(id) for id in self._xml_elem.xpath('/eSearchResult/IdList/Id/text()')]
+        return [int(id) for id in self._xml_root.xpath('/eSearchResult/IdList/Id/text()')]
 
     @property
     def webenv(self):
         try:
-            return self._xml_elem.find('WebEnv').text
+            return self._xml_root.find('WebEnv').text
         except AttributeError:
             return None
 

@@ -17,7 +17,7 @@ class EntrezgeneLocus(Base):
 
     @property
     def references(self):
-        return [GeneCommentary(gc) for gc in self._xml_elem.findall('Gene-commentary')]
+        return [GeneCommentary(gc) for gc in self._xml_root.findall('Gene-commentary')]
 
 
 if __name__ == "__main__":
