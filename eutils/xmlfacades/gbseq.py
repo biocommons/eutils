@@ -14,7 +14,7 @@ class GBSeq(eutils.xmlfacades.base.Base):
 
     @property
     def acv(self):
-        return self._xml_elem.findtext('GBSeq_accession-version')
+        return self._xml_root.findtext('GBSeq_accession-version')
 
     @property
     def cds(self):
@@ -25,15 +25,15 @@ class GBSeq(eutils.xmlfacades.base.Base):
 
     @property
     def comment(self):
-        return self._xml_elem.findtext('GBSeq_comment')
+        return self._xml_root.findtext('GBSeq_comment')
 
     @property
     def created(self):
-        return self._xml_elem.findtext('GBSeq_create-date')
+        return self._xml_root.findtext('GBSeq_create-date')
 
     @property
     def definition(self):
-        return self._xml_elem.findtext('GBSeq_definition')
+        return self._xml_root.findtext('GBSeq_definition')
 
     @property
     def exons(self):
@@ -42,7 +42,7 @@ class GBSeq(eutils.xmlfacades.base.Base):
     @property
     def genes(self):
         return [str(e)
-                for e in list(set(self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature'
+                for e in list(set(self._xml_root.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature'
                                                        '/GBFeature_quals/GBQualifier[GBQualifier_name/text()="gene"]'
                                                        '/GBQualifier_value/text()')))]
 
@@ -54,47 +54,47 @@ class GBSeq(eutils.xmlfacades.base.Base):
 
     @property
     def length(self):
-        return int(self._xml_elem.findtext('GBSeq_length'))
+        return int(self._xml_root.findtext('GBSeq_length'))
 
     @property
     def locus(self):
-        return self._xml_elem.findtext('GBSeq_locus')
+        return self._xml_root.findtext('GBSeq_locus')
 
     @property
     def moltype(self):
-        return self._xml_elem.findtext('GBSeq_moltype')
+        return self._xml_root.findtext('GBSeq_moltype')
 
     @property
     def organism(self):
-        return self._xml_elem.findtext('GBSeq_organism')
+        return self._xml_root.findtext('GBSeq_organism')
 
     @property
     def seqids(self):
         """returns a dictionary of sequence ids, like {'gi': ['319655736'], 'ref': ['NM_000551.3']}"""
-        seqids = self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_other-seqids/GBSeqid/text()')
+        seqids = self._xml_root.xpath('/GBSet/GBSeq/GBSeq_other-seqids/GBSeqid/text()')
         return dict((t, l.rstrip('|').split('|')) for t, _, l in [si.partition('|') for si in seqids])
 
     @property
     def sequence(self):
-        return self._xml_elem.findtext('GBSeq_sequence').upper()
+        return self._xml_root.findtext('GBSeq_sequence').upper()
 
     @property
     def updated(self):
-        return self._xml_elem.findtext('GBSeq_update-date')
+        return self._xml_root.findtext('GBSeq_update-date')
 
     ############################################################################
     # Internals
 
     @property
     def _cds_feature_node(self):
-        cds_nodes = self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key/text()="CDS"]')
+        cds_nodes = self._xml_root.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key/text()="CDS"]')
         if len(cds_nodes) > 1:
             raise EutilsError('More than 1 CDS feature for {self.acv}?!'.format(self=self))
         return None if len(cds_nodes) == 0 else cds_nodes[0]
 
     @property
     def _exon_feature_nodes(self):
-        return self._xml_elem.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key="exon"]')
+        return self._xml_root.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key="exon"]')
 
 
 class Feature(object):

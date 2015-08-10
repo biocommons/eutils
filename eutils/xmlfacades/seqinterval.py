@@ -14,20 +14,20 @@ class SeqInterval(Base):
 
     @property
     def interval_from(self):
-        return int(self._xml_elem.findtext('Seq-interval_from'))
+        return int(self._xml_root.findtext('Seq-interval_from'))
 
     @property
     def interval_to(self):
-        return int(self._xml_elem.findtext('Seq-interval_to'))
+        return int(self._xml_root.findtext('Seq-interval_to'))
 
     @property
     def strand(self):
-        nastrand = int(self._xml_elem.find('Seq-interval_strand/Na-strand').get('value'))
+        nastrand = int(self._xml_root.find('Seq-interval_strand/Na-strand').get('value'))
         return 1 if nastrand == 'plus' else -1 if nastrand == 'minus' else None
 
     @property
     def gi(self):
-        return int(self._xml_elem.findtext('Seq-interval_id/Seq-id/Seq-id_gi'))
+        return int(self._xml_root.findtext('Seq-interval_id/Seq-id/Seq-id_gi'))
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

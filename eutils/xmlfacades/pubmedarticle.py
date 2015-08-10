@@ -56,20 +56,20 @@ class PubmedArticle(eutils.xmlfacades.base.Base):
 
     @property
     def doi(self):
-        return xml_get_text_or_none(self._xml_elem, 'PubmedData/ArticleIdList/ArticleId[@IdType="doi"]')
+        return xml_get_text_or_none(self._xml_root, 'PubmedData/ArticleIdList/ArticleId[@IdType="doi"]')
 
     @property
     def pii(self):
-        return xml_get_text_or_none(self._xml_elem, 'PubmedData/ArticleIdList/ArticleId[@IdType="pii"]')
+        return xml_get_text_or_none(self._xml_root, 'PubmedData/ArticleIdList/ArticleId[@IdType="pii"]')
 
     @property
     def pmc(self):
-        pmc = xml_get_text_or_none(self._xml_elem, 'PubmedData/ArticleIdList/ArticleId[@IdType="pmc"]')
+        pmc = xml_get_text_or_none(self._xml_root, 'PubmedData/ArticleIdList/ArticleId[@IdType="pmc"]')
         return None if pmc is None else pmc[3:]
 
     @property
     def _medline_citation(self):
-        return eutils.xmlfacades.medlinecitation.MedlineCitation(self._xml_elem.find('MedlineCitation'))
+        return eutils.xmlfacades.medlinecitation.MedlineCitation(self._xml_root.find('MedlineCitation'))
 
 
 if __name__ == "__main__":

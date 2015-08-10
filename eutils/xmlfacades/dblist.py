@@ -25,7 +25,7 @@ class DbList(eutils.xmlfacades.base.Base):
 
     @property
     def databases(self):
-        return sorted(self._xml_elem.xpath('DbName/text()'))
+        return sorted(self._xml_root.xpath('DbName/text()'))
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

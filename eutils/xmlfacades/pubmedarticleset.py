@@ -11,7 +11,7 @@ class PubmedArticleSet(eutils.xmlfacades.base.Base):
     _root_tag = 'PubmedArticleSet'
 
     def __iter__(self):
-        return (PubmedArticle(pa_n) for pa_n in self._xml_elem.iterfind('PubmedArticle'))
+        return (PubmedArticle(pa_n) for pa_n in self._xml_root.iterfind('PubmedArticle'))
 
 
 if __name__ == "__main__":

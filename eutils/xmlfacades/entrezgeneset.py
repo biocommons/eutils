@@ -22,7 +22,7 @@ class EntrezgeneSet(Base):
     _root_tag = 'Entrezgene-Set'
 
     def __unicode__(self):
-        return '{type} ({chillin} children)'.format(type=type(self).__name__, chillin=len(self._xml_elem.getchildren()))
+        return '{type} ({chillin} children)'.format(type=type(self).__name__, chillin=len(self._xml_root.getchildren()))
 
     @property
     def entrezgenes(self):
@@ -34,7 +34,7 @@ class EntrezgeneSet(Base):
             return self._entrezgenes
 
     def _entrezgene_nodes(self):
-        return self._xml_elem.iterfind('Entrezgene')
+        return self._xml_root.iterfind('Entrezgene')
 
     def __iter__(self):
         return (eg for eg in self.entrezgenes)

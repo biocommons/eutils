@@ -23,23 +23,23 @@ class GeneCommentary(Base):
 
     @property
     def type(self):
-        return self._xml_elem.find('Gene-commentary_type').get("value")
+        return self._xml_root.find('Gene-commentary_type').get("value")
 
     @property
     def heading(self):
-        return self._xml_elem.findtext('Gene-commentary_heading')
+        return self._xml_root.findtext('Gene-commentary_heading')
 
     @property
     def label(self):
-        return self._xml_elem.findtext('Gene-commentary_label')
+        return self._xml_root.findtext('Gene-commentary_label')
 
     @property
     def accession(self):
-        return self._xml_elem.findtext('Gene-commentary_accession')
+        return self._xml_root.findtext('Gene-commentary_accession')
 
     @property
     def version(self):
-        return self._xml_elem.findtext('Gene-commentary_version')
+        return self._xml_root.findtext('Gene-commentary_version')
 
     @property
     def acv(self):
@@ -49,11 +49,11 @@ class GeneCommentary(Base):
 
     @property
     def products(self):
-        return [GeneCommentary(gc) for gc in self._xml_elem.xpath('Gene-commentary_products/Gene-commentary')]
+        return [GeneCommentary(gc) for gc in self._xml_root.xpath('Gene-commentary_products/Gene-commentary')]
 
     @property
     def genomic_coords(self):
-        gcgcs = self._xml_elem.xpath('Gene-commentary_genomic-coords')
+        gcgcs = self._xml_root.xpath('Gene-commentary_genomic-coords')
         if len(gcgcs) == 0:
             return None
         assert len(gcgcs) == 1

@@ -25,27 +25,27 @@ class DbInfo(eutils.xmlfacades.base.Base):
 
     @property
     def dbname(self):
-        return self._xml_elem.findtext('DbName')
+        return self._xml_root.findtext('DbName')
 
     @property
     def menuname(self):
-        return self._xml_elem.findtext('MenuName')
+        return self._xml_root.findtext('MenuName')
 
     @property
     def description(self):
-        return self._xml_elem.findtext('Description')
+        return self._xml_root.findtext('Description')
 
     @property
     def dbbuild(self):
-        return self._xml_elem.findtext('DbBuild')
+        return self._xml_root.findtext('DbBuild')
 
     @property
     def count(self):
-        return self._xml_elem.findtext('Count')
+        return self._xml_root.findtext('Count')
 
     @property
     def lastupdate(self):
-        return self._xml_elem.findtext('LastUpdate')
+        return self._xml_root.findtext('LastUpdate')
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
