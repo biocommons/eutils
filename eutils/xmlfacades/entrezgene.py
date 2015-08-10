@@ -5,7 +5,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import lxml.etree as le
 
 from eutils.xmlfacades.base import Base
-from eutils.xmlfacades.entrezgenelocus import EntrezgeneLocus
+from eutils.xmlfacades.genecommentary import GeneCommentary
 
 
 class Entrezgene(Base):
@@ -16,6 +16,10 @@ class Entrezgene(Base):
         return "{self.gene_id} ({self.hgnc}; {self.description})".format(self=self)
 
     @property
+    def common_tax(self):
+        return self._xml_root.findtext('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_common')
+
+    @property
     def description(self):
         return self._xml_root.findtext('Entrezgene_gene/Gene-ref/Gene-ref_desc')
 
@@ -24,17 +28,35 @@ class Entrezgene(Base):
         return int(self._xml_root.findtext('Entrezgene_track-info/Gene-track/Gene-track_geneid'))
 
     @property
+    def gene_commentaries(self):
+        try:
+            return self._gene_commentaries
+        except AttributeError:
+            self._gene_commentaries = [GeneCommentary(n) for n in  self._xml_root.iterfind('Entrezgene_locus/Gene-commentary')]
+            return self._gene_commentaries
+
+    @property
+    def genus_species(self):
+        return self._xml_root.xpath('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_taxname/text()')[0]
+
+    @property
     def hgnc(self):
         return self._xml_root.findtext('Entrezgene_gene/Gene-ref/Gene-ref_locus')
+
+    @property
+    def locus(self):
+        n = self._xml_root.find('Entrezgene_locus')
+        return None if n is None else EntrezgeneLocus(n)
 
     @property
     def maploc(self):
         return self._xml_root.findtext('Entrezgene_gene/Gene-ref/Gene-ref_maploc')
 
     @property
-    def locus(self):
-        n = self._xml_root.find('Entrezgene_locus')
-        return None if n is None else EntrezgeneLocus(n)
+    def tax_id(self):
+        return int(self._xml_root.xpath(
+            'Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_db/'
+            'Dbtag[Dbtag_db/text()="taxon"]/Dbtag_tag/Object-id/Object-id_id/text()')[0])
 
     @property
     def summary(self):
@@ -48,30 +70,15 @@ class Entrezgene(Base):
     def type(self):
         return self._xml_root.find('Entrezgene_type').get("value")
 
-    @property
-    def genus_species(self):
-        return self._xml_root.xpath('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_taxname/text()')[0]
-
-    @property
-    def common_tax(self):
-        return self._xml_root.xpath('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_common/text()')[0]
-
-    @property
-    def tax_id(self):
-        return int(self._xml_root.xpath(
-            'Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_db/Dbtag[Dbtag_db/text()="taxon"]/Dbtag_tag/Object-id/Object-id_id/text()')[
-                0
-            ])
-
 
 if __name__ == "__main__":
     import os
     import lxml.etree
+    from eutils.xmlfacades.entrezgeneset import EntrezgeneSet
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
     data_file = os.path.join(data_dir, 'entrezgeneset.xml.gz')
-    doc = lxml.etree.parse(data_file)
-    n = doc.findall('.//Entrezgene')[0]
-    o = Entrezgene(n)
+    egs = EntrezgeneSet(le.parse(data_file).getroot())
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

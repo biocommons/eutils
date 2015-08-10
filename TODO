@@ -1,13 +1,21 @@
 -*-outline-*-
 
+* remove validate_xml methods
+
 * doc, docstrings
 * tag + push
-* arrow for dates
 * Gene?
 
-* #121: update xmlfacades to better match xml tags and cardinality
+* parse dates
+
+* more tests! (See coverage)
+* use tags to distinguish tests that require net connectivity from others
+Net tests need to not use cache (easier when these are separated! -- #123)
+But... commit cache into repo for non-net tests
 
 * #120: "Documentation" is unclear eutils
+
+* #121: update xmlfacades to better match xml tags and cardinality
 
 * #126: IndexError retrieving "comment" field from GBSeq object eutils
 

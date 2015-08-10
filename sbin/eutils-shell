@@ -13,17 +13,12 @@ import eutils.clientx
 from eutils.xmlfacades.esearchresult import ESearchResult
 from eutils.xmlfacades.entrezgeneset import EntrezgeneSet
 
-# old style
-import eutils.xmlfacades.einfo
-
-
 logging.basicConfig(level=logging.DEBUG)
-
 
 data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)),'..','tests','data')
 
 
-if True:
+if False:
     xml = gzip.open(os.path.join(data_dir,'esearch.fcgi?term=hart%20rk[author].xml.gz')).read()
     doc = lxml.etree.XML(xml)
     esr = ESearchResult(doc)
@@ -40,10 +35,17 @@ if False:
                                 eg.summary[:30] + "..." if eg.summary else None])))
 
 
-#ec = eutils.clientx.ClientX()
-#gene = ec.fetch_gene_by_hgnc('VHL')
-#gc = gene.references[0].products[0].genomic_coords
-#gbseq = ec.fetch_gbseq_by_ac(gene.references[0].products[0].acv)
+if True:
+    ec = eutils.client.Client()
+    esr = ec.esearch(db='gene',term='tumor necrosis factor')
+    egs = ec.efetch(db='gene',id=esr.ids[0])
+    eg = egs.entrezgenes[0]
+    # eg.locus, eg.maploc, eg.description, eg.type
+    # [ str(r) for r in eg.references ]
+    # eg.references[0].acv
+    # eg.references[0].products[0].acv
+    # eg.references[0].products[0].genomic_coords.strand
+    # eg.references[0].products[0].genomic_coords.intervals
 
 
 import IPython; IPython.embed()
