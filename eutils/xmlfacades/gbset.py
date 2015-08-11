@@ -15,6 +15,10 @@ class GBSet(eutils.xmlfacades.base.Base):
     def __unicode__(self):
         return "GBSet({self.acv})".format(self=self)
 
+    @property
+    def gbseqs(self):
+        return list(self)
+
     def __iter__(self):
         return (GBSeq(n) for n in self._xml_root.iterfind('GBSeq'))
 
