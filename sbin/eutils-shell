@@ -4,7 +4,7 @@ import gzip
 import logging
 import os
 
-import lxml.etree
+import lxml.etree as le
 
 import eutils.client
 import eutils.clientx
@@ -35,17 +35,18 @@ if False:
                                 eg.summary[:30] + "..." if eg.summary else None])))
 
 
-if True:
-    ec = eutils.client.Client()
+ec = eutils.client.Client()
+
+if False:
     esr = ec.esearch(db='gene',term='tumor necrosis factor')
     egs = ec.efetch(db='gene',id=esr.ids[0])
     eg = egs.entrezgenes[0]
-    # eg.locus, eg.maploc, eg.description, eg.type
-    # [ str(r) for r in eg.references ]
-    # eg.references[0].acv
-    # eg.references[0].products[0].acv
-    # eg.references[0].products[0].genomic_coords.strand
-    # eg.references[0].products[0].genomic_coords.intervals
+
+    
+if True:
+    esr = ec.esearch(db='nuccore',term='NM_000533.3')
+    gbset = ec.efetch(db='nuccore',id=esr.ids[0])
+    gbseq = gbset.gbseqs[0]
 
 
 import IPython; IPython.embed()

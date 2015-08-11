@@ -2,10 +2,13 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import eutils.xmlfacades.base
+import logging
 
+from eutils.xmlfacades.base import Base
 
-class GBSeq(eutils.xmlfacades.base.Base):
+logger = logging.getLogger(__name__)
+
+class GBSeq(Base):
 
     _root_tag = 'GBSeq'
 
@@ -18,10 +21,8 @@ class GBSeq(eutils.xmlfacades.base.Base):
 
     @property
     def cds(self):
-        cds_f = self._cds_feature_node
-        if cds_f is None:
-            raise EutilsError("No CDS features defined for {self.acv}".format(self=self))
-        return CDSFeature(cds_f)
+        cds = self.features.cds
+        return (cds.start_i, cds.end_i)
 
     @property
     def comment(self):
@@ -37,14 +38,19 @@ class GBSeq(eutils.xmlfacades.base.Base):
 
     @property
     def exons(self):
-        return [ExonFeature(n) for n in self._exon_feature_nodes]
+        return [(f.start_i, f.end_i) for f in self.features.exons]
 
     @property
+    def features(self):
+        return GBFeatureTable(self._xml_root.find('GBSeq_feature-table'))
+
+    @property
+    def gene(self):
+        return self.features.gene.qualifiers['gene']
+    
+    @property
     def genes(self):
-        return [str(e)
-                for e in list(set(self._xml_root.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature'
-                                                       '/GBFeature_quals/GBQualifier[GBQualifier_name/text()="gene"]'
-                                                       '/GBQualifier_value/text()')))]
+        raise RuntimeError("The genes property is obsolete; use gene instead")
 
     @property
     def gi(self):
@@ -69,10 +75,11 @@ class GBSeq(eutils.xmlfacades.base.Base):
         return self._xml_root.findtext('GBSeq_organism')
 
     @property
-    def seqids(self):
+    def other_seqids(self):
         """returns a dictionary of sequence ids, like {'gi': ['319655736'], 'ref': ['NM_000551.3']}"""
-        seqids = self._xml_root.xpath('/GBSet/GBSeq/GBSeq_other-seqids/GBSeqid/text()')
-        return dict((t, l.rstrip('|').split('|')) for t, _, l in [si.partition('|') for si in seqids])
+        seqids = self._xml_root.xpath('GBSeq_other-seqids/GBSeqid/text()')
+        return {t: l.rstrip('|').split('|')
+                for t, _, l in [si.partition('|') for si in seqids]}
 
     @property
     def sequence(self):
@@ -82,45 +89,109 @@ class GBSeq(eutils.xmlfacades.base.Base):
     def updated(self):
         return self._xml_root.findtext('GBSeq_update-date')
 
-    ############################################################################
-    # Internals
+
+
+class GBFeatureTable(Base):
+
+    """Represents a collection of features associated with a genbank
+    sequence
+
+    Genbank features have types, referred to by their (non-unique)
+    "keys", such as "gene", "CDS", "misc_feature", etc.  All features
+    have locations and typically have additional, type specific
+    "qualifiers".  Access to feature information is provided though
+    GBFeature instances or subclasses.
+
+    Subclasses of GBFeature are used to access additional data for
+    specific feature types, such as GBFeatureCDS and GBFeatureExon for
+    CDS and exon features, respectively.
+
+    The cardinality of each feature type (name) varies: exactly 1
+    gene, optionally 1 CDS, 0 or more exons and misc_features, etc.
+
+    GBFeatureTable provides an iterator over all features, and returns
+    GBFeature instances.
+    
+    In addition, when selecting features for specific types, the
+    features are instantiated as their type-specific subclasses. This
+    is the preferred selection mechanism for these feature types.
+
+    """
+
+    _root_tag = 'GBSeq_feature-table'
+
+    def __iter__(self):
+        return (GBFeature(n) for n in self._xml_root.iterfind('GBFeature'))
+        
+    @property
+    def cds(self):
+        key = 'CDS'
+        nodes = self._get_nodes_with_key(key)
+        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(n=len(nodes), key=key)
+        return None if len(nodes) == 0 else GBFeatureCDS(nodes[0])
 
     @property
-    def _cds_feature_node(self):
-        cds_nodes = self._xml_root.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key/text()="CDS"]')
-        if len(cds_nodes) > 1:
-            raise EutilsError('More than 1 CDS feature for {self.acv}?!'.format(self=self))
-        return None if len(cds_nodes) == 0 else cds_nodes[0]
+    def exons(self):
+        key = 'exon'
+        nodes = self._get_nodes_with_key(key)
+        return [GBFeatureExon(n) for n in nodes]
 
     @property
-    def _exon_feature_nodes(self):
-        return self._xml_root.xpath('/GBSet/GBSeq/GBSeq_feature-table/GBFeature[GBFeature_key="exon"]')
+    def gene(self):
+        key = 'gene'
+        nodes = self._get_nodes_with_key(key)
+        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(n=len(nodes), key=key)
+        return None if len(nodes) == 0 else GBFeature(nodes[0])
+
+    @property
+    def source(self):
+        key = 'source'
+        nodes = self._get_nodes_with_key(key)
+        assert len(nodes) == 1, "Got {n=n} {key} features! (expected exactly 1)".format(n=len(nodes), key=key)
+        return GBFeature(nodes[0])
+
+    def _get_nodes_with_key(self, key):
+        nodes = self._xml_root.xpath('GBFeature[GBFeature_key/text()="{key}"]'.format(key=key))
+        return nodes
 
 
-class Feature(object):
-    def __init__(self, feature_node):
-        assert feature_node.tag == 'GBFeature'
-        self._n = feature_node
-        loc = self._n.find('GBFeature_location').text
-        if 'join' not in loc:
+
+class GBFeature(Base):
+
+    _root_tag = 'GBFeature'
+
+    def __init__(self, xml):
+        super(GBFeature, self).__init__(xml)
+        loc = self._xml_root.findtext('GBFeature_location')
+        if '..' in loc:
             s, e = loc.split('..')
-            self.start_i, self.end_i = int(s) - 1, int(e)
-            self.length = self.end_i - self.start_i
+            s, e = int(s), int(e)
+        else:
+            s = e = int(loc)
+        self.start_i, self.end_i = s - 1, e  # interbase
 
+    @property
+    def key(self):
+        return self._xml_root.findtext('GBFeature_key')
 
-class CDSFeature(Feature):
+    @property
+    def qualifiers(self):
+        return {q.findtext('GBQualifier_name'): q.findtext('GBQualifier_value')
+                for q in self._xml_root.findall('GBFeature_quals/GBQualifier')}
+
+class GBFeatureCDS(GBFeature):
+
     @property
     def translation(self):
         return self._n.xpath(
             'GBFeature_quals/GBQualifier[GBQualifier_name/text()="translation"]/GBQualifier_value/text()')[0]
 
+class GBFeatureExon(GBFeature):
 
-class ExonFeature(Feature):
     @property
     def inference(self):
         return self._n.xpath(
-            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="inference"]/GBQualifier_value/text()')[0].replace(
-                'alignment:', '')
+            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="inference"]/GBQualifier_value/text()')[0]
 
 
 if __name__ == "__main__":
@@ -133,6 +204,7 @@ if __name__ == "__main__":
     path = os.path.join(data_dir, relpath)
     gbset = GBSet(le.parse(path).getroot())
     gbseq = iter(gbset).next()
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
