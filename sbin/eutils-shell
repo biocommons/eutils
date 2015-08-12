@@ -7,7 +7,6 @@ import os
 import lxml.etree as le
 
 import eutils.client
-import eutils.clientx
 
 # new style
 from eutils.xmlfacades.esearchresult import ESearchResult
