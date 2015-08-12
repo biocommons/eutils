@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""
-This is the module docstring
-"""
-
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 import logging
@@ -25,11 +21,16 @@ default_cache_path = os.path.join(os.path.expanduser('~'), '.cache', 'eutils-cac
 logger = logging.getLogger(__name__)
 
 class Client(object):
-    """
-    This is the eutils client
+    """class-based access to NCBI E-Utilities, returning Python classes
+    with rich data accessors
+
     """
 
     def __init__(self, cache_path=default_cache_path):
+        """
+        :param str cache_path: full path to sqlite database file (created if necessary)
+        :raises EutilsError: if cache file couldn't be created
+        """
         cache_dir = os.path.dirname(cache_path)
         if not os.path.exists(cache_dir):
             try:
@@ -38,7 +39,17 @@ class Client(object):
             except OSError:
                 raise EutilsError("Failed to make cache directory " + cache_dir)
         self._qs = QueryService(cache_path=cache_path)
-        self.databases = self.einfo().databases
+
+    @property
+    def databases(self):
+        """
+        list of databases available from eutils (per einfo query)
+        """
+        try:
+            return self._databases
+        except AttributeError:
+            self._databases = self.einfo().databases
+            return self._databases
 
     def einfo(self, db=None):
         """query the einfo endpoint

@@ -7,11 +7,8 @@ class EutilsError(Exception):
     pass
 
 
-class EutilsBadRequestError(EutilsError):
+class EutilsRequestError(EutilsError):
     pass
-
-
-EutilsRequestError = EutilsBadRequestError
 
 
 class EutilsNotFoundError(EutilsError):
