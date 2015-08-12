@@ -8,8 +8,6 @@
 Net tests need to not use cache (easier when these are separated! -- #123)
 But... commit cache into repo for non-net tests
 
-* decide fate of clientx
-
 
 * #122: implement TTL support in cache
 

@@ -3,11 +3,13 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 import eutils.client
-from eutils.exceptions import *
+from eutils.exceptions import EutilsError, EutilsNCBIError, EutilsNotFoundError
 
 
 class ClientX(eutils.client.Client):
     """
+    *warning* This class is subject to rapid development and api changes.
+
     A subclass of eutils.client.Client that provides specific lookup functions.
 
     This functionality is in a separate class because the API is experimental.
@@ -50,6 +52,7 @@ class ClientX(eutils.client.Client):
                 o=organism,
                 db=db))
         return iter(self.efetch(db=db, id=','.join(map(str, esr.ids)))).next()
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
