@@ -90,7 +90,7 @@ class Client(object):
             # TODO: GBSet is misnamed; it should be GBSeq and get the GBSeq XML node as root (see gbset.py)
             return GBSet(doc)
         if db in ['pubmed']:
-            return iter(PubmedArticleSet(doc)).next()
+            return PubmedArticleSet(doc)
         if db in ['snp']:
             return ExchangeSet(xml)
         raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))
