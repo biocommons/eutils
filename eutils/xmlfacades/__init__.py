@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+"""xmlfacades/__init__.py doc string"""
+
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 # <LICENSE>

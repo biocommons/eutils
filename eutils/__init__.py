@@ -2,6 +2,17 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
+import pkg_resources
+import warnings
+
+try:
+    __version__ = pkg_resources.get_distribution(__name__).version
+except pkg_resources.DistributionNotFound as e:
+    warnings.warn("can't get __version__ because %s package isn't installed" % __package__, Warning)
+    __version__ = None
+
+
+
 # <LICENSE>
 # Copyright 2015 eutils Committers
 # 
