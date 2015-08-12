@@ -5,22 +5,53 @@ Using eutils
 Installation
 ############
 
-::
+The easiest way to install the eutils package is to use pre-build
+Python package from PyPI, like so::
 
   $ pip install eutils
 
+Consider using `virtualenvwrapper
+<https://virtualenvwrapper.readthedocs.org/en/latest/>`_ or `pyvenv
+<https://docs.python.org/3/library/venv.html>`_ to setup virtual
+environments before installing eutils.
 
-A Quick Example
-###############
+Code that relies on eutils should specify a version bracket to ensure
+that eutils receives bug fixes but not updates that might break
+compatibility.  In your package's setup.py::
 
-::
+  setup(
+    ...
+    install_requires = [
+      'eutils>=0.1,<0.2',
+    ],
+    ...
+    )
 
-    >>> import eutils.client
+Alternatively, you may install from source; please see
+:ref:`dev_install` for details.
+
+
+Examples
+########
+
+
+Common setup
+$$$$$$$$$$$$
+
+Instantiating an eutils :class:`eutils.client.Client` is this easy::
+
+    >>> import eutils
     
     # Initialize a client. This client handles all caching and query
     # throttling
-    >>> ec = eutils.client.Client()
+    >>> ec = eutils.Client()
   
+
+Fetching gene information
+$$$$$$$$$$$$$$$$$$$$$$$$$
+
+::
+
     # search for tumor necrosis factor genes
     # any valid NCBI query may be used
     >>> esr = ec.esearch(db='gene',term='tumor necrosis factor')
@@ -71,3 +102,41 @@ A Quick Example
     # and the mrna has a product, the resulting protein:
     >>> str(mrna.products[0])
     'GeneCommentary(acv=NP_001119584.1,type=peptide,heading=Reference,label=isoform a)'
+
+
+Fetch PubMed information
+$$$$$$$$$$$$$$$$$$$$$$$$
+
+::
+
+   # search pubmed by author
+   >>> esr = c.esearch(db='pubmed', term='Nussbaum RL')
+
+   # fetch all of them
+   >>> paset = c.efetch(db='pubmed', id=esr.ids)
+   
+   # paset represents PubmedArticleSet, a collection of
+   PubmedArticles. The major interface component is to iterate over
+   PubmedArticles with constructs like `for pa in paset: ...`. We
+   fetch the first PubmedArticle like this:
+   >>> pa = iter(paset).next()
+   
+   PubmedArticle provides acccessors to essential data:
+   >>> pa.title
+   'High incidence of functional ion-channel abnormalities in a
+   consecutive Long QT cohort with novel missense genetic variants of
+   unknown significance.'
+   
+   >>> pa.authors
+   [u'Steffensen AB', u'Refaat MM', u'David JP', u'Mujezinovic A',
+   u'Calloe K', u'Wojciak J', u'Nussbaum RL', u'Scheinman MM',
+   u'Schmitt N']
+   
+   >>> pa.jrnl, pa.volume, pa.issue, pa.year
+   ('Sci Rep', '5', None, '2015')
+   
+   >>> pa.jrnl, pa.volume, pa.issue, pa.year, pa.pages
+   ('Sci Rep', '5', None, '2015', '10009')
+   
+   >>> pa.pmid, pa.doi, pa.pmc
+   ('26066609', '10.1038/srep10009', '4464365')
