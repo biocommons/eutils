@@ -14,7 +14,7 @@ setup(
     zip_safe = True,
 
     author = 'Reece Hart',
-    author_email='reecehart+eutils@gmail.com',
+    author_email='biocommons-dev@googlegroups.com',
     name = "eutils",
     packages = find_packages(),
     url = 'https://bitbucket.org/biocommons/eutils',
