@@ -23,7 +23,7 @@ def key_from(po):
 
 def val_to(o, compress):
     po = cPickle.dumps(o)
-    return zlib.compress(po) if compress else pop
+    return zlib.compress(po) if compress else po
 
 
 def val_from(po, compress):
