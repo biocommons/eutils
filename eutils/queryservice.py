@@ -70,6 +70,21 @@ class QueryService(object):
     See http://www.ncbi.nlm.nih.gov/books/NBK25499/ for details about
     NCBI E-utilities.
 
+
+    >>> from eutils.queryservice import QueryService
+
+    create an instance of QueryService
+    >>> qs = QueryService()
+
+    get xml for database info (in this case, a list of available database)
+    >>> result = qs.einfo()
+
+    execute a search using an NCBI query against the gene database
+    >>> result = qs.esearch({'db': 'gene', 'term': 'VEGF AND human[organism]'})
+
+    get xml doc for gene id=7157
+    >>> result = qs.efetch({'db': 'gene', 'id': 7157})
+
     """
 
     url_base = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils'
@@ -91,9 +106,6 @@ class QueryService(object):
         :rtype: None
         :raises OSError: if sqlite file can't be opened
 
-        >>> from eutils.queryservice import QueryService
-        >>> qs = QueryService()
-
         """
 
         self.default_args = default_args
@@ -114,8 +126,6 @@ class QueryService(object):
         :rtype: str
         :raises EutilsRequestError: when NCBI replies, but the request failed (e.g., bogus database name)
 
-        >>> result = qs.efetch({'db': 'gene', 'id': 7157})
-
         """
         return self._query('/efetch.fcgi', args)
 
@@ -127,8 +137,6 @@ class QueryService(object):
         :returns: content of reply
         :rtype: str
         :raises EutilsRequestError: when NCBI replies, but the request failed (e.g., bogus database name)
-
-        >>> result = qs.einfo()
 
         """
 
@@ -142,8 +150,6 @@ class QueryService(object):
         :returns: content of reply
         :rtype: str
         :raises EutilsRequestError: when NCBI replies, but the request failed (e.g., bogus database name)
-
-        >>> result = qs.esearch({'db': 'gene', 'term': 'VEGF AND human[organism]'})
 
         """
         return self._query('/esearch.fcgi', args)
