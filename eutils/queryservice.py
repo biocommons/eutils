@@ -1,5 +1,27 @@
 # -*- coding: utf-8 -*-
 
+"""provide cached and throttled querying of `NCBI E-utilities
+<http://www.ncbi.nlm.nih.gov/books/NBK25499/>`_.
+
+QueryService defaults to returning XML documents only. This behavior
+may be controlled upon instantiation by setting default_args.
+
+::
+
+    # create an instance of QueryService
+    >>> qs = QueryService()
+
+    # get xml for database info (in this case, a list of available database)
+    >>> result = qs.einfo()
+
+    # execute a search using an NCBI query against the gene database
+    >>> result = qs.esearch({'db': 'gene', 'term': 'VEGF AND human[organism]'})
+
+    # get xml doc for gene id=7157
+    >>> result = qs.efetch({'db': 'gene', 'id': 7157})
+
+"""
+
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 # TODO: Fetch & compare
@@ -8,6 +30,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 # TODO: deal with caching status 200 replies that are bogus (e.g., truncated xml) -- callbacks?
 # TODO: provide uncached access
 # TODO: support history
+# TODO: default args is misplaced -- it should go in client instead
 
 import datetime
 import hashlib
@@ -22,13 +45,14 @@ import pytz
 import requests
 
 from eutils.sqlitecache import SQLiteCache
-from eutils.exceptions import *
+from eutils.exceptions import EutilsRequestError
 
 logger = logging.getLogger(__name__)
 
+url_base = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils'
 default_default_args = {'retmode': 'xml', 'usehistory': 'y', 'retmax': 250}
 default_tool = __package__
-default_email = 'biocommons-dev@gmail.com'
+default_email = 'biocommons-dev@googlegroups.com'
 default_request_interval = 0.333
 default_cache_path = os.path.join(os.path.expanduser('~'), '.cache', 'eutils-cache.db')
 
@@ -36,12 +60,19 @@ eastern_tz = pytz.timezone('US/Eastern')
 
 
 def time_dep_request_interval(utc_dt=None):
-    # From http://www.ncbi.nlm.nih.gov/books/NBK25497/:
-    # "In order not to overload the E-utility servers, NCBI recommends that
-    # users post no more than three URL requests per second and limit
-    # large jobs to either weekends or between 9:00 PM and 5:00 AM Eastern
-    # time during weekdays."
-    # Translation: Weekdays 0500-2100 => 0.333s between requests; no throttle otherwise
+    """
+    returns a request interval approrpriate for the current time
+
+    From http://www.ncbi.nlm.nih.gov/books/NBK25497/:
+
+      "In order not to overload the E-utility servers, NCBI recommends that
+      users post no more than three URL requests per second and limit
+      large jobs to either weekends or between 9:00 PM and 5:00 AM Eastern
+      time during weekdays."
+
+    Translation: Weekdays 0500-2100 => 0.333s between requests; no throttle otherwise
+    """
+
     if utc_dt is None:
         utc_dt = datetime.datetime.utcnow()
     eastern_dt = eastern_tz.fromutc(utc_dt)
@@ -67,27 +98,7 @@ class QueryService(object):
     implemented. (Implementing other query modes should be
     straightforward.)
 
-    See http://www.ncbi.nlm.nih.gov/books/NBK25499/ for details about
-    NCBI E-utilities.
-
-
-    >>> from eutils.queryservice import QueryService
-
-    create an instance of QueryService
-    >>> qs = QueryService()
-
-    get xml for database info (in this case, a list of available database)
-    >>> result = qs.einfo()
-
-    execute a search using an NCBI query against the gene database
-    >>> result = qs.esearch({'db': 'gene', 'term': 'VEGF AND human[organism]'})
-
-    get xml doc for gene id=7157
-    >>> result = qs.efetch({'db': 'gene', 'id': 7157})
-
     """
-
-    url_base = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils'
 
     def __init__(self,
                  email=default_email,
@@ -175,7 +186,7 @@ class QueryService(object):
         # and is independent of the request method (GET/POST) args are
         # sorted for canonicalization
 
-        url = self.url_base + path
+        url = url_base + path
         defining_args = dict(self.default_args.items() + args.items())
         full_args = dict(self._ident_args.items() + defining_args.items())
         cache_key = hashlib.md5(cPickle.dumps((url, sorted(defining_args.items())))).hexdigest()
