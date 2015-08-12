@@ -73,8 +73,7 @@ A Quick Example
   >>> str(mrna)
   'GeneCommentary(acv=NM_001126112.2,type=mRNA,heading=Reference,label=transcript variant 2)'
 
-  # mrna.genomic_coords provides access to the exon definitions on this
-  reference
+  # mrna.genomic_coords provides access to the exon definitions on this reference
 
   >>> mrna.genomic_coords.gi, mrna.genomic_coords.strand
   ('568815581', -1)
@@ -130,4 +129,4 @@ Again, thanks for your contributions.
 
 .. |build_status| image:: https://drone.io/bitbucket.org/biocommons/eutils/status.png
   :target: https://drone.io/bitbucket.org/biocommons/eutils
-  :align: middle 
+  :align: middle
