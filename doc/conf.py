@@ -276,3 +276,4 @@ intersphinx_mapping = {'http://docs.python.org/': None}
 # -- Custom stuff ---
 
 autodoc_default_flags = ['members', 'undoc-members', 'show-inheritance'] #, 'inherited-members']
+autoclass_content = 'both'

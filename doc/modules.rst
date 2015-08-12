@@ -1,7 +1,7 @@
 Modules
 @@@@@@@
 
-Modules overview...
+.. include:: modules/overview.rst
 
 .. toctree::
    :maxdepth: 2
@@ -11,3 +11,4 @@ Modules overview...
    modules/eutils.exceptions
    modules/eutils.queryservice
    modules/eutils.xmlfacades
+   modules/eutils.sketchy.clientx
