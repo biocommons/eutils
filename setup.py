@@ -1,18 +1,20 @@
 from setuptools import setup, find_packages
 
-with open('doc/description.txt') as f:
-    long_description = f.read()
+with open('doc/description-long.txt') as f:
+    description_long = f.read()
+with open('doc/description-short.txt') as f:
+    description_short = f.read()
 
 
 setup(
     license = 'Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)',
-    long_description = long_description,
+    long_description = description_long,
+    description = description_short,
     use_scm_version = True,
     zip_safe = True,
 
     author = 'Reece Hart',
     author_email='reecehart+eutils@gmail.com',
-    description = """Structured Python interface to NCBI E-Utilities.""",
     name = "eutils",
     packages = find_packages(),
     url = 'https://bitbucket.org/biocommons/eutils',
@@ -43,6 +45,8 @@ setup(
 
     setup_requires = [
         'setuptools_scm',
+        'sphinx',
+        'sphinx_rtd_theme',
         'nose',
         ],
 

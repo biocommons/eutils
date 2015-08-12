@@ -19,4 +19,5 @@ archive
 build
 cover
 dist
+doc/_build
 tmp

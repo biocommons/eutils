@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+This is the module docstring
+"""
+
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 import logging
@@ -21,6 +25,10 @@ default_cache_path = os.path.join(os.path.expanduser('~'), '.cache', 'eutils-cac
 logger = logging.getLogger(__name__)
 
 class Client(object):
+    """
+    This is the eutils client
+    """
+
     def __init__(self, cache_path=default_cache_path):
         cache_dir = os.path.dirname(cache_path)
         if not os.path.exists(cache_dir):

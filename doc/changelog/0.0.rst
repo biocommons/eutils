@@ -1,0 +1,10 @@
+0.0 Series
+==========
+
+0.0.x (y-m-d)
+-------------
+
+* `#228 <https://bitbucket.org/biocommons/hgvs/issue/228/>`_: IndexError when schema name is empty
+* `#228 <https://bitbucket.org/biocommons/hgvs/issue/228/>`_: updated CHANGELOG
+* hgvs/edit.py: doc string indentation fix
+
