@@ -1,6 +1,6 @@
 syntax: glob
 
-*.egg
+.eggs
 *.egg-info
 *.enc
 *.ini
@@ -10,7 +10,6 @@ syntax: glob
 *.pyc
 *.pyo
 *.so
-*.txt
 *~
 .DS_Store
 .coverage
