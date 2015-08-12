@@ -29,9 +29,6 @@ A Quick Example
   $ pip install eutils
   $ ipython
 
-
-::
-
   >>> import eutils.client
   
   # Initialize a client. This client handles all caching and query
