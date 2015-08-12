@@ -1,0 +1,52 @@
+#!/usr/bin/env python
+
+import gzip
+import logging
+import os
+
+import lxml.etree as le
+
+import eutils.client
+
+# new style
+from eutils.xmlfacades.esearchresult import ESearchResult
+from eutils.xmlfacades.entrezgeneset import EntrezgeneSet
+
+logging.basicConfig(level=logging.DEBUG)
+
+data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)),'..','tests','data')
+
+
+if False:
+    xml = gzip.open(os.path.join(data_dir,'esearch.fcgi?term=hart%20rk[author].xml.gz')).read()
+    doc = lxml.etree.XML(xml)
+    esr = ESearchResult(doc)
+
+
+if False:
+    xml = gzip.open(os.path.join(data_dir,'entrezgeneset.xml.gz')).read()
+    doc = lxml.etree.XML(xml)
+    egs = EntrezgeneSet(doc)
+
+    print("{} genes in EntrezgeneSet".format(len(egs.entrezgenes)))
+    for eg in egs:
+        print("\t".join(map(str,[eg.gene_id,eg.maploc,eg.hgnc,
+                                eg.summary[:30] + "..." if eg.summary else None])))
+
+
+ec = eutils.client.Client()
+
+if False:
+    esr = ec.esearch(db='gene',term='tumor necrosis factor')
+    egs = ec.efetch(db='gene',id=esr.ids[0])
+    eg = egs.entrezgenes[0]
+
+    
+if True:
+    esr = ec.esearch(db='nuccore',term='NM_000533.3')
+    gbset = ec.efetch(db='nuccore',id=esr.ids[0])
+    gbseq = gbset.gbseqs[0]
+
+
+import IPython; IPython.embed()
+

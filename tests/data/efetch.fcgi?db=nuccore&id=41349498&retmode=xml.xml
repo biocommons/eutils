@@ -1,0 +1,966 @@
+<?xml version="1.0"?>
+ <!DOCTYPE GBSet PUBLIC "-//NCBI//NCBI GBSeq/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_GBSeq.dtd">
+ <GBSet>
+<GBSeq>
+  <GBSeq_locus>NM_000533</GBSeq_locus>
+  <GBSeq_length>3038</GBSeq_length>
+  <GBSeq_strandedness>single</GBSeq_strandedness>
+  <GBSeq_moltype>mRNA</GBSeq_moltype>
+  <GBSeq_topology>linear</GBSeq_topology>
+  <GBSeq_division>PRI</GBSeq_division>
+  <GBSeq_update-date>24-MAY-2014</GBSeq_update-date>
+  <GBSeq_create-date>17-OCT-2000</GBSeq_create-date>
+  <GBSeq_definition>Homo sapiens proteolipid protein 1 (PLP1), transcript variant 1, mRNA</GBSeq_definition>
+  <GBSeq_primary-accession>NM_000533</GBSeq_primary-accession>
+  <GBSeq_accession-version>NM_000533.3</GBSeq_accession-version>
+  <GBSeq_other-seqids>
+    <GBSeqid>ref|NM_000533.3|</GBSeqid>
+    <GBSeqid>gi|41349498</GBSeqid>
+  </GBSeq_other-seqids>
+  <GBSeq_keywords>
+    <GBKeyword>RefSeq</GBKeyword>
+  </GBSeq_keywords>
+  <GBSeq_source>Homo sapiens (human)</GBSeq_source>
+  <GBSeq_organism>Homo sapiens</GBSeq_organism>
+  <GBSeq_taxonomy>Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini; Catarrhini; Hominidae; Homo</GBSeq_taxonomy>
+  <GBSeq_references>
+    <GBReference>
+      <GBReference_reference>1</GBReference_reference>
+      <GBReference_position>1..3038</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Noetzli L</GBAuthor>
+        <GBAuthor>Sanz PG</GBAuthor>
+        <GBAuthor>Brodsky GL</GBAuthor>
+        <GBAuthor>Hinckley JD</GBAuthor>
+        <GBAuthor>Giugni JC</GBAuthor>
+        <GBAuthor>Giannaula RJ</GBAuthor>
+        <GBAuthor>Gonzalez-Alegre P</GBAuthor>
+        <GBAuthor>Di Paola J</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>A novel mutation in PLP1 causes severe hereditary spastic paraplegia type 2</GBReference_title>
+      <GBReference_journal>Gene 533 (1), 447-450 (2014)</GBReference_journal>
+      <GBReference_xref>
+        <GBXref>
+          <GBXref_dbname>doi</GBXref_dbname>
+          <GBXref_id>10.1016/j.gene.2013.09.076</GBXref_id>
+        </GBXref>
+      </GBReference_xref>
+      <GBReference_pubmed>24103481</GBReference_pubmed>
+      <GBReference_remark>GeneRIF: report a novel PLP1 missense mutation (c.88G&gt;C) in a family from Argentina. This mutation is in a highly conserved transmembrane domain of PLP1 and the mutant protein was found to be retained in the endoplasmic reticulum when expressed in vitro</GBReference_remark>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>2</GBReference_reference>
+      <GBReference_position>1..3038</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Hoffman-Zacharska D</GBAuthor>
+        <GBAuthor>Mierzewska H</GBAuthor>
+        <GBAuthor>Szczepanik E</GBAuthor>
+        <GBAuthor>Poznanski J</GBAuthor>
+        <GBAuthor>Mazurczak T</GBAuthor>
+        <GBAuthor>Jakubiuk-Tomaszuk A</GBAuthor>
+        <GBAuthor>Madry J</GBAuthor>
+        <GBAuthor>Kierdaszuk A</GBAuthor>
+        <GBAuthor>Bal J</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>The spectrum of PLP1 gene mutations in patients with the classical form of the Pelizaeus-Merzbacher disease</GBReference_title>
+      <GBReference_journal>Med Wieku Rozwoj 17 (4), 293-300 (2013)</GBReference_journal>
+      <GBReference_pubmed>24519770</GBReference_pubmed>
+      <GBReference_remark>GeneRIF: Our clinical and molecular findings showed that the phenotypic spectrum resulting from PLP1 mutations seems to be broader in patients with the PLP1 gene duplication compared to patients with both nonsense and missense mutation.</GBReference_remark>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>3</GBReference_reference>
+      <GBReference_position>1..3038</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Regis S</GBAuthor>
+        <GBAuthor>Corsolini F</GBAuthor>
+        <GBAuthor>Grossi S</GBAuthor>
+        <GBAuthor>Tappino B</GBAuthor>
+        <GBAuthor>Cooper DN</GBAuthor>
+        <GBAuthor>Filocamo M</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Restoration of the normal splicing pattern of the PLP1 gene by means of an antisense oligonucleotide directed against an exonic mutation</GBReference_title>
+      <GBReference_journal>PLoS ONE 8 (9), E73633 (2013)</GBReference_journal>
+      <GBReference_xref>
+        <GBXref>
+          <GBXref_dbname>doi</GBXref_dbname>
+          <GBXref_id>10.1371/journal.pone.0073633</GBXref_id>
+        </GBXref>
+      </GBReference_xref>
+      <GBReference_pubmed>24019930</GBReference_pubmed>
+      <GBReference_remark>GeneRIF: show that the presence of the c.436C&gt;G mutation served to introduce regulatory motifs that appear to be responsible for the perturbed splicing pattern that led to loss of the major PLP transcript; Publication Status: Online-Only</GBReference_remark>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>4</GBReference_reference>
+      <GBReference_position>1..3038</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Numata Y</GBAuthor>
+        <GBAuthor>Morimura T</GBAuthor>
+        <GBAuthor>Nakamura S</GBAuthor>
+        <GBAuthor>Hirano E</GBAuthor>
+        <GBAuthor>Kure S</GBAuthor>
+        <GBAuthor>Goto YI</GBAuthor>
+        <GBAuthor>Inoue K</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Depletion of molecular chaperones from the endoplasmic reticulum and fragmentation of the Golgi apparatus associated with pathogenesis in Pelizaeus-Merzbacher disease</GBReference_title>
+      <GBReference_journal>J. Biol. Chem. 288 (11), 7451-7466 (2013)</GBReference_journal>
+      <GBReference_xref>
+        <GBXref>
+          <GBXref_dbname>doi</GBXref_dbname>
+          <GBXref_id>10.1074/jbc.M112.435388</GBXref_id>
+        </GBXref>
+      </GBReference_xref>
+      <GBReference_pubmed>23344956</GBReference_pubmed>
+      <GBReference_remark>GeneRIF: PLP1 mutants inhibit Golgi apparatus to endoplasmic reticulum trafficking and have a role in pathogenesis of Pelizaeus-Merzbacher disease</GBReference_remark>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>5</GBReference_reference>
+      <GBReference_position>1..3038</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Vanderver,A.</GBAuthor>
+        <GBAuthor>Tonduti,D.</GBAuthor>
+        <GBAuthor>Schiffmann,R.</GBAuthor>
+        <GBAuthor>Schmidt,J.</GBAuthor>
+        <GBAuthor>Van der Knaap,M.S.</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Leukodystrophy Overview</GBReference_title>
+      <GBReference_journal>(in) Pagon RA, Adam MP, Ardinger HH, Bird TD, Dolan CR, Fong CT, Smith RJH and Stephens K (Eds.); GENEREVIEWS(R); (1993)</GBReference_journal>
+      <GBReference_pubmed>24501781</GBReference_pubmed>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>6</GBReference_reference>
+      <GBReference_position>1..3038</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Hobson,G.M.</GBAuthor>
+        <GBAuthor>Kamholz,J.</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>PLP1-Related Disorders</GBReference_title>
+      <GBReference_journal>(in) Pagon RA, Adam MP, Ardinger HH, Bird TD, Dolan CR, Fong CT, Smith RJH and Stephens K (Eds.); GENEREVIEWS(R); (1993)</GBReference_journal>
+      <GBReference_pubmed>20301361</GBReference_pubmed>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>7</GBReference_reference>
+      <GBReference_position>1..3038</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Klein,C.</GBAuthor>
+        <GBAuthor>Marras,C.</GBAuthor>
+        <GBAuthor>Munchau,A.</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Dystonia Overview</GBReference_title>
+      <GBReference_journal>(in) Pagon RA, Adam MP, Ardinger HH, Bird TD, Dolan CR, Fong CT, Smith RJH and Stephens K (Eds.); GENEREVIEWS(R); (1993)</GBReference_journal>
+      <GBReference_pubmed>20301334</GBReference_pubmed>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>8</GBReference_reference>
+      <GBReference_position>1..3038</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Strautnieks S</GBAuthor>
+        <GBAuthor>Rutland P</GBAuthor>
+        <GBAuthor>Winter RM</GBAuthor>
+        <GBAuthor>Baraitser M</GBAuthor>
+        <GBAuthor>Malcolm S</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Pelizaeus-Merzbacher disease: detection of mutations Thr181----Pro and Leu223----Pro in the proteolipid protein gene, and prenatal diagnosis</GBReference_title>
+      <GBReference_journal>Am. J. Hum. Genet. 51 (4), 871-878 (1992)</GBReference_journal>
+      <GBReference_pubmed>1384324</GBReference_pubmed>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>9</GBReference_reference>
+      <GBReference_position>1..3038</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Doll R</GBAuthor>
+        <GBAuthor>Natowicz MR</GBAuthor>
+        <GBAuthor>Schiffmann R</GBAuthor>
+        <GBAuthor>Smith FI</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Molecular diagnostics for myelin proteolipid protein gene mutations in Pelizaeus-Merzbacher disease</GBReference_title>
+      <GBReference_journal>Am. J. Hum. Genet. 51 (1), 161-169 (1992)</GBReference_journal>
+      <GBReference_pubmed>1376966</GBReference_pubmed>
+    </GBReference>
+    <GBReference>
+      <GBReference_reference>10</GBReference_reference>
+      <GBReference_position>1..3038</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>Pratt VM</GBAuthor>
+        <GBAuthor>Trofatter JA</GBAuthor>
+        <GBAuthor>Schinzel A</GBAuthor>
+        <GBAuthor>Dlouhy SR</GBAuthor>
+        <GBAuthor>Conneally PM</GBAuthor>
+        <GBAuthor>Hodes ME</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>A new mutation in the proteolipid protein (PLP) gene in a German family with Pelizaeus-Merzbacher disease</GBReference_title>
+      <GBReference_journal>Am. J. Med. Genet. 38 (1), 136-139 (1991)</GBReference_journal>
+      <GBReference_xref>
+        <GBXref>
+          <GBXref_dbname>doi</GBXref_dbname>
+          <GBXref_id>10.1002/ajmg.1320380129</GBXref_id>
+        </GBXref>
+      </GBReference_xref>
+      <GBReference_pubmed>1707231</GBReference_pubmed>
+    </GBReference>
+  </GBSeq_references>
+  <GBSeq_comment>REVIEWED REFSEQ: This record has been curated by NCBI staff. The reference sequence was derived from CA389667.1, BX445448.2, BC002665.1, AI205189.1, M27110.1, AK128782.1 and AV731932.2.; [WARNING] On Jan 7, 2015 this sequence was replaced by gi:744066791.; On Jan 26, 2004 this sequence version replaced gi:19923103.; ~Summary: This gene encodes a transmembrane proteolipid protein that is the predominant myelin protein present in the central nervous system. It may play a role in the compaction, stabilization, and maintenance of myelin sheaths, as well as in oligodendrocyte development and axonal survival. Mutations in this gene cause X-linked Pelizaeus-Merzbacher disease and spastic paraplegia type 2. Alternatively spliced transcript variants encoding distinct isoforms or having different 5&apos; UTRs, have been identified for this gene. [provided by RefSeq, Jul 2008]; ~Transcript Variant: This variant (1), also known as PLP, encodes the longer isoform (1), which may play an additional role in peripheral nerve function. Transcript variants 1 and 3 encode the same isoform.; ~Publication Note: This RefSeq record includes a subset of the publications that are available for this gene. Please see the Gene record to access additional publications.; ##Evidence-Data-START## Transcript exon combination BC095452.1, AK128782.1 [ECO:0000332] RNAseq introns single sample supports all introns ERS025082, ERS025084 [ECO:0000348] ##Evidence-Data-END##; COMPLETENESS: complete on the 3&apos; end.</GBSeq_comment>
+  <GBSeq_primary>REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP~1-228               CA389667.1         19-246              ~229-867             BX445448.2         163-801             ~868-2008            BC002665.1         739-1879            ~2009-2009           AI205189.1         413-413             ~2010-2012           BC002665.1         1880-1882           ~2013-2827           M27110.1           1963-2777           ~2828-3023           AK128782.1         2783-2978           ~3024-3038           AV731932.2         667-681             </GBSeq_primary>
+  <GBSeq_feature-table>
+    <GBFeature>
+      <GBFeature_key>source</GBFeature_key>
+      <GBFeature_location>1..3038</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1</GBInterval_from>
+          <GBInterval_to>3038</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>organism</GBQualifier_name>
+          <GBQualifier_value>Homo sapiens</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>mol_type</GBQualifier_name>
+          <GBQualifier_value>mRNA</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>taxon:9606</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>chromosome</GBQualifier_name>
+          <GBQualifier_value>X</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>map</GBQualifier_name>
+          <GBQualifier_value>Xq22</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>gene</GBFeature_key>
+      <GBFeature_location>1..3038</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1</GBInterval_from>
+          <GBInterval_to>3038</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>proteolipid protein 1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>GeneID:5354</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>HGNC:HGNC:9086</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>MIM:300401</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>exon</GBFeature_key>
+      <GBFeature_location>1..174</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1</GBInterval_from>
+          <GBInterval_to>174</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>alignment:Splign:1.39.8</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>misc_feature</GBFeature_key>
+      <GBFeature_location>132..134</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>132</GBInterval_from>
+          <GBInterval_to>134</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>upstream in-frame stop codon</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>CDS</GBFeature_key>
+      <GBFeature_location>171..1004</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>171</GBInterval_from>
+          <GBInterval_to>1004</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>isoform 1 is encoded by transcript variant 1; lipophilin; myelin proteolipid protein; major myelin proteolipid protein</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>codon_start</GBQualifier_name>
+          <GBQualifier_value>1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>transl_table</GBQualifier_name>
+          <GBQualifier_value>1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>product</GBQualifier_name>
+          <GBQualifier_value>myelin proteolipid protein isoform 1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>protein_id</GBQualifier_name>
+          <GBQualifier_value>NP_000524.3</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>GI:41349499</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>CCDS:CCDS14513.1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>GeneID:5354</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>HGNC:HGNC:9086</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>MIM:300401</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>translation</GBQualifier_name>
+          <GBQualifier_value>MGLLECCARCLVGAPFASLVATGLCFFGVALFCGCGHEALTGTEKLIETYFSKNYQDYEYLINVIHAFQYVIYGTASFFFLYGALLLAEGFYTTGAVRQIFGDYKTTICGKGLSATVTGGQKGRGSRGQHQAHSLERVCHCLGKWLGHPDKFVGITYALTVVWLLVFACSAVPVYIYFNTWTTCQSIAFPSKTSASIGSLCADARMYGVLPWNAFPGKVCGSNLLSICKTAEFQMTFHLFIAAFVGAAATLVSLLTFMIAATYNFAVLKLMGRGTKF</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>misc_feature</GBFeature_key>
+      <GBFeature_location>198..278</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>198</GBInterval_from>
+          <GBInterval_to>278</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>non-experimental evidence, no additional details recorded</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>propagated from UniProtKB/Swiss-Prot (P60201.2); transmembrane region</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>misc_feature</GBFeature_key>
+      <GBFeature_location>360..434</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>360</GBInterval_from>
+          <GBInterval_to>434</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>non-experimental evidence, no additional details recorded</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>propagated from UniProtKB/Swiss-Prot (P60201.2); transmembrane region</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>misc_feature</GBFeature_key>
+      <GBFeature_location>624..701</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>624</GBInterval_from>
+          <GBInterval_to>701</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>non-experimental evidence, no additional details recorded</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>propagated from UniProtKB/Swiss-Prot (P60201.2); transmembrane region</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>misc_feature</GBFeature_key>
+      <GBFeature_location>870..950</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>870</GBInterval_from>
+          <GBInterval_to>950</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>non-experimental evidence, no additional details recorded</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>note</GBQualifier_name>
+          <GBQualifier_value>propagated from UniProtKB/Swiss-Prot (P60201.2); transmembrane region</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>175..909</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>175</GBInterval_from>
+          <GBInterval_to>909</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>PLP2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:253311</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>exon</GBFeature_key>
+      <GBFeature_location>175..361</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>175</GBInterval_from>
+          <GBInterval_to>361</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>alignment:Splign:1.39.8</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>230..481</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>230</GBInterval_from>
+          <GBInterval_to>481</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>PMC311008P1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:272836</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>exon</GBFeature_key>
+      <GBFeature_location>362..623</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>362</GBInterval_from>
+          <GBInterval_to>623</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>alignment:Splign:1.39.8</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>463..812</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>463</GBInterval_from>
+          <GBInterval_to>812</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>Plp1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:531423</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>561..948</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>561</GBInterval_from>
+          <GBInterval_to>948</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>Plp1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:495852</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>exon</GBFeature_key>
+      <GBFeature_location>624..792</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>624</GBInterval_from>
+          <GBInterval_to>792</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>alignment:Splign:1.39.8</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>exon</GBFeature_key>
+      <GBFeature_location>793..866</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>793</GBInterval_from>
+          <GBInterval_to>866</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>alignment:Splign:1.39.8</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>exon</GBFeature_key>
+      <GBFeature_location>867..932</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>867</GBInterval_from>
+          <GBInterval_to>932</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>alignment:Splign:1.39.8</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>exon</GBFeature_key>
+      <GBFeature_location>933..3026</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>933</GBInterval_from>
+          <GBInterval_to>3026</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>inference</GBQualifier_name>
+          <GBQualifier_value>alignment:Splign:1.39.8</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>1020..2049</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1020</GBInterval_from>
+          <GBInterval_to>2049</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>GDB:370833</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:156829</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>1207..1308</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1207</GBInterval_from>
+          <GBInterval_to>1308</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>DXS9790</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:50664</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>1908..2656</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1908</GBInterval_from>
+          <GBInterval_to>2656</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>PLP1_1059</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:277593</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>2341..2453</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>2341</GBInterval_from>
+          <GBInterval_to>2453</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>DXS8149</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:34211</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>STS</GBFeature_key>
+      <GBFeature_location>2403..2507</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>2403</GBInterval_from>
+          <GBInterval_to>2507</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>standard_name</GBQualifier_name>
+          <GBQualifier_value>SHGC-63459</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>UniSTS:26355</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>regulatory</GBFeature_key>
+      <GBFeature_location>2990..2995</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>2990</GBInterval_from>
+          <GBInterval_to>2995</GBInterval_to>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>regulatory_class</GBQualifier_name>
+          <GBQualifier_value>polyA_signal_sequence</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+    <GBFeature>
+      <GBFeature_key>polyA_site</GBFeature_key>
+      <GBFeature_location>3026</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_point>3026</GBInterval_point>
+          <GBInterval_accession>NM_000533.3</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>gene</GBQualifier_name>
+          <GBQualifier_value>PLP1</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>gene_synonym</GBQualifier_name>
+          <GBQualifier_value>GPM6C; HLD1; MMPL; PLP; PLP/DM20; PMD; SPG2</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+  </GBSeq_feature-table>
+  <GBSeq_sequence>tcaatcagaaagcccttttcattgcaggagaagaggacaaagatactcagagagaaaaagtaaaagaccgaagaaggaggctggagagaccaggatccttccagctgaacaaagtcagccacaaagcagactagccagccggctacaattggagtcagagtcccaaagacatgggcttgttagagtgctgtgcaagatgtctggtaggggccccctttgcttccctggtggccactggattgtgtttctttggggtggcactgttctgtggctgtggacatgaagccctcactggcacagaaaagctaattgagacctatttctccaaaaactaccaagactatgagtatctcatcaatgtgatccatgccttccagtatgtcatctatggaactgcctctttcttcttcctttatggggccctcctgctggctgagggcttctacaccaccggcgcagtcaggcagatctttggcgactacaagaccaccatctgcggcaagggcctgagcgcaacggtaacagggggccagaaggggaggggttccagaggccaacatcaagctcattctttggagcgggtgtgtcattgtttgggaaaatggctaggacatcccgacaagtttgtgggcatcacctatgccctgaccgttgtgtggctcctggtgtttgcctgctctgctgtgcctgtgtacatttacttcaacacctggaccacctgccagtctattgccttccccagcaagacctctgccagtataggcagtctctgtgctgatgccagaatgtatggtgttctcccatggaatgctttccctggcaaggtttgtggctccaaccttctgtccatctgcaaaacagctgagttccaaatgaccttccacctgtttattgctgcatttgtgggggctgcagctacactggtttccctgctcaccttcatgattgctgccacttacaactttgccgtccttaaactcatgggccgaggcaccaagttctgatcccccgtagaaatccccctttctctaatagcgaggctctaaccacacagcctacaatgctgcgtctcccatcttaactctttgcctttgccaccaactggccctcttcttacttgatgagtgtaacaagaaaggagagtcttgcagtgattaaggtctctctttggactctcccctcttatgtacctcttttagtcattttgcttcatagctggttcctgctagaaatgggaaatgcctaagaagatgacttcccaactgcaagtcacaaaggaatggaggctctaattgaattttcaagcatctcctgaggatcagaaagtaatttcttctcaaagggtacttccactgatggaaacaaagtggaaggaaagatgctcaggtacagagaaggaatgtctttggtcctcttgccatctataggggccaaatatattctctttggtgtacaaaatggaattcattctggtctctctattaccactgaagatagaagaaaaaagaatgtcagaaaaacaataagagcgtttgcccaaatctgcctattgcagctgggagaagggggtcaaagcaaggatctttcacccacagaaagagagcactgaccccgatggcgatggactactgaagccctaactcagccaaccttacttacagcataagggagcgtagaatctgtgtagacgaagggggcatctggccttacacctcgttagggaagagaaacagggtgttgtcagcatcttctcactcccttctccttgataacagctaccatgacaaccctgtggtttccaaggagctgagaatagaaggaaactagcttacatgagaacagactggcctgaggagcagcagttgctggtggctaatggtgtaacctgagatggccctctggtagacacaggatagataactctttggatagcatgtctttttttctgttaattagttgtgtactctggcctctgtcatatcttcacaatggtgctcatttcatgggggtattatccattcagtcatcgtaggtgatttgaaggtcttgatttgttttagaatgatgcacatttcatgtattccagtttgtttattacttatttggggttgcatcagaaatgtctggagaataattctttgattatgactgttttttaaactaggaaaattggacattaagcatcacaaatgatattaaaaattggctagttgaatctattgggattttctacaagtattctgcctttgcagaaacagatttggtgaatttgaatctcaatttgagtaatctgatcgttctttctagctaatggaaaatgattttacttagcaatgttatcttggtgtgttaagagttaggtttaacataaaggttattttctcctgatatagatcacataacagaatgcaccagtcatcagctattcagttggtaagcttccaggaaaaaggacaggcagaaagagtttgagacctgaatagctcccagatttcagtcttttcctgtttttgttaactttgggttaaaaaaaaaaaaagtctgattggttttaattgaaggaaagatttgtactacagttcttttgttgtaaagagttgtgttgttcttttcccccaaagtggtttcagcaatatttaaggagatgtaagagctttacaaaaagacacttgatacttgttttcaaaccagtatacaagataagcttccaggctgcatagaaggaggagagggaaaatgttttgtaagaaaccaatcaagataaaggacagtgaagtaatccgtaccttgtgttttgttttgatttaataacataacaaataaccaacccttccctgaaaacctcacatgcatacatacacatatatacacacacaaagagagttaatcaactgaaagtgtttccttcatttctgatatagaattgcaattttaacacacataaaggataaacttttagaaacttatcttacaaagtgtattttataaaattaaagaaaataaaattaagaatgttctcaatcaaaaaaaaaaaaaaa</GBSeq_sequence>
+</GBSeq>
+
+</GBSet>
+

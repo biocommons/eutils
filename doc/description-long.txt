@@ -1,0 +1,16 @@
+eutils (https://bitbucket.org/biocommons/eutils/) is a Python package
+that facilitates the use of the National Center for Biotechnology
+Information (NCBI) Eutilities interface.  It is conceptually similar
+to facilities in Biopython and PyCogent, but it differs from those in
+a few important ways. Features:
+
+* Eutils, and nothing else.  This reduces the number of dependencies.
+
+* Caching and throttling are built-in. (NCBI bans excessive use.)
+
+* Aims to provide parsers for all major data types.
+
+Status: eutils is in early development.  PubMed, Gene, RefSeq
+(nucleotide), and dbSNP data are well-represented; others are not
+represented at all.
+

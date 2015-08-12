@@ -1,0 +1,22 @@
+syntax: glob
+
+.eggs
+*.egg-info
+*.enc
+*.ini
+*.ipynb
+*.json
+*.orig
+*.pyc
+*.pyo
+*.so
+*~
+.DS_Store
+.coverage
+.keys
+archive
+build
+cover
+dist
+doc/_build
+tmp

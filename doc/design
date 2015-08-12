@@ -1,0 +1,44 @@
+QueryService -- provides eutils web requests
+CachingQueryService -- subclass of above, with selectable caching
+Client -- uses QS to 
+EasyClient -- combine esearch + efetch
+
+
+
+* make cache key less opaque
+
+* central client interface -- single config point
+
+* rich objects with dot notation access to elements
+** careful distinguish variable content from structure
+  e.g., gene.mapping[grch37p10][1], NOT gene.coords.grch37p10.exon1..
+** pointer to client for method-based access to other functionality
+  RefSeqGene.fetch_RefSeqProtein()
+
+* Distinct Clients? XML and typed?
+
+* esearch proxies that support iteration?
+
+* client provides caching *XML* fetch replies (not objects) to mongo or sqlite (concurrency!)
+
+* classes initialized from XML (for cachability)
+
+* support flexible searches with arbitrary queries
+  needs to be typed for return results (by db)
+
+* expose link to generated query for debugging
+
+* support history sessions
+
+* client provides throttling? client singlton?
+
+
+eutils
+  clients/
+    xmlclient -- caches replies
+    richclient (xc)
+  models/
+    <one object per database?>
+    info
+	search results proxy (for iteration)
+    link results proxy

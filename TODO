@@ -1,0 +1,23 @@
+-*-outline-*-
+
+* doc, docstrings
+
+* more tests! (See coverage)
+
+* use tags to distinguish tests that require net connectivity from others
+Net tests need to not use cache (easier when these are separated! -- #123)
+But... commit cache into repo for non-net tests
+
+
+* #122: implement TTL support in cache
+
+* #123: refactor queryservice to separate querying, throttling, and caching
+queryservice implements too much functionality. It should be refactored into:
+a basic query service that executes queries, period
+a thin throttling service based on the basic query service
+a caching service on the throttled service (since that's all the caching service should use)
+separate caching, throttling, querying, parsing/facades
+
+* #124: Support large search result sets
+support webenv history
+use web history + iterators for chained searching
