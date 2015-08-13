@@ -4,19 +4,36 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 
 class EutilsError(Exception):
-    pass
+    """Base class for all Eutils exceptions, and also used to raise
+    general exception.
 
-
-class EutilsRequestError(EutilsError):
-    pass
-
-
-class EutilsNotFoundError(EutilsError):
+    """
     pass
 
 
 class EutilsNCBIError(EutilsError):
+    """Raised when NCBI returns data that appears to be incorrect or
+    invalid.
+
+    """
     pass
+
+
+class EutilsNotFoundError(EutilsError):
+    """Raised when the requested data is not available. (Used only by the
+    :mod:`eutils.sketchy.clientx` interface currently.)
+
+    """
+    pass
+
+
+class EutilsRequestError(EutilsError):
+    """Raised when NCBI responds with an error, such as when a non-existent
+    database is specified.
+
+    """
+    pass
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
