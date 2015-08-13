@@ -32,9 +32,7 @@ docs: setup build_sphinx
 # sphinx docs needs to be able to import packages
 build_sphinx: develop
 
-#=> develop, bdist, bdist_egg, sdist, upload_docs, etc
-# On Ubuntu 14.04 w/Python 2.7.8, upgrading setuptools (from 2.2 to
-# 7.0) is essential for sphinxcontrib-fulltoc 1.1.
+#=> develop, bdist, bdist_egg, sdist, etc
 develop:
 	pip install --upgrade setuptools
 	python setup.py $@
@@ -45,16 +43,10 @@ bdist bdist_egg build build_sphinx install sdist: %:
 #=> upload
 upload: upload_pypi
 
-#=> upload_all: upload_pypi, upload_invitae, and upload_docs
-upload_all: upload_pypi upload_docs;
-
 #=> upload_*: upload to named pypi service (requires config in ~/.pypirc)
 upload_%:
 	python setup.py bdist_egg bdist_wheel sdist upload -r $*
 
-#=> upload_docs: upload documentation to pythonhosted
-upload_docs: %:
-	python setup.py $* -r pypi
 
 
 ############################################################################
