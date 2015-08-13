@@ -12,6 +12,19 @@ except pkg_resources.DistributionNotFound as e:
     __version__ = None
 
 
+if False:
+    # This block is under consideration
+    # Pros: simplified use: just import eutils and move on
+    # Cons: having code appear to be in two places (e.g.,
+    # eutils.Client and eutils.client.Client) is problematic in sphinx
+    # and likely creates user confusion.
+    from eutils.client import Client
+    from eutils.exceptions import EutilsError, EutilsNCBIError, EutilsNotFoundError, EutilsRequestError
+    from eutils.queryservice import QueryService
+    __all__ = [
+        'Client', 'QueryService', 'EutilsError',
+        'EutilsNCBIError', 'EutilsNotFoundError', 'EutilsRequestError']
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

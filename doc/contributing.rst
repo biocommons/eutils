@@ -60,9 +60,13 @@ Some of the key targets are:
 
 
 
+.. _dev_install:
 
 Installation for Development
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You will need `Mercurial <https://mercurial.selenic.com/>`_ to clone
+the eutils repository.
 
 ::
 
