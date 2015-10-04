@@ -203,7 +203,7 @@ if __name__ == "__main__":
     relpath = 'efetch.fcgi?db=nuccore&id=148536845&retmode=xml.xml'
     path = os.path.join(data_dir, relpath)
     gbset = GBSet(le.parse(path).getroot())
-    gbseq = iter(gbset).next()
+    gbseq = next(iter(gbset))
 
 
 # <LICENSE>
