@@ -21,6 +21,7 @@ may be controlled upon instantiation by setting default_args.
     >>> result = qs.efetch({'db': 'gene', 'id': 7157})
 
 """
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 # TODO: Fetch & compare
 # TODO: TTL support in cache, request-specific TTLs?
