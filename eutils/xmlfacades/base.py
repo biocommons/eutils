@@ -41,7 +41,7 @@ class Base(object):
                 type(self).__name__, self._root_tag, self._xml_root.tag))
 
     def __str__(self):
-        return unicode(self).encode('utf-8')
+        return str(self).encode('utf-8')
 
 
 # <LICENSE>
