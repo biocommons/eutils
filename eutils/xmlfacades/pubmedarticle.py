@@ -83,7 +83,7 @@ if __name__ == "__main__":
     ]
     path = os.path.join(data_dir, relpaths[0])
     pas = PubmedArticleSet(le.parse(path).getroot())
-    pa = iter(pas).next()
+    pa = next(iter(pas))
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
