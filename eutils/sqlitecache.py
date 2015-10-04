@@ -6,28 +6,32 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 Taken from http://bitbucket.org/reece/rcore/
 """
 
-import cPickle
 import logging
-import os
+import os, sys
 import sqlite3
 import zlib
 
+#py3k / py2k compatibility
+if sys.version_info >= (3,0):
+    import pickle
+else:
+    import cPickle as pickle
 
-def key_to(o):
-    return cPickle.dumps(o)
-
-
-def key_from(po):
-    return cPickle.loads(po)
-
-
-def val_to(o, compress):
-    po = cPickle.dumps(o)
-    return zlib.compress(po) if compress else po
+def key_to(obj):
+    return pickle.dumps(obj)
 
 
-def val_from(po, compress):
-    return cPickle.loads(zlib.decompress(po) if compress else po)
+def key_from(pobj):
+    return pickle.loads(pobj)
+
+
+def val_to(obj, compress):
+    po = pickle.dumps(obj)
+    return zlib.compress(pobj) if compress else pobj
+
+
+def val_from(pobj, compress):
+    return pickle.loads(zlib.decompress(pobj) if compress else pobj)
 
 
 class SQLiteCache(object):
@@ -50,7 +54,7 @@ class SQLiteCache(object):
         return 'SQLiteCache(db_path={self._db_path},compress_values={self.compress_values})'.format(self=self)
 
     def __str__(self):
-        return unicode(self).encode('utf-8')
+        return str(self).encode('utf-8')
 
     def __dir__(self):
         self._logger.debug('__dir__()')
@@ -99,7 +103,7 @@ class SQLiteCache(object):
             self._logger.debug('created tables')
 
     def _get_schema_version(self):
-        if (u'meta', ) not in self._execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall():
+        if ('meta', ) not in self._execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall():
             return None
         return self._fetch1v('SELECT value FROM meta WHERE key = ?', ['schema version'])
 
