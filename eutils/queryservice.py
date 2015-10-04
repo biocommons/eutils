@@ -22,8 +22,6 @@ may be controlled upon instantiation by setting default_args.
 
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
-
 # TODO: Fetch & compare
 # TODO: TTL support in cache, request-specific TTLs?
 # TODO: optional db -> options map (esp. for rettype & retmode)
@@ -32,13 +30,18 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 # TODO: support history
 # TODO: default args is misplaced -- it should go in client instead
 
+import collections
 import datetime
 import hashlib
-import cPickle
 import logging
-import os
+import os, sys
 import time
-import urllib2
+
+#py3k / py2k compatibility
+if sys.version_info >= (3,0):
+    import pickle
+else:
+    import cPickle as pickle
 
 import lxml.etree
 import pytz
@@ -187,9 +190,12 @@ class QueryService(object):
         # sorted for canonicalization
 
         url = url_base + path
-        defining_args = dict(self.default_args.items() + args.items())
-        full_args = dict(self._ident_args.items() + defining_args.items())
-        cache_key = hashlib.md5(cPickle.dumps((url, sorted(defining_args.items())))).hexdigest()
+
+        # next 3 lines converted by 2to3
+        defining_args = dict(list(self.default_args.items()) + list(args.items()))
+        full_args = dict(list(self._ident_args.items()) + list(defining_args.items()))
+        cache_key = hashlib.md5(pickle.dumps((url, sorted(defining_args.items())))).hexdigest()
+        
         sqas = ';'.join([k + '=' + str(v) for k, v in sorted(args.items())])
         full_args_str = ';'.join([k + '=' + str(v) for k, v in sorted(full_args.items())])
 
@@ -209,7 +215,7 @@ class QueryService(object):
                 pass
 
         if not skip_sleep:
-            req_int = self.request_interval() if callable(self.request_interval) else self.request_interval
+            req_int = self.request_interval() if isinstance(self.request_interval, collections.Callable) else self.request_interval
             sleep_time = req_int - (time.clock() - self._last_request_clock)
             if sleep_time > 0:
                 logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
