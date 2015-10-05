@@ -26,7 +26,7 @@ def key_from(pobj):
 
 
 def val_to(obj, compress):
-    po = pickle.dumps(obj)
+    pobj = pickle.dumps(obj)
     return zlib.compress(pobj) if compress else pobj
 
 
