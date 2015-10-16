@@ -41,6 +41,7 @@ setup(
         'lxml',
         'pytz',
         'requests',
+        'six',
         ],
 
     setup_requires = [

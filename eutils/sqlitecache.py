@@ -11,11 +11,8 @@ import os, sys
 import sqlite3
 import zlib
 
-#py3k / py2k compatibility
-if sys.version_info >= (3,0):
-    import pickle
-else:
-    import cPickle as pickle
+from eutils.compat import pickle
+
 
 def key_to(obj):
     return pickle.dumps(obj)

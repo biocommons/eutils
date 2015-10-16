@@ -14,7 +14,7 @@ class Test_eutils_xmlfacades_PubmedArticle(unittest.TestCase):
     def _read_article_xml(relpath):
         path = os.path.join(data_dir,relpath)
         pas = PubmedArticleSet(le.parse(path).getroot())
-        pa = iter(pas).next()
+        pa = next(iter(pas))
         return pa
 
     def test_20412080(self):

@@ -10,7 +10,6 @@ from eutils.exceptions import EutilsError
 
 logger = logging.getLogger(__name__)
 
-
 class Base(object):
     """Root class for all xmlfacade classes.
 
@@ -29,7 +28,7 @@ class Base(object):
     def __init__(self, xml):
         if isinstance(xml, lxml.etree._Element):
             self._xml_root = xml
-        elif isinstance(xml, str):
+        elif isinstance(xml, str) or isinstance(xml, bytes):
             self._xml_root = lxml.etree.XML(xml)
         else:
             raise EutilsError("Cannot create object from type " + type(xml).__name__)
