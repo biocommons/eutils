@@ -7,7 +7,7 @@ Taken from http://bitbucket.org/reece/rcore/
 """
 
 import logging
-import os, sys
+import os
 import sqlite3
 import zlib
 

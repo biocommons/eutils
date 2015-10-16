@@ -35,7 +35,7 @@ import collections
 import datetime
 import hashlib
 import logging
-import os, sys
+import os
 import time
 
 import lxml.etree
