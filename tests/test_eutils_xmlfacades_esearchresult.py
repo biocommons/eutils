@@ -13,6 +13,7 @@ class Test_ESearchResult(unittest.TestCase):
         path = os.path.join(data_dir,'esearch.fcgi?term=hart%20rk[author].xml.gz')
         xml = gzip.open(path).read()
         self.expected_ids = [6067859, 11108480, 19209718, 24667040, 25273102]
+
         self.esr = ESearchResult(xml)
 
     def test_count(self):

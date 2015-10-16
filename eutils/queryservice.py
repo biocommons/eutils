@@ -38,18 +38,13 @@ import logging
 import os, sys
 import time
 
-#py3k / py2k compatibility
-if sys.version_info >= (3,0):
-    import pickle
-else:
-    import cPickle as pickle
-
 import lxml.etree
 import pytz
 import requests
 
 from eutils.sqlitecache import SQLiteCache
 from eutils.exceptions import EutilsRequestError
+from eutils.compat import pickle
 
 logger = logging.getLogger(__name__)
 
@@ -192,7 +187,7 @@ class QueryService(object):
 
         url = url_base + path
 
-        # next 3 lines converted by 2to3
+        # next 3 lines converted by 2to3 -nm
         defining_args = dict(list(self.default_args.items()) + list(args.items()))
         full_args = dict(list(self._ident_args.items()) + list(defining_args.items()))
         cache_key = hashlib.md5(pickle.dumps((url, sorted(defining_args.items())))).hexdigest()
