@@ -39,9 +39,6 @@ class Base(object):
             raise EutilsError("XML for {} object must be a {} element (got {})".format(
                 type(self).__name__, self._root_tag, self._xml_root.tag))
 
-    def __str__(self):
-        return str(self).encode('utf-8')
-
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
