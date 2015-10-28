@@ -22,3 +22,4 @@ doc/_build
 tmp
 ve/
 ve3k/
+.tox/
