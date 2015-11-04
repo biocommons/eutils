@@ -12,7 +12,7 @@ class GBSeq(Base):
 
     _root_tag = 'GBSeq'
 
-    def __unicode__(self):
+    def __str__(self):
         return "GBSeq({self.acv})".format(self=self)
 
     @property

@@ -11,7 +11,7 @@ class PubmedArticle(eutils.xmlfacades.base.Base):
 
     _root_tag = 'PubmedArticle'
 
-    def __unicode__(self):
+    def __str__(self):
         return ('{self.__class__.__name__}({self.pmid}; {self.jrnl}; {self.title}; {self.authors})'.format(pma=self))
 
     @property

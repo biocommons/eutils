@@ -12,7 +12,7 @@ class GBSet(eutils.xmlfacades.base.Base):
 
     _root_tag = 'GBSet'
 
-    def __unicode__(self):
+    def __str__(self):
         return "GBSet({self.acv})".format(self=self)
 
     @property
