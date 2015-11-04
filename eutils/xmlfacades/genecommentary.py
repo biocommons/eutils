@@ -20,7 +20,7 @@ class GeneCommentary(eutils.xmlfacades.base.Base):
 
     _root_tag = 'Gene-commentary'
 
-    def __unicode__(self):
+    def __str__(self):
         return 'GeneCommentary(acv={self.acv},type={self.type},heading={self.heading},label={self.label})'.format(self=self)
 
     @property
@@ -68,7 +68,7 @@ class GeneCommentaryGenomicCoords(eutils.xmlfacades.base.Base):
 
     _root_tag = 'Gene-commentary_genomic-coords'
 
-    def __unicode__(self):
+    def __str__(self):
         return "{self.gi}:{self.strand}:{self._interval_str}".format(self=self)
 
     @property
@@ -94,7 +94,7 @@ class SeqInterval(eutils.xmlfacades.base.Base):
 
     _root_tag = 'Seq-interval'
 
-    def __unicode__(self):
+    def __str__(self):
         return "[{self.interval_from},{self.interval_to}]".format(self=self)
 
     @property

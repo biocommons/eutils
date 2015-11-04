@@ -12,7 +12,7 @@ class Entrezgene(Base):
 
     _root_tag = 'Entrezgene'
 
-    def __unicode__(self):
+    def __str__(self):
         return "Entrezgene(id={self.gene_id};hgnc={self.hgnc};description={self.description};type={self.type})".format(self=self)
 
     @property

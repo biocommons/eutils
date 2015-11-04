@@ -33,7 +33,7 @@ class Rs(object):
         assert rs_node.tag == '{http://www.ncbi.nlm.nih.gov/SNP/docsum}Rs'
         self._n = rs_node
 
-    #def __unicode__(self):
+    #def __str__(self):
     #    return "Rs({self.id})".format(self=self)
 
     @property
