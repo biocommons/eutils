@@ -12,7 +12,7 @@ class PubmedArticle(eutils.xmlfacades.base.Base):
     _root_tag = 'PubmedArticle'
 
     def __str__(self):
-        return ('{self.__class__.__name__}({self.pmid}; {self.jrnl}; {self.title}; {self.authors})'.format(pma=self))
+        return ('{pma.__class__.__name__}({pma.pmid}; {pma.jrnl}; {pma.title}; {pma.authors})'.format(pma=self))
 
     @property
     def abstract(self):
