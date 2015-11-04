@@ -54,7 +54,7 @@ class Test_eutils_xmlfacades_PubmedArticle(unittest.TestCase):
     def test___str__(self):
         'Ensure xmlfacade Base object safely converts to string.'
         pma = self._read_article_xml('efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml')
-        self.assertIn('object', '%s' % pma) 
+        self.assertIn('PubmedArticle(20412080', '%s' % pma)
 
 if __name__ == '__main__':
     unittest.main()
