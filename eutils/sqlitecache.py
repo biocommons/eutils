@@ -47,11 +47,8 @@ class SQLiteCache(object):
 
         ############################################################################
         ## Special Python methods
-    def __unicode__(self):
-        return 'SQLiteCache(db_path={self._db_path},compress_values={self.compress_values})'.format(self=self)
-
     def __str__(self):
-        return str(self).encode('utf-8')
+        return 'SQLiteCache(db_path={self._db_path},compress_values={self.compress_values})'.format(self=self)
 
     def __dir__(self):
         self._logger.debug('__dir__()')
