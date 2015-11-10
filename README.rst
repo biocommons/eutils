@@ -40,7 +40,7 @@ A Quick Example
   >>> esr = ec.esearch(db='gene',term='tumor necrosis factor')
   
   # fetch one of those (gene id 7157 is human TNF)
-  >>> egs = ec.efetch(db='gene',id=7157)
+  >>> egs = ec.efetch(db='gene', id=7157)
   
   # One may fetch multiple genes at a time. These are returned as an
   # EntrezgeneSet. We'll grab the first (and only) child, which returns
@@ -58,8 +58,8 @@ A Quick Example
     'GeneCommentary(acv=NC_018928.2,type=genomic,heading=Alternate CHM1_1.1,label=Chromosome 17 Alternate CHM1_1.1)']
   
   # Get the first three products defined on GRCh38
-  >>> [p.acv for p in eg.references[0].products][:3]
-  ['NM_001126112.2', 'NM_001276761.1', 'NM_000546.5'] 
+  #>>> [p.acv for p in eg.references[0].products][:3]
+  #['NM_001126112.2', 'NM_001276761.1', 'NM_000546.5'] 
 
   # As a sample, grab the first product defined on this reference (order is arbitrary)
   >>> mrna = eg.references[0].products[0]
