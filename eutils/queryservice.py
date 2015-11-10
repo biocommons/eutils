@@ -93,9 +93,18 @@ class QueryService(object):
     QueryService works with any valid query arguments, passed as
     dictionaries.
 
-    Currently, only einfo, esearch, and efetch are
-    implemented. (Implementing other query modes should be
-    straightforward.)
+    Implemented interfaces:
+
+        * esearch
+        * efetch
+        * elink
+        * einfo
+        * esummary
+
+    Implementing other query modes should be straightforward.
+
+    See also the NCBI's Entrez Programming Utilities Help: 
+        http://www.ncbi.nlm.nih.gov/books/NBK25500/
 
     """
 
@@ -129,7 +138,8 @@ class QueryService(object):
         self._request_count = 0
 
     def efetch(self, args):
-        """execute a cached, throttled efetch query
+        """
+        execute a cached, throttled efetch query
 
         :param dict args: dict of query items
         :returns: content of reply
@@ -139,30 +149,93 @@ class QueryService(object):
         """
         return self._query('/efetch.fcgi', args)
 
-    def einfo(self, args={}):
+    def einfo(self, args=None):
         """
-        execute a cached, throttled einfo query
+        execute a NON-cached, throttled einfo query
 
-        :param dict args: dict of query items
+        einfo.fcgi?db=<database>
+
+        Input: Entrez database (&db) or None (returns info on all Entrez databases)
+
+        Output: XML containing database statistics
+
+        Example: Find database statistics for Entrez Protein.
+
+            QueryService.einfo({'db': 'protein'})
+
+        Equivalent HTTP request:
+
+            http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=protein
+
+        :param dict args: dict of query items (optional)
         :returns: content of reply
         :rtype: str
         :raises EutilsRequestError: when NCBI replies, but the request failed (e.g., bogus database name)
 
         """
-
-        return self._query('/einfo.fcgi', args)
+        if args is None:
+            args = {}
+        return self._query('/einfo.fcgi', args, skip_cache=True)
 
     def esearch(self, args):
         """
         execute a cached, throttled esearch query
 
-        :param dict args: dict of query items, containing at least db and term keys
+        :param dict args: dict of query items, containing at least 'db' and 'term' keys
         :returns: content of reply
         :rtype: str
         :raises EutilsRequestError: when NCBI replies, but the request failed (e.g., bogus database name)
 
         """
         return self._query('/esearch.fcgi', args)
+
+    def elink(self, args):
+        """
+        execute a cached, throttled elink query
+
+        Input: List of UIDs (&id); Source Entrez database (&dbfrom); Destination Entrez database (&db)
+
+        Output: XML containing linked UIDs from source and destination databases
+
+        Example: Find one set of Gene IDs linked to nuccore GIs 34577062 and 24475906
+
+            QueryService.elink({'dbfrom': 'nuccore', 'db': 'gene', 'id': '34577062,24475906'})
+
+        Equivalent HTTP request:
+
+            http://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=nuccore&db=gene&id=34577062,24475906
+
+        :param dict args: dict of query items containing at least the 'db', 'dbfrom', and 'id' keys.
+        :returns: content of reply
+        :rtype: str
+        :raises EutilsRequestError: when NCBI replies, but the request failed (e.g., bogus database name)
+
+        """
+        return self._query('/elink.fcgi', args)
+
+    def esummary(self, args):
+        """
+        execute a cached, throttled esummary query
+
+        Input: List of UIDs (&id); Entrez database (&db)
+
+        Output: XML document summary for requested ID(s) [comma-separated]
+
+        Example: 
+        
+            QueryService.esummary({ 'db': 'medgen', 'id': 134 })
+
+        Equivalent HTTP request:
+
+            http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=medgen&id=134
+
+        :param dict args: dict of query items containing at least 'db' and 'id' keys.
+        :returns: content of reply
+        :rtype: str
+        :raises EutilsRequestError: when NCBI replies, but the request failed (e.g., bogus database name)
+
+        """
+        return self._query('/esummary.fcgi', args)
 
 
     ############################################################################

@@ -57,13 +57,9 @@ A Quick Example
     'GeneCommentary(acv=NG_017013.2,type=genomic,heading=None,label=RefSeqGene)',
     'GeneCommentary(acv=NC_018928.2,type=genomic,heading=Alternate CHM1_1.1,label=Chromosome 17 Alternate CHM1_1.1)']
   
-  # Get all products defined on GRCh38
-  >>> [p.acv for p in eg.references[0].products]
-  [u'NM_001126112.2', u'NM_001276761.1', u'NM_000546.5',
-  u'NM_001276760.1', u'NM_001126113.2', u'NM_001276695.1',
-  u'NM_001126114.2', u'NM_001276696.1', u'NM_001126118.1',
-  u'NM_001126115.1', u'NM_001276697.1', u'NM_001126117.1',
-  u'NM_001276699.1', u'NM_001126116.1', u'NM_001276698.1']
+  # Get the first three products defined on GRCh38
+  >>> [p.acv for p in eg.references[0].products][:3]
+  ['NM_001126112.2', 'NM_001276761.1', 'NM_000546.5'] 
 
   # As a sample, grab the first product defined on this reference (order is arbitrary)
   >>> mrna = eg.references[0].products[0]
