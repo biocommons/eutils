@@ -34,7 +34,7 @@ build_sphinx: develop
 
 #=> develop, bdist, bdist_egg, sdist, etc
 develop:
-	pip install --upgrade setuptools
+	pip install -r etc/dev.reqs
 	python setup.py $@
 
 bdist bdist_egg build build_sphinx install sdist: %:
@@ -53,13 +53,16 @@ upload_%:
 #= TESTING
 # see test configuration in setup.cfg
 
-#=> test -- run tests
 test-setup: develop
 
-#=> test, test-with-coverage -- per-commit test target for CI
+#=> test-with-coverage -- per-commit test target for CI
 # see test configuration in setup.cfg
-test test-with-coverage:
+test-with-coverage:
 	python setup.py nosetests
+
+#=> test == tox -- use tox for testing
+test tox:
+	tox
 
 #=> ci-test -- per-commit test target for CI
 ci-test: test
@@ -86,7 +89,7 @@ cleaner: clean
 #=> cleanest: above, and remove the virtualenv, .orig, and .bak files
 cleanest: cleaner
 	find . \( -name \*.orig -o -name \*.bak \) -print0 | xargs -0r /bin/rm -v
-	/bin/rm -fr distribute-* *.egg *.egg-info *.tar.gz nosetests.xml cover
+	/bin/rm -fr *.egg-info .tox .eggs .coverage
 #=> pristine: above, and delete anything unknown to mercurial
 pristine: cleanest
 	hg st -un0 | xargs -0r echo /bin/rm -fv
