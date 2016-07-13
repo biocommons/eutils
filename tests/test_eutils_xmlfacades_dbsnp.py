@@ -12,7 +12,7 @@ class Test_eutils_xmlfacades_dbsnp_ExchangeSet(unittest.TestCase):
         self.es = eutils.xmlfacades.dbsnp.ExchangeSet(xml)
 
     def test_two_snps(self):
-        self.assertEqual(len(self.es), 2)
+        assert len(self.es) == 2
 
 if __name__ == '__main__':
     unittest.main()

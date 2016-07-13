@@ -48,14 +48,14 @@ setup(
         'setuptools_scm',
         'sphinx',
         'sphinx_rtd_theme',
-        'nose',
-        ],
+        'wheel',
+    ],
 
     tests_require = [
-        'coverage',
-        'nose',
-        'nose-cov',
-        ],
+        'pytest',
+        'pytest-cov',
+        'tox',
+    ],
 )
 
 ## <LICENSE>
