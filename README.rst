@@ -52,10 +52,10 @@ A Quick Example
   ('TP53', '17p13.1', 'tumor protein p53', 'protein-coding', 'Homo sapiens')
 
   # get a list of genomic references
-  >>> [str(r) for r in eg.references]
-   ['GeneCommentary(acv=NC_000017.11,type=genomic,heading=Reference GRCh38.p2 Primary Assembly,label=Chromosome 17 Reference GRCh38.p2 Primary Assembly)',
-    'GeneCommentary(acv=NG_017013.2,type=genomic,heading=None,label=RefSeqGene)',
-    'GeneCommentary(acv=NC_018928.2,type=genomic,heading=Alternate CHM1_1.1,label=Chromosome 17 Alternate CHM1_1.1)']
+  >>> print([str(r) for r in eg.references])   # doctest: +ELLIPSIS
+  ['GeneCommentary(acv=NC_000017.11,...,label=Chromosome 17 Reference GRCh38... Primary Assembly)',
+   'GeneCommentary(acv=NG_017013.2,...,label=RefSeqGene)',
+   'GeneCommentary(acv=NC_018928.2,...,label=Chromosome 17 Alternate CHM1_1.1)']
   
   # Get the first three products defined on GRCh38
   #>>> [p.acv for p in eg.references[0].products][:3]
