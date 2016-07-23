@@ -253,6 +253,12 @@ class QueryService(object):
         address) and with the default args declared when instantiating
         the client.
         """
+        def _cacheable(r):
+            """return False if r shouldn't be cached (contains a no-cache meta
+            line); True otherwise"""
+            return not ("no-cache" in r  # obviate parsing, maybe
+                        and lxml.etree.XML(r).xpath("//meta/@content='no-cache'"))
+        
         # cache key: the key associated with this endpoint and args The
         # key intentionally excludes the identifying args (tool and email)
         # and is independent of the request method (GET/POST) args are
@@ -268,6 +274,7 @@ class QueryService(object):
         sqas = ';'.join([k + '=' + str(v) for k, v in sorted(args.items())])
         full_args_str = ';'.join([k + '=' + str(v) for k, v in sorted(full_args.items())])
 
+        logging.debug("CACHE:" + str(skip_cache) + "//" + str(self._cache))
         if not skip_cache and self._cache:
             try:
                 v = self._cache[cache_key]
@@ -297,13 +304,20 @@ class QueryService(object):
             r=r,
             len=len(r.text)))
 
-        if not r.ok or any(bad_word in r.text for bad_word in ['<error>', '<ERROR>']):
+        if not r.ok:
             # TODO: discriminate between types of errors
             xml = lxml.etree.fromstring(r.text.encode('utf-8'))
             raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
 
-        if self._cache:
-            # N.B. we cache the read even if skip_cache is true
+        if any(bad_word in r.text for bad_word in ['<error>', '<ERROR>']):
+            xml = lxml.etree.fromstring(r.text.encode('utf-8'))
+            raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+
+        if '<h1 class="error">Access Denied</h1>' in r.text:
+            raise EutilsRequestError('Access Denied: {url}'.format(url=url))
+
+        if self._cache and _cacheable(r.text):
+            # N.B. we cache results even when skip_cache (read) is true
             self._cache[cache_key] = r.content
             logger.info('cached results for key {cache_key} ({url}, {sqas}) '.format(
                 cache_key=cache_key,
@@ -314,8 +328,11 @@ class QueryService(object):
 
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.DEBUG)
     qs = QueryService()
     r = qs.einfo({'db': 'protein'})
+    r = qs.efetch({'db': 'protein', 'id': '319655736'})
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
