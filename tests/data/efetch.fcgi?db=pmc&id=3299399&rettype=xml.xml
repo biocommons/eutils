@@ -1,0 +1,1364 @@
+<pmc-articleset><article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="review-article">
+  <?properties open_access?>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">Front Psychiatry</journal-id>
+      <journal-id journal-id-type="publisher-id">Front. Psychiatry</journal-id>
+      <journal-title-group>
+        <journal-title>Frontiers in Psychiatry</journal-title>
+      </journal-title-group>
+      <issn pub-type="epub">1664-0640</issn>
+      <publisher>
+        <publisher-name>Frontiers Research Foundation</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmid">22416237</article-id>
+      <article-id pub-id-type="pmc">3299399</article-id>
+      <article-id pub-id-type="doi">10.3389/fpsyt.2012.00018</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Psychiatry</subject>
+          <subj-group>
+            <subject>Review Article</subject>
+          </subj-group>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>The Effects of Psychosis Risk Variants on Brain Connectivity: A Review</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Mothersill</surname>
+            <given-names>Omar</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+          <xref ref-type="author-notes" rid="fn002">
+            <sup>&#8224;</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Kelly</surname>
+            <given-names>Sinead</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+          <xref ref-type="author-notes" rid="fn002">
+            <sup>&#8224;</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Rose</surname>
+            <given-names>Emma Jane</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Donohoe</surname>
+            <given-names>Gary</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+          <xref ref-type="author-notes" rid="fn001">*</xref>
+        </contrib>
+      </contrib-group>
+      <aff id="aff1">
+        <sup>1</sup>
+        <institution>Neuropsychiatric Genetics Group, Department of Psychiatry, Trinity College Dublin</institution>
+        <country>Dublin, Ireland</country>
+      </aff>
+      <aff id="aff2">
+        <sup>2</sup>
+        <institution>Trinity College Institute for Neuroscience, Trinity College Dublin</institution>
+        <country>Dublin, Ireland</country>
+      </aff>
+      <author-notes>
+        <fn fn-type="edited-by">
+          <p>Edited by: Daniela Tropea, Trinity College Dublin, Ireland</p>
+        </fn>
+        <fn fn-type="edited-by">
+          <p>Reviewed by: Mikhail Pletnikov, Johns Hopkins University, USA; Andrew M. McIntosh, The University of Edinburgh, UK</p>
+        </fn>
+        <corresp id="fn001">*Correspondence: Gary Donohoe, Associate Professor of Clinical Psychology and Neuropsychology, Neuropsychiatric Genetics Group, Department of Psychiatry, Trinity College Dublin, Trinity Centre for Health Sciences, St. James&#8217; Hospital, Dublin 8, Ireland. e-mail: <email>donoghug@tcd.ie</email></corresp>
+        <fn fn-type="other" id="fn002">
+          <p><sup>&#8224;</sup>Omar Mothersill and Sinead Kelly have contributed equally to this work.</p>
+        </fn>
+        <fn fn-type="other" id="fn003">
+          <p>This article was submitted to Frontiers in Molecular Psychiatry, a specialty of Frontiers in Psychiatry.</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="epub">
+        <day>09</day>
+        <month>3</month>
+        <year>2012</year>
+      </pub-date>
+      <pub-date pub-type="collection">
+        <year>2012</year>
+      </pub-date>
+      <volume>3</volume>
+      <elocation-id>18</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>02</day>
+          <month>12</month>
+          <year>2011</year>
+        </date>
+        <date date-type="accepted">
+          <day>22</day>
+          <month>2</month>
+          <year>2012</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>Copyright &#169; 2012 Mothersill, Kelly, Rose and Donohoe.</copyright-statement>
+        <copyright-year>2012</copyright-year>
+        <license license-type="open-access" xlink:href="http://www.frontiersin.org/licenseagreement">
+          <license-p>This is an open-access article distributed under the terms of the <uri xlink:type="simple" xlink:href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution Non Commercial License</uri>, which permits non-commercial use, distribution, and reproduction in other forums, provided the original authors and source are credited.</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>In light of observed changes in connectivity in schizophrenia and the highly heritable nature of the disease, neural connectivity may serve as an important intermediate phenotype for schizophrenia. However, how individual variants confer altered connectivity and which measure of brain connectivity is more proximal to the underlying genetic architecture (i.e., functional or structural) has not been well delineated. In this review we consider these issues and the relative sensitivity of imaging methodologies to schizophrenia-related changes in connectivity. We searched PubMed for studies considering schizophrenia risk genes AND functional or structural connectivity. Where data was available, summary statistics were used to determine an estimate of effect size (i.e., Cohen&#8217;s <italic>d</italic>). A random-effects meta-analysis was used to consider (1) the largest effect and (2) all significant effects between functional and structural studies. Schizophrenia risk variants involved in neurotransmission, neurodevelopment and myelin function were found to be associated with altered neural connectivity. On average, schizophrenia risk genes had a large effect on functional (mean <italic>d&#8201;</italic>=&#8201;0.76) and structural connectivity (mean <italic>d&#8201;</italic>=&#8201;1.04). The examination of the largest effect size indicated that the outcomes of functional and structural studies were comparable (<italic>Q</italic>&#8201;=&#8201;2.17, <italic>p</italic>&#8201;&gt;&#8201;0.05). Conversely, consideration of effect size estimates for <italic>all</italic> significant effects suggest that reported effect sizes in structural connectivity studies were more variable than in functional connectivity studies, and that there was a significant lack of homogeneity across the modalities (<italic>Q</italic>&#8201;=&#8201;6.928, <italic>p</italic>&#8201;=&#8201;0.008). Given the more variable profile of effect sizes associated with structural connectivity, these data may suggest that structural imaging methods are more sensitive to a wider range of effects, as opposed to functional studies which may only be able to determine large effects. These conclusions are limited by methodological considerations, and require further investigation involving larger samples, multiple genes, and novel analysis techniques for confirmation.</p>
+      </abstract>
+      <kwd-group>
+        <kwd>schizophrenia</kwd>
+        <kwd>functional connectivity</kwd>
+        <kwd>structural connectivity</kwd>
+        <kwd>genotype</kwd>
+        <kwd>effect size</kwd>
+      </kwd-group>
+      <counts>
+        <fig-count count="2"/>
+        <table-count count="3"/>
+        <equation-count count="0"/>
+        <ref-count count="76"/>
+        <page-count count="12"/>
+        <word-count count="10126"/>
+      </counts>
+    </article-meta>
+  </front>
+  <body>
+    <sec>
+      <title>Introduction</title>
+      <sec>
+        <title>Examining the function of schizophrenia (SZ) risk variants</title>
+        <p>Schizophrenia is a complex genetic disorder affecting roughly 1% of the world&#8217;s population (see Lewis and Lieberman, <xref ref-type="bibr" rid="B30">2000</xref> for a review). It is characterized by hallucinations and delusions, reduced emotion and cognitive impairment, and imposes a heavy cost on society (for example, the total cost of psychotic disorders in Europe in 2010 was recently calculated as &#8364;93.9 billion; Gustavsson et al., <xref ref-type="bibr" rid="B18">2011</xref>). While there is no consensus about its exact causes, the heritability of SZ is estimated to be about 80% (Sullivan et al., <xref ref-type="bibr" rid="B64">2003</xref>). Genome-wide association (GWAS) and copy number variation studies have identified several common and rare gene variants associated with the disorder (O&#8217;Donovan et al., <xref ref-type="bibr" rid="B45">2008</xref>). Understanding the function of these variants could, therefore, lead to a greater understanding of disease pathogenesis, which could direct new treatments.</p>
+        <p>Schizophrenia patients present with variable symptom profiles and distinct disease trajectories. This heterogeneity may be in part due to the complex genetics of SZ, which in turn poses significant problems for understanding the mechanisms by which genetic variants confer risk for this disease. In an attempt to address this complexity, researchers have focused on so-called &#8220;intermediate phenotypes,&#8221; which are measurable variations that occur on the pathway between genes and disease, and as such may be closer to the underlying genetic architecture than clinical symptoms (see Gottesman and Gould, <xref ref-type="bibr" rid="B17">2003</xref> for a review). Possible intermediate phenotypes for SZ include changes in brain chemistry, structure, function (Braff et al., <xref ref-type="bibr" rid="B1">2007</xref>) and connectivity (Meyer-Lindenberg, <xref ref-type="bibr" rid="B35">2009</xref>).</p>
+        <p>While changes in functional and structural connectivity may be a critical aspect of the SZ disease profile, there has been little systematic evaluation of the relative sensitivity of these different indices to genetic risk for SZ. In this meta-analysis we outline empirical investigations that have utilized functional magnetic resonance imaging (fMRI) or diffusion tensor imaging (DTI) to investigate the effects of SZ risk variants on functional and structural brain connectivity. We also consider the relative magnitude of these effects, in order to determine the extent of the genetic impact on brain connectivity.</p>
+      </sec>
+      <sec>
+        <title>Altered functional connectivity in SZ</title>
+        <p>In the early 20th century, German neurologist Carl Wernicke proposed that SZ arises from altered neural connectivity (or dysconnectivity) rather than from abnormalities in specific parts of the brain (see Stephan et al., <xref ref-type="bibr" rid="B62">2009</xref> for a review). One hundred years later, advances in neuroimaging technology have enabled scientists to empirically consider dysconnectivity as a key component of SZ pathogenesis.</p>
+        <p>Two or more brain regions are said to be functionally connected if they show a correlation of activity over time (Friston et al., <xref ref-type="bibr" rid="B15">1993</xref>). The hypothesis that functional connectivity is altered in SZ is supported by positron emission tomography (PET; e.g., Friston and Frith, <xref ref-type="bibr" rid="B14">1995</xref>; Meyer-Lindenberg et al., <xref ref-type="bibr" rid="B37">2001</xref>, <xref ref-type="bibr" rid="B39">2005</xref>) and fMRI studies (Lawrie et al., <xref ref-type="bibr" rid="B29">2002</xref>), which reveal abnormal prefronto-temporal connectivity in SZ patients while they perform cognitive tasks. Electroencephalogram (EEG) research also demonstrates abnormal functional connectivity patterns in patients with SZ (Breakspear et al., <xref ref-type="bibr" rid="B2">2003</xref>), and one genetic mouse model of SZ reveals decreased hippocampal-prefrontal connectivity during a T-maze task (Sigurdsson et al., <xref ref-type="bibr" rid="B59">2010</xref>).</p>
+        <p>Support for the role of functional connectivity as an intermediate phenotype for psychiatric disorders includes a fMRI study by Pezawas et al., <xref ref-type="bibr" rid="B50">2005</xref>). These authors examined the effects of a 5-HTTLPRpolymorphism that is associated with anxiety and depression, on functional connectivity between the amygdala and cingulate cortex. It was reported that variant-associated changes in connectivity predicted almost 30% of the variance in the behavioral effects of this polymorphism. Behavioral variability was also in fact better predicted by changes in connectivity than changes in regional brain activation.</p>
+        <p>Understanding the underlying biological causes of altered functional connectivity has the potential to lead to a better understanding of SZ pathogenesis, but so far the etiology of functional dysconnectivity remains unclear. However, different mechanisms have been proposed, which we will discuss in the following sections.</p>
+      </sec>
+      <sec>
+        <title>The &#8220;disconnection&#8221; hypothesis of SZ</title>
+        <p>The &#8220;disconnection&#8221; hypothesis was first proposed by Karl Friston and colleagues in the 1990s (Friston, <xref ref-type="bibr" rid="B12">1998</xref>). This hypothesis postulates that SZ is primarily caused by abnormal <italic>N</italic>-methyl-<sc>d</sc>-aspartate (NMDA)-receptor mediated synaptic plasticity, which in turn, is caused by dysregulation of these receptors by neurotransmitters such as dopamine. Support for the role of the NMDA receptor in SZ comes from several studies. Firstly, drugs that block the NMDA-receptor, such as ketamine and phencyclidine, can induce psychotic symptoms in healthy controls (see Javitt, <xref ref-type="bibr" rid="B21">2010</xref> for a review). Similarly, ketamine administration induces sensory processing deficits in controls similar to deficits seen in patients, suggesting a role for NMDA receptors in these deficits (Umbricht et al., <xref ref-type="bibr" rid="B70">2000</xref>). Activity of midbrain dopaminergic neurons is partially regulated by glutamatergic projections from the prefrontal cortex (PFC), acting via NMDA receptors, and NMDA receptor-blockade enhances amphetamine-induced increases in striatal dopamine in controls, similar to increases seen in SZ patients (Kegeles et al., <xref ref-type="bibr" rid="B24">2000</xref>). Finally, genetic variants that play a role in NMDA-signaling have been associated with increased SZ risk in candidate gene studies [e.g., <italic>G72</italic>,<italic>GRM3</italic> and <italic>RGS4</italic>; see Harrison and Weinberger (<xref ref-type="bibr" rid="B20">2005</xref>) for a review].</p>
+      </sec>
+      <sec>
+        <title>Functional connectivity MRI analysis techniques</title>
+        <p>Functional connectivity can be measured with a variety of tools (e.g., PET, EEG), but this review will focus on papers using fMRI to measure the phenotype in healthy controls and patients with SZ. Using the blood oxygen level dependent (BOLD) response as an indirect measure of neuronal activity (Ogawa et al., <xref ref-type="bibr" rid="B46">1990</xref>), there are a range of approaches to analysis. This review will focus on <italic>seeded connectivity</italic> and <italic>psychophysiological interaction</italic> (PPI).</p>
+        <p>A seeded connectivity analysis begins with the selection of a seed region, which can be a voxel, or cluster of voxels in the fMRI time-series (Nallasamy and Tsao, <xref ref-type="bibr" rid="B42">2011</xref>). The mean time-course for the seed region is then correlated with all other voxels in the brain. Voxels that pass a certain threshold are considered to be functionally connected with the seed region, resulting in a functional connectivity map. While the PPI approach also measures the co-variation of the BOLD signal in voxels across the brain (Friston et al., <xref ref-type="bibr" rid="B13">1997</xref>), it also measures changes in the interactions between brain regions in response to different psychological tasks.</p>
+      </sec>
+      <sec>
+        <title>Structural connectivity and SZ</title>
+        <p>White matter (WM) contains myelinated nerve cells that connect various gray matter (GM) areas of the brain to each other, and carry nerve impulses between neurons. Compromised WM integrity is evident in SZ (Kubicki et al., <xref ref-type="bibr" rid="B28">2007</xref>; Ellison-Wright and Bullmore, <xref ref-type="bibr" rid="B8">2009</xref>). Moreover, WM abnormalities are apparent in individuals at high risk of SZ and also in patients during the early stages of illness, suggesting that these abnormalities may be a stable characteristic of the disease (Witthaus et al., <xref ref-type="bibr" rid="B75">2008</xref>; Perez-Iglesias et al., <xref ref-type="bibr" rid="B49">2010</xref>). There are two key postulations regarding the nature of WM deficits in SZ: The &#8220;<italic>global theory</italic>&#8221; and the &#8220;<italic>macro-circuit theory</italic>.&#8221; The global theory of WM disruption in SZ suggests that WM is compromised uniformly throughout the brain, whereas the macro-circuit theory proposes that specific WM tracts are compromised, which may be a cause <italic>or</italic> consequence of abnormalities in the gray matter regions these tracts connect (Buchsbaum et al., <xref ref-type="bibr" rid="B3">2006</xref>; Konrad and Winterer, <xref ref-type="bibr" rid="B27">2008</xref>).</p>
+        <sec>
+          <title>Diffusion tensor imaging</title>
+          <p>Diffusion tensor imaging is a method used to measure the diffusion of water molecules in brain WM. Healthy brain WM has a complex axonal structure and, therefore, water diffusion will be restricted along the direction of the axons. This is known as <italic>anisotropic</italic> diffusion. However, if brain WM is compromised water diffusion can become less restricted (i.e., <italic>isotropic</italic>). A common measure derived from DTI to describe the degree of anisotropy during diffusion is <italic>fractional anisotropy</italic> (FA). However, other measures of diffusion such as radial and axial diffusivity can also be obtained. Based on the voxel-wise information provided by DTI, fiber tracking algorithms can be implemented in regions of interest to reconstruct the underlying three-dimensional WM pathways. While caution must be exercised when interpreting measures of anisotropy (Jones, <xref ref-type="bibr" rid="B22">2008</xref>, <xref ref-type="bibr" rid="B23">2010</xref>; Tournier et al., <xref ref-type="bibr" rid="B69">2011</xref>), such measures are thought to index structural integrity of WM tracts and, thus, may be reasonably considered to be implicit indices of brain connectivity.</p>
+        </sec>
+        <sec>
+          <title>WM integrity and SZ: evidence from DTI investigations</title>
+          <p>A review by Kubicki et al. (<xref ref-type="bibr" rid="B28">2007</xref>) noted that the most frequent positive findings of DTI studies in SZ were decreased FA within the prefrontal and temporal lobes, as well as abnormalities within the fiber bundles connecting these regions. WM tracts within these regions that were found to be affected included: (a) the uncinate fasciculus that connects parts of the limbic system with areas in the frontal cortex; (b) the cingulum bundle; and (c) the arcuate fasciculus that connects part of the temporo-parietal junction with the frontal cortex and is thought to be part of the superior longitudinal fasciculus. Ellison-Wright and Bullmore (<xref ref-type="bibr" rid="B8">2009</xref>) conducted a meta-analysis of 15 DTI studies, which included a total of 407 patients with SZ and 383 comparison subjects. Results identified two regions of FA decreases in SZ subjects in comparison to controls. The first region was in the left frontal deep WM, which is traversed by WM tracts interconnecting the frontal lobe, thalamus and cingulate gyrus. The tracts include: (a) anterior thalamic radiation (ATR); (b) corticobulbar tracts; (c) inter-hemispheric fibers running through the genu of the corpus callosum; (d) the inferior fronto-occipital fasciculus; (e) the cingulum bundle. The second region was in the left temporal deep WM that is traversed by WM tracts interconnecting the frontal lobe, insula, hippocampus&#8211;amygdala, temporal and occipital lobes. These tracts include: (a) inter-hemispheric fibers running through the splenium of the corpus callosum; (b) the inferior fronto-occipital fasciculus; (c) the inferior longitudinal fasciculus; (d) the fornix/striaterminalis. These two reviews of the current DTI/SZ literature suggest that specific networks of WM are disrupted in SZ providing support for the macro-circuit theory of WM disruption in the disease.</p>
+        </sec>
+        <sec>
+          <title>Pathophysiological mechanisms of compromised WM</title>
+          <p>As the integrity of axons is dependent on myelination and factors influencing myelination, it is possible that myelin and oligodendroglia function also plays a role in the pathophysiology of SZ (Davis et al., <xref ref-type="bibr" rid="B6">2003</xref>). Since myelination also impacts synaptic plasticity, oligodendrocyte abnormality and subsequent myelin dysfunction may contribute to the development of SZ by altering synaptic function and information processing (Fields, <xref ref-type="bibr" rid="B11">2008</xref>). Conduction velocity along axons is also thought to be essential for learning processes (Fields, <xref ref-type="bibr" rid="B11">2008</xref>) and disruption of this has the potential to lead to the range of cognitive impairments observed in SZ (Tanaka et al., <xref ref-type="bibr" rid="B66">2009</xref>). Furthermore, oligodendrocyte and myelin dysfunction also impacts neuronal activity that is relevant to SZ, such as glutamate and dopamine signaling. Evidence from psychotic episodes of multiple sclerosis (MS) patients and experimentally induced demyelination suggests that altered myelin function leads to altered dopamine signaling (Takahashi et al., <xref ref-type="bibr" rid="B65">2011</xref>). Similar analyses have also revealed increased levels of glutamate in brains of MS patients as well as increased expression of glutamate receptors on oligodendrocytes (Takahashi et al., <xref ref-type="bibr" rid="B65">2011</xref>). Glutamate transporters are also present on oligodendroglia and are thought to regulate glutamate concentrations to prevent glutamate-induced excitotoxicity (Pitt et al., <xref ref-type="bibr" rid="B51">2003</xref>). Over activation of oligodendroglial glutamate receptors is excitotoxic and can result in oligodendrocyte death (Davis et al., <xref ref-type="bibr" rid="B6">2003</xref>).</p>
+          <p>Recently, attention has turned toward the consideration of genes that influence oligodendrocyte architecture and how these genes may also be associated with SZ risk. Hakak et al. (<xref ref-type="bibr" rid="B19">2001</xref>) examined the expression of 6500 genes derived from postmortem cortical tissue of SZ patients and controls. The expression levels of six myelin-related genes were significantly down regulated for SZ patients in comparison to control subjects. These genes included: myelin-associated glycoprotein (MAG), CNP, myelin and lymphocyte protein (MAL), gelosn (GSN), ErbB3, and transferring. Down regulation of these genes supports the view that oligodendrocytes, the cell type from which all these genes derive in the brain, contribute to the pathophysiology of SZ.</p>
+        </sec>
+      </sec>
+      <sec>
+        <title>Using imaging genetics to examine neural connectivity</title>
+        <p>Two previous meta-analyses have considered the magnitude of the impact of gene variants on brain function, each reporting large effect sizes. Munafo et al. (<xref ref-type="bibr" rid="B41">2008</xref>) examined the effect sizes of the 5-HTTLPR polymorphism and amygdala activation, while Mier et al. (<xref ref-type="bibr" rid="B40">2010</xref>) examined the magnitude of effect of the catechol-<italic>O</italic>-methyltransferase (<italic>COMT</italic>) Val158Met polymorphism on brain function, reporting association between this variant and activation of the PFC. However, to our knowledge no studies have specifically considered the effect size of gene variants in studies of functional and structural connectivity, or compared effect sizes between these phenotypes. Consideration of the relative impact of these two measures of brain connectivity will help us to better delineate whether or not one phenotype is more proximal to the underlying genetics, and thus preferential as an intermediate phenotype for studies of SZ. This could not only aid our theoretical understanding of the SZ disease trajectory but may also have significant practical implications for future investigations.</p>
+      </sec>
+    </sec>
+    <sec sec-type="methods">
+      <title>Methods</title>
+      <p>We searched for relevant papers based on the criteria of studies that included genes implicated in SZ risk <italic>and</italic> measures of either DTI or functional connectivity. PubMed (<uri xlink:type="simple" xlink:href="http://www.ncbi.nlm.nih.gov/pubmed/">http://www.ncbi.nlm.nih.gov/pubmed/</uri>) was used to search for relevant functional and structural connectivity papers published until June 2011. The following search terms were included in this search: [schizophrenia OR schiz*] AND [genetic or gene*] AND [MRI OR DTI] AND [connectivity] AND [structural OR functional]. This literature search was supplemented with a review of the references from each of the papers identified. In total 24 studies meeting these search criteria were retrieved, including 12 DTI studies and 12 functional connectivity studies. Individual studies differed slightly in terms of MRI acquisition and analysis parameters (e.g., voxel size, size of Gaussian function used for smoothing). However, all studies were included regardless of these differences, due to the small number of studies available. Where the data presented were insufficient for effect size calculations, a request for supplementary data was sent to the corresponding author. This led to data being available for 19 out of the 24 studies identified (10 DTI studies and 9 functional connectivity studies).</p>
+      <p>Effect size calculations were performed using two online effect size calculators <italic><uri xlink:type="simple" xlink:href="http://www.uccs.edu/~faculty/lbecker/">http://www.uccs.edu/&#8764;faculty/lbecker/</uri></italic> and <italic><uri xlink:type="simple" xlink:href="http://www.lyonsmorris.com/ma1/index.cfm">www.lyonsmorris.com/ma1/index.cfm</uri></italic> Estimates of effect size were calculated based upon either descriptive data (i.e., mean, SD, and <italic>N</italic>), or statistical data (i.e., <italic>t, F</italic>). The purpose of this paper was to estimate differences in effect size rather than differences in direction of effect. That is we were interested in delineating the relative sensitivity of these two indices of brain connectivity to genetic variability, rather than accounting for the overall impact of a specific variant or group of variants. Therefore, direction of effect was not included in the analysis and all effect sizes were considered positive.</p>
+      <p>A random effects meta-analyses considering the relative difference in the impact of SZ risk genes on functional and structural connectivity was carried out using the comprehensive meta analysis (CMA; software package v2; <uri xlink:type="simple" xlink:href="http://www.meta-analysis.com">www.meta-analysis.com</uri>). For the purposes of this analysis, Hedge&#8217;s <italic>g</italic> and its associated variance were calculated for the outcome of each significant effect in each study. As with prior estimates of Cohen&#8217;s d, g was calculated using a variety of input variables including descriptive and inferential statistics. In the first analysis, the largest effect for each study was chosen so to reflect the maximal sensitivity to gene effects within each investigation. In a secondary analysis, all of the effects for each significant result in each paper were taken into account. This strategy allowed us to account for both variability in the number and range of significant effects reported across methodologies.</p>
+    </sec>
+    <sec>
+      <title>Results</title>
+      <p>Overall, 8 fMRI and 10 DTI studies were included in the meta-analysis. Summary information from all of these studies is presented in Tables <xref ref-type="table" rid="T1">1</xref> and <xref ref-type="table" rid="T2">2</xref>.</p>
+      <table-wrap id="T1" position="float">
+        <label>Table 1</label>
+        <caption>
+          <p><bold>Details of the functional connectivity studies included in this meta-analysis</bold>.</p>
+        </caption>
+        <table frame="hsides" rules="groups">
+          <thead>
+            <tr>
+              <th align="left" rowspan="1" colspan="1">First author and date</th>
+              <th align="left" rowspan="1" colspan="1">Gene of interest</th>
+              <th align="left" rowspan="1" colspan="1">Connectivity</th>
+              <th align="left" rowspan="1" colspan="1">Method</th>
+              <th align="left" rowspan="1" colspan="1">Statistic</th>
+              <th align="left" rowspan="1" colspan="1">
+                <italic>n</italic>
+              </th>
+              <th align="left" rowspan="1" colspan="1">Cohen&#8217;s <italic>d</italic></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Meyer-Lindenberg et al. (<xref ref-type="bibr" rid="B38">2007</xref>)</td>
+              <td align="left" rowspan="1" colspan="1">
+                <italic>PPP1R1B</italic>
+              </td>
+              <td align="left" rowspan="1" colspan="1">L. PFC &#8211; striatum, frequent haplotype carriers&#8201;&gt;&#8201;non-frequent haplotype carriers</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">4.41<sup>&#8224;</sup></td>
+              <td align="left" rowspan="1" colspan="1">126</td>
+              <td align="left" rowspan="1" colspan="1">0.79</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. PFC &#8211; striatum, frequent haplotype carriers&#8201;&gt;&#8201;non-frequent haplotype carriers</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">4.57<sup>&#8224;</sup></td>
+              <td align="left" rowspan="1" colspan="1">126</td>
+              <td align="left" rowspan="1" colspan="1">0.82</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">L. PFC &#8211; striatum, frequent haplotype carriers&#8201;&gt;&#8201;non-frequent haplotype carriers</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">4.31<sup>&#8224;</sup></td>
+              <td align="left" rowspan="1" colspan="1">142</td>
+              <td align="left" rowspan="1" colspan="1">0.73</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Kempf et al. (<xref ref-type="bibr" rid="B25">2008</xref>)</td>
+              <td align="left" rowspan="1" colspan="1">
+                <italic>PRODH</italic>
+              </td>
+              <td align="left" rowspan="1" colspan="1">dlPFC &#8211; striatum, reference haplotype carriers&#8201;&gt;&#8201;protective haplotype carriers</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.91*</td>
+              <td align="left" rowspan="1" colspan="1">103(108 total)</td>
+              <td align="left" rowspan="1" colspan="1">0.79</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">dlPFC &#8211; striatum, risk haplotype carriers&#8201;&gt;&#8201;protective haplotype carriers</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.88*</td>
+              <td align="left" rowspan="1" colspan="1">48(108 total)</td>
+              <td align="left" rowspan="1" colspan="1">0.87</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Di Giorgio et al. (<xref ref-type="bibr" rid="B7">2008</xref>)</td>
+              <td align="left" rowspan="1" colspan="1">
+                <italic>DISC1</italic>
+              </td>
+              <td align="left" rowspan="1" colspan="1">R. hippocampus &#8211; R. dlPFC, Ser/Ser&#8201;&gt;&#8201;Cys carriers</td>
+              <td align="left" rowspan="1" colspan="1">PPI</td>
+              <td align="left" rowspan="1" colspan="1">3.58*</td>
+              <td align="left" rowspan="1" colspan="1">80</td>
+              <td align="left" rowspan="1" colspan="1">0.81</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Esslinger et al. (<xref ref-type="bibr" rid="B10">2009</xref>)</td>
+              <td align="left" rowspan="1" colspan="1">
+                <italic>ZNF804A</italic>
+              </td>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; L. hippocampus, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.98<sup>&#167;</sup></td>
+              <td align="left" rowspan="1" colspan="1">115</td>
+              <td align="left" rowspan="1" colspan="1">0.75</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; R. dlPFC, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">4.05<sup>&#167;</sup></td>
+              <td align="left" rowspan="1" colspan="1">115</td>
+              <td align="left" rowspan="1" colspan="1">0.77</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; L. dlPFC, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.59<sup>&#167;</sup></td>
+              <td align="left" rowspan="1" colspan="1">115</td>
+              <td align="left" rowspan="1" colspan="1">0.68</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Esslinger et al. (<xref ref-type="bibr" rid="B9">2011</xref>)</td>
+              <td align="left" rowspan="1" colspan="1">
+                <italic>ZNF804A</italic>
+              </td>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; L. MFG, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">5.09<sup>&#8225;</sup></td>
+              <td align="left" rowspan="1" colspan="1">111</td>
+              <td align="left" rowspan="1" colspan="1">0.98</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; R. MFG, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">4.68<sup>&#8225;</sup></td>
+              <td align="left" rowspan="1" colspan="1">111</td>
+              <td align="left" rowspan="1" colspan="1">0.9</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; R. SFG, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">4.5<sup>&#8225;</sup></td>
+              <td align="left" rowspan="1" colspan="1">111</td>
+              <td align="left" rowspan="1" colspan="1">0.86</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; L. MFG, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.9<sup>&#8225;</sup></td>
+              <td align="left" rowspan="1" colspan="1">111</td>
+              <td align="left" rowspan="1" colspan="1">0.74</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; L. hippocampus, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">4.28<sup>&#167;</sup></td>
+              <td align="left" rowspan="1" colspan="1">111</td>
+              <td align="left" rowspan="1" colspan="1">0.82</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; R. hippocampus, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.34<sup>&#167;</sup></td>
+              <td align="left" rowspan="1" colspan="1">111</td>
+              <td align="left" rowspan="1" colspan="1">0.64</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Walter et al. (<xref ref-type="bibr" rid="B72">2011</xref>)</td>
+              <td align="left" rowspan="1" colspan="1">
+                <italic>ZNF804A</italic>
+              </td>
+              <td align="left" rowspan="1" colspan="1">L. TPJ &#8211; L. inferior frontal gyrus, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.77*</td>
+              <td align="left" rowspan="1" colspan="1">109</td>
+              <td align="left" rowspan="1" colspan="1">0.73</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">L. TPJ &#8211; L. cuneus, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.76*</td>
+              <td align="left" rowspan="1" colspan="1">109</td>
+              <td align="left" rowspan="1" colspan="1">0.73</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">L. TPJ &#8211; R. thalamus, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.68*</td>
+              <td align="left" rowspan="1" colspan="1">109</td>
+              <td align="left" rowspan="1" colspan="1">0.72</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">L. TPJ &#8211; L. caudatetail, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.96*</td>
+              <td align="left" rowspan="1" colspan="1">109</td>
+              <td align="left" rowspan="1" colspan="1">0.77</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; R. precentral gyrus, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">4.27*</td>
+              <td align="left" rowspan="1" colspan="1">109</td>
+              <td align="left" rowspan="1" colspan="1">0.83</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; L. MTG, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.32*</td>
+              <td align="left" rowspan="1" colspan="1">109</td>
+              <td align="left" rowspan="1" colspan="1">0.65</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; L. LG, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.83*</td>
+              <td align="left" rowspan="1" colspan="1">109</td>
+              <td align="left" rowspan="1" colspan="1">0.74</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Paulus et al. (<xref ref-type="bibr" rid="B48">2011</xref>)</td>
+              <td align="left" rowspan="1" colspan="1">
+                <italic>ZNF804A</italic>
+              </td>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; L. HF, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.3*</td>
+              <td align="left" rowspan="1" colspan="1">94</td>
+              <td align="left" rowspan="1" colspan="1">0.48</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; L. HF, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.22*</td>
+              <td align="left" rowspan="1" colspan="1">94</td>
+              <td align="left" rowspan="1" colspan="1">0.46</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; R. HF, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.85*</td>
+              <td align="left" rowspan="1" colspan="1">94</td>
+              <td align="left" rowspan="1" colspan="1">0.59</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; R. HF, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.19*</td>
+              <td align="left" rowspan="1" colspan="1">94</td>
+              <td align="left" rowspan="1" colspan="1">0.46</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; L. dlPFC, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.42*</td>
+              <td align="left" rowspan="1" colspan="1">94</td>
+              <td align="left" rowspan="1" colspan="1">0.71</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; L. dlPFC, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.26*</td>
+              <td align="left" rowspan="1" colspan="1">94</td>
+              <td align="left" rowspan="1" colspan="1">0.47</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; R. dlPFC, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.39*</td>
+              <td align="left" rowspan="1" colspan="1">94</td>
+              <td align="left" rowspan="1" colspan="1">0.5</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; R. dlPFC, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.33*</td>
+              <td align="left" rowspan="1" colspan="1">94</td>
+              <td align="left" rowspan="1" colspan="1">0.49</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; R. dlPFC, AA&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;CC</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.33*</td>
+              <td align="left" rowspan="1" colspan="1">94</td>
+              <td align="left" rowspan="1" colspan="1">0.49</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">R. dlPFC &#8211; R. dlPFC, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.43*</td>
+              <td align="left" rowspan="1" colspan="1">94</td>
+              <td align="left" rowspan="1" colspan="1">0.51</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Rasetti et al. (<xref ref-type="bibr" rid="B54">2011</xref>)</td>
+              <td align="left" rowspan="1" colspan="1">
+                <italic>ZNF804A</italic>
+              </td>
+              <td align="left" rowspan="1" colspan="1">Controls: R. dlPFC &#8211; L. HF, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.72*</td>
+              <td align="left" rowspan="1" colspan="1">96</td>
+              <td align="left" rowspan="1" colspan="1">0.56</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">Controls: R. dlPFC &#8211; L. dlPFC, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.65*</td>
+              <td align="left" rowspan="1" colspan="1">96</td>
+              <td align="left" rowspan="1" colspan="1">0.75</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">Controls: R. dlPFC &#8211; R. PFC, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">3.21*</td>
+              <td align="left" rowspan="1" colspan="1">96</td>
+              <td align="left" rowspan="1" colspan="1">0.66</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">Controls: R. dlPFC &#8211; L. hippocampus, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">PPI</td>
+              <td align="left" rowspan="1" colspan="1">3.74<sup>&#167;</sup></td>
+              <td align="left" rowspan="1" colspan="1">96</td>
+              <td align="left" rowspan="1" colspan="1">0.77</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">Controls: R. dlPFC &#8211; R. hippocampus, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">PPI</td>
+              <td align="left" rowspan="1" colspan="1">2.89<sup>&#8224;</sup></td>
+              <td align="left" rowspan="1" colspan="1">96</td>
+              <td align="left" rowspan="1" colspan="1">0.6</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">Siblings: R. dlPFC &#8211; R. hippocampus, AA &#8211; abnormal coupling</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.53*</td>
+              <td align="left" rowspan="1" colspan="1">83</td>
+              <td align="left" rowspan="1" colspan="1">0.57</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">Siblings: R. dlPFC &#8211; L. PFC, AA&#8201;&lt;&#8201;C carriers</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">2.77*</td>
+              <td align="left" rowspan="1" colspan="1">83</td>
+              <td align="left" rowspan="1" colspan="1">0.62</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">Siblings: R. dlPFC &#8211; R. dlPFC, AA &#8211; greater task-related modulation of coupling</td>
+              <td align="left" rowspan="1" colspan="1">PPI</td>
+              <td align="left" rowspan="1" colspan="1">4.36<sup>&#167;</sup></td>
+              <td align="left" rowspan="1" colspan="1">83</td>
+              <td align="left" rowspan="1" colspan="1">0.98</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">Patients: R. dlPFC &#8211; R. PFC, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">SC</td>
+              <td align="left" rowspan="1" colspan="1">4.58<sup>&#167;</sup></td>
+              <td align="left" rowspan="1" colspan="1">33</td>
+              <td align="left" rowspan="1" colspan="1">1.65</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">Patients: R. dlPFC &#8211; L. hippocampus, AA&#8201;&lt;&#8201; C carriers</td>
+              <td align="left" rowspan="1" colspan="1">PPI</td>
+              <td align="left" rowspan="1" colspan="1">3.56<sup>&#167;</sup></td>
+              <td align="left" rowspan="1" colspan="1">33</td>
+              <td align="left" rowspan="1" colspan="1">1.28</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">Patients: R. dlPFC &#8211; L. PFC, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">PPI</td>
+              <td align="left" rowspan="1" colspan="1">2.84*</td>
+              <td align="left" rowspan="1" colspan="1">33</td>
+              <td align="left" rowspan="1" colspan="1">1.02</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">Patients: R. dlPFC &#8211; R. PFC, CC&#8201;&gt;&#8201;CA&#8201;&gt;&#8201;AA</td>
+              <td align="left" rowspan="1" colspan="1">PPI</td>
+              <td align="left" rowspan="1" colspan="1">3.40*</td>
+              <td align="left" rowspan="1" colspan="1">33</td>
+              <td align="left" rowspan="1" colspan="1">1.22</td>
+            </tr>
+          </tbody>
+        </table>
+        <table-wrap-foot>
+          <p><italic><italic>n</italic>, sample size; SC, seeded connectivity; PPI, psychophysiological interaction; dlPFC, dorsolateral prefrontal cortex; MFG, middle frontal gyrus; SFG, superior frontal gyrus; TPJ, temporo-parietal junction; MTG, middle temporal gyrus; LG, lingual gyrus; IFG, inferior frontal gyrus; *<italic>p</italic>-value is uncorrected for multiple comparisons; <sup>&#8224;</sup>false discovery rate corrected within region of interest; <sup>&#8225;</sup>false discovery rate corrected for whole brain; <sup>&#167;</sup>family wise error corrected within region of interest</italic>.</p>
+        </table-wrap-foot>
+      </table-wrap>
+      <table-wrap id="T2" position="float">
+        <label>Table 2</label>
+        <caption>
+          <p><bold>Details of the structural connectivity studies using DTI included in this meta-analysis</bold>.</p>
+        </caption>
+        <table frame="hsides" rules="groups">
+          <thead>
+            <tr>
+              <th align="left" rowspan="1" colspan="1">First author and date</th>
+              <th align="left" rowspan="1" colspan="1">Gene</th>
+              <th align="left" rowspan="1" colspan="1">Connectivity</th>
+              <th align="left" rowspan="1" colspan="1">Statistic (<italic>t</italic> or <italic>F</italic>)</th>
+              <th align="left" rowspan="1" colspan="1">
+                <italic>N</italic>
+              </th>
+              <th align="left" rowspan="1" colspan="1">Cohen&#8217;s <italic>d</italic></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">McIntosh et al. (<xref ref-type="bibr" rid="B33">2008</xref>)</td>
+              <td align="left" rowspan="1" colspan="1"><italic>NRG1</italic> SNP8NRG243177</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in ALIC</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;2.65*</td>
+              <td align="left" rowspan="1" colspan="1">43</td>
+              <td align="left" rowspan="1" colspan="1">0.83</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Winterer et al. (<xref ref-type="bibr" rid="B74">2008</xref>)</td>
+              <td align="left" rowspan="1" colspan="1"><italic>NRG1</italic> SNP8NRG221533</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in MF subcortical WM</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;4.67***</td>
+              <td align="left" rowspan="1" colspan="1">50</td>
+              <td align="left" rowspan="1" colspan="1">1.35</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Sprooten et al. (<xref ref-type="bibr" rid="B60">2009</xref>)</td>
+              <td align="left" rowspan="1" colspan="1"><italic>NRG1</italic> SNP8NRG221533</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in left ATR</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;5.52***</td>
+              <td align="left" rowspan="1" colspan="1">28</td>
+              <td align="left" rowspan="1" colspan="1">1.95</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"><italic>NRG1</italic> SNP8NRG243177</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in left ATR</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;4.69***</td>
+              <td align="left" rowspan="1" colspan="1">28</td>
+              <td align="left" rowspan="1" colspan="1">1.66</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Wang et al. (<xref ref-type="bibr" rid="B73">2009</xref>)</td>
+              <td align="left" rowspan="1" colspan="1"><italic>NRG1</italic> SNP8NRG221533</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in anterior cingulum</td>
+              <td align="left" rowspan="1" colspan="1"><italic>F</italic>&#8201;=&#8201;5.27*</td>
+              <td align="left" rowspan="1" colspan="1">31</td>
+              <td align="left" rowspan="1" colspan="1">0.86</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"><italic>NRG1</italic> SNP8NRG221533</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in anterior cingulum</td>
+              <td align="left" rowspan="1" colspan="1"><italic>F</italic>&#8201;=&#8201;18***</td>
+              <td align="left" rowspan="1" colspan="1">34</td>
+              <td align="left" rowspan="1" colspan="1">1.54</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Konrad et al. (<xref ref-type="bibr" rid="B26">2009</xref>)</td>
+              <td align="left" rowspan="1" colspan="1"><italic>ErbB4</italic> rs707284</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in temporal lobe WM</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;4.24***</td>
+              <td align="left" rowspan="1" colspan="1">50</td>
+              <td align="left" rowspan="1" colspan="1">1.22</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"><italic>ErbB4</italic> rs758440</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in temporal lobe WM</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;2.81***</td>
+              <td align="left" rowspan="1" colspan="1">50</td>
+              <td align="left" rowspan="1" colspan="1">0.81</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"><italic>ErbB4</italic> rs839541</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in temporal lobe WM</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;4.31***</td>
+              <td align="left" rowspan="1" colspan="1">50</td>
+              <td align="left" rowspan="1" colspan="1">1.24</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"><italic>ErbB4</italic> rs839523</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in temporal lobe WM</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;4.73***</td>
+              <td align="left" rowspan="1" colspan="1">50</td>
+              <td align="left" rowspan="1" colspan="1">1.37</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">G-T-G-T versus lower risk</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in temporal lobe WM</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;3.85***</td>
+              <td align="left" rowspan="1" colspan="1">32</td>
+              <td align="left" rowspan="1" colspan="1">1.41</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">G-T-G-T versus all other</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in temporal lobe WM</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;3.2***</td>
+              <td align="left" rowspan="1" colspan="1">50</td>
+              <td align="left" rowspan="1" colspan="1">0.92</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">All other versus non-risk</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in temporal lobe WM</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;3.66***</td>
+              <td align="left" rowspan="1" colspan="1">50</td>
+              <td align="left" rowspan="1" colspan="1">1.057</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Zuliani et al. (<xref ref-type="bibr" rid="B76">2011</xref>)</td>
+              <td align="left" rowspan="1" colspan="1"><italic>ErbB4</italic> rs4673628</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in right ALIC</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;3.48*<sup>?</sup></td>
+              <td align="left" rowspan="1" colspan="1">36</td>
+              <td align="left" rowspan="1" colspan="1">1.19</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"><italic>ErbB4</italic> rs4673629</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in left ALIC</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;3.98*<sup>?</sup></td>
+              <td align="left" rowspan="1" colspan="1">36</td>
+              <td align="left" rowspan="1" colspan="1">1.37</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Thomason et al. (<xref ref-type="bibr" rid="B67">2010</xref>)</td>
+              <td align="left" rowspan="1" colspan="1"><italic>COMT</italic> val158met</td>
+              <td align="left" rowspan="1" colspan="1">Main effect of genotype on FA, AD, RD in GCC</td>
+              <td align="left" rowspan="1" colspan="1"><italic>F</italic>&#8201;=&#8201;3.04*</td>
+              <td align="left" rowspan="1" colspan="1">40</td>
+              <td align="left" rowspan="1" colspan="1">0.76</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"><italic>COMT</italic> val158met</td>
+              <td align="left" rowspan="1" colspan="1">Main effect of genotype on FA, AD, RD in ATR</td>
+              <td align="left" rowspan="1" colspan="1"><italic>F</italic>&#8201;=&#8201;2.79*</td>
+              <td align="left" rowspan="1" colspan="1">40</td>
+              <td align="left" rowspan="1" colspan="1">0.7</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1"><italic>COMT</italic> val158met</td>
+              <td align="left" rowspan="1" colspan="1">Main effect of genotype on FA, AD, RD in UF</td>
+              <td align="left" rowspan="1" colspan="1"><italic>F</italic>&#8201;=&#8201;2.47*</td>
+              <td align="left" rowspan="1" colspan="1">40</td>
+              <td align="left" rowspan="1" colspan="1">0.6</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Liu et al. (<xref ref-type="bibr" rid="B31">2010</xref>)</td>
+              <td align="left" rowspan="1" colspan="1"><italic>COMT</italic> val158met</td>
+              <td align="left" rowspan="1" colspan="1">Decreased FA in right CST for Val/Val carriers</td>
+              <td align="left" rowspan="1" colspan="1"><italic>F</italic>&#8201;=&#8201;5.197*</td>
+              <td align="left" rowspan="1" colspan="1">79</td>
+              <td align="left" rowspan="1" colspan="1">0.51</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">LPS, HPS and APS haplotypes</td>
+              <td align="left" rowspan="1" colspan="1">Association with mean FA in left PF lobe</td>
+              <td align="left" rowspan="1" colspan="1"><italic>F</italic>&#8201;=&#8201;2.79*</td>
+              <td align="left" rowspan="1" colspan="1">68</td>
+              <td align="left" rowspan="1" colspan="1">0.38</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">LPS, HPS and APS haplotypes</td>
+              <td align="left" rowspan="1" colspan="1">Association with mean FA in right PF lobe</td>
+              <td align="left" rowspan="1" colspan="1"><italic>F</italic>&#8201;=&#8201;3.58*</td>
+              <td align="left" rowspan="1" colspan="1">68</td>
+              <td align="left" rowspan="1" colspan="1">0.47</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1"/>
+              <td align="left" rowspan="1" colspan="1">LPS, HPS and APS haplotypes</td>
+              <td align="left" rowspan="1" colspan="1">Association with mean FA in right UF</td>
+              <td align="left" rowspan="1" colspan="1"><italic>F</italic>&#8201;=&#8201;3.507*</td>
+              <td align="left" rowspan="1" colspan="1">68</td>
+              <td align="left" rowspan="1" colspan="1">0.47</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Roffman et al. (<xref ref-type="bibr" rid="B55">2011</xref>)</td>
+              <td align="left" rowspan="1" colspan="1"><italic>MTHFR</italic> 677T</td>
+              <td align="left" rowspan="1" colspan="1">Reduced FA in bilateral DACC</td>
+              <td align="left" rowspan="1" colspan="1"><italic>F</italic>&#8201;=&#8201;6.59*</td>
+              <td align="left" rowspan="1" colspan="1">18</td>
+              <td align="left" rowspan="1" colspan="1">1.29</td>
+            </tr>
+            <tr>
+              <td align="left" rowspan="1" colspan="1">Pacheco et al. (<xref ref-type="bibr" rid="B47">2009</xref>)</td>
+              <td align="left" rowspan="1" colspan="1">
+                <italic>5-HTTLPR</italic>
+              </td>
+              <td align="left" rowspan="1" colspan="1">Increasing number of low expressing alleles &#8211; decreasing FA in left FUF</td>
+              <td align="left" rowspan="1" colspan="1"><italic>t</italic>&#8201;=&#8201;&#8722;3.03*</td>
+              <td align="left" rowspan="1" colspan="1">37</td>
+              <td align="left" rowspan="1" colspan="1">&#8722;0.92</td>
+            </tr>
+          </tbody>
+        </table>
+        <table-wrap-foot>
+          <p><italic>n</italic>, sample size; FA, fractional anisotropy; MF, medial frontal; WM, white matter; ALIC, anterior limb of internal capsule; AD, axial diffusivity; RD, radial diffusivity; ATR, anterior thalamic radiation; UF,uncinate fasciculus; GCC, genu of corpus callosum; CST, corticospinal tract; PF, prefrontal; DACC, dorsal anterior cingulate cortex; FUF, frontal uncinate fasciculus; *<italic>p</italic>&#8201;&lt;&#8201;0.05; ***<italic>p</italic>&#8201;&lt;&#8201;0.001; *<sup>?</sup><italic>p</italic>&#8201;&lt;&#8201;0.05 family wise error corrected</p>
+        </table-wrap-foot>
+      </table-wrap>
+      <sec>
+        <title>Functional connectivity</title>
+        <p>A total of 44 effect sizes were calculated from the functional connectivity studies. Effect sizes (i.e., Cohen&#8217;s <italic>d</italic>) ranged from medium to large (<italic>d&#8201;</italic>=&#8201;0.46&#8211;1.65) with an average effect size of 0.76 (SD&#8201;&#177;&#8201;0.23). The largest effect size (<italic>d&#8201;</italic>=&#8201;1.65) was reported for the impact of a single nucleotide polymorphism (SNP) in <italic>ZNF804A</italic> on functional connectivity within the right PFC in SZ patients (Rasetti et al., <xref ref-type="bibr" rid="B54">2011</xref>). While large effect sizes (<italic>d&#8201;</italic>&gt;&#8201;0.7) were also calculated in other studies examining the effects of this SNP on functional connectivity (Esslinger et al., <xref ref-type="bibr" rid="B10">2009</xref>, <xref ref-type="bibr" rid="B9">2011</xref>; Rasetti et al., <xref ref-type="bibr" rid="B54">2011</xref>) these results were not consistent: the smallest effect size was also reported for this SNP (<italic>d&#8201;</italic>=&#8201;0.46; Paulus et al., <xref ref-type="bibr" rid="B48">2011</xref>).</p>
+      </sec>
+      <sec>
+        <title>Structural connectivity</title>
+        <p>A total of 24 effect sizes were calculated for structural connectivity investigations. Effect sizes ranged from small to large (<italic>d&#8201;</italic>=&#8201;0.38&#8211;1.95) with an average effect size of 1.04 (SD&#8201;=&#8201;0.42). The largest effect size was revealed for the impact of <italic>NRG1</italic> SNP on WM integrity in the left ATR (Sprooten et al., <xref ref-type="bibr" rid="B60">2009</xref>). Large effect sizes were also observed for all the other studies examining the impact of <italic>NRG1</italic> on WM integrity (all <italic>d&#8201;</italic>&gt;&#8201;0.80). Similar effect sizes were revealed for studies investigating the ErbB4 gene, with Cohen&#8217;s <italic>d</italic> for these studies ranging from 0.81 to 1.41. Both the <italic>MTHFR</italic> gene and the <italic>5-HTT</italic> gene had large effect sizes of 1.29 and 0.92 respectively. The smallest effect size of 0.38 was computed for the effect of a <italic>COMT</italic> haplotype on left prefrontal WM integrity. Cohen&#8217;s d for the <italic>COMT</italic> papers ranged from 0.38 to 0.76.</p>
+      </sec>
+      <sec>
+        <title>Meta-analysis</title>
+        <p>In our first meta-analysis we considered only the largest effect sizes in each study (Figure <xref ref-type="fig" rid="F1">1</xref>; Table <xref ref-type="table" rid="T3">3</xref>). This analysis revealed no significant difference in outcome variability between the effect sizes for functional and structural studies (<italic>Q</italic>&#8201;=&#8201;2.171, <italic>p</italic>&#8201;=&#8201;0.141). Our second analysis examined all of the effects for each result in each paper (Figure <xref ref-type="fig" rid="F2">2</xref>; Table <xref ref-type="table" rid="T3">3</xref>). This analysis revealed a significant difference between effects sizes in functional and structural studies (<italic>Q</italic>&#8201;=&#8201;6.928, <italic>p</italic>&#8201;=&#8201;0.008).</p>
+        <fig id="F1" position="float">
+          <label>Figure 1</label>
+          <caption>
+            <p><bold>Forest plot reporting Hedges&#8217; <italic>g</italic> and 95% CI for the analysis showing the largest effect size in each paper</bold>. CI, confidence interval; g, Hedges&#8217; <italic>g</italic>; SE, standard error.</p>
+          </caption>
+          <graphic xlink:href="fpsyt-03-00018-g001"/>
+        </fig>
+        <table-wrap id="T3" position="float">
+          <label>Table 3</label>
+          <caption>
+            <p><bold>Results of random-effects meta-analysis comparing the relative difference in the impact of variants on functional and structural connectivity</bold>.</p>
+          </caption>
+          <table frame="hsides" rules="groups">
+            <thead>
+              <tr>
+                <th align="left" rowspan="1" colspan="1"/>
+                <th colspan="6" align="center" rowspan="1">Effect size and 95% confidence interval<hr/></th>
+                <th colspan="3" align="center" rowspan="1">Heterogeneity<hr/></th>
+              </tr>
+              <tr>
+                <th align="left" rowspan="1" colspan="1"/>
+                <th align="left" rowspan="1" colspan="1">No. of studies</th>
+                <th align="left" rowspan="1" colspan="1">Point estimate</th>
+                <th align="left" rowspan="1" colspan="1">SE</th>
+                <th align="left" rowspan="1" colspan="1">Variance</th>
+                <th align="left" rowspan="1" colspan="1">Lower limit</th>
+                <th align="left" rowspan="1" colspan="1">Upper limit</th>
+                <th align="left" rowspan="1" colspan="1"><italic>Q</italic>-value</th>
+                <th align="left" rowspan="1" colspan="1">d<italic>f</italic> (<italic>Q</italic>)</th>
+                <th align="left" rowspan="1" colspan="1"><italic>p</italic>-value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color:DarkGray;">
+                <td colspan="10" align="left" rowspan="1">
+                  <bold>MAXIMUM ESTIMATE</bold>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Functional</td>
+                <td align="left" rowspan="1" colspan="1">9</td>
+                <td align="left" rowspan="1" colspan="1">0.812</td>
+                <td align="left" rowspan="1" colspan="1">0.072</td>
+                <td align="left" rowspan="1" colspan="1">0.005</td>
+                <td align="left" rowspan="1" colspan="1">0.671</td>
+                <td align="left" rowspan="1" colspan="1">0.953</td>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Structural</td>
+                <td align="left" rowspan="1" colspan="1">10</td>
+                <td align="left" rowspan="1" colspan="1">1.067</td>
+                <td align="left" rowspan="1" colspan="1">0.158</td>
+                <td align="left" rowspan="1" colspan="1">0.025</td>
+                <td align="left" rowspan="1" colspan="1">0.758</td>
+                <td align="left" rowspan="1" colspan="1">0.377</td>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Total between</td>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1">2.171</td>
+                <td align="left" rowspan="1" colspan="1">1</td>
+                <td align="left" rowspan="1" colspan="1">0.141</td>
+              </tr>
+              <tr style="background-color:DarkGray;">
+                <td colspan="10" align="left" rowspan="1">
+                  <bold>ALL ESTIMATES</bold>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Functional</td>
+                <td align="left" rowspan="1" colspan="1">44</td>
+                <td align="left" rowspan="1" colspan="1">0.687</td>
+                <td align="left" rowspan="1" colspan="1">0.032</td>
+                <td align="left" rowspan="1" colspan="1">0.001</td>
+                <td align="left" rowspan="1" colspan="1">0.625</td>
+                <td align="left" rowspan="1" colspan="1">0.750</td>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Structural</td>
+                <td align="left" rowspan="1" colspan="1">24</td>
+                <td align="left" rowspan="1" colspan="1">0.934</td>
+                <td align="left" rowspan="1" colspan="1">0.088</td>
+                <td align="left" rowspan="1" colspan="1">0.008</td>
+                <td align="left" rowspan="1" colspan="1">0.761</td>
+                <td align="left" rowspan="1" colspan="1">1.108</td>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Total between</td>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1">6.928</td>
+                <td align="left" rowspan="1" colspan="1">1</td>
+                <td align="left" rowspan="1" colspan="1">0.008</td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+        <fig id="F2" position="float">
+          <label>Figure 2</label>
+          <caption>
+            <p><bold>Forest plot reporting Hedges&#8217; <italic>g</italic> and 95% CI for each functional and structural connectivity analysis</bold>. CI, confidence interval; g, Hedges&#8217; <italic>g</italic>; SE, standard error.</p>
+          </caption>
+          <graphic xlink:href="fpsyt-03-00018-g002"/>
+        </fig>
+      </sec>
+    </sec>
+    <sec>
+      <title>Discussion</title>
+      <p>The aim of this review was to consider the nature and magnitude of effect of SZ risk variants on functional and structural connectivity. Our focus was the overall magnitude of such effects, rather than delineating the direction of effect of a specific variant. Therefore, we focused on the size, rather than the direction of individuals results. Examining the effect of risk variants on connectivity in fMRI and DTI studies, we found that variation in genes implicated in neurotransmission, plasticity, development and myelin function are associated with altered neural connectivity. Meta-analyses of effect size data revealed that there was no significant difference between the effect sizes of functional and structural studies when the largest effect size of each study was analyzed. However, when all effects were taken into consideration, the effect sizes for the structural studies were larger than in the functional connectivity studies, and there was a significant lack of homogeneity across the modalities. Mostly likely, given the absence of difference when only the largest effects from each set of studies are considered, this difference reflects the greater variation in effect sizes in structural studies compared to fMRI studies.</p>
+      <sec>
+        <title>Functional connectivity studies</title>
+        <p>To date, the effects on functional connectivity of a number of candidate SZ genes (<italic>DISC1</italic>, <italic>PRODH</italic>, <italic>PPP1R1B</italic>) and one gene with genome-wide significance for SZ risk (<italic>ZNF804A</italic>), each of which were found to be associated with altered functional connectivity. The mean effect size for the functional connectivity studies was large (<italic>d</italic>&#8201;=&#8201;0.76), with the largest effect size reported for the impact of the rs1344706 variant in <italic>ZNF804A</italic>.The ZNF804A risk variant rs1344706 has become the focus of much interest in SZ research over the last 3&#8201;years, as GWAS and follow-up analyses have established strong evidence for a link between this variant and risk for the disorder (O&#8217;Donovan et al., <xref ref-type="bibr" rid="B45">2008</xref>). While the function of the <italic>ZNF804A</italic> gene is unknown, it has been speculated to play a role in gene regulation (O&#8217;Donovan et al., <xref ref-type="bibr" rid="B45">2008</xref>) and glutamate and dopamine transmission (Esslinger et al., <xref ref-type="bibr" rid="B10">2009</xref>). ZNF804A represents the only SZ-implicated gene that we are aware of whose effects on functional connectivity have been investigated now on a number of occasions. Importantly, the size of effect reported for this variant has varied considerably. For example, as well as having the highest effect of the variants considered it also has the lowest effect of the variants considered (<italic>d</italic>&#8201;=&#8201;0.46; Paulus et al., <xref ref-type="bibr" rid="B48">2011</xref>), suggesting that establishing the true effect of any variant on functional connectivity will require investigation in multiple and adequately powered cohorts. Variants from the candidate SZ gene literature by comparison, while each showing large effects on functional connectivity (<italic>d</italic>-range: 0.73&#8211;0.87), have each only been the subject of single studies to date (<italic>DISC1</italic>; Di Giorgio et al., <xref ref-type="bibr" rid="B7">2008</xref>; <italic>PRODH</italic>; Kempf et al., <xref ref-type="bibr" rid="B25">2008</xref>; <italic>PPP1R1B</italic>; Meyer-Lindenberg et al., <xref ref-type="bibr" rid="B38">2007</xref>).</p>
+        <p>In 10 of the 12 fMRI studies included in this review, SZ risk variants were reported to affect functional circuits that included the PFC during the performance of a variety of tasks, such as memory encoding and retrieval, working memory, emotion processing, and during rest. These findings reflect the PFC&#8217;s dominant role in many processes related to higher cognitive functioning, making it consistently implicated in SZ pathogenesis (Callicott et al., <xref ref-type="bibr" rid="B4">2000</xref>).There are several possibilities for why PFC function is altered in SZ as reflected in these studies. For example, the &#8220;<italic>reduced neuropil hypothesis</italic>&#8221; of schizophrenia suggests that reduced PFC gray matter (observed in the absence of a concomitant change in cell numbers)may reflect decreased dendritic spines/axon terminals; the inefficiencies synaptic transmission expected to result may well lead to the altered functional connectivity patterns seen here (Selemon and Goldman-Rakic, <xref ref-type="bibr" rid="B58">1999</xref>).</p>
+      </sec>
+      <sec>
+        <title>Structural connectivity studies</title>
+        <p>A number of candidate SZ risk genes have been investigated in terms of their effects on structural connectivity. This includes genes that are involved in myelination (<italic>NRG1, ErbB4</italic>) neurotransmission (<italic>COMT, MTHFR, 5-HTTLPR</italic>) and neurodevelopment (<italic>BDNF</italic> and <italic>DISC1</italic>). Almost all variants considered here were associated with significant variation in FA scores using DTI.</p>
+        <p>The average effect size for these studies was large, with the largest effect size computed for the impact of NRG1 on FA in the left ATR (Sprooten et al., <xref ref-type="bibr" rid="B60">2009</xref>). The NRG1 gene codes for the <italic>NRG1</italic> protein, that is involved in growth and differentiation of neuronal and glial cells and is necessary for the normal development of the nervous system. <italic>ErbB4</italic> is a receptor for the <italic>NRG1</italic> protein. It is thought that NRG1 may mediate its effects on SZ susceptibility through functional interaction with ErbB4 (Norton et al., <xref ref-type="bibr" rid="B44">2006</xref>). Interestingly, ErbB4 was also observed here to show effects on WM integrity that would be considered to be in of large magnitude. The role of these genes in myelin function suggests a mechanism by which they confer risk for SZ. The relatively large impact of these genes on structural connectivity, noted here, suggests that genetically mediated &#8220;dysconnectivity&#8221; in SZ results from macro-circuit WM abnormalities in addition to micro-circuit synaptic plasticity. However, since oligodendrocyte dysfunction may also impact synaptic function and information processing via a myelin-dependent impact on synaptic plasticity (Fields, <xref ref-type="bibr" rid="B11">2008</xref>), it remains to be established if the influence of these variants is specific to structural connectivity or if they also impact upon functional connectivity.</p>
+        <p>Other gene variants associated with variation in WM connectivity included COMT, MTHFR, 5-HTTLPR, BDNF and DISC1. Results for both the <italic>MTHFR</italic> gene and the <italic>5-HTT</italic> gene had large effect sizes. The <italic>MTHFR</italic> gene codes for the an enzyme that plays a role in the regulation of intracellular methylation reactions and may influence dopamine signaling (Roffman et al., <xref ref-type="bibr" rid="B56">2008</xref>). The hypofunctional 677T variant of this gene has been associated with increased SZ risk (Gilbody et al., <xref ref-type="bibr" rid="B16">2007</xref>). The reuptake of serotonin to the presynaptic neuron for recycling or degradation after serotonin release is regulated by the serotonin transporter (<italic>5-HTT)</italic>. Although the <italic>5-HTTLPR</italic> polymorphism has been found to be associated with SZ in a South India population (Vijayan et al., <xref ref-type="bibr" rid="B71">2009</xref>), other genetic association studies have given conflicting results (Rao et al., <xref ref-type="bibr" rid="B53">1998</xref>). The smallest effect size was computed for the effect of a <italic>COMT</italic> haplotype on left prefrontal WM integrity (Liu et al., <xref ref-type="bibr" rid="B31">2010</xref>). The COMT gene codes for an enzyme that is involved in the degradation of dopamine. Therefore, the evidence from DTI studies investigating the impact of the COMT gene on WM indicates that neurosignalling processes involved in SZ may also impact structural connectivity. Finally, <italic>BDNF</italic> (Chiang et al., <xref ref-type="bibr" rid="B5">2011</xref>) and <italic>DISC1</italic> (Sprooten et al., <xref ref-type="bibr" rid="B61">2011</xref>) which are genes that are crucial for neurodevelopment, were also associated with WM connectivity in SZ. However, as insufficient data was available, effect sizes for these studies were not calculated.</p>
+      </sec>
+      <sec>
+        <title>Meta-analysis</title>
+        <p>The papers included in this review most commonly report a large effect of gene variants on functional and structural connectivity. This result is similar to previous meta-analyses in imaging genetics, which reported large effect sizes of gene variants (i.e., <italic>5-HTTLPR</italic> polymorphism and the <italic>COMT</italic> Val158Met polymorphism) on brain function (Munafo et al., <xref ref-type="bibr" rid="B41">2008</xref>; Mier et al., <xref ref-type="bibr" rid="B40">2010</xref>). This result is also consistent with the intermediate phenotype hypothesis that common SZ risk variants will show small effects on behavior and disease risk, but large effects at the level of the brain (Tost et al., <xref ref-type="bibr" rid="B68">2011</xref>).</p>
+        <p>When the maximum effect size value for each paper in our meta-analysis was compared between fMRI and DTI studies, no significant difference was found between these measures. As only a small number of studies were obtained, there may be a lack of power to detect such differences. However, examination of effect sizes for all significant effects indicate that structural connectivity studies were associated with overall larger and more variable effect sizes. This suggests that measures of structural connectivity, such as DTI, may be sensitive to a wider range of effects compared to functional connectivity measures, which may only be able to accurately detect large effects. This result may also indicate that structural connectivity is closer to the level of genes than functional connectivity.</p>
+      </sec>
+      <sec>
+        <title>Limitations</title>
+        <p>A number of limitations need to be considered in evaluating the findings of the present study. Firstly, many of the studies included in the meta-analysis have examined the effects of polymorphisms that do not have consistent association with SZ phenotypes. This makes it difficult to determine the relevance of these genes for our understanding of SZ pathogenesis (for a review, see Meyer-Lindenberg, <xref ref-type="bibr" rid="B36">2010</xref>). Secondly, it should also be noted that the sample sizes included in these studies are relatively small and thus, are under powered to detect differences in brain connectivity conferred by individual variants. Due to the interplay between sample size, power, and effect size, smaller studies generally show larger effects in meta-analyses (Sterne et al., <xref ref-type="bibr" rid="B63">2000</xref>) and may lack sufficient power to detect smaller effects. Related to the general issue of sample size, it is important to note that the average sample size of the studies utilizing DTI was smaller than that for the functional studies. As a result, the effect sizes for the structural papers may be over-inflated. However, the results of our meta-analysis suggest that despite smaller samples, the structural imaging studies were associated with a wider range of effects, suggesting that sample size is not the only factor at play here.</p>
+        <p>Due to the under-representation of publications with negative results, the studies included in this review may not be representative of connectivity research in its entirety, but rather a bias toward only publish papers showing statistically significant results. Therefore, while our effect size findings are calculated on the basis of published effect sizes, it is possible that the true effect sizes are smaller, and to an extent that is unknown. Similarly, it is also unclear to what extent differences in scanning parameters between the studies included in this meta-analysis influenced results. More systematic investigation of these differences will in the future be possible with the accumulation of more studies.</p>
+        <p>An additional limitation in the studies considered here is that each investigation examined the effects of only one particular variant. However, the true function of these genes may be affected by additive or epistatic interactions with other variants. As such, the results presented in this review may be incomplete without taking these interactions into account (Nicodemus et al., <xref ref-type="bibr" rid="B43">2010</xref>).</p>
+        <p>Finally, it is probable that these results could be impacted by differences in functional and structural methodological approaches. For example, a number of analysis methods can be employed to measure functional connectivity between brain regions. However, we are not currently aware of the relative strengths and weaknesses of these different approaches. There are also various approaches used to quantify WM connectivity using DTI, which also pose different strengths and limitations (see Jones, <xref ref-type="bibr" rid="B23">2010</xref> for a review).</p>
+      </sec>
+      <sec>
+        <title>Conclusions and future directions</title>
+        <p>In a short period of time, imaging genetics has made important progress in delineating genetic effects on neural connectivity. In particular, it has established neural connectivity as a key intermediate phenotype for SZ, which can be used to explore the complex trajectory from genetic risk to clinical symptoms.</p>
+        <p>Despite the progress that has taken place, we believe important advances can be made in this research field in four key areas. Firstly, future studies should examine the effects of gene variants on neural connectivity in larger sample sizes, as this can provide the extra statistical power that may be necessary to detect smaller effects of these genes. Multi-site research projects, such as the IMAGEN project in Europe, may be particularly suited for compiling imaging and genetic databases of thousands of subjects (Schumann et al., <xref ref-type="bibr" rid="B57">2010</xref>). Secondly, future studies should examine additive and epistatic effects of gene variants on neural connectivity, as these variants are unlikely to be working in isolation. Thirdly, future studies should examine the effects of risk variants in healthy controls and SZ patients as the opposite effects of these genes on connectivity can be found in these different groups (e.g., Prata et al., <xref ref-type="bibr" rid="B52">2009</xref>).</p>
+        <p>Finally, future studies could benefit from the novel application of recently developed analysis techniques to imaging genetics. For example, DCM hold potential for constructing models of changing brain interactions that also take into account genetic variation (Meyer-Lindenberg, <xref ref-type="bibr" rid="B35">2009</xref>). Other recent advances include the use of parallel ICA to simultaneously analyze independent components derived from fMRI and genetic data (Liu et al., <xref ref-type="bibr" rid="B32">2009</xref>). For example, Meda et al. (<xref ref-type="bibr" rid="B34">2010</xref>) used this technique in a pilot study to identify simultaneous independent components of fMRI data and SNP data, derived from a sample of 35 controls and 31 SZ patients. The authors found correlations between different neural networks and a number of SNPs, including polymorphisms involved in altered dopamine transmission. While the authors only included a small number of SNPs and a small sample size, this research suggests a powerful new approach for future studies examining the effects of SZ risk variants on functional brain networks. Similarly, more advanced DTI techniques could be implemented that use high angular resolution to account for multiple crossing fibers within a single voxel. Such imaging techniques include Q-space approaches and mixture models (Tournier et al., <xref ref-type="bibr" rid="B69">2011</xref>). These models provide mathematical alternatives to the tensor model for the characterization of diffusion processes. Furthermore, Jones (<xref ref-type="bibr" rid="B23">2010</xref>) recommends the integration of DTI with other measures of WM such as measures of axon density and myelination that can be acquired using techniques such as magnetization transfer or multicomponent relaxometry.</p>
+        <p>In conclusion, the present meta-analysis examined the nature and magnitude of effect of SZ risk variants on functional and structural connectivity. Gene variants impacting upon both synaptic plasticity and axonal connectivity have been associated with altered neural connectivity in patients and healthy controls. As such, it is likely that both mechanisms make important contributions to SZ pathogenesis. On average, risk variants exert a large effect on functional and structural connectivity. There is also more variability in the effects of variants on structural connectivity, compared to functional connectivity. While imaging genetics has made considerable progress in the field of neural connectivity in a short period of time, important advances are still to be made. It is hoped that this research will lead to a better understanding of the biological mechanisms mediating genetic risk for SZ, which can then be used to direct novel treatments for the disorder.</p>
+      </sec>
+    </sec>
+    <sec>
+      <title>Conflict of Interest Statement</title>
+      <p>The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.</p>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <p>This work was supported by a Science Foundation Ireland research award to Professor Aiden Corvin (SFI08/IN.1/B1916-Corvin).</p>
+    </ack>
+    <ref-list>
+      <title>References</title>
+      <ref id="B1">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Braff</surname><given-names>D. L.</given-names></name><name><surname>Freedman</surname><given-names>R.</given-names></name><name><surname>Schork</surname><given-names>N. J.</given-names></name><name><surname>Gottesman</surname><given-names>I. I.</given-names></name></person-group> (<year>2007</year>). <article-title>Deconstructing schizophrenia: an overview of the use of endophenotypes in order to understand a complex disorder</article-title>. <source>Schizophr. Bull.</source>
+<volume>33</volume>, <fpage>21</fpage><pub-id pub-id-type="doi">10.1093/schbul/sbl049</pub-id><pub-id pub-id-type="pmid">17088422</pub-id></mixed-citation>
+      </ref>
+      <ref id="B2">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Breakspear</surname><given-names>M.</given-names></name><name><surname>Terry</surname><given-names>J. R.</given-names></name><name><surname>Friston</surname><given-names>K. J.</given-names></name><name><surname>Harris</surname><given-names>A. W.</given-names></name><name><surname>Williams</surname><given-names>L. M.</given-names></name><name><surname>Brown</surname><given-names>K.</given-names></name><name><surname>Brennan</surname><given-names>J.</given-names></name><name><surname>Gordon</surname><given-names>E.</given-names></name></person-group> (<year>2003</year>). <article-title>A disturbance of nonlinear interdependence in scalp EEG of subjects with first episode schizophrenia</article-title>. <source>Neuroimage</source>
+<volume>20</volume>, <fpage>466</fpage>&#8211;<lpage>478</lpage><pub-id pub-id-type="doi">10.1016/S1053-8119(03)00332-X</pub-id><pub-id pub-id-type="pmid">14527607</pub-id></mixed-citation>
+      </ref>
+      <ref id="B3">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Buchsbaum</surname><given-names>M. S.</given-names></name><name><surname>Schoenknecht</surname><given-names>P.</given-names></name><name><surname>Torosjan</surname><given-names>Y.</given-names></name><name><surname>Newmark</surname><given-names>R.</given-names></name><name><surname>Chu</surname><given-names>K. W.</given-names></name><name><surname>Mitelman</surname><given-names>S.</given-names></name><name><surname>Brickman</surname><given-names>A. M.</given-names></name><name><surname>Shihabuddin</surname><given-names>L.</given-names></name><name><surname>Haznedar</surname><given-names>M. M.</given-names></name><name><surname>Hazlett</surname><given-names>E. A.</given-names></name><name><surname>Ahmed</surname><given-names>S.</given-names></name><name><surname>Tang</surname><given-names>C.</given-names></name></person-group> (<year>2006</year>). <article-title>Diffusion tensor imaging of frontal lobe white matter tracts in schizophrenia</article-title>. <source>Ann. Gen. Psychiatry</source>
+<volume>5</volume>, <fpage>19</fpage><pub-id pub-id-type="doi">10.1186/1744-859X-5-19</pub-id><pub-id pub-id-type="pmid">17132158</pub-id></mixed-citation>
+      </ref>
+      <ref id="B4">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Callicott</surname><given-names>J. H.</given-names></name><name><surname>Bertolino</surname><given-names>A.</given-names></name><name><surname>Mattay</surname><given-names>V. S.</given-names></name><name><surname>Langheim</surname><given-names>F. J.</given-names></name><name><surname>Duyn</surname><given-names>J.</given-names></name><name><surname>Coppola</surname><given-names>R.</given-names></name><name><surname>Goldberg</surname><given-names>T. E.</given-names></name><name><surname>Weinberger</surname><given-names>D. R.</given-names></name></person-group> (<year>2000</year>). <article-title>Physiological dysfunction of the dorsolateral prefrontal cortex in schizophrenia revisited</article-title>. <source>Cereb. Cortex</source>
+<volume>10</volume>, <fpage>1078</fpage>&#8211;<lpage>1092</lpage><pub-id pub-id-type="doi">10.1093/cercor/10.11.1078</pub-id><pub-id pub-id-type="pmid">11053229</pub-id></mixed-citation>
+      </ref>
+      <ref id="B5">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Chiang</surname><given-names>M. C.</given-names></name><name><surname>Barysheva</surname><given-names>M.</given-names></name><name><surname>Toga</surname><given-names>A. W.</given-names></name><name><surname>Medland</surname><given-names>S. E.</given-names></name><name><surname>Hansell</surname><given-names>N. K.</given-names></name><name><surname>James</surname><given-names>M. R.</given-names></name><name><surname>McMahon</surname><given-names>K. L.</given-names></name><name><surname>de Zubicatay</surname><given-names>G. I.</given-names></name><name><surname>Martin</surname><given-names>N. G.</given-names></name><name><surname>Wright</surname><given-names>M. J.</given-names></name><name><surname>Thompson</surname><given-names>P. M.</given-names></name></person-group> (<year>2011</year>). <article-title>BDNF gene effects on brain circuitry replicated in 455 twins</article-title>. <source>Neuroimage</source>
+<volume>55</volume>, <fpage>448</fpage>&#8211;<lpage>454</lpage><pub-id pub-id-type="doi">10.1016/j.neuroimage.2010.12.053</pub-id><pub-id pub-id-type="pmid">21195196</pub-id></mixed-citation>
+      </ref>
+      <ref id="B6">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Davis</surname><given-names>K. L.</given-names></name><name><surname>Stewart</surname><given-names>D. G.</given-names></name><name><surname>Friedman</surname><given-names>J. I.</given-names></name><name><surname>Buchsbaum</surname><given-names>M.</given-names></name><name><surname>Harvey</surname><given-names>P. D.</given-names></name><name><surname>Hof</surname><given-names>P. R.</given-names></name><name><surname>Buxbaum</surname><given-names>J.</given-names></name><name><surname>Haroutunian</surname><given-names>V.</given-names></name></person-group> (<year>2003</year>). <article-title>White matter changes in schizophrenia: evidence for myelin-related dysfunction</article-title>. <source>Arch. Gen. Psychiatry</source>
+<volume>60</volume>, <fpage>443</fpage>&#8211;<lpage>456</lpage><pub-id pub-id-type="doi">10.1001/archpsyc.60.5.443</pub-id><pub-id pub-id-type="pmid">12742865</pub-id></mixed-citation>
+      </ref>
+      <ref id="B7">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Di Giorgio</surname><given-names>A.</given-names></name><name><surname>Blasi</surname><given-names>G.</given-names></name><name><surname>Sambataro</surname><given-names>F.</given-names></name><name><surname>Rampino</surname><given-names>A.</given-names></name><name><surname>Papazacharias</surname><given-names>A.</given-names></name><name><surname>Gambi</surname><given-names>F.</given-names></name><name><surname>Romano</surname><given-names>R.</given-names></name><name><surname>Caforio</surname><given-names>G.</given-names></name><name><surname>Rizzo</surname><given-names>M.</given-names></name><name><surname>Latorre</surname><given-names>V.</given-names></name><name><surname>Popolizio</surname><given-names>T.</given-names></name><name><surname>Kolachana</surname><given-names>B.</given-names></name><name><surname>Callicott</surname><given-names>J. H.</given-names></name><name><surname>Nardini</surname><given-names>M.</given-names></name><name><surname>Weinberger</surname><given-names>D. R.</given-names></name><name><surname>Bertolino</surname><given-names>A.</given-names></name></person-group> (<year>2008</year>). <article-title>Association of the SerCys DISC1 polymorphism with human hippocampal formation gray matter and function during memory encoding</article-title>. <source>Eur. J. Neurosci.</source>
+<volume>28</volume>, <fpage>2129</fpage>&#8211;<lpage>2136</lpage><pub-id pub-id-type="doi">10.1111/j.1460-9568.2008.06482.x</pub-id><pub-id pub-id-type="pmid">19046394</pub-id></mixed-citation>
+      </ref>
+      <ref id="B8">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Ellison-Wright</surname><given-names>I.</given-names></name><name><surname>Bullmore</surname><given-names>E.</given-names></name></person-group> (<year>2009</year>). <article-title>Meta-analysis of diffusion tensor imaging studies in schizophrenia</article-title>. <source>Schizophr. Res.</source>
+<volume>108</volume>, <fpage>3</fpage>&#8211;<lpage>10</lpage><pub-id pub-id-type="doi">10.1016/j.schres.2008.11.021</pub-id><pub-id pub-id-type="pmid">19128945</pub-id></mixed-citation>
+      </ref>
+      <ref id="B9">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Esslinger</surname><given-names>C.</given-names></name><name><surname>Kirsch</surname><given-names>P.</given-names></name><name><surname>Haddad</surname><given-names>L.</given-names></name><name><surname>Mier</surname><given-names>D.</given-names></name><name><surname>Sauer</surname><given-names>C.</given-names></name><name><surname>Erk</surname><given-names>S.</given-names></name><name><surname>Schnell</surname><given-names>K.</given-names></name><name><surname>Arnold</surname><given-names>C.</given-names></name><name><surname>Witt</surname><given-names>S. H.</given-names></name><name><surname>Rietschel</surname><given-names>M.</given-names></name><name><surname>Cichon</surname><given-names>S.</given-names></name><name><surname>Walter</surname><given-names>H.</given-names></name><name><surname>Meyer-Lindenberg</surname><given-names>A.</given-names></name></person-group> (<year>2011</year>). <article-title>Cognitive state and connectivity effects of the genome-wide significant psychosis variant in ZNF804A</article-title>. <source>Neuroimage</source>
+<volume>54</volume>, <fpage>2514</fpage>&#8211;<lpage>2523</lpage><pub-id pub-id-type="doi">10.1016/j.neuroimage.2010.10.012</pub-id><pub-id pub-id-type="pmid">20946959</pub-id></mixed-citation>
+      </ref>
+      <ref id="B10">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Esslinger</surname><given-names>C.</given-names></name><name><surname>Walter</surname><given-names>H.</given-names></name><name><surname>Kirsch</surname><given-names>P.</given-names></name><name><surname>Erk</surname><given-names>S.</given-names></name><name><surname>Schnell</surname><given-names>K.</given-names></name><name><surname>Arnold</surname><given-names>C.</given-names></name><name><surname>Haddad</surname><given-names>L.</given-names></name><name><surname>Mier</surname><given-names>D.</given-names></name><name><surname>Opitz Von Boberfeld</surname><given-names>C.</given-names></name><name><surname>Raab</surname><given-names>K.</given-names></name><name><surname>Witt</surname><given-names>S. H.</given-names></name><name><surname>Rietschel</surname><given-names>M.</given-names></name><name><surname>Cichon</surname><given-names>S.</given-names></name><name><surname>Meyer-Lindenberg</surname><given-names>A.</given-names></name></person-group> (<year>2009</year>). <article-title>Neural mechanisms of a genome-wide supported psychosis variant</article-title>. <source>Science</source>
+<volume>324</volume>, <fpage>605</fpage><pub-id pub-id-type="doi">10.1126/science.1167768</pub-id><pub-id pub-id-type="pmid">19407193</pub-id></mixed-citation>
+      </ref>
+      <ref id="B11">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Fields</surname><given-names>R. D.</given-names></name></person-group> (<year>2008</year>). <article-title>White matter in learning, cognition and psychiatric disorders</article-title>. <source>Trends Neurosci.</source>
+<volume>31</volume>, <fpage>361</fpage>&#8211;<lpage>370</lpage><pub-id pub-id-type="doi">10.1016/j.tins.2008.04.001</pub-id><pub-id pub-id-type="pmid">18538868</pub-id></mixed-citation>
+      </ref>
+      <ref id="B12">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Friston</surname><given-names>K. J.</given-names></name></person-group> (<year>1998</year>). <article-title>The disconnection hypothesis</article-title>. <source>Schizophr. Res.</source>
+<volume>30</volume>, <fpage>115</fpage>&#8211;<lpage>125</lpage><pub-id pub-id-type="doi">10.1016/S0920-9964(97)00140-0</pub-id><pub-id pub-id-type="pmid">9549774</pub-id></mixed-citation>
+      </ref>
+      <ref id="B13">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Friston</surname><given-names>K. J.</given-names></name><name><surname>Buechel</surname><given-names>C.</given-names></name><name><surname>Fink</surname><given-names>G. R.</given-names></name><name><surname>Morris</surname><given-names>J.</given-names></name><name><surname>Rolls</surname><given-names>E.</given-names></name><name><surname>Dolan</surname><given-names>R. J.</given-names></name></person-group> (<year>1997</year>). <article-title>Psychophysiological and modulatory interactions in neuroimaging</article-title>. <source>Neuroimage</source>
+<volume>6</volume>, <fpage>218</fpage>&#8211;<lpage>229</lpage><pub-id pub-id-type="doi">10.1006/nimg.1997.0291</pub-id><pub-id pub-id-type="pmid">9344826</pub-id></mixed-citation>
+      </ref>
+      <ref id="B14">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Friston</surname><given-names>K. J.</given-names></name><name><surname>Frith</surname><given-names>C. D.</given-names></name></person-group> (<year>1995</year>). <article-title>Schizophrenia: a disconnection syndrome?</article-title>
+<source>Clin. Neurosci.</source>
+<volume>3</volume>, <fpage>89</fpage>&#8211;<lpage>97</lpage><pub-id pub-id-type="pmid">7583624</pub-id></mixed-citation>
+      </ref>
+      <ref id="B15">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Friston</surname><given-names>K. J.</given-names></name><name><surname>Frith</surname><given-names>C. D.</given-names></name><name><surname>Liddle</surname><given-names>P. F.</given-names></name><name><surname>Frackowiak</surname><given-names>R. S.</given-names></name></person-group> (<year>1993</year>). <article-title>Functional connectivity: the principal-component analysis of large (PET) data sets</article-title>. <source>J. Cereb. Blood Flow Metab.</source>
+<volume>13</volume>, <fpage>5</fpage>&#8211;<lpage>14</lpage><pub-id pub-id-type="doi">10.1038/jcbfm.1993.133</pub-id><pub-id pub-id-type="pmid">8417010</pub-id></mixed-citation>
+      </ref>
+      <ref id="B16">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Gilbody</surname><given-names>S.</given-names></name><name><surname>Lewis</surname><given-names>S.</given-names></name><name><surname>Lightfoot</surname><given-names>T.</given-names></name></person-group> (<year>2007</year>). <article-title>Methylenetetrahydrofolate reductase (MTHFR) genetic polymorphisms and psychiatric disorders: a HuGE review</article-title>. <source>Am. J. Epidemiol.</source>
+<volume>165</volume>, <fpage>1</fpage>&#8211;<lpage>13</lpage><pub-id pub-id-type="doi">10.1093/aje/kwj347</pub-id><pub-id pub-id-type="pmid">17074966</pub-id></mixed-citation>
+      </ref>
+      <ref id="B17">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Gottesman</surname><given-names>I. I.</given-names></name><name><surname>Gould</surname><given-names>T. D.</given-names></name></person-group> (<year>2003</year>). <article-title>The endophenotype concept in psychiatry: etymology and strategic intentions</article-title>. <source>Am. J. Psychiatry</source>
+<volume>160</volume>, <fpage>636</fpage>&#8211;<lpage>645</lpage><pub-id pub-id-type="doi">10.1176/appi.ajp.160.4.636</pub-id><pub-id pub-id-type="pmid">12668349</pub-id></mixed-citation>
+      </ref>
+      <ref id="B18">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Gustavsson</surname><given-names>A.</given-names></name><name><surname>Svensson</surname><given-names>M.</given-names></name><name><surname>Jacobi</surname><given-names>F.</given-names></name><name><surname>Allgulander</surname><given-names>C.</given-names></name><name><surname>Alonso</surname><given-names>J.</given-names></name><name><surname>Beghi</surname><given-names>E.</given-names></name><name><surname>Dodel</surname><given-names>R.</given-names></name><name><surname>Ekman</surname><given-names>M.</given-names></name><name><surname>Faravelli</surname><given-names>C.</given-names></name><name><surname>Fratiglioni</surname><given-names>L.</given-names></name><name><surname>Gannon</surname><given-names>B.</given-names></name><name><surname>Jones</surname><given-names>D. H.</given-names></name><name><surname>Jennum</surname><given-names>P.</given-names></name><name><surname>Jordanova</surname><given-names>A.</given-names></name><name><surname>Jonsson</surname><given-names>L.</given-names></name><name><surname>Karampampa</surname><given-names>K.</given-names></name><name><surname>Knapp</surname><given-names>M.</given-names></name><name><surname>Kobelt</surname><given-names>G.</given-names></name><name><surname>Kurth</surname><given-names>T.</given-names></name><name><surname>Lieb</surname><given-names>R.</given-names></name><name><surname>Linde</surname><given-names>M.</given-names></name><name><surname>Ljungcrantz</surname><given-names>C.</given-names></name><name><surname>Maercker</surname><given-names>A.</given-names></name><name><surname>Melin</surname><given-names>B.</given-names></name><name><surname>Moscarelli</surname><given-names>M.</given-names></name><name><surname>Musayev</surname><given-names>A.</given-names></name><name><surname>Norwood</surname><given-names>F.</given-names></name><name><surname>Preisig</surname><given-names>M.</given-names></name><name><surname>Pugliatti</surname><given-names>M.</given-names></name><name><surname>Rehm</surname><given-names>J.</given-names></name><name><surname>Salvador-Carulla</surname><given-names>L.</given-names></name><name><surname>Schlehofer</surname><given-names>B.</given-names></name><name><surname>Simon</surname><given-names>R.</given-names></name><name><surname>Steinhausen</surname><given-names>H. C.</given-names></name><name><surname>Stovner</surname><given-names>L. J.</given-names></name><name><surname>Vallat</surname><given-names>J. M.</given-names></name><name><surname>Den Bergh</surname><given-names>P. V.</given-names></name><name><surname>Van Os</surname><given-names>J.</given-names></name><name><surname>Vos</surname><given-names>P.</given-names></name><name><surname>Xu</surname><given-names>W.</given-names></name><name><surname>Wittchen</surname><given-names>H. U.</given-names></name><name><surname>Jonsson</surname><given-names>B.</given-names></name><name><surname>Olesen</surname><given-names>J.</given-names></name></person-group> (<year>2011</year>). <article-title>Cost of disorders of the brain in Europe 2010</article-title>. <source>Eur. Neuropsychopharmacol.</source>
+<volume>21</volume>, <fpage>718</fpage>&#8211;<lpage>779</lpage><pub-id pub-id-type="doi">10.1016/j.euroneuro.2011.08.008</pub-id><pub-id pub-id-type="pmid">21924589</pub-id></mixed-citation>
+      </ref>
+      <ref id="B19">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Hakak</surname><given-names>Y.</given-names></name><name><surname>Walker</surname><given-names>J. R.</given-names></name><name><surname>Li</surname><given-names>C.</given-names></name><name><surname>Wong</surname><given-names>W. H.</given-names></name><name><surname>Davis</surname><given-names>K. L.</given-names></name><name><surname>Buxbaum</surname><given-names>J. D.</given-names></name><name><surname>Haroutunian</surname><given-names>V.</given-names></name><name><surname>Fienberg</surname><given-names>A. A.</given-names></name></person-group> (<year>2001</year>). <article-title>Genome-wide expression analysis reveals dysregulation of myelination-related genes in chronic schizophrenia</article-title>. <source>Proc. Natl. Acad. Sci. U.S.A.</source>
+<volume>98</volume>, <fpage>4746</fpage>&#8211;<lpage>4751</lpage><pub-id pub-id-type="doi">10.1073/pnas.081071198</pub-id><pub-id pub-id-type="pmid">11296301</pub-id></mixed-citation>
+      </ref>
+      <ref id="B20">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Harrison</surname><given-names>P. J.</given-names></name><name><surname>Weinberger</surname><given-names>D. R.</given-names></name></person-group> (<year>2005</year>). <article-title>Schizophrenia genes, gene expression, and neuropathology: on the matter of their convergence</article-title>. <source>Mol. Psychiatry</source>
+<volume>10</volume>, <fpage>40</fpage>&#8211;<lpage>68</lpage>; image 45.<pub-id pub-id-type="doi">10.1038/sj.mp.4001686</pub-id><pub-id pub-id-type="pmid">15263907</pub-id></mixed-citation>
+      </ref>
+      <ref id="B21">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Javitt</surname><given-names>D. C.</given-names></name></person-group> (<year>2010</year>). <article-title>Glutamatergic theories of schizophrenia</article-title>. <source>Isr. J. Psychiatry Relat. Sci.</source>
+<volume>47</volume>, <fpage>4</fpage>&#8211;<lpage>16</lpage><pub-id pub-id-type="pmid">20686195</pub-id></mixed-citation>
+      </ref>
+      <ref id="B22">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Jones</surname><given-names>D. K.</given-names></name></person-group> (<year>2008</year>). <article-title>Studying connections in the living human brain with diffusion MRI</article-title>. <source>Cortex</source>
+<volume>44</volume>, <fpage>936</fpage>&#8211;<lpage>952</lpage><pub-id pub-id-type="doi">10.1016/j.cortex.2008.05.002</pub-id><pub-id pub-id-type="pmid">18635164</pub-id></mixed-citation>
+      </ref>
+      <ref id="B23">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Jones</surname><given-names>D. K.</given-names></name></person-group> (<year>2010</year>). <article-title>Challenges and limitations of quantifying brain connectivity in vivo with diffusion MRI</article-title>. <source>Imaging</source>
+<volume>2</volume>, <fpage>341</fpage>&#8211;<lpage>355</lpage><pub-id pub-id-type="doi">10.2217/iim.10.21</pub-id></mixed-citation>
+      </ref>
+      <ref id="B24">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Kegeles</surname><given-names>L. S.</given-names></name><name><surname>Abi-Dargham</surname><given-names>A.</given-names></name><name><surname>Zea-Ponce</surname><given-names>Y.</given-names></name><name><surname>Rodenhiser-Hill</surname><given-names>J.</given-names></name><name><surname>Mann</surname><given-names>J. J.</given-names></name><name><surname>Van Heertum</surname><given-names>R. L.</given-names></name><name><surname>Cooper</surname><given-names>T. B.</given-names></name><name><surname>Carlsson</surname><given-names>A.</given-names></name><name><surname>Laruelle</surname><given-names>M.</given-names></name></person-group> (<year>2000</year>). <article-title>Modulation of amphetamine-induced striatal dopamine release by ketamine in humans: implications for schizophrenia</article-title>. <source>Biol. Psychiatry</source>
+<volume>48</volume>, <fpage>627</fpage>&#8211;<lpage>640</lpage><pub-id pub-id-type="doi">10.1016/S0006-3223(00)00976-8</pub-id><pub-id pub-id-type="pmid">11032974</pub-id></mixed-citation>
+      </ref>
+      <ref id="B25">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Kempf</surname><given-names>L.</given-names></name><name><surname>Nicodemus</surname><given-names>K. K.</given-names></name><name><surname>Kolachana</surname><given-names>B.</given-names></name><name><surname>Vakkalanka</surname><given-names>R.</given-names></name><name><surname>Verchinski</surname><given-names>B. A.</given-names></name><name><surname>Egan</surname><given-names>M. F.</given-names></name><name><surname>Straub</surname><given-names>R. E.</given-names></name><name><surname>Mattay</surname><given-names>V. A.</given-names></name><name><surname>Callicott</surname><given-names>J. H.</given-names></name><name><surname>Weinberger</surname><given-names>D. R.</given-names></name><name><surname>Meyer-Lindenberg</surname><given-names>A.</given-names></name></person-group> (<year>2008</year>). <article-title>Functional polymorphisms in PRODH are associated with risk and protection for schizophrenia and fronto-striatal structure and function</article-title>. <source>PLoS Genet.</source>
+<volume>4</volume>, <fpage>e1000252</fpage><pub-id pub-id-type="doi">10.1371/journal.pgen.1000252</pub-id><pub-id pub-id-type="pmid">18989458</pub-id></mixed-citation>
+      </ref>
+      <ref id="B26">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Konrad</surname><given-names>A.</given-names></name><name><surname>Vucurevic</surname><given-names>G.</given-names></name><name><surname>Musso</surname><given-names>F.</given-names></name><name><surname>Stoeter</surname><given-names>P.</given-names></name><name><surname>Dahmen</surname><given-names>N.</given-names></name><name><surname>Winterer</surname><given-names>G.</given-names></name></person-group> (<year>2009</year>). <article-title>ErbB4 genotype predicts left frontotemporal structural connectivity in human brain</article-title>. <source>Neuropsychopharmacology</source>
+<volume>34</volume>, <fpage>641</fpage>&#8211;<lpage>650</lpage><pub-id pub-id-type="doi">10.1038/npp.2008.112</pub-id><pub-id pub-id-type="pmid">18668031</pub-id></mixed-citation>
+      </ref>
+      <ref id="B27">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Konrad</surname><given-names>A.</given-names></name><name><surname>Winterer</surname><given-names>G.</given-names></name></person-group> (<year>2008</year>). <article-title>Disturbed structural connectivity in schizophrenia primary factor in pathology or epiphenomenon?</article-title>
+<source>Schizophr. Bull.</source>
+<volume>34</volume>, <fpage>72</fpage>&#8211;<lpage>92</lpage><pub-id pub-id-type="doi">10.1093/schbul/sbm034</pub-id><pub-id pub-id-type="pmid">17485733</pub-id></mixed-citation>
+      </ref>
+      <ref id="B28">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Kubicki</surname><given-names>M.</given-names></name><name><surname>Mccarley</surname><given-names>R.</given-names></name><name><surname>Westin</surname><given-names>C. F.</given-names></name><name><surname>Park</surname><given-names>H. J.</given-names></name><name><surname>Maier</surname><given-names>S.</given-names></name><name><surname>Kikinis</surname><given-names>R.</given-names></name><name><surname>Jolesz</surname><given-names>F. A.</given-names></name><name><surname>Shenton</surname><given-names>M. E.</given-names></name></person-group> (<year>2007</year>). <article-title>A review of diffusion tensor imaging studies in schizophrenia</article-title>. <source>J. Psychiatr. Res.</source>
+<volume>41</volume>, <fpage>15</fpage>&#8211;<lpage>30</lpage><pub-id pub-id-type="doi">10.1016/j.jpsychires.2005.05.005</pub-id><pub-id pub-id-type="pmid">16023676</pub-id></mixed-citation>
+      </ref>
+      <ref id="B29">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Lawrie</surname><given-names>S. M.</given-names></name><name><surname>Buechel</surname><given-names>C.</given-names></name><name><surname>Whalley</surname><given-names>H. C.</given-names></name><name><surname>Frith</surname><given-names>C. D.</given-names></name><name><surname>Friston</surname><given-names>K. J.</given-names></name><name><surname>Johnstone</surname><given-names>E. C.</given-names></name></person-group> (<year>2002</year>). <article-title>Reduced frontotemporal functional connectivity in schizophrenia associated with auditory hallucinations</article-title>. <source>Biol. Psychiatry</source>
+<volume>51</volume>, <fpage>1008</fpage>&#8211;<lpage>1011</lpage><pub-id pub-id-type="doi">10.1016/S0006-3223(02)01316-1</pub-id><pub-id pub-id-type="pmid">12062886</pub-id></mixed-citation>
+      </ref>
+      <ref id="B30">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Lewis</surname><given-names>D. A.</given-names></name><name><surname>Lieberman</surname><given-names>J. A.</given-names></name></person-group> (<year>2000</year>). <article-title>Catching up on schizophrenia: natural history and neurobiology</article-title>. <source>Neuron</source>
+<volume>28</volume>, <fpage>325</fpage>&#8211;<lpage>334</lpage><pub-id pub-id-type="doi">10.1016/S0896-6273(00)00111-2</pub-id><pub-id pub-id-type="pmid">11144342</pub-id></mixed-citation>
+      </ref>
+      <ref id="B31">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Liu</surname><given-names>B.</given-names></name><name><surname>Li</surname><given-names>J.</given-names></name><name><surname>Yu</surname><given-names>C.</given-names></name><name><surname>Li</surname><given-names>Y.</given-names></name><name><surname>Liu</surname><given-names>Y.</given-names></name><name><surname>Song</surname><given-names>M.</given-names></name><name><surname>Fan</surname><given-names>M.</given-names></name><name><surname>Li</surname><given-names>K.</given-names></name><name><surname>Jiang</surname><given-names>T.</given-names></name></person-group> (<year>2010</year>). <article-title>Haplotypes of catechol-O-methyltransferase modulate intelligence-related brain white matter integrity</article-title>. <source>Neuroimage</source>
+<volume>50</volume>, <fpage>243</fpage>&#8211;<lpage>249</lpage><pub-id pub-id-type="doi">10.1016/j.neuroimage.2009.12.020</pub-id><pub-id pub-id-type="pmid">20005296</pub-id></mixed-citation>
+      </ref>
+      <ref id="B32">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Liu</surname><given-names>J.</given-names></name><name><surname>Pearlson</surname><given-names>G.</given-names></name><name><surname>Windemuth</surname><given-names>A.</given-names></name><name><surname>Ruano</surname><given-names>G.</given-names></name><name><surname>Perrone-Bizzozero</surname><given-names>N. I.</given-names></name><name><surname>Calhoun</surname><given-names>V.</given-names></name></person-group> (<year>2009</year>). <article-title>Combining fMRI and SNP data to investigate connections between brain function and genetics using parallel ICA</article-title>. <source>Hum. Brain Mapp.</source>
+<volume>30</volume>, <fpage>241</fpage>&#8211;<lpage>255</lpage><pub-id pub-id-type="doi">10.1002/hbm.20508</pub-id><pub-id pub-id-type="pmid">18072279</pub-id></mixed-citation>
+      </ref>
+      <ref id="B33">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>McIntosh</surname><given-names>A. M.</given-names></name><name><surname>Moorhead</surname><given-names>T. W.</given-names></name><name><surname>Job</surname><given-names>D.</given-names></name><name><surname>Lymer</surname><given-names>G. K.</given-names></name><name><surname>Munoz Maniega</surname><given-names>S.</given-names></name><name><surname>Mckirdy</surname><given-names>J.</given-names></name><name><surname>Sussmann</surname><given-names>J. E.</given-names></name><name><surname>Baig</surname><given-names>B. J.</given-names></name><name><surname>Bastin</surname><given-names>M. E.</given-names></name><name><surname>Porteous</surname><given-names>D.</given-names></name><name><surname>Evans</surname><given-names>K. L.</given-names></name><name><surname>Johnstone</surname><given-names>E. C.</given-names></name><name><surname>Lawrie</surname><given-names>S. M.</given-names></name><name><surname>Hall</surname><given-names>J.</given-names></name></person-group> (<year>2008</year>). <article-title>The effects of a neuregulin 1 variant on white matter density and integrity</article-title>. <source>Mol. Psychiatry</source>
+<volume>13</volume>, <fpage>1054</fpage>&#8211;<lpage>1059</lpage><pub-id pub-id-type="doi">10.1038/sj.mp.4002103</pub-id><pub-id pub-id-type="pmid">17925794</pub-id></mixed-citation>
+      </ref>
+      <ref id="B34">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Meda</surname><given-names>S. A.</given-names></name><name><surname>Jagannathan</surname><given-names>K.</given-names></name><name><surname>Gelernter</surname><given-names>J.</given-names></name><name><surname>Calhoun</surname><given-names>V. D.</given-names></name><name><surname>Liu</surname><given-names>J.</given-names></name><name><surname>Stevens</surname><given-names>M. C.</given-names></name><name><surname>Pearlson</surname><given-names>G. D.</given-names></name></person-group> (<year>2010</year>). <article-title>A pilot multivariate parallel ICA study to investigate differential linkage between neural networks and genetic profiles in schizophrenia</article-title>. <source>Neuroimage</source>
+<volume>53</volume>, <fpage>1007</fpage>&#8211;<lpage>1015</lpage><pub-id pub-id-type="doi">10.1016/j.neuroimage.2009.11.052</pub-id><pub-id pub-id-type="pmid">19944766</pub-id></mixed-citation>
+      </ref>
+      <ref id="B35">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Meyer-Lindenberg</surname><given-names>A.</given-names></name></person-group> (<year>2009</year>). <article-title>Neural connectivity as an intermediate phenotype: brain networks under genetic control</article-title>. <source>Hum. Brain Mapp.</source>
+<volume>30</volume>, <fpage>1938</fpage>&#8211;<lpage>1946</lpage><pub-id pub-id-type="doi">10.1002/hbm.20639</pub-id><pub-id pub-id-type="pmid">19294651</pub-id></mixed-citation>
+      </ref>
+      <ref id="B36">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Meyer-Lindenberg</surname><given-names>A.</given-names></name></person-group> (<year>2010</year>). <article-title>From maps to mechanisms through neuroimaging of schizophrenia</article-title>. <source>Nature</source>
+<volume>468</volume>, <fpage>194</fpage>&#8211;<lpage>202</lpage><pub-id pub-id-type="doi">10.1038/nature09569</pub-id><pub-id pub-id-type="pmid">21068827</pub-id></mixed-citation>
+      </ref>
+      <ref id="B37">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Meyer-Lindenberg</surname><given-names>A.</given-names></name><name><surname>Poline</surname><given-names>J. B.</given-names></name><name><surname>Kohn</surname><given-names>P. D.</given-names></name><name><surname>Holt</surname><given-names>J. L.</given-names></name><name><surname>Egan</surname><given-names>M. F.</given-names></name><name><surname>Weinberger</surname><given-names>D. R.</given-names></name><name><surname>Berman</surname><given-names>K. F.</given-names></name></person-group> (<year>2001</year>). <article-title>Evidence for abnormal cortical functional connectivity during working memory in schizophrenia</article-title>. <source>Am. J. Psychiatry</source>
+<volume>158</volume>, <fpage>1809</fpage>&#8211;<lpage>1817</lpage><pub-id pub-id-type="doi">10.1176/appi.ajp.158.11.1809</pub-id><pub-id pub-id-type="pmid">11691686</pub-id></mixed-citation>
+      </ref>
+      <ref id="B38">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Meyer-Lindenberg</surname><given-names>A.</given-names></name><name><surname>Straub</surname><given-names>R. E.</given-names></name><name><surname>Lipska</surname><given-names>B. K.</given-names></name><name><surname>Verchinski</surname><given-names>B. A.</given-names></name><name><surname>Goldberg</surname><given-names>T.</given-names></name><name><surname>Callicott</surname><given-names>J. H.</given-names></name><name><surname>Egan</surname><given-names>M. F.</given-names></name><name><surname>Huffaker</surname><given-names>S. S.</given-names></name><name><surname>Mattay</surname><given-names>V. S.</given-names></name><name><surname>Kolachana</surname><given-names>B.</given-names></name><name><surname>Kleinman</surname><given-names>J. E.</given-names></name><name><surname>Weinberger</surname><given-names>D. R.</given-names></name></person-group> (<year>2007</year>). <article-title>Genetic evidence implicating DARPP-32 in human frontostriatal structure, function, and cognition</article-title>. <source>J. Clin. Invest.</source>
+<volume>117</volume>, <fpage>672</fpage>&#8211;<lpage>682</lpage><pub-id pub-id-type="doi">10.1172/JCI30413</pub-id><pub-id pub-id-type="pmid">17290303</pub-id></mixed-citation>
+      </ref>
+      <ref id="B39">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Meyer-Lindenberg</surname><given-names>A. S.</given-names></name><name><surname>Olsen</surname><given-names>R. K.</given-names></name><name><surname>Kohn</surname><given-names>P. D.</given-names></name><name><surname>Brown</surname><given-names>T.</given-names></name><name><surname>Egan</surname><given-names>M. F.</given-names></name><name><surname>Weinberger</surname><given-names>D. R.</given-names></name><name><surname>Berman</surname><given-names>K. F.</given-names></name></person-group> (<year>2005</year>). <article-title>Regionally specific disturbance of dorsolateral prefrontal-hippocampal functional connectivity in schizophrenia</article-title>. <source>Arch. Gen. Psychiatry</source>
+<volume>62</volume>, <fpage>379</fpage>&#8211;<lpage>386</lpage><pub-id pub-id-type="doi">10.1001/archpsyc.62.4.379</pub-id><pub-id pub-id-type="pmid">15809405</pub-id></mixed-citation>
+      </ref>
+      <ref id="B40">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Mier</surname><given-names>D.</given-names></name><name><surname>Kirsch</surname><given-names>P.</given-names></name><name><surname>Meyer-Lindenberg</surname><given-names>A.</given-names></name></person-group> (<year>2010</year>). <article-title>Neural substrates of pleiotropic action of genetic variation in COMT: a meta-analysis</article-title>. <source>Mol. Psychiatry</source>
+<volume>15</volume>, <fpage>918</fpage>&#8211;<lpage>927</lpage><pub-id pub-id-type="doi">10.1038/mp.2009.36</pub-id><pub-id pub-id-type="pmid">19417742</pub-id></mixed-citation>
+      </ref>
+      <ref id="B41">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Munafo</surname><given-names>M. R.</given-names></name><name><surname>Brown</surname><given-names>S. M.</given-names></name><name><surname>Hariri</surname><given-names>A. R.</given-names></name></person-group> (<year>2008</year>). <article-title>Serotonin transporter (5-HTTLPR) genotype and amygdala activation: a meta-analysis</article-title>. <source>Biol. Psychiatry</source>
+<volume>63</volume>, <fpage>852</fpage>&#8211;<lpage>857</lpage><pub-id pub-id-type="doi">10.1016/j.biopsych.2007.08.016</pub-id><pub-id pub-id-type="pmid">17949693</pub-id></mixed-citation>
+      </ref>
+      <ref id="B42">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Nallasamy</surname><given-names>N.</given-names></name><name><surname>Tsao</surname><given-names>D. Y.</given-names></name></person-group> (<year>2011</year>). <article-title>Functional connectivity in the brain: effects of anesthesia</article-title>. <source>Neuroscientist.</source>
+<volume>17</volume>, <fpage>94</fpage>&#8211;<lpage>106</lpage><pub-id pub-id-type="doi">10.1177/1073858410374126</pub-id><pub-id pub-id-type="pmid">21343409</pub-id></mixed-citation>
+      </ref>
+      <ref id="B43">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Nicodemus</surname><given-names>K. K.</given-names></name><name><surname>Law</surname><given-names>A. J.</given-names></name><name><surname>Radulescu</surname><given-names>E.</given-names></name><name><surname>Luna</surname><given-names>A.</given-names></name><name><surname>Kolachana</surname><given-names>B.</given-names></name><name><surname>Vakkalanka</surname><given-names>R.</given-names></name><name><surname>Rujescu</surname><given-names>D.</given-names></name><name><surname>Giegling</surname><given-names>I.</given-names></name><name><surname>Straub</surname><given-names>R. E.</given-names></name><name><surname>Mcgee</surname><given-names>K.</given-names></name><name><surname>Gold</surname><given-names>B.</given-names></name><name><surname>Dean</surname><given-names>M.</given-names></name><name><surname>Muglia</surname><given-names>P.</given-names></name><name><surname>Callicott</surname><given-names>J. H.</given-names></name><name><surname>Tan</surname><given-names>H. Y.</given-names></name><name><surname>Weinberger</surname><given-names>D. R.</given-names></name></person-group> (<year>2010</year>). <article-title>Biological validation of increased schizophrenia risk with NRG1, ERBB4, and AKT1 epistasis via functional neuroimaging in healthy controls</article-title>. <source>Arch. Gen. Psychiatry</source>
+<volume>67</volume>, <fpage>991</fpage>&#8211;<lpage>1001</lpage><pub-id pub-id-type="doi">10.1001/archgenpsychiatry.2010.117</pub-id><pub-id pub-id-type="pmid">20921115</pub-id></mixed-citation>
+      </ref>
+      <ref id="B44">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Norton</surname><given-names>N.</given-names></name><name><surname>Moskvina</surname><given-names>V.</given-names></name><name><surname>Morris</surname><given-names>D. W.</given-names></name><name><surname>Bray</surname><given-names>N. J.</given-names></name><name><surname>Zammit</surname><given-names>S.</given-names></name><name><surname>Williams</surname><given-names>N. M.</given-names></name><name><surname>Williams</surname><given-names>H. J.</given-names></name><name><surname>Preece</surname><given-names>A. C.</given-names></name><name><surname>Dwyer</surname><given-names>S.</given-names></name><name><surname>Wilkinson</surname><given-names>J. C.</given-names></name><name><surname>Spurlock</surname><given-names>G.</given-names></name><name><surname>Kirov</surname><given-names>G.</given-names></name><name><surname>Buckland</surname><given-names>P.</given-names></name><name><surname>Waddington</surname><given-names>J. L.</given-names></name><name><surname>Gill</surname><given-names>M.</given-names></name><name><surname>Corvin</surname><given-names>A. P.</given-names></name><name><surname>Owen</surname><given-names>M. J.</given-names></name><name><surname>O&#8217;Donovan</surname><given-names>M. C.</given-names></name></person-group> (<year>2006</year>). <article-title>Evidence that interaction between neuregulin 1 and its receptor erbB4 increases susceptibility to schizophrenia</article-title>. <source>Am. J. Med. Genet. B Neuropsychiatr. Genet.</source>
+<volume>141B</volume>, <fpage>96</fpage>&#8211;<lpage>101</lpage><pub-id pub-id-type="doi">10.1002/ajmg.b.30236</pub-id><pub-id pub-id-type="pmid">16249994</pub-id></mixed-citation>
+      </ref>
+      <ref id="B45">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>O&#8217;Donovan</surname><given-names>M. C.</given-names></name><name><surname>Craddock</surname><given-names>N.</given-names></name><name><surname>Norton</surname><given-names>N.</given-names></name><name><surname>Williams</surname><given-names>H.</given-names></name><name><surname>Peirce</surname><given-names>T.</given-names></name><name><surname>Moskvina</surname><given-names>V.</given-names></name><name><surname>Nikolov</surname><given-names>I.</given-names></name><name><surname>Hamshere</surname><given-names>M.</given-names></name><name><surname>Carroll</surname><given-names>L.</given-names></name><name><surname>Georgieva</surname><given-names>L.</given-names></name><name><surname>Dwyer</surname><given-names>S.</given-names></name><name><surname>Holmans</surname><given-names>P.</given-names></name><name><surname>Marchini</surname><given-names>J. L.</given-names></name><name><surname>Spencer</surname><given-names>C. C.</given-names></name><name><surname>Howie</surname><given-names>B.</given-names></name><name><surname>Leung</surname><given-names>H. T.</given-names></name><name><surname>Hartmann</surname><given-names>A. M.</given-names></name><name><surname>Moller</surname><given-names>H. J.</given-names></name><name><surname>Morris</surname><given-names>D. W.</given-names></name><name><surname>Shi</surname><given-names>Y.</given-names></name><name><surname>Feng</surname><given-names>G.</given-names></name><name><surname>Hoffmann</surname><given-names>P.</given-names></name><name><surname>Propping</surname><given-names>P.</given-names></name><name><surname>Vasilescu</surname><given-names>C.</given-names></name><name><surname>Maier</surname><given-names>W.</given-names></name><name><surname>Rietschel</surname><given-names>M.</given-names></name><name><surname>Zammit</surname><given-names>S.</given-names></name><name><surname>Schumacher</surname><given-names>J.</given-names></name><name><surname>Quinn</surname><given-names>E. M.</given-names></name><name><surname>Schulze</surname><given-names>T. G.</given-names></name><name><surname>Williams</surname><given-names>N. M.</given-names></name><name><surname>Giegling</surname><given-names>I.</given-names></name><name><surname>Iwata</surname><given-names>N.</given-names></name><name><surname>Ikeda</surname><given-names>M.</given-names></name><name><surname>Darvasi</surname><given-names>A.</given-names></name><name><surname>Shifman</surname><given-names>S.</given-names></name><name><surname>He</surname><given-names>L.</given-names></name><name><surname>Duan</surname><given-names>J.</given-names></name><name><surname>Sanders</surname><given-names>A. R.</given-names></name><name><surname>Levinson</surname><given-names>D. F.</given-names></name><name><surname>Gejman</surname><given-names>P. V.</given-names></name><name><surname>Cichon</surname><given-names>S.</given-names></name><name><surname>Nothen</surname><given-names>M. M.</given-names></name><name><surname>Gill</surname><given-names>M.</given-names></name><name><surname>Corvin</surname><given-names>A.</given-names></name><name><surname>Rujescu</surname><given-names>D.</given-names></name><name><surname>Kirov</surname><given-names>G.</given-names></name><name><surname>Owen</surname><given-names>M. J.</given-names></name><name><surname>Buccola</surname><given-names>N. G.</given-names></name><name><surname>Mowry</surname><given-names>B. J.</given-names></name><name><surname>Freedman</surname><given-names>R.</given-names></name><name><surname>Amin</surname><given-names>F.</given-names></name><name><surname>Black</surname><given-names>D. W.</given-names></name><name><surname>Silverman</surname><given-names>J. M.</given-names></name><name><surname>Byerley</surname><given-names>W. F.</given-names></name><name><surname>Cloninger</surname><given-names>C. R.</given-names></name></person-group> (<year>2008</year>). <article-title>Identification of loci associated with schizophrenia by genome-wide association and follow-up</article-title>. <source>Nat. Genet.</source>
+<volume>40</volume>, <fpage>1053</fpage>&#8211;<lpage>1055</lpage><pub-id pub-id-type="doi">10.1038/ng.201</pub-id><pub-id pub-id-type="pmid">18677311</pub-id></mixed-citation>
+      </ref>
+      <ref id="B46">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Ogawa</surname><given-names>S.</given-names></name><name><surname>Lee</surname><given-names>T. M.</given-names></name><name><surname>Kay</surname><given-names>A. R.</given-names></name><name><surname>Tank</surname><given-names>D. W.</given-names></name></person-group> (<year>1990</year>). <article-title>Brain magnetic resonance imaging with contrast dependent on blood oxygenation</article-title>. <source>Proc. Natl. Acad. Sci. U.S.A.</source>
+<volume>87</volume>, <fpage>9868</fpage>&#8211;<lpage>9872</lpage><pub-id pub-id-type="doi">10.1073/pnas.87.24.9868</pub-id><pub-id pub-id-type="pmid">2124706</pub-id></mixed-citation>
+      </ref>
+      <ref id="B47">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Pacheco</surname><given-names>J.</given-names></name><name><surname>Beevers</surname><given-names>C. G.</given-names></name><name><surname>Benavides</surname><given-names>C.</given-names></name><name><surname>Mcgeary</surname><given-names>J.</given-names></name><name><surname>Stice</surname><given-names>E.</given-names></name><name><surname>Schnyer</surname><given-names>D. M.</given-names></name></person-group> (<year>2009</year>). <article-title>Frontal-limbic white matter pathway associations with the serotonin transporter gene promoter region (5-HTTLPR) polymorphism</article-title>. <source>J. Neurosci.</source>
+<volume>29</volume>, <fpage>6229</fpage>&#8211;<lpage>6233</lpage><pub-id pub-id-type="doi">10.1523/JNEUROSCI.0896-09.2009</pub-id><pub-id pub-id-type="pmid">19439600</pub-id></mixed-citation>
+      </ref>
+      <ref id="B48">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Paulus</surname><given-names>F. M.</given-names></name><name><surname>Krach</surname><given-names>S.</given-names></name><name><surname>Bedenbender</surname><given-names>J.</given-names></name><name><surname>Pyka</surname><given-names>M.</given-names></name><name><surname>Sommer</surname><given-names>J.</given-names></name><name><surname>Krug</surname><given-names>A.</given-names></name><name><surname>Knake</surname><given-names>S.</given-names></name><name><surname>Nothen</surname><given-names>M. M.</given-names></name><name><surname>Witt</surname><given-names>S. H.</given-names></name><name><surname>Rietschel</surname><given-names>M.</given-names></name><name><surname>Kircher</surname><given-names>T.</given-names></name><name><surname>Jansen</surname><given-names>A.</given-names></name></person-group> (<year>2011</year>). <article-title>Partial support for ZNF804A genotype-dependent alterations in prefrontal connectivity</article-title>. <source>Hum. Brain Mapp</source>.<pub-id pub-id-type="doi">10.1002/hbm.21434</pub-id></mixed-citation>
+      </ref>
+      <ref id="B49">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Perez-Iglesias</surname><given-names>R.</given-names></name><name><surname>Tordesillas-Gutierrez</surname><given-names>D.</given-names></name><name><surname>Barker</surname><given-names>G. J.</given-names></name><name><surname>Mcguire</surname><given-names>P. K.</given-names></name><name><surname>Roiz-Santianez</surname><given-names>R.</given-names></name><name><surname>Mata</surname><given-names>I.</given-names></name><name><surname>De Lucas</surname><given-names>E. M.</given-names></name><name><surname>Quintana</surname><given-names>F.</given-names></name><name><surname>Vazquez-Barquero</surname><given-names>J. L.</given-names></name><name><surname>Crespo-Facorro</surname><given-names>B.</given-names></name></person-group> (<year>2010</year>). <article-title>White matter defects in first episode psychosis patients: a voxelwise analysis of diffusion tensor imaging</article-title>. <source>Neuroimage</source>
+<volume>49</volume>, <fpage>199</fpage>&#8211;<lpage>204</lpage><pub-id pub-id-type="doi">10.1016/j.neuroimage.2009.07.016</pub-id><pub-id pub-id-type="pmid">19619664</pub-id></mixed-citation>
+      </ref>
+      <ref id="B50">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Pezawas</surname><given-names>L.</given-names></name><name><surname>Meyer-Lindenberg</surname><given-names>A.</given-names></name><name><surname>Drabant</surname><given-names>E. M.</given-names></name><name><surname>Verchinski</surname><given-names>B. A.</given-names></name><name><surname>Munoz</surname><given-names>K. E.</given-names></name><name><surname>Kolachana</surname><given-names>B. S.</given-names></name><name><surname>Egan</surname><given-names>M. F.</given-names></name><name><surname>Mattay</surname><given-names>V. S.</given-names></name><name><surname>Hariri</surname><given-names>A. R.</given-names></name><name><surname>Weinberger</surname><given-names>D. R.</given-names></name></person-group> (<year>2005</year>). <article-title>5-HTTLPR polymorphism impacts human cingulate-amygdala interactions: a genetic susceptibility mechanism for depression</article-title>. <source>Nat. Neurosci.</source>
+<volume>8</volume>, <fpage>828</fpage>&#8211;<lpage>834</lpage><pub-id pub-id-type="doi">10.1038/nn1463</pub-id><pub-id pub-id-type="pmid">15880108</pub-id></mixed-citation>
+      </ref>
+      <ref id="B51">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Pitt</surname><given-names>D.</given-names></name><name><surname>Nagelmeier</surname><given-names>I. E.</given-names></name><name><surname>Wilson</surname><given-names>H. C.</given-names></name><name><surname>Raine</surname><given-names>C. S.</given-names></name></person-group> (<year>2003</year>). <article-title>Glutamate uptake by oligodendrocytes: Implications for excitotoxicity in multiple sclerosis</article-title>. <source>Neurology</source>
+<volume>61</volume>, <fpage>1113</fpage>&#8211;<lpage>1120</lpage><pub-id pub-id-type="pmid">14581674</pub-id></mixed-citation>
+      </ref>
+      <ref id="B52">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Prata</surname><given-names>D. P.</given-names></name><name><surname>Mechelli</surname><given-names>A.</given-names></name><name><surname>Fu</surname><given-names>C. H.</given-names></name><name><surname>Picchioni</surname><given-names>M.</given-names></name><name><surname>Kane</surname><given-names>F.</given-names></name><name><surname>Kalidindi</surname><given-names>S.</given-names></name><name><surname>Mcdonald</surname><given-names>C.</given-names></name><name><surname>Howes</surname><given-names>O.</given-names></name><name><surname>Kravariti</surname><given-names>E.</given-names></name><name><surname>Demjaha</surname><given-names>A.</given-names></name><name><surname>Toulopoulou</surname><given-names>T.</given-names></name><name><surname>Diforti</surname><given-names>M.</given-names></name><name><surname>Murray</surname><given-names>R. M.</given-names></name><name><surname>Collier</surname><given-names>D. A.</given-names></name><name><surname>Mcguire</surname><given-names>P. K.</given-names></name></person-group> (<year>2009</year>). <article-title>Opposite effects of catechol-O-methyltransferase Val158Met on cortical function in healthy subjects and patients with schizophrenia</article-title>. <source>Biol. Psychiatry</source>
+<volume>65</volume>, <fpage>473</fpage>&#8211;<lpage>480</lpage><pub-id pub-id-type="doi">10.1016/j.biopsych.2008.09.027</pub-id><pub-id pub-id-type="pmid">19054502</pub-id></mixed-citation>
+      </ref>
+      <ref id="B53">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Rao</surname><given-names>D.</given-names></name><name><surname>Jonsson</surname><given-names>E. G.</given-names></name><name><surname>Paus</surname><given-names>S.</given-names></name><name><surname>Ganguli</surname><given-names>R.</given-names></name><name><surname>Nothen</surname><given-names>M.</given-names></name><name><surname>Nimgaonkar</surname><given-names>V. L.</given-names></name></person-group> (<year>1998</year>). <article-title>Schizophrenia and the serotonin transporter gene</article-title>. <source>Psychiatr. Genet.</source>
+<volume>8</volume>, <fpage>207</fpage>&#8211;<lpage>212</lpage><pub-id pub-id-type="doi">10.1097/00041444-199808040-00002</pub-id><pub-id pub-id-type="pmid">9861638</pub-id></mixed-citation>
+      </ref>
+      <ref id="B54">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Rasetti</surname><given-names>R.</given-names></name><name><surname>Sambataro</surname><given-names>F.</given-names></name><name><surname>Chen</surname><given-names>Q.</given-names></name><name><surname>Callicott</surname><given-names>J. H.</given-names></name><name><surname>Mattay</surname><given-names>V. S.</given-names></name><name><surname>Weinberger</surname><given-names>D. R.</given-names></name></person-group> (<year>2011</year>). <article-title>Altered Cortical Network Dynamics: A Potential Intermediate Phenotype for Schizophrenia and Association With ZNF804A</article-title>. <source>Arch. Gen. Psychiatry</source>
+<volume>68</volume>, <fpage>1207</fpage>&#8211;<lpage>1217</lpage><pub-id pub-id-type="doi">10.1001/archgenpsychiatry.2011.103</pub-id><pub-id pub-id-type="pmid">21810628</pub-id></mixed-citation>
+      </ref>
+      <ref id="B55">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Roffman</surname><given-names>J. L.</given-names></name><name><surname>Brohawn</surname><given-names>D. G.</given-names></name><name><surname>Friedman</surname><given-names>J. S.</given-names></name><name><surname>Dyckman</surname><given-names>K. A.</given-names></name><name><surname>Thakkar</surname><given-names>K. N.</given-names></name><name><surname>Agam</surname><given-names>Y.</given-names></name><name><surname>Vangel</surname><given-names>M. G.</given-names></name><name><surname>Goff</surname><given-names>D. C.</given-names></name><name><surname>Manoach</surname><given-names>D. S.</given-names></name></person-group> (<year>2011</year>). <article-title>MTHFR 677C&gt;T effects on anterior cingulate structure and function during response monitoring in schizophrenia: a preliminary study</article-title>. <source>Brain Imaging Behav.</source>
+<volume>5</volume>, <fpage>65</fpage>&#8211;<lpage>75</lpage><pub-id pub-id-type="doi">10.1007/s11682-010-9111-2</pub-id><pub-id pub-id-type="pmid">21190096</pub-id></mixed-citation>
+      </ref>
+      <ref id="B56">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Roffman</surname><given-names>J. L.</given-names></name><name><surname>Weiss</surname><given-names>A. P.</given-names></name><name><surname>Purcell</surname><given-names>S.</given-names></name><name><surname>Caffalette</surname><given-names>C. A.</given-names></name><name><surname>Freudenreich</surname><given-names>O.</given-names></name><name><surname>Henderson</surname><given-names>D. C.</given-names></name><name><surname>Bottiglieri</surname><given-names>T.</given-names></name><name><surname>Wong</surname><given-names>D. H.</given-names></name><name><surname>Halsted</surname><given-names>C. H.</given-names></name><name><surname>Goff</surname><given-names>D. C.</given-names></name></person-group> (<year>2008</year>). <article-title>Contribution of methylenetetrahydrofolate reductase (MTHFR) polymorphisms to negative symptoms in schizophrenia</article-title>. <source>Biol. Psychiatry</source>
+<volume>63</volume>, <fpage>42</fpage>&#8211;<lpage>48</lpage><pub-id pub-id-type="doi">10.1016/j.biopsych.2006.12.017</pub-id><pub-id pub-id-type="pmid">17543893</pub-id></mixed-citation>
+      </ref>
+      <ref id="B57">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Schumann</surname><given-names>G.</given-names></name><name><surname>Loth</surname><given-names>E.</given-names></name><name><surname>Banaschewski</surname><given-names>T.</given-names></name><name><surname>Barbot</surname><given-names>A.</given-names></name><name><surname>Barker</surname><given-names>G.</given-names></name><name><surname>Buchel</surname><given-names>C.</given-names></name><name><surname>Conrod</surname><given-names>P. J.</given-names></name><name><surname>Dalley</surname><given-names>J. W.</given-names></name><name><surname>Flor</surname><given-names>H.</given-names></name><name><surname>Gallinat</surname><given-names>J.</given-names></name><name><surname>Garavan</surname><given-names>H.</given-names></name><name><surname>Heinz</surname><given-names>A.</given-names></name><name><surname>Itterman</surname><given-names>B.</given-names></name><name><surname>Lathrop</surname><given-names>M.</given-names></name><name><surname>Mallik</surname><given-names>C.</given-names></name><name><surname>Mann</surname><given-names>K.</given-names></name><name><surname>Martinot</surname><given-names>J. L.</given-names></name><name><surname>Paus</surname><given-names>T.</given-names></name><name><surname>Poline</surname><given-names>J. B.</given-names></name><name><surname>Robbins</surname><given-names>T. W.</given-names></name><name><surname>Rietschel</surname><given-names>M.</given-names></name><name><surname>Reed</surname><given-names>L.</given-names></name><name><surname>Smolka</surname><given-names>M.</given-names></name><name><surname>Spanagel</surname><given-names>R.</given-names></name><name><surname>Speiser</surname><given-names>C.</given-names></name><name><surname>Stephens</surname><given-names>D. N.</given-names></name><name><surname>Strohle</surname><given-names>A.</given-names></name><name><surname>Struve</surname><given-names>M.</given-names></name></person-group> (<year>2010</year>). <article-title>The IMAGEN study: reinforcement-related behaviour in normal brain function and psychopathology</article-title>. <source>Mol. Psychiatry</source>
+<volume>15</volume>, <fpage>1128</fpage>&#8211;<lpage>1139</lpage><pub-id pub-id-type="doi">10.1038/mp.2010.4</pub-id><pub-id pub-id-type="pmid">21102431</pub-id></mixed-citation>
+      </ref>
+      <ref id="B58">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Selemon</surname><given-names>L. D.</given-names></name><name><surname>Goldman-Rakic</surname><given-names>P. S.</given-names></name></person-group> (<year>1999</year>). <article-title>The reduced neuropil hypothesis: a circuit based model of schizophrenia</article-title>. <source>Biol. Psychiatry</source>
+<volume>45</volume>, <fpage>17</fpage>&#8211;<lpage>25</lpage><pub-id pub-id-type="doi">10.1016/S0006-3223(98)00281-9</pub-id><pub-id pub-id-type="pmid">9894571</pub-id></mixed-citation>
+      </ref>
+      <ref id="B59">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Sigurdsson</surname><given-names>T.</given-names></name><name><surname>Stark</surname><given-names>K. L.</given-names></name><name><surname>Karayiorgou</surname><given-names>M.</given-names></name><name><surname>Gogos</surname><given-names>J. A.</given-names></name><name><surname>Gordon</surname><given-names>J. A.</given-names></name></person-group> (<year>2010</year>). <article-title>Impaired hippocampal&#8211;prefrontal synchrony in a genetic mouse model of schizophrenia</article-title>. <source>Nature</source>
+<volume>464</volume>, <fpage>763</fpage><pub-id pub-id-type="doi">10.1038/nature08855</pub-id><pub-id pub-id-type="pmid">20360742</pub-id></mixed-citation>
+      </ref>
+      <ref id="B60">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Sprooten</surname><given-names>E.</given-names></name><name><surname>Lymer</surname><given-names>G. K.</given-names></name><name><surname>Munoz Maniega</surname><given-names>S.</given-names></name><name><surname>Mckirdy</surname><given-names>J.</given-names></name><name><surname>Clayden</surname><given-names>J. D.</given-names></name><name><surname>Bastin</surname><given-names>M. E.</given-names></name><name><surname>Porteous</surname><given-names>D.</given-names></name><name><surname>Johnstone</surname><given-names>E. C.</given-names></name><name><surname>Lawrie</surname><given-names>S. M.</given-names></name><name><surname>Hall</surname><given-names>J.</given-names></name><name><surname>Mcintosh</surname><given-names>A. M.</given-names></name></person-group> (<year>2009</year>). <article-title>The relationship of anterior thalamic radiation integrity to psychosis risk associated neuregulin-1 variants</article-title>. <source>Mol. Psychiatry</source>
+<volume>14</volume>, <fpage>237</fpage>&#8211;<lpage>238</lpage>, 233.<pub-id pub-id-type="doi">10.1038/mp.2009.1</pub-id><pub-id pub-id-type="pmid">19229203</pub-id></mixed-citation>
+      </ref>
+      <ref id="B61">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Sprooten</surname><given-names>E.</given-names></name><name><surname>Sussman</surname><given-names>J. E.</given-names></name><name><surname>Moorhear</surname><given-names>T. W.</given-names></name><name><surname>Whalley</surname><given-names>H. C.</given-names></name><name><surname>ffrench-Constant</surname><given-names>C.</given-names></name><name><surname>Blumberg</surname><given-names>H. P.</given-names></name><name><surname>Bastin</surname><given-names>M. E.</given-names></name><name><surname>Hall</surname><given-names>J.</given-names></name><name><surname>Lawrie</surname><given-names>S. M.</given-names></name><name><surname>McIntosh</surname><given-names>A. M.</given-names></name></person-group> (<year>2011</year>). <article-title>Association of white matter imtegrity with genetic variation in an exonic DISC1 SNP</article-title>. <source>Mol. Psychiatry</source>
+<fpage>1</fpage>&#8211;<lpage>2</lpage><pub-id pub-id-type="pmid">21483438</pub-id></mixed-citation>
+      </ref>
+      <ref id="B62">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Stephan</surname><given-names>K. E.</given-names></name><name><surname>Friston</surname><given-names>K. J.</given-names></name><name><surname>Frith</surname><given-names>C. D.</given-names></name></person-group> (<year>2009</year>). <article-title>Dysconnection in schizophrenia: from abnormal synaptic plasticity to failures of self-monitoring</article-title>. <source>Schizophr. Bull.</source>
+<volume>35</volume>, <fpage>509</fpage>&#8211;<lpage>527</lpage><pub-id pub-id-type="doi">10.1093/schbul/sbn176</pub-id><pub-id pub-id-type="pmid">19155345</pub-id></mixed-citation>
+      </ref>
+      <ref id="B63">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Sterne</surname><given-names>J. A.</given-names></name><name><surname>Gavaghan</surname><given-names>D.</given-names></name><name><surname>Egger</surname><given-names>M.</given-names></name></person-group> (<year>2000</year>). <article-title>Publication and related bias in meta-analysis: power of statistical tests and prevalence in the literature</article-title>. <source>J. Clin. Epidemiol.</source>
+<volume>53</volume>, <fpage>1119</fpage>&#8211;<lpage>1129</lpage><pub-id pub-id-type="doi">10.1016/S0895-4356(00)00242-0</pub-id><pub-id pub-id-type="pmid">11106885</pub-id></mixed-citation>
+      </ref>
+      <ref id="B64">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Sullivan</surname><given-names>P. F.</given-names></name><name><surname>Kendler</surname><given-names>K. S.</given-names></name><name><surname>Neale</surname><given-names>M. C.</given-names></name></person-group> (<year>2003</year>). <article-title>Schizophrenia as a complex trait: evidence from a meta-analysis of twin studies</article-title>. <source>Arch. Gen. Psychiatry</source>
+<volume>60</volume>, <fpage>1187</fpage>&#8211;<lpage>1192</lpage><pub-id pub-id-type="doi">10.1001/archpsyc.60.12.1187</pub-id><pub-id pub-id-type="pmid">14662550</pub-id></mixed-citation>
+      </ref>
+      <ref id="B65">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Takahashi</surname><given-names>N.</given-names></name><name><surname>Sakurai</surname><given-names>T.</given-names></name><name><surname>Davis</surname><given-names>K. L.</given-names></name><name><surname>Buxbaum</surname><given-names>J. D.</given-names></name></person-group> (<year>2011</year>). <article-title>Linking oligodendrocyte and myelin dysfunction to neurocircuitry abnormalities in schizophrenia</article-title>. <source>Prog. Neurobiol.</source>
+<volume>93</volume>, <fpage>13</fpage>&#8211;<lpage>24</lpage><pub-id pub-id-type="doi">10.1016/j.pneurobio.2010.09.004</pub-id><pub-id pub-id-type="pmid">20950668</pub-id></mixed-citation>
+      </ref>
+      <ref id="B66">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Tanaka</surname><given-names>H.</given-names></name><name><surname>Ma</surname><given-names>J.</given-names></name><name><surname>Tanaka</surname><given-names>K. F.</given-names></name><name><surname>Takao</surname><given-names>K.</given-names></name><name><surname>Komada</surname><given-names>M.</given-names></name><name><surname>Tanda</surname><given-names>K.</given-names></name><name><surname>Suzuki</surname><given-names>A.</given-names></name><name><surname>Ishibashi</surname><given-names>T.</given-names></name><name><surname>Baba</surname><given-names>H.</given-names></name><name><surname>Isa</surname><given-names>T.</given-names></name><name><surname>Shigemoto</surname><given-names>R.</given-names></name><name><surname>Ono</surname><given-names>K.</given-names></name><name><surname>Miyakawa</surname><given-names>T.</given-names></name><name><surname>Ikenaka</surname><given-names>K.</given-names></name></person-group> (<year>2009</year>). <article-title>Mice with altered myelin proteolipid protein gene expression display cognitive deficits accompanied by abnormal neuron-glia interactions and decreased conduction velocities</article-title>. <source>J. Neurosci.</source>
+<volume>29</volume>, <fpage>8363</fpage>&#8211;<lpage>8371</lpage><pub-id pub-id-type="doi">10.1523/JNEUROSCI.2799-09.2009</pub-id><pub-id pub-id-type="pmid">19571127</pub-id></mixed-citation>
+      </ref>
+      <ref id="B67">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Thomason</surname><given-names>M. E.</given-names></name><name><surname>Dougherty</surname><given-names>R. F.</given-names></name><name><surname>Colich</surname><given-names>N. L.</given-names></name><name><surname>Perry</surname><given-names>L. M.</given-names></name><name><surname>Rykhlevskaia</surname><given-names>E. I.</given-names></name><name><surname>Louro</surname><given-names>H. M.</given-names></name><name><surname>Hallmayer</surname><given-names>J. F.</given-names></name><name><surname>Waugh</surname><given-names>C. E.</given-names></name><name><surname>Bammer</surname><given-names>R.</given-names></name><name><surname>Glover</surname><given-names>G. H.</given-names></name><name><surname>Gotlib</surname><given-names>I. H.</given-names></name></person-group> (<year>2010</year>). <article-title>COMT genotype affects prefrontal white matter pathways in children and adolescents</article-title>. <source>Neuroimage</source>
+<volume>53</volume>, <fpage>926</fpage>&#8211;<lpage>934</lpage><pub-id pub-id-type="doi">10.1016/j.neuroimage.2010.01.033</pub-id><pub-id pub-id-type="pmid">20083203</pub-id></mixed-citation>
+      </ref>
+      <ref id="B68">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Tost</surname><given-names>H.</given-names></name><name><surname>Bilek</surname><given-names>E.</given-names></name><name><surname>Meyer-Lindenberg</surname><given-names>A.</given-names></name></person-group> (<year>2011</year>). <article-title>Brain connectivity in psychiatric imaging genetics</article-title>. <source>Neuroimage</source>.<pub-id pub-id-type="doi">10.1016/j.neuroimage.2011.11.007</pub-id></mixed-citation>
+      </ref>
+      <ref id="B69">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Tournier</surname><given-names>J. D.</given-names></name><name><surname>Mori</surname><given-names>S.</given-names></name><name><surname>Leemans</surname><given-names>A.</given-names></name></person-group> (<year>2011</year>). <article-title>Diffusion tensor imaging and beyond</article-title>. <source>Magn. Reson. Med.</source>
+<volume>65</volume>, <fpage>1532</fpage>&#8211;<lpage>1556</lpage><pub-id pub-id-type="doi">10.1002/mrm.22924</pub-id><pub-id pub-id-type="pmid">21469191</pub-id></mixed-citation>
+      </ref>
+      <ref id="B70">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Umbricht</surname><given-names>D.</given-names></name><name><surname>Schmid</surname><given-names>L.</given-names></name><name><surname>Koller</surname><given-names>R.</given-names></name><name><surname>Vollenweider</surname><given-names>F. X.</given-names></name><name><surname>Hell</surname><given-names>D.</given-names></name><name><surname>Javitt</surname><given-names>D. C.</given-names></name></person-group> (<year>2000</year>). <article-title>Ketamine-induced deficits in auditory and visual context-dependent processing in healthy volunteers: implications for models of cognitive deficits in schizophrenia</article-title>. <source>Arch. Gen. Psychiatry</source>
+<volume>57</volume>, <fpage>1139</fpage>&#8211;<lpage>1147</lpage><pub-id pub-id-type="doi">10.1001/archpsyc.57.12.1139</pub-id><pub-id pub-id-type="pmid">11115327</pub-id></mixed-citation>
+      </ref>
+      <ref id="B71">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Vijayan</surname><given-names>N. N.</given-names></name><name><surname>Iwayama</surname><given-names>Y.</given-names></name><name><surname>Koshy</surname><given-names>L. V.</given-names></name><name><surname>Natarajan</surname><given-names>C.</given-names></name><name><surname>Nair</surname><given-names>C.</given-names></name><name><surname>Allencherry</surname><given-names>P. M.</given-names></name><name><surname>Yoshikawa</surname><given-names>T.</given-names></name><name><surname>Banerjee</surname><given-names>M.</given-names></name></person-group> (<year>2009</year>). <article-title>Evidence of association of serotonin transporter gene polymorphisms with schizophrenia in a South Indian population</article-title>. <source>J. Hum. Genet.</source>
+<volume>54</volume>, <fpage>538</fpage>&#8211;<lpage>542</lpage><pub-id pub-id-type="doi">10.1038/jhg.2009.76</pub-id><pub-id pub-id-type="pmid">19713975</pub-id></mixed-citation>
+      </ref>
+      <ref id="B72">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Walter</surname><given-names>H.</given-names></name><name><surname>Schnell</surname><given-names>K.</given-names></name><name><surname>Erk</surname><given-names>S.</given-names></name><name><surname>Arnold</surname><given-names>C.</given-names></name><name><surname>Kirsch</surname><given-names>P.</given-names></name><name><surname>Esslinger</surname><given-names>C.</given-names></name><name><surname>Mier</surname><given-names>D.</given-names></name><name><surname>Schmitgen</surname><given-names>M. M.</given-names></name><name><surname>Rietschel</surname><given-names>M.</given-names></name><name><surname>Witt</surname><given-names>S. H.</given-names></name><name><surname>Nothen</surname><given-names>M. M.</given-names></name><name><surname>Cichon</surname><given-names>S.</given-names></name><name><surname>Meyer-Lindenberg</surname><given-names>A.</given-names></name></person-group> (<year>2011</year>). <article-title>Effects of a genome-wide supported psychosis risk variant on neural activation during a theory-of-mind task</article-title>. <source>Mol. Psychiatry</source>
+<volume>16</volume>, <fpage>462</fpage>&#8211;<lpage>470</lpage><pub-id pub-id-type="doi">10.1038/mp.2010.18</pub-id><pub-id pub-id-type="pmid">20231838</pub-id></mixed-citation>
+      </ref>
+      <ref id="B73">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Wang</surname><given-names>F.</given-names></name><name><surname>Jiang</surname><given-names>T.</given-names></name><name><surname>Sun</surname><given-names>Z.</given-names></name><name><surname>Teng</surname><given-names>S. L.</given-names></name><name><surname>Luo</surname><given-names>X.</given-names></name><name><surname>Zhu</surname><given-names>Z.</given-names></name><name><surname>Zang</surname><given-names>Y.</given-names></name><name><surname>Zhang</surname><given-names>H.</given-names></name><name><surname>Yue</surname><given-names>W.</given-names></name><name><surname>Qu</surname><given-names>M.</given-names></name><name><surname>Lu</surname><given-names>T.</given-names></name><name><surname>Hong</surname><given-names>N.</given-names></name><name><surname>Huang</surname><given-names>H.</given-names></name><name><surname>Blumberg</surname><given-names>H. P.</given-names></name><name><surname>Zhang</surname><given-names>D.</given-names></name></person-group> (<year>2009</year>). <article-title>Neuregulin 1 genetic variation and anterior cingulum integrity in patients with schizophrenia and healthy controls</article-title>. <source>J Psychiatry Neurosci</source>
+<volume>34</volume>, <fpage>181</fpage>&#8211;<lpage>186</lpage><pub-id pub-id-type="pmid">19448847</pub-id></mixed-citation>
+      </ref>
+      <ref id="B74">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Winterer</surname><given-names>G.</given-names></name><name><surname>Konrad</surname><given-names>A.</given-names></name><name><surname>Vucurevic</surname><given-names>G.</given-names></name><name><surname>Musso</surname><given-names>F.</given-names></name><name><surname>Stoeter</surname><given-names>P.</given-names></name><name><surname>Dahmen</surname><given-names>N.</given-names></name></person-group> (<year>2008</year>). <article-title>Association of 5&#8242; end neuregulin-1 (NRG1) gene variation with subcortical medial frontal microstructure in humans</article-title>. <source>Neuroimage</source>
+<volume>40</volume>, <fpage>712</fpage>&#8211;<lpage>718</lpage><pub-id pub-id-type="doi">10.1016/j.neuroimage.2007.12.041</pub-id><pub-id pub-id-type="pmid">18255317</pub-id></mixed-citation>
+      </ref>
+      <ref id="B75">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Witthaus</surname><given-names>H.</given-names></name><name><surname>Brune</surname><given-names>M.</given-names></name><name><surname>Kaufmann</surname><given-names>C.</given-names></name><name><surname>Bohner</surname><given-names>G.</given-names></name><name><surname>Ozgurdal</surname><given-names>S.</given-names></name><name><surname>Gudlowski</surname><given-names>Y.</given-names></name><name><surname>Heinz</surname><given-names>A.</given-names></name><name><surname>Klingebiel</surname><given-names>R.</given-names></name><name><surname>Juckel</surname><given-names>G.</given-names></name></person-group> (<year>2008</year>). <article-title>White matter abnormalities in subjects at ultra high-risk for schizophrenia and first-episode schizophrenic patients</article-title>. <source>Schizophr. Res.</source>
+<volume>102</volume>, <fpage>141</fpage>&#8211;<lpage>149</lpage><pub-id pub-id-type="doi">10.1016/S0920-9964(08)70427-4</pub-id><pub-id pub-id-type="pmid">18515047</pub-id></mixed-citation>
+      </ref>
+      <ref id="B76">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Zuliani</surname><given-names>R.</given-names></name><name><surname>Moorhead</surname><given-names>T. W.</given-names></name><name><surname>Bastin</surname><given-names>M. E.</given-names></name><name><surname>Johnstone</surname><given-names>E. C.</given-names></name><name><surname>Lawrie</surname><given-names>S. M.</given-names></name><name><surname>Brambilla</surname><given-names>P.</given-names></name><name><surname>O&#8217;Donovan</surname><given-names>M. C.</given-names></name><name><surname>Owen</surname><given-names>M. J.</given-names></name><name><surname>Hall</surname><given-names>J.</given-names></name><name><surname>Mcintosh</surname><given-names>A. M.</given-names></name></person-group> (<year>2011</year>). <article-title>Genetic variants in the ErbB4 gene are associated with white matter integrity</article-title>. <source>Psychiatry Res.</source>
+<volume>191</volume>, <fpage>133</fpage>&#8211;<lpage>137</lpage><pub-id pub-id-type="doi">10.1016/j.pscychresns.2010.11.001</pub-id><pub-id pub-id-type="pmid">21232925</pub-id></mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+</pmc-articleset>
