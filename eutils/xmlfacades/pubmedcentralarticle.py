@@ -15,7 +15,7 @@ class PubmedCentralArticle(eutils.xmlfacades.base.Base):
 
     @property
     def title(self):
-        return xml_get_text_or_none(self._xml_root, 'front/article-meta/title-group/article-title')
+        return ''.join([x for x in xml_get1(self._xml_root, 'front/article-meta/title-group/article-title').itertext()])
 
     @property
     def abstract_text(self):
@@ -23,7 +23,12 @@ class PubmedCentralArticle(eutils.xmlfacades.base.Base):
 
     @property
     def body_text(self):
-        return ''.join([x for x in xml_get1(self._xml_root, 'body').itertext()])
+        body = self._xml_root.xpath('body')
+        if body:
+            parts = [x for x in body[0].itertext()]
+            return ''.join(parts)
+        else:
+            return None
 
     @property
     def doi(self):
