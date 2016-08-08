@@ -15,6 +15,7 @@ from eutils.xmlfacades.entrezgeneset import EntrezgeneSet
 from eutils.xmlfacades.esearchresult import ESearchResult
 from eutils.xmlfacades.gbset import GBSet
 from eutils.xmlfacades.pubmedarticleset import PubmedArticleSet
+from eutils.xmlfacades.pubmedcentralarticleset import PubmedCentralArticleSet
 
 default_cache_path = os.path.join(os.path.expanduser('~'), '.cache', 'eutils-cache.db')
 
@@ -93,6 +94,8 @@ class Client(object):
             return PubmedArticleSet(doc)
         if db in ['snp']:
             return ExchangeSet(xml)
+        if db in ['pmc']:
+            return PubmedCentralArticleSet(doc)
         raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))
 
 

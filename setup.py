@@ -17,7 +17,7 @@ setup(
     author_email='biocommons-dev@googlegroups.com',
     name = "eutils",
     packages = find_packages(),
-    url = 'https://bitbucket.org/biocommons/eutils',
+    url = 'https://github.com/biocommons/eutils',
 
      classifiers = [
         "Development Status :: 3 - Alpha",

@@ -310,8 +310,9 @@ class QueryService(object):
             raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
 
         if any(bad_word in r.text for bad_word in ['<error>', '<ERROR>']):
-            xml = lxml.etree.fromstring(r.text.encode('utf-8'))
-            raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+            if r.text is not None:
+                xml = lxml.etree.fromstring(r.text.encode('utf-8'))
+                raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
 
         if '<h1 class="error">Access Denied</h1>' in r.text:
             raise EutilsRequestError('Access Denied: {url}'.format(url=url))
