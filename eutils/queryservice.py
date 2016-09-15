@@ -48,7 +48,7 @@ from eutils.compat import pickle
 
 logger = logging.getLogger(__name__)
 
-url_base = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils'
+url_base = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
 default_default_args = {'retmode': 'xml', 'usehistory': 'y', 'retmax': 250}
 default_tool = __package__
 default_email = 'biocommons-dev@googlegroups.com'
@@ -165,7 +165,7 @@ class QueryService(object):
 
         Equivalent HTTP request:
 
-            http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=protein
+            https://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=protein
 
         :param dict args: dict of query items (optional)
         :returns: content of reply
@@ -203,7 +203,7 @@ class QueryService(object):
 
         Equivalent HTTP request:
 
-            http://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=nuccore&db=gene&id=34577062,24475906
+            https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=nuccore&db=gene&id=34577062,24475906
 
         :param dict args: dict of query items containing at least the 'db', 'dbfrom', and 'id' keys.
         :returns: content of reply
@@ -227,7 +227,7 @@ class QueryService(object):
 
         Equivalent HTTP request:
 
-            http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=medgen&id=134
+            https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=medgen&id=134
 
         :param dict args: dict of query items containing at least 'db' and 'id' keys.
         :returns: content of reply

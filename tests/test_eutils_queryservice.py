@@ -46,7 +46,7 @@ class TestEutilsQueries(unittest.TestCase):
 
     def test_esearch(self):
         '''Testing esearch.fcgi by searching medgen db for concepts related to OCRL gene.'''
-        # http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=medgen&term=OCRL
+        # https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=medgen&term=OCRL
         result = self.qs.esearch( { 'db': 'medgen', 'term': 'OCRL' } )
 
         # eSearchResult should contain something like this:
@@ -72,7 +72,7 @@ class TestEutilsQueries(unittest.TestCase):
     def test_esummary(self):
         '''Testing esummary.fcgi by looking up a known medgen concept'''
 
-        # http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=medgen&id=336867
+        # https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=medgen&id=336867
         result = self.qs.esummary({ 'db': 'medgen', 'id': 336867 })
         assert_in_xml(result, 'ConceptId')
 

@@ -15,7 +15,7 @@ import time
 
 from eutils.xmlfacades.entrezgeneset import EntrezgeneSet
 
-eutils_base_url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils'
+eutils_base_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
 retmax_request = 250
 
 def fetch_gene(hgnc):
