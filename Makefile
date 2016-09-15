@@ -1,9 +1,8 @@
-# Python project Makefile
+# Makefile for Python project
 
-.SUFFIXES :
-.PRECIOUS :
-.PHONY : FORCE
 .DELETE_ON_ERROR:
+.PHONY: FORCE
+.SUFFIXES:
 
 SHELL:=/bin/bash -o pipefail
 SELF:=$(firstword $(MAKEFILE_LIST))
@@ -14,36 +13,46 @@ SELF:=$(firstword $(MAKEFILE_LIST))
 default: help
 
 #=> help -- display this help message
-help: config
-	@sbin/extract-makefile-documentation "${SELF}"
+help:
+	@sbin/makefile-extract-documentation "${SELF}"
 
 
 ############################################################################
 #= SETUP, INSTALLATION, PACKAGING
 
-#=> setup
-setup: develop
+#=> venv: make a Python 3 virtual environment
+.PHONY: venv
+venv:
+	pyvenv venv; \
+	source venv/bin/activate; \
+	python -m ensurepip --upgrade; \
+	pip install --upgrade pip setuptools
 
-#=> docs -- make sphinx docs
-.PHONY: docs
-docs: setup build_sphinx
+#=> setup: setup/upgrade packages *in current environment*
+.PHONY: setup
+setup: etc/develop.reqs etc/install.reqs
+	pip install --upgrade -r $(word 1,$^)
+	pip install --upgrade -r $(word 2,$^)
 
-#=> build_sphinx
-# sphinx docs needs to be able to import packages
-build_sphinx: develop
+#=> devready: create venv, install prerequisites, install pkg in develop mode
+.PHONY: devready
+devready:
+	make venv && source venv/bin/activate && make setup develop
+	@echo '#############################################################################'
+	@echo '###  Do not forget to `source venv/bin/activate` to use this environment  ###'
+	@echo '#############################################################################'
 
-#=> develop, bdist, bdist_egg, sdist, etc
-develop:
-	pip install -r etc/dev.reqs
+#=> develop: install package in develop mode
+#=> install: install package
+#=> bdist bdist_egg bdist_wheel build sdist: distribution options
+.PHONY: bdist bdist_egg bdist_wheel build build_sphinx sdist install develop
+bdist bdist_egg bdist_wheel build sdist install develop: %:
 	python setup.py $@
 
-bdist bdist_egg build build_sphinx install sdist: %:
-	python setup.py $@
-
-#=> upload
-upload: upload_pypi
-
+#=> upload: upload to pypi
 #=> upload_*: upload to named pypi service (requires config in ~/.pypirc)
+.PHONY: upload upload_%
+upload: upload_pypi
 upload_%:
 	python setup.py bdist_egg bdist_wheel sdist upload -r $*
 
@@ -53,50 +62,55 @@ upload_%:
 #= TESTING
 # see test configuration in setup.cfg
 
-test-setup: develop
+#=> test: execute tests
+.PHONY: test
+test:
+	python setup.py pytest --addopts="--cov=eutils eutils tests"
 
-#=> test-with-coverage -- per-commit test target for CI
-# see test configuration in setup.cfg
-test-with-coverage:
-	python setup.py nosetests
-
-#=> test == tox -- use tox for testing
-test tox:
+#=> tox: execute tests via tox
+.PHONY: tox
+tox:
 	tox
-
-#=> ci-test -- per-commit test target for CI
-ci-test: test
-
-#=> ci-test-ve -- test in virtualenv
-ci-test-ve: ve
-	source ve/bin/activate; \
-	make ci-test
-
-
 
 
 ############################################################################
-#= CLEANUP
-.PHONY: clean cleaner cleanest pristine
-#=> clean: clean up editor backups, etc.
-clean:
-	find . -name \*~ -print0 | xargs -0r /bin/rm
-#=> cleaner: above, and remove generated files
-cleaner: clean
-	find . -name \*.pyc -print0 | xargs -0r /bin/rm -f
-	/bin/rm -fr build bdist cover dist sdist ve virtualenv*
-	-make -C doc clean
-#=> cleanest: above, and remove the virtualenv, .orig, and .bak files
-cleanest: cleaner
-	find . \( -name \*.orig -o -name \*.bak \) -print0 | xargs -0r /bin/rm -v
-	/bin/rm -fr *.egg-info .tox .eggs .coverage
-#=> pristine: above, and delete anything unknown to mercurial
-pristine: cleanest
-	hg st -un0 | xargs -0r echo /bin/rm -fv
+#= UTILITY TARGETS
 
+# N.B. Although code is stored in github, I use hg and hg-git on the command line
+#=> reformat: reformat code with yapf and commit
+.PHONY: reformat
+reformat:
+	@if hg sum | grep -qL '^commit:.*modified'; then echo "Repository not clean" 1>&2; exit 1; fi
+	@if hg sum | grep -qL ' applied'; then echo "Repository has applied patches" 1>&2; exit 1; fi
+	yapf -i -r seqrepo tests
+	hg commit -m "reformatted with yapf"
+
+#=> docs -- make sphinx docs
+.PHONY: doc docs
+doc docs: develop
+	# RTD makes json. Build here to ensure that it works.
+	make -C doc html json
+
+#=> clean: remove temporary and backup files
+.PHONY: clean
+clean:
+	find . \( -name \*~ -o -name \*.bak \) -print0 | xargs -0r rm
+
+#=> cleaner: remove files and directories that are easily rebuilt
+.PHONY: cleaner
+cleaner: clean
+	rm -f devready.log
+	rm -fr .cache *.egg-info build dist doc/_build htmlcov
+	find . \( -name \*.pyc -o -name \*.orig -o -name \*.rej \) -print0 | xargs -0r rm
+	find . -name __pycache__ -print0 | xargs -0r rm -fr
+
+#=> cleaner: remove files and directories that require more time/network fetches to rebuild
+.PHONY: cleanest distclean
+cleanest distclean: cleaner
+	rm -fr .eggs .tox venv
 
 ## <LICENSE>
-## Copyright 2014 eutils Contributors (https://bitbucket.org/biocommons/eutils)
+## Copyright 2016 Source Code Committers
 ## 
 ## Licensed under the Apache License, Version 2.0 (the "License");
 ## you may not use this file except in compliance with the License.

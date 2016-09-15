@@ -5,8 +5,10 @@ eutils -- a simplified interface to NCBI E-Utilities
 eutils is a Python package to simplify searching, fetching, and
 parsing records from NCBI using their E-utilities_ interface.
 
-STATUS: This code is alpha. There are no known bugs, but the code supports
-only a limited subset of E-Utilities replies.
+STATUS: This code is alpha. There are no known bugs, but the code
+supports only a limited subset of E-Utilities replies.  PubMed, Gene,
+RefSeq (nucleotide), and dbSNP data are well-represented; others are
+not represented at all.
 
 |pypi_badge| |build_status| `Source`_
 
@@ -18,7 +20,6 @@ Features
 * optional sqlite-based caching of compressed replies
 * "façades" that facilitate access to essential attributes in replies
 
-https://drone.io/bitbucket.org/biocommons/eutils/status.png
 
 
 A Quick Example
@@ -120,6 +121,7 @@ Again, thanks for your contributions.
   :target: https://pypi.python.org/pypi?name=eutils
   :align: middle
 
-.. |build_status| image:: https://drone.io/bitbucket.org/biocommons/eutils/status.png
-  :target: https://drone.io/bitbucket.org/biocommons/eutils
+.. |build_status| image:: https://travis-ci.org/biocommons/eutils.svg?branch=master
+  :target: https://travis-ci.org/biocommons/eutils
   :align: middle
+
