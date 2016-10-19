@@ -66,6 +66,7 @@ setup(
         'pytest',
         'pytest-cov',
         'tox',
+        'mock',
     ],
 )
 

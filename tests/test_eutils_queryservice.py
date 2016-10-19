@@ -3,8 +3,10 @@ from __future__ import absolute_import, unicode_literals
 import unittest
 import six
 from lxml import etree
+from mock import patch, MagicMock
 
 import eutils.client as ec
+from eutils.exceptions import EutilsNCBIError
 
 '''Performs a query using every form of eutils fcgi that this python 
 library should support.
@@ -76,3 +78,14 @@ class TestEutilsQueries(unittest.TestCase):
         result = self.qs.esummary({ 'db': 'medgen', 'id': 336867 })
         assert_in_xml(result, 'ConceptId')
 
+    @patch('eutils.queryservice.requests')
+    def test_handles_malformed_xml_errors(self, mock_requests):
+        post_return_value = MagicMock()
+        post_return_value.status_code = 404
+        post_return_value.reason = 'dunno'
+        post_return_value.test = 'Bad XML'
+        post_return_value.ok = False
+        mock_requests.post.return_value = post_return_value
+        with self.assertRaises(EutilsNCBIError):
+            pmid = 1234569
+            self.qs.efetch(args={'db': 'pubmed', 'id': pmid})
