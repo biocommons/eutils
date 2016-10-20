@@ -43,7 +43,7 @@ import pytz
 import requests
 
 from eutils.sqlitecache import SQLiteCache
-from eutils.exceptions import EutilsRequestError
+from eutils.exceptions import EutilsRequestError, EutilsNCBIError
 from eutils.compat import pickle
 
 logger = logging.getLogger(__name__)
@@ -306,13 +306,19 @@ class QueryService(object):
 
         if not r.ok:
             # TODO: discriminate between types of errors
-            xml = lxml.etree.fromstring(r.text.encode('utf-8'))
-            raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+            try:
+                xml = lxml.etree.fromstring(r.text.encode('utf-8'))
+                raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+            except Exception:
+                raise EutilsNCBIError('Error parsing response object from NCBI')
 
         if any(bad_word in r.text for bad_word in ['<error>', '<ERROR>']):
             if r.text is not None:
-                xml = lxml.etree.fromstring(r.text.encode('utf-8'))
-                raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+                try:
+                    xml = lxml.etree.fromstring(r.text.encode('utf-8'))
+                    raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+                except Exception:
+                    raise EutilsNCBIError('Error parsing response object from NCBI')
 
         if '<h1 class="error">Access Denied</h1>' in r.text:
             raise EutilsRequestError('Access Denied: {url}'.format(url=url))
