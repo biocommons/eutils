@@ -76,7 +76,7 @@ class Client(object):
         esr = ESearchResult(self._qs.esearch({'db': db, 'term': term}))
         if esr.count > esr.retmax:
             logger.warn("NCBI found {esr.count} results, but we truncated the reply at {esr.retmax}"
-                        " results; see https://bitbucket.org/biocommons/eutils/issues/124/".format(esr=esr))
+                        " results; see https://github.com/biocommons/eutils/issues/124/".format(esr=esr))
         return esr
 
     def efetch(self, db, id):

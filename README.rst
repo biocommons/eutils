@@ -88,7 +88,7 @@ Important Notes
 ---------------
 
 * **You are encouraged to** `browse issues
-  <https://bitbucket.org/biocommons/eutils/issues>`_. Please report any
+  <https://github.com/biocommons/eutils/issues>`_. Please report any
   issues you find.
 * **Use a pip package specification to ensure stay within minor
   releases for API stability.** For example, ``eutils >=0.1,<0.2``.
