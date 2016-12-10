@@ -3,6 +3,5 @@ ipython
 pytest
 pytest-cov
 restview
-setuptools
 tox
 yapf

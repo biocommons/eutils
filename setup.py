@@ -1,10 +1,10 @@
+# -*- coding: utf-8 -*-
+
 from setuptools import setup, find_packages
 
 package_name = "eutils"
 short_description = open("doc/short-description.txt").read()
 long_description = open("README.rst").read()
-
-# namespace_package = "".join(package_name.split(".")[:-1])
 
 setup(
     author = package_name + " Committers",
@@ -12,10 +12,6 @@ setup(
     license = "Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)",
     long_description = long_description,
     name = package_name,
-    # namespace_packages = [namespace_package],
-    # package_data = {
-    #     "biocommons.pkg": ["_data/migrations/*"],
-    #     },
     packages = find_packages(),
     use_scm_version = True,
     zip_safe = True,
@@ -42,11 +38,6 @@ setup(
         'bioinformatics',
     ],
 
-    # entry_points = {
-    #     "console_scripts": [
-    #         "seqrepo = seqrepo.cli:main",
-    #     ],
-    # },
     install_requires = [
         'lxml',
         'pytz',
@@ -57,8 +48,6 @@ setup(
     setup_requires = [
         "pytest-runner",
         'setuptools_scm',
-        'sphinx',
-        'sphinx_rtd_theme',
         'wheel',
     ],
 

@@ -31,8 +31,8 @@ venv:
 #=> setup: setup/upgrade packages *in current environment*
 .PHONY: setup
 setup: etc/develop.reqs etc/install.reqs
-	pip install --upgrade -r $(word 1,$^)
-	pip install --upgrade -r $(word 2,$^)
+	if [ -s $(word 1,$^) ]; then pip install --upgrade -r $(word 1,$^); fi
+	if [ -s $(word 2,$^) ]; then pip install --upgrade -r $(word 2,$^); fi
 
 #=> devready: create venv, install prerequisites, install pkg in develop mode
 .PHONY: devready
@@ -57,7 +57,6 @@ upload_%:
 	python setup.py bdist_egg bdist_wheel sdist upload -r $*
 
 
-
 ############################################################################
 #= TESTING
 # see test configuration in setup.cfg
@@ -65,7 +64,7 @@ upload_%:
 #=> test: execute tests
 .PHONY: test
 test:
-	python setup.py pytest --addopts="--cov=eutils eutils tests"
+	python setup.py pytest
 
 #=> tox: execute tests via tox
 .PHONY: tox
@@ -108,6 +107,7 @@ cleaner: clean
 .PHONY: cleanest distclean
 cleanest distclean: cleaner
 	rm -fr .eggs .tox venv
+
 
 ## <LICENSE>
 ## Copyright 2016 Source Code Committers
