@@ -309,16 +309,16 @@ class QueryService(object):
             try:
                 xml = lxml.etree.fromstring(r.text.encode('utf-8'))
                 raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
-            except Exception:
-                raise EutilsNCBIError('Error parsing response object from NCBI')
+            except Exception, ex:
+                raise EutilsNCBIError('Error parsing response object from NCBI: {}'.format(ex))
 
         if any(bad_word in r.text for bad_word in ['<error>', '<ERROR>']):
             if r.text is not None:
                 try:
                     xml = lxml.etree.fromstring(r.text.encode('utf-8'))
                     raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
-                except Exception:
-                    raise EutilsNCBIError('Error parsing response object from NCBI')
+                except Exception, ex:
+                    raise EutilsNCBIError('Error parsing response object from NCBI: {}'.format(ex))
 
         if '<h1 class="error">Access Denied</h1>' in r.text:
             raise EutilsRequestError('Access Denied: {url}'.format(url=url))
