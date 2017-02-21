@@ -47,14 +47,14 @@ setup(
 
     setup_requires = [
         "pytest-runner",
-        'setuptools_scm',
-        'wheel',
+        "setuptools_scm",
+        "wheel",
     ],
 
     tests_require = [
-        'pytest',
-        'pytest-cov',
-        'mock',
+        "pytest",
+        "pytest-cov",
+        "tox",
     ],
 )
 

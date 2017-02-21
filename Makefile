@@ -7,6 +7,9 @@
 SHELL:=/bin/bash -o pipefail
 SELF:=$(firstword $(MAKEFILE_LIST))
 
+PKG=eutils
+PKGD=$(subst .,/,${PKG})
+
 
 ############################################################################
 #= BASIC USAGE
@@ -42,6 +45,7 @@ devready:
 	@echo '###  Do not forget to `source venv/bin/activate` to use this environment  ###'
 	@echo '#############################################################################'
 
+
 #=> develop: install package in develop mode
 #=> install: install package
 #=> bdist bdist_egg bdist_wheel build sdist: distribution options
@@ -49,12 +53,14 @@ devready:
 bdist bdist_egg bdist_wheel build sdist install develop: %:
 	python setup.py $@
 
-#=> upload: upload to pypi
-#=> upload_*: upload to named pypi service (requires config in ~/.pypirc)
-.PHONY: upload upload_%
-upload: upload_pypi
-upload_%:
-	python setup.py bdist_egg bdist_wheel sdist upload -r $*
+
+## Legacy: Instead, pypi deployment should be by travis
+# #=> upload: upload to pypi
+# #=> upload_*: upload to named pypi service (requires config in ~/.pypirc)
+# .PHONY: upload upload_%
+# upload: upload_pypi
+# upload_%:
+# 	python setup.py bdist_egg bdist_wheel sdist upload -r $*
 
 
 ############################################################################
@@ -64,7 +70,7 @@ upload_%:
 #=> test: execute tests
 .PHONY: test
 test:
-	python setup.py pytest
+	python setup.py pytest --addopts="--cov=${PKG} ${PKG} tests"
 
 #=> tox: execute tests via tox
 .PHONY: tox
@@ -81,7 +87,7 @@ tox:
 reformat:
 	@if hg sum | grep -qL '^commit:.*modified'; then echo "Repository not clean" 1>&2; exit 1; fi
 	@if hg sum | grep -qL ' applied'; then echo "Repository has applied patches" 1>&2; exit 1; fi
-	yapf -i -r seqrepo tests
+	yapf -i -r "${PKGD}" tests
 	hg commit -m "reformatted with yapf"
 
 #=> docs -- make sphinx docs
