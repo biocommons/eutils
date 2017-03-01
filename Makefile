@@ -34,7 +34,7 @@ venv:
 
 #=> setup: setup/upgrade packages *in current environment*
 .PHONY: setup
-setup: etc/develop.reqs etc/tests.reqs etc/install.reqs
+setup: etc/develop.reqs etc/test.reqs etc/install.reqs
 	if [ -s $(word 1,$^) ]; then pip install --upgrade -r $(word 1,$^); fi
 	if [ -s $(word 2,$^) ]; then pip install --upgrade -r $(word 2,$^); fi
 	if [ -s $(word 3,$^) ]; then pip install --upgrade -r $(word 3,$^); fi
@@ -42,7 +42,7 @@ setup: etc/develop.reqs etc/tests.reqs etc/install.reqs
 #=> devready: create venv, install prerequisites, install pkg in develop mode
 .PHONY: devready
 devready:
-	make venv && source venv/bin/activate && make setup && pip install -e .
+	make venv && source venv/bin/activate && make setup develop
 	@echo '#############################################################################'
 	@echo '###  Do not forget to `source venv/bin/activate` to use this environment  ###'
 	@echo '#############################################################################'
@@ -72,7 +72,7 @@ bdist bdist_egg bdist_wheel build sdist install develop: %:
 #=> test: execute tests
 .PHONY: test
 test:
-	pytest --cov=${PKG} ${PKG} tests
+	python setup.py pytest --addopts="--cov=${PKG} ${PKG} tests"
 
 #=> tox: execute tests via tox
 .PHONY: tox
