@@ -13,6 +13,14 @@ not represented at all.
 |pypi_badge| |build_status| `Source`_
 
 
+News
+----
+
+* 0.3.0.post0 was just released. BEHAVIOR CHANGE: Client() no longer
+  caches by default. Add Client(cache=True) to get previous behavior.
+
+
+
 Features
 --------
 * simple Pythonic interface for searching and fetching
