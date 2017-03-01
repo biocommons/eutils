@@ -2,6 +2,7 @@
 
 .DELETE_ON_ERROR:
 .PHONY: FORCE
+.PRECIOUS :
 .SUFFIXES:
 
 SHELL:=/bin/bash -o pipefail
@@ -40,7 +41,7 @@ setup: etc/develop.reqs etc/install.reqs
 #=> devready: create venv, install prerequisites, install pkg in develop mode
 .PHONY: devready
 devready:
-	make venv && source venv/bin/activate && make setup develop
+	make venv && source venv/bin/activate && make setup && pip install -e .
 	@echo '#############################################################################'
 	@echo '###  Do not forget to `source venv/bin/activate` to use this environment  ###'
 	@echo '#############################################################################'
@@ -70,7 +71,7 @@ bdist bdist_egg bdist_wheel build sdist install develop: %:
 #=> test: execute tests
 .PHONY: test
 test:
-	python setup.py pytest --addopts="--cov=${PKG} ${PKG} tests"
+	pytest --cov=${PKG} ${PKG} tests
 
 #=> tox: execute tests via tox
 .PHONY: tox
@@ -91,10 +92,13 @@ reformat:
 	hg commit -m "reformatted with yapf"
 
 #=> docs -- make sphinx docs
-.PHONY: doc docs
-doc docs: develop
+.PHONY: docs
+docs: develop
 	# RTD makes json. Build here to ensure that it works.
 	make -C doc html json
+
+############################################################################
+#= CLEANUP
 
 #=> clean: remove temporary and backup files
 .PHONY: clean
@@ -104,14 +108,13 @@ clean:
 #=> cleaner: remove files and directories that are easily rebuilt
 .PHONY: cleaner
 cleaner: clean
-	rm -f devready.log
 	rm -fr .cache *.egg-info build dist doc/_build htmlcov
 	find . \( -name \*.pyc -o -name \*.orig -o -name \*.rej \) -print0 | xargs -0r rm
 	find . -name __pycache__ -print0 | xargs -0r rm -fr
 
-#=> cleaner: remove files and directories that require more time/network fetches to rebuild
-.PHONY: cleanest distclean
-cleanest distclean: cleaner
+#=> cleanest: remove files and directories that require more time/network fetches to rebuild
+.PHONY: cleanest
+cleanest: cleaner
 	rm -fr .eggs .tox venv
 
 

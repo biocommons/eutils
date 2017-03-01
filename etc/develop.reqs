@@ -1,7 +1,10 @@
 flake8
 ipython
+mock
 pytest
 pytest-cov
 restview
+setuptools
 tox
+vcrpy
 yapf

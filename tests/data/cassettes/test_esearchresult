@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: email=biocommons-dev%40googlegroups.com&retmode=xml&usehistory=y&term=hart+rk%5Bauthor%5D&retmax=250&tool=eutils&db=pubmed
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['122']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.13.0]
+    method: POST
+    uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA2WS226jMBCG7/sUXu7L2OZgU7muujmsos1pQ6LVarVCNFgBlUAFJkrffh2gLWnv
+        /vn+8czYHvFwPubopKo6K4t7i9jYQqrYl0lWHO6t3XZ6yy30IG/Et/FqtP2zniAVqrjapxtVN7lG
+        6933+WyErFuA5XwBMN6OkarbDEQx9rFPOcBkaSEr1fqlvgNQjc7y2i72T5ld5Ee7yFL7UJ56DolO
+        4P1kX8o20DJDXPWWYlQ2hZZcQCfERulFfL6AXl1IqONKS9yyTotfjapef6pXSQS8a/FbPU2Kk1yO
+        ZuOIRMTxHcf1Am4UtolrU2pT4kUBxsZ0OXdcygiLCHZ8l/qezyK8UPoRR2G0UIc41GWlomlkWvSF
+        xSyZZ7U215glkjJOXOYHAkzQET9wCOHOkLCAEDIkHmUOwXRAXN9n2MUfhAQUB4zwASEEc5cPcszj
+        Mu69NYd+MLGt4qLOY21WIVQaroGO988SISS2qjoa+6K7QKbmVVH1/Pex0WlZ/RPQ0tafZipPZGcI
+        6KLW+PR3LZucX/IyUXIp4E1eMAw6itVa/tisdmsBRrXm5xm77x3gr/N9yRBwvVo3/wGDyECbGAMA
+        AA==
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Cache-Control: [private]
+      Connection: [Keep-Alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['457']
+      Content-Security-Policy: [upgrade-insecure-requests]
+      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
+          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
+          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
+      Content-Type: [text/xml; charset=UTF-8]
+      Date: ['Wed, 01 Mar 2017 04:31:57 GMT']
+      Keep-Alive: ['timeout=1, max=10']
+      NCBI-PHID: [990D47C98B64E4A100000000004F0044]
+      NCBI-SID: [990D47C98B64EBD1_0079SID]
+      Server: [Apache]
+      Set-Cookie: ['ncbi_sid=990D47C98B64EBD1_0079SID; domain=.nih.gov; path=/; expires=Thu,
+          01 Mar 2018 04:31:57 GMT']
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Vary: [Accept-Encoding]
+      X-UA-Compatible: [IE=Edge]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

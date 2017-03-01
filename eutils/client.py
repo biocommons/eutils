@@ -20,6 +20,7 @@ from eutils.xmlfacades.pubmedcentralarticleset import PubmedCentralArticleSet
 
 logger = logging.getLogger(__name__)
 
+
 class Client(object):
     """class-based access to NCBI E-Utilities, returning Python classes
     with rich data accessors

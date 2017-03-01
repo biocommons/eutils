@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: email=biocommons-dev%40googlegroups.com&id=1234567&tool=eutils&cmd=neighbor&retmode=xml&usehistory=y&dbfrom=pubmed&retmax=250
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['125']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.13.0]
+    method: POST
+    uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA+VZwU4bMRA9N1+xzZ2sxx7b4yoEqQQkJEpRC4eeUEO2sGqyQSTQfn5nYUFUBfSs
+        JifCAex9OxnPPM88m+HO7/msuK2ul/Wi2e7TwPSLqjlfTOvmYrt/erK/Jf1iZ9Qbvh9/3j35drxX
+        VId18/NLtbyZrYrj04+HB7tFf6ssjw4/leX4ZFxUM31eWEOGyLqy3DvqF/3L1epq+aEsq5tVPVsO
+        mvNJPWhm80FTXw4uFrfdfDldTcvHN+8MDXSqr1//5FtHvV5RDNvx10oHhX6G48n+9WI+urqZzKvp
+        sOyG988Opof1sgPeDUdqnX2Iw1L/vseUT0EPtseTx5fGk5PFE+s6eHjSYo++z6vu6dkD6HG+A3a/
+        ujdGvXf6+ceXdq68f/4S3ARPYmG4ZUo+wzoJDPbJqDMOhTsRSsGg8OBsMAQvlCM7ExmF2xSCODyM
+        JvmUAuyMiUksbN2ZEK3H4c5JgNG6UiM+wSslr1kV2LoVwunFzlM0hLsu0eBRjyZKMjAFggZdDExf
+        IkfBwdbJCrONsPMUlL0521pDCSc1svERzpIlmzjDtrWaVBhOQSTB/KLoY2ADm1f2emUYHvbWvkvw
+        atkTKctQuDhmnO+x5a/3MIGJtVfCBLbiouDoxJpVOO4+Kd8D7Lr2d6NxzzCfktIMZ3AInDzOGk7R
+        4J3MOm0HxuBd1Qb9ITw6EtU+nitvWNs8bJ6FQvRwJfNkRHMLs9K2NRvv25pal2B4YI7qPAzXRhzx
+        zkrSNgW8UqovbTmDvRHiiNca0g3uXUbLIVFJk6ENg1WJhe9xdslIRuxZQ+nhPRuiqIbLqCCqyVLE
+        hYomKuK0VJGdfIZYjcSMb1jS4sdB8KapRyKTASfVqiaDZ8Zq6PGeSc5w4gzeWM82Q8YZfSOjuBrl
+        POPqRmNjc/Rw0iNXwA8WNggeGtGukKG2o3ZNmyFurI0ZbUdlXIoJ78mkxxCC9zexcMKdCboDcfVs
+        VRzgUQ9eCYaLj9jKg4gzxmmV13P0C/juvqGdenLFsK57h7PzelVN6wa/f7BO2IWE1y7xIZDNwXtV
+        HC8l/vlwrCUSi/mkbt7GVUyu4H1ddW0uJz/q2+ot5GOtV2MbrhjX1W1d/VpuLC3r5eb/q+RMtfN6
+        V9zcVunSstkt8wZzs7YEXc0v77ttRnZElXDO7ZRvk+Nekh7PLfBxOOoNy7/+afIHVZ5M2OoZAAA=
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Cache-Control: [private]
+      Connection: [Keep-Alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['911']
+      Content-Security-Policy: [upgrade-insecure-requests]
+      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
+          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
+          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
+      Content-Type: [text/xml; charset=UTF-8]
+      Date: ['Wed, 01 Mar 2017 05:16:26 GMT']
+      Keep-Alive: ['timeout=1, max=10']
+      NCBI-PHID: [990CDDA68B6581510000000000550053]
+      NCBI-SID: [990CDDA68B6592A1_0085SID]
+      Server: [Apache]
+      Set-Cookie: ['ncbi_sid=990CDDA68B6592A1_0085SID; domain=.nih.gov; path=/; expires=Thu,
+          01 Mar 2018 05:16:26 GMT']
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Vary: [Accept-Encoding]
+      X-UA-Compatible: [IE=Edge]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

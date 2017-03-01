@@ -9,16 +9,16 @@ may be controlled upon instantiation by setting default_args.
 ::
 
     # create an instance of QueryService
-    >>> qs = QueryService()
+    >> qs = QueryService()
 
     # get xml for database info (in this case, a list of available database)
-    >>> result = qs.einfo()
+    >> result = qs.einfo()
 
     # execute a search using an NCBI query against the gene database
-    >>> result = qs.esearch({'db': 'gene', 'term': 'VEGF AND human[organism]'})
+    >> result = qs.esearch({'db': 'gene', 'term': 'VEGF AND human[organism]'})
 
     # get xml doc for gene id=7157
-    >>> result = qs.efetch({'db': 'gene', 'id': 7157})
+    >> result = qs.efetch({'db': 'gene', 'id': 7157})
 
 """
 from __future__ import absolute_import, division, print_function, unicode_literals

@@ -4,7 +4,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import pkg_resources
 import warnings
 
-
+# flake8: noqa
 from .client import Client
 from .exceptions import EutilsError, EutilsNCBIError, EutilsNotFoundError, EutilsRequestError
 from .queryservice import QueryService

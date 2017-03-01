@@ -1,0 +1,47 @@
+interactions:
+- request:
+    body: db=medgen&term=OCRL&email=biocommons-dev%40googlegroups.com&tool=eutils&retmax=250&usehistory=y&retmode=xml
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['107']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.13.0]
+    method: POST
+    uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA22SXW+bMBSG7/srPO7LscOXqVxXHUmmaPlaIJqmaUI0WAmaYypwovTf1zGsTdrd
+        ve/zHp9zwGYPp71ER9G0Va3uHeJiBwm1qctKbe+ddTa+pQ564Dfsy3CRZL+WIyRSUTSb3Uq0B6nR
+        cv11OkmQcwswn84AhtkQidZWoAHGIQ4HFGA0d5Cz0/q5vQMQB13J1lWbp8pVcu+qaudu62PPodQl
+        vJ3sW7kGOmaJq9mcJfVBaR4w6ARbCT0rTmfQqzNJddFoji3rNPtxEM3Ld/HCCYM3zX6Kp5E68nky
+        GeYkJ14QR1EQ+EZhl/guoa7n5zHGJvMp9fzAo1FOYhpTEuDYz/FM6Eecp/lMbItU143Ix7mZ0Pdl
+        k3Jatdp8xaTkUehFgc/ASOs9L6RhdOW9weDdk5DiILzwlPhBb6FvzLKmUK0stLnJVGi4BrrY/OUI
+        IZaJZm/is+4MXySr6e9HKdG4ErJs/zCw2BZYxN9DBh2x4Yf/b9no9CzrUvA5g3/yjOFiLFss+bfV
+        Yr1kYJQNPy7aXdEF/s+Sn0oYXL+Pm1enXKCG3QIAAA==
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Cache-Control: [private]
+      Connection: [Keep-Alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['430']
+      Content-Security-Policy: [upgrade-insecure-requests]
+      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
+          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
+          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
+      Content-Type: [text/xml; charset=UTF-8]
+      Date: ['Wed, 01 Mar 2017 05:16:27 GMT']
+      Keep-Alive: ['timeout=1, max=10']
+      NCBI-PHID: [03EE87728B659031000000000022001F]
+      NCBI-SID: [03EE87728B6592B1_0034SID]
+      Server: [Apache]
+      Set-Cookie: ['ncbi_sid=03EE87728B6592B1_0034SID; domain=.nih.gov; path=/; expires=Thu,
+          01 Mar 2018 05:16:27 GMT']
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Vary: [Accept-Encoding]
+      X-UA-Compatible: [IE=Edge]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
