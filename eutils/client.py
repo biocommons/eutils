@@ -17,7 +17,6 @@ from eutils.xmlfacades.gbset import GBSet
 from eutils.xmlfacades.pubmedarticleset import PubmedArticleSet
 from eutils.xmlfacades.pubmedcentralarticleset import PubmedCentralArticleSet
 
-default_cache_path = os.path.join(os.path.expanduser('~'), '.cache', 'eutils-cache.db')
 
 logger = logging.getLogger(__name__)
 
@@ -27,19 +26,14 @@ class Client(object):
 
     """
 
-    def __init__(self, cache_path=default_cache_path):
+    def __init__(self, cache=False):
         """
-        :param str cache_path: full path to sqlite database file (created if necessary)
+        :param str cache: passed to QueryService, which see for explanation
         :raises EutilsError: if cache file couldn't be created
         """
-        cache_dir = os.path.dirname(cache_path)
-        if not os.path.exists(cache_dir):
-            try:
-                os.mkdir(cache_dir)
-                logger.info("Made cache directory " + cache_dir)
-            except OSError:
-                raise EutilsError("Failed to make cache directory " + cache_dir)
-        self._qs = QueryService(cache_path=cache_path)
+
+        self._qs = QueryService(cache=cache)
+
 
     @property
     def databases(self):

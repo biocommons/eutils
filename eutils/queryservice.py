@@ -110,14 +110,14 @@ class QueryService(object):
 
     def __init__(self,
                  email=default_email,
-                 cache_path=default_cache_path,
+                 cache=False,
                  default_args=default_default_args,
                  request_interval=time_dep_request_interval,
                  tool=default_tool,
                  ):
         """
         :param str email: email of user (for abuse reports)
-        :param str cache_path: full path to sqlite file (created if necessary)
+        :param str cache: if True, cache at ~/.cache/eutils-db.sqlite; if string, cache there; if False, don't cache
         :param dict default_args: dictionary of query args that should accompany all requests
         :param request_interval: seconds between requests
         :type request_interval: int or a callable returning an int
@@ -133,9 +133,17 @@ class QueryService(object):
         self.tool = tool
 
         self._last_request_clock = 0
-        self._cache = SQLiteCache(cache_path) if cache_path else None
         self._ident_args = {'tool': tool, 'email': email}
         self._request_count = 0
+
+        if cache is True:
+            cache_path = default_cache_path
+        elif cache:
+            cache_path = cache  # better act like a path string
+        else:
+            cache_path = False
+        self._cache = SQLiteCache(cache_path) if cache_path else None
+
 
     def efetch(self, args):
         """
