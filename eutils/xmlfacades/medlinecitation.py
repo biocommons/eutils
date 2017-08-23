@@ -12,7 +12,8 @@ class MedlineCitation(eutils.xmlfacades.base.Base):
 
     @property
     def abstract(self):
-        return self._xml_root.findtext('Article/Abstract/AbstractText')
+        # return self._xml_root.findtext('Article/Abstract/AbstractText')
+        return " ".join([at.text for at in self._xml_root.findall('Article/Abstract/AbstractText')])
 
     @property
     def authors(self):

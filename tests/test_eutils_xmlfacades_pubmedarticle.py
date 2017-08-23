@@ -40,3 +40,5 @@ def test_eutils_xmlfacades_pubmedarticle_22351513(client):
     pas = client.efetch(db="pubmed", id=22351513)
     pa = next(iter(pas))
     assert 'Mahmooduzzafar' in pa.authors
+    assert pa.abstract.startswith("The oil content and fatty acid composition")
+    assert pa.abstract.endswith("edible vegetable oil after toxicological studies.")
