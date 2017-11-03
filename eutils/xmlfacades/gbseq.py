@@ -8,6 +8,7 @@ from eutils.xmlfacades.base import Base
 
 logger = logging.getLogger(__name__)
 
+
 class GBSeq(Base):
 
     _root_tag = 'GBSeq'
@@ -54,7 +55,10 @@ class GBSeq(Base):
 
     @property
     def gi(self):
-        gis = self.seqids['gi']
+        seqids = self._xml_root.xpath('GBSeq_other-seqids/GBSeqid/text()')
+        d = {t: l.rstrip('|').split('|')
+                for t, _, l in [si.partition('|') for si in seqids]}
+        gis = d['gi']
         assert 1 == len(gis), "expected exactly one gi in XML"
         return int(gis[0])
 
@@ -155,7 +159,6 @@ class GBFeatureTable(Base):
         return nodes
 
 
-
 class GBFeature(Base):
 
     _root_tag = 'GBFeature'
@@ -179,18 +182,25 @@ class GBFeature(Base):
         return {q.findtext('GBQualifier_name'): q.findtext('GBQualifier_value')
                 for q in self._xml_root.findall('GBFeature_quals/GBQualifier')}
 
+
 class GBFeatureCDS(GBFeature):
 
     @property
     def translation(self):
-        return self._n.xpath(
+        return self._xml_root.xpath(
             'GBFeature_quals/GBQualifier[GBQualifier_name/text()="translation"]/GBQualifier_value/text()')[0]
+
+    @property
+    def db_xrefs(self):
+        return self._xml_root.xpath(
+            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="db_xref"]/GBQualifier_value/text()')
+
 
 class GBFeatureExon(GBFeature):
 
     @property
     def inference(self):
-        return self._n.xpath(
+        return self._xml_root.xpath(
             'GBFeature_quals/GBQualifier[GBQualifier_name/text()="inference"]/GBQualifier_value/text()')[0]
 
 
