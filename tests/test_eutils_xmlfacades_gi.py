@@ -24,6 +24,13 @@ def test_esearchresult(client):
            "LSRDGYVYKYDLSLPVERLYDIVTDLRARLGPHAKHVVGYGHLGDGNLHLNVTAEAFS" \
            "PSLLAALEPHVYEWTAGQQGSVSAEHGVGFRKRDVLGYSKPPGALQLMQQLKALLDPK" \
            "GILNPYKTLPSQA"
-
     assert prot == r.features.cds.translation
+
+    # this returns the ranges
+    exons = r.exons
+    assert 10 == len(exons)
+
+    # this returns GBFeatureExon objects
+    exon = next(iter(r.features.exons))
+    assert "alignment:Splign:1.39.8" == exon.inference
 

@@ -8,6 +8,7 @@ from eutils.xmlfacades.base import Base
 
 logger = logging.getLogger(__name__)
 
+
 class GBSeq(Base):
 
     _root_tag = 'GBSeq'
@@ -76,10 +77,6 @@ class GBSeq(Base):
     @property
     def organism(self):
         return self._xml_root.findtext('GBSeq_organism')
-
-    @property
-    def cds_xrefs(self):
-        return self._xml_root.findtext('')
 
     @property
     def other_seqids(self):
@@ -162,7 +159,6 @@ class GBFeatureTable(Base):
         return nodes
 
 
-
 class GBFeature(Base):
 
     _root_tag = 'GBFeature'
@@ -198,7 +194,6 @@ class GBFeatureCDS(GBFeature):
     def db_xrefs(self):
         return self._xml_root.xpath(
             'GBFeature_quals/GBQualifier[GBQualifier_name/text()="db_xref"]/GBQualifier_value/text()')
-
 
 
 class GBFeatureExon(GBFeature):
