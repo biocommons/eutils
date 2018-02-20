@@ -47,7 +47,10 @@ class GBSeq(Base):
 
     @property
     def gene(self):
-        return self.features.gene.qualifiers['gene']
+        gene = self.features.gene
+        if not gene:
+            return None
+        return gene.qualifiers['gene']
     
     @property
     def genes(self):
