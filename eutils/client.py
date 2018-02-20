@@ -82,7 +82,7 @@ class Client(object):
         doc = le.XML(xml)
         if db in ['gene']:
             return EntrezgeneSet(doc)
-        if db in ['nuccore', 'nucest']:
+        if db in ['nuccore', 'nucest', 'protein']:
             # TODO: GBSet is misnamed; it should be GBSeq and get the GBSeq XML node as root (see gbset.py)
             return GBSet(doc)
         if db in ['pubmed']:
