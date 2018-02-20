@@ -182,26 +182,42 @@ class GBFeature(Base):
         return {q.findtext('GBQualifier_name'): q.findtext('GBQualifier_value')
                 for q in self._xml_root.findall('GBFeature_quals/GBQualifier')}
 
+    def get_qualifiers(self, name):
+        return self._xml_root.xpath(
+            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="'+name+'"]/GBQualifier_value/text()')
+
+    def get_qualifier(self, name):
+        nodes = self.get_qualifiers(name)
+        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1 when using get_qualifier)".format(n=len(nodes), key=name)
+        if len(nodes)==0:
+            return None
+        return self.get_qualifiers(name)[0]
+
 
 class GBFeatureCDS(GBFeature):
 
     @property
     def translation(self):
-        return self._xml_root.xpath(
-            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="translation"]/GBQualifier_value/text()')[0]
+        return self.get_qualifier('translation')
 
     @property
     def db_xrefs(self):
-        return self._xml_root.xpath(
-            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="db_xref"]/GBQualifier_value/text()')
+        return self.get_qualifiers('db_xref')
+
+    @property
+    def gene(self):
+        return self.get_qualifier('gene')
+
+    @property
+    def gene_synonyms(self):
+        return (self.get_qualifier('gene_synonym') or "").split("; ")
 
 
 class GBFeatureExon(GBFeature):
 
     @property
     def inference(self):
-        return self._xml_root.xpath(
-            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="inference"]/GBQualifier_value/text()')[0]
+        return self.get_qualifier('inference')
 
 
 if __name__ == "__main__":
