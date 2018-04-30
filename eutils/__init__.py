@@ -4,25 +4,18 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import pkg_resources
 import warnings
 
+# flake8: noqa
+from .client import Client
+from .exceptions import EutilsError, EutilsNCBIError, EutilsNotFoundError, EutilsRequestError
+from .queryservice import QueryService
+
+
 try:
     __version__ = pkg_resources.get_distribution(__name__).version
 except pkg_resources.DistributionNotFound as e:
     warnings.warn("can't get __version__ because %s package isn't installed" % __package__, Warning)
     __version__ = None
 
-
-if False:
-    # This block is under consideration
-    # Pros: simplified use: just import eutils and move on
-    # Cons: having code appear to be in two places (e.g.,
-    # eutils.Client and eutils.client.Client) is problematic in sphinx
-    # and likely creates user confusion.
-    from eutils.client import Client
-    from eutils.exceptions import EutilsError, EutilsNCBIError, EutilsNotFoundError, EutilsRequestError
-    from eutils.queryservice import QueryService
-    __all__ = [
-        'Client', 'QueryService', 'EutilsError',
-        'EutilsNCBIError', 'EutilsNotFoundError', 'EutilsRequestError']
 
 
 # <LICENSE>

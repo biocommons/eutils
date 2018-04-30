@@ -1,0 +1,5 @@
+mock
+pytest
+pytest-cov
+tox
+vcrpy

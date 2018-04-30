@@ -1,0 +1,92 @@
+interactions:
+- request:
+    body: usehistory=y&email=biocommons-dev%40googlegroups.com&version=2.0&retmax=250&db=protein&retmode=xml&tool=eutils
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['110']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.13.0]
+    method: POST
+    uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Cache-Control: [private]
+      Connection: [Keep-Alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['3020']
+      Content-Security-Policy: [upgrade-insecure-requests]
+      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
+          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
+          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
+      Content-Type: [text/xml; charset=UTF-8]
+      Date: ['Wed, 01 Mar 2017 03:53:40 GMT']
+      Keep-Alive: ['timeout=1, max=10']
+      NCBI-PHID: [03EDB9518B642BE10000000000420042]
+      NCBI-SID: [03EDB9518B645C41_0066SID]
+      Server: [Apache]
+      Set-Cookie: ['ncbi_sid=03EDB9518B645C41_0066SID; domain=.nih.gov; path=/; expires=Thu,
+          01 Mar 2018 03:53:40 GMT']
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Vary: [Accept-Encoding]
+      X-UA-Compatible: [IE=Edge]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

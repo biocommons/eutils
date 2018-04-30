@@ -9,16 +9,16 @@ may be controlled upon instantiation by setting default_args.
 ::
 
     # create an instance of QueryService
-    >>> qs = QueryService()
+    >> qs = QueryService()
 
     # get xml for database info (in this case, a list of available database)
-    >>> result = qs.einfo()
+    >> result = qs.einfo()
 
     # execute a search using an NCBI query against the gene database
-    >>> result = qs.esearch({'db': 'gene', 'term': 'VEGF AND human[organism]'})
+    >> result = qs.esearch({'db': 'gene', 'term': 'VEGF AND human[organism]'})
 
     # get xml doc for gene id=7157
-    >>> result = qs.efetch({'db': 'gene', 'id': 7157})
+    >> result = qs.efetch({'db': 'gene', 'id': 7157})
 
 """
 from __future__ import absolute_import, division, print_function, unicode_literals
@@ -43,7 +43,7 @@ import pytz
 import requests
 
 from eutils.sqlitecache import SQLiteCache
-from eutils.exceptions import EutilsRequestError
+from eutils.exceptions import EutilsRequestError, EutilsNCBIError
 from eutils.compat import pickle
 
 logger = logging.getLogger(__name__)
@@ -123,14 +123,14 @@ class QueryService(object):
 
     def __init__(self,
                  email=default_email,
-                 cache_path=default_cache_path,
+                 cache=False,
                  default_args=default_default_args,
                  request_interval=time_dep_request_interval,
                  tool=default_tool,
                  ):
         """
         :param str email: email of user (for abuse reports)
-        :param str cache_path: full path to sqlite file (created if necessary)
+        :param str cache: if True, cache at ~/.cache/eutils-db.sqlite; if string, cache there; if False, don't cache
         :param dict default_args: dictionary of query args that should accompany all requests
         :param request_interval: seconds between requests
         :type request_interval: int or a callable returning an int
@@ -146,9 +146,17 @@ class QueryService(object):
         self.tool = tool
 
         self._last_request_clock = 0
-        self._cache = SQLiteCache(cache_path) if cache_path else None
         self._ident_args = {'tool': tool, 'email': email}
         self._request_count = 0
+
+        if cache is True:
+            cache_path = default_cache_path
+        elif cache:
+            cache_path = cache  # better act like a path string
+        else:
+            cache_path = False
+        self._cache = SQLiteCache(cache_path) if cache_path else None
+
 
     def efetch(self, args):
         """
@@ -322,13 +330,19 @@ class QueryService(object):
 
         if not r.ok:
             # TODO: discriminate between types of errors
-            xml = lxml.etree.fromstring(r.text.encode('utf-8'))
-            raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+            try:
+                xml = lxml.etree.fromstring(r.text.encode('utf-8'))
+                raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+            except Exception as ex:
+                raise EutilsNCBIError('Error parsing response object from NCBI: {}'.format(ex))
 
         if any(bad_word in r.text for bad_word in ['<error>', '<ERROR>']):
             if r.text is not None:
-                xml = lxml.etree.fromstring(r.text.encode('utf-8'))
-                raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+                try:
+                    xml = lxml.etree.fromstring(r.text.encode('utf-8'))
+                    raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+                except Exception as ex:
+                    raise EutilsNCBIError('Error parsing response object from NCBI: {}'.format(ex))
 
         if '<h1 class="error">Access Denied</h1>' in r.text:
             raise EutilsRequestError('Access Denied: {url}'.format(url=url))

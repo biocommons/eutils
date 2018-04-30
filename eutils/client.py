@@ -17,9 +17,9 @@ from eutils.xmlfacades.gbset import GBSet
 from eutils.xmlfacades.pubmedarticleset import PubmedArticleSet
 from eutils.xmlfacades.pubmedcentralarticleset import PubmedCentralArticleSet
 
-default_cache_path = os.path.join(os.path.expanduser('~'), '.cache', 'eutils-cache.db')
 
 logger = logging.getLogger(__name__)
+
 
 class Client(object):
     """class-based access to NCBI E-Utilities, returning Python classes
@@ -27,19 +27,14 @@ class Client(object):
 
     """
 
-    def __init__(self, cache_path=default_cache_path):
+    def __init__(self, cache=False):
         """
-        :param str cache_path: full path to sqlite database file (created if necessary)
+        :param str cache: passed to QueryService, which see for explanation
         :raises EutilsError: if cache file couldn't be created
         """
-        cache_dir = os.path.dirname(cache_path)
-        if not os.path.exists(cache_dir):
-            try:
-                os.mkdir(cache_dir)
-                logger.info("Made cache directory " + cache_dir)
-            except OSError:
-                raise EutilsError("Failed to make cache directory " + cache_dir)
-        self._qs = QueryService(cache_path=cache_path)
+
+        self._qs = QueryService(cache=cache)
+
 
     @property
     def databases(self):
@@ -76,7 +71,7 @@ class Client(object):
         esr = ESearchResult(self._qs.esearch({'db': db, 'term': term}))
         if esr.count > esr.retmax:
             logger.warn("NCBI found {esr.count} results, but we truncated the reply at {esr.retmax}"
-                        " results; see https://bitbucket.org/biocommons/eutils/issues/124/".format(esr=esr))
+                        " results; see https://github.com/biocommons/eutils/issues/124/".format(esr=esr))
         return esr
 
     def efetch(self, db, id):
@@ -87,7 +82,7 @@ class Client(object):
         doc = le.XML(xml)
         if db in ['gene']:
             return EntrezgeneSet(doc)
-        if db in ['nuccore']:
+        if db in ['nuccore', 'nucest', 'protein']:
             # TODO: GBSet is misnamed; it should be GBSeq and get the GBSeq XML node as root (see gbset.py)
             return GBSet(doc)
         if db in ['pubmed']:

@@ -1,0 +1,78 @@
+interactions:
+- request:
+    body: retmax=250&usehistory=y&tool=eutils&retmode=xml&id=%5B2031%2C+14181%5D&db=snp&email=biocommons-dev%40googlegroups.com
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['117']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.13.0]
+    method: POST
+    uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi
+  response:
+    body:
+      string: !!binary |
+        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
+        pbgmnWAmAAA=
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Cache-Control: [private]
+      Connection: [Keep-Alive]
+      Content-Encoding: [gzip]
+      Content-Security-Policy: [upgrade-insecure-requests]
+      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
+          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
+          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
+      Content-Type: [text/xml; charset=UTF-8]
+      Date: ['Wed, 01 Mar 2017 03:56:18 GMT']
+      Keep-Alive: ['timeout=1, max=10']
+      NCBI-PHID: [990C8BF78B63DEE10000000003780362]
+      NCBI-SID: [990C8BF78B646621_0888SID]
+      Server: [Apache]
+      Set-Cookie: ['ncbi_sid=990C8BF78B646621_0888SID; domain=.nih.gov; path=/; expires=Thu,
+          01 Mar 2018 03:56:18 GMT']
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Vary: [Accept-Encoding]
+      X-UA-Compatible: [IE=Edge]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

@@ -1,0 +1,71 @@
+interactions:
+- request:
+    body: db=pubmed&retmax=250&retmode=xml&tool=eutils&id=20412080&usehistory=y&email=biocommons-dev%40googlegroups.com
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['109']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.13.0]
+    method: POST
+    uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi
+  response:
+    body:
+      string: !!binary |
+        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
+        HXXLqP7V2+Q+xN7G/xeHgjDPSRgAAA==
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Cache-Control: [private]
+      Connection: [Keep-Alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['1789']
+      Content-Security-Policy: [upgrade-insecure-requests]
+      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
+          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
+          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
+      Content-Type: [text/xml; charset=UTF-8]
+      Date: ['Wed, 01 Mar 2017 04:46:12 GMT']
+      Keep-Alive: ['timeout=1, max=10']
+      NCBI-PHID: [990DAC7A8B648FB10000000003930376]
+      NCBI-SID: [990DAC7A8B652141_0915SID]
+      Server: [Apache]
+      Set-Cookie: ['ncbi_sid=990DAC7A8B652141_0915SID; domain=.nih.gov; path=/; expires=Thu,
+          01 Mar 2018 04:46:12 GMT']
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Vary: [Accept-Encoding]
+      X-UA-Compatible: [IE=Edge]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

@@ -8,6 +8,7 @@ from eutils.xmlfacades.base import Base
 
 logger = logging.getLogger(__name__)
 
+
 class GBSeq(Base):
 
     _root_tag = 'GBSeq'
@@ -46,7 +47,10 @@ class GBSeq(Base):
 
     @property
     def gene(self):
-        return self.features.gene.qualifiers['gene']
+        gene = self.features.gene
+        if not gene:
+            return None
+        return gene.qualifiers['gene']
     
     @property
     def genes(self):
@@ -54,7 +58,10 @@ class GBSeq(Base):
 
     @property
     def gi(self):
-        gis = self.seqids['gi']
+        seqids = self._xml_root.xpath('GBSeq_other-seqids/GBSeqid/text()')
+        d = {t: l.rstrip('|').split('|')
+                for t, _, l in [si.partition('|') for si in seqids]}
+        gis = d['gi']
         assert 1 == len(gis), "expected exactly one gi in XML"
         return int(gis[0])
 
@@ -155,7 +162,6 @@ class GBFeatureTable(Base):
         return nodes
 
 
-
 class GBFeature(Base):
 
     _root_tag = 'GBFeature'
@@ -179,19 +185,42 @@ class GBFeature(Base):
         return {q.findtext('GBQualifier_name'): q.findtext('GBQualifier_value')
                 for q in self._xml_root.findall('GBFeature_quals/GBQualifier')}
 
+    def get_qualifiers(self, name):
+        return self._xml_root.xpath(
+            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="'+name+'"]/GBQualifier_value/text()')
+
+    def get_qualifier(self, name):
+        nodes = self.get_qualifiers(name)
+        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1 when using get_qualifier)".format(n=len(nodes), key=name)
+        if len(nodes)==0:
+            return None
+        return self.get_qualifiers(name)[0]
+
+
 class GBFeatureCDS(GBFeature):
 
     @property
     def translation(self):
-        return self._n.xpath(
-            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="translation"]/GBQualifier_value/text()')[0]
+        return self.get_qualifier('translation')
+
+    @property
+    def db_xrefs(self):
+        return self.get_qualifiers('db_xref')
+
+    @property
+    def gene(self):
+        return self.get_qualifier('gene')
+
+    @property
+    def gene_synonyms(self):
+        return (self.get_qualifier('gene_synonym') or "").split("; ")
+
 
 class GBFeatureExon(GBFeature):
 
     @property
     def inference(self):
-        return self._n.xpath(
-            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="inference"]/GBQualifier_value/text()')[0]
+        return self.get_qualifier('inference')
 
 
 if __name__ == "__main__":

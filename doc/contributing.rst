@@ -113,7 +113,7 @@ Developing and Contributing to eutils
 provides many useful utilitarian rules. Type ``make`` to see a list of
 targets.)
 
-* Create an issue at https://bitbucket.org/biocommons/eutils/issues/
+* Create an issue at https://github.com/biocommons/eutils/issues/
   for the feature you want to work on. This helps tracking for
   changelogs.
 

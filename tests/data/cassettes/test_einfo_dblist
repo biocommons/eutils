@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: retmax=250&tool=eutils&retmode=xml&usehistory=y&email=biocommons-dev%40googlegroups.com
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['87']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.13.0]
+    method: POST
+    uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA3WUQW/bMAyFz+uv8HyvlaaXYUhbYE0HFMiyYkgPO0qyamuVRE+UgvbfjwmCIQWe
+        bxI/S4+iH7m6e4uh2bvMntJNe9Ut2sYlS71Pw037vPt++aVt7m4vVp/XP+93v58eGveYXuiX4xpK
+        8/T8bfN437SXSm03P5Ra79aN88Kb5eLqenG9XCr1sG2bdixl4q9KuVp84C5Z47sUYpf82A20P8VV
+        X3r1/+Txok5CrcifqcpubTaeZXHxSZZbHd3tVE10/UqdtmcgU5GbAEnVWsoOk+Co+H4GDswYOC4A
+        cMnVlgqleNJZxAAZXKKIgE5JcpNyIMbsognvABlPUos/zqIUBbKOE0zEBM2lNzOKhugVVcP26G/Y
+        4NNeZ0gowTLoCUenUJHukDWjE73BulJmKNvDy92hhi8+OERHihRo5kJxpxAIeERukhZhJ+aAMESr
+        ixYxACn6iMJ5KFnbV9Qj0aIoTeyQWaQEBj3x1GpWfkyRgYK+sGJQPeNOfpdjER+zFCeqCTa45Wq4
+        6GRhTse5MDodCioku7/HdkIoIRtx1iBa9BtJt6KH1eTnLHaYsyEgUs6celidpt1KfRiD/wDfvDxf
+        vAUAAA==
+    headers:
+      Access-Control-Allow-Origin: ['*']
+      Cache-Control: [private]
+      Connection: [Keep-Alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['460']
+      Content-Security-Policy: [upgrade-insecure-requests]
+      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
+          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
+          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
+      Content-Type: [text/xml; charset=UTF-8]
+      Date: ['Wed, 01 Mar 2017 03:53:40 GMT']
+      Keep-Alive: ['timeout=1, max=10']
+      NCBI-PHID: [990C31438B642A010000000000520052]
+      NCBI-SID: [990C31438B645C41_0082SID]
+      Server: [Apache]
+      Set-Cookie: ['ncbi_sid=990C31438B645C41_0082SID; domain=.nih.gov; path=/; expires=Thu,
+          01 Mar 2018 03:53:40 GMT']
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
+      Vary: [Accept-Encoding]
+      X-UA-Compatible: [IE=Edge]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
