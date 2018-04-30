@@ -78,6 +78,19 @@ def time_dep_request_interval(utc_dt=None):
     return default_request_interval if (0 <= eastern_dt.weekday() <= 4 and 5 <= eastern_dt.hour < 21) else 0
 
 
+def add_eutils_api_key(url):
+    """Adds eutils api key to the query
+
+    :param url: eutils url without a query string
+    :return: url with api_key parameter set to the value of environment
+    variable 'ncbi_api_key' if available
+    """
+    apikey = os.environ.get('ncbi_api_key')
+    if apikey:
+        url += '?api_key={apikey}'.format(apikey=apikey)
+    return url
+
+
 class QueryService(object):
 
     """*provides throttled and cached querying of NCBI E-utilities services*
@@ -296,6 +309,9 @@ class QueryService(object):
             if sleep_time > 0:
                 logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
                 time.sleep(sleep_time)
+
+        url = add_eutils_api_key(url)
+
         r = requests.post(url, full_args)
         self._last_request_clock = time.clock()
         logger.debug('post({url}, {fas}): {r.status_code} {r.reason}, {len})'.format(
