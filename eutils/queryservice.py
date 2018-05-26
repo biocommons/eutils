@@ -248,7 +248,7 @@ class QueryService(object):
 
     ############################################################################
     ## Internals
-    def _query(self, path, args={}, skip_cache=False, skip_sleep=False):
+    def _query(self, path, args=None, skip_cache=False, skip_sleep=False):
         """return results for a NCBI query, possibly from the cache
 
         :param: path: relative query path (e.g., 'einfo.fcgi')
@@ -261,6 +261,8 @@ class QueryService(object):
         address) and with the default args declared when instantiating
         the client.
         """
+        if args is None:
+            args = {}        
         def _cacheable(r):
             """return False if r shouldn't be cached (contains a no-cache meta
             line); True otherwise"""
