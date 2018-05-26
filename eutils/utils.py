@@ -31,7 +31,7 @@ def xml_xpath_text(node, xpath):
 
 def xml_xpath_text_first(node, xpath):
     try:
-        return xml_xpath_list_text(node, xpath)[0]
+        return xml_xpath_text(node, xpath)[0]
     except IndexError:
         return None
 
