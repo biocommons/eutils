@@ -34,18 +34,6 @@ def assert_in_xml(xml, item):
     assert item in xml
 
 
-def test_add_eutils_api_key():
-    try:
-        url = 'http://test.com'
-        assert _add_eutils_api_key(url) == url
-        os.environ['NCBI_API_KEY'] = 'test-api-key'
-        assert _add_eutils_api_key(url) == url + '?api_key=test-api-key'
-    finally:
-        try:
-            os.environ.pop('NCBI_API_KEY')
-        except KeyError:
-            pass
-
 
 class TestEutilsQueries(unittest.TestCase):
 
