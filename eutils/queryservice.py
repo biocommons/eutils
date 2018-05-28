@@ -83,9 +83,9 @@ def add_eutils_api_key(url):
 
     :param url: eutils url without a query string
     :return: url with api_key parameter set to the value of environment
-    variable 'ncbi_api_key' if available
+    variable 'NCBI_API_KEY' if available
     """
-    apikey = os.environ.get('ncbi_api_key')
+    apikey = os.environ.get('NCBI_API_KEY')
     if apikey:
         url += '?api_key={apikey}'.format(apikey=apikey)
     return url

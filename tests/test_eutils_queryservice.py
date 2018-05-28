@@ -38,11 +38,11 @@ def test_add_eutils_api_key():
     try:
         url = 'http://test.com'
         assert _add_eutils_api_key(url) == url
-        os.environ['ncbi_api_key'] = 'test-api-key'
+        os.environ['NCBI_API_KEY'] = 'test-api-key'
         assert _add_eutils_api_key(url) == url + '?api_key=test-api-key'
     finally:
         try:
-            os.environ.pop('ncbi_api_key')
+            os.environ.pop('NCBI_API_KEY')
         except KeyError:
             pass
 
