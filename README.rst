@@ -10,7 +10,7 @@ supports only a limited subset of E-Utilities replies.  PubMed, Gene,
 RefSeq (nucleotide), and dbSNP data are well-represented; others are
 not represented at all.
 
-|pypi_badge| |build_status| `Source`_
+|pypi_badge| |build_status| |contributors| |license|
 
 
 News
@@ -134,13 +134,16 @@ Again, thanks for your contributions.
 
 
 .. _E-utilities: http://www.ncbi.nlm.nih.gov/books/NBK25499/
-.. _source: https://bitbucket.org/biocommons/eutis/
 
-.. |pypi_badge| image:: https://badge.fury.io/py/eutils.png
-  :target: https://pypi.python.org/pypi?name=eutils
-  :align: middle
+.. |pypi_badge| image:: https://img.shields.io/pypi/v/eutils.svg
+  :target: https://pypi.org/project/eutils/
 
 .. |build_status| image:: https://travis-ci.org/biocommons/eutils.svg?branch=master
   :target: https://travis-ci.org/biocommons/eutils
-  :align: middle
+
+.. |license| image:: https://img.shields.io/github/license/biocommons/eutils.svg
+  :target: https://github.com/biocommons/eutils/blob/master/LICENSE
+
+.. |contributors| image:: https://img.shields.io/github/contributors/biocommons/eutils.svg
+  :target: https://github.com/biocommons/eutils
 
