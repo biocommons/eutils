@@ -21,3 +21,15 @@ separate caching, throttling, querying, parsing/facades
 * #124: Support large search result sets
 support webenv history
 use web history + iterators for chained searching
+
+* add test tags to isolate tests against live ncbi data (ie not pyvcr tests)
+
+* QueryService:
+** Fetch & compare
+** TTL support in cache, request-specific TTLs?
+** optional db -> options map (esp. for rettype & retmode)
+** deal with caching status 200 replies that are bogus (e.g., truncated xml) -- callbacks?
+** provide uncached access
+** support history
+** default args is misplaced -- it should go in client instead
+

@@ -33,16 +33,27 @@ Features
 A Quick Example
 ---------------
 
+As of May 1, 2018, NCBI throttles requests based on whether a client
+is registered. Unregistered clients are limited to 3 requests/second;
+registered clients are granted 10 requests/second, and may request
+more. See the `NCBI Announcement
+<https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/>`_
+for more information. 
+
+The eutils package will automatically throttle requests according to
+NCBI guidelines (3 or 10 requests/second without or with an API key,
+respectively).
+
 ::
 
   $ pip install eutils
   $ ipython
 
-  >>> import eutils.client
+  >>> from eutils import Client
   
   # Initialize a client. This client handles all caching and query
-  # throttling
-  >>> ec = eutils.client.Client()
+  # throttling.  For example:
+  >>> ec = Client(api_key=os.environ.get("NCBI_API_KEY", None))
 
   # search for tumor necrosis factor genes
   # any valid NCBI query may be used

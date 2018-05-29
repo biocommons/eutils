@@ -21,74 +21,29 @@ may be controlled upon instantiation by setting default_args.
     >> result = qs.efetch({'db': 'gene', 'id': 7157})
 
 """
+
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-# TODO: Fetch & compare
-# TODO: TTL support in cache, request-specific TTLs?
-# TODO: optional db -> options map (esp. for rettype & retmode)
-# TODO: deal with caching status 200 replies that are bogus (e.g., truncated xml) -- callbacks?
-# TODO: provide uncached access
-# TODO: support history
-# TODO: default args is misplaced -- it should go in client instead
-
-import collections
-import datetime
 import hashlib
 import logging
 import os
 import time
 
 import lxml.etree
-import pytz
 import requests
 
 from eutils.sqlitecache import SQLiteCache
 from eutils.exceptions import EutilsRequestError, EutilsNCBIError
 from eutils.compat import pickle
 
-logger = logging.getLogger(__name__)
+
+_logger = logging.getLogger(__name__)
 
 url_base = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
 default_default_args = {'retmode': 'xml', 'usehistory': 'y', 'retmax': 250}
 default_tool = __package__
 default_email = 'biocommons-dev@googlegroups.com'
-default_request_interval = 0.333
 default_cache_path = os.path.join(os.path.expanduser('~'), '.cache', 'eutils-cache.db')
-
-eastern_tz = pytz.timezone('US/Eastern')
-
-
-def time_dep_request_interval(utc_dt=None):
-    """
-    returns a request interval approrpriate for the current time
-
-    From http://www.ncbi.nlm.nih.gov/books/NBK25497/:
-
-      "In order not to overload the E-utility servers, NCBI recommends that
-      users post no more than three URL requests per second and limit
-      large jobs to either weekends or between 9:00 PM and 5:00 AM Eastern
-      time during weekdays."
-
-    Translation: Weekdays 0500-2100 => 0.333s between requests; no throttle otherwise
-    """
-
-    if utc_dt is None:
-        utc_dt = datetime.datetime.utcnow()
-    eastern_dt = eastern_tz.fromutc(utc_dt)
-    return default_request_interval if (0 <= eastern_dt.weekday() <= 4 and 5 <= eastern_dt.hour < 21) else 0
-
-
-def add_eutils_api_key(url):
-    """Adds eutils api key to the query
-
-    :param url: eutils url without a query string
-    :return: url with api_key parameter set to the value of environment
-    variable 'NCBI_API_KEY' if available
-    """
-    apikey = os.environ.get('NCBI_API_KEY')
-    if apikey:
-        url += '?api_key={apikey}'.format(apikey=apikey)
-    return url
 
 
 class QueryService(object):
@@ -125,15 +80,17 @@ class QueryService(object):
                  email=default_email,
                  cache=False,
                  default_args=default_default_args,
-                 request_interval=time_dep_request_interval,
+                 request_interval=None,
                  tool=default_tool,
+                 api_key=None
                  ):
         """
         :param str email: email of user (for abuse reports)
         :param str cache: if True, cache at ~/.cache/eutils-db.sqlite; if string, cache there; if False, don't cache
         :param dict default_args: dictionary of query args that should accompany all requests
-        :param request_interval: seconds between requests
+        :param request_interval: seconds between requests; default: auto-select based on API key
         :type request_interval: int or a callable returning an int
+        :param str api_key: api key assigned by NCBI
         :param str tool: name of client
         :rtype: None
         :raises OSError: if sqlite file can't be opened
@@ -142,8 +99,22 @@ class QueryService(object):
 
         self.default_args = default_args
         self.email = email
-        self.request_interval = request_interval
         self.tool = tool
+        self.api_key = api_key
+
+        if request_interval is not None:
+            _logger.warn("eutils QueryService: request_interval no longer supported; ignoring passed parameter")
+
+        if self.api_key is None:
+            requests_per_second = 3
+            _logger.warn("No NCBI API key provided; throttling to {} requests/second; see "
+                         "https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/".format(
+                             requests_per_second))
+        else:
+            requests_per_second = 10
+            _logger.info("Using NCBI API key; throttling to {} requests/second".format(requests_per_second))
+
+        self.request_interval = 1.0 / requests_per_second
 
         self._last_request_clock = 0
         self._ident_args = {'tool': tool, 'email': email}
@@ -291,7 +262,7 @@ class QueryService(object):
         defining_args = dict(list(self.default_args.items()) + list(args.items()))
         full_args = dict(list(self._ident_args.items()) + list(defining_args.items()))
         cache_key = hashlib.md5(pickle.dumps((url, sorted(defining_args.items())))).hexdigest()
-        
+
         sqas = ';'.join([k + '=' + str(v) for k, v in sorted(args.items())])
         full_args_str = ';'.join([k + '=' + str(v) for k, v in sorted(full_args.items())])
 
@@ -299,30 +270,33 @@ class QueryService(object):
         if not skip_cache and self._cache:
             try:
                 v = self._cache[cache_key]
-                logger.debug('cache hit for key {cache_key} ({url}, {sqas}) '.format(
+                _logger.debug('cache hit for key {cache_key} ({url}, {sqas}) '.format(
                     cache_key=cache_key,
                     url=url,
                     sqas=sqas))
                 return v
             except KeyError:
-                logger.debug('cache miss for key {cache_key} ({url}, {sqas}) '.format(
+                _logger.debug('cache miss for key {cache_key} ({url}, {sqas}) '.format(
                     cache_key=cache_key,
                     url=url,
                     sqas=sqas))
                 pass
 
+        if self.api_key:
+            url += '?api_key={self.api_key}'.format(self=self)
+
+        # --
+
         if not skip_sleep:
-            req_int = self.request_interval() if isinstance(self.request_interval, collections.Callable) else self.request_interval
+            req_int = self.request_interval
             sleep_time = req_int - (time.clock() - self._last_request_clock)
             if sleep_time > 0:
-                logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
+                _logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
                 time.sleep(sleep_time)
-
-        url = add_eutils_api_key(url)
 
         r = requests.post(url, full_args)
         self._last_request_clock = time.clock()
-        logger.debug('post({url}, {fas}): {r.status_code} {r.reason}, {len})'.format(
+        _logger.debug('post({url}, {fas}): {r.status_code} {r.reason}, {len})'.format(
             url=url,
             fas=full_args_str,
             r=r,
@@ -330,6 +304,9 @@ class QueryService(object):
 
         if not r.ok:
             # TODO: discriminate between types of errors
+            if r.headers["Content-Type"] == "application/json":
+                json = r.json()
+                raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=json["error"]))
             try:
                 xml = lxml.etree.fromstring(r.text.encode('utf-8'))
                 raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
@@ -350,7 +327,7 @@ class QueryService(object):
         if self._cache and _cacheable(r.text):
             # N.B. we cache results even when skip_cache (read) is true
             self._cache[cache_key] = r.content
-            logger.info('cached results for key {cache_key} ({url}, {sqas}) '.format(
+            _logger.info('cached results for key {cache_key} ({url}, {sqas}) '.format(
                 cache_key=cache_key,
                 url=url,
                 sqas=sqas))

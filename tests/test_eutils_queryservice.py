@@ -1,23 +1,34 @@
-from __future__ import absolute_import, unicode_literals
-
-import vcr
-
-import unittest
-import six
-from lxml import etree
-from mock import patch, MagicMock
-
-import eutils.client as ec
-from eutils.exceptions import EutilsNCBIError
-
-'''Performs a query using every form of eutils fcgi that this python 
+"""Performs a query using every form of eutils fcgi that this python 
 library should support.
 
-"If you liked it, then you shoulda put a test on it." --Beyonce'''
+"If you liked it, then you shoulda put a test on it." --Beyonce
+
+"""
 
 
-# helper function for elink test.
+from __future__ import absolute_import, unicode_literals
+
+import unittest
+
+from lxml import etree
+from mock import patch, MagicMock
+import pytest
+import six
+import vcr
+
+from eutils.queryservice import QueryService
+from eutils.exceptions import EutilsNCBIError, EutilsRequestError
+
+
+def assert_in_xml(xml, item):
+    if six.PY3 and type(xml) == six.binary_type:
+        xml = xml.decode()
+    assert item in xml
+
 def parse_related_pmids_result(xmlstr):
+    """helper function for elink test.
+
+    """
     outd = {}
     dom = etree.fromstring(xmlstr)
     for linkset in dom.findall('LinkSet/LinkSetDb'):
@@ -28,17 +39,20 @@ def parse_related_pmids_result(xmlstr):
     return outd
 
 
-def assert_in_xml(xml, item):
-    if six.PY3 and type(xml) == six.binary_type:
-        xml = xml.decode()
-    assert item in xml
+def test_api_key():
+    """tests that the API key is being used"""
+    qs = QueryService()
+    assert b"DbName" in qs.einfo()
 
+    qs = QueryService(api_key="bogus")
+    with pytest.raises(EutilsRequestError):
+        qs.einfo()
 
 
 class TestEutilsQueries(unittest.TestCase):
 
     def setUp(self):
-        self.qs = ec.QueryService()
+        self.qs = QueryService()
 
     def tearDown(self):
         pass

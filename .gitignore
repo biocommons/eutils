@@ -69,6 +69,7 @@ __pycache__/
 .pytest_cache
 .Python
 .python-version
+*.rej
 .ropeproject
 # Rope project settings
 .scrapy
