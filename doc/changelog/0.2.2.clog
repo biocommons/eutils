@@ -1,0 +1,5 @@
+clog format: 1; -*-outline-*-
+* 0.2.2 (2016-12-10)
+Changes since 0.2.1 (2016-10-19).
+** Internal and Developer Changes
+*** closes #141: updates issue links from bitbucket to github [c41c501]

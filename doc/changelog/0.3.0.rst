@@ -1,0 +1,15 @@
+
+0.3.0 (2017-02-28)
+###################
+
+Changes since 0.2.4 (2017-02-21).
+
+Special Attention
+$$$$$$$$$$$$$$$$$$
+
+* closes `#147 <https://github.com/biocommons/eutils/issues/147/>`_: Do not use cache by default (use `cache=True` for current behavior) [`abfa129 <https://github.com/biocommons/eutils/commit/abfa129>`_]
+
+Internal and Developer Changes
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+* closes `#140 <https://github.com/biocommons/eutils/issues/140/>`_: migrate tests to vcrpy (and delete test data) [`7862548 <https://github.com/biocommons/eutils/commit/7862548>`_]

@@ -1,0 +1,10 @@
+
+0.3.2 (2017-11-02)
+###################
+
+Changes since 0.3.1 (2017-08-22).
+
+Internal and Developer Changes
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+* Fix for `#150 <https://github.com/biocommons/eutils/issues/150/>`_ drop gi assertion in tests [`e857856 <https://github.com/biocommons/eutils/commit/e857856>`_]

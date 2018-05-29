@@ -80,6 +80,8 @@ sdist/
 # Sphinx documentation
 .spyderproject
 # Spyder project settings
+.tags
+.tags.mk
 target/
 tmp
 .tox/

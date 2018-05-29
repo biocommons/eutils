@@ -1,0 +1,10 @@
+
+0.2.2 (2016-12-10)
+###################
+
+Changes since 0.2.1 (2016-10-19).
+
+Internal and Developer Changes
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+* closes `#141 <https://github.com/biocommons/eutils/issues/141/>`_: updates issue links from bitbucket to github [`c41c501 <https://github.com/biocommons/eutils/commit/c41c501>`_]

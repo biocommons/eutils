@@ -1,0 +1,10 @@
+clog format: 1; -*-outline-*-
+* 0.2.3 (2017-02-03)
+Changes since 0.2.2 (2016-12-10).
+** New Features
+*** Merge pull request #143 from diekhans/betterResponseParseErrors
+*** Merge pull request #144 from diekhans/nucestSupport [f26636c]
+** Other Changes
+*** include error message from XML parser when can't parse NCBI response [47d0673]
+** Internal and Developer Changes
+*** use exception syntax compatible with py 3 [858cbdc]

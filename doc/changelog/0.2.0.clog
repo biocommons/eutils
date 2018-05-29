@@ -1,0 +1,7 @@
+clog format: 1; -*-outline-*-
+* 0.2.0 (2016-09-15)
+Changes since 0.1.1 (2016-07-22).
+** New Features
+*** fixes #8: use https for eutilities (required by 2016-09-30) [0ce382f]
+*** Update ExchangeSet handling for switch to https [399b330]
+*** basic support for pubmedcentral [18b3a63]

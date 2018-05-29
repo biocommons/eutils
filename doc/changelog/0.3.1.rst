@@ -1,0 +1,10 @@
+
+0.3.1 (2017-08-22)
+###################
+
+Changes since 0.3.0.post0 (2017-03-01).
+
+Bug Fixes
+$$$$$$$$$$
+
+* closes `#149 <https://github.com/biocommons/eutils/issues/149/>`_: fix bug in which multi-line abstracts were truncated [`df491f8 <https://github.com/biocommons/eutils/commit/df491f8>`_]
