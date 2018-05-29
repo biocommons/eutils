@@ -7,15 +7,15 @@ import os
 
 import lxml.etree as le
 
-from eutils.exceptions import EutilsError
-from eutils.queryservice import QueryService
-from eutils.xmlfacades.dbsnp import ExchangeSet
-from eutils.xmlfacades.einforesult import EInfoResult
-from eutils.xmlfacades.entrezgeneset import EntrezgeneSet
-from eutils.xmlfacades.esearchresult import ESearchResult
-from eutils.xmlfacades.gbset import GBSet
-from eutils.xmlfacades.pubmedarticleset import PubmedArticleSet
-from eutils.xmlfacades.pubmedcentralarticleset import PubmedCentralArticleSet
+from .exceptions import EutilsError
+from .queryservice import QueryService
+from .xmlfacades.dbsnp import ExchangeSet
+from .xmlfacades.einforesult import EInfoResult
+from .xmlfacades.entrezgeneset import EntrezgeneSet
+from .xmlfacades.esearchresult import ESearchResult
+from .xmlfacades.gbset import GBSet
+from .xmlfacades.pubmedarticleset import PubmedArticleSet
+from .xmlfacades.pubmedcentralarticleset import PubmedCentralArticleSet
 
 
 logger = logging.getLogger(__name__)

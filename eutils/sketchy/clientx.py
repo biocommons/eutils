@@ -2,11 +2,10 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import eutils.client
-from eutils.exceptions import EutilsError, EutilsNCBIError, EutilsNotFoundError
+from eutils import Client, EutilsError, EutilsNCBIError, EutilsNotFoundError
 
 
-class ClientX(eutils.client.Client):
+class ClientX(Client):
     """
     *warning* This class is subject to rapid development and api changes.
 

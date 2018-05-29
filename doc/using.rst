@@ -22,7 +22,7 @@ compatibility.  In your package's setup.py::
   setup(
     ...
     install_requires = [
-      'eutils>=0.1,<0.2',
+      'eutils>=0.4,<0.3',
     ],
     ...
     )
@@ -38,7 +38,7 @@ Examples
 Common setup
 $$$$$$$$$$$$
 
-Instantiating an eutils :class:`eutils.client.Client` is this easy::
+Instantiating an eutils :class:`eutils.Client` is this easy::
 
     >>> import eutils
     
