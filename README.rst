@@ -11,7 +11,15 @@ parsing records from NCBI using their E-utilities_ interface.
 News
 ----
 
-* 0.4.0 was just released. See 
+* 0.4.0 was just released. See `0.4 Change Log
+  <https://eutils.readthedocs.io/en/stable/changelog/0.4.html>`_.
+
++-----------------------------------------------------------------------+
+| 0.4.0 was just released. See `0.4 Change Log                          |
+| <https://eutils.readthedocs.io/en/stable/changelog/0.4.html>`_.       |
++-----------------------------------------------------------------------+
+
+.. note:: test
 
 
 
