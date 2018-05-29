@@ -1,0 +1,25 @@
+
+0.4.0 (2018-05-28)
+###################
+
+Changes since 0.3.2 (2017-11-02).
+
+Special Attention
+$$$$$$$$$$$$$$$$$$
+
+* fixes `#152 <https://github.com/biocommons/eutils/issues/152/>`_: support NCBI API keys [`1175630 <https://github.com/biocommons/eutils/commit/1175630>`_]
+Removed time-based throttling and added support for NCBI API
+keys. Without an API key, NCBI returns an error if clients make more
+than 3 requests/second. With an API, clients may make 10
+requests/second. See https://www.ncbi.nlm.nih.gov/books/NBK25497/. The
+API key may be passed as argument to :ref:`Client` and QueryService.
+
+New Features
+$$$$$$$$$$$$$
+
+* `#153 <https://github.com/biocommons/eutils/issues/153/>`_: efetch for protein db
+
+Internal and Developer Changes
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+* closes `#132 <https://github.com/biocommons/eutils/issues/132/>`_: Fix functions default argument (`#156 <https://github.com/biocommons/eutils/issues/156/>`_)
