@@ -1,14 +1,21 @@
 Modules
-@@@@@@@
+!!!!!!!
 
-.. include:: modules/overview.rst
+Main Classes
+@@@@@@@@@@@@
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
+.. autoclass:: eutils.Client
+.. autoclass:: eutils.QueryService
 
-   modules/eutils.client
-   modules/eutils.exceptions
-   modules/eutils.queryservice
-   modules/eutils.xmlfacades
-   modules/eutils.sketchy.clientx
+Exceptions
+@@@@@@@@@@
+
+.. autoclass:: eutils.EutilsError
+.. autoclass:: eutils.EutilsNCBIError
+.. autoclass:: eutils.EutilsNotFoundError
+.. autoclass:: eutils.EutilsRequestError
+
+Experimental
+@@@@@@@@@@@@
+
+.. automodule:: eutils.sketchy.clientx
