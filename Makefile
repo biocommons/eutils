@@ -5,7 +5,7 @@
 .PRECIOUS :
 .SUFFIXES:
 
-SHELL:=/bin/bash -o pipefail
+SHELL:=/bin/bash -e -o pipefail
 SELF:=$(firstword $(MAKEFILE_LIST))
 
 PKG=eutils
@@ -72,7 +72,7 @@ bdist bdist_egg bdist_wheel build sdist install develop: %:
 #=> test: execute tests
 .PHONY: test
 test:
-	python setup.py pytest --addopts="--cov=${PKG} ${PKG} tests"
+	python setup.py pytest --addopts="--cov=${PKG} ${PKGD} tests"
 
 #=> tox: execute tests via tox
 .PHONY: tox

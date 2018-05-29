@@ -5,6 +5,8 @@ pytest
 pytest-cov
 restview
 setuptools
+sphinx
+sphinx_rtd_theme
 tox
 vcrpy
 yapf

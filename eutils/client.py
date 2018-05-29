@@ -7,7 +7,7 @@ import os
 
 import lxml.etree as le
 
-from eutils.exceptions import *
+from eutils.exceptions import EutilsError
 from eutils.queryservice import QueryService
 from eutils.xmlfacades.dbsnp import ExchangeSet
 from eutils.xmlfacades.einforesult import EInfoResult
@@ -27,13 +27,15 @@ class Client(object):
 
     """
 
-    def __init__(self, cache=False):
+    def __init__(self, cache=False, api_key=None):
         """
         :param str cache: passed to QueryService, which see for explanation
+        :param str api_key: API key from NCBI
         :raises EutilsError: if cache file couldn't be created
+
         """
 
-        self._qs = QueryService(cache=cache)
+        self._qs = QueryService(cache=cache, api_key=api_key)
 
 
     @property
