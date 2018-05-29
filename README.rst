@@ -10,14 +10,13 @@ supports only a limited subset of E-Utilities replies.  PubMed, Gene,
 RefSeq (nucleotide), and dbSNP data are well-represented; others are
 not represented at all.
 
-|pypi_badge| |build_status| |contributors| |license|
+|pypi_badge| |build_status| |contributors| |license| |rtd| |changelog|
 
 
 News
 ----
 
-* 0.3.0.post0 was just released. BEHAVIOR CHANGE: Client() no longer
-  caches by default. Add Client(cache=True) to get previous behavior.
+* 0.4.0 was just released. See 
 
 
 
@@ -146,4 +145,10 @@ Again, thanks for your contributions.
 
 .. |contributors| image:: https://img.shields.io/github/contributors/biocommons/eutils.svg
   :target: https://github.com/biocommons/eutils
+
+.. |rtd| image:: https://img.shields.io/badge/docs-readthedocs-green.svg
+   :target: http://eutils.readthedocs.io/
+
+.. |changelog| image:: https://img.shields.io/badge/docs-changelog-green.svg
+   :target: https://eutils.readthedocs.io/en/stable/changelog/
 
