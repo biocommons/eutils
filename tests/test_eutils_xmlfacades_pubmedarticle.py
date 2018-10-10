@@ -42,3 +42,16 @@ def test_eutils_xmlfacades_pubmedarticle_22351513(client):
     assert 'Mahmooduzzafar' in pa.authors
     assert pa.abstract.startswith("The oil content and fatty acid composition")
     assert pa.abstract.endswith("edible vegetable oil after toxicological studies.")
+
+
+@vcr.use_cassette
+def test_eutils_xmlfacades_pubmedarticle_29915538(client):
+    pas = client.efetch(db="pubmed", id=29915538)
+    pa = next(iter(pas))
+    assert pa.abstract.startswith("Background: Semaglutide, a newly once-weekly glucagon like peptide-1 (GLP-1)")
+    assert pa.abstract.endswith("GLP-1 receptor agonists of exenatide release and dulaglutide.")
+    assert "Semaglutide" in pa.abstract
+    assert "Results" in pa.abstract
+    assert "P < 0.001" in pa.abstract
+
+
