@@ -103,11 +103,11 @@ class QueryService(object):
         self.api_key = api_key
 
         if request_interval is not None:
-            _logger.warn("eutils QueryService: request_interval no longer supported; ignoring passed parameter")
+            _logger.warning("eutils QueryService: request_interval no longer supported; ignoring passed parameter")
 
         if self.api_key is None:
             requests_per_second = 3
-            _logger.warn("No NCBI API key provided; throttling to {} requests/second; see "
+            _logger.warning("No NCBI API key provided; throttling to {} requests/second; see "
                          "https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/".format(
                              requests_per_second))
         else:
