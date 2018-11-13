@@ -30,6 +30,10 @@ class MedlineCitation(eutils.xmlfacades.base.Base):
         return [_format_author(au) for au in self._xml_root.xpath('Article/AuthorList/Author')]
 
     @property
+    def chemicals(self):
+        return self._xml_root.xpath('ChemicalList/Chemical/NameOfSubstance/text()')
+
+    @property
     def issue(self):
         return self._xml_root.findtext('Article/Journal/JournalIssue/Issue')
 
@@ -43,12 +47,20 @@ class MedlineCitation(eutils.xmlfacades.base.Base):
         return self._xml_root.xpath('MeshHeadingList/MeshHeading/DescriptorName/text()')
 
     @property
+    def mesh_qualifiers(self):
+        return self._xml_root.xpath('MeshHeadingList/MeshHeading/QualifierName/text()')
+
+    @property
     def pages(self):
         return self._xml_root.findtext('Article/Pagination/MedlinePgn')
 
     @property
     def pmid(self):
         return self._xml_root.findtext('PMID')
+
+    @property
+    def pub_types(self):
+        return self._xml_root.xpath('Article/PublicationTypeList/PublicationType/text()')
 
     @property
     def title(self):
