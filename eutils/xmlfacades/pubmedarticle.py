@@ -23,6 +23,10 @@ class PubmedArticle(eutils.xmlfacades.base.Base):
         return self._medline_citation.authors
 
     @property
+    def chemicals(self):
+        return self._medline_citation.chemicals
+
+    @property
     def issue(self):
         return self._medline_citation.issue
 
@@ -35,12 +39,20 @@ class PubmedArticle(eutils.xmlfacades.base.Base):
         return self._medline_citation.mesh_headings
 
     @property
+    def mesh_qualifiers(self):
+        return self._medline_citation.mesh_qualifiers
+
+    @property
     def pages(self):
         return self._medline_citation.pages
 
     @property
     def pmid(self):
         return self._medline_citation.pmid
+
+    @property
+    def pub_types(self):
+        return self._medline_citation.pub_types
 
     @property
     def title(self):
