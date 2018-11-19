@@ -17,6 +17,8 @@ except pkg_resources.DistributionNotFound as e:
     __version__ = None
 
 
+from ._versionwarning import warnings
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
