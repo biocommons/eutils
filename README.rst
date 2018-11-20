@@ -2,17 +2,17 @@
 eutils -- a simplified interface to NCBI E-Utilities
 ====================================================
 
+|pypi_badge| |build_status| |issues_badge| |contributors| |license| |docs| |changelog|
+
 eutils is a Python package to simplify searching, fetching, and
 parsing records from NCBI using their E-utilities_ interface.
-
-|pypi_badge| |build_status| |contributors| |license| |rtd| |changelog|
 
 
 News
 ----
 
-* 0.4.0 was just released. See `0.4 Change Log
-  <https://eutils.readthedocs.io/en/stable/changelog/0.4.html>`_.
+* 0.5.0 was released on 2018-11-20. See `0.5 Change Log
+  <https://eutils.readthedocs.io/en/stable/changelog/0.5.html>`_.
 
 
 
@@ -130,21 +130,25 @@ Again, thanks for your contributions.
 
 .. _E-utilities: http://www.ncbi.nlm.nih.gov/books/NBK25499/
 
-.. |pypi_badge| image:: https://img.shields.io/pypi/v/eutils.svg
-  :target: https://pypi.org/project/eutils/
 
 .. |build_status| image:: https://travis-ci.org/biocommons/eutils.svg?branch=master
   :target: https://travis-ci.org/biocommons/eutils
 
-.. |license| image:: https://img.shields.io/github/license/biocommons/eutils.svg
-  :target: https://github.com/biocommons/eutils/blob/master/LICENSE
+.. |changelog| image:: https://img.shields.io/badge/docs-changelog-green.svg
+   :target: https://eutils.readthedocs.io/en/stable/changelog/
 
 .. |contributors| image:: https://img.shields.io/github/contributors/biocommons/eutils.svg
   :target: https://github.com/biocommons/eutils
 
-.. |rtd| image:: https://img.shields.io/badge/docs-readthedocs-green.svg
+.. |docs| image:: https://img.shields.io/badge/docs-readthedocs-green.svg
    :target: http://eutils.readthedocs.io/
 
-.. |changelog| image:: https://img.shields.io/badge/docs-changelog-green.svg
-   :target: https://eutils.readthedocs.io/en/stable/changelog/
+.. |issues_badge| image:: https://img.shields.io/github/issues/biocommons/eutils.png
+  :target: https://github.com/biocommons/eutils/issues
+  :align: middle
 
+.. |license| image:: https://img.shields.io/github/license/biocommons/eutils.svg
+  :target: https://github.com/biocommons/eutils/blob/master/LICENSE
+
+.. |pypi_badge| image:: https://img.shields.io/pypi/v/eutils.svg
+  :target: https://pypi.org/project/eutils/

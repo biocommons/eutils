@@ -1,11 +1,10 @@
 ChangeLog
-@@@@@@@@@
+!!!!!!!!!
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   0.4
-   0.3
-   0.2
-   0.1
-   0.0
+   0.5/index
+   0.4/index
+   0.3/index
+   0.2/index
