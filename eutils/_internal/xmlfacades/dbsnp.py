@@ -4,17 +4,14 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import re
 
-import lxml.etree
-
-from eutils.exceptions import *
-import eutils.xmlfacades.base
+from .base import Base
 
 genome_ac_re = re.compile('^(?:NC)_')
 transcript_ac_re = re.compile('^(?:ENST|NG|NM)_')
 protein_ac_re = re.compile('^(?:ENSP|NP)_')
 
 
-class ExchangeSet(eutils.xmlfacades.base.Base):
+class ExchangeSet(Base):
 
     _root_tag = '{https://www.ncbi.nlm.nih.gov/SNP/docsum}ExchangeSet'
 

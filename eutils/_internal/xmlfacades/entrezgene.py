@@ -4,8 +4,8 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import lxml.etree as le
 
-from eutils.xmlfacades.base import Base
-from eutils.xmlfacades.genecommentary import GeneCommentary
+from .base import Base
+from .genecommentary import GeneCommentary
 
 
 class Entrezgene(Base):
@@ -77,7 +77,7 @@ class Entrezgene(Base):
 if __name__ == "__main__":
     import os
     import lxml.etree
-    from eutils.xmlfacades.entrezgeneset import EntrezgeneSet
+    from .xmlfacades.entrezgeneset import EntrezgeneSet
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
     data_file = os.path.join(data_dir, 'entrezgeneset.xml.gz')
     egs = EntrezgeneSet(le.parse(data_file).getroot())

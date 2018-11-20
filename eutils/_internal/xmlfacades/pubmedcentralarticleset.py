@@ -1,31 +1,30 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import absolute_import, division, print_function, unicode_literals
-"""Provides support for parsing NCBI einfo queries as described here:
 
-http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo
-
-Unfortunately, the reply from this endpoint is has two very different
-modes: if called without an argument, it returns a list of databases;
-if called with a single db= argument, it returns details about the
-database.  That means that the client interface is necessarily very
-different.
-
-TODO: Implement classes for each and return appropriate class based on
-reply.
-
-"""
-
-import eutils.xmlfacades.base
+from .base import Base
+from .pubmedcentralarticle import PubmedCentralArticle
 
 
-class DbList(eutils.xmlfacades.base.Base):
+class PubmedCentralArticleSet(Base):
 
-    _root_tag = 'DbList'
+    _root_tag = 'pmc-articleset'
 
-    @property
-    def databases(self):
-        return sorted(self._xml_root.xpath('DbName/text()'))
+    def __iter__(self):
+        return (PubmedCentralArticle(pmca_n) for pmca_n in self._xml_root.iterfind('article'))
+
+
+if __name__ == "__main__":
+    import os
+    import lxml.etree as le
+
+    data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
+    relpaths = [
+        'efetch.fcgi?db=pmc&id=3299399&rettype=xml.xml', 'efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml',
+        'efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml'
+    ]
+
+    pmcasets = [PubmedCentralArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot()) for relpath in relpaths]
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

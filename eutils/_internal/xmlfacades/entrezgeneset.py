@@ -2,8 +2,8 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-from eutils.xmlfacades.base import Base
-from eutils.xmlfacades.entrezgene import Entrezgene
+from .base import Base
+from .entrezgene import Entrezgene
 
 
 class EntrezgeneSet(Base):

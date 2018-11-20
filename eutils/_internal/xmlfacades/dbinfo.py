@@ -16,10 +16,10 @@ reply.
 
 """
 
-import eutils.xmlfacades.base
+from .base import Base
 
 
-class DbInfo(eutils.xmlfacades.base.Base):
+class DbInfo(Base):
 
     _root_tag = 'DbInfo'
 

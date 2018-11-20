@@ -2,11 +2,11 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-from eutils.utils import xml_get_text_or_none, xml_get1
-import eutils.xmlfacades.base
+from ..utils import xml_get_text_or_none, xml_get1
+from .base import Base
 
 
-class PubmedCentralArticle(eutils.xmlfacades.base.Base):
+class PubmedCentralArticle(Base):
 
     _root_tag = 'article'
 
@@ -44,7 +44,7 @@ class PubmedCentralArticle(eutils.xmlfacades.base.Base):
 
 
 if __name__ == "__main__":
-    from eutils.xmlfacades.pubmedcentralarticleset import PubmedCentralArticleSet
+    from .xmlfacades.pubmedcentralarticleset import PubmedCentralArticleSet
     import lxml.etree as le
     import os
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')

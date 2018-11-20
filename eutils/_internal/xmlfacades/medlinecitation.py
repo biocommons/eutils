@@ -2,11 +2,10 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-from eutils.utils import xml_get_text, xml_get_text_or_none
-import eutils.xmlfacades.base
+from .base import Base
 
 
-class MedlineCitation(eutils.xmlfacades.base.Base):
+class MedlineCitation(Base):
 
     _root_tag = 'MedlineCitation'
 

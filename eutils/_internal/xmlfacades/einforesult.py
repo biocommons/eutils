@@ -16,14 +16,14 @@ reply.
 
 """
 
-from eutils.exceptions import EutilsError
-import eutils.xmlfacades.base
-import eutils.xmlfacades.einforesult
-import eutils.xmlfacades.dbinfo
-import eutils.xmlfacades.dblist
+from ..exceptions import EutilsError
+from .base import Base
+
+from .dbinfo import DbInfo
+from .dblist import DbList
 
 
-class EInfoResult(eutils.xmlfacades.base.Base):
+class EInfoResult(Base):
 
     _root_tag = 'eInfoResult'
 
@@ -39,11 +39,11 @@ class EInfoResult(eutils.xmlfacades.base.Base):
 
     @property
     def dbinfo(self):
-        return eutils.xmlfacades.dbinfo.DbInfo(self._child('DbInfo'))
+        return DbInfo(self._child('DbInfo'))
 
     @property
     def dblist(self):
-        return eutils.xmlfacades.dblist.DbList(self._child('DbList'))
+        return DbList(self._child('DbList'))
 
     # Internal Methods
     def _child(self, tag):
@@ -54,6 +54,7 @@ class EInfoResult(eutils.xmlfacades.base.Base):
 
 
 if __name__ == "__main__":
+
     import os
     import lxml.etree as le
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
@@ -66,6 +67,7 @@ if __name__ == "__main__":
 
     dbinfo = eiinfo.dbinfo
     dblist = eilist.dblist
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

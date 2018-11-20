@@ -1,21 +1,36 @@
 # -*- coding: utf-8 -*-
+
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import pkg_resources
-import warnings
-
-# flake8: noqa
-from ._internal.client import Client
-from ._internal.exceptions import EutilsError, EutilsNCBIError, EutilsNotFoundError, EutilsRequestError
-from ._internal.queryservice import QueryService
-from ._internal.versionwarning import warnings
+from .base import Base
 
 
-try:
-    __version__ = pkg_resources.get_distribution(__name__).version
-except pkg_resources.DistributionNotFound as e:
-    warnings.warn("can't get __version__ because %s package isn't installed" % __package__, Warning)
-    __version__ = None
+class ESearchResult(Base):
+
+    _root_tag = 'eSearchResult'
+
+    @property
+    def count(self):
+        return int(self._xml_root.find('Count').text)
+
+    @property
+    def retmax(self):
+        return int(self._xml_root.find('RetMax').text)
+
+    @property
+    def retstart(self):
+        return int(self._xml_root.find('RetStart').text)
+
+    @property
+    def ids(self):
+        return [int(id) for id in self._xml_root.xpath('/eSearchResult/IdList/Id/text()')]
+
+    @property
+    def webenv(self):
+        try:
+            return self._xml_root.find('WebEnv').text
+        except AttributeError:
+            return None
 
 
 # <LICENSE>

@@ -4,7 +4,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import logging
 
-from eutils.xmlfacades.base import Base
+from .base import Base
 
 logger = logging.getLogger(__name__)
 
@@ -226,7 +226,7 @@ class GBFeatureExon(GBFeature):
 if __name__ == "__main__":
     import os
     import lxml.etree as le
-    from eutils.xmlfacades.gbset import GBSet
+    from .xmlfacades.gbset import GBSet
 
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
     relpath = 'efetch.fcgi?db=nuccore&id=148536845&retmode=xml.xml'

@@ -2,10 +2,12 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-from eutils.exceptions import EutilsError
-import eutils.xmlfacades.base
 
-class GeneCommentary(eutils.xmlfacades.base.Base):
+from ..exceptions import EutilsError
+from .base import Base
+
+
+class GeneCommentary(Base):
     """This class  a rudimentary interface for using "Gene-commentary" XML
     nodes in NCBI efetch replies.
 
@@ -61,7 +63,7 @@ class GeneCommentary(eutils.xmlfacades.base.Base):
         return self._xml_root.findtext('Gene-commentary_version')
 
 
-class GeneCommentaryGenomicCoords(eutils.xmlfacades.base.Base):
+class GeneCommentaryGenomicCoords(Base):
     """This class  a rudimentary interface for using "Gene-commentary_genomic-coords" XML
     nodes in NCBI eutilities (efetch) responses.
     """
@@ -90,7 +92,7 @@ class GeneCommentaryGenomicCoords(eutils.xmlfacades.base.Base):
         return ';'.join(str(i) for i in self.intervals)
 
 
-class SeqInterval(eutils.xmlfacades.base.Base):
+class SeqInterval(Base):
 
     _root_tag = 'Seq-interval'
 

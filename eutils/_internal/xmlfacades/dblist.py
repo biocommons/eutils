@@ -1,40 +1,31 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import absolute_import, division, print_function, unicode_literals
+"""Provides support for parsing NCBI einfo queries as described here:
 
-import lxml.etree
+http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo
 
-from eutils.exceptions import *
-from eutils.xmlfacades.base import Base
+Unfortunately, the reply from this endpoint is has two very different
+modes: if called without an argument, it returns a list of databases;
+if called with a single db= argument, it returns details about the
+database.  That means that the client interface is necessarily very
+different.
+
+TODO: Implement classes for each and return appropriate class based on
+reply.
+
+"""
+
+from .base import Base
 
 
-class ESearchResult(Base):
+class DbList(Base):
 
-    _root_tag = 'eSearchResult'
-
-    @property
-    def count(self):
-        return int(self._xml_root.find('Count').text)
-
-    @property
-    def retmax(self):
-        return int(self._xml_root.find('RetMax').text)
-
-    @property
-    def retstart(self):
-        return int(self._xml_root.find('RetStart').text)
-
-    @property
-    def ids(self):
-        return [int(id) for id in self._xml_root.xpath('/eSearchResult/IdList/Id/text()')]
+    _root_tag = 'DbList'
 
     @property
-    def webenv(self):
-        try:
-            return self._xml_root.find('WebEnv').text
-        except AttributeError:
-            return None
-
+    def databases(self):
+        return sorted(self._xml_root.xpath('DbName/text()'))
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

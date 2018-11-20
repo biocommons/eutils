@@ -16,8 +16,8 @@ import pytest
 import six
 import vcr
 
-from eutils.queryservice import QueryService
-from eutils.exceptions import EutilsNCBIError, EutilsRequestError
+from eutils._internal.queryservice import QueryService
+from eutils._internal.exceptions import EutilsNCBIError, EutilsRequestError
 
 
 def assert_in_xml(xml, item):
@@ -101,7 +101,7 @@ class TestEutilsQueries(unittest.TestCase):
         assert_in_xml(result, 'ConceptId')
 
     @vcr.use_cassette
-    @patch('eutils.queryservice.requests')
+    @patch('eutils._internal.queryservice.requests')
     def test_handles_malformed_xml_errors(self, mock_requests):
         post_return_value = MagicMock()
         post_return_value.status_code = 404

@@ -2,12 +2,12 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-from eutils.utils import xml_get_text, xml_get_text_or_none
-import eutils.xmlfacades.base
-import eutils.xmlfacades.medlinecitation
+from ..utils import xml_get_text_or_none
+from .base import Base
+from .medlinecitation import MedlineCitation
 
 
-class PubmedArticle(eutils.xmlfacades.base.Base):
+class PubmedArticle(Base):
 
     _root_tag = 'PubmedArticle'
 
@@ -81,11 +81,11 @@ class PubmedArticle(eutils.xmlfacades.base.Base):
 
     @property
     def _medline_citation(self):
-        return eutils.xmlfacades.medlinecitation.MedlineCitation(self._xml_root.find('MedlineCitation'))
+        return MedlineCitation(self._xml_root.find('MedlineCitation'))
 
 
 if __name__ == "__main__":
-    from eutils.xmlfacades.pubmedarticleset import PubmedArticleSet
+    from .xmlfacades.pubmedarticleset import PubmedArticleSet
     import lxml.etree as le
     import os
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')

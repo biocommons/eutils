@@ -6,9 +6,10 @@ import logging
 
 import lxml.etree
 
-from eutils.exceptions import EutilsError
+from ..exceptions import EutilsError
 
 logger = logging.getLogger(__name__)
+
 
 class Base(object):
     """Root class for all xmlfacade classes.

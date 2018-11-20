@@ -32,9 +32,9 @@ import time
 import lxml.etree
 import requests
 
-from eutils.sqlitecache import SQLiteCache
-from eutils.exceptions import EutilsRequestError, EutilsNCBIError
-from eutils.compat import pickle
+from .sqlitecache import SQLiteCache
+from .exceptions import EutilsRequestError, EutilsNCBIError
+from .compat import pickle
 
 
 _logger = logging.getLogger(__name__)

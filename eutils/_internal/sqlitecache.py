@@ -11,7 +11,7 @@ import os
 import sqlite3
 import zlib
 
-from eutils.compat import pickle
+from .compat import pickle
 
 
 def key_to(obj):

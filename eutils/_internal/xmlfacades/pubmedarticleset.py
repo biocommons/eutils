@@ -2,16 +2,16 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import eutils.xmlfacades.base
-from eutils.xmlfacades.pubmedcentralarticle import PubmedCentralArticle
+from .base import Base
+from .pubmedarticle import PubmedArticle
 
 
-class PubmedCentralArticleSet(eutils.xmlfacades.base.Base):
+class PubmedArticleSet(Base):
 
-    _root_tag = 'pmc-articleset'
+    _root_tag = 'PubmedArticleSet'
 
     def __iter__(self):
-        return (PubmedCentralArticle(pmca_n) for pmca_n in self._xml_root.iterfind('article'))
+        return (PubmedArticle(pa_n) for pa_n in self._xml_root.iterfind('PubmedArticle'))
 
 
 if __name__ == "__main__":
@@ -20,11 +20,11 @@ if __name__ == "__main__":
 
     data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
     relpaths = [
-        'efetch.fcgi?db=pmc&id=3299399&rettype=xml.xml', 'efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml',
-        'efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml'
+        'efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml', 'efetch.fcgi?db=pubmed&id=22351513&retmode=xml.xml',
+        'efetch.fcgi?db=pubmed&id=23121403&retmode=xml.xml'
     ]
 
-    pmcasets = [PubmedCentralArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot()) for relpath in relpaths]
+    pmasets = [PubmedArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot()) for relpath in relpaths]
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
