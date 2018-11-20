@@ -5,11 +5,6 @@ Introduction
 eutils is a Python package to simplify searching, fetching, and
 parsing records from NCBI using their E-utilities_ interface.
 
-STATUS: This code is alpha. There are no known bugs, but the code supports
-only a limited subset of E-Utilities replies.
-
-|pypi_badge| |build_status| `Source`_
-
 
 Features
 ########
@@ -34,11 +29,3 @@ Important Notes
 
 .. _E-utilities: http://www.ncbi.nlm.nih.gov/books/NBK25499/
 .. _source: https://bitbucket.org/biocommons/eutis/
-
-.. |pypi_badge| image:: https://badge.fury.io/py/eutils.png
-  :target: https://pypi.python.org/pypi?name=eutils
-  :align: middle
-
-.. |build_status| image:: https://drone.io/bitbucket.org/biocommons/eutils/status.png
-  :target: https://drone.io/bitbucket.org/biocommons/eutils
-  :align: middle 
