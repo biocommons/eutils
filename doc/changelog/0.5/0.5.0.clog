@@ -1,0 +1,13 @@
+clog format: 1; -*-outline-*-
+* 0.5.0 (2018-11-19)
+Changes since 0.4.1 (2018-10-10).
+** Special Attention
+Support for Python < 3.6 will be dropped on 2019-03-31. This release
+will issue warnings when imported by an python version < 3.6. See
+https://github.com/biocommons/org/wiki/Migrating-to-Python-3.6
+** New Features
+*** #159: Adding publication types, mesh qualifiers and chemicals properties for medlinecitations [d28dbd0]. Thanks to @VincentMatthys for this contribution!
+** Internal and Developer Changes
+*** removed py 3.5 from travis config; updated badges in README [5ab476c]
+*** sync project files with bioutils; use travis stages for test+deploy [2a2222e]
+*** deprecate python < 3.6; see https://github.com/biocommons/org/wiki/Migrating-to-Python-3.6 [57c41cc]
