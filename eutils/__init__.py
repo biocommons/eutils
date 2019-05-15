@@ -4,6 +4,9 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import pkg_resources
 import warnings
 
+from ._versionwarning import *
+
+
 # flake8: noqa
 from ._internal.client import Client
 from ._internal.exceptions import EutilsError, EutilsNCBIError, EutilsNotFoundError, EutilsRequestError
