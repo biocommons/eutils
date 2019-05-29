@@ -1,4 +1,4 @@
-"""Performs a query using every form of eutils fcgi that this python 
+"""Performs a query using every form of eutils fcgi that this python
 library should support.
 
 "If you liked it, then you shoulda put a test on it." --Beyonce
@@ -21,7 +21,7 @@ from eutils._internal.exceptions import EutilsNCBIError, EutilsRequestError
 
 
 def assert_in_xml(xml, item):
-    if six.PY3 and type(xml) == six.binary_type:
+    if six.PY3 and isinstance(xml, six.binary_type):
         xml = xml.decode()
     assert item in xml
 
@@ -77,18 +77,17 @@ class TestEutilsQueries(unittest.TestCase):
 
     @vcr.use_cassette
     def test_elink(self):
-        '''Testing elink.fcgi by looking up related pmids in pubmed.''' 
+        '''Testing elink.fcgi by looking up related pmids in pubmed.'''
         #   Expected response should contain the following information:
-            
+
         #    * pubmed    (all related links)
         #    * citedin   (papers that cited this paper)
         #    * five      (the "five" that pubmed displays as the top related results)
         #    * reviews   (review papers that cite this paper)
         #    * combined  (?)
 
-        expected_keys = ['pubmed', 'citedin', 'five', 'reviews', 'combined']
-        xmlstr = self.qs.elink( { 'dbfrom': 'pubmed', 'id': 1234567, 'cmd': 'neighbor' } )
- 
+        xmlstr = self.qs.elink({'dbfrom': 'pubmed', 'id': 1234567, 'cmd': 'neighbor'})
+
         resd = parse_related_pmids_result(xmlstr)
         assert 'pubmed' in resd.keys()
 

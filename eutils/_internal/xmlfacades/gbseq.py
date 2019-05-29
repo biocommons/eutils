@@ -51,7 +51,7 @@ class GBSeq(Base):
         if not gene:
             return None
         return gene.qualifiers['gene']
-    
+
     @property
     def genes(self):
         raise RuntimeError("The genes property is obsolete; use gene instead")
@@ -62,7 +62,7 @@ class GBSeq(Base):
         d = {t: l.rstrip('|').split('|')
                 for t, _, l in [si.partition('|') for si in seqids]}
         gis = d['gi']
-        assert 1 == len(gis), "expected exactly one gi in XML"
+        assert len(gis) == 1, "expected exactly one gi in XML"
         return int(gis[0])
 
     @property
@@ -118,7 +118,7 @@ class GBFeatureTable(Base):
 
     GBFeatureTable provides an iterator over all features, and returns
     GBFeature instances.
-    
+
     In addition, when selecting features for specific types, the
     features are instantiated as their type-specific subclasses. This
     is the preferred selection mechanism for these feature types.
@@ -129,13 +129,13 @@ class GBFeatureTable(Base):
 
     def __iter__(self):
         return (GBFeature(n) for n in self._xml_root.iterfind('GBFeature'))
-        
+
     @property
     def cds(self):
         key = 'CDS'
         nodes = self._get_nodes_with_key(key)
         assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(n=len(nodes), key=key)
-        return None if len(nodes) == 0 else GBFeatureCDS(nodes[0])
+        return None if not nodes else GBFeatureCDS(nodes[0])
 
     @property
     def exons(self):
@@ -148,7 +148,7 @@ class GBFeatureTable(Base):
         key = 'gene'
         nodes = self._get_nodes_with_key(key)
         assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(n=len(nodes), key=key)
-        return None if len(nodes) == 0 else GBFeature(nodes[0])
+        return None if not nodes else GBFeature(nodes[0])
 
     @property
     def source(self):
@@ -192,7 +192,7 @@ class GBFeature(Base):
     def get_qualifier(self, name):
         nodes = self.get_qualifiers(name)
         assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1 when using get_qualifier)".format(n=len(nodes), key=name)
-        if len(nodes)==0:
+        if not nodes:
             return None
         return self.get_qualifiers(name)[0]
 
@@ -237,13 +237,13 @@ if __name__ == "__main__":
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 # http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
