@@ -291,13 +291,13 @@ class QueryService(object):
 
         if not skip_sleep:
             req_int = self.request_interval
-            sleep_time = req_int - (time.process_time() - self._last_request_clock)
+            sleep_time = req_int - (time.monotonic() - self._last_request_clock)
             if sleep_time > 0:
                 _logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
                 time.sleep(sleep_time)
 
         r = requests.post(url, full_args)
-        self._last_request_clock = time.process_time()
+        self._last_request_clock = time.monotonic()
         _logger.debug('post({url}, {fas}): {r.status_code} {r.reason}, {len})'.format(
             url=url,
             fas=full_args_str,
