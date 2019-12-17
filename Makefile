@@ -44,9 +44,9 @@ develop:
 .PHONY: devready
 devready:
 	make ${VEDIR} && source ${VEDIR}/bin/activate && make develop
-	@echo '#################################################################################'
-	@echo '###  Do not forget to `source ${VEDIR}/bin/activate` to use this environment  ###'
-	@echo '#################################################################################'
+	@echo '################################################################'
+	@echo '###  `source ${VEDIR}/bin/activate` to use this environment  ###'
+	@echo '################################################################'
 
 #=> install: install package
 #=> bdist bdist_egg bdist_wheel build sdist: distribution options
@@ -89,7 +89,7 @@ reformat:
 .PHONY: docs
 docs: develop
 	# RTD makes json. Build here to ensure that it works.
-	make -C doc html json
+	make -C docs html json
 
 ############################################################################
 #= CLEANUP
