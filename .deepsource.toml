@@ -7,4 +7,4 @@ test_patterns = [
 [[analyzers]]
 name = 'python'
 enabled = true
-runtime_version = '2.x.x'
+runtime_version = '3.x.x'
