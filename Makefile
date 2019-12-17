@@ -10,8 +10,9 @@ SELF:=$(firstword $(MAKEFILE_LIST))
 
 PKG=eutils
 PKGD=$(subst .,/,${PKG})
+PYV:=3.7
+VEDIR=venv/${PYV}
 
-VEDIR=venv/3.6
 
 
 ############################################################################
@@ -27,48 +28,35 @@ help:
 #= SETUP, INSTALLATION, PACKAGING
 
 #=> venv: make a Python 3 virtual environment
-.PHONY: venv/2.7
-venv/2.7:
-	virtualenv -p $$(type -p python2.7) $@; \
-	source $@/bin/activate; \
-	pip install --upgrade pip setuptools
-
-#=> venv: make a Python 3 virtual environment
-.PHONY: ${VEDIR}
-${VEDIR}:
-	pyvenv $@; \
+.PHONY: venv/%
+venv/%:
+	python$* -m venv $@; \
 	source $@/bin/activate; \
 	python -m ensurepip --upgrade; \
 	pip install --upgrade pip setuptools
 
-#=> setup: setup/upgrade packages *in current environment*
-.PHONY: setup
-setup: etc/develop.reqs etc/test.reqs etc/install.reqs
-	if [ -s $(word 1,$^) ]; then pip install --upgrade -r $(word 1,$^); fi
-	if [ -s $(word 2,$^) ]; then pip install --upgrade -r $(word 2,$^); fi
-	if [ -s $(word 3,$^) ]; then pip install --upgrade -r $(word 3,$^); fi
+#=> develop: install package in develop mode
+.PHONY: develop
+develop:
+	pip install -e .[dev,extras,notebooks]
 
 #=> devready: create venv, install prerequisites, install pkg in develop mode
 .PHONY: devready
 devready:
-	make ${VEDIR} && source ${VEDIR}/bin/activate && make setup develop
+	make ${VEDIR} && source ${VEDIR}/bin/activate && make develop
 	@echo '#################################################################################'
 	@echo '###  Do not forget to `source ${VEDIR}/bin/activate` to use this environment  ###'
 	@echo '#################################################################################'
 
-#=> develop: install package in develop mode
 #=> install: install package
 #=> bdist bdist_egg bdist_wheel build sdist: distribution options
-.PHONY: bdist bdist_egg bdist_wheel build build_sphinx sdist install develop
-bdist bdist_egg bdist_wheel build sdist install develop: %:
+.PHONY: bdist bdist_egg bdist_wheel build build_sphinx sdist install
+bdist bdist_egg bdist_wheel build sdist install: %:
 	python setup.py $@
 
-#=> upload: upload to pypi
-#=> upload_*: upload to named pypi service (requires config in ~/.pypirc)
-.PHONY: upload upload_%
-upload: upload_pypi
-upload_%:
-	python setup.py bdist_egg bdist_wheel sdist upload -r $*
+.PHONY: install-extras
+install-extras:
+	pip install -e .[extras]
 
 
 ############################################################################
@@ -78,7 +66,7 @@ upload_%:
 #=> test: execute tests
 .PHONY: test
 test:
-	pytest --cov=${PKG}
+	python setup.py pytest
 
 #=> tox: execute tests via tox
 .PHONY: tox
@@ -93,10 +81,9 @@ tox:
 #=> reformat: reformat code with yapf and commit
 .PHONY: reformat
 reformat:
-	@if hg sum | grep -qL '^commit:.*modified'; then echo "Repository not clean" 1>&2; exit 1; fi
-	@if hg sum | grep -qL ' applied'; then echo "Repository has applied patches" 1>&2; exit 1; fi
+	@if ! git diff --cached --exit-code; then echo "Repository not clean" 1>&2; exit 1; fi
 	yapf -i -r "${PKGD}" tests
-	hg commit -m "reformatted with yapf"
+	git commit -a -m "reformatted with yapf"
 
 #=> docs -- make sphinx docs
 .PHONY: docs
@@ -115,7 +102,7 @@ clean:
 #=> cleaner: remove files and directories that are easily rebuilt
 .PHONY: cleaner
 cleaner: clean
-	rm -fr .cache *.egg-info build dist doc/_build htmlcov
+	rm -fr .cache *.egg-info .pytest_cache build dist doc/_build htmlcov
 	find . \( -name \*.pyc -o -name \*.orig -o -name \*.rej \) -print0 | xargs -0r rm
 	find . -name __pycache__ -print0 | xargs -0r rm -fr
 
