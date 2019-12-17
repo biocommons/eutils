@@ -1,5 +1,6 @@
 import vcr
 
+
 @vcr.use_cassette
 def test_esearchresult(client):
 
@@ -33,4 +34,3 @@ def test_esearchresult(client):
     # this returns GBFeatureExon objects
     exon = next(iter(r.features.exons))
     assert "alignment:Splign:1.39.8" == exon.inference
-

@@ -8,4 +8,3 @@ def test_entrezgeneset(client):
     assert isinstance(r.entrezgenes, list)
     assert 1 == len(r.entrezgenes)
     assert 4747 == r.entrezgenes[0].gene_id
-    

@@ -5,7 +5,6 @@ library should support.
 
 """
 
-
 from __future__ import absolute_import, unicode_literals
 
 import unittest
@@ -24,6 +23,7 @@ def assert_in_xml(xml, item):
     if six.PY3 and isinstance(xml, six.binary_type):
         xml = xml.decode()
     assert item in xml
+
 
 def parse_related_pmids_result(xmlstr):
     """helper function for elink test.
@@ -50,7 +50,6 @@ def test_api_key():
 
 
 class TestEutilsQueries(unittest.TestCase):
-
     def setUp(self):
         self.qs = QueryService()
 
@@ -69,7 +68,7 @@ class TestEutilsQueries(unittest.TestCase):
     def test_esearch(self):
         '''Testing esearch.fcgi by searching medgen db for concepts related to OCRL gene.'''
         # https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=medgen&term=OCRL
-        result = self.qs.esearch( { 'db': 'medgen', 'term': 'OCRL' } )
+        result = self.qs.esearch({'db': 'medgen', 'term': 'OCRL'})
 
         # eSearchResult should contain something like this:
         #<IdList><Id>763754</Id><Id>336867</Id><Id>336322</Id><Id>168056</Id><Id>18145</Id></IdList>
@@ -96,7 +95,7 @@ class TestEutilsQueries(unittest.TestCase):
         '''Testing esummary.fcgi by looking up a known medgen concept'''
 
         # https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=medgen&id=336867
-        result = self.qs.esummary({ 'db': 'medgen', 'id': 336867 })
+        result = self.qs.esummary({'db': 'medgen', 'id': 336867})
         assert_in_xml(result, 'ConceptId')
 
     @vcr.use_cassette

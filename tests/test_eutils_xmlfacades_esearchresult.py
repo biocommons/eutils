@@ -1,5 +1,6 @@
 import vcr
 
+
 @vcr.use_cassette
 def test_esearchresult(client):
     r = client.esearch(db="pubmed", term="hart rk[author]")
