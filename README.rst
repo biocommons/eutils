@@ -10,8 +10,9 @@ parsing records from NCBI using their E-utilities_ interface.
 News
 ----
 
-* 0.5.0 was released on 2018-11-20. See `0.5 Change Log
-  <https://eutils.readthedocs.io/en/stable/changelog/0.5.html>`_.
+* 0.6.0 was released on 2019-12-17. Support for Python 2.7 has been
+  dropped. See the `0.6 ChangeLog
+  <https://eutils.readthedocs.io/en/stable/changelog/0.6.html>`_.
 
 
 
