@@ -27,6 +27,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import hashlib
 import logging
 import os
+import pickle
 import time
 
 import lxml.etree
@@ -34,7 +35,6 @@ import requests
 
 from .sqlitecache import SQLiteCache
 from .exceptions import EutilsRequestError, EutilsNCBIError
-from .compat import pickle
 
 
 _logger = logging.getLogger(__name__)

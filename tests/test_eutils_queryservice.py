@@ -12,7 +12,6 @@ import unittest
 from lxml import etree
 from mock import patch, MagicMock
 import pytest
-import six
 import vcr
 
 from eutils._internal.queryservice import QueryService
@@ -20,8 +19,7 @@ from eutils._internal.exceptions import EutilsNCBIError, EutilsRequestError
 
 
 def assert_in_xml(xml, item):
-    if six.PY3 and isinstance(xml, six.binary_type):
-        xml = xml.decode()
+    xml = xml.decode()
     assert item in xml
 
 

@@ -8,10 +8,9 @@ Taken from http://bitbucket.org/reece/rcore/
 
 import logging
 import os
+import pickle
 import sqlite3
 import zlib
-
-from .compat import pickle
 
 
 def key_to(obj):
