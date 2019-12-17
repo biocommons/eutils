@@ -20,20 +20,20 @@ class GeneCommentary(Base):
 
     """
 
-    _root_tag = 'Gene-commentary'
+    _root_tag = "Gene-commentary"
 
     def __str__(self):
-        return 'GeneCommentary(acv={self.acv},type={self.type},heading={self.heading},label={self.label})'.format(self=self)
+        return "GeneCommentary(acv={self.acv},type={self.type},heading={self.heading},label={self.label})".format(self=self)
 
     @property
     def accession(self):
-        return self._xml_root.findtext('Gene-commentary_accession')
+        return self._xml_root.findtext("Gene-commentary_accession")
 
     @property
     def acv(self):
         if self.accession is None or self.version is None:
             return None
-        return self.accession + '.' + self.version
+        return self.accession + "." + self.version
 
     @property
     def genomic_coords(self):
@@ -44,15 +44,15 @@ class GeneCommentary(Base):
 
     @property
     def heading(self):
-        return self._xml_root.findtext('Gene-commentary_heading')
+        return self._xml_root.findtext("Gene-commentary_heading")
 
     @property
     def label(self):
-        return self._xml_root.findtext('Gene-commentary_label')
+        return self._xml_root.findtext("Gene-commentary_label")
 
     @property
     def products(self):
-        return [GeneCommentary(gc) for gc in self._xml_root.findall('Gene-commentary_products/Gene-commentary')]
+        return [GeneCommentary(gc) for gc in self._xml_root.findall("Gene-commentary_products/Gene-commentary")]
 
     @property
     def type(self):
@@ -60,7 +60,7 @@ class GeneCommentary(Base):
 
     @property
     def version(self):
-        return self._xml_root.findtext('Gene-commentary_version')
+        return self._xml_root.findtext("Gene-commentary_version")
 
 
 class GeneCommentaryGenomicCoords(Base):
@@ -68,44 +68,44 @@ class GeneCommentaryGenomicCoords(Base):
     nodes in NCBI eutilities (efetch) responses.
     """
 
-    _root_tag = 'Gene-commentary_genomic-coords'
+    _root_tag = "Gene-commentary_genomic-coords"
 
     def __str__(self):
         return "{self.gi}:{self.strand}:{self._interval_str}".format(self=self)
 
     @property
     def strand(self):
-        nastrand = self._xml_root.find('.//Na-strand').get('value')
-        return 1 if nastrand == 'plus' else -1 if nastrand == 'minus' else None
+        nastrand = self._xml_root.find(".//Na-strand").get("value")
+        return 1 if nastrand == "plus" else -1 if nastrand == "minus" else None
 
     @property
     def gi(self):
-        return self._xml_root.findtext('.//Seq-id_gi')
+        return self._xml_root.findtext(".//Seq-id_gi")
 
     @property
     def intervals(self):
         return [(i.interval_from, i.interval_to)
-                for i in (SeqInterval(n) for n in self._xml_root.findall('.//Seq-interval'))]
+                for i in (SeqInterval(n) for n in self._xml_root.findall(".//Seq-interval"))]
 
     @property
     def _interval_str(self):
-        return ';'.join(str(i) for i in self.intervals)
+        return ";".join(str(i) for i in self.intervals)
 
 
 class SeqInterval(Base):
 
-    _root_tag = 'Seq-interval'
+    _root_tag = "Seq-interval"
 
     def __str__(self):
         return "[{self.interval_from},{self.interval_to}]".format(self=self)
 
     @property
     def interval_from(self):
-        return int(self._xml_root.findtext('Seq-interval_from'))
+        return int(self._xml_root.findtext("Seq-interval_from"))
 
     @property
     def interval_to(self):
-        return int(self._xml_root.findtext('Seq-interval_to'))
+        return int(self._xml_root.findtext("Seq-interval_to"))
 
 
 # <LICENSE>

@@ -8,7 +8,7 @@ from .gbseq import GBSeq
 
 class GBSet(Base):
 
-    _root_tag = 'GBSet'
+    _root_tag = "GBSet"
 
     def __str__(self):
         return "GBSet({self.acv})".format(self=self)
@@ -18,7 +18,7 @@ class GBSet(Base):
         return list(self)
 
     def __iter__(self):
-        return (GBSeq(n) for n in self._xml_root.iterfind('GBSeq'))
+        return (GBSeq(n) for n in self._xml_root.iterfind("GBSeq"))
 
 
 if __name__ == "__main__":
@@ -26,8 +26,8 @@ if __name__ == "__main__":
     import lxml.etree as le
 
 
-    data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
-    relpath = 'efetch.fcgi?db=nuccore&id=148536845&retmode=xml.xml'
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
+    relpath = "efetch.fcgi?db=nuccore&id=148536845&retmode=xml.xml"
     path = os.path.join(data_dir, relpath)
     gbset = GBSet(le.parse(path).getroot())
 

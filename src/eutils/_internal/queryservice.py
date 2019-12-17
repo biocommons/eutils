@@ -15,10 +15,10 @@ may be controlled upon instantiation by setting default_args.
     >> result = qs.einfo()
 
     # execute a search using an NCBI query against the gene database
-    >> result = qs.esearch({'db': 'gene', 'term': 'VEGF AND human[organism]'})
+    >> result = qs.esearch({"db": "gene", "term": "VEGF AND human[organism]"})
 
     # get xml doc for gene id=7157
-    >> result = qs.efetch({'db': 'gene', 'id': 7157})
+    >> result = qs.efetch({"db": "gene", "id": 7157})
 
 """
 
@@ -39,11 +39,11 @@ from .compat import pickle
 
 _logger = logging.getLogger(__name__)
 
-url_base = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
-default_default_args = {'retmode': 'xml', 'usehistory': 'y', 'retmax': 250}
+url_base = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+default_default_args = {"retmode": "xml", "usehistory": "y", "retmax": 250}
 default_tool = __package__
-default_email = 'biocommons-dev@googlegroups.com'
-default_cache_path = os.path.join(os.path.expanduser('~'), '.cache', 'eutils-cache.db')
+default_email = "biocommons-dev@googlegroups.com"
+default_cache_path = os.path.join(os.path.expanduser("~"), ".cache", "eutils-cache.db")
 
 
 class QueryService(object):
@@ -117,7 +117,7 @@ class QueryService(object):
         self.request_interval = 1.0 / requests_per_second
 
         self._last_request_clock = 0
-        self._ident_args = {'tool': tool, 'email': email}
+        self._ident_args = {"tool": tool, "email": email}
         self._request_count = 0
 
         if cache is True:
@@ -139,7 +139,7 @@ class QueryService(object):
         :raises EutilsRequestError: when NCBI replies, but the request failed (e.g., bogus database name)
 
         """
-        return self._query('/efetch.fcgi', args)
+        return self._query("/efetch.fcgi", args)
 
     def einfo(self, args=None):
         """
@@ -153,7 +153,7 @@ class QueryService(object):
 
         Example: Find database statistics for Entrez Protein.
 
-            QueryService.einfo({'db': 'protein'})
+            QueryService.einfo({"db": "protein"})
 
         Equivalent HTTP request:
 
@@ -167,19 +167,19 @@ class QueryService(object):
         """
         if args is None:
             args = {}
-        return self._query('/einfo.fcgi', args, skip_cache=True)
+        return self._query("/einfo.fcgi", args, skip_cache=True)
 
     def esearch(self, args):
         """
         execute a cached, throttled esearch query
 
-        :param dict args: dict of query items, containing at least 'db' and 'term' keys
+        :param dict args: dict of query items, containing at least "db" and "term" keys
         :returns: content of reply
         :rtype: str
         :raises EutilsRequestError: when NCBI replies, but the request failed (e.g., bogus database name)
 
         """
-        return self._query('/esearch.fcgi', args)
+        return self._query("/esearch.fcgi", args)
 
     def elink(self, args):
         """
@@ -191,19 +191,19 @@ class QueryService(object):
 
         Example: Find one set of Gene IDs linked to nuccore GIs 34577062 and 24475906
 
-            QueryService.elink({'dbfrom': 'nuccore', 'db': 'gene', 'id': '34577062,24475906'})
+            QueryService.elink({"dbfrom": "nuccore", "db": "gene", "id": "34577062,24475906"})
 
         Equivalent HTTP request:
 
             https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=nuccore&db=gene&id=34577062,24475906
 
-        :param dict args: dict of query items containing at least the 'db', 'dbfrom', and 'id' keys.
+        :param dict args: dict of query items containing at least the "db", "dbfrom", and "id" keys.
         :returns: content of reply
         :rtype: str
         :raises EutilsRequestError: when NCBI replies, but the request failed (e.g., bogus database name)
 
         """
-        return self._query('/elink.fcgi', args)
+        return self._query("/elink.fcgi", args)
 
     def esummary(self, args):
         """
@@ -215,19 +215,19 @@ class QueryService(object):
 
         Example: 
         
-            QueryService.esummary({ 'db': 'medgen', 'id': 134 })
+            QueryService.esummary({ "db": "medgen", "id": 134 })
 
         Equivalent HTTP request:
 
             https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=medgen&id=134
 
-        :param dict args: dict of query items containing at least 'db' and 'id' keys.
+        :param dict args: dict of query items containing at least "db" and "id" keys.
         :returns: content of reply
         :rtype: str
         :raises EutilsRequestError: when NCBI replies, but the request failed (e.g., bogus database name)
 
         """
-        return self._query('/esummary.fcgi', args)
+        return self._query("/esummary.fcgi", args)
 
 
     ############################################################################
@@ -235,7 +235,7 @@ class QueryService(object):
     def _query(self, path, args=None, skip_cache=False, skip_sleep=False):
         """return results for a NCBI query, possibly from the cache
 
-        :param: path: relative query path (e.g., 'einfo.fcgi')
+        :param: path: relative query path (e.g., "einfo.fcgi")
         :param: args: dictionary of query args
         :param: skip_cache: whether to bypass the cache on reading
         :param: skip_sleep: whether to bypass query throttling
@@ -265,27 +265,27 @@ class QueryService(object):
         full_args = dict(list(self._ident_args.items()) + list(defining_args.items()))
         cache_key = hashlib.md5(pickle.dumps((url, sorted(defining_args.items())))).hexdigest()
 
-        sqas = ';'.join([k + '=' + str(v) for k, v in sorted(args.items())])
-        full_args_str = ';'.join([k + '=' + str(v) for k, v in sorted(full_args.items())])
+        sqas = ";".join([k + "=" + str(v) for k, v in sorted(args.items())])
+        full_args_str = ";".join([k + "=" + str(v) for k, v in sorted(full_args.items())])
 
         logging.debug("CACHE:" + str(skip_cache) + "//" + str(self._cache))
         if not skip_cache and self._cache:
             try:
                 v = self._cache[cache_key]
-                _logger.debug('cache hit for key {cache_key} ({url}, {sqas}) '.format(
+                _logger.debug("cache hit for key {cache_key} ({url}, {sqas}) ".format(
                     cache_key=cache_key,
                     url=url,
                     sqas=sqas))
                 return v
             except KeyError:
-                _logger.debug('cache miss for key {cache_key} ({url}, {sqas}) '.format(
+                _logger.debug("cache miss for key {cache_key} ({url}, {sqas}) ".format(
                     cache_key=cache_key,
                     url=url,
                     sqas=sqas))
                 pass
 
         if self.api_key:
-            url += '?api_key={self.api_key}'.format(self=self)
+            url += "?api_key={self.api_key}".format(self=self)
 
         # --
 
@@ -293,12 +293,12 @@ class QueryService(object):
             req_int = self.request_interval
             sleep_time = req_int - (time.monotonic() - self._last_request_clock)
             if sleep_time > 0:
-                _logger.debug('sleeping {sleep_time:.3f}'.format(sleep_time=sleep_time))
+                _logger.debug("sleeping {sleep_time:.3f}".format(sleep_time=sleep_time))
                 time.sleep(sleep_time)
 
         r = requests.post(url, full_args)
         self._last_request_clock = time.monotonic()
-        _logger.debug('post({url}, {fas}): {r.status_code} {r.reason}, {len})'.format(
+        _logger.debug("post({url}, {fas}): {r.status_code} {r.reason}, {len})".format(
             url=url,
             fas=full_args_str,
             r=r,
@@ -310,28 +310,28 @@ class QueryService(object):
                 json = r.json()
                 raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=json["error"]))
             try:
-                xml = lxml.etree.fromstring(r.text.encode('utf-8'))
-                errornode = xml.find('ERROR')
+                xml = lxml.etree.fromstring(r.text.encode("utf-8"))
+                errornode = xml.find("ERROR")
                 errormsg = errornode.text if errornode else "Unknown Error"
-                raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=errormsg))
+                raise EutilsRequestError("{r.reason} ({r.status_code}): {error}".format(r=r, error=errormsg))
             except Exception as ex:
-                raise EutilsNCBIError('Error parsing response object from NCBI: {}'.format(ex))
+                raise EutilsNCBIError("Error parsing response object from NCBI: {}".format(ex))
 
-        if any(bad_word in r.text for bad_word in ['<error>', '<ERROR>']):
+        if any(bad_word in r.text for bad_word in ["<error>", "<ERROR>"]):
             if r.text is not None:
                 try:
-                    xml = lxml.etree.fromstring(r.text.encode('utf-8'))
-                    raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+                    xml = lxml.etree.fromstring(r.text.encode("utf-8"))
+                    raise EutilsRequestError("{r.reason} ({r.status_code}): {error}".format(r=r, error=xml.find("ERROR").text))
                 except Exception as ex:
-                    raise EutilsNCBIError('Error parsing response object from NCBI: {}'.format(ex))
+                    raise EutilsNCBIError("Error parsing response object from NCBI: {}".format(ex))
 
         if '<h1 class="error">Access Denied</h1>' in r.text:
-            raise EutilsRequestError('Access Denied: {url}'.format(url=url))
+            raise EutilsRequestError("Access Denied: {url}".format(url=url))
 
         if self._cache and _cacheable(r.text):
             # N.B. we cache results even when skip_cache (read) is true
             self._cache[cache_key] = r.content
-            _logger.info('cached results for key {cache_key} ({url}, {sqas}) '.format(
+            _logger.info("cached results for key {cache_key} ({url}, {sqas}) ".format(
                 cache_key=cache_key,
                 url=url,
                 sqas=sqas))
@@ -339,11 +339,11 @@ class QueryService(object):
         return r.content
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
     qs = QueryService()
-    r = qs.einfo({'db': 'protein'})
-    r = qs.efetch({'db': 'protein', 'id': '319655736'})
+    r = qs.einfo({"db": "protein"})
+    r = qs.efetch({"db": "protein", "id": "319655736"})
 
 
 # <LICENSE>

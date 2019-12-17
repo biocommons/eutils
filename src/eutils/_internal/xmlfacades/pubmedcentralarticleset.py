@@ -8,20 +8,20 @@ from .pubmedcentralarticle import PubmedCentralArticle
 
 class PubmedCentralArticleSet(Base):
 
-    _root_tag = 'pmc-articleset'
+    _root_tag = "pmc-articleset"
 
     def __iter__(self):
-        return (PubmedCentralArticle(pmca_n) for pmca_n in self._xml_root.iterfind('article'))
+        return (PubmedCentralArticle(pmca_n) for pmca_n in self._xml_root.iterfind("article"))
 
 
 if __name__ == "__main__":
     import os
     import lxml.etree as le
 
-    data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
     relpaths = [
-        'efetch.fcgi?db=pmc&id=3299399&rettype=xml.xml', 'efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml',
-        'efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml'
+        "efetch.fcgi?db=pmc&id=3299399&rettype=xml.xml", "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml",
+        "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml"
     ]
 
     pmcasets = [PubmedCentralArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot()) for relpath in relpaths]

@@ -10,47 +10,47 @@ from .genecommentary import GeneCommentary
 
 class Entrezgene(Base):
 
-    _root_tag = 'Entrezgene'
+    _root_tag = "Entrezgene"
 
     def __str__(self):
         return "Entrezgene(id={self.gene_id};hgnc={self.hgnc};description={self.description};type={self.type})".format(self=self)
 
     @property
     def common_tax(self):
-        return self._xml_root.findtext('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_common')
+        return self._xml_root.findtext("Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_common")
 
     @property
     def description(self):
-        return self._xml_root.findtext('Entrezgene_gene/Gene-ref/Gene-ref_desc')
+        return self._xml_root.findtext("Entrezgene_gene/Gene-ref/Gene-ref_desc")
 
     @property
     def gene_id(self):
-        return int(self._xml_root.findtext('Entrezgene_track-info/Gene-track/Gene-track_geneid'))
+        return int(self._xml_root.findtext("Entrezgene_track-info/Gene-track/Gene-track_geneid"))
 
     @property
     def gene_commentaries(self):
         try:
             return self._gene_commentaries
         except AttributeError:
-            self._gene_commentaries = [GeneCommentary(n) for n in  self._xml_root.iterfind('Entrezgene_locus/Gene-commentary')]
+            self._gene_commentaries = [GeneCommentary(n) for n in  self._xml_root.iterfind("Entrezgene_locus/Gene-commentary")]
             return self._gene_commentaries
 
     @property
     def genus_species(self):
-        return self._xml_root.xpath('Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_taxname/text()')[0]
+        return self._xml_root.xpath("Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_taxname/text()")[0]
 
     @property
     def hgnc(self):
-        return self._xml_root.findtext('Entrezgene_gene/Gene-ref/Gene-ref_locus')
+        return self._xml_root.findtext("Entrezgene_gene/Gene-ref/Gene-ref_locus")
 
     @property
     def locus(self):
-        n = self._xml_root.find('Entrezgene_locus')
+        n = self._xml_root.find("Entrezgene_locus")
         return None if n is None else EntrezgeneLocus(n)
 
     @property
     def maploc(self):
-        return self._xml_root.findtext('Entrezgene_gene/Gene-ref/Gene-ref_maploc')
+        return self._xml_root.findtext("Entrezgene_gene/Gene-ref/Gene-ref_maploc")
 
     # references is a synonym for gene_commentaries
     references = gene_commentaries
@@ -58,16 +58,16 @@ class Entrezgene(Base):
     @property
     def tax_id(self):
         return int(self._xml_root.xpath(
-            'Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_db/'
+            "Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_db/"
             'Dbtag[Dbtag_db/text()="taxon"]/Dbtag_tag/Object-id/Object-id_id/text()')[0])
 
     @property
     def summary(self):
-        return self._xml_root.findtext('Entrezgene_summary')
+        return self._xml_root.findtext("Entrezgene_summary")
 
     @property
     def synonyms(self):
-        return self._xml_root.xpath('Entrezgene_gene/Gene-ref/Gene-ref_syn/Gene-ref_syn_E/text()')
+        return self._xml_root.xpath("Entrezgene_gene/Gene-ref/Gene-ref_syn/Gene-ref_syn_E/text()")
 
     @property
     def type(self):
@@ -77,8 +77,8 @@ class Entrezgene(Base):
 if __name__ == "__main__":
     import os
     from .xmlfacades.entrezgeneset import EntrezgeneSet
-    data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
-    data_file = os.path.join(data_dir, 'entrezgeneset.xml.gz')
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
+    data_file = os.path.join(data_dir, "entrezgeneset.xml.gz")
     egs = EntrezgeneSet(le.parse(data_file).getroot())
 
 

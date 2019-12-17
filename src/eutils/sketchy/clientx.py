@@ -16,20 +16,20 @@ class ClientX(Client):
 
     def fetch_gene_by_hgnc(self, hgnc):
         query = 'human[orgn] AND {hgnc}[preferred symbol] AND "current only"[Filter]'.format(hgnc=hgnc)
-        esr = self.esearch(db='gene', term=query)
+        esr = self.esearch(db="gene", term=query)
         if esr.count != 1:
             raise EutilsError("Received {n} search replies for gene {hgnc} (query: '{query}')".format(
                 n=esr.count,
                 hgnc=hgnc,
                 query=query))
-        gene = next(iter(self.efetch(db='gene', id=esr.ids[0])))
+        gene = next(iter(self.efetch(db="gene", id=esr.ids[0])))
         if hgnc != gene.hgnc:
             raise EutilsError("Queried for {q_hgnc}, got reply for gene {r_hgnc}".format(q_hgnc=hgnc, r_hgnc=gene.hgnc))
         return gene
 
     def fetch_nuccore_by_ac(self, acv):
         query = acv
-        db = 'nuccore'
+        db = "nuccore"
         esr = self.esearch(db=db, term=query)
         if esr.count > 1:
             raise EutilsError("Received {n} replies for {acv} in database {db}".format(n=esr.count, acv=acv, db=db))
@@ -42,15 +42,15 @@ class ClientX(Client):
 
     fetch_gbseq_by_ac = fetch_nuccore_by_ac
 
-    def fetch_snps_for_gene(self, hgnc, organism='human'):
-        db = 'snp'
-        esr = self.esearch(db=db, term='%s[gene name] AND %s[organism]' % (hgnc, organism))
+    def fetch_snps_for_gene(self, hgnc, organism="human"):
+        db = "snp"
+        esr = self.esearch(db=db, term="%s[gene name] AND %s[organism]" % (hgnc, organism))
         if esr.count == 0:
             raise EutilsNotFoundError("No results for gene {hgnc} and organism {o} in database {db}".format(
                 hgnc=hgnc,
                 o=organism,
                 db=db))
-        return next(iter(self.efetch(db=db, id=','.join(map(str, esr.ids)))))
+        return next(iter(self.efetch(db=db, id=",".join(map(str, esr.ids)))))
 
 
 # <LICENSE>

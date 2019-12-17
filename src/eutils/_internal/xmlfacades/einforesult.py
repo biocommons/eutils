@@ -25,25 +25,25 @@ from .dblist import DbList
 
 class EInfoResult(Base):
 
-    _root_tag = 'eInfoResult'
+    _root_tag = "eInfoResult"
 
     @property
     def type(self):
         "return 'dblist' or 'dbinfo' corresponding to the two major kinds of EInfoResult replies"
         childtag = self._xml_root[0].tag
-        if childtag == 'DbInfo':
-            return 'dbinfo'
-        elif childtag == 'DbList':
-            return 'dblist'
+        if childtag == "DbInfo":
+            return "dbinfo"
+        elif childtag == "DbList":
+            return "dblist"
         raise RuntimeError("Shouldn't be here; EInfoResult contains neither a DbList nor a DbInfo")
 
     @property
     def dbinfo(self):
-        return DbInfo(self._child('DbInfo'))
+        return DbInfo(self._child("DbInfo"))
 
     @property
     def dblist(self):
-        return DbList(self._child('DbList'))
+        return DbList(self._child("DbList"))
 
     # Internal Methods
     def _child(self, tag):
@@ -57,10 +57,10 @@ if __name__ == "__main__":
 
     import os
     import lxml.etree as le
-    data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
 
-    dir_path = os.path.join(data_dir, 'einfo.fcgi?db=protein&retmode=xml.xml.gz')
-    dlr_path = os.path.join(data_dir, 'einfo.fcgi?retmode=xml.xml.gz')
+    dir_path = os.path.join(data_dir, "einfo.fcgi?db=protein&retmode=xml.xml.gz")
+    dlr_path = os.path.join(data_dir, "einfo.fcgi?retmode=xml.xml.gz")
 
     eiinfo = eutils.xmlfacades.einforesult.EInfoResult(le.parse(dir_path).getroot())
     eilist = eutils.xmlfacades.einforesult.EInfoResult(le.parse(dlr_path).getroot())

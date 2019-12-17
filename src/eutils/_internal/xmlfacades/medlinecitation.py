@@ -7,81 +7,81 @@ from .base import Base
 
 class MedlineCitation(Base):
 
-    _root_tag = 'MedlineCitation'
+    _root_tag = "MedlineCitation"
 
     @property
     def abstract(self):
-        # return self._xml_root.findtext('Article/Abstract/AbstractText')
+        # return self._xml_root.findtext("Article/Abstract/AbstractText")
         return " ".join(["".join(at.itertext()) for at in self._xml_root.findall('Article/Abstract/AbstractText')])
 
     @property
     def authors(self):
         # N.B. Citations may have 0 authors. e.g., pmid:7550356
-        # Citations may also have a 'CollectiveName' author instead of one with a forename, lastname, and initials
+        # Citations may also have a "CollectiveName" author instead of one with a forename, lastname, and initials
         def _format_author(au):
-            if au.find('CollectiveName') is not None:
-                return au.find('CollectiveName').text
-            elif au.find('LastName') is not None and au.find('Initials') is not None:
-                return au.find('LastName').text + ' ' + au.find('Initials').text
+            if au.find("CollectiveName") is not None:
+                return au.find("CollectiveName").text
+            elif au.find("LastName") is not None and au.find("Initials") is not None:
+                return au.find("LastName").text + " " + au.find("Initials").text
             else:
-                return au.find('LastName').text
+                return au.find("LastName").text
 
-        return [_format_author(au) for au in self._xml_root.xpath('Article/AuthorList/Author')]
+        return [_format_author(au) for au in self._xml_root.xpath("Article/AuthorList/Author")]
 
     @property
     def chemicals(self):
-        return self._xml_root.xpath('ChemicalList/Chemical/NameOfSubstance/text()')
+        return self._xml_root.xpath("ChemicalList/Chemical/NameOfSubstance/text()")
 
     @property
     def issue(self):
-        return self._xml_root.findtext('Article/Journal/JournalIssue/Issue')
+        return self._xml_root.findtext("Article/Journal/JournalIssue/Issue")
 
     @property
     def jrnl(self):
-        return self._xml_root.findtext('Article/Journal/ISOAbbreviation') or self._xml_root.findtext(
-            'Article/Journal/Title')
+        return self._xml_root.findtext("Article/Journal/ISOAbbreviation") or self._xml_root.findtext(
+            "Article/Journal/Title")
 
     @property
     def mesh_headings(self):
-        return self._xml_root.xpath('MeshHeadingList/MeshHeading/DescriptorName/text()')
+        return self._xml_root.xpath("MeshHeadingList/MeshHeading/DescriptorName/text()")
 
     @property
     def mesh_qualifiers(self):
-        return self._xml_root.xpath('MeshHeadingList/MeshHeading/QualifierName/text()')
+        return self._xml_root.xpath("MeshHeadingList/MeshHeading/QualifierName/text()")
 
     @property
     def pages(self):
-        return self._xml_root.findtext('Article/Pagination/MedlinePgn')
+        return self._xml_root.findtext("Article/Pagination/MedlinePgn")
 
     @property
     def pmid(self):
-        return self._xml_root.findtext('PMID')
+        return self._xml_root.findtext("PMID")
 
     @property
     def pub_types(self):
-        return self._xml_root.xpath('Article/PublicationTypeList/PublicationType/text()')
+        return self._xml_root.xpath("Article/PublicationTypeList/PublicationType/text()")
 
     @property
     def title(self):
-        return self._xml_root.findtext('Article/ArticleTitle')
+        return self._xml_root.findtext("Article/ArticleTitle")
 
     @property
     def volume(self):
-        return self._xml_root.findtext('Article/Journal/JournalIssue/Volume')
+        return self._xml_root.findtext("Article/Journal/JournalIssue/Volume")
 
     @property
     def year(self):
-        return self._xml_root.findtext('Article/Journal/JournalIssue/PubDate/Year') \
-          or self._xml_root.findtext('Article/Journal/JournalIssue/PubDate/Year') \
-          or self._xml_root.findtext('Article/Journal/JournalIssue/PubDate/MedlineDate')
+        return self._xml_root.findtext("Article/Journal/JournalIssue/PubDate/Year") \
+          or self._xml_root.findtext("Article/Journal/JournalIssue/PubDate/Year") \
+          or self._xml_root.findtext("Article/Journal/JournalIssue/PubDate/MedlineDate")
 
 
 if __name__ == "__main__":
     import lxml.etree as le
     import os
 
-    data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'tests', 'data')
-    path = os.path.join(data_dir, 'medlinecitation-id=20412080.xml.gz')
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
+    path = os.path.join(data_dir, "medlinecitation-id=20412080.xml.gz")
 
     mc = MedlineCitation(le.parse(path).getroot())
 

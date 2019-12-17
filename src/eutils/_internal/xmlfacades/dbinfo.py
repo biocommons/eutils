@@ -21,31 +21,31 @@ from .base import Base
 
 class DbInfo(Base):
 
-    _root_tag = 'DbInfo'
+    _root_tag = "DbInfo"
 
     @property
     def dbname(self):
-        return self._xml_root.findtext('DbName')
+        return self._xml_root.findtext("DbName")
 
     @property
     def menuname(self):
-        return self._xml_root.findtext('MenuName')
+        return self._xml_root.findtext("MenuName")
 
     @property
     def description(self):
-        return self._xml_root.findtext('Description')
+        return self._xml_root.findtext("Description")
 
     @property
     def dbbuild(self):
-        return self._xml_root.findtext('DbBuild')
+        return self._xml_root.findtext("DbBuild")
 
     @property
     def count(self):
-        return self._xml_root.findtext('Count')
+        return self._xml_root.findtext("Count")
 
     @property
     def lastupdate(self):
-        return self._xml_root.findtext('LastUpdate')
+        return self._xml_root.findtext("LastUpdate")
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

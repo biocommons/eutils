@@ -19,7 +19,7 @@ class EntrezgeneSet(Base):
 
     """
 
-    _root_tag = 'Entrezgene-Set'
+    _root_tag = "Entrezgene-Set"
 
     @property
     def entrezgenes(self):
@@ -30,7 +30,7 @@ class EntrezgeneSet(Base):
             return self._entrezgenes
 
     def _entrezgene_nodes(self):
-        return self._xml_root.iterfind('Entrezgene')
+        return self._xml_root.iterfind("Entrezgene")
 
     def __iter__(self):
         return (eg for eg in self.entrezgenes)

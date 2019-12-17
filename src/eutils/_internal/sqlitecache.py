@@ -48,15 +48,15 @@ class SQLiteCache(object):
         ############################################################################
         ## Special Python methods
     def __str__(self):
-        return 'SQLiteCache(db_path={self._db_path},compress_values={self.compress_values})'.format(self=self)
+        return "SQLiteCache(db_path={self._db_path},compress_values={self.compress_values})".format(self=self)
 
     def __dir__(self):
-        self._logger.debug('__dir__()')
-        return [key_from(row[0]) for row in self._execute('SELECT key FROM cache', [])]
+        self._logger.debug("__dir__()")
+        return [key_from(row[0]) for row in self._execute("SELECT key FROM cache", [])]
 
     def __getitem__(self, key):
-        self._logger.debug('__getitem__({key})'.format(key=key))
-        cur = self._execute('SELECT value,value_compressed FROM cache WHERE key = ?', [key_to(key)])
+        self._logger.debug("__getitem__({key})".format(key=key))
+        cur = self._execute("SELECT value,value_compressed FROM cache WHERE key = ?", [key_to(key)])
         row = cur.fetchone()
         if row is None:
             raise KeyError(key)
@@ -64,46 +64,46 @@ class SQLiteCache(object):
 
     def __setitem__(self, key, value):
         db_val = val_to(value, self.compress_values)
-        self._logger.debug('__setitem__({key},({vlen} bytes))'.format(key=key, vlen=len(db_val)))
-        self._execute('INSERT OR REPLACE INTO cache (key,value_compressed,value) VALUES (?,?,?)',
+        self._logger.debug("__setitem__({key},({vlen} bytes))".format(key=key, vlen=len(db_val)))
+        self._execute("INSERT OR REPLACE INTO cache (key,value_compressed,value) VALUES (?,?,?)",
                       [key_to(key), self.compress_values, db_val])
 
     def __delitem__(self, key):
-        self._logger.debug('__delitem__({key})'.format(key=key))
-        cur = self._execute('DELETE FROM cache WHERE key = ?', [key_to(key)])
+        self._logger.debug("__delitem__({key})".format(key=key))
+        cur = self._execute("DELETE FROM cache WHERE key = ?", [key_to(key)])
         if cur.rowcount == 0:
             raise KeyError(key)
 
     def __contains__(self, key):
-        self._logger.debug('__contains__({key})'.format(key=key))
-        return self._fetch1v('SELECT EXISTS(SELECT 1 FROM cache WHERE key=? LIMIT 1)', [key_to(key)])
+        self._logger.debug("__contains__({key})".format(key=key))
+        return self._fetch1v("SELECT EXISTS(SELECT 1 FROM cache WHERE key=? LIMIT 1)", [key_to(key)])
 
     ############################################################################
     ## Internal functions
 
     def _connect(self, db_path):
-        assert self._con is None, 'already connected'
+        assert self._con is None, "already connected"
         self._con = sqlite3.connect(db_path, isolation_level=None, check_same_thread=False)
         self._con.text_factory = str
         self._db_path = db_path
-        self._logger.info('opened ' + db_path)
+        self._logger.info("opened " + db_path)
         sver = self._get_schema_version()
-        self._logger.debug('schema version is ' + str(sver))
+        self._logger.debug("schema version is " + str(sver))
         if sver is None:
             self._execute(
                 "CREATE TABLE cache (key BLOB PRIMARY KEY, created INTEGER DEFAULT (strftime('%s','now')), value_compressed BOOL, value BLOB)")
             self._execute("CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL)")
             self._execute("INSERT INTO meta (key, value) VALUES (?,?)", ['schema version', 1])
-            self._logger.debug('created tables')
+            self._logger.debug("created tables")
 
     def _get_schema_version(self):
         if ('meta', ) not in self._execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall():
             return None
-        return self._fetch1v('SELECT value FROM meta WHERE key = ?', ['schema version'])
+        return self._fetch1v("SELECT value FROM meta WHERE key = ?", ["schema version"])
 
     def _execute(self, query, params=[]):
         cur = self._con.cursor()
-        self._logger.debug('executing query <{query}> with params <{nvars} vars>'.format(
+        self._logger.debug("executing query <{query}> with params <{nvars} vars>".format(
             query=query,
             nvars=len(params)))
         cur.execute(query, params)
@@ -113,9 +113,9 @@ class SQLiteCache(object):
         return self._execute(query, params).fetchone()[0]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
-    c = SQLiteCache('/tmp/SQLiteCache-test.db')
+    c = SQLiteCache("/tmp/SQLiteCache-test.db")
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

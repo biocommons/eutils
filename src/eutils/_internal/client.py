@@ -65,12 +65,12 @@ class Client(object):
 
         if db is None:
             return EInfoResult(self._qs.einfo()).dblist
-        return EInfoResult(self._qs.einfo({'db': db, 'version': '2.0'})).dbinfo
+        return EInfoResult(self._qs.einfo({"db": db, "version": "2.0"})).dbinfo
 
     def esearch(self, db, term):
         """query the esearch endpoint
         """
-        esr = ESearchResult(self._qs.esearch({'db': db, 'term': term}))
+        esr = ESearchResult(self._qs.esearch({"db": db, "term": term}))
         if esr.count > esr.retmax:
             logger.warning("NCBI found {esr.count} results, but we truncated the reply at {esr.retmax}"
                         " results; see https://github.com/biocommons/eutils/issues/124/".format(esr=esr))
@@ -80,20 +80,20 @@ class Client(object):
         """query the efetch endpoint
         """
         db = db.lower()
-        xml = self._qs.efetch({'db': db, 'id': str(id)})
+        xml = self._qs.efetch({"db": db, "id": str(id)})
         doc = le.XML(xml)
-        if db in ['gene']:
+        if db in ["gene"]:
             return EntrezgeneSet(doc)
-        if db in ['nuccore', 'nucest', 'protein']:
+        if db in ["nuccore", "nucest", "protein"]:
             # TODO: GBSet is misnamed; it should be GBSeq and get the GBSeq XML node as root (see gbset.py)
             return GBSet(doc)
-        if db in ['pubmed']:
+        if db in ["pubmed"]:
             return PubmedArticleSet(doc)
-        if db in ['snp']:
+        if db in ["snp"]:
             return ExchangeSet(xml)
-        if db in ['pmc']:
+        if db in ["pmc"]:
             return PubmedCentralArticleSet(doc)
-        raise EutilsError('database {db} is not currently supported by eutils'.format(db=db))
+        raise EutilsError("database {db} is not currently supported by eutils".format(db=db))
 
 
 # <LICENSE>
