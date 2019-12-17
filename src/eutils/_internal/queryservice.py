@@ -311,7 +311,9 @@ class QueryService(object):
                 raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=json["error"]))
             try:
                 xml = lxml.etree.fromstring(r.text.encode('utf-8'))
-                raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=xml.find('ERROR').text))
+                errornode = xml.find('ERROR')
+                errormsg = errornode.text if errornode else "Unknown Error"
+                raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=errormsg))
             except Exception as ex:
                 raise EutilsNCBIError('Error parsing response object from NCBI: {}'.format(ex))
 
