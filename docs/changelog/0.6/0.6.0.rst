@@ -1,0 +1,38 @@
+
+0.6.0 (2019-12-17)
+###################
+
+Changes since 0.5.2 (2019-05-15).
+
+Special Attention
+$$$$$$$$$$$$$$$$$$
+
+Support for Python 2.7 has been dropped.
+
+Deprecations
+$$$$$$$$$$$$$
+
+
+Bug Fixes
+$$$$$$$$$$
+
+* Closes `#164 <https://github.com/biocommons/eutils/issues/164/>`_: Handle cases of NCBI error response without ERROR message [`2e55029 <https://github.com/biocommons/eutils/commit/2e55029>`_] (Reece Hart)
+
+New Features
+$$$$$$$$$$$$$
+
+
+Other Changes
+$$$$$$$$$$$$$$
+
+* Replace deprecated time.clock function (`#165 <https://github.com/biocommons/eutils/issues/165/>`_) [`caeff2b <https://github.com/biocommons/eutils/commit/caeff2b>`_] (Jeff van Santen)
+* Replaced process_time() with monotonic(), which measures elapsed time [`d4508f8 <https://github.com/biocommons/eutils/commit/d4508f8>`_] (Reece Hart)
+
+Internal and Developer Changes
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+* Add .deepsource.toml, Fix issues raised by DeepSource (`#163 <https://github.com/biocommons/eutils/issues/163/>`_) [`db41c8b <https://github.com/biocommons/eutils/commit/db41c8b>`_] (Mohit Solanki)
+* Dropped python 2.7 support [`3e53fa2 <https://github.com/biocommons/eutils/commit/3e53fa2>`_] (Reece Hart)
+* Closes `#166 <https://github.com/biocommons/eutils/issues/166/>`_: Remove six and _internal/compat.py [`b5d4e84 <https://github.com/biocommons/eutils/commit/b5d4e84>`_] (Reece Hart)
+* Sync with current biocommons conventions: use setup.cfg, use src/, Makefile updates, drop req files [`a232d9b <https://github.com/biocommons/eutils/commit/a232d9b>`_] (Reece Hart)
+* Add support for testing on Python 3.8 on travis and tox [`0e6e2f0 <https://github.com/biocommons/eutils/commit/0e6e2f0>`_] (Reece Hart)
