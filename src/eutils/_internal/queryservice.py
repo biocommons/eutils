@@ -71,8 +71,9 @@ class QueryService(object):
 
     Implementing other query modes should be straightforward.
 
-    See also the NCBI's Entrez Programming Utilities Help: 
-        http://www.ncbi.nlm.nih.gov/books/NBK25500/
+    See also  
+        * http://www.ncbi.nlm.nih.gov/books/NBK25500/ :the NCBI's Entrez Programming Utilities Help
+        * http://www.ncbi.nlm.nih.gov/books/NBK25499/ :NCBI E-utilities
 
     """
 
