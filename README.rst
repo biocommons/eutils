@@ -6,7 +6,6 @@ eutils -- a simplified interface to NCBI E-Utilities
 eutils is a Python package to simplify searching, fetching, and
 parsing records from NCBI using their E-utilities_ interface.
 
-
 News
 ----
 
@@ -14,6 +13,10 @@ News
   dropped. See the `0.6 ChangeLog
   <https://eutils.readthedocs.io/en/stable/changelog/0.6.html>`_.
 
+
+Documentation
+--------------
+See https://eutils.readthedocs.io/en/stable/
 
 
 Features
