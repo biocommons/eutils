@@ -10,6 +10,7 @@ from ._versionwarning import *
 # flake8: noqa
 from ._internal.client import Client
 from ._internal.exceptions import EutilsError, EutilsNCBIError, EutilsNotFoundError, EutilsRequestError
+from ._internal.sqlitecache import SQLiteCache
 from ._internal.queryservice import QueryService
 from ._internal.versionwarning import warnings
 
