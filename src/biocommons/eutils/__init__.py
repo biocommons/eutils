@@ -1,19 +1,21 @@
 # -*- coding: utf-8 -*-
 import importlib.metadata
-import warnings
 
-
-# flake8: noqa
 from ._internal.client import Client
 from ._internal.exceptions import EutilsError, EutilsNCBIError, EutilsNotFoundError, EutilsRequestError
 from ._internal.queryservice import QueryService
 
+__all__ = [
+    "Client",
+    "EutilsError",
+    "EutilsNCBIError",
+    "EutilsNotFoundError",
+    "EutilsRequestError",
+    "QueryService",
+]
 
-try:
-    __version__ = importlib.metadata.version(__name__)
-except importlib.metadata.PackageNotFoundError as e:
-    warnings.warn("can't get __version__ because %s package isn't installed" % __package__, Warning)
-    __version__ = None
+
+__version__ = importlib.metadata.version(__name__)
 
 
 # <LICENSE>
