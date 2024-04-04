@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import importlib.metadata
+from importlib.metadata import PackageNotFoundError, version
 
 from ._internal.client import Client
 from ._internal.exceptions import EutilsError, EutilsNCBIError, EutilsNotFoundError, EutilsRequestError
@@ -14,9 +14,11 @@ __all__ = [
     "QueryService",
 ]
 
-
-__version__ = importlib.metadata.version(__name__)
-
+try:
+    __version__ = version(__package__)
+except PackageNotFoundError:  # pragma: no cover
+    # package is not installed
+    __version__ = None
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
