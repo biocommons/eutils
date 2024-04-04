@@ -6,16 +6,16 @@ import os
 
 import lxml.etree as le
 
-from eutils import Client
+from biocommons.eutils import Client
 
 # new style
-from eutils.xmlfacades.esearchresult import ESearchResult
-from eutils.xmlfacades.entrezgeneset import EntrezgeneSet
+from biocommons.eutils._internal.xmlfacades.esearchresult import ESearchResult
+from biocommons.eutils._internal.xmlfacades.entrezgeneset import EntrezgeneSet
 
 logging.basicConfig(level=logging.DEBUG)
 
 data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)),'..','tests','data')
-ec = eutils.client.Client()
+ec = Client()
 
 
 if True:

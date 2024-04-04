@@ -4,18 +4,18 @@ Modules
 Main Classes
 @@@@@@@@@@@@
 
-.. autoclass:: eutils.Client
-.. autoclass:: eutils.QueryService
+.. autoclass:: biocommons.eutils.Client
+.. autoclass:: biocommons.eutils.QueryService
 
 Exceptions
 @@@@@@@@@@
 
-.. autoclass:: eutils.EutilsError
-.. autoclass:: eutils.EutilsNCBIError
-.. autoclass:: eutils.EutilsNotFoundError
-.. autoclass:: eutils.EutilsRequestError
+.. autoclass:: biocommons.eutils.EutilsError
+.. autoclass:: biocommons.eutils.EutilsNCBIError
+.. autoclass:: biocommons.eutils.EutilsNotFoundError
+.. autoclass:: biocommons.eutils.EutilsRequestError
 
 Experimental
 @@@@@@@@@@@@
 
-.. automodule:: eutils.sketchy.clientx
+.. automodule:: biocommons.eutils.sketchy.clientx

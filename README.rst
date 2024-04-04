@@ -36,7 +36,7 @@ is registered. Unregistered clients are limited to 3 requests/second;
 registered clients are granted 10 requests/second, and may request
 more. See the `NCBI Announcement
 <https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/>`_
-for more information. 
+for more information.
 
 The eutils package will automatically throttle requests according to
 NCBI guidelines (3 or 10 requests/second without or with an API key,
@@ -47,8 +47,8 @@ respectively).
   $ pip install eutils
   $ ipython
 
-  >>> from eutils import Client
-  
+  >>> from biocmmons.eutils import Client
+
   # Initialize a client. This client handles all caching and query
   # throttling.  For example:
   >>> ec = Client(api_key=os.environ.get("NCBI_API_KEY", None))
@@ -56,10 +56,10 @@ respectively).
   # search for tumor necrosis factor genes
   # any valid NCBI query may be used
   >>> esr = ec.esearch(db='gene',term='tumor necrosis factor')
-  
+
   # fetch one of those (gene id 7157 is human TNF)
   >>> egs = ec.efetch(db='gene', id=7157)
-  
+
   # One may fetch multiple genes at a time. These are returned as an
   # EntrezgeneSet. We'll grab the first (and only) child, which returns
   # an instance of the Entrezgene class.
@@ -74,10 +74,10 @@ respectively).
   [('NC_000017.11', 'Chromosome 17 Reference GRCh38...'),
    ('NC_018928.2', 'Chromosome 17 Alternate ...'),
    ('NG_017013.2', 'RefSeqGene')]
-  
+
   # Get the first three products defined on GRCh38
   #>>> [p.acv for p in eg.references[0].products][:3]
-  #['NM_001126112.2', 'NM_001276761.1', 'NM_000546.5'] 
+  #['NM_001126112.2', 'NM_001276761.1', 'NM_000546.5']
 
   # As a sample, grab the first product defined on this reference (order is arbitrary)
   >>> mrna = eg.references[0].products[0]
