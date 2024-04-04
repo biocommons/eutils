@@ -1,0 +1,95 @@
+[project]
+name = "biocommons.eutils"
+authors = [
+  { name="biocommons contributors", email="biocommons-dev@googlegroups.com" },
+]
+description = "Python interface to NCBI's eutilities API"
+readme = "README.md"
+license = { file="LICENSE.txt" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dynamic = ["version"]
+dependencies = [
+    "lxml",
+    "pytz",
+    "requests",
+]
+
+[project.optional-dependencies]
+dev = [
+    "flake8",
+    "ipython",
+    "mock",
+    "pytest",
+    "pytest-cov",
+    "restview",
+    "setuptools",
+    "sphinx",
+    "sphinx_rtd_theme",
+    "tox",
+    "vcrpy",
+    "yapf",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/biocommons/eutils"
+"Bug Tracker" = "https://github.com/biocommons/eutils/issues"
+
+
+[build-system]
+requires = [
+	 "setuptools >= 65.3",
+   	 "setuptools_scm[toml] ~= 7.0"
+	 ]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = [
+	"src",
+]
+exclude = [
+	"__pycache__",
+	"*.pyc",
+]
+namespaces = true
+
+[tool.setuptools.package-data]
+"*" = [
+	"*.gz",
+	"*.json",
+	"*.yaml",
+]
+
+
+[tool.setuptools_scm]
+
+
+# https://docs.pytest.org/en/6.2.x/customize.html#pyproject-toml
+[tool.pytest.ini_options]
+testpaths = [
+    "src",
+    "tests"
+]
+addopts = "--doctest-modules --cov-config=setup.cfg --cov-report=term-missing --cov=src"
+doctest_optionflags = [
+    "ALLOW_BYTES",
+    "ALLOW_UNICODE",
+    "ELLIPSIS",
+    "IGNORE_EXCEPTION_DETAIL",
+    "NORMALIZE_WHITESPACE",
+]
+markers = [
+	"network: tests that require network connectivity",
+	"slow: slow tests that should be run infrequently",
+]

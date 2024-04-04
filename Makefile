@@ -38,7 +38,7 @@ venv/%:
 #=> develop: install package in develop mode
 .PHONY: develop
 develop:
-	pip install -e .[dev,extras,notebooks]
+	pip install -e .[dev]
 
 #=> devready: create venv, install prerequisites, install pkg in develop mode
 .PHONY: devready
@@ -53,10 +53,6 @@ devready:
 .PHONY: bdist bdist_egg bdist_wheel build build_sphinx sdist install
 bdist bdist_egg bdist_wheel build sdist install: %:
 	python setup.py $@
-
-.PHONY: install-extras
-install-extras:
-	pip install -e .[extras]
 
 
 ############################################################################
@@ -114,13 +110,13 @@ cleanest: cleaner
 
 ## <LICENSE>
 ## Copyright 2016 Source Code Committers
-## 
+##
 ## Licensed under the Apache License, Version 2.0 (the "License");
 ## you may not use this file except in compliance with the License.
 ## You may obtain a copy of the License at
-## 
+##
 ##     http://www.apache.org/licenses/LICENSE-2.0
-## 
+##
 ## Unless required by applicable law or agreed to in writing, software
 ## distributed under the License is distributed on an "AS IS" BASIS,
 ## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
