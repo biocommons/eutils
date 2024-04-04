@@ -44,7 +44,7 @@ respectively).
 
 ::
 
-  $ pip install eutils
+  $ pip install biocommons.eutils
   $ ipython
 
   >>> from biocmmons.eutils import Client

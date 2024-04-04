@@ -4,7 +4,7 @@ authors = [
   { name="biocommons contributors", email="biocommons-dev@googlegroups.com" },
 ]
 description = "Python interface to NCBI's eutilities API"
-readme = "README.md"
+readme = "README.rst"
 license = { file="LICENSE.txt" }
 requires-python = ">=3.10"
 classifiers = [
