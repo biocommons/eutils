@@ -14,8 +14,8 @@ from mock import patch, MagicMock
 import pytest
 import vcr
 
-from eutils._internal.queryservice import QueryService
-from eutils._internal.exceptions import EutilsNCBIError, EutilsRequestError
+from biocommons.eutils._internal.queryservice import QueryService
+from biocommons.eutils._internal.exceptions import EutilsNCBIError, EutilsRequestError
 
 
 def assert_in_xml(xml, item):
