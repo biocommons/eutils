@@ -1,103 +1,359 @@
 interactions:
 - request:
-    body: tool=eutils&email=biocommons-dev%40googlegroups.com&retmode=xml&usehistory=y&retmax=250&db=pubmed&id=29915538
+    body: tool=biocommons.eutils._internal&email=biocommons-dev%40googlegroups.com&retmode=xml&usehistory=y&retmax=250&db=pubmed&id=29915538
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Length: ['109']
-      Content-Type: [application/x-www-form-urlencoded]
-      User-Agent: [python-requests/2.19.1]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.31.0
     method: POST
     uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi
   response:
     body:
-      string: !!binary |
-        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
-        AAAA//8DACN2xpHGRgAA
+      string: '<?xml version="1.0" ?>
+
+        <!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January
+        2024//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_240101.dtd">
+
+        <PubmedArticleSet>
+
+        <PubmedArticle><MedlineCitation Status="PubMed-not-MEDLINE" Owner="NLM"><PMID
+        Version="1">29915538</PMID><DateRevised><Year>2020</Year><Month>09</Month><Day>30</Day></DateRevised><Article
+        PubModel="Electronic-eCollection"><Journal><ISSN IssnType="Print">1663-9812</ISSN><JournalIssue
+        CitedMedium="Print"><Volume>9</Volume><PubDate><Year>2018</Year></PubDate></JournalIssue><Title>Frontiers
+        in pharmacology</Title><ISOAbbreviation>Front Pharmacol</ISOAbbreviation></Journal><ArticleTitle>Efficacy
+        and Safety of Once-Weekly Semaglutide for the Treatment of Type 2 Diabetes:
+        A Systematic Review and Meta-Analysis of Randomized Controlled Trials.</ArticleTitle><Pagination><StartPage>576</StartPage><MedlinePgn>576</MedlinePgn></Pagination><ELocationID
+        EIdType="pii" ValidYN="Y">576</ELocationID><ELocationID EIdType="doi" ValidYN="Y">10.3389/fphar.2018.00576</ELocationID><Abstract><AbstractText><b>Background:</b>
+        Semaglutide, a newly once-weekly glucagon like peptide-1 (GLP-1) receptor
+        agonist, has showed a favorable effect on glycaemic control and weight reduction
+        in type 2 diabetes mellitus (T2DM). This meta-analysis was conducted to evaluate
+        the clinical efficacy and safety of semaglutide in T2DM. <b>Methods:</b> A
+        comprehensive searching was performed for Phase III randomized controlled
+        trials (RCTs) which reported the efficacy and safety data of semaglutide and
+        other therapies. The efficacy data expressed as weight mean difference (WMD)
+        and the safety data expressed as risk ratios (RRs) were calculated by employing
+        random-effects model. Heterogeneity was assessed through I<sup>2</sup> test,
+        and subgroup analyses were performed by different control groups, dosage of
+        semaglutide, and durations of follow up. <b>Results:</b> 9 RCTs including
+        9,773 subjects met the inclusion criteria. For efficacy, compared with other
+        therapies, semaglutide resulted in a significant reduction in glycosylated
+        hemoglobin (weight mean difference, WMD: -0.93%, 95% CI: -1.24 to -0.62, <i>P</i>
+        &lt; 0.001), fasting plasma glucose (WMD: -1.15 mmol/L, 95% CI: -1.67 to -0.63,
+        <i>P</i> &lt; 0.001), mean self-monitoring of plasma glucose (WMD: -1.19 mmol/L,
+        95% CI: -1.68 to -0.70, <i>P</i> &lt; 0.001), body weight (WMD: -3.47 kg,
+        95% CI: -3.96 to -2.98, <i>P</i> &lt; 0.001), body mass index (WMD: -1.25
+        kg/m<sup>2</sup>, 95% CI: -1.45 to -1.04, <i>P</i> &lt; 0.001), systolic blood
+        pressure (WMD: -2.55 mmHg, 95% CI: -3.22 to -1.88, <i>P</i> &lt; 0.001), with
+        the exception of negative result of diastolic blood pressure (WMD: -0.29 mmHg,
+        95% CI: -0.65 to 0.07, <i>P</i> = 0.113) and increased impact on pulse rate
+        (WMD: -2.21, 95% CI: 1.54 to 2.88, <i>P</i> &lt; 0.001). The results were
+        consistent across the key subgroups. For safety, semaglutide did not increase
+        the risk of any adverse events, hypoglycemia and pancreatitis, but induced
+        a higher risk of gastrointestinal disorders when compared with other therapies
+        (RR: 1.98, 95%CI: 1.49 to 2.62, <i>P</i> &lt; 0.001). <b>Conclusion:</b> Semaglutide
+        was effective and acceptable in patients with T2DM except for a high risk
+        of gastrointestinal disorders. The capacity of glycaemic and body weight control
+        of semaglutide appeared more effective than other add-on therapies including
+        other GLP-1 receptor agonists of exenatide release and dulaglutide.</AbstractText></Abstract><AuthorList
+        CompleteYN="Y"><Author ValidYN="Y"><LastName>Shi</LastName><ForeName>Fang-Hong</ForeName><Initials>FH</Initials><AffiliationInfo><Affiliation>Department
+        of Pharmacy, Renji Hospital, School of Medicine, Shanghai Jiaotong University,
+        Shanghai, China.</Affiliation></AffiliationInfo></Author><Author ValidYN="Y"><LastName>Li</LastName><ForeName>Hao</ForeName><Initials>H</Initials><AffiliationInfo><Affiliation>Department
+        of Pharmacy, Shanghai Children''s Medical Center, School of Medicine, Shanghai
+        Jiaotong University, Shanghai, China.</Affiliation></AffiliationInfo></Author><Author
+        ValidYN="Y"><LastName>Cui</LastName><ForeName>Min</ForeName><Initials>M</Initials><AffiliationInfo><Affiliation>Department
+        of Pharmacy, Renji Hospital, School of Medicine, Shanghai Jiaotong University,
+        Shanghai, China.</Affiliation></AffiliationInfo></Author><Author ValidYN="Y"><LastName>Zhang</LastName><ForeName>Zai-Li</ForeName><Initials>ZL</Initials><AffiliationInfo><Affiliation>Department
+        of Pharmacy, Renji Hospital, School of Medicine, Shanghai Jiaotong University,
+        Shanghai, China.</Affiliation></AffiliationInfo></Author><Author ValidYN="Y"><LastName>Gu</LastName><ForeName>Zhi-Chun</ForeName><Initials>ZC</Initials><AffiliationInfo><Affiliation>Department
+        of Pharmacy, Renji Hospital, School of Medicine, Shanghai Jiaotong University,
+        Shanghai, China.</Affiliation></AffiliationInfo></Author><Author ValidYN="Y"><LastName>Liu</LastName><ForeName>Xiao-Yan</ForeName><Initials>XY</Initials><AffiliationInfo><Affiliation>Department
+        of Pharmacy, Renji Hospital, School of Medicine, Shanghai Jiaotong University,
+        Shanghai, China.</Affiliation></AffiliationInfo></Author></AuthorList><Language>eng</Language><PublicationTypeList><PublicationType
+        UI="D016428">Journal Article</PublicationType></PublicationTypeList><ArticleDate
+        DateType="Electronic"><Year>2018</Year><Month>06</Month><Day>04</Day></ArticleDate></Article><MedlineJournalInfo><Country>Switzerland</Country><MedlineTA>Front
+        Pharmacol</MedlineTA><NlmUniqueID>101548923</NlmUniqueID><ISSNLinking>1663-9812</ISSNLinking></MedlineJournalInfo><KeywordList
+        Owner="NOTNLM"><Keyword MajorTopicYN="N">glucagon-like peptide-1 receptor
+        agonists</Keyword><Keyword MajorTopicYN="N">meta-analysis</Keyword><Keyword
+        MajorTopicYN="N">randomized controlled trials</Keyword><Keyword MajorTopicYN="N">semaglutide</Keyword><Keyword
+        MajorTopicYN="N">type 2 diabetes</Keyword></KeywordList></MedlineCitation><PubmedData><History><PubMedPubDate
+        PubStatus="received"><Year>2018</Year><Month>3</Month><Day>1</Day></PubMedPubDate><PubMedPubDate
+        PubStatus="accepted"><Year>2018</Year><Month>5</Month><Day>14</Day></PubMedPubDate><PubMedPubDate
+        PubStatus="entrez"><Year>2018</Year><Month>6</Month><Day>20</Day><Hour>6</Hour><Minute>0</Minute></PubMedPubDate><PubMedPubDate
+        PubStatus="pubmed"><Year>2018</Year><Month>6</Month><Day>20</Day><Hour>6</Hour><Minute>0</Minute></PubMedPubDate><PubMedPubDate
+        PubStatus="medline"><Year>2018</Year><Month>6</Month><Day>20</Day><Hour>6</Hour><Minute>1</Minute></PubMedPubDate><PubMedPubDate
+        PubStatus="pmc-release"><Year>2018</Year><Month>6</Month><Day>4</Day></PubMedPubDate></History><PublicationStatus>epublish</PublicationStatus><ArticleIdList><ArticleId
+        IdType="pubmed">29915538</ArticleId><ArticleId IdType="pmc">PMC5994433</ArticleId><ArticleId
+        IdType="doi">10.3389/fphar.2018.00576</ArticleId></ArticleIdList><ReferenceList><Reference><Citation>Ahmann
+        A. J., Capehorn M., Charpentier G., Dotta F., Henkel E., Lingvay I. (2018).
+        Efficacy and safety of once-weekly semaglutide versus exenatide ER in subjects
+        with type 2 diabetes (SUSTAIN 3): a 56-week, open-label, randomized clinical
+        trial. Diabetes Care 41, 258&#x2013;266. 10.2337/dc17-0417</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.2337/dc17-0417</ArticleId><ArticleId IdType="pubmed">29246950</ArticleId></ArticleIdList></Reference><Reference><Citation>Ahr&#xe9;n
+        B., Masmiquel L., Kumar H., Sargin M., Karsb&#xf8;l J. D., Jacobsen S. H.,
+        et al. . (2017). Efficacy and safety of once-weekly semaglutide versus once-daily
+        sitagliptin as an add-on to metformin, thiazolidinediones, or both, in patients
+        with type 2 diabetes (SUSTAIN 2): a 56-week, double-blind, phase 3a, randomised
+        trial. Lancet Diabetes Endocrinol. 5, 341&#x2013;354. 10.1016/S2213-8587(17)30092-X</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/S2213-8587(17)30092-X</ArticleId><ArticleId IdType="pubmed">28385659</ArticleId></ArticleIdList></Reference><Reference><Citation>Aroda
+        V. R., Bain S. C., Cariou B., Piletic M., Rose L., Axelsen M., et al. . (2017).
+        Efficacy and safety of once-weekly semaglutide versus once-daily insulin glargine
+        as add-on to metformin (with or without sulfonylureas) in insulin-naive patients
+        with type 2 diabetes (SUSTAIN 4): a randomised, open-label, parallel-group,
+        multicentre, multinational, phase 3a trial. Lancet Diabetes Endocrinol. 5,
+        355&#x2013;366. 10.1016/S2213-8587(17)30085-2</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/S2213-8587(17)30085-2</ArticleId><ArticleId IdType="pubmed">28344112</ArticleId></ArticleIdList></Reference><Reference><Citation>Butler
+        P. C., Elashoff M., Elashoff R., Gale E. A. M. (2013). A critical analysis
+        of the clinical use of incretin-based therapies: are the GLP-1 therapies safe?
+        Diabetes Care 36, 2118&#x2013;2125. 10.2337/dc12-2713</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.2337/dc12-2713</ArticleId><ArticleId IdType="pmc">PMC3687282</ArticleId><ArticleId
+        IdType="pubmed">23645885</ArticleId></ArticleIdList></Reference><Reference><Citation>Chen
+        Y. H., Lin H., Xie C. L., Hou J. W., Li Y. G. (2017). Role of adenosine-guided
+        pulmonary vein isolation in patients undergoing catheter ablation for atrial
+        fibrillation: a meta-analysis. Europace 19, 552&#x2013;559. 10.1093/europace/euw201</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1093/europace/euw201</ArticleId><ArticleId IdType="pubmed">28431050</ArticleId></ArticleIdList></Reference><Reference><Citation>Conway
+        R., Rodbard H., Lingvay I., Reed J., Rosa R. D., Rose L., et al. (2016). Efficacy
+        and safety of semaglutide once-weekly vs. placebo as add-on to basal insulin
+        alone or in combination with metformin in subjects with type 2 diabetes (SUSTAIN
+        5). Can. J. Diabetes 40, S41&#x2013;S42. 10.1016/j.jcjd.2016.08.116</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/j.jcjd.2016.08.116</ArticleId></ArticleIdList></Reference><Reference><Citation>Dhillon
+        S. (2018). Semaglutide: first global approval. Drugs 78, 275&#x2013;284. 10.1007/s40265-018-0871-0</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1007/s40265-018-0871-0</ArticleId><ArticleId IdType="pubmed">29363040</ArticleId></ArticleIdList></Reference><Reference><Citation>Doggrell
+        S. A. (2018). Sgemaglutide in type 2 diabetes - is it the best glucagon-like
+        peptide 1 receptor agonist (GLP-1R agonist)? Expert Opin. Drug Metab. Toxicol.
+        14, 371&#x2013;377. 10.1080/17425255.2018.1441286</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1080/17425255.2018.1441286</ArticleId><ArticleId IdType="pubmed">29439603</ArticleId></ArticleIdList></Reference><Reference><Citation>Dugan
+        J. A. (2017). Standards of care and treatment in diabetes. Phys. Assist. Clin.
+        2, 13&#x2013;23. 10.1016/j.cpha.2016.08.004</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/j.cpha.2016.08.004</ArticleId></ArticleIdList></Reference><Reference><Citation>Dungan
+        K. M., Povedano S. T., Forst T., Gonz&#xe1;lez J. G., Atisso C., Sealls W.,
+        et al. . (2014). Once-weekly dulaglutide versus once-daily liraglutide in
+        metformin-treated patients with type 2 diabetes (AWARD-6): a randomised, open-label,
+        phase 3, non-inferiority trial. Lancet 384, 1349&#x2013;1357. 10.1016/S0140-6736(14)60976-4</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/S0140-6736(14)60976-4</ArticleId><ArticleId IdType="pubmed">25018121</ArticleId></ArticleIdList></Reference><Reference><Citation>Egger
+        M., Davey Smith G., Schneider M., Minder C. (1997). Bias in meta-analysis
+        detected by a simple, graphical test. BMJ 315, 629&#x2013;634. 10.1136/bmj.315.7109.629</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1136/bmj.315.7109.629</ArticleId><ArticleId IdType="pmc">PMC2127453</ArticleId><ArticleId
+        IdType="pubmed">9310563</ArticleId></ArticleIdList></Reference><Reference><Citation>Fonseca
+        V., Capehorn M., Garg S., Jodar E., Birch S., Holst A. G., et al. (2017).
+        Semaglutide-induced reductions in insulin resistance are mediated primarily
+        via weight loss in subjects with type 2 diabetes (SUSTAIN 1-3). Diabetologia
+        60, S375&#x2013;S376.</Citation></Reference><Reference><Citation>Giorda C.
+        B., Sacerdote C., Nada E., Marafetti L., Baldi I., Gnavi R. (2015). Incretin-based
+        therapies and acute pancreatitis risk: a systematic review and meta-analysis
+        of observational studies. Endocrine 48, 461&#x2013;471. 10.1007/s12020-014-0386-8</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1007/s12020-014-0386-8</ArticleId><ArticleId IdType="pubmed">25146552</ArticleId></ArticleIdList></Reference><Reference><Citation>Higgins
+        J. P., Altman D. G., G&#xf8;tzsche P. C., J&#xfc;ni P., Moher D., Oxman A.
+        D., et al. . (2011). The Cochrane Collaboration''s tool for assessing risk
+        of bias in randomised trials. BMJ 343:d5928. 10.1136/bmj.d5928</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1136/bmj.d5928</ArticleId><ArticleId IdType="pmc">PMC3196245</ArticleId><ArticleId
+        IdType="pubmed">22008217</ArticleId></ArticleIdList></Reference><Reference><Citation>Inzucchi
+        S. E., Bergenstal R. M., Buse J. B., Diamant M., Ferrannini E., Nauck M.,
+        et al. . (2012). Management of hyperglycemia in type 2 diabetes: a patient-centered
+        approach: position statement of the American Diabetes Association (ADA) and
+        the European Association for the Study of Diabetes (EASD). Diabetes Care 35,
+        1364&#x2013;1379. 10.2337/dc12-0413</Citation><ArticleIdList><ArticleId IdType="doi">10.2337/dc12-0413</ArticleId><ArticleId
+        IdType="pmc">PMC3357214</ArticleId><ArticleId IdType="pubmed">22517736</ArticleId></ArticleIdList></Reference><Reference><Citation>Inzucchi
+        S. E., Bergenstal R. M., Buse J. B., Diamant M., Ferrannini E., Nauck M.,
+        et al. . (2015). Management of hyperglycemia in type 2 diabetes, 2015: a patient-centered
+        approach: update to a position statement of the American Diabetes Association
+        and the European Association for the Study of Diabetes. Diabetes Care 38,
+        140&#x2013;149. 10.2337/dc14-2441</Citation><ArticleIdList><ArticleId IdType="doi">10.2337/dc14-2441</ArticleId><ArticleId
+        IdType="pubmed">25538310</ArticleId></ArticleIdList></Reference><Reference><Citation>Ja&#xef;s
+        X., D''Armini A. M., Jansa P., Torbicki A., Delcroix M., Ghofrani H. A., et
+        al. . (2008). Bosentan for treatment of inoperable chronic thromboembolic
+        pulmonary hypertension: BENEFiT (Bosentan Effects in iNopErable forms of chronIc
+        Thromboembolic pulmonary hypertension), a randomized, placebo-controlled trial.
+        J. Am. Coll. Cardiol. 52, 2127&#x2013;2134. 10.1016/j.jacc.2008.08.059</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/j.jacc.2008.08.059</ArticleId><ArticleId IdType="pubmed">19095129</ArticleId></ArticleIdList></Reference><Reference><Citation>Kaku
+        K., Yamada Y., Watada H., Abiko A., Nishida T., Zacho J., et al. . (2018).
+        Safety and efficacy of once-weekly semaglutide vs additional oral antidiabetic
+        drugs in Japanese people with inadequately controlled type 2 diabetes: a randomized
+        trial. Diabetes Obes. Metab. 20, 1202&#x2013;1212. 10.1111/dom.13218</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1111/dom.13218</ArticleId><ArticleId IdType="pmc">PMC5969242</ArticleId><ArticleId
+        IdType="pubmed">29322610</ArticleId></ArticleIdList></Reference><Reference><Citation>Kapitza
+        C., Dahl K., Jacobsen J. B., Axelsen M. B., Flint A. (2017). Effects of semaglutide
+        on beta cell function and glycaemic control in participants with type 2 diabetes:
+        a randomised, double-blind, placebo-controlled trial. Diabetologia 60, 1390&#x2013;1399.
+        10.1007/s00125-017-4289-0</Citation><ArticleIdList><ArticleId IdType="doi">10.1007/s00125-017-4289-0</ArticleId><ArticleId
+        IdType="pmc">PMC5491562</ArticleId><ArticleId IdType="pubmed">28526920</ArticleId></ArticleIdList></Reference><Reference><Citation>Kapitza
+        C., Nosek L., Jensen L., Hartvig H., Jensen C. B., Flint A. (2015). Semaglutide,
+        a once-weekly human GLP-1 analog, does not reduce the bioavailability of the
+        combined oral contraceptive, ethinylestradiol/levonorgestrel. J. Clin. Pharmacol.
+        55, 497&#x2013;504. 10.1002/jcph.443</Citation><ArticleIdList><ArticleId IdType="doi">10.1002/jcph.443</ArticleId><ArticleId
+        IdType="pmc">PMC4418331</ArticleId><ArticleId IdType="pubmed">25475122</ArticleId></ArticleIdList></Reference><Reference><Citation>Karagiannis
+        T., Liakos A. (2015). Efficacy and safety of once-weekly glucagon-like peptide
+        1 receptor agonists for the management of type 2 diabetes: a systematic review
+        and meta-analysis of randomized controlled trials. Diabetes Obes. Metab. 17,
+        1065&#x2013;1074. 10.1111/dom.12541</Citation><ArticleIdList><ArticleId IdType="doi">10.1111/dom.12541</ArticleId><ArticleId
+        IdType="pubmed">26395850</ArticleId></ArticleIdList></Reference><Reference><Citation>Koro
+        C. E., Bowlin S. J., Bourgeois N., Fedder D. O. (2004). Glycemic control from
+        1988 to 2000 among U.S. adults diagnosed with type 2 diabetes: a preliminary
+        report. Diabetes Care 27, 17&#x2013;20. 10.2337/diacare.27.1.17</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.2337/diacare.27.1.17</ArticleId><ArticleId IdType="pubmed">14693960</ArticleId></ArticleIdList></Reference><Reference><Citation>Lau
+        J., Bloch P., Sch&#xe4;ffer L., Pettersson I., Spetzler J., Kofoed J., et
+        al. . (2015). Discovery of the once-weekly glucagon-like peptide-1 (GLP-1)
+        analogue semaglutide. J. Med. Chem. 58, 7370&#x2013;7380. 10.1021/acs.jmedchem.5b00726</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1021/acs.jmedchem.5b00726</ArticleId><ArticleId IdType="pubmed">26308095</ArticleId></ArticleIdList></Reference><Reference><Citation>Lee
+        Y. S., Park M. S., Choung J. S., Kim S. S., Oh H. H., Choi C. S., et al. .
+        (2012). Glucagon-like peptide-1 inhibits adipose tissue macrophage infiltration
+        and inflammation in an obese mouse model of diabetes. Diabetologia 55, 2456&#x2013;2468.
+        10.1007/s00125-012-2592-3</Citation><ArticleIdList><ArticleId IdType="doi">10.1007/s00125-012-2592-3</ArticleId><ArticleId
+        IdType="pubmed">22722451</ArticleId></ArticleIdList></Reference><Reference><Citation>Li
+        L., Shen J., Bala M. M., Busse J. W., Ebrahim S., Vandvik P. O., et al. .
+        (2014). Incretin treatment and risk of pancreatitis in patients with type
+        2 diabetes mellitus: systematic review and meta-analysis of randomised and
+        non-randomised studies. BMJ 348:g2366. 10.1136/bmj.g2366</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1136/bmj.g2366</ArticleId><ArticleId IdType="pmc">PMC3987051</ArticleId><ArticleId
+        IdType="pubmed">24736555</ArticleId></ArticleIdList></Reference><Reference><Citation>Liu
+        J., Conde K., Zhang P., Lilascharoen V., Xu Z., Lim B. K., et al. . (2017).
+        Enhanced AMPA receptor trafficking mediates the anorexigenic effect of endogenous
+        glucagon-like peptide-1 in the paraventricular Hypothalamus. Neuron 96, 897.e895&#x2013;909.e895.
+        10.1016/j.neuron.2017.09.042</Citation><ArticleIdList><ArticleId IdType="doi">10.1016/j.neuron.2017.09.042</ArticleId><ArticleId
+        IdType="pmc">PMC5729931</ArticleId><ArticleId IdType="pubmed">29056294</ArticleId></ArticleIdList></Reference><Reference><Citation>Lorenz
+        M., Lawson F., Owens D., Raccah D., Roy-Duval C., Lehmann A., et al. . (2017).
+        Differential effects of glucagon-like peptide-1 receptor agonists on heart
+        rate. Cardiovasc. Diabetol. 16:6. 10.1186/s12933-016-0490-6</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1186/s12933-016-0490-6</ArticleId><ArticleId IdType="pmc">PMC5237337</ArticleId><ArticleId
+        IdType="pubmed">28086882</ArticleId></ArticleIdList></Reference><Reference><Citation>Marso
+        S. P., Bain S. C., Consoli A., Eliaschewitz F. G., J&#xf3;dar E., Leiter L.
+        A., et al. . (2016). Semaglutide and cardiovascular outcomes in patients with
+        type 2 diabetes. N. Engl. J. Med. 375, 1834&#x2013;1844. 10.1056/NEJMoa1607141</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1056/NEJMoa1607141</ArticleId><ArticleId IdType="pubmed">27633186</ArticleId></ArticleIdList></Reference><Reference><Citation>Meier
+        J. J. (2012). GLP-1 receptor agonists for individualized treatment of type
+        2 diabetes mellitus. Nat. Rev. Endocrinol. 8, 728&#x2013;742. 10.1038/nrendo.2012.140</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1038/nrendo.2012.140</ArticleId><ArticleId IdType="pubmed">22945360</ArticleId></ArticleIdList></Reference><Reference><Citation>Moher
+        D., Liberati A., Tetzlaff J., Altman D. G. (2010). Preferred reporting items
+        for systematic reviews and meta-analyses: the PRISMA statement. Int. J. Surg.
+        8, 336&#x2013;341. 10.1016/j.ijsu.2010.02.007</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/j.ijsu.2010.02.007</ArticleId><ArticleId IdType="pubmed">20171303</ArticleId></ArticleIdList></Reference><Reference><Citation>Monami
+        M., Dicembrini I., Nardini C., Fiordelli I., Mannucci E. (2014). Glucagon-like
+        peptide-1 receptor agonists and pancreatitis: a meta-analysis of randomized
+        clinical trials. Diabetes Res. Clin. Pract. 103, 269&#x2013;275. 10.1016/j.diabres.2014.01.010</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/j.diabres.2014.01.010</ArticleId><ArticleId IdType="pubmed">24485345</ArticleId></ArticleIdList></Reference><Reference><Citation>Nauck
+        M. A., Petrie J. R., Sesti G., Mannucci E., Courr&#xe8;ges J. P., Lindegaard
+        M. L., et al. . (2016). A phase 2, randomized, dose-finding study of the novel
+        once-weekly human GLP-1 analog, semaglutide, compared with placebo and open-label
+        liraglutide in patients with type 2 diabetes. Diabetes Care 39, 231&#x2013;241.
+        10.2337/dc15-0165</Citation><ArticleIdList><ArticleId IdType="doi">10.2337/dc15-0165</ArticleId><ArticleId
+        IdType="pubmed">26358288</ArticleId></ArticleIdList></Reference><Reference><Citation>Patel
+        A., MacMahon S., Chalmers J., Neal B., Woodward M., et al. . (2007). Effects
+        of a fixed combination of perindopril and indapamide on macrovascular and
+        microvascular outcomes in patients with type 2 diabetes mellitus (the ADVANCE
+        trial): a randomised controlled trial. Lancet 370, 829&#x2013;840. 10.1016/S0140-6736(07)61303-8</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/S0140-6736(07)61303-8</ArticleId><ArticleId IdType="pubmed">17765963</ArticleId></ArticleIdList></Reference><Reference><Citation>Pratley
+        R. E., Aroda V. R., Lingvay I., L&#xfc;demann J., Andreassen C., Navarria
+        A., et al. . (2018). Semaglutide versus dulaglutide once weekly in patients
+        with type 2 diabetes (SUSTAIN 7): a randomised, open-label, phase 3b trial.
+        Lancet Diabetes Endocrinol. 6, 275&#x2013;286. 10.1016/S2213-8587(18)30024-X</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/S2213-8587(18)30024-X</ArticleId><ArticleId IdType="pubmed">29397376</ArticleId></ArticleIdList></Reference><Reference><Citation>Pratley
+        R. E., Nauck M. A., Barnett A. H., Feinglos M. N., Ovalle F., Harman-Boehm
+        I., et al. . (2014). Once-weekly albiglutide versus once-daily liraglutide
+        in patients with type 2 diabetes inadequately controlled on oral drugs (HARMONY
+        7): a randomised, open-label, multicentre, non-inferiority phase 3 study.
+        Lancet Diabetes Endocrinol. 2, 289&#x2013;297. 10.1016/S2213-8587(13)70214-6</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/S2213-8587(13)70214-6</ArticleId><ArticleId IdType="pubmed">24703047</ArticleId></ArticleIdList></Reference><Reference><Citation>Roshanov
+        P. S., Dennis B. B. (2015). Incretin-based therapies are associated with acute
+        pancreatitis: meta-analysis of large randomized controlled trials. Diabetes
+        Res. Clin. Pract. 110, e13&#x2013;e17. 10.1016/j.diabres.2015.10.014</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/j.diabres.2015.10.014</ArticleId><ArticleId IdType="pubmed">26643128</ArticleId></ArticleIdList></Reference><Reference><Citation>Seino
+        Y., Terauchi Y., Osonoi T., Yabe D., Abe N., Nishida T., et al. . (2018).
+        Safety and efficacy of semaglutide once weekly vs sitagliptin once daily,
+        both as monotherapy in Japanese people with type 2 diabetes. Diabetes Obes.
+        Metab. 20, 378&#x2013;388. 10.1111/dom.13082</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1111/dom.13082</ArticleId><ArticleId IdType="pmc">PMC5813234</ArticleId><ArticleId
+        IdType="pubmed">28786547</ArticleId></ArticleIdList></Reference><Reference><Citation>Sisti
+        L. G., Dajko M., Campanella P., Shkurti E., Ricciardi W., de Waure C. (2017).
+        The effect of multifactorial lifestyle interventions on cardiovascular risk
+        factors: a systematic review and meta-analysis of trials conducted in the
+        general population and high risk groups. Prev. Med. 109, 82&#x2013;97. 10.1016/j.ypmed.2017.12.027</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/j.ypmed.2017.12.027</ArticleId><ArticleId IdType="pubmed">29291422</ArticleId></ArticleIdList></Reference><Reference><Citation>Sorli
+        C., Harashima S. I., Tsoukas G. M., Unger J., Karsb&#xf8;l J. D., Hansen T.,
+        et al. . (2017). Efficacy and safety of once-weekly semaglutide monotherapy
+        versus placebo in patients with type 2 diabetes (SUSTAIN 1): a double-blind,
+        randomised, placebo-controlled, parallel-group, multinational, multicentre
+        phase 3a trial. Lancet Diabetes Endocrinol. 5, 251&#x2013;260. 10.1016/S2213-8587(17)30013-X</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/S2213-8587(17)30013-X</ArticleId><ArticleId IdType="pubmed">28110911</ArticleId></ArticleIdList></Reference><Reference><Citation>Sun
+        F., Chai S., Li L., Yu K., Yang Z., Wu S., et al. . (2015a). Effects of glucagon-like
+        peptide-1 receptor agonists on weight loss in patients with type 2 diabetes:
+        a systematic review and network meta-analysis. J. Diabetes Res. 2015:157201.
+        10.1155/2015/157201</Citation><ArticleIdList><ArticleId IdType="doi">10.1155/2015/157201</ArticleId><ArticleId
+        IdType="pmc">PMC4320855</ArticleId><ArticleId IdType="pubmed">25688373</ArticleId></ArticleIdList></Reference><Reference><Citation>Sun
+        F., Chai S., Yu K., Quan X., Yang Z., Wu S., et al. . (2015b). Gastrointestinal
+        adverse events of glucagon-like peptide-1 receptor agonists in patients with
+        type 2 diabetes: a systematic review and network meta-analysis. Diabetes Technol.
+        Ther. 17, 35&#x2013;42. 10.1089/dia.2014.0188</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1089/dia.2014.0188</ArticleId><ArticleId IdType="pmc">PMC4290796</ArticleId><ArticleId
+        IdType="pubmed">25375397</ArticleId></ArticleIdList></Reference><Reference><Citation>Sun
+        F., Wu S., Guo S., Yu K., Yang Z., Li L., et al. . (2015c). Impact of GLP-1
+        receptor agonists on blood pressure, heart rate and hypertension among patients
+        with type 2 diabetes: a systematic review and network meta-analysis. Diabetes
+        Res. Clin. Pract. 110, 26&#x2013;37. 10.1016/j.diabres.2015.07.015</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1016/j.diabres.2015.07.015</ArticleId><ArticleId IdType="pubmed">26358202</ArticleId></ArticleIdList></Reference><Reference><Citation>Tan
+        X., Cao X., Zhou M., Zou P., Hu J. (2017). Efficacy and safety of once-weekly
+        semaglutide for the treatment of type 2 diabetes. Expert Opin. Investig. Drugs
+        26, 1083&#x2013;1089. 10.1080/13543784.2017.1360274</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1080/13543784.2017.1360274</ArticleId><ArticleId IdType="pubmed">28741970</ArticleId></ArticleIdList></Reference><Reference><Citation>Turner
+        R. C., Cull C. A., Frighi V., Holman R. R. (1999). Glycemic control with diet,
+        sulfonylurea, metformin, or insulin in patients with type 2 diabetes mellitus:
+        progressive requirement for multiple therapies (UKPDS 49). UK Prospective
+        Diabetes Study (UKPDS) Group. JAMA 281, 2005&#x2013;2012. 10.1001/jama.281.21.2005</Citation><ArticleIdList><ArticleId
+        IdType="doi">10.1001/jama.281.21.2005</ArticleId><ArticleId IdType="pubmed">10359389</ArticleId></ArticleIdList></Reference><Reference><Citation>Zhang
+        L., Zhang M., Zhang Y., Tong N. (2016). Efficacy and safety of dulaglutide
+        in patients with type 2 diabetes: a meta-analysis and systematic review. Sci.
+        Rep. 6:18904. 10.1038/srep18904</Citation><ArticleIdList><ArticleId IdType="doi">10.1038/srep18904</ArticleId><ArticleId
+        IdType="pmc">PMC4705511</ArticleId><ArticleId IdType="pubmed">26742577</ArticleId></ArticleIdList></Reference></ReferenceList></PubmedData></PubmedArticle></PubmedArticleSet>'
     headers:
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: [private]
-      Connection: [Keep-Alive]
-      Content-Security-Policy: [upgrade-insecure-requests]
-      Content-Type: [text/xml; charset=UTF-8]
-      Date: ['Wed, 10 Oct 2018 14:50:50 GMT']
-      Keep-Alive: ['timeout=1, max=10']
-      NCBI-PHID: [266B3E9FCA21EB0069E21979C4D3C156.1.m_5]
-      NCBI-SID: [90BD382FE835CAC7_B321SID]
-      Server: [Finatra]
-      Set-Cookie: ['ncbi_sid=90BD382FE835CAC7_B321SID; domain=.nih.gov; path=/; expires=Thu,
-          10 Oct 2019 14:50:50 GMT']
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
-      Transfer-Encoding: [chunked]
-      X-RateLimit-Limit: ['100']
-      X-RateLimit-Remaining: ['99']
-      X-UA-Compatible: [IE=Edge]
-      X-XSS-Protection: [1; mode=block]
-      content-encoding: [gzip]
-    status: {code: 200, message: OK}
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - private
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Date:
+      - Fri, 12 Apr 2024 19:08:05 GMT
+      Keep-Alive:
+      - timeout=4, max=40
+      NCBI-PHID:
+      - 322C2F91E09EF72500004833F145B7AD.1.1.m_5
+      NCBI-SID:
+      - 9E7725A350D33AFB_E812SID
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Server:
+      - Finatra
+      Set-Cookie:
+      - ncbi_sid=9E7725A350D33AFB_E812SID; domain=.nih.gov; path=/; expires=Sat, 12
+        Apr 2025 19:08:05 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-RateLimit-Limit:
+      - '3'
+      X-RateLimit-Remaining:
+      - '1'
+      X-UA-Compatible:
+      - IE=Edge
+      X-XSS-Protection:
+      - 1; mode=block
+      content-encoding:
+      - gzip
+    status:
+      code: 200
+      message: OK
 version: 1

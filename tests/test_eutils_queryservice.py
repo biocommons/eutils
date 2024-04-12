@@ -95,7 +95,7 @@ class TestEutilsQueries(unittest.TestCase):
         assert_in_xml(result, 'ConceptId')
 
     @vcr.use_cassette
-    @patch('eutils._internal.queryservice.requests')
+    @patch('biocommons.eutils._internal.queryservice.requests')
     def test_handles_malformed_xml_errors(self, mock_requests):
         post_return_value = MagicMock()
         post_return_value.status_code = 404

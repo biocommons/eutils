@@ -1,95 +1,167 @@
 interactions:
 - request:
-    body: tool=eutils&email=biocommons-dev%40googlegroups.com&retmode=xml&usehistory=y&retmax=250&db=pubmed&id=22528466
+    body: tool=biocommons.eutils._internal&email=biocommons-dev%40googlegroups.com&retmode=xml&usehistory=y&retmax=250&db=pubmed&id=22528466
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Length: ['109']
-      Content-Type: [application/x-www-form-urlencoded]
-      User-Agent: [python-requests/2.19.1]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.31.0
     method: POST
     uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi
   response:
     body:
-      string: !!binary |
-        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
-        9xgAAAD//wMAWIIpgfU2AAA=
+      string: '<?xml version="1.0" ?>
+
+        <!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January
+        2024//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_240101.dtd">
+
+        <PubmedArticleSet>
+
+        <PubmedArticle><MedlineCitation Status="MEDLINE" Owner="NLM"><PMID Version="1">22528466</PMID><DateCompleted><Year>2013</Year><Month>05</Month><Day>14</Day></DateCompleted><DateRevised><Year>2021</Year><Month>10</Month><Day>21</Day></DateRevised><Article
+        PubModel="Print-Electronic"><Journal><ISSN IssnType="Electronic">1573-9368</ISSN><JournalIssue
+        CitedMedium="Internet"><Volume>21</Volume><Issue>6</Issue><PubDate><Year>2012</Year><Month>Dec</Month></PubDate></JournalIssue><Title>Transgenic
+        research</Title><ISOAbbreviation>Transgenic Res</ISOAbbreviation></Journal><ArticleTitle>Expression
+        of biologically active human interferon alpha 2 in Aloe vera.</ArticleTitle><Pagination><StartPage>1349</StartPage><EndPage>1357</EndPage><MedlinePgn>1349-57</MedlinePgn></Pagination><ELocationID
+        EIdType="doi" ValidYN="Y">10.1007/s11248-012-9616-0</ELocationID><Abstract><AbstractText>Methods
+        necessary for the successful transformation and regeneration of Aloe vera
+        were developed and used to express the human protein, interferon alpha 2 (IFN&#x3b1;2).
+        IFN&#x3b1;2 is a secreted cytokine that plays a vital role in regulating the
+        cellular response to viral infection. Transgenic plants were regenerated from
+        callus cultures initiated from zygotic embryos. Expression of the IFNA2 transgene
+        in transformed plants was confirmed by RT-PCR and IFN&#x3b1;2 protein was
+        detected by immunoblot analysis. Human A549 cells treated with transgenic
+        aloe extracts for 6 h induced expression of the interferon stimulated gene
+        54, indicating activation of the IFN signaling pathway. The biological activity
+        of the aloe produced IFN&#x3b1;2 was assessed using an antiviral assay with
+        A549 cells treated with extracts from both the rind and pulp fractions of
+        the shoot and subsequently infected with the lytic encephalomyocarditis virus.
+        The highest level of activity attributable to recombinant IFN&#x3b1;2 was
+        determined to be 625 IU/mg of total soluble protein (TSP) in the rind and
+        2,108 IU/mg TSP in the pulp. Two daughter plants that vegetatively budded
+        during the course of this study were also confirmed to express IFN&#x3b1;2.
+        These results confirm that Aloe vera is capable of expressing a human protein
+        with biological activity, and that a secreted protein targeting the apoplast
+        can be detected in the pulp fraction of the plant.</AbstractText></Abstract><AuthorList
+        CompleteYN="Y"><Author ValidYN="Y"><LastName>Lowther</LastName><ForeName>William</ForeName><Initials>W</Initials><AffiliationInfo><Affiliation>Thegreencell,
+        Inc., 505 Capitol Court NE, Suite 200, Washington, DC 20002, USA. williaml@thegreencell.com</Affiliation></AffiliationInfo></Author><Author
+        ValidYN="Y"><LastName>Lorick</LastName><ForeName>Kevin</ForeName><Initials>K</Initials></Author><Author
+        ValidYN="Y"><LastName>Lawrence</LastName><ForeName>Susan D</ForeName><Initials>SD</Initials></Author><Author
+        ValidYN="Y"><LastName>Yeow</LastName><ForeName>Wen-Shuz</ForeName><Initials>WS</Initials></Author></AuthorList><Language>eng</Language><PublicationTypeList><PublicationType
+        UI="D016428">Journal Article</PublicationType><PublicationType UI="D013486">Research
+        Support, U.S. Gov''t, Non-P.H.S.</PublicationType></PublicationTypeList><ArticleDate
+        DateType="Electronic"><Year>2012</Year><Month>04</Month><Day>24</Day></ArticleDate></Article><MedlineJournalInfo><Country>Netherlands</Country><MedlineTA>Transgenic
+        Res</MedlineTA><NlmUniqueID>9209120</NlmUniqueID><ISSNLinking>0962-8819</ISSNLinking></MedlineJournalInfo><ChemicalList><Chemical><RegistryNumber>0</RegistryNumber><NameOfSubstance
+        UI="D000998">Antiviral Agents</NameOfSubstance></Chemical><Chemical><RegistryNumber>0</RegistryNumber><NameOfSubstance
+        UI="C554158">IFNA2 protein, human</NameOfSubstance></Chemical><Chemical><RegistryNumber>0</RegistryNumber><NameOfSubstance
+        UI="D016898">Interferon-alpha</NameOfSubstance></Chemical><Chemical><RegistryNumber>0</RegistryNumber><NameOfSubstance
+        UI="D010936">Plant Extracts</NameOfSubstance></Chemical><Chemical><RegistryNumber>EC
+        3.2.1.31</RegistryNumber><NameOfSubstance UI="D005966">Glucuronidase</NameOfSubstance></Chemical></ChemicalList><CitationSubset>IM</CitationSubset><MeshHeadingList><MeshHeading><DescriptorName
+        UI="D000504" MajorTopicYN="N">Aloe</DescriptorName><QualifierName UI="Q000737"
+        MajorTopicYN="Y">chemistry</QualifierName><QualifierName UI="Q000235" MajorTopicYN="N">genetics</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D000998" MajorTopicYN="N">Antiviral Agents</DescriptorName><QualifierName
+        UI="Q000494" MajorTopicYN="Y">pharmacology</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D004686" MajorTopicYN="N">Encephalomyocarditis virus</DescriptorName><QualifierName
+        UI="Q000187" MajorTopicYN="Y">drug effects</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D018745" MajorTopicYN="N">Genome, Plant</DescriptorName></MeshHeading><MeshHeading><DescriptorName
+        UI="D005966" MajorTopicYN="N">Glucuronidase</DescriptorName><QualifierName
+        UI="Q000235" MajorTopicYN="N">genetics</QualifierName><QualifierName UI="Q000378"
+        MajorTopicYN="N">metabolism</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D006801" MajorTopicYN="N">Humans</DescriptorName></MeshHeading><MeshHeading><DescriptorName
+        UI="D015151" MajorTopicYN="N">Immunoblotting</DescriptorName></MeshHeading><MeshHeading><DescriptorName
+        UI="D016898" MajorTopicYN="N">Interferon-alpha</DescriptorName><QualifierName
+        UI="Q000235" MajorTopicYN="N">genetics</QualifierName><QualifierName UI="Q000378"
+        MajorTopicYN="Y">metabolism</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D010936" MajorTopicYN="N">Plant Extracts</DescriptorName><QualifierName
+        UI="Q000494" MajorTopicYN="Y">pharmacology</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D018515" MajorTopicYN="N">Plant Leaves</DescriptorName><QualifierName
+        UI="Q000187" MajorTopicYN="N">drug effects</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D030821" MajorTopicYN="N">Plants, Genetically Modified</DescriptorName><QualifierName
+        UI="Q000235" MajorTopicYN="Y">genetics</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D012639" MajorTopicYN="N">Seeds</DescriptorName><QualifierName UI="Q000737"
+        MajorTopicYN="Y">chemistry</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D015398" MajorTopicYN="N">Signal Transduction</DescriptorName><QualifierName
+        UI="Q000187" MajorTopicYN="N">drug effects</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D019076" MajorTopicYN="N">Transgenes</DescriptorName><QualifierName UI="Q000502"
+        MajorTopicYN="N">physiology</QualifierName></MeshHeading></MeshHeadingList></MedlineCitation><PubmedData><History><PubMedPubDate
+        PubStatus="received"><Year>2011</Year><Month>12</Month><Day>15</Day></PubMedPubDate><PubMedPubDate
+        PubStatus="accepted"><Year>2012</Year><Month>3</Month><Day>31</Day></PubMedPubDate><PubMedPubDate
+        PubStatus="entrez"><Year>2012</Year><Month>4</Month><Day>25</Day><Hour>6</Hour><Minute>0</Minute></PubMedPubDate><PubMedPubDate
+        PubStatus="pubmed"><Year>2012</Year><Month>4</Month><Day>25</Day><Hour>6</Hour><Minute>0</Minute></PubMedPubDate><PubMedPubDate
+        PubStatus="medline"><Year>2013</Year><Month>5</Month><Day>15</Day><Hour>6</Hour><Minute>0</Minute></PubMedPubDate></History><PublicationStatus>ppublish</PublicationStatus><ArticleIdList><ArticleId
+        IdType="pubmed">22528466</ArticleId><ArticleId IdType="doi">10.1007/s11248-012-9616-0</ArticleId></ArticleIdList><ReferenceList><Reference><Citation>Int
+        J Antimicrob Agents. 2008 Oct;32(4):355-9</Citation><ArticleIdList><ArticleId
+        IdType="pubmed">18701259</ArticleId></ArticleIdList></Reference><Reference><Citation>Transgenic
+        Res. 1996 May;5(3):213-8</Citation><ArticleIdList><ArticleId IdType="pubmed">8673150</ArticleId></ArticleIdList></Reference><Reference><Citation>J
+        Zhejiang Univ Sci B. 2008 May;9(5):351-5</Citation><ArticleIdList><ArticleId
+        IdType="pubmed">18500773</ArticleId></ArticleIdList></Reference><Reference><Citation>J
+        Genet Genomics. 2007 Dec;34(12):1053-60</Citation><ArticleIdList><ArticleId
+        IdType="pubmed">18155617</ArticleId></ArticleIdList></Reference><Reference><Citation>Cancer
+        Chemother Pharmacol. 1984;12(1):39-42</Citation><ArticleIdList><ArticleId
+        IdType="pubmed">6690072</ArticleId></ArticleIdList></Reference><Reference><Citation>Plant
+        Cell Rep. 2011 Mar;30(3):407-15</Citation><ArticleIdList><ArticleId IdType="pubmed">21046110</ArticleId></ArticleIdList></Reference><Reference><Citation>Proteomics.
+        2010 Feb;10(4):799-827</Citation><ArticleIdList><ArticleId IdType="pubmed">19953550</ArticleId></ArticleIdList></Reference><Reference><Citation>Enzyme
+        Protein. 1996;49(4):212-21</Citation><ArticleIdList><ArticleId IdType="pubmed">9030888</ArticleId></ArticleIdList></Reference><Reference><Citation>Biotechnol
+        Genet Eng Rev. 1998;15:457-98</Citation><ArticleIdList><ArticleId IdType="pubmed">9573613</ArticleId></ArticleIdList></Reference><Reference><Citation>Curr
+        Opin Immunol. 2011 Aug;23(4):495-9</Citation><ArticleIdList><ArticleId IdType="pubmed">21752617</ArticleId></ArticleIdList></Reference><Reference><Citation>Nucleic
+        Acids Res Suppl. 2003;(3):261-2</Citation><ArticleIdList><ArticleId IdType="pubmed">14510480</ArticleId></ArticleIdList></Reference><Reference><Citation>Enzyme
+        Protein. 1993;47(2):92-8</Citation><ArticleIdList><ArticleId IdType="pubmed">8193675</ArticleId></ArticleIdList></Reference><Reference><Citation>Plant
+        Physiol. 1997 Oct;115(2):527-532</Citation><ArticleIdList><ArticleId IdType="pubmed">12223821</ArticleId></ArticleIdList></Reference><Reference><Citation>Appl
+        Biochem Biotechnol. 2011 Apr;163(7):860-8</Citation><ArticleIdList><ArticleId
+        IdType="pubmed">20857229</ArticleId></ArticleIdList></Reference><Reference><Citation>J
+        Interferon Cytokine Res. 2001 Aug;21(8):595-602</Citation><ArticleIdList><ArticleId
+        IdType="pubmed">11559437</ArticleId></ArticleIdList></Reference><Reference><Citation>Plant
+        Signal Behav. 2010 Feb;5(2):129-31</Citation><ArticleIdList><ArticleId IdType="pubmed">19923907</ArticleId></ArticleIdList></Reference></ReferenceList></PubmedData></PubmedArticle></PubmedArticleSet>'
     headers:
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: [private]
-      Connection: [Keep-Alive]
-      Content-Security-Policy: [upgrade-insecure-requests]
-      Content-Type: [text/xml; charset=UTF-8]
-      Date: ['Wed, 14 Nov 2018 14:41:19 GMT']
-      Keep-Alive: ['timeout=1, max=10']
-      NCBI-PHID: [322CFEA86A528025000023E9671C4C83.1.1.m_5]
-      NCBI-SID: [DC9FB779F3EB0FC2_06A2SID]
-      Server: [Finatra]
-      Set-Cookie: ['ncbi_sid=DC9FB779F3EB0FC2_06A2SID; domain=.nih.gov; path=/; expires=Thu,
-          14 Nov 2019 14:41:20 GMT']
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
-      Transfer-Encoding: [chunked]
-      X-RateLimit-Limit: ['100']
-      X-RateLimit-Remaining: ['99']
-      X-UA-Compatible: [IE=Edge]
-      X-XSS-Protection: [1; mode=block]
-      content-encoding: [gzip]
-      l5d-success-class: ['1.0']
-    status: {code: 200, message: OK}
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - private
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Date:
+      - Fri, 12 Apr 2024 19:08:02 GMT
+      Keep-Alive:
+      - timeout=4, max=40
+      NCBI-PHID:
+      - 322C2F91E09EF72500003633E3C2CCF2.1.1.m_5
+      NCBI-SID:
+      - 8232A730B0000AFB_B91ESID
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Server:
+      - Finatra
+      Set-Cookie:
+      - ncbi_sid=8232A730B0000AFB_B91ESID; domain=.nih.gov; path=/; expires=Sat, 12
+        Apr 2025 19:08:02 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-RateLimit-Limit:
+      - '3'
+      X-RateLimit-Remaining:
+      - '2'
+      X-UA-Compatible:
+      - IE=Edge
+      X-XSS-Protection:
+      - 1; mode=block
+      content-encoding:
+      - gzip
+    status:
+      code: 200
+      message: OK
 version: 1

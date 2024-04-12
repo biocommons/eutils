@@ -1,55 +1,139 @@
 interactions:
 - request:
-    body: email=biocommons-dev%40googlegroups.com&id=1234567&tool=eutils&cmd=neighbor&retmode=xml&usehistory=y&dbfrom=pubmed&retmax=250
+    body: tool=biocommons.eutils._internal&email=biocommons-dev%40googlegroups.com&retmode=xml&usehistory=y&retmax=250&dbfrom=pubmed&id=1234567&cmd=neighbor
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Length: ['125']
-      Content-Type: [application/x-www-form-urlencoded]
-      User-Agent: [python-requests/2.13.0]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '146'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.31.0
     method: POST
     uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA+VZwU4bMRA9N1+xzZ2sxx7b4yoEqQQkJEpRC4eeUEO2sGqyQSTQfn5nYUFUBfSs
-        JifCAex9OxnPPM88m+HO7/msuK2ul/Wi2e7TwPSLqjlfTOvmYrt/erK/Jf1iZ9Qbvh9/3j35drxX
-        VId18/NLtbyZrYrj04+HB7tFf6ssjw4/leX4ZFxUM31eWEOGyLqy3DvqF/3L1epq+aEsq5tVPVsO
-        mvNJPWhm80FTXw4uFrfdfDldTcvHN+8MDXSqr1//5FtHvV5RDNvx10oHhX6G48n+9WI+urqZzKvp
-        sOyG988Opof1sgPeDUdqnX2Iw1L/vseUT0EPtseTx5fGk5PFE+s6eHjSYo++z6vu6dkD6HG+A3a/
-        ujdGvXf6+ceXdq68f/4S3ARPYmG4ZUo+wzoJDPbJqDMOhTsRSsGg8OBsMAQvlCM7ExmF2xSCODyM
-        JvmUAuyMiUksbN2ZEK3H4c5JgNG6UiM+wSslr1kV2LoVwunFzlM0hLsu0eBRjyZKMjAFggZdDExf
-        IkfBwdbJCrONsPMUlL0521pDCSc1svERzpIlmzjDtrWaVBhOQSTB/KLoY2ADm1f2emUYHvbWvkvw
-        atkTKctQuDhmnO+x5a/3MIGJtVfCBLbiouDoxJpVOO4+Kd8D7Lr2d6NxzzCfktIMZ3AInDzOGk7R
-        4J3MOm0HxuBd1Qb9ITw6EtU+nitvWNs8bJ6FQvRwJfNkRHMLs9K2NRvv25pal2B4YI7qPAzXRhzx
-        zkrSNgW8UqovbTmDvRHiiNca0g3uXUbLIVFJk6ENg1WJhe9xdslIRuxZQ+nhPRuiqIbLqCCqyVLE
-        hYomKuK0VJGdfIZYjcSMb1jS4sdB8KapRyKTASfVqiaDZ8Zq6PGeSc5w4gzeWM82Q8YZfSOjuBrl
-        POPqRmNjc/Rw0iNXwA8WNggeGtGukKG2o3ZNmyFurI0ZbUdlXIoJ78mkxxCC9zexcMKdCboDcfVs
-        VRzgUQ9eCYaLj9jKg4gzxmmV13P0C/juvqGdenLFsK57h7PzelVN6wa/f7BO2IWE1y7xIZDNwXtV
-        HC8l/vlwrCUSi/mkbt7GVUyu4H1ddW0uJz/q2+ot5GOtV2MbrhjX1W1d/VpuLC3r5eb/q+RMtfN6
-        V9zcVunSstkt8wZzs7YEXc0v77ttRnZElXDO7ZRvk+Nekh7PLfBxOOoNy7/+afIHVZ5M2OoZAAA=
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<!DOCTYPE eLinkResult
+        PUBLIC \"-//NLM//DTD elink 20101123//EN\" \"https://eutils.ncbi.nlm.nih.gov/eutils/dtd/20101123/elink.dtd\">\n<eLinkResult>\n\n
+        \ <LinkSet>\n    <DbFrom>pubmed</DbFrom>\n    <IdList>\n      <Id>1234567</Id>\n
+        \   </IdList>\n    <LinkSetDb>\n      <DbTo>pubmed</DbTo>\n      <LinkName>pubmed_pubmed</LinkName>\n
+        \     \n        <Link>\n\t\t\t\t<Id>1234567</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>1065182</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>1241957</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>10187</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>4743074</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>5900653</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>6326012</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>3881960</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>2966832</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>4079822</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>333862</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>1095996</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>2960859</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>13649797</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>3067252</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>228157</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>2987096</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>4351701</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>1150068</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>7078904</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>160742</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>740577</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>1131634</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>1243519</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>12844276</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>6672803</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>15057016</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>212949</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>4341416</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>6103834</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>2941700</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>6142013</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>7422170</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>14368386</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>17576400</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>7207216</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>399315</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>6447675</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>11207630</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>834401</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>5928465</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>4325426</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>17576399</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>7789055</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>1497053</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>5999221</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>4816754</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>4511789</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>283783</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>12626215</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>14071847</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>4599392</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>5042415</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>7653724</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>8215068</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>4843720</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>11025867</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>6079752</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>14100062</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>5108846</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>23095007</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>29738424</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>6784745</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>7199609</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>2168762</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>2179790</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>10764680</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>6472751</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>4761688</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>691164</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>3823726</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>18667277</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>6519560</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>11883282</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>6275498</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>16226000</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>1227215</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>7010080</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>11304940</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>6714483</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>2996259</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>14805409</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>4390875</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>6543230</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>10805607</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>5138611</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>14049179</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>7004327</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>26209223</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>3826177</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>4486678</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>30839365</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>31834158</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>31834157</Id>\n\t\t\t</Link>\n
+        \     \n    </LinkSetDb>\n    <LinkSetDb>\n      <DbTo>pubmed</DbTo>\n      <LinkName>pubmed_pubmed_alsoviewed</LinkName>\n
+        \     \n        <Link>\n\t\t\t\t<Id>12345678</Id>\n\t\t\t</Link>\n      \n
+        \   </LinkSetDb>\n    <LinkSetDb>\n      <DbTo>pubmed</DbTo>\n      <LinkName>pubmed_pubmed_citedin</LinkName>\n
+        \     \n        <Link>\n\t\t\t\t<Id>23843693</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>18566123</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>18554815</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>18254016</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>15495039</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>12371603</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>10667447</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>10408736</Id>\n\t\t\t</Link>\n
+        \     \n    </LinkSetDb>\n    <LinkSetDb>\n      <DbTo>pubmed</DbTo>\n      <LinkName>pubmed_pubmed_combined</LinkName>\n
+        \     \n        <Link>\n\t\t\t\t<Id>1234567</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>1065182</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>1241957</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>10187</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>4599392</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>2179790</Id>\n\t\t\t</Link>\n
+        \     \n    </LinkSetDb>\n    <LinkSetDb>\n      <DbTo>pubmed</DbTo>\n      <LinkName>pubmed_pubmed_five</LinkName>\n
+        \     \n        <Link>\n\t\t\t\t<Id>1234567</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>1065182</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>1241957</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>10187</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>4743074</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>5900653</Id>\n\t\t\t</Link>\n
+        \     \n    </LinkSetDb>\n    \n    <LinkSetDb>\n      <DbTo>pubmed</DbTo>\n
+        \     <LinkName>pubmed_pubmed_reviews</LinkName>\n      \n        <Link>\n\t\t\t\t<Id>1234567</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>4599392</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>2179790</Id>\n\t\t\t</Link>\n
+        \     \n    </LinkSetDb>\n    <LinkSetDb>\n      <DbTo>pubmed</DbTo>\n      <LinkName>pubmed_pubmed_reviews_five</LinkName>\n
+        \     \n        <Link>\n\t\t\t\t<Id>1234567</Id>\n\t\t\t</Link>\n        <Link>\n\t\t\t\t<Id>4599392</Id>\n\t\t\t</Link>\n
+        \       <Link>\n\t\t\t\t<Id>2179790</Id>\n\t\t\t</Link>\n      \n    </LinkSetDb>\n
+        \   \n  </LinkSet>\n</eLinkResult>\n"
     headers:
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: [private]
-      Connection: [Keep-Alive]
-      Content-Encoding: [gzip]
-      Content-Length: ['911']
-      Content-Security-Policy: [upgrade-insecure-requests]
-      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
-          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
-          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
-      Content-Type: [text/xml; charset=UTF-8]
-      Date: ['Wed, 01 Mar 2017 05:16:26 GMT']
-      Keep-Alive: ['timeout=1, max=10']
-      NCBI-PHID: [990CDDA68B6581510000000000550053]
-      NCBI-SID: [990CDDA68B6592A1_0085SID]
-      Server: [Apache]
-      Set-Cookie: ['ncbi_sid=990CDDA68B6592A1_0085SID; domain=.nih.gov; path=/; expires=Thu,
-          01 Mar 2018 05:16:26 GMT']
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
-      Vary: [Accept-Encoding]
-      X-UA-Compatible: [IE=Edge]
-      X-XSS-Protection: [1; mode=block]
-    status: {code: 200, message: OK}
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - private
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Date:
+      - Fri, 12 Apr 2024 18:49:56 GMT
+      Keep-Alive:
+      - timeout=4, max=40
+      NCBI-PHID:
+      - 322C2F91E09EF725000047241B9465D4.1.1.m_1
+      NCBI-SID:
+      - 9C32A021C0219C1E_5D60SID
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Server:
+      - Finatra
+      Set-Cookie:
+      - ncbi_sid=9C32A021C0219C1E_5D60SID; domain=.nih.gov; path=/; expires=Sat, 12
+        Apr 2025 18:49:56 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-RateLimit-Limit:
+      - '3'
+      X-RateLimit-Remaining:
+      - '1'
+      X-UA-Compatible:
+      - IE=Edge
+      X-XSS-Protection:
+      - 1; mode=block
+      content-encoding:
+      - gzip
+    status:
+      code: 200
+      message: OK
 version: 1

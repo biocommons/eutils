@@ -1,48 +1,68 @@
 interactions:
 - request:
-    body: retmax=250&tool=eutils&retmode=xml&usehistory=y&email=biocommons-dev%40googlegroups.com
+    body: tool=biocommons.eutils._internal&email=biocommons-dev%40googlegroups.com&retmode=xml&usehistory=y&retmax=250
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Length: ['87']
-      Content-Type: [application/x-www-form-urlencoded]
-      User-Agent: [python-requests/2.13.0]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '108'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.31.0
     method: POST
     uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA3WUQW/bMAyFz+uv8HyvlaaXYUhbYE0HFMiyYkgPO0qyamuVRE+UgvbfjwmCIQWe
-        bxI/S4+iH7m6e4uh2bvMntJNe9Ut2sYlS71Pw037vPt++aVt7m4vVp/XP+93v58eGveYXuiX4xpK
-        8/T8bfN437SXSm03P5Ra79aN88Kb5eLqenG9XCr1sG2bdixl4q9KuVp84C5Z47sUYpf82A20P8VV
-        X3r1/+Txok5CrcifqcpubTaeZXHxSZZbHd3tVE10/UqdtmcgU5GbAEnVWsoOk+Co+H4GDswYOC4A
-        cMnVlgqleNJZxAAZXKKIgE5JcpNyIMbsognvABlPUos/zqIUBbKOE0zEBM2lNzOKhugVVcP26G/Y
-        4NNeZ0gowTLoCUenUJHukDWjE73BulJmKNvDy92hhi8+OERHihRo5kJxpxAIeERukhZhJ+aAMESr
-        ixYxACn6iMJ5KFnbV9Qj0aIoTeyQWaQEBj3x1GpWfkyRgYK+sGJQPeNOfpdjER+zFCeqCTa45Wq4
-        6GRhTse5MDodCioku7/HdkIoIRtx1iBa9BtJt6KH1eTnLHaYsyEgUs6celidpt1KfRiD/wDfvDxf
-        vAUAAA==
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<!DOCTYPE eInfoResult
+        PUBLIC \"-//NLM//DTD einfo 20190110//EN\" \"https://eutils.ncbi.nlm.nih.gov/eutils/dtd/20190110/einfo.dtd\">\n<eInfoResult>\n<DbList>\n\n\t<DbName>pubmed</DbName>\n\t<DbName>protein</DbName>\n\t<DbName>nuccore</DbName>\n\t<DbName>ipg</DbName>\n\t<DbName>nucleotide</DbName>\n\t<DbName>structure</DbName>\n\t<DbName>genome</DbName>\n\t<DbName>annotinfo</DbName>\n\t<DbName>assembly</DbName>\n\t<DbName>bioproject</DbName>\n\t<DbName>biosample</DbName>\n\t<DbName>blastdbinfo</DbName>\n\t<DbName>books</DbName>\n\t<DbName>cdd</DbName>\n\t<DbName>clinvar</DbName>\n\t<DbName>gap</DbName>\n\t<DbName>gapplus</DbName>\n\t<DbName>grasp</DbName>\n\t<DbName>dbvar</DbName>\n\t<DbName>gene</DbName>\n\t<DbName>gds</DbName>\n\t<DbName>geoprofiles</DbName>\n\t<DbName>medgen</DbName>\n\t<DbName>mesh</DbName>\n\t<DbName>nlmcatalog</DbName>\n\t<DbName>omim</DbName>\n\t<DbName>orgtrack</DbName>\n\t<DbName>pmc</DbName>\n\t<DbName>popset</DbName>\n\t<DbName>proteinclusters</DbName>\n\t<DbName>pcassay</DbName>\n\t<DbName>protfam</DbName>\n\t<DbName>pccompound</DbName>\n\t<DbName>pcsubstance</DbName>\n\t<DbName>seqannot</DbName>\n\t<DbName>snp</DbName>\n\t<DbName>sra</DbName>\n\t<DbName>taxonomy</DbName>\n\t<DbName>biocollections</DbName>\n\t<DbName>gtr</DbName>\n</DbList>\n\n</eInfoResult>\n"
     headers:
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: [private]
-      Connection: [Keep-Alive]
-      Content-Encoding: [gzip]
-      Content-Length: ['460']
-      Content-Security-Policy: [upgrade-insecure-requests]
-      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
-          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
-          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
-      Content-Type: [text/xml; charset=UTF-8]
-      Date: ['Wed, 01 Mar 2017 03:53:40 GMT']
-      Keep-Alive: ['timeout=1, max=10']
-      NCBI-PHID: [990C31438B642A010000000000520052]
-      NCBI-SID: [990C31438B645C41_0082SID]
-      Server: [Apache]
-      Set-Cookie: ['ncbi_sid=990C31438B645C41_0082SID; domain=.nih.gov; path=/; expires=Thu,
-          01 Mar 2018 03:53:40 GMT']
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
-      Vary: [Accept-Encoding]
-      X-UA-Compatible: [IE=Edge]
-      X-XSS-Protection: [1; mode=block]
-    status: {code: 200, message: OK}
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - private
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Date:
+      - Fri, 12 Apr 2024 19:06:03 GMT
+      Keep-Alive:
+      - timeout=4, max=40
+      NCBI-PHID:
+      - 322C2F91E09EF72500005C31C9563551.1.1.m_1
+      NCBI-SID:
+      - 8C2C755DA006B8D2_A9F8SID
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Server:
+      - Finatra
+      Set-Cookie:
+      - ncbi_sid=8C2C755DA006B8D2_A9F8SID; domain=.nih.gov; path=/; expires=Sat, 12
+        Apr 2025 19:06:04 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-RateLimit-Limit:
+      - '3'
+      X-RateLimit-Remaining:
+      - '2'
+      X-UA-Compatible:
+      - IE=Edge
+      X-XSS-Protection:
+      - 1; mode=block
+      content-encoding:
+      - gzip
+    status:
+      code: 200
+      message: OK
 version: 1
