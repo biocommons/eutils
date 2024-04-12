@@ -81,7 +81,7 @@ testpaths = [
     "src",
     "tests"
 ]
-addopts = "--doctest-modules --cov-config=setup.cfg --cov-report=term-missing --cov=src"
+addopts = "--doctest-modules --cov-report=term-missing --cov=src"
 doctest_optionflags = [
     "ALLOW_BYTES",
     "ALLOW_UNICODE",
