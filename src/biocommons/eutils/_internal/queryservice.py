@@ -22,8 +22,6 @@ may be controlled upon instantiation by setting default_args.
 
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
-
 import hashlib
 import logging
 import os
@@ -71,7 +69,7 @@ class QueryService(object):
 
     Implementing other query modes should be straightforward.
 
-    See also  
+    See also
         * http://www.ncbi.nlm.nih.gov/books/NBK25500/ :the NCBI's Entrez Programming Utilities Help
         * http://www.ncbi.nlm.nih.gov/books/NBK25499/ :NCBI E-utilities
 
@@ -214,8 +212,8 @@ class QueryService(object):
 
         Output: XML document summary for requested ID(s) [comma-separated]
 
-        Example: 
-        
+        Example:
+
             QueryService.esummary({ "db": "medgen", "id": 134 })
 
         Equivalent HTTP request:
@@ -247,13 +245,13 @@ class QueryService(object):
         the client.
         """
         if args is None:
-            args = {}        
+            args = {}
         def _cacheable(r):
             """return False if r shouldn't be cached (contains a no-cache meta
             line); True otherwise"""
             return not ("no-cache" in r  # obviate parsing, maybe
                         and lxml.etree.XML(r).xpath("//meta/@content='no-cache'"))
-        
+
         # cache key: the key associated with this endpoint and args The
         # key intentionally excludes the identifying args (tool and email)
         # and is independent of the request method (GET/POST) args are
@@ -349,13 +347,13 @@ if __name__ == "__main__":
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 # http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
