@@ -14,7 +14,7 @@ def test_eutils_xmlfacades_pubmedarticle_22528466(client):
         ["Antiviral Agents", "IFNA2 protein, human", "Interferon-alpha", "Plant Extracts", "Glucuronidase"])
     assert pa.doi == "10.1007/s11248-012-9616-0"
     assert pa.issue == "6"
-    assert pa.jrnl == "Transgenic Res."
+    assert pa.jrnl == "Transgenic Res"
     assert set(pa.mesh_headings) == set([
         "Aloe", "Antiviral Agents", "Encephalomyocarditis virus", "Genome, Plant", "Glucuronidase", "Humans",
         "Immunoblotting", "Interferon-alpha", "Plant Extracts", "Plant Leaves", "Plants, Genetically Modified", "Seeds",
@@ -45,7 +45,7 @@ def test_eutils_xmlfacades_pubmedarticle_20412080(client):
     assert set(pa.chemicals) == set([])
     assert pa.doi == '10.1111/j.1399-0004.2010.01436.x'
     assert pa.issue == '6'
-    assert pa.jrnl == 'Clin. Genet.'
+    assert pa.jrnl == 'Clin Genet'
     assert set(pa.mesh_headings) == set([
         'Algorithms', 'Computational Biology', 'Databases, Genetic', 'Gene Expression', 'Humans', 'Phenotype',
         'Vocabulary, Controlled'

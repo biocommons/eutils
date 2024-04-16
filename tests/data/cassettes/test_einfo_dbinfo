@@ -1,92 +1,163 @@
 interactions:
 - request:
-    body: usehistory=y&email=biocommons-dev%40googlegroups.com&version=2.0&retmax=250&db=protein&retmode=xml&tool=eutils
+    body: tool=biocommons.eutils._internal&email=biocommons-dev%40googlegroups.com&retmode=xml&usehistory=y&retmax=250&db=protein&version=2.0
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Length: ['110']
-      Content-Type: [application/x-www-form-urlencoded]
-      User-Agent: [python-requests/2.13.0]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '131'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.31.0
     method: POST
     uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
   response:
     body:
-      string: !!binary |
-        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
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<!DOCTYPE eInfoResult
+        PUBLIC \"-//NLM//DTD einfo 20190110//EN\" \"https://eutils.ncbi.nlm.nih.gov/eutils/dtd/20190110/einfo.dtd\">\n<eInfoResult>\n\t<DbInfo>\n\t<DbName>protein</DbName>\n\t<MenuName>Protein</MenuName>\n\t<Description>Protein
+        sequence record</Description>\n\t<DbBuild>Build240409-2311m.1</DbBuild>\n\t<Count>1291933024</Count>\n\t<LastUpdate>2024/04/11
+        11:05</LastUpdate>\n\t<FieldList>\n\t\t<Field>\n\t\t\t<Name>ALL</Name>\n\t\t\t<FullName>All
+        Fields</FullName>\n\t\t\t<Description>All terms from all searchable fields</Description>\n\t\t\t<TermCount>6465730342</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>N</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>UID</Name>\n\t\t\t<FullName>UID</FullName>\n\t\t\t<Description>Unique
+        number assigned to each sequence</Description>\n\t\t\t<TermCount>0</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>Y</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>Y</IsHidden>\n\t\t\t<IsTruncatable>N</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>FILT</Name>\n\t\t\t<FullName>Filter</FullName>\n\t\t\t<Description>Limits
+        the records</Description>\n\t\t\t<TermCount>253</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>WORD</Name>\n\t\t\t<FullName>Text
+        Word</FullName>\n\t\t\t<Description>Free text associated with record</Description>\n\t\t\t<TermCount>1703043146</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>N</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>TITL</Name>\n\t\t\t<FullName>Title</FullName>\n\t\t\t<Description>Words
+        in definition line</Description>\n\t\t\t<TermCount>202702177</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>N</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>KYWD</Name>\n\t\t\t<FullName>Keyword</FullName>\n\t\t\t<Description>Nonstandardized
+        terms provided by submitter</Description>\n\t\t\t<TermCount>32373</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>AUTH</Name>\n\t\t\t<FullName>Author</FullName>\n\t\t\t<Description>Author(s)
+        of publication</Description>\n\t\t\t<TermCount>3291121</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>JOUR</Name>\n\t\t\t<FullName>Journal</FullName>\n\t\t\t<Description>Journal
+        abbreviation of publication</Description>\n\t\t\t<TermCount>105236</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>VOL</Name>\n\t\t\t<FullName>Volume</FullName>\n\t\t\t<Description>Volume
+        number of publication</Description>\n\t\t\t<TermCount>5010</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>ISS</Name>\n\t\t\t<FullName>Issue</FullName>\n\t\t\t<Description>Issue
+        number of publication</Description>\n\t\t\t<TermCount>5058</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>PAGE</Name>\n\t\t\t<FullName>Page
+        Number</FullName>\n\t\t\t<Description>Page number(s) of publication</Description>\n\t\t\t<TermCount>258677</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>ORGN</Name>\n\t\t\t<FullName>Organism</FullName>\n\t\t\t<Description>Scientific
+        and common names of organism, and all higher levels of taxonomy</Description>\n\t\t\t<TermCount>4553214</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>Y</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>ACCN</Name>\n\t\t\t<FullName>Accession</FullName>\n\t\t\t<Description>Accession
+        number of sequence</Description>\n\t\t\t<TermCount>2585214655</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>Y</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>PACC</Name>\n\t\t\t<FullName>Primary
+        Accession</FullName>\n\t\t\t<Description>Does not include retired secondary
+        accessions</Description>\n\t\t\t<TermCount>2583535897</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>Y</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>GENE</Name>\n\t\t\t<FullName>Gene
+        Name</FullName>\n\t\t\t<Description>Name of gene associated with sequence</Description>\n\t\t\t<TermCount>1819531125</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>PROT</Name>\n\t\t\t<FullName>Protein
+        Name</FullName>\n\t\t\t<Description>Name of protein associated with sequence</Description>\n\t\t\t<TermCount>11347249</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>ECNO</Name>\n\t\t\t<FullName>EC/RN
+        Number</FullName>\n\t\t\t<Description>EC number for enzyme or CAS registry
+        number</Description>\n\t\t\t<TermCount>6820</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>PDAT</Name>\n\t\t\t<FullName>Publication
+        Date</FullName>\n\t\t\t<Description>Date sequence added to GenBank</Description>\n\t\t\t<TermCount>13074</TermCount>\n\t\t\t<IsDate>Y</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>N</IsTruncatable>\n\t\t\t<IsRangable>Y</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>MDAT</Name>\n\t\t\t<FullName>Modification
+        Date</FullName>\n\t\t\t<Description>Date of last update</Description>\n\t\t\t<TermCount>8486</TermCount>\n\t\t\t<IsDate>Y</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>N</IsTruncatable>\n\t\t\t<IsRangable>Y</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>SUBS</Name>\n\t\t\t<FullName>Substance
+        Name</FullName>\n\t\t\t<Description>CAS chemical name or MEDLINE Substance
+        Name</Description>\n\t\t\t<TermCount>1653902</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>PROP</Name>\n\t\t\t<FullName>Properties</FullName>\n\t\t\t<Description>Classification
+        by source qualifiers and molecule type</Description>\n\t\t\t<TermCount>198792</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>SQID</Name>\n\t\t\t<FullName>SeqID
+        String</FullName>\n\t\t\t<Description>String identifier for sequence</Description>\n\t\t\t<TermCount>851187395</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>GPRJ</Name>\n\t\t\t<FullName>BioProject</FullName>\n\t\t\t<Description>BioProject</Description>\n\t\t\t<TermCount>144441</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>Y</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>SLEN</Name>\n\t\t\t<FullName>Sequence
+        Length</FullName>\n\t\t\t<Description>Length of sequence</Description>\n\t\t\t<TermCount>20130</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>Y</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>N</IsTruncatable>\n\t\t\t<IsRangable>Y</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>MLWT</Name>\n\t\t\t<FullName>Molecular
+        Weight</FullName>\n\t\t\t<Description>Molecular Weight</Description>\n\t\t\t<TermCount>699809</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>Y</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>N</IsTruncatable>\n\t\t\t<IsRangable>Y</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>FKEY</Name>\n\t\t\t<FullName>Feature
+        key</FullName>\n\t\t\t<Description>Feature annotated on sequence</Description>\n\t\t\t<TermCount>32</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>PORG</Name>\n\t\t\t<FullName>Primary
+        Organism</FullName>\n\t\t\t<Description>Scientific and common names of primary
+        organism, and all higher levels of taxonomy</Description>\n\t\t\t<TermCount>4544179</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>Y</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>ASSM</Name>\n\t\t\t<FullName>Assembly</FullName>\n\t\t\t<Description>Assembly</Description>\n\t\t\t<TermCount>52</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>DIV</Name>\n\t\t\t<FullName>Division</FullName>\n\t\t\t<Description>Division</Description>\n\t\t\t<TermCount>13</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>STRN</Name>\n\t\t\t<FullName>Strain</FullName>\n\t\t\t<Description>Strain</Description>\n\t\t\t<TermCount>1194580</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>ISOL</Name>\n\t\t\t<FullName>Isolate</FullName>\n\t\t\t<Description>Isolate</Description>\n\t\t\t<TermCount>7724070</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>CULT</Name>\n\t\t\t<FullName>Cultivar</FullName>\n\t\t\t<Description>Cultivar</Description>\n\t\t\t<TermCount>28529</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t\t<Field>\n\t\t\t<Name>BRD</Name>\n\t\t\t<FullName>Breed</FullName>\n\t\t\t<Description>Breed</Description>\n\t\t\t<TermCount>3990</TermCount>\n\t\t\t<IsDate>N</IsDate>\n\t\t\t<IsNumerical>N</IsNumerical>\n\t\t\t<SingleToken>Y</SingleToken>\n\t\t\t<Hierarchy>N</Hierarchy>\n\t\t\t<IsHidden>N</IsHidden>\n\t\t\t<IsTruncatable>Y</IsTruncatable>\n\t\t\t<IsRangable>N</IsRangable>\n\t\t</Field>\n\t</FieldList>\n\t\t<LinkList>\n\t\t\t<Link>\n\t\t\t\t<Name>nuccore_protein_wp</Name>\n\t\t\t\t<Menu>Links
+        to autonomous proteins</Menu>\n\t\t\t\t<Description>Autonomous protein records</Description>\n\t\t\t\t<DbTo>nuccore</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_biocollections</Name>\n\t\t\t\t<Menu>BioCollections</Menu>\n\t\t\t\t<Description>BioCollections</Description>\n\t\t\t\t<DbTo>biocollections</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_bioproject</Name>\n\t\t\t\t<Menu>BioProject
+        Links</Menu>\n\t\t\t\t<Description>Proteins related to BioProjects</Description>\n\t\t\t\t<DbTo>bioproject</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_biosystems</Name>\n\t\t\t\t<Menu>BioSystem
+        Links</Menu>\n\t\t\t\t<Description>BioSystems</Description>\n\t\t\t\t<DbTo>biosystems</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_ccds</Name>\n\t\t\t\t<Menu>ccds</Menu>\n\t\t\t\t<Description>Link
+        to Consensus CDS</Description>\n\t\t\t\t<DbTo>ccds</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_cdd</Name>\n\t\t\t\t<Menu>Conserved
+        Domain Links</Menu>\n\t\t\t\t<Description>Link to conserved domains within
+        a protein</Description>\n\t\t\t\t<DbTo>cdd</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_cdd_concise_2</Name>\n\t\t\t\t<Menu>Concise
+        Conserved Domain Links</Menu>\n\t\t\t\t<Description>Link to a concise list
+        of conserved domains in a protein</Description>\n\t\t\t\t<DbTo>cdd</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_cdd_summary</Name>\n\t\t\t\t<Menu></Menu>\n\t\t\t\t<Description>Display
+        conserved domains within a protein</Description>\n\t\t\t\t<DbTo>cdd</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_gene</Name>\n\t\t\t\t<Menu>Gene
+        Links</Menu>\n\t\t\t\t<Description>Link to related Genes</Description>\n\t\t\t\t<DbTo>gene</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_genome</Name>\n\t\t\t\t<Menu>Genome
+        Links</Menu>\n\t\t\t\t<Description>Genome record encoding protein sequence</Description>\n\t\t\t\t<DbTo>genome</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_homologene</Name>\n\t\t\t\t<Menu>HomoloGene
+        Links</Menu>\n\t\t\t\t<Description>Related HomoloGene</Description>\n\t\t\t\t<DbTo>homologene</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_nuccore</Name>\n\t\t\t\t<Menu>Nucleotide
+        Links</Menu>\n\t\t\t\t<Description>Nucleotide sequence from coding region</Description>\n\t\t\t\t<DbTo>nuccore</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_nuccore_mat_peptide</Name>\n\t\t\t\t<Menu>Mature
+        Peptides</Menu>\n\t\t\t\t<Description>Link between nucleotide record and mature
+        peptides contained within nucleotide record</Description>\n\t\t\t\t<DbTo>nuccore</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_nuccore_mgc</Name>\n\t\t\t\t<Menu>Nucleotide
+        NIH cDNA clone links</Menu>\n\t\t\t\t<Description>Nucleotide NIH cDNA clone</Description>\n\t\t\t\t<DbTo>nuccore</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_nuccore_mrna</Name>\n\t\t\t\t<Menu>Encoding
+        mRNA</Menu>\n\t\t\t\t<Description>Link from protein to encoding mRNA</Description>\n\t\t\t\t<DbTo>nuccore</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_nuccore_small_genome</Name>\n\t\t\t\t<Menu>Link
+        to all nucleotide sequences from this genome</Menu>\n\t\t\t\t<Description>All
+        nucleotide sequences from this genome</Description>\n\t\t\t\t<DbTo>nuccore</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_nuccore_tsa</Name>\n\t\t\t\t<Menu>TSA
+        master records</Menu>\n\t\t\t\t<Description>Links to TSA master records</Description>\n\t\t\t\t<DbTo>nuccore</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_nuccore_wgs</Name>\n\t\t\t\t<Menu></Menu>\n\t\t\t\t<Description>Links
+        to WGS master sequences</Description>\n\t\t\t\t<DbTo>nuccore</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_nuccore_wp</Name>\n\t\t\t\t<Menu>Link
+        to genomic records</Menu>\n\t\t\t\t<Description>Genomic records</Description>\n\t\t\t\t<DbTo>nuccore</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_nucgss</Name>\n\t\t\t\t<Menu>GSS
+        Links</Menu>\n\t\t\t\t<Description>GSS sequence from coding region</Description>\n\t\t\t\t<DbTo>nucgss</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_nucleotide_mgc_url</Name>\n\t\t\t\t<Menu></Menu>\n\t\t\t\t<Description>Order
+        cDNA clone</Description>\n\t\t\t\t<DbTo>nucleotide</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_omim</Name>\n\t\t\t\t<Menu>OMIM
+        Links</Menu>\n\t\t\t\t<Description>OMIM records associated with protein sequence</Description>\n\t\t\t\t<DbTo>omim</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_pcassay_target</Name>\n\t\t\t\t<Menu>BioAssay
+        by Target (List)</Menu>\n\t\t\t\t<Description>PubChem BioAssays done on the
+        protein target</Description>\n\t\t\t\t<DbTo>pcassay</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_pcassay_target_pig</Name>\n\t\t\t\t<Menu>BioAssay
+        by Target (Identical Proteins, List)</Menu>\n\t\t\t\t<Description>PubChem
+        BioAssays done on the protein target PIG</Description>\n\t\t\t\t<DbTo>pcassay</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_pcassay_target_pig_summary</Name>\n\t\t\t\t<Menu>pcassay</Menu>\n\t\t\t\t<Description>BioAssay
+        by Target (Identical Proteins, Summary)</Description>\n\t\t\t\t<DbTo>pcassay</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_pcassay_target_summary</Name>\n\t\t\t\t<Menu>pcassay</Menu>\n\t\t\t\t<Description>BioAssay
+        by Target (Summary)</Description>\n\t\t\t\t<DbTo>pcassay</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_pccompound</Name>\n\t\t\t\t<Menu>PubChem
+        Compound Links</Menu>\n\t\t\t\t<Description>Related PubChem Compound</Description>\n\t\t\t\t<DbTo>pccompound</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_pcsubstance</Name>\n\t\t\t\t<Menu>PubChem
+        Substance Links</Menu>\n\t\t\t\t<Description>Related PubChem Substance</Description>\n\t\t\t\t<DbTo>pcsubstance</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_pmc</Name>\n\t\t\t\t<Menu>PMC
+        Links</Menu>\n\t\t\t\t<Description>Free full text articles in PMC</Description>\n\t\t\t\t<DbTo>pmc</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_popset</Name>\n\t\t\t\t<Menu>PopSet
+        Links</Menu>\n\t\t\t\t<Description>Population set containing protein sequence</Description>\n\t\t\t\t<DbTo>popset</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_protein_cdart_summary</Name>\n\t\t\t\t<Menu></Menu>\n\t\t\t\t<Description>Display
+        proteins with similar conserved domain architecture</Description>\n\t\t\t\t<DbTo>protein</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_protein_ref2wp</Name>\n\t\t\t\t<Menu>Links
+        from references to autonomous proteins</Menu>\n\t\t\t\t<Description>Autonomous
+        protein records</Description>\n\t\t\t\t<DbTo>protein</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_protein_refseq2uniprot</Name>\n\t\t\t\t<Menu>Protein
+        (UniProtKB)</Menu>\n\t\t\t\t<Description>Protein gi (refseq) to protein gi
+        (UniProtKB)</Description>\n\t\t\t\t<DbTo>protein</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_protein_small_genome</Name>\n\t\t\t\t<Menu>Link
+        to all proteins from this genome</Menu>\n\t\t\t\t<Description>All proteins
+        from this genome</Description>\n\t\t\t\t<DbTo>protein</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_protein_uniprot2refseq</Name>\n\t\t\t\t<Menu>Protein
+        (RefSeq)</Menu>\n\t\t\t\t<Description>Protein gi (UniProtKB) to protein gi
+        (refseq)</Description>\n\t\t\t\t<DbTo>protein</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_protein_wp2ref</Name>\n\t\t\t\t<Menu>Link
+        to referencing proteins</Menu>\n\t\t\t\t<Description>Referencing proteins</Description>\n\t\t\t\t<DbTo>protein</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_proteinclusters</Name>\n\t\t\t\t<Menu>Protein
+        Cluster Links</Menu>\n\t\t\t\t<Description>Related Protein Clusters</Description>\n\t\t\t\t<DbTo>proteinclusters</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_protfam</Name>\n\t\t\t\t<Menu>Protein
+        Family Models</Menu>\n\t\t\t\t<Description>Protein family models characterizing
+        a particular protein</Description>\n\t\t\t\t<DbTo>protfam</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_pubmed</Name>\n\t\t\t\t<Menu>PubMed
+        Links</Menu>\n\t\t\t\t<Description>PubMed articles cited by protein sequence
+        record</Description>\n\t\t\t\t<DbTo>pubmed</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_pubmed_refseq</Name>\n\t\t\t\t<Menu>PubMed
+        (RefSeq) Links</Menu>\n\t\t\t\t<Description>Link to RefSeq PubMed articles</Description>\n\t\t\t\t<DbTo>pubmed</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_pubmed_weighted</Name>\n\t\t\t\t<Menu>PubMed
+        (Weighted) Links</Menu>\n\t\t\t\t<Description>Links to pubmed</Description>\n\t\t\t\t<DbTo>pubmed</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_snp</Name>\n\t\t\t\t<Menu>SNP
+        Links</Menu>\n\t\t\t\t<Description>Related SNPs</Description>\n\t\t\t\t<DbTo>snp</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_snp_geneview</Name>\n\t\t\t\t<Menu></Menu>\n\t\t\t\t<Description>SNPs
+        linked from GeneView</Description>\n\t\t\t\t<DbTo>snp</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_structure</Name>\n\t\t\t\t<Menu>Identical
+        Structures</Menu>\n\t\t\t\t<Description>3D structures for identical protein
+        sequences</Description>\n\t\t\t\t<DbTo>structure</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_structure_direct</Name>\n\t\t\t\t<Menu>Structures</Menu>\n\t\t\t\t<Description>Experimentally
+        determined 3D Structures</Description>\n\t\t\t\t<DbTo>structure</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_structure_related</Name>\n\t\t\t\t<Menu></Menu>\n\t\t\t\t<Description>Related
+        structures</Description>\n\t\t\t\t<DbTo>structure</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_structure_related_list</Name>\n\t\t\t\t<Menu>Related
+        Structures (List)</Menu>\n\t\t\t\t<Description>List of related structures</Description>\n\t\t\t\t<DbTo>structure</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_taxonomy</Name>\n\t\t\t\t<Menu>Taxonomy
+        Links</Menu>\n\t\t\t\t<Description>Taxonomy sequences associated with protein
+        record</Description>\n\t\t\t\t<DbTo>taxonomy</DbTo>\n\t\t\t</Link>\n\t\t\t<Link>\n\t\t\t\t<Name>protein_taxonomy_wp2species</Name>\n\t\t\t\t<Menu>Links
+        from autonomous proteins to species level organisms</Menu>\n\t\t\t\t<Description>Species
+        level organisms</Description>\n\t\t\t\t<DbTo>taxonomy</DbTo>\n\t\t\t</Link>\n\t\t</LinkList>\n\t</DbInfo>\n\n</eInfoResult>\n"
     headers:
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: [private]
-      Connection: [Keep-Alive]
-      Content-Encoding: [gzip]
-      Content-Length: ['3020']
-      Content-Security-Policy: [upgrade-insecure-requests]
-      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
-          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
-          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
-      Content-Type: [text/xml; charset=UTF-8]
-      Date: ['Wed, 01 Mar 2017 03:53:40 GMT']
-      Keep-Alive: ['timeout=1, max=10']
-      NCBI-PHID: [03EDB9518B642BE10000000000420042]
-      NCBI-SID: [03EDB9518B645C41_0066SID]
-      Server: [Apache]
-      Set-Cookie: ['ncbi_sid=03EDB9518B645C41_0066SID; domain=.nih.gov; path=/; expires=Thu,
-          01 Mar 2018 03:53:40 GMT']
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
-      Vary: [Accept-Encoding]
-      X-UA-Compatible: [IE=Edge]
-      X-XSS-Protection: [1; mode=block]
-    status: {code: 200, message: OK}
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - private
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Date:
+      - Fri, 12 Apr 2024 19:06:04 GMT
+      Keep-Alive:
+      - timeout=4, max=40
+      NCBI-PHID:
+      - 322C2F91E09EF72500002F31CEA9FDD7.1.1.m_1
+      NCBI-SID:
+      - 1049C5DF38848734_37E6SID
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Server:
+      - Finatra
+      Set-Cookie:
+      - ncbi_sid=1049C5DF38848734_37E6SID; domain=.nih.gov; path=/; expires=Sat, 12
+        Apr 2025 19:06:04 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-RateLimit-Limit:
+      - '3'
+      X-RateLimit-Remaining:
+      - '1'
+      X-UA-Compatible:
+      - IE=Edge
+      X-XSS-Protection:
+      - 1; mode=block
+      content-encoding:
+      - gzip
+    status:
+      code: 200
+      message: OK
 version: 1

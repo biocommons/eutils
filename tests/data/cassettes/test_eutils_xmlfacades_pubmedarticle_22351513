@@ -1,85 +1,152 @@
 interactions:
 - request:
-    body: id=22351513&retmode=xml&retmax=250&email=biocommons-dev%40googlegroups.com&tool=eutils&db=pubmed&usehistory=y
+    body: tool=biocommons.eutils._internal&email=biocommons-dev%40googlegroups.com&retmode=xml&usehistory=y&retmax=250&db=pubmed&id=22351513
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Length: ['109']
-      Content-Type: [application/x-www-form-urlencoded]
-      User-Agent: [python-requests/2.13.0]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '130'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.31.0
     method: POST
     uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA8xZ3XLbuhG+P0+B8qJNZmzxR5YVtzLPKJKTyJFkxbIzk3PTgUiIRAICLAjKkS86
-        cx7nPEKnd+dR+iRdgJQsSvSf6pNpZhLTwGLx7beL3QXS+fl7wtCCyIwKfmq5DcdCP/s/df7Uv+hd
-        fZmcoUk+S0jYlYoGjEyJQpPrt8NBD1mHtj0ejmy7f9XXQqO10AFyM4XOMc+xXCLPcdu2fTa2kBUr
-        lWZ/te1QhQ3OkgancSMSC5sHM2qnZh9b5Kr8/LvbdlzHbYC0BYC2cWwP+T8h+NMBGIxy0qMKK7AI
-        TeFnnp1ao7P+cDA+s9DFDSfy1ALoVrHELJuMBn30ec2C5Xtes+W23GbH1lMbkn2sSE8S+De8GzUz
-        XwiWPpjrdWzzWZ0dCa5i32l37OKrOtvHS99907H1z7u97NrNCggiSRnZD4SevA+E59aD2N3OwLgk
-        C5rdC6L5EAj32SB2NuuUvjfxJ0LCTq2JpFwdnjESKCk4Dawt9ecilxyz6qiZGUynYzTIMn61TMmp
-        tanCdU7ahw5EY8fWUjWLS7WwPCcIgo+EEIg0T06tAVdEcqKs3VVm5WfB8oT4J+CT8rNezqg2rBVf
-        9VJAhGaqftZIPBggFcnCO908qnVURVQ7q+lsOa0iYd+LrGNvklczf0UVHO9SCIk5UjFBWUAJD4j+
-        dS5EiDCHv5GkQc5ULknHLlbVufmiO5tJCCWTIPzzBpoGtIHeaS1draGhvVwVqsaQXRtEq2AsNv6M
-        ZbEWUY4EZSgACglXBugcK7VEOKAhDCepyKiRXJlGSGiWwO/dAKQwylIC9mYgzXRYwvxcisRIcyFV
-        fEMg494KbvgY8JBiMKKCpwp1giPKa0wr/F6k0EnEfa/pOoct8P/d0BYV92nqnA1FYMYhsZ4NwuJQ
-        hYJa6DNmNPwyPrW+6JPVcB3Hs79mc9xoHXuQHjcWbhM8y5TEgarBvJq6It8VGuKZTgVvu72P7y8v
-        rsd9C41Z0oPoi4RcVib8K6Dwee5JsA4w46XscRdxLQ1hG+OZLkkrJbte06PGcxxl+UzDAcIB0KtL
-        /BVnKsb8NbohsDGGyFvegn4dWDIkEimBQsjNMoEVWg+VKBXaGgobz4VEcZ5gLQxraYKNsVmepNoq
-        HScb3D2R2suz6fXwarrF62rUv9ggdAEHAcDOiLohhKMjx1DsOh6K0LfoP7/++/d/NZD2QkyjWBOy
-        6Y0bDBTPFAbDjL0l1zO6IFxkGPV7DfSqous1wongUUGy5qPqnmKrexycxeIG9jFAJGJkQZjxcM4z
-        40Xj1PXS7AARoxUztkRwPAQjNCi0vvpnu9VutO9gGfCNNfDXB6gi3fJaDWdHmuczGuDXhrBQgHcx
-        UFILpYiMuchBEqJhRpB74jVaGxpTzBKwstxRa/TarcbxhkSmoBysBAoAjOSBSGMmCDZL1piQNKYr
-        MIctIYGWGav2PEDkqTjPNKiA4Syjc1o4U7toRdvhBh2RFHkKSmnEQTbAZRCZnFBaKmYZkYvyDDz5
-        9G6Fwl6R37sY94bX08HFeCv47yamRVZJgSONKVN5uATCFgQzQAwnWT2e5nOmjwzCiJMblEG5KUqd
-        Ds06zg7BcTGCjmPGinSmiaAqQ/OcsY1kABFeaibfUyZ0n1KciDwz+vVSk7ZWgDRGatx6p4QA2xCN
-        AajhZE6VjjhtUCogw+hasNDfac7wZtrE0MaC92LtPlgDSnWppgu8xvC449ZhBqvhyrJEGU0ow7JA
-        ALxKkkJi1WcDoICShMjyfOIFBklNT8nSgkRE4ZKvDEj9Bi4RyxnB/AAleaawDA8gFfM5g6wgD0xY
-        8pDnRZQJBmY20AfThOzrzjooCM+VyenfKZQSEcEBYCaGnhSyPZEuJQSJGnCgICkK83oQ/f6bvo95
-        aCoAGJANGHoxScweUHzAarmETWq1bBX++mLc6eYqFnJIIZGv7gxlqa85X0a20g/UN49DKIBjDK3x
-        RyiDHXv9a730OyGJmb6kS3ybhyHUnY69Hr2nveZUB3fmX0L3t/quF+3O55QV6Ujz80BbvCHp90mK
-        pUp0RgDW3wqF+fIAbskJBMoHnIQm3MoPNMYRhpAbQ7T0CYspcqFLOvYO7nq7Dc33NNyPwgQR44AX
-        8cxUwlGGQ7PAz/BPHsT0hTzzosY8L8xGWOl+ocueYcuo+8OM6TKcPN2YicQL8vXphkx+nB2zkD7L
-        K5DS0S/QOubsGX755YfZM8JxAnfO/PYWz7F8yLD6bVejOtduzQwxj3IcEZ/wSCsuf9u6A+YzRoub
-        lr6c7aqpk0LXg1Or77jHR94ba30nL2+a5pK/Kf10fc2jNy3Lv4SOCUvoZKZ5qgs5ZEDBD68b0wZ6
-        LxZ/UY9ssDNdQ00JVT9FIP3P7mPPLuZHn0xWj3v172pGwjxr1b2QrO/p1deR9fDGUHkLXz2X7CR1
-        qP45hwrun/GIQZOiC3kxsPUAV+i56vrn+u1j4+ljfdOHueoa6HWvOf1HTuBW7jTbx83mUcfeHKyK
-        62eyIeXfKI98uN97hy33yCtez1bDG6Y+ZFhn1aDUOHM1VcP3JYmo7mbGeTIj0gfmt0Z2l+jDdzGf
-        5tDYYN3VFaHpHDlHruX3oV/Sz9nvsMrA8Krotkfrcf0YuC3Pa1v+O9NLd/Xd8P8ZreucNCGPTJi+
-        5F1AH/7Hg/WuR4OT62a7N9kf9UnTgZC4MNcvzfEfj/rk4/nQc6+cT+f/A+r2G4iM4eqhYk/gd2PV
-        A9lZ/ZeL1kWUPxiBZHVoM5Nl8QeCoaBHNcd6Y7Yuk5IskDRVQmrsq7CHc9qy0Ah/FfJKpDTQNXhs
-        +cVNDNJuZVGN1k85VO45JXdKP4HOdrO9rRQKe6AJ0B7o2JVlT1brtY5qsMIF80bF6M84Sf+GQv36
-        JFJ9X3hwF50872FrLx5NttvFVk1/e7LpNL0a1eY9M6PZvmS6J3WAV48Ue6ttOnVgaSbKZ43CTWku
-        zRuVHtp3p2PHqdkpgxaILVfRoMONzvJHt3npcDDVZBdcpby8XDR8eWI0vLiVR26dC94xLTOAtvC2
-        dPBDpr40qLZ7UpMlUNGwvicikjiNdcNq3gT2xfZfAAAA//8jy22QqgQzwNDqFvoXE1T3J6iix3SL
-        /7DyJLgNhukW5EbZ4Ko+R0t8GqYGIzNjSyyOA03xDLqEMHjbUYbG2NujwdApATANTEaZJZVkldwo
-        wogmNLwrDWt5Q4UhK6VcEksSkYzwAGrLxxgcgCzlgq7WAC2sga2gKkpNTs0sS03BN0JiSGiExAL/
-        CAloeRSWERIUNxHvXvBqIYoGdLCvUYI719CEes5NTE5OLSihsXstqedeYIYqSq2ixLWERsuMcKwn
-        svHILy2yM7PRB9NYTM/MKwX6wwBoPIRFDe9C1iSOGO/mQooRSvyLY5XhgHkYaB56gYc8Gg3xuV1B
-        AUioOANlLBkqh9AHHZv1TME9wuyZogBb9QRLO4g1pXA1BPWCVkxhWyWFxQQkQeQaAbnsh/HgY8vo
-        IuCFtQA0PYVUFCwAAA==
+      string: '<?xml version="1.0" ?>
+
+        <!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January
+        2024//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_240101.dtd">
+
+        <PubmedArticleSet>
+
+        <PubmedArticle><MedlineCitation Status="MEDLINE" Owner="NLM"><PMID Version="1">22351513</PMID><DateCompleted><Year>2012</Year><Month>12</Month><Day>21</Day></DateCompleted><DateRevised><Year>2013</Year><Month>11</Month><Day>21</Day></DateRevised><Article
+        PubModel="Print-Electronic"><Journal><ISSN IssnType="Electronic">1097-0010</ISSN><JournalIssue
+        CitedMedium="Internet"><Volume>92</Volume><Issue>11</Issue><PubDate><Year>2012</Year><Month>Aug</Month><Day>30</Day></PubDate></JournalIssue><Title>Journal
+        of the science of food and agriculture</Title><ISOAbbreviation>J Sci Food
+        Agric</ISOAbbreviation></Journal><ArticleTitle>Variation in oil content and
+        fatty acid composition of the seed oil of Acacia species collected from the
+        northwest zone of India.</ArticleTitle><Pagination><StartPage>2310</StartPage><EndPage>2315</EndPage><MedlinePgn>2310-5</MedlinePgn></Pagination><ELocationID
+        EIdType="doi" ValidYN="Y">10.1002/jsfa.5627</ELocationID><Abstract><AbstractText
+        Label="BACKGROUND" NlmCategory="BACKGROUND">The oil content and fatty acid
+        composition of the mature seeds of Acacia species collected from natural habitat
+        of the northwest zone of the Indian subcontinent (Rajasthan) were analyzed
+        in order to determine their potential for human or animal consumption.</AbstractText><AbstractText
+        Label="RESULTS" NlmCategory="RESULTS">Oil content varied between 40 and 102
+        g kg&#x207b;&#xb9;. The highest oil content was obtained in Acacia bivenosa
+        DC. (102 g kg&#x207b;&#xb9;) among the nine Acacia species. The fatty acid
+        composition showed higher levels of unsaturated fatty acids, especially linoleic
+        acid (~757.7 g kg&#x207b;&#xb9; in A. bivenosa), oleic acid (~525.0 g kg&#x207b;&#xb9;
+        in A. nubica) and dominant saturated fatty acids were found to be 192.5 g
+        kg&#x207b;&#xb9; palmitic acid and 275.6 g kg&#x207b;&#xb9; stearic acid in
+        A. leucophloea and A. nubica respectively. Seed oils of Acacia species can
+        thus be classified in the linoleic-oleic acid group. Significant variations
+        were observed in oil content and fatty acid composition of Acacia species.</AbstractText><AbstractText
+        Label="CONCLUSION" NlmCategory="CONCLUSIONS">The present study revealed that
+        the seed oil of Acacia species could be a new source of high linoleic-oleic
+        acid-rich edible oil and its full potential should be exploited. The use of
+        oil from Acacia seed is of potential economic benefit to the poor native population
+        of the areas where it is cultivated. The fatty acid composition of Acacia
+        seed oils is very similar to that reported for commercially available edible
+        vegetable oils like soybean, mustard, sunflower, groundnut and olive. Hence
+        the seed oil of Acacia species could be a new source of edible vegetable oil
+        after toxicological studies.</AbstractText><CopyrightInformation>Copyright
+        &#xa9; 2012 Society of Chemical Industry.</CopyrightInformation></Abstract><AuthorList
+        CompleteYN="Y"><Author ValidYN="Y"><LastName>Khan</LastName><ForeName>Riyazuddeen</ForeName><Initials>R</Initials><AffiliationInfo><Affiliation>Department
+        of Botany, Jamia Hamdard, Hamdard Nagar, New Delhi 110062, India.</Affiliation></AffiliationInfo></Author><Author
+        ValidYN="Y"><LastName>Srivastava</LastName><ForeName>Ruchi</ForeName><Initials>R</Initials></Author><Author
+        ValidYN="Y"><LastName>Khan</LastName><ForeName>Mather Ali</ForeName><Initials>MA</Initials></Author><Author
+        ValidYN="Y"><LastName>Alam</LastName><ForeName>Pravej</ForeName><Initials>P</Initials></Author><Author
+        ValidYN="Y"><LastName>Abdin</LastName><ForeName>Malik Zainul</ForeName><Initials>MZ</Initials></Author><Author
+        ValidYN="Y"><LastName>Mahmooduzzafar</LastName></Author></AuthorList><Language>eng</Language><PublicationTypeList><PublicationType
+        UI="D016428">Journal Article</PublicationType><PublicationType UI="D013485">Research
+        Support, Non-U.S. Gov''t</PublicationType></PublicationTypeList><ArticleDate
+        DateType="Electronic"><Year>2012</Year><Month>02</Month><Day>20</Day></ArticleDate></Article><MedlineJournalInfo><Country>England</Country><MedlineTA>J
+        Sci Food Agric</MedlineTA><NlmUniqueID>0376334</NlmUniqueID><ISSNLinking>0022-5142</ISSNLinking></MedlineJournalInfo><ChemicalList><Chemical><RegistryNumber>0</RegistryNumber><NameOfSubstance
+        UI="D004041">Dietary Fats</NameOfSubstance></Chemical><Chemical><RegistryNumber>0</RegistryNumber><NameOfSubstance
+        UI="D005227">Fatty Acids</NameOfSubstance></Chemical><Chemical><RegistryNumber>0</RegistryNumber><NameOfSubstance
+        UI="D010938">Plant Oils</NameOfSubstance></Chemical><Chemical><RegistryNumber>2UMI9U37CP</RegistryNumber><NameOfSubstance
+        UI="D019301">Oleic Acid</NameOfSubstance></Chemical><Chemical><RegistryNumber>9KJL21T0QJ</RegistryNumber><NameOfSubstance
+        UI="D019787">Linoleic Acid</NameOfSubstance></Chemical></ChemicalList><CitationSubset>IM</CitationSubset><MeshHeadingList><MeshHeading><DescriptorName
+        UI="D000045" MajorTopicYN="N">Acacia</DescriptorName><QualifierName UI="Q000737"
+        MajorTopicYN="Y">chemistry</QualifierName><QualifierName UI="Q000254" MajorTopicYN="N">growth
+        &amp; development</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D004041" MajorTopicYN="N">Dietary Fats</DescriptorName><QualifierName
+        UI="Q000032" MajorTopicYN="N">analysis</QualifierName><QualifierName UI="Q000191"
+        MajorTopicYN="N">economics</QualifierName><QualifierName UI="Q000302" MajorTopicYN="N">isolation
+        &amp; purification</QualifierName><QualifierName UI="Q000600" MajorTopicYN="N">supply
+        &amp; distribution</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D005227" MajorTopicYN="N">Fatty Acids</DescriptorName><QualifierName UI="Q000032"
+        MajorTopicYN="Y">analysis</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D005410" MajorTopicYN="N">Flame Ionization</DescriptorName></MeshHeading><MeshHeading><DescriptorName
+        UI="D007194" MajorTopicYN="N" Type="Geographic">India</DescriptorName></MeshHeading><MeshHeading><DescriptorName
+        UI="D019787" MajorTopicYN="N">Linoleic Acid</DescriptorName><QualifierName
+        UI="Q000032" MajorTopicYN="N">analysis</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D019301" MajorTopicYN="N">Oleic Acid</DescriptorName><QualifierName UI="Q000032"
+        MajorTopicYN="N">analysis</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D010938" MajorTopicYN="N">Plant Oils</DescriptorName><QualifierName UI="Q000737"
+        MajorTopicYN="Y">chemistry</QualifierName><QualifierName UI="Q000191" MajorTopicYN="N">economics</QualifierName><QualifierName
+        UI="Q000302" MajorTopicYN="N">isolation &amp; purification</QualifierName><QualifierName
+        UI="Q000600" MajorTopicYN="N">supply &amp; distribution</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D012639" MajorTopicYN="N">Seeds</DescriptorName><QualifierName UI="Q000737"
+        MajorTopicYN="Y">chemistry</QualifierName><QualifierName UI="Q000254" MajorTopicYN="N">growth
+        &amp; development</QualifierName></MeshHeading><MeshHeading><DescriptorName
+        UI="D013045" MajorTopicYN="N">Species Specificity</DescriptorName></MeshHeading></MeshHeadingList></MedlineCitation><PubmedData><History><PubMedPubDate
+        PubStatus="received"><Year>2011</Year><Month>8</Month><Day>7</Day></PubMedPubDate><PubMedPubDate
+        PubStatus="revised"><Year>2012</Year><Month>1</Month><Day>14</Day></PubMedPubDate><PubMedPubDate
+        PubStatus="accepted"><Year>2012</Year><Month>1</Month><Day>19</Day></PubMedPubDate><PubMedPubDate
+        PubStatus="entrez"><Year>2012</Year><Month>2</Month><Day>22</Day><Hour>6</Hour><Minute>0</Minute></PubMedPubDate><PubMedPubDate
+        PubStatus="pubmed"><Year>2012</Year><Month>2</Month><Day>22</Day><Hour>6</Hour><Minute>0</Minute></PubMedPubDate><PubMedPubDate
+        PubStatus="medline"><Year>2012</Year><Month>12</Month><Day>22</Day><Hour>6</Hour><Minute>0</Minute></PubMedPubDate></History><PublicationStatus>ppublish</PublicationStatus><ArticleIdList><ArticleId
+        IdType="pubmed">22351513</ArticleId><ArticleId IdType="doi">10.1002/jsfa.5627</ArticleId></ArticleIdList></PubmedData></PubmedArticle></PubmedArticleSet>'
     headers:
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: [private]
-      Connection: [Keep-Alive]
-      Content-Encoding: [gzip]
-      Content-Security-Policy: [upgrade-insecure-requests]
-      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
-          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
-          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
-      Content-Type: [text/xml; charset=UTF-8]
-      Date: ['Wed, 01 Mar 2017 04:47:14 GMT']
-      Keep-Alive: ['timeout=1, max=10']
-      NCBI-PHID: [990DFEEB8B64BCF10000000002A30290]
-      NCBI-SID: [990DFEEB8B652521_0675SID]
-      Server: [Apache]
-      Set-Cookie: ['ncbi_sid=990DFEEB8B652521_0675SID; domain=.nih.gov; path=/; expires=Thu,
-          01 Mar 2018 04:47:14 GMT']
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
-      Vary: [Accept-Encoding]
-      X-UA-Compatible: [IE=Edge]
-      X-XSS-Protection: [1; mode=block]
-    status: {code: 200, message: OK}
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - private
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Date:
+      - Fri, 12 Apr 2024 19:08:04 GMT
+      Keep-Alive:
+      - timeout=4, max=40
+      NCBI-PHID:
+      - 939BB5891DA9C03500003C1A853EC4EA.1.1.m_3
+      NCBI-SID:
+      - B188F3CE49E46B99_D99BSID
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Server:
+      - Finatra
+      Set-Cookie:
+      - ncbi_sid=B188F3CE49E46B99_D99BSID; domain=.nih.gov; path=/; expires=Sat, 12
+        Apr 2025 19:08:05 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-RateLimit-Limit:
+      - '3'
+      X-RateLimit-Remaining:
+      - '1'
+      X-UA-Compatible:
+      - IE=Edge
+      X-XSS-Protection:
+      - 1; mode=block
+      content-encoding:
+      - gzip
+    status:
+      code: 200
+      message: OK
 version: 1

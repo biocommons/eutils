@@ -5,7 +5,7 @@ import tempfile
 import time
 import unittest
 
-from eutils._internal.sqlitecache import SQLiteCache
+from biocommons.eutils._internal.sqlitecache import SQLiteCache
 
 
 class Test_SQLiteCacheBase(unittest.TestCase):

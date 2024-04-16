@@ -1,92 +1,248 @@
 interactions:
 - request:
-    body: db=medgen&email=biocommons-dev%40googlegroups.com&id=336867&tool=eutils&retmax=250&retmode=xml&usehistory=y
+    body: tool=biocommons.eutils._internal&email=biocommons-dev%40googlegroups.com&retmode=xml&usehistory=y&retmax=250&db=medgen&id=336867
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      Content-Length: ['107']
-      Content-Type: [application/x-www-form-urlencoded]
-      User-Agent: [python-requests/2.13.0]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '128'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.31.0
     method: POST
     uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi
   response:
     body:
-      string: !!binary |
-        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
+      string: '<?xml version="1.0" encoding="UTF-8" ?>
+
+        <!DOCTYPE eSummaryResult PUBLIC "-//NLM//DTD esummary medgen 20190125//EN"
+        "https://eutils.ncbi.nlm.nih.gov/eutils/dtd/20190125/esummary_medgen.dtd">
+
+        <eSummaryResult>
+
+        <DocumentSummarySet status="OK"><DbBuild>Build240412-0757.1</DbBuild><DocumentSummary
+        uid="336867"><ConceptId>C1845167</ConceptId><Title>Dent disease type 2</Title><Definition>Dent
+        disease, an X-linked disorder of proximal renal tubular dysfunction, is characterized
+        by low molecular weight (LMW) proteinuria, hypercalciuria, and at least one
+        additional finding including nephrocalcinosis, nephrolithiasis, hematuria,
+        hypophosphatemia, chronic kidney disease (CKD), and evidence of X-linked inheritance.
+        Males younger than age ten years may manifest only LMW proteinuria and/or
+        hypercalciuria, which are usually asymptomatic. Thirty to 80% of affected
+        males develop end-stage renal disease (ESRD) between ages 30 and 50 years;
+        in some instances ESRD does not develop until the sixth decade of life or
+        later. The disease may also be accompanied by rickets or osteomalacia, growth
+        restriction, and short stature. Disease severity can vary within the same
+        family. Males with Dent disease 2 (caused by pathogenic variants in OCRL)
+        may also have mild intellectual disability, cataracts, and/or elevated muscle
+        enzymes. Due to random X-chromosome inactivation, some female carriers may
+        manifest hypercalciuria and, rarely, renal calculi and moderate LMW proteinuria.
+        Females rarely develop CKD.</Definition><SemanticId>T047</SemanticId><SemanticType>Disease
+        or Syndrome</SemanticType><Suppressed/><ConceptMeta><Names><Name SDUI="300555"
+        CODE="300555" SAB="OMIM" TTY="PT" type="syn">DENT DISEASE 2</Name><Name SDUI="C564487"
+        SCUI="M0564787" CODE="C564487" SAB="MSH" TTY="NM" type="syn">Dent Disease
+        2</Name><Name SDUI="300535" CODE="300535" SAB="OMIM" TTY="PHENO" type="syn">DENT
+        DISEASE 2</Name><Name SCUI="717790004" CODE="717790004" SAB="SNOMEDCT_US"
+        TTY="PT" type="preferred">Dent disease type 2</Name><Name SDUI="300555" CODE="300555"
+        SAB="OMIM" TTY="ACR" type="syn">DENT2</Name><Name SDUI="GTRT000001952" CODE="AN1486807"
+        SAB="GTR" TTY="PT" type="preferred">Dent disease type 2</Name><Name SDUI="MONDO:0010359"
+        SCUI="GTRT000001952" CODE="MONDO_0010359" SAB="MONDO" TTY="PT" type="preferred">Dent
+        disease type 2</Name><Name SDUI="MONDO:0010359" SCUI="GTRT000001952" CODE="AN1593121"
+        SAB="MONDO" TTY="SYN" type="syn">OCRL Dent disease</Name><Name SDUI="MONDO:0010359"
+        SCUI="GTRT000001952" CODE="AN1596872" SAB="MONDO" TTY="SYN" type="syn">Dent
+        disease caused by mutation in OCRL</Name><Name SDUI="MONDO:0010359" SCUI="GTRT000001952"
+        CODE="AN1596873" SAB="MONDO" TTY="SYN" type="syn">nephrolithiasis type 2</Name><Name
+        SDUI="MONDO:0010359" SCUI="GTRT000001952" CODE="AN1653716" SAB="MONDO" TTY="SYN"
+        type="syn">DENT disease 2</Name><Name SDUI="MONDO:0010359" SCUI="GTRT000001952"
+        CODE="AN1653717" SAB="MONDO" TTY="SYN" type="preferred">Dent disease type
+        2</Name><Name SDUI="Orphanet_93623" SCUI="GTRT000001952" CODE="AN1758600"
+        SAB="ORDO" TTY="PT" type="preferred">Dent disease type 2</Name><Name SDUI="MONDO:0010359"
+        SCUI="GTRT000001952" CODE="MONDO_0010359" SAB="MONDO" TTY="SYN" type="syn">dent
+        disease 2, X-linked recessive</Name></Names><Definitions><Definition source="GeneReviews">Dent
+        disease, an X-linked disorder of proximal renal tubular dysfunction, is characterized
+        by low molecular weight (LMW) proteinuria, hypercalciuria, and at least one
+        additional finding including nephrocalcinosis, nephrolithiasis, hematuria,
+        hypophosphatemia, chronic kidney disease (CKD), and evidence of X-linked inheritance.
+        Males younger than age ten years may manifest only LMW proteinuria and/or
+        hypercalciuria, which are usually asymptomatic. Thirty to 80% of affected
+        males develop end-stage renal disease (ESRD) between ages 30 and 50 years;
+        in some instances ESRD does not develop until the sixth decade of life or
+        later. The disease may also be accompanied by rickets or osteomalacia, growth
+        restriction, and short stature. Disease severity can vary within the same
+        family. Males with Dent disease 2 (caused by pathogenic variants in OCRL)
+        may also have mild intellectual disability, cataracts, and/or elevated muscle
+        enzymes. Due to random X-chromosome inactivation, some female carriers may
+        manifest hypercalciuria and, rarely, renal calculi and moderate LMW proteinuria.
+        Females rarely develop CKD.</Definition></Definitions><Chromosome>X</Chromosome><Cytogenetic>Xq26.1</Cytogenetic><ModesOfInheritance><ModeOfInheritance
+        uid="375779" CUI="C1845977" TUI="T033"><Name>X-linked recessive inheritance</Name><SemanticType>Finding</SemanticType><Definition>A
+        mode of inheritance that is observed for recessive traits related to a gene
+        encoded on the X chromosome. In the context of medical genetics, X-linked
+        recessive disorders manifest in males (who have one copy of the X chromosome
+        and are thus hemizygotes), but generally not in female heterozygotes who have
+        one mutant and one normal allele.</Definition><SAB>ORDO</SAB></ModeOfInheritance></ModesOfInheritance><PharmacologicResponse></PharmacologicResponse><OMIM><MIM>300555</MIM></OMIM><ClinicalFeatures><ClinicalFeature
+        uid="9232" CUI="C0019322" TUI="T190" SDUI="HP:0001537"><Name>Umbilical hernia</Name><SemanticType>Anatomical
+        Abnormality</SemanticType><Definition>Protrusion of abdominal contents through
+        a defect in the abdominal wall musculature around the umbilicus. Skin and
+        subcutaneous tissue overlie the defect.</Definition></ClinicalFeature><ClinicalFeature
+        uid="43775" CUI="C0020438" TUI="T033" SDUI="HP:0002150"><Name>Hypercalciuria</Name><SemanticType>Finding</SemanticType><Definition>Abnormally
+        high level of calcium in the urine.</Definition></ClinicalFeature><ClinicalFeature
+        uid="10222" CUI="C0027709" TUI="T047" SDUI="HP:0000121"><Name>Nephrocalcinosis</Name><SemanticType>Disease
+        or Syndrome</SemanticType><Definition>Nephrocalcinosis is the deposition of
+        calcium salts in renal parenchyma.</Definition></ClinicalFeature><ClinicalFeature
+        uid="39327" CUI="C0085682" TUI="T047" SDUI="HP:0002148"><Name>Hypophosphatemia</Name><SemanticType>Disease
+        or Syndrome</SemanticType><Definition>An abnormally decreased phosphate concentration
+        in the blood.</Definition></ClinicalFeature><ClinicalFeature uid="57497" CUI="C0151904"
+        TUI="T033" SDUI="HP:0031956"><Name>Elevated circulating aspartate aminotransferase
+        concentration</Name><SemanticType>Finding</SemanticType><Definition>The concentration
+        of aspartate aminotransferase (AST) in the blood circulation is above the
+        upper limit of normal.</Definition></ClinicalFeature><ClinicalFeature uid="57740"
+        CUI="C0151905" TUI="T033" SDUI="HP:0031964"><Name>Elevated circulating alanine
+        aminotransferase concentration</Name><SemanticType>Finding</SemanticType><Definition>An
+        abnormally high concentration in the circulation of alanine aminotransferase
+        (ALT).</Definition></ClinicalFeature><ClinicalFeature uid="116067" CUI="C0238621"
+        TUI="T047" SDUI="HP:0003355"><Name>Aminoaciduria</Name><SemanticType>Disease
+        or Syndrome</SemanticType><Definition>An increased concentration of an amino
+        acid in the urine.</Definition></ClinicalFeature><ClinicalFeature uid="69128"
+        CUI="C0241005" TUI="T033" SDUI="HP:0003236"><Name>Elevated circulating creatine
+        kinase concentration</Name><SemanticType>Finding</SemanticType><Definition>An
+        elevation of the level of the enzyme creatine kinase (also known as creatine
+        phosphokinase (CK; EC 2.7.3.2) in the blood. CK levels can be elevated in
+        a number of clinical disorders such as myocardial infarction, rhabdomyolysis,
+        and muscular dystrophy.</Definition></ClinicalFeature><ClinicalFeature uid="90932"
+        CUI="C0338656" TUI="T048" SDUI="HP:0100543"><Name>Cognitive impairment</Name><SemanticType>Mental
+        or Behavioral Dysfunction</SemanticType><Definition>Abnormal cognition is
+        characterized by deficits in thinking, reasoning, or remembering.</Definition></ClinicalFeature><ClinicalFeature
+        uid="87607" CUI="C0349588" TUI="T033" SDUI="HP:0004322"><Name>Short stature</Name><SemanticType>Finding</SemanticType><Definition>A
+        height below that which is expected according to age and gender norms. Although
+        there is no universally accepted definition of short stature, many refer to
+        "short stature" as height more than 2 standard deviations below the mean for
+        age and gender (or below the 3rd percentile for age and gender dependent norms).</Definition></ClinicalFeature><ClinicalFeature
+        uid="473458" CUI="C1561643" TUI="T047" SDUI="HP:0012622"><Name>Chronic kidney
+        disease</Name><SemanticType>Disease or Syndrome</SemanticType><Definition>Functional
+        anomaly of the kidney persisting for at least three months.</Definition></ClinicalFeature><ClinicalFeature
+        uid="326534" CUI="C1839603" TUI="T047" SDUI="HP:0000114"><Name>Proximal tubulopathy</Name><SemanticType>Disease
+        or Syndrome</SemanticType><Definition>Dysfunction of the proximal tubule,
+        which is the portion of the duct system of the nephron of the kidney which
+        leads from Bowman''s capsule to the loop of Henle.</Definition></ClinicalFeature><ClinicalFeature
+        uid="333360" CUI="C1839606" TUI="T033" SDUI="HP:0003126"><Name>Low-molecular-weight
+        proteinuria</Name><SemanticType>Finding</SemanticType><Definition>Excretion
+        in urine of proteins of a size smaller than albumin (molecular weight 69 kD).</Definition></ClinicalFeature><ClinicalFeature
+        uid="861405" CUI="C4012968" TUI="T033" SDUI="HP:0011342"><Name>Mild global
+        developmental delay</Name><SemanticType>Finding</SemanticType><Definition>A
+        mild delay in the achievement of motor or mental milestones in the domains
+        of development of a child.</Definition></ClinicalFeature><ClinicalFeature
+        uid="1377250" CUI="C4477095" TUI="T033" SDUI="HP:0025435"><Name>Increased
+        circulating lactate dehydrogenase concentration</Name><SemanticType>Finding</SemanticType><Definition>An
+        elevated level of the enzyme lactate dehydrogenase in the blood circulation.</Definition></ClinicalFeature></ClinicalFeatures><PhenotypicAbnormalities><Category
+        CUI="C0042063" name="Abnormality of the genitourinary system"><ClinicalFeature
+        uid="43775" CUI="C0020438" TUI="T033"><SemanticType>Finding</SemanticType><Name>Hypercalciuria</Name><Definition>Abnormally
+        high level of calcium in the urine.</Definition></ClinicalFeature><ClinicalFeature
+        uid="10222" CUI="C0027709" TUI="T047"><SemanticType>Disease or Syndrome</SemanticType><Name>Nephrocalcinosis</Name><Definition>Nephrocalcinosis
+        is the deposition of calcium salts in renal parenchyma.</Definition></ClinicalFeature><ClinicalFeature
+        uid="116067" CUI="C0238621" TUI="T047"><SemanticType>Disease or Syndrome</SemanticType><Name>Aminoaciduria</Name><Definition>An
+        increased concentration of an amino acid in the urine.</Definition></ClinicalFeature><ClinicalFeature
+        uid="473458" CUI="C1561643" TUI="T047"><SemanticType>Disease or Syndrome</SemanticType><Name>Chronic
+        kidney disease</Name><Definition>Functional anomaly of the kidney persisting
+        for at least three months.</Definition></ClinicalFeature><ClinicalFeature
+        uid="326534" CUI="C1839603" TUI="T047"><SemanticType>Disease or Syndrome</SemanticType><Name>Proximal
+        tubulopathy</Name><Definition>Dysfunction of the proximal tubule, which is
+        the portion of the duct system of the nephron of the kidney which leads from
+        Bowman''s capsule to the loop of Henle.</Definition></ClinicalFeature><ClinicalFeature
+        uid="333360" CUI="C1839606" TUI="T033"><SemanticType>Finding</SemanticType><Name>Low-molecular-weight
+        proteinuria</Name><Definition>Excretion in urine of proteins of a size smaller
+        than albumin (molecular weight 69 kD).</Definition></ClinicalFeature></Category><Category
+        CUI="C0262361" name="Growth abnormality"><ClinicalFeature uid="87607" CUI="C0349588"
+        TUI="T033"><SemanticType>Finding</SemanticType><Name>Short stature</Name><Definition>A
+        height below that which is expected according to age and gender norms. Although
+        there is no universally accepted definition of short stature, many refer to
+        "short stature" as height more than 2 standard deviations below the mean for
+        age and gender (or below the 3rd percentile for age and gender dependent norms).</Definition></ClinicalFeature></Category><Category
+        CUI="C0497552" name="Abnormality of the nervous system"><ClinicalFeature uid="90932"
+        CUI="C0338656" TUI="T048"><SemanticType>Mental or Behavioral Dysfunction</SemanticType><Name>Cognitive
+        impairment</Name><Definition>Abnormal cognition is characterized by deficits
+        in thinking, reasoning, or remembering.</Definition></ClinicalFeature><ClinicalFeature
+        uid="861405" CUI="C4012968" TUI="T033"><SemanticType>Finding</SemanticType><Name>Mild
+        global developmental delay</Name><Definition>A mild delay in the achievement
+        of motor or mental milestones in the domains of development of a child.</Definition></ClinicalFeature></Category><Category
+        CUI="C3825027" name="Abnormality of the musculoskeletal system"><ClinicalFeature
+        uid="9232" CUI="C0019322" TUI="T190"><SemanticType>Anatomical Abnormality</SemanticType><Name>Umbilical
+        hernia</Name><Definition>Protrusion of abdominal contents through a defect
+        in the abdominal wall musculature around the umbilicus. Skin and subcutaneous
+        tissue overlie the defect.</Definition></ClinicalFeature></Category><Category
+        CUI="C4021768" name="Abnormality of metabolism/homeostasis"><ClinicalFeature
+        uid="39327" CUI="C0085682" TUI="T047"><SemanticType>Disease or Syndrome</SemanticType><Name>Hypophosphatemia</Name><Definition>An
+        abnormally decreased phosphate concentration in the blood.</Definition></ClinicalFeature><ClinicalFeature
+        uid="57497" CUI="C0151904" TUI="T033"><SemanticType>Finding</SemanticType><Name>Elevated
+        circulating aspartate aminotransferase concentration</Name><Definition>The
+        concentration of aspartate aminotransferase (AST) in the blood circulation
+        is above the upper limit of normal.</Definition></ClinicalFeature><ClinicalFeature
+        uid="57740" CUI="C0151905" TUI="T033"><SemanticType>Finding</SemanticType><Name>Elevated
+        circulating alanine aminotransferase concentration</Name><Definition>An abnormally
+        high concentration in the circulation of alanine aminotransferase (ALT).</Definition></ClinicalFeature><ClinicalFeature
+        uid="69128" CUI="C0241005" TUI="T033"><SemanticType>Finding</SemanticType><Name>Elevated
+        circulating creatine kinase concentration</Name><Definition>An elevation of
+        the level of the enzyme creatine kinase (also known as creatine phosphokinase
+        (CK; EC 2.7.3.2) in the blood. CK levels can be elevated in a number of clinical
+        disorders such as myocardial infarction, rhabdomyolysis, and muscular dystrophy.</Definition></ClinicalFeature><ClinicalFeature
+        uid="1377250" CUI="C4477095" TUI="T033"><SemanticType>Finding</SemanticType><Name>Increased
+        circulating lactate dehydrogenase concentration</Name><Definition>An elevated
+        level of the enzyme lactate dehydrogenase in the blood circulation.</Definition></ClinicalFeature></Category></PhenotypicAbnormalities><RelatedDisorders></RelatedDisorders><SNOMEDCT><Name
+        SAUI="3310260011" SCUI="717790004" SAB="SNOMEDCT_US" TTY="PT">Dent disease
+        type 2</Name></SNOMEDCT><AssociatedGenes><Gene gene_id="4952" chromosome="X"
+        cytogen_loc="Xq26.1">OCRL</Gene></AssociatedGenes><ORDO><HierarchyUrl>http://www.orpha.net/consor/cgi-bin/Disease_Classif.php?lng=EN&amp;data_id=156&amp;PatId=12454&amp;search=Disease_Classif_Simple&amp;new=1</HierarchyUrl></ORDO><SemanticTypes><SemanticType
+        TUI="T047">Disease or Syndrome</SemanticType></SemanticTypes></ConceptMeta><ModificationDate/><Merged/></DocumentSummary></DocumentSummarySet>
+
+
+        </eSummaryResult>
+
+        '
     headers:
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: [private]
-      Connection: [Keep-Alive]
-      Content-Encoding: [gzip]
-      Content-Length: ['3011']
-      Content-Security-Policy: [upgrade-insecure-requests]
-      Content-Security-Policy-Report-Only: ['default-src https:; script-src https:
-          ''unsafe-inline'' ''unsafe-eval''; font-src https: data:; img-src https:
-          data:; style-src https: ''unsafe-inline''; report-uri https://www.ncbi.nlm.nih.gov/corecgi/csp/csp.cgi']
-      Content-Type: [text/xml; charset=UTF-8]
-      Date: ['Wed, 01 Mar 2017 05:16:27 GMT']
-      Keep-Alive: ['timeout=1, max=10']
-      NCBI-PHID: [990DFB868B657BC100000000002D0020]
-      NCBI-SID: [990DFB868B6592B1_0045SID]
-      Server: [Apache]
-      Set-Cookie: ['ncbi_sid=990DFB868B6592B1_0045SID; domain=.nih.gov; path=/; expires=Thu,
-          01 Mar 2018 05:16:27 GMT']
-      Strict-Transport-Security: [max-age=31536000; includeSubDomains; preload]
-      Vary: [Accept-Encoding]
-      X-UA-Compatible: [IE=Edge]
-      X-XSS-Protection: [1; mode=block]
-    status: {code: 200, message: OK}
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - private
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Date:
+      - Fri, 12 Apr 2024 18:49:56 GMT
+      Keep-Alive:
+      - timeout=4, max=40
+      NCBI-PHID:
+      - 322C2F91E09EF725000026241F9EFEA6.1.1.m_1
+      NCBI-SID:
+      - AD3790D190E11D8D_CF8CSID
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Server:
+      - Finatra
+      Set-Cookie:
+      - ncbi_sid=AD3790D190E11D8D_CF8CSID; domain=.nih.gov; path=/; expires=Sat, 12
+        Apr 2025 18:49:57 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-RateLimit-Limit:
+      - '3'
+      X-RateLimit-Remaining:
+      - '0'
+      X-UA-Compatible:
+      - IE=Edge
+      X-XSS-Protection:
+      - 1; mode=block
+      content-encoding:
+      - gzip
+    status:
+      code: 200
+      message: OK
 version: 1

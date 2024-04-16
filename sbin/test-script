@@ -2,7 +2,7 @@
 
 """fetch gene-nm-np as tsv table using entrez
 
-This script queries NCBI for human gene records in Entrez.  
+This script queries NCBI for human gene records in Entrez.
 
 """
 
@@ -13,7 +13,7 @@ import requests
 import sys
 import time
 
-from eutils.xmlfacades.entrezgeneset import EntrezgeneSet
+from biocommons.eutils._internal.xmlfacades.entrezgeneset import EntrezgeneSet
 
 eutils_base_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
 retmax_request = 250

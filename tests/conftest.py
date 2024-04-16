@@ -3,7 +3,7 @@ import os
 import pytest
 import vcr
 
-import eutils
+import biocommons.eutils
 
 import logging
 logging.basicConfig()
@@ -24,9 +24,9 @@ vcr.use_cassette = vcr.default_vcr.use_cassette
 
 @pytest.fixture(scope="session")
 def client():
-    return eutils.Client()
+    return biocommons.eutils.Client()
 
 
 @pytest.fixture(scope="session")
 def qs():
-    return eutils.QueryService()
+    return biocommons.eutils.QueryService()
