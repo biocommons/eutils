@@ -33,6 +33,7 @@ class EntrezgeneSet(Base):
     def __iter__(self):
         return (eg for eg in self.entrezgenes)
 
+
 # <LICENSE>
 # Copyright 2015 eutils Committers
 #

@@ -5,7 +5,6 @@ from .pubmedarticle import PubmedArticle
 
 
 class PubmedArticleSet(Base):
-
     _root_tag = "PubmedArticleSet"
 
     def __iter__(self):
@@ -18,11 +17,15 @@ if __name__ == "__main__":
 
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
     relpaths = [
-        "efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml", "efetch.fcgi?db=pubmed&id=22351513&retmode=xml.xml",
-        "efetch.fcgi?db=pubmed&id=23121403&retmode=xml.xml"
+        "efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml",
+        "efetch.fcgi?db=pubmed&id=22351513&retmode=xml.xml",
+        "efetch.fcgi?db=pubmed&id=23121403&retmode=xml.xml",
     ]
 
-    pmasets = [PubmedArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot()) for relpath in relpaths]
+    pmasets = [
+        PubmedArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot())
+        for relpath in relpaths
+    ]
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

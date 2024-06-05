@@ -8,7 +8,6 @@ logger = logging.getLogger(__name__)
 
 
 class GBSeq(Base):
-
     _root_tag = "GBSeq"
 
     def __str__(self):
@@ -57,8 +56,7 @@ class GBSeq(Base):
     @property
     def gi(self):
         seqids = self._xml_root.xpath("GBSeq_other-seqids/GBSeqid/text()")
-        d = {t: l.rstrip("|").split("|")
-                for t, _, l in [si.partition("|") for si in seqids]}
+        d = {t: l.rstrip("|").split("|") for t, _, l in [si.partition("|") for si in seqids]}
         gis = d["gi"]
         assert len(gis) == 1, "expected exactly one gi in XML"
         return int(gis[0])
@@ -83,8 +81,7 @@ class GBSeq(Base):
     def other_seqids(self):
         """returns a dictionary of sequence ids, like {'gi': ['319655736'], 'ref': ['NM_000551.3']}"""
         seqids = self._xml_root.xpath("GBSeq_other-seqids/GBSeqid/text()")
-        return {t: l.rstrip("|").split("|")
-                for t, _, l in [si.partition("|") for si in seqids]}
+        return {t: l.rstrip("|").split("|") for t, _, l in [si.partition("|") for si in seqids]}
 
     @property
     def sequence(self):
@@ -95,9 +92,7 @@ class GBSeq(Base):
         return self._xml_root.findtext("GBSeq_update-date")
 
 
-
 class GBFeatureTable(Base):
-
     """Represents a collection of features associated with a genbank
     sequence
 
@@ -132,7 +127,9 @@ class GBFeatureTable(Base):
     def cds(self):
         key = "CDS"
         nodes = self._get_nodes_with_key(key)
-        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(n=len(nodes), key=key)
+        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(
+            n=len(nodes), key=key
+        )
         return None if not nodes else GBFeatureCDS(nodes[0])
 
     @property
@@ -145,14 +142,18 @@ class GBFeatureTable(Base):
     def gene(self):
         key = "gene"
         nodes = self._get_nodes_with_key(key)
-        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(n=len(nodes), key=key)
+        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(
+            n=len(nodes), key=key
+        )
         return None if not nodes else GBFeature(nodes[0])
 
     @property
     def source(self):
         key = "source"
         nodes = self._get_nodes_with_key(key)
-        assert len(nodes) == 1, "Got {n=n} {key} features! (expected exactly 1)".format(n=len(nodes), key=key)
+        assert len(nodes) == 1, "Got {n=n} {key} features! (expected exactly 1)".format(
+            n=len(nodes), key=key
+        )
         return GBFeature(nodes[0])
 
     def _get_nodes_with_key(self, key):
@@ -161,7 +162,6 @@ class GBFeatureTable(Base):
 
 
 class GBFeature(Base):
-
     _root_tag = "GBFeature"
 
     def __init__(self, xml):
@@ -180,23 +180,31 @@ class GBFeature(Base):
 
     @property
     def qualifiers(self):
-        return {q.findtext("GBQualifier_name"): q.findtext("GBQualifier_value")
-                for q in self._xml_root.findall("GBFeature_quals/GBQualifier")}
+        return {
+            q.findtext("GBQualifier_name"): q.findtext("GBQualifier_value")
+            for q in self._xml_root.findall("GBFeature_quals/GBQualifier")
+        }
 
     def get_qualifiers(self, name):
         return self._xml_root.xpath(
-            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="'+name+'"]/GBQualifier_value/text()')
+            'GBFeature_quals/GBQualifier[GBQualifier_name/text()="'
+            + name
+            + '"]/GBQualifier_value/text()'
+        )
 
     def get_qualifier(self, name):
         nodes = self.get_qualifiers(name)
-        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1 when using get_qualifier)".format(n=len(nodes), key=name)
+        assert (
+            len(nodes) <= 1
+        ), "Node has {n=n} {key} features! (expected <= 1 when using get_qualifier)".format(
+            n=len(nodes), key=name
+        )
         if not nodes:
             return None
         return self.get_qualifiers(name)[0]
 
 
 class GBFeatureCDS(GBFeature):
-
     @property
     def translation(self):
         return self.get_qualifier("translation")
@@ -211,11 +219,10 @@ class GBFeatureCDS(GBFeature):
 
     @property
     def gene_synonyms(self):
-        return (self.get_qualifier('gene_synonym') or "").split("; ")
+        return (self.get_qualifier("gene_synonym") or "").split("; ")
 
 
 class GBFeatureExon(GBFeature):
-
     @property
     def inference(self):
         return self.get_qualifier("inference")

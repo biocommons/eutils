@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 def xml_get1(node, xpath):
     return node.xpath(xpath)[0]
 
@@ -18,7 +19,7 @@ def xml_get_text(node, xpath):
 def xml_get_text_or_none(node, xpath):
     try:
         return xml_get_text(node, xpath)
-    except IndexError:    # xpath search found 0 matches
+    except IndexError:  # xpath search found 0 matches
         return None
 
 

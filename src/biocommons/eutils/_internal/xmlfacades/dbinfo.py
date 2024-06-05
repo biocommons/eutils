@@ -19,7 +19,6 @@ from .base import Base
 
 
 class DbInfo(Base):
-
     _root_tag = "DbInfo"
 
     @property
@@ -45,6 +44,7 @@ class DbInfo(Base):
     @property
     def lastupdate(self):
         return self._xml_root.findtext("LastUpdate")
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

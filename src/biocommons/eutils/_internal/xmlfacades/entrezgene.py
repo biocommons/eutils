@@ -7,15 +7,18 @@ from .genecommentary import GeneCommentary
 
 
 class Entrezgene(Base):
-
     _root_tag = "Entrezgene"
 
     def __str__(self):
-        return "Entrezgene(id={self.gene_id};hgnc={self.hgnc};description={self.description};type={self.type})".format(self=self)
+        return "Entrezgene(id={self.gene_id};hgnc={self.hgnc};description={self.description};type={self.type})".format(
+            self=self
+        )
 
     @property
     def common_tax(self):
-        return self._xml_root.findtext("Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_common")
+        return self._xml_root.findtext(
+            "Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_common"
+        )
 
     @property
     def description(self):
@@ -30,12 +33,17 @@ class Entrezgene(Base):
         try:
             return self._gene_commentaries
         except AttributeError:
-            self._gene_commentaries = [GeneCommentary(n) for n in  self._xml_root.iterfind("Entrezgene_locus/Gene-commentary")]
+            self._gene_commentaries = [
+                GeneCommentary(n)
+                for n in self._xml_root.iterfind("Entrezgene_locus/Gene-commentary")
+            ]
             return self._gene_commentaries
 
     @property
     def genus_species(self):
-        return self._xml_root.xpath("Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_taxname/text()")[0]
+        return self._xml_root.xpath(
+            "Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_taxname/text()"
+        )[0]
 
     @property
     def hgnc(self):
@@ -55,9 +63,12 @@ class Entrezgene(Base):
 
     @property
     def tax_id(self):
-        return int(self._xml_root.xpath(
-            "Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_db/"
-            'Dbtag[Dbtag_db/text()="taxon"]/Dbtag_tag/Object-id/Object-id_id/text()')[0])
+        return int(
+            self._xml_root.xpath(
+                "Entrezgene_source/BioSource/BioSource_org/Org-ref/Org-ref_db/"
+                'Dbtag[Dbtag_db/text()="taxon"]/Dbtag_tag/Object-id/Object-id_id/text()'
+            )[0]
+        )
 
     @property
     def summary(self):
@@ -69,12 +80,13 @@ class Entrezgene(Base):
 
     @property
     def type(self):
-        return self._xml_root.find('Entrezgene_type').get("value")
+        return self._xml_root.find("Entrezgene_type").get("value")
 
 
 if __name__ == "__main__":
     import os
     from .xmlfacades.entrezgeneset import EntrezgeneSet
+
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
     data_file = os.path.join(data_dir, "entrezgeneset.xml.gz")
     egs = EntrezgeneSet(le.parse(data_file).getroot())

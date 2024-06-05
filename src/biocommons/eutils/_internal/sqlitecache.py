@@ -30,7 +30,6 @@ def val_from(pobj, compress):
 
 
 class SQLiteCache(object):
-
     ############################################################################
     ## Exposed methods
     def __init__(self, db_path, compress_values=True):
@@ -45,8 +44,11 @@ class SQLiteCache(object):
 
         ############################################################################
         ## Special Python methods
+
     def __str__(self):
-        return "SQLiteCache(db_path={self._db_path},compress_values={self.compress_values})".format(self=self)
+        return "SQLiteCache(db_path={self._db_path},compress_values={self.compress_values})".format(
+            self=self
+        )
 
     def __dir__(self):
         self._logger.debug("__dir__()")
@@ -63,8 +65,10 @@ class SQLiteCache(object):
     def __setitem__(self, key, value):
         db_val = val_to(value, self.compress_values)
         self._logger.debug("__setitem__({key},({vlen} bytes))".format(key=key, vlen=len(db_val)))
-        self._execute("INSERT OR REPLACE INTO cache (key,value_compressed,value) VALUES (?,?,?)",
-                      [key_to(key), self.compress_values, db_val])
+        self._execute(
+            "INSERT OR REPLACE INTO cache (key,value_compressed,value) VALUES (?,?,?)",
+            [key_to(key), self.compress_values, db_val],
+        )
 
     def __delitem__(self, key):
         self._logger.debug("__delitem__({key})".format(key=key))
@@ -74,7 +78,9 @@ class SQLiteCache(object):
 
     def __contains__(self, key):
         self._logger.debug("__contains__({key})".format(key=key))
-        return self._fetch1v("SELECT EXISTS(SELECT 1 FROM cache WHERE key=? LIMIT 1)", [key_to(key)])
+        return self._fetch1v(
+            "SELECT EXISTS(SELECT 1 FROM cache WHERE key=? LIMIT 1)", [key_to(key)]
+        )
 
     ############################################################################
     ## Internal functions
@@ -89,21 +95,26 @@ class SQLiteCache(object):
         self._logger.debug("schema version is " + str(sver))
         if sver is None:
             self._execute(
-                "CREATE TABLE cache (key BLOB PRIMARY KEY, created INTEGER DEFAULT (strftime('%s','now')), value_compressed BOOL, value BLOB)")
+                "CREATE TABLE cache (key BLOB PRIMARY KEY, created INTEGER DEFAULT (strftime('%s','now')), value_compressed BOOL, value BLOB)"
+            )
             self._execute("CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL)")
-            self._execute("INSERT INTO meta (key, value) VALUES (?,?)", ['schema version', 1])
+            self._execute("INSERT INTO meta (key, value) VALUES (?,?)", ["schema version", 1])
             self._logger.debug("created tables")
 
     def _get_schema_version(self):
-        if ('meta', ) not in self._execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall():
+        if ("meta",) not in self._execute(
+            "SELECT name FROM sqlite_master WHERE type='table'"
+        ).fetchall():
             return None
         return self._fetch1v("SELECT value FROM meta WHERE key = ?", ["schema version"])
 
     def _execute(self, query, params=[]):
         cur = self._con.cursor()
-        self._logger.debug("executing query <{query}> with params <{nvars} vars>".format(
-            query=query,
-            nvars=len(params)))
+        self._logger.debug(
+            "executing query <{query}> with params <{nvars} vars>".format(
+                query=query, nvars=len(params)
+            )
+        )
         cur.execute(query, params)
         return cur
 

@@ -23,7 +23,6 @@ from .dblist import DbList
 
 
 class EInfoResult(Base):
-
     _root_tag = "eInfoResult"
 
     @property
@@ -53,9 +52,9 @@ class EInfoResult(Base):
 
 
 if __name__ == "__main__":
-
     import os
     import lxml.etree as le
+
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
 
     dir_path = os.path.join(data_dir, "einfo.fcgi?db=protein&retmode=xml.xml.gz")

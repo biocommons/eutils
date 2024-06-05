@@ -45,7 +45,6 @@ default_cache_path = os.path.join(os.path.expanduser("~"), ".cache", "eutils-cac
 
 
 class QueryService(object):
-
     """*provides throttled and cached querying of NCBI E-utilities services*
 
     QueryService has three functions:
@@ -75,14 +74,15 @@ class QueryService(object):
 
     """
 
-    def __init__(self,
-                 email=default_email,
-                 cache=False,
-                 default_args=default_default_args,
-                 request_interval=None,
-                 tool=default_tool,
-                 api_key=None
-                 ):
+    def __init__(
+        self,
+        email=default_email,
+        cache=False,
+        default_args=default_default_args,
+        request_interval=None,
+        tool=default_tool,
+        api_key=None,
+    ):
         """
         :param str email: email of user (for abuse reports)
         :param str cache: if True, cache at ~/.cache/eutils-db.sqlite; if string, cache there; if False, don't cache
@@ -102,16 +102,23 @@ class QueryService(object):
         self.api_key = api_key
 
         if request_interval is not None:
-            _logger.warning("eutils QueryService: request_interval no longer supported; ignoring passed parameter")
+            _logger.warning(
+                "eutils QueryService: request_interval no longer supported; ignoring passed parameter"
+            )
 
         if self.api_key is None:
             requests_per_second = 3
-            _logger.warning("No NCBI API key provided; throttling to {} requests/second; see "
-                         "https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/".format(
-                             requests_per_second))
+            _logger.warning(
+                "No NCBI API key provided; throttling to {} requests/second; see "
+                "https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/".format(
+                    requests_per_second
+                )
+            )
         else:
             requests_per_second = 10
-            _logger.info("Using NCBI API key; throttling to {} requests/second".format(requests_per_second))
+            _logger.info(
+                "Using NCBI API key; throttling to {} requests/second".format(requests_per_second)
+            )
 
         self.request_interval = 1.0 / requests_per_second
 
@@ -126,7 +133,6 @@ class QueryService(object):
         else:
             cache_path = False
         self._cache = SQLiteCache(cache_path) if cache_path else None
-
 
     def efetch(self, args):
         """
@@ -228,7 +234,6 @@ class QueryService(object):
         """
         return self._query("/esummary.fcgi", args)
 
-
     ############################################################################
     ## Internals
     def _query(self, path, args=None, skip_cache=False, skip_sleep=False):
@@ -246,11 +251,14 @@ class QueryService(object):
         """
         if args is None:
             args = {}
+
         def _cacheable(r):
             """return False if r shouldn't be cached (contains a no-cache meta
             line); True otherwise"""
-            return not ("no-cache" in r  # obviate parsing, maybe
-                        and lxml.etree.XML(r).xpath("//meta/@content='no-cache'"))
+            return not (
+                "no-cache" in r  # obviate parsing, maybe
+                and lxml.etree.XML(r).xpath("//meta/@content='no-cache'")
+            )
 
         # cache key: the key associated with this endpoint and args The
         # key intentionally excludes the identifying args (tool and email)
@@ -271,16 +279,18 @@ class QueryService(object):
         if not skip_cache and self._cache:
             try:
                 v = self._cache[cache_key]
-                _logger.debug("cache hit for key {cache_key} ({url}, {sqas}) ".format(
-                    cache_key=cache_key,
-                    url=url,
-                    sqas=sqas))
+                _logger.debug(
+                    "cache hit for key {cache_key} ({url}, {sqas}) ".format(
+                        cache_key=cache_key, url=url, sqas=sqas
+                    )
+                )
                 return v
             except KeyError:
-                _logger.debug("cache miss for key {cache_key} ({url}, {sqas}) ".format(
-                    cache_key=cache_key,
-                    url=url,
-                    sqas=sqas))
+                _logger.debug(
+                    "cache miss for key {cache_key} ({url}, {sqas}) ".format(
+                        cache_key=cache_key, url=url, sqas=sqas
+                    )
+                )
                 pass
 
         if self.api_key:
@@ -297,22 +307,26 @@ class QueryService(object):
 
         r = requests.post(url, full_args)
         self._last_request_clock = time.monotonic()
-        _logger.debug("post({url}, {fas}): {r.status_code} {r.reason}, {len})".format(
-            url=url,
-            fas=full_args_str,
-            r=r,
-            len=len(r.text)))
+        _logger.debug(
+            "post({url}, {fas}): {r.status_code} {r.reason}, {len})".format(
+                url=url, fas=full_args_str, r=r, len=len(r.text)
+            )
+        )
 
         if not r.ok:
             # TODO: discriminate between types of errors
             if r.headers["Content-Type"] == "application/json":
                 json = r.json()
-                raise EutilsRequestError('{r.reason} ({r.status_code}): {error}'.format(r=r, error=json["error"]))
+                raise EutilsRequestError(
+                    "{r.reason} ({r.status_code}): {error}".format(r=r, error=json["error"])
+                )
             try:
                 xml = lxml.etree.fromstring(r.text.encode("utf-8"))
                 errornode = xml.find("ERROR")
                 errormsg = errornode.text if errornode else "Unknown Error"
-                raise EutilsRequestError("{r.reason} ({r.status_code}): {error}".format(r=r, error=errormsg))
+                raise EutilsRequestError(
+                    "{r.reason} ({r.status_code}): {error}".format(r=r, error=errormsg)
+                )
             except Exception as ex:
                 raise EutilsNCBIError("Error parsing response object from NCBI: {}".format(ex))
 
@@ -320,7 +334,11 @@ class QueryService(object):
             if r.text is not None:
                 try:
                     xml = lxml.etree.fromstring(r.text.encode("utf-8"))
-                    raise EutilsRequestError("{r.reason} ({r.status_code}): {error}".format(r=r, error=xml.find("ERROR").text))
+                    raise EutilsRequestError(
+                        "{r.reason} ({r.status_code}): {error}".format(
+                            r=r, error=xml.find("ERROR").text
+                        )
+                    )
                 except Exception as ex:
                     raise EutilsNCBIError("Error parsing response object from NCBI: {}".format(ex))
 
@@ -330,10 +348,11 @@ class QueryService(object):
         if self._cache and _cacheable(r.text):
             # N.B. we cache results even when skip_cache (read) is true
             self._cache[cache_key] = r.content
-            _logger.info("cached results for key {cache_key} ({url}, {sqas}) ".format(
-                cache_key=cache_key,
-                url=url,
-                sqas=sqas))
+            _logger.info(
+                "cached results for key {cache_key} ({url}, {sqas}) ".format(
+                    cache_key=cache_key, url=url, sqas=sqas
+                )
+            )
 
         return r.content
 

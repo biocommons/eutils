@@ -19,12 +19,12 @@ from .base import Base
 
 
 class DbList(Base):
-
     _root_tag = "DbList"
 
     @property
     def databases(self):
         return sorted(self._xml_root.xpath("DbName/text()"))
+
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

@@ -5,7 +5,6 @@ from .pubmedcentralarticle import PubmedCentralArticle
 
 
 class PubmedCentralArticleSet(Base):
-
     _root_tag = "pmc-articleset"
 
     def __iter__(self):
@@ -18,11 +17,15 @@ if __name__ == "__main__":
 
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
     relpaths = [
-        "efetch.fcgi?db=pmc&id=3299399&rettype=xml.xml", "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml",
-        "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml"
+        "efetch.fcgi?db=pmc&id=3299399&rettype=xml.xml",
+        "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml",
+        "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml",
     ]
 
-    pmcasets = [PubmedCentralArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot()) for relpath in relpaths]
+    pmcasets = [
+        PubmedCentralArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot())
+        for relpath in relpaths
+    ]
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
