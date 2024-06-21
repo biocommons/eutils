@@ -4,7 +4,6 @@ from .base import Base
 
 
 class ESearchResult(Base):
-
     _root_tag = "eSearchResult"
 
     @property

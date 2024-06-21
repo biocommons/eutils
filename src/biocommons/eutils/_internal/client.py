@@ -35,7 +35,6 @@ class Client(object):
 
         self._qs = QueryService(cache=cache, api_key=api_key)
 
-
     @property
     def databases(self):
         """
@@ -66,17 +65,17 @@ class Client(object):
         return EInfoResult(self._qs.einfo({"db": db, "version": "2.0"})).dbinfo
 
     def esearch(self, db, term):
-        """query the esearch endpoint
-        """
+        """query the esearch endpoint"""
         esr = ESearchResult(self._qs.esearch({"db": db, "term": term}))
         if esr.count > esr.retmax:
-            logger.warning("NCBI found {esr.count} results, but we truncated the reply at {esr.retmax}"
-                        " results; see https://github.com/biocommons/eutils/issues/124/".format(esr=esr))
+            logger.warning(
+                "NCBI found {esr.count} results, but we truncated the reply at {esr.retmax}"
+                " results; see https://github.com/biocommons/eutils/issues/124/".format(esr=esr)
+            )
         return esr
 
     def efetch(self, db, id):
-        """query the efetch endpoint
-        """
+        """query the efetch endpoint"""
         db = db.lower()
         xml = self._qs.efetch({"db": db, "id": str(id)})
         doc = le.XML(xml)

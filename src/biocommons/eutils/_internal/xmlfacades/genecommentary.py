@@ -20,7 +20,9 @@ class GeneCommentary(Base):
     _root_tag = "Gene-commentary"
 
     def __str__(self):
-        return "GeneCommentary(acv={self.acv},type={self.type},heading={self.heading},label={self.label})".format(self=self)
+        return "GeneCommentary(acv={self.acv},type={self.type},heading={self.heading},label={self.label})".format(
+            self=self
+        )
 
     @property
     def accession(self):
@@ -36,7 +38,11 @@ class GeneCommentary(Base):
     def genomic_coords(self):
         n = self._xml_root.find("Gene-commentary_genomic-coords")
         if n is None:
-            raise EutilsError("this object (type={self.type}) does not have genomic coordinates defined (mRNA and peptide typically do)".format(self=self))
+            raise EutilsError(
+                "this object (type={self.type}) does not have genomic coordinates defined (mRNA and peptide typically do)".format(
+                    self=self
+                )
+            )
         return GeneCommentaryGenomicCoords(n)
 
     @property
@@ -49,11 +55,14 @@ class GeneCommentary(Base):
 
     @property
     def products(self):
-        return [GeneCommentary(gc) for gc in self._xml_root.findall("Gene-commentary_products/Gene-commentary")]
+        return [
+            GeneCommentary(gc)
+            for gc in self._xml_root.findall("Gene-commentary_products/Gene-commentary")
+        ]
 
     @property
     def type(self):
-        return self._xml_root.find('Gene-commentary_type').get("value")
+        return self._xml_root.find("Gene-commentary_type").get("value")
 
     @property
     def version(self):
@@ -81,8 +90,10 @@ class GeneCommentaryGenomicCoords(Base):
 
     @property
     def intervals(self):
-        return [(i.interval_from, i.interval_to)
-                for i in (SeqInterval(n) for n in self._xml_root.findall(".//Seq-interval"))]
+        return [
+            (i.interval_from, i.interval_to)
+            for i in (SeqInterval(n) for n in self._xml_root.findall(".//Seq-interval"))
+        ]
 
     @property
     def _interval_str(self):
@@ -90,7 +101,6 @@ class GeneCommentaryGenomicCoords(Base):
 
 
 class SeqInterval(Base):
-
     _root_tag = "Seq-interval"
 
     def __str__(self):

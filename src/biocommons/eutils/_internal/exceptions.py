@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
+
 class EutilsError(Exception):
     """Base class for all Eutils exceptions, and also used to raise
     general exception.
 
     """
+
     pass
 
 
@@ -13,6 +15,7 @@ class EutilsNCBIError(EutilsError):
     invalid.
 
     """
+
     pass
 
 
@@ -21,6 +24,7 @@ class EutilsNotFoundError(EutilsError):
     :mod:`eutils.sketchy.clientx` interface currently.)
 
     """
+
     pass
 
 
@@ -29,6 +33,7 @@ class EutilsRequestError(EutilsError):
     database is specified.
 
     """
+
     pass
 
 

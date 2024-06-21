@@ -27,15 +27,16 @@ dev = [
     "flake8",
     "ipython",
     "mock",
+    "pre-commit~=3.4",
     "pytest",
     "pytest-cov",
     "restview",
+    "ruff==0.4.4",
     "setuptools",
     "sphinx",
     "sphinx_rtd_theme",
     "tox",
     "vcrpy",
-    "yapf",
 ]
 
 [project.urls]
@@ -93,3 +94,7 @@ markers = [
 	"network: tests that require network connectivity",
 	"slow: slow tests that should be run infrequently",
 ]
+
+[tool.ruff]
+src = ["src", "tests"]
+line-length = 100

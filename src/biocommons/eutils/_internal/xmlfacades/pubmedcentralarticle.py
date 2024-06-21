@@ -5,50 +5,68 @@ from .base import Base
 
 
 class PubmedCentralArticle(Base):
-
     _root_tag = "article"
 
     def __str__(self):
-        return ("{pmca.__class__.__name__}(pmc={pmca.pmc};pmid={pmca.pmid};doi={pmca.doi};{pmca.title})".format(pmca=self))
+        return "{pmca.__class__.__name__}(pmc={pmca.pmc};pmid={pmca.pmid};doi={pmca.doi};{pmca.title})".format(
+            pmca=self
+        )
 
     @property
     def title(self):
-        return ''.join([x for x in xml_get1(self._xml_root, "front/article-meta/title-group/article-title").itertext()])
+        return "".join(
+            [
+                x
+                for x in xml_get1(
+                    self._xml_root, "front/article-meta/title-group/article-title"
+                ).itertext()
+            ]
+        )
 
     @property
     def abstract_text(self):
-        return ''.join([x for x in xml_get1(self._xml_root, "front/article-meta/abstract").itertext()])
+        return "".join(
+            [x for x in xml_get1(self._xml_root, "front/article-meta/abstract").itertext()]
+        )
 
     @property
     def body_text(self):
         body = self._xml_root.xpath("body")
         if body:
             parts = [x for x in body[0].itertext()]
-            return ''.join(parts)
+            return "".join(parts)
         else:
             return None
 
     @property
     def doi(self):
-        return xml_get_text_or_none(self._xml_root, 'front/article-meta/article-id[@pub-id-type="doi"]')
+        return xml_get_text_or_none(
+            self._xml_root, 'front/article-meta/article-id[@pub-id-type="doi"]'
+        )
 
     @property
     def pmid(self):
-        return xml_get_text_or_none(self._xml_root, 'front/article-meta/article-id[@pub-id-type="pmid"]')
+        return xml_get_text_or_none(
+            self._xml_root, 'front/article-meta/article-id[@pub-id-type="pmid"]'
+        )
 
     @property
     def pmc(self):
-        return xml_get_text_or_none(self._xml_root, 'front/article-meta/article-id[@pub-id-type="pmc"]')
+        return xml_get_text_or_none(
+            self._xml_root, 'front/article-meta/article-id[@pub-id-type="pmc"]'
+        )
 
 
 if __name__ == "__main__":
     from .xmlfacades.pubmedcentralarticleset import PubmedCentralArticleSet
     import lxml.etree as le
     import os
+
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
     relpaths = [
-        "efetch.fcgi?db=pmc&id=3299399&rettype=xml.xml", "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml",
-        "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml"
+        "efetch.fcgi?db=pmc&id=3299399&rettype=xml.xml",
+        "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml",
+        "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml",
     ]
     path = os.path.join(data_dir, relpaths[0])
     pmcas = PubmedCentralArticleSet(le.parse(path).getroot())

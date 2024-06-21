@@ -35,8 +35,11 @@ class Base(object):
         if self._root_tag is None:
             raise EutilsError("_root_tag not defined for class {}".format(type(self).__name__))
         elif self._root_tag != self._xml_root.tag:
-            raise EutilsError("XML for {} object must be a {} element (got {})".format(
-                type(self).__name__, self._root_tag, self._xml_root.tag))
+            raise EutilsError(
+                "XML for {} object must be a {} element (got {})".format(
+                    type(self).__name__, self._root_tag, self._xml_root.tag
+                )
+            )
 
 
 # <LICENSE>

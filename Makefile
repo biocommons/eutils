@@ -74,12 +74,12 @@ tox:
 #= UTILITY TARGETS
 
 # N.B. Although code is stored in github, I use hg and hg-git on the command line
-#=> reformat: reformat code with yapf and commit
+#=> reformat: reformat code with Ruff and commit
 .PHONY: reformat
 reformat:
 	@if ! git diff --cached --exit-code; then echo "Repository not clean" 1>&2; exit 1; fi
-	yapf -i -r "${PKGD}" tests
-	git commit -a -m "reformatted with yapf"
+	ruff format "${PKGD}"
+	git commit -a -m "reformatted with ruff"
 
 #=> docs -- make sphinx docs
 .PHONY: docs

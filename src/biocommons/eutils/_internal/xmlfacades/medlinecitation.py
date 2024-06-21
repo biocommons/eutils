@@ -4,13 +4,17 @@ from .base import Base
 
 
 class MedlineCitation(Base):
-
     _root_tag = "MedlineCitation"
 
     @property
     def abstract(self):
         # return self._xml_root.findtext("Article/Abstract/AbstractText")
-        return " ".join(["".join(at.itertext()) for at in self._xml_root.findall('Article/Abstract/AbstractText')])
+        return " ".join(
+            [
+                "".join(at.itertext())
+                for at in self._xml_root.findall("Article/Abstract/AbstractText")
+            ]
+        )
 
     @property
     def authors(self):
@@ -36,8 +40,9 @@ class MedlineCitation(Base):
 
     @property
     def jrnl(self):
-        return self._xml_root.findtext("Article/Journal/ISOAbbreviation") or self._xml_root.findtext(
-            "Article/Journal/Title")
+        return self._xml_root.findtext(
+            "Article/Journal/ISOAbbreviation"
+        ) or self._xml_root.findtext("Article/Journal/Title")
 
     @property
     def mesh_headings(self):
@@ -69,9 +74,11 @@ class MedlineCitation(Base):
 
     @property
     def year(self):
-        return self._xml_root.findtext("Article/Journal/JournalIssue/PubDate/Year") \
-          or self._xml_root.findtext("Article/Journal/JournalIssue/PubDate/Year") \
-          or self._xml_root.findtext("Article/Journal/JournalIssue/PubDate/MedlineDate")
+        return (
+            self._xml_root.findtext("Article/Journal/JournalIssue/PubDate/Year")
+            or self._xml_root.findtext("Article/Journal/JournalIssue/PubDate/Year")
+            or self._xml_root.findtext("Article/Journal/JournalIssue/PubDate/MedlineDate")
+        )
 
 
 if __name__ == "__main__":

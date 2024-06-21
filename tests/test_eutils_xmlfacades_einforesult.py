@@ -5,7 +5,7 @@ import vcr
 def test_einfo_dblist(client):
     dblist_result = client.einfo()
 
-    assert 'protein' in dblist_result.databases
+    assert "protein" in dblist_result.databases
     assert 40 == len(dblist_result.databases)
 
 
