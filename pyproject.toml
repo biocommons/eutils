@@ -96,5 +96,5 @@ markers = [
 ]
 
 [tool.ruff]
-src = ["src", "test"]
+src = ["src", "tests"]
 line-length = 100
