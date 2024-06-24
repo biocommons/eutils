@@ -46,6 +46,13 @@ Instantiating an eutils :class:`biocommons.eutils.Client` is this easy::
     # throttling
     >>> ec = eutils.Client()
 
+.. note::
+
+   E-Utilities APIs aren't guaranteed to return data in a consistent order, so it is
+   expected that responses shown in the demonstrations below may not be consistent
+   with your own console sessions. These examples are intended to demonstrate library
+   API functions, not to show exhaustive or consistent results.
+
 
 Fetching gene information
 $$$$$$$$$$$$$$$$$$$$$$$$$
@@ -56,8 +63,12 @@ $$$$$$$$$$$$$$$$$$$$$$$$$
     # any valid NCBI query may be used
     >>> esr = ec.esearch(db='gene',term='tumor necrosis factor')
 
-    # fetch one of those (gene id 7157 is human TNF)
-    >>> egs = ec.efetch(db='gene',id=7157)
+    # esearch returns a list of entity IDs associated with your search. preview some of them:
+    >>> esr.ids[:5]
+    [136114222, 136113226, 136112112, 136111930, 136111620]
+
+    # fetch data for an ID (gene id 7157 is human TNF)
+    >>> egs = ec.efetch(db='gene', id=7157)
 
     # One may fetch multiple genes at a time. These are returned as an
     # EntrezgeneSet. We'll grab the first (and only) child, which returns
@@ -76,20 +87,18 @@ $$$$$$$$$$$$$$$$$$$$$$$$$
 
     # Get all products defined on GRCh38
     >>> [p.acv for p in eg.references[0].products]
-    [u'NM_001126112.2', u'NM_001276761.1', u'NM_000546.5',
-    u'NM_001276760.1', u'NM_001126113.2', u'NM_001276695.1',
-    u'NM_001126114.2', u'NM_001276696.1', u'NM_001126118.1',
-    u'NM_001126115.1', u'NM_001276697.1', u'NM_001126117.1',
-    u'NM_001276699.1', u'NM_001126116.1', u'NM_001276698.1']
+    ['NM_001126112.2', 'NM_001276761.1', 'NM_000546.5',
+    'NM_001276760.1', 'NM_001126113.2', 'NM_001276695.1',
+    'NM_001126114.2', 'NM_001276696.1', 'NM_001126118.1',
+    'NM_001126115.1', 'NM_001276697.1', 'NM_001126117.1',
+    'NM_001276699.1', 'NM_001126116.1', 'NM_001276698.1']
 
     # As a sample, grab the first product defined on this reference (order is arbitrary)
-    >>> mrna = eg.references[0].products[0]
+    >>> mrna = [i for i in eg.references[0].products if i.type == "mRNA"][0]
     >>> str(mrna)
     'GeneCommentary(acv=NM_001126112.2,type=mRNA,heading=Reference,label=transcript variant 2)'
 
-    # mrna.genomic_coords provides access to the exon definitions on this
-    reference
-
+    # mrna.genomic_coords provides access to the exon definitions on this reference
     >>> mrna.genomic_coords.gi, mrna.genomic_coords.strand
     ('568815581', -1)
 
@@ -110,16 +119,16 @@ $$$$$$$$$$$$$$$$$$$$$$$$
 ::
 
    # search pubmed by author
-   >>> esr = c.esearch(db='pubmed', term='Nussbaum RL')
+   >>> esr = ec.esearch(db='pubmed', term='Nussbaum RL')
 
    # fetch all of them
-   >>> paset = c.efetch(db='pubmed', id=esr.ids)
+   >>> paset = ec.efetch(db='pubmed', id=esr.ids)
 
    # paset represents PubmedArticleSet, a collection of
    PubmedArticles. The major interface component is to iterate over
    PubmedArticles with constructs like `for pa in paset: ...`. We
    fetch the first PubmedArticle like this:
-   >>> pa = iter(paset).next()
+   >>> pa = next(iter(paset))
 
    PubmedArticle provides acccessors to essential data:
    >>> pa.title
