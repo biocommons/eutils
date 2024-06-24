@@ -42,8 +42,7 @@ Instantiating an eutils :class:`biocommons.eutils.Client` is this easy::
 
     >>> import biocommons.eutils as eutils
 
-    # Initialize a client. This client handles all caching and query
-    # throttling
+    # Initialize a client. This client handles all caching and query throttling
     >>> ec = eutils.Client()
 
 .. note::
