@@ -47,7 +47,8 @@ respectively).
   $ pip install biocommons.eutils
   $ ipython
 
-  >>> from biocmmons.eutils import Client
+  >>> import os
+  >>> from biocommons.eutils import Client
 
   # Initialize a client. This client handles all caching and query
   # throttling.  For example:
@@ -57,7 +58,11 @@ respectively).
   # any valid NCBI query may be used
   >>> esr = ec.esearch(db='gene',term='tumor necrosis factor')
 
-  # fetch one of those (gene id 7157 is human TNF)
+  # esearch returns a list of entity IDs associated with your search. preview some of them:
+  >>> esr.ids[:5]
+  [136114222, 136113226, 136112112, 136111930, 136111620]
+
+  # fetch data for an ID (gene id 7157 is human TNF)
   >>> egs = ec.efetch(db='gene', id=7157)
 
   # One may fetch multiple genes at a time. These are returned as an
@@ -76,16 +81,15 @@ respectively).
    ('NG_017013.2', 'RefSeqGene')]
 
   # Get the first three products defined on GRCh38
-  #>>> [p.acv for p in eg.references[0].products][:3]
-  #['NM_001126112.2', 'NM_001276761.1', 'NM_000546.5']
+  >>> [p.acv for p in eg.references[0].products][:3]
+  ['NM_001126112.2', 'NM_001276761.1', 'NM_000546.5']
 
   # As a sample, grab the first product defined on this reference (order is arbitrary)
-  >>> mrna = eg.references[0].products[0]
+  >>> mrna = [i for i in eg.references[0].products if i.type == "mRNA"][0]
   >>> str(mrna)
   'GeneCommentary(acv=NM_001126112.2,type=mRNA,heading=Reference,label=transcript variant 2)'
 
   # mrna.genomic_coords provides access to the exon definitions on this reference
-
   >>> mrna.genomic_coords.gi, mrna.genomic_coords.strand
   ('568815581', -1)
 
@@ -95,7 +99,7 @@ respectively).
   (7674180, 7674289), (7673700, 7673836), (7673534, 7673607),
   (7670608, 7670714), (7668401, 7669689)]
 
-  # and the mrna has a product, the resulting protein:
+  # and if the mrna has a product, the resulting protein:
   >>> str(mrna.products[0])
   'GeneCommentary(acv=NP_001119584.1,type=peptide,heading=Reference,label=isoform a)'
 
