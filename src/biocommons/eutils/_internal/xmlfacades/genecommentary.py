@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from ..exceptions import EutilsError
 from .base import Base
 
@@ -20,9 +18,7 @@ class GeneCommentary(Base):
     _root_tag = "Gene-commentary"
 
     def __str__(self):
-        return "GeneCommentary(acv={self.acv},type={self.type},heading={self.heading},label={self.label})".format(
-            self=self
-        )
+        return f"GeneCommentary(acv={self.acv},type={self.type},heading={self.heading},label={self.label})"
 
     @property
     def accession(self):
@@ -38,11 +34,8 @@ class GeneCommentary(Base):
     def genomic_coords(self):
         n = self._xml_root.find("Gene-commentary_genomic-coords")
         if n is None:
-            raise EutilsError(
-                "this object (type={self.type}) does not have genomic coordinates defined (mRNA and peptide typically do)".format(
-                    self=self
-                )
-            )
+            msg = f"this object (type={self.type}) does not have genomic coordinates defined (mRNA and peptide typically do)"
+            raise EutilsError(msg)
         return GeneCommentaryGenomicCoords(n)
 
     @property
@@ -77,7 +70,7 @@ class GeneCommentaryGenomicCoords(Base):
     _root_tag = "Gene-commentary_genomic-coords"
 
     def __str__(self):
-        return "{self.gi}:{self.strand}:{self._interval_str}".format(self=self)
+        return f"{self.gi}:{self.strand}:{self._interval_str}"
 
     @property
     def strand(self):
@@ -104,7 +97,7 @@ class SeqInterval(Base):
     _root_tag = "Seq-interval"
 
     def __str__(self):
-        return "[{self.interval_from},{self.interval_to}]".format(self=self)
+        return f"[{self.interval_from},{self.interval_to}]"
 
     @property
     def interval_from(self):

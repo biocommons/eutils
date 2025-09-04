@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """xmlfacades/__init__.py doc string"""
 
 # <LICENSE>

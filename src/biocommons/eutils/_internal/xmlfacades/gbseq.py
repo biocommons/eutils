@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import logging
 
 from .base import Base
@@ -11,7 +9,7 @@ class GBSeq(Base):
     _root_tag = "GBSeq"
 
     def __str__(self):
-        return "GBSeq({self.acv})".format(self=self)
+        return f"GBSeq({self.acv})"
 
     @property
     def acv(self):
@@ -51,14 +49,17 @@ class GBSeq(Base):
 
     @property
     def genes(self):
-        raise RuntimeError("The genes property is obsolete; use gene instead")
+        msg = "The genes property is obsolete; use gene instead"
+        raise RuntimeError(msg)
 
     @property
     def gi(self):
         seqids = self._xml_root.xpath("GBSeq_other-seqids/GBSeqid/text()")
-        d = {t: l.rstrip("|").split("|") for t, _, l in [si.partition("|") for si in seqids]}
+        d = {t: l.rstrip("|").split("|") for t, _, l in [si.partition("|") for si in seqids]}  # noqa: E741
         gis = d["gi"]
-        assert len(gis) == 1, "expected exactly one gi in XML"
+        if len(gis) != 1:
+            msg = "expected exactly one gi in XML"
+            raise ValueError(msg)
         return int(gis[0])
 
     @property
@@ -81,7 +82,7 @@ class GBSeq(Base):
     def other_seqids(self):
         """returns a dictionary of sequence ids, like {'gi': ['319655736'], 'ref': ['NM_000551.3']}"""
         seqids = self._xml_root.xpath("GBSeq_other-seqids/GBSeqid/text()")
-        return {t: l.rstrip("|").split("|") for t, _, l in [si.partition("|") for si in seqids]}
+        return {t: l.rstrip("|").split("|") for t, _, l in [si.partition("|") for si in seqids]}  # noqa: E741
 
     @property
     def sequence(self):
@@ -127,9 +128,9 @@ class GBFeatureTable(Base):
     def cds(self):
         key = "CDS"
         nodes = self._get_nodes_with_key(key)
-        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(
-            n=len(nodes), key=key
-        )
+        if len(nodes) > 1:
+            msg = f"Node has {len(nodes)} {key} features! (expected <= 1)"
+            raise ValueError(msg)
         return None if not nodes else GBFeatureCDS(nodes[0])
 
     @property
@@ -142,30 +143,29 @@ class GBFeatureTable(Base):
     def gene(self):
         key = "gene"
         nodes = self._get_nodes_with_key(key)
-        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(
-            n=len(nodes), key=key
-        )
+        if len(nodes) > 1:
+            msg = f"Node has {len(nodes)} {key} features! (expected <= 1)"
+            raise ValueError(msg)
         return None if not nodes else GBFeature(nodes[0])
 
     @property
     def source(self):
         key = "source"
         nodes = self._get_nodes_with_key(key)
-        assert len(nodes) == 1, "Got {n=n} {key} features! (expected exactly 1)".format(
-            n=len(nodes), key=key
-        )
+        if len(nodes) != 1:
+            msg = f"Got {len(nodes)} {key} features! (expected exactly 1)"
+            raise ValueError(msg)
         return GBFeature(nodes[0])
 
     def _get_nodes_with_key(self, key):
-        nodes = self._xml_root.xpath('GBFeature[GBFeature_key/text()="{key}"]'.format(key=key))
-        return nodes
+        return self._xml_root.xpath(f'GBFeature[GBFeature_key/text()="{key}"]')
 
 
 class GBFeature(Base):
     _root_tag = "GBFeature"
 
     def __init__(self, xml):
-        super(GBFeature, self).__init__(xml)
+        super().__init__(xml)
         loc = self._xml_root.findtext("GBFeature_location")
         if ".." in loc:
             s, e = loc.split("..")
@@ -194,11 +194,10 @@ class GBFeature(Base):
 
     def get_qualifier(self, name):
         nodes = self.get_qualifiers(name)
-        assert (
-            len(nodes) <= 1
-        ), "Node has {n=n} {key} features! (expected <= 1 when using get_qualifier)".format(
-            n=len(nodes), key=name
-        )
+        if len(nodes) > 1:
+            msg = f"Node has {len(nodes)} {name} features! (expected <= 1 when using get_qualifier)"
+            raise ValueError(msg)
+
         if not nodes:
             return None
         return self.get_qualifiers(name)[0]
@@ -230,12 +229,14 @@ class GBFeatureExon(GBFeature):
 
 if __name__ == "__main__":
     import os
+
     import lxml.etree as le
+
     from .xmlfacades.gbset import GBSet
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")  # noqa: PTH118, PTH120
     relpath = "efetch.fcgi?db=nuccore&id=148536845&retmode=xml.xml"
-    path = os.path.join(data_dir, relpath)
+    path = os.path.join(data_dir, relpath)  # noqa: PTH118
     gbset = GBSet(le.parse(path).getroot())
     gbseq = next(iter(gbset))
 

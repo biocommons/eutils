@@ -2,7 +2,7 @@ xmlfacades
 ==========
 
 These modules provide property-based access to data parsed from
-eutilities XML replies.  
+eutilities XML replies.
 
 xmlfacades are initialized with an `lxml.etree._Element` and return a
 class with methods appropriate for the XML node type.  Object
@@ -18,4 +18,3 @@ for Entrezgene-Set replies are::
     xpath: /Entrezgene-Set/Entrezgene/Entrezgene_locus/Gene-commentary/Gene-commentary_products/Gene-commentary/Gene-commentary_genomic-coords
             ^              ^          ^                ^               ^                        ^               ^
     class:  EntrezgeneSet  Entrezgene EntrezgeneLocus  GeneCommentary  GeneCommentaryProducts   GeneCommentary  GeneCommentaryGenomicCoords
-

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from .base import Base
 from .pubmedarticle import PubmedArticle
 
@@ -13,9 +11,10 @@ class PubmedArticleSet(Base):
 
 if __name__ == "__main__":
     import os
+
     import lxml.etree as le
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")  # noqa: PTH118, PTH120
     relpaths = [
         "efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml",
         "efetch.fcgi?db=pubmed&id=22351513&retmode=xml.xml",
@@ -23,7 +22,7 @@ if __name__ == "__main__":
     ]
 
     pmasets = [
-        PubmedArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot())
+        PubmedArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot())  # noqa: PTH118
         for relpath in relpaths
     ]
 

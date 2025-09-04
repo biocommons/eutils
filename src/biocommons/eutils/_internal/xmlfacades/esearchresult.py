@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from .base import Base
 
 
@@ -20,7 +18,7 @@ class ESearchResult(Base):
 
     @property
     def ids(self):
-        return [int(id) for id in self._xml_root.xpath("/eSearchResult/IdList/Id/text()")]
+        return [int(item_id) for item_id in self._xml_root.xpath("/eSearchResult/IdList/Id/text()")]
 
     @property
     def webenv(self):

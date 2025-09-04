@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import logging
 
 import lxml.etree
@@ -9,7 +7,7 @@ from ..exceptions import EutilsError
 logger = logging.getLogger(__name__)
 
 
-class Base(object):
+class Base:
     """Root class for all xmlfacade classes.
 
     This class is instantiated only by subclasses.
@@ -27,19 +25,17 @@ class Base(object):
     def __init__(self, xml):
         if isinstance(xml, lxml.etree._Element):
             self._xml_root = xml
-        elif isinstance(xml, str) or isinstance(xml, bytes):
+        elif isinstance(xml, (str | bytes)):
             self._xml_root = lxml.etree.XML(xml)
         else:
             raise EutilsError("Cannot create object from type " + type(xml).__name__)
 
         if self._root_tag is None:
-            raise EutilsError("_root_tag not defined for class {}".format(type(self).__name__))
-        elif self._root_tag != self._xml_root.tag:
-            raise EutilsError(
-                "XML for {} object must be a {} element (got {})".format(
-                    type(self).__name__, self._root_tag, self._xml_root.tag
-                )
-            )
+            msg = f"_root_tag not defined for class {type(self).__name__}"
+            raise EutilsError(msg)
+        if self._root_tag != self._xml_root.tag:
+            msg = f"XML for {type(self).__name__} object must be a {self._root_tag} element (got {self._xml_root.tag})"
+            raise EutilsError(msg)
 
 
 # <LICENSE>

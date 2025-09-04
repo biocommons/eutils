@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from .base import Base
 
 
@@ -23,10 +21,9 @@ class MedlineCitation(Base):
         def _format_author(au):
             if au.find("CollectiveName") is not None:
                 return au.find("CollectiveName").text
-            elif au.find("LastName") is not None and au.find("Initials") is not None:
+            if au.find("LastName") is not None and au.find("Initials") is not None:
                 return au.find("LastName").text + " " + au.find("Initials").text
-            else:
-                return au.find("LastName").text
+            return au.find("LastName").text
 
         return [_format_author(au) for au in self._xml_root.xpath("Article/AuthorList/Author")]
 
@@ -82,11 +79,12 @@ class MedlineCitation(Base):
 
 
 if __name__ == "__main__":
-    import lxml.etree as le
     import os
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
-    path = os.path.join(data_dir, "medlinecitation-id=20412080.xml.gz")
+    import lxml.etree as le
+
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")  # noqa: PTH118, PTH120
+    path = os.path.join(data_dir, "medlinecitation-id=20412080.xml.gz")  # noqa: PTH118
 
     mc = MedlineCitation(le.parse(path).getroot())
 

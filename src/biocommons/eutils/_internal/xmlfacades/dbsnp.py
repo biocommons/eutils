@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import re
 
 from .base import Base
@@ -26,11 +24,12 @@ class ExchangeSet(Base):
         )
 
 
-class Rs(object):
+class Rs:
     _root_tag = "Rs"
 
     def __init__(self, rs_node):
-        assert rs_node.tag == "{https://www.ncbi.nlm.nih.gov/SNP/docsum}Rs"
+        if rs_node.tag != "{https://www.ncbi.nlm.nih.gov/SNP/docsum}Rs":
+            raise ValueError
         self._n = rs_node
 
     # def __str__(self):

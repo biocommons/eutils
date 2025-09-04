@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """Provides support for parsing NCBI einfo queries as described here:
 
 http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo
@@ -17,7 +15,6 @@ reply.
 
 from ..exceptions import EutilsError
 from .base import Base
-
 from .dbinfo import DbInfo
 from .dblist import DbList
 
@@ -31,9 +28,10 @@ class EInfoResult(Base):
         childtag = self._xml_root[0].tag
         if childtag == "DbInfo":
             return "dbinfo"
-        elif childtag == "DbList":
+        if childtag == "DbList":
             return "dblist"
-        raise RuntimeError("Shouldn't be here; EInfoResult contains neither a DbList nor a DbInfo")
+        msg = "Shouldn't be here; EInfoResult contains neither a DbList nor a DbInfo"
+        raise RuntimeError(msg)
 
     @property
     def dbinfo(self):
@@ -53,15 +51,16 @@ class EInfoResult(Base):
 
 if __name__ == "__main__":
     import os
+
     import lxml.etree as le
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")  # noqa: PTH118, PTH120
 
-    dir_path = os.path.join(data_dir, "einfo.fcgi?db=protein&retmode=xml.xml.gz")
-    dlr_path = os.path.join(data_dir, "einfo.fcgi?retmode=xml.xml.gz")
+    dir_path = os.path.join(data_dir, "einfo.fcgi?db=protein&retmode=xml.xml.gz")  # noqa: PTH118
+    dlr_path = os.path.join(data_dir, "einfo.fcgi?retmode=xml.xml.gz")  # noqa: PTH118
 
-    eiinfo = eutils.xmlfacades.einforesult.EInfoResult(le.parse(dir_path).getroot())
-    eilist = eutils.xmlfacades.einforesult.EInfoResult(le.parse(dlr_path).getroot())
+    eiinfo = eutils.xmlfacades.einforesult.EInfoResult(le.parse(dir_path).getroot())  # noqa: F821
+    eilist = eutils.xmlfacades.einforesult.EInfoResult(le.parse(dlr_path).getroot())  # noqa: F821
 
     dbinfo = eiinfo.dbinfo
     dblist = eilist.dblist

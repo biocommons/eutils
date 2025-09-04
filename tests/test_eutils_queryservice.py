@@ -6,14 +6,14 @@ library should support.
 """
 
 import unittest
+from unittest.mock import MagicMock, patch
 
-from lxml import etree
-from mock import patch, MagicMock
 import pytest
 import vcr
+from lxml import etree
 
-from biocommons.eutils._internal.queryservice import QueryService
 from biocommons.eutils._internal.exceptions import EutilsNCBIError, EutilsRequestError
+from biocommons.eutils._internal.queryservice import QueryService
 
 
 def assert_in_xml(xml, item):
@@ -28,8 +28,8 @@ def parse_related_pmids_result(xmlstr):
     for linkset in dom.findall("LinkSet/LinkSetDb"):
         heading = linkset.find("LinkName").text.split("_")[-1]
         outd[heading] = []
-        for Id in linkset.findall("Link/Id"):
-            outd[heading].append(Id.text)
+        for link_id in linkset.findall("Link/Id"):
+            outd[heading].append(link_id.text)
     return outd
 
 
@@ -82,7 +82,7 @@ class TestEutilsQueries(unittest.TestCase):
         xmlstr = self.qs.elink({"dbfrom": "pubmed", "id": 1234567, "cmd": "neighbor"})
 
         resd = parse_related_pmids_result(xmlstr)
-        assert "pubmed" in resd.keys()
+        assert "pubmed" in resd
 
     @vcr.use_cassette
     def test_esummary(self):
@@ -101,6 +101,6 @@ class TestEutilsQueries(unittest.TestCase):
         post_return_value.test = "Bad XML"
         post_return_value.ok = False
         mock_requests.post.return_value = post_return_value
-        with self.assertRaises(EutilsNCBIError):
-            pmid = 1234569
+        pmid = 1234569
+        with pytest.raises(EutilsNCBIError):
             self.qs.efetch(args={"db": "pubmed", "id": pmid})

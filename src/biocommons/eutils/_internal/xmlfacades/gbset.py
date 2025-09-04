@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from .base import Base
 from .gbseq import GBSeq
 
@@ -8,7 +6,7 @@ class GBSet(Base):
     _root_tag = "GBSet"
 
     def __str__(self):
-        return "GBSet({self.acv})".format(self=self)
+        return f"GBSet({self.acv})"
 
     @property
     def gbseqs(self):
@@ -20,11 +18,12 @@ class GBSet(Base):
 
 if __name__ == "__main__":
     import os
+
     import lxml.etree as le
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")  # noqa: PTH118, PTH120
     relpath = "efetch.fcgi?db=nuccore&id=148536845&retmode=xml.xml"
-    path = os.path.join(data_dir, relpath)
+    path = os.path.join(data_dir, relpath)  # noqa: PTH118
     gbset = GBSet(le.parse(path).getroot())
 
 # <LICENSE>

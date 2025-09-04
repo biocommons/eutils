@@ -2,7 +2,7 @@ import vcr
 
 
 @vcr.use_cassette
-def test_eutils_xmlfacades_pubmedcentralarticle_PMC3299399(client):
+def test_eutils_xmlfacades_pubmedcentralarticle_PMC3299399(client):  # noqa: N802
     pas = client.efetch(db="pmc", id=3299399)
     pa = next(iter(pas))
 

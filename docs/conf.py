@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # eutils documentation build configuration file, created by
 # sphinx-quickstart on Tue Aug 11 10:03:31 2015.
@@ -12,8 +11,6 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys
-import os
 
 import sphinx_rtd_theme
 

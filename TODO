@@ -32,4 +32,3 @@ use web history + iterators for chained searching
 ** provide uncached access
 ** support history
 ** default args is misplaced -- it should go in client instead
-

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from biocommons.eutils import Client, EutilsError, EutilsNCBIError, EutilsNotFoundError
 
 
@@ -13,23 +11,15 @@ class ClientX(Client):
     """
 
     def fetch_gene_by_hgnc(self, hgnc):
-        query = 'human[orgn] AND {hgnc}[preferred symbol] AND "current only"[Filter]'.format(
-            hgnc=hgnc
-        )
+        query = f'human[orgn] AND {hgnc}[preferred symbol] AND "current only"[Filter]'
         esr = self.esearch(db="gene", term=query)
         if esr.count != 1:
-            raise EutilsError(
-                "Received {n} search replies for gene {hgnc} (query: '{query}')".format(
-                    n=esr.count, hgnc=hgnc, query=query
-                )
-            )
+            msg = f"Received {esr.count} search replies for gene {hgnc} (query: '{query}')"
+            raise EutilsError(msg)
         gene = next(iter(self.efetch(db="gene", id=esr.ids[0])))
         if hgnc != gene.hgnc:
-            raise EutilsError(
-                "Queried for {q_hgnc}, got reply for gene {r_hgnc}".format(
-                    q_hgnc=hgnc, r_hgnc=gene.hgnc
-                )
-            )
+            msg = f"Queried for {hgnc}, got reply for gene {gene.hgnc}"
+            raise EutilsError(msg)
         return gene
 
     def fetch_nuccore_by_ac(self, acv):
@@ -37,33 +27,25 @@ class ClientX(Client):
         db = "nuccore"
         esr = self.esearch(db=db, term=query)
         if esr.count > 1:
-            raise EutilsError(
-                "Received {n} replies for {acv} in database {db}".format(
-                    n=esr.count, acv=acv, db=db
-                )
-            )
+            msg = f"Received {esr.count} replies for {acv} in database {db}"
+            raise EutilsError(msg)
         if esr.count == 0:
-            raise EutilsNotFoundError(
-                "No results for {query} in database {db}".format(query=query, db=db)
-            )
+            msg = f"No results for {query} in database {db}"
+            raise EutilsNotFoundError(msg)
         gbseq = next(iter(self.efetch(db=db, id=esr.ids[0])))
         if acv != gbseq.acv:
-            raise EutilsNCBIError(
-                "Queried for {q_acv}, got reply for {r_acv}".format(q_acv=acv, r_acv=gbseq.acv)
-            )
+            msg = f"Queried for {acv}, got reply for {gbseq.acv}"
+            raise EutilsNCBIError(msg)
         return gbseq
 
     fetch_gbseq_by_ac = fetch_nuccore_by_ac
 
     def fetch_snps_for_gene(self, hgnc, organism="human"):
         db = "snp"
-        esr = self.esearch(db=db, term="%s[gene name] AND %s[organism]" % (hgnc, organism))
+        esr = self.esearch(db=db, term=f"{hgnc}[gene name] AND {organism}[organism]")
         if esr.count == 0:
-            raise EutilsNotFoundError(
-                "No results for gene {hgnc} and organism {o} in database {db}".format(
-                    hgnc=hgnc, o=organism, db=db
-                )
-            )
+            msg = f"No results for gene {hgnc} and organism {organism} in database {db}"
+            raise EutilsNotFoundError(msg)
         return next(iter(self.efetch(db=db, id=",".join(map(str, esr.ids)))))
 
 

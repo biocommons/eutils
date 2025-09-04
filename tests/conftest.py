@@ -1,18 +1,18 @@
+import logging
 import os
+from pathlib import Path
 
 import pytest
 import vcr
 
 import biocommons.eutils
 
-import logging
-
 logging.basicConfig()
 logger = logging.getLogger("vcr")
 logger.setLevel(logging.DEBUG)
 
-test_dir = os.path.dirname(__file__)
-test_data_dir = os.path.join(test_dir, "data", "cassettes")
+test_dir = Path(__file__)
+test_data_dir = test_dir / "data" / "cassettes"
 
 vcr.default_vcr = vcr.VCR(
     cassette_library_dir=test_data_dir,
