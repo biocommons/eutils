@@ -40,7 +40,6 @@ classifiers = [
 ]
 dependencies = [
     "lxml",
-    "pytz",
     "requests",
 ]
 description = "Python interface to NCBI's eutilities API"
