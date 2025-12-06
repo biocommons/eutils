@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """provide cached and throttled querying of `NCBI E-utilities
 <http://www.ncbi.nlm.nih.gov/books/NBK25499/>`_.
 
@@ -22,6 +20,8 @@ may be controlled upon instantiation by setting default_args.
 
 """
 
+# ruff: noqa
+
 import hashlib
 import logging
 import os
@@ -31,11 +31,21 @@ import time
 import lxml.etree
 import requests
 
+from .exceptions import EutilsNCBIError, EutilsRequestError
 from .sqlitecache import SQLiteCache
-from .exceptions import EutilsRequestError, EutilsNCBIError
-
 
 _logger = logging.getLogger(__name__)
+
+def _redact_api_key(url):
+    # Redact api_key query parameter value in URL, if present.
+    from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+    parts = urlsplit(url)
+    query = dict(parse_qsl(parts.query))
+    if 'api_key' in query:
+        query["api_key"] = "<REDACTED>"
+        new_query = urlencode(query)
+        url = urlunsplit((parts.scheme, parts.netloc, parts.path, new_query, parts.fragment))
+    return url
 
 url_base = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 default_default_args = {"retmode": "xml", "usehistory": "y", "retmax": 250}
@@ -44,7 +54,7 @@ default_email = "biocommons-dev@googlegroups.com"
 default_cache_path = os.path.join(os.path.expanduser("~"), ".cache", "eutils-cache.db")
 
 
-class QueryService(object):
+class QueryService:
     """*provides throttled and cached querying of NCBI E-utilities services*
 
     QueryService has three functions:
@@ -99,7 +109,7 @@ class QueryService(object):
         self.default_args = default_args
         self.email = email
         self.tool = tool
-        self.api_key = api_key
+        self.api_key = api_key or os.environ.get("NCBI_API_KEY")
 
         if request_interval is not None:
             _logger.warning(
@@ -109,16 +119,12 @@ class QueryService(object):
         if self.api_key is None:
             requests_per_second = 3
             _logger.warning(
-                "No NCBI API key provided; throttling to {} requests/second; see "
-                "https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/".format(
-                    requests_per_second
-                )
+                f"No NCBI API key provided; throttling to {requests_per_second} requests/second; see "
+                "https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/"
             )
         else:
             requests_per_second = 10
-            _logger.info(
-                "Using NCBI API key; throttling to {} requests/second".format(requests_per_second)
-            )
+            _logger.info(f"Using NCBI API key; throttling to {requests_per_second} requests/second")
 
         self.request_interval = 1.0 / requests_per_second
 
@@ -279,22 +285,13 @@ class QueryService(object):
         if not skip_cache and self._cache:
             try:
                 v = self._cache[cache_key]
-                _logger.debug(
-                    "cache hit for key {cache_key} ({url}, {sqas}) ".format(
-                        cache_key=cache_key, url=url, sqas=sqas
-                    )
-                )
+                _logger.debug(f"cache hit for key {cache_key} ({url}, {sqas}) ")
                 return v
             except KeyError:
-                _logger.debug(
-                    "cache miss for key {cache_key} ({url}, {sqas}) ".format(
-                        cache_key=cache_key, url=url, sqas=sqas
-                    )
-                )
-                pass
+                _logger.debug(f"cache miss for key {cache_key} ({url}, {sqas}) ")
 
         if self.api_key:
-            url += "?api_key={self.api_key}".format(self=self)
+            url += f"?api_key={self.api_key}"
 
         # --
 
@@ -302,16 +299,12 @@ class QueryService(object):
             req_int = self.request_interval
             sleep_time = req_int - (time.monotonic() - self._last_request_clock)
             if sleep_time > 0:
-                _logger.debug("sleeping {sleep_time:.3f}".format(sleep_time=sleep_time))
+                _logger.debug(f"sleeping {sleep_time:.3f}")
                 time.sleep(sleep_time)
 
         r = requests.post(url, full_args)
         self._last_request_clock = time.monotonic()
-        _logger.debug(
-            "post({url}, {fas}): {r.status_code} {r.reason}, {len})".format(
-                url=url, fas=full_args_str, r=r, len=len(r.text)
-            )
-        )
+        _logger.debug(f"post({url}, {full_args_str}): {r.status_code} {r.reason}, {len(r.text)})")
 
         if not r.ok:
             # TODO: discriminate between types of errors
@@ -324,11 +317,9 @@ class QueryService(object):
                 xml = lxml.etree.fromstring(r.text.encode("utf-8"))
                 errornode = xml.find("ERROR")
                 errormsg = errornode.text if errornode else "Unknown Error"
-                raise EutilsRequestError(
-                    "{r.reason} ({r.status_code}): {error}".format(r=r, error=errormsg)
-                )
+                raise EutilsRequestError(f"{r.reason} ({r.status_code}): {errormsg}")
             except Exception as ex:
-                raise EutilsNCBIError("Error parsing response object from NCBI: {}".format(ex))
+                raise EutilsNCBIError(f"Error parsing response object from NCBI: {ex}")
 
         if any(bad_word in r.text for bad_word in ["<error>", "<ERROR>"]):
             if r.text is not None:
@@ -340,18 +331,16 @@ class QueryService(object):
                         )
                     )
                 except Exception as ex:
-                    raise EutilsNCBIError("Error parsing response object from NCBI: {}".format(ex))
+                    raise EutilsNCBIError(f"Error parsing response object from NCBI: {ex}")
 
         if '<h1 class="error">Access Denied</h1>' in r.text:
-            raise EutilsRequestError("Access Denied: {url}".format(url=url))
+            raise EutilsRequestError(f"Access Denied: {url}")
 
         if self._cache and _cacheable(r.text):
             # N.B. we cache results even when skip_cache (read) is true
             self._cache[cache_key] = r.content
             _logger.info(
-                "cached results for key {cache_key} ({url}, {sqas}) ".format(
-                    cache_key=cache_key, url=url, sqas=sqas
-                )
+                f"cached results for key {cache_key} ({_redact_api_key(url)}, {sqas}) "
             )
 
         return r.content

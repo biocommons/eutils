@@ -455,4 +455,147 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: tool=biocommons.eutils._internal&email=biocommons-dev%40googlegroups.com&retmode=xml&usehistory=y&retmax=250&db=pubmed&term=hart+rk%5Bauthor%5D
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '143'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: POST
+    uri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi
+  response:
+    body:
+      string: '<?xml version="1.0" encoding="UTF-8" ?>
+
+        <!DOCTYPE eSearchResult PUBLIC "-//NLM//DTD esearch 20060628//EN" "https://eutils.ncbi.nlm.nih.gov/eutils/dtd/20060628/esearch.dtd">
+
+        <eSearchResult><Count>34</Count><RetMax>34</RetMax><RetStart>0</RetStart><QueryKey>1</QueryKey><WebEnv>MCID_6934533c4c5abba8c303da1d</WebEnv><IdList>
+
+        <Id>40455089</Id>
+
+        <Id>40211185</Id>
+
+        <Id>40122602</Id>
+
+        <Id>39702242</Id>
+
+        <Id>39601509</Id>
+
+        <Id>37391771</Id>
+
+        <Id>37250454</Id>
+
+        <Id>37074468</Id>
+
+        <Id>36540993</Id>
+
+        <Id>36496405</Id>
+
+        <Id>36175569</Id>
+
+        <Id>35896740</Id>
+
+        <Id>35816316</Id>
+
+        <Id>35311178</Id>
+
+        <Id>35255777</Id>
+
+        <Id>35125667</Id>
+
+        <Id>35072136</Id>
+
+        <Id>35057853</Id>
+
+        <Id>34930811</Id>
+
+        <Id>34467258</Id>
+
+        <Id>33270643</Id>
+
+        <Id>32986449</Id>
+
+        <Id>32928228</Id>
+
+        <Id>30976270</Id>
+
+        <Id>30129167</Id>
+
+        <Id>28967166</Id>
+
+        <Id>27814769</Id>
+
+        <Id>26931183</Id>
+
+        <Id>26791113</Id>
+
+        <Id>25273102</Id>
+
+        <Id>24667040</Id>
+
+        <Id>19209718</Id>
+
+        <Id>11108480</Id>
+
+        <Id>6067859</Id>
+
+        </IdList><TranslationSet><Translation>     <From>hart rk[author]</From>     <To>Hart,
+        Rk[Full Author Name] OR hart rk[Author]</To>    </Translation></TranslationSet><QueryTranslation>hart,
+        rk[Author] OR hart rk[Author]</QueryTranslation></eSearchResult>
+
+        '
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - private
+      Connection:
+      - Keep-Alive
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Date:
+      - Sat, 06 Dec 2025 16:00:59 GMT
+      Keep-Alive:
+      - timeout=4, max=40
+      NCBI-PHID:
+      - 1D349DF9857F095500003CB78E33F78B.1.1.m_1
+      NCBI-SID:
+      - 489261156D11E7F7_285BSID
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Server:
+      - Finatra
+      Set-Cookie:
+      - ncbi_sid=489261156D11E7F7_285BSID; domain=.nih.gov; path=/; expires=Sun, 06
+        Dec 2026 16:01:00 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-RateLimit-Limit:
+      - '10'
+      X-RateLimit-Remaining:
+      - '9'
+      X-UA-Compatible:
+      - IE=Edge
+      X-XSS-Protection:
+      - 1; mode=block
+      content-encoding:
+      - gzip
+    status:
+      code: 200
+      message: OK
 version: 1

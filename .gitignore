@@ -1,95 +1,119 @@
-
-*~
-archive
+*$py.class
 *.bak
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-build
-build/
-# Byte-compiled / optimized / DLL files
-.cache
-celerybeat-schedule
-# celery beat schedule file
-# C extensions
-cover
-*,cover
-.coverage
-.coverage.*
-coverage.xml
-develop-eggs/
-dist
-dist/
-# Distribution / packaging
-# Django stuff:
-doc/_build
-docs/_build/
-# dotenv
-downloads/
-.DS_Store
+*.cover
 *.egg
 *.egg-info
 *.egg-info/
-.eggs
-.eggs/
-eggs/
 *.enc
-.env
-env/
-ENV/
-# Flask stuff:
-htmlcov/
-.hypothesis/
-.installed.cfg
-# Installer logs
-instance/
-*.ipynb
-.ipynb_checkpoints
-# IPython Notebook
-*.json
-.keys
-lib/
-lib64/
-local_settings.py
 *.log
 *.manifest
 *.mo
-nosetests.xml
 *.orig
+*.pot
+*.py.cover
+*.py[cod]
+*.py[codz]
+*.pyc
+*.pyo
+*.rej
+*.sage.py
+*.so
+*.spec
+*.sqlite3
+*.sqlite3-journal
+*~
+.DS_Store
+.Python
+.abstra/
+.cache
+.claude
+.coverage
+.coverage.*
+.cursorignore
+.cursorindexingignore
+.dmypy.json
+.eggs/
+.env
+.envrc
+.hypothesis/
+.idea
+.installed.cfg
+.ipynb_checkpoints
+.keys
+.mypy_cache/
+.nox/
+.pdm-build/
+.pdm-python
+.pixi
+.pybuilder/
+.pypirc
+.pyre/
+.pytest_cache
+.pytest_cache/
+.python-version
+.pytype/
+.ropeproject
+.ruff_cache/
+.scrapy
+.spyderproject
+.spyproject
+.tags
+.tags.mk
+.tox/
+.venv
+.vscode
+.webassets-cache
+/site
+ENV/
+MANIFEST
+__marimo__/
+__pycache__/
+__pypackages__/
+archive
+bdist
+bioutils/_data/assemblies/pull
+build
+build/
+celerybeat-schedule
+celerybeat.pid
+cover/
+coverage.xml
+cython_debug/
+develop-eggs/
+dist/
+dmypy.json
+doc*/changelog/*/.tags
+doc*/changelog/*/.tags.mk
+doc/_build
+doc/build
+doc/changelog/*/.tags
+doc/changelog/*/.tags.mk
+doc/changelog/*/hg-git-remap.pl
+docs/_build/
+docs/source
+downloads/
+eggs/
+env.bak/
+env/
+htmlcov/
+instance/
+ipython_config.py
+lib/
+lib64/
+local_settings.py
+marimo/_lsp/
+marimo/_static/
+misc
+nosetests.xml
 parts/
 pip-delete-this-directory.txt
 pip-log.txt
-*.pot
-# PyBuilder
-*.pyc
-__pycache__/
-*$py.class
-*.py[cod]
-# pyenv
-# PyInstaller
-*.pyo
-.pytest_cache
-.Python
-.python-version
-*.rej
-.ropeproject
-# Rope project settings
-.scrapy
-# Scrapy stuff:
+profile_default/
 sdist/
-*.so
-*.spec
-# Sphinx documentation
-.spyderproject
-# Spyder project settings
-.tags
-.tags.mk
+share/python-wheels/
 target/
-tmp
-.tox/
-# Translations
-# Unit test / coverage reports
-#  Usually these files are written by a python script from a template
+tmp/
 var/
-ve3k/
+venv.bak/
 venv/
-# virtualenv
-.webassets-cache
+wheels/

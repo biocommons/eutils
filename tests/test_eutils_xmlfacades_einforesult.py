@@ -5,15 +5,16 @@ import vcr
 def test_einfo_dblist(client):
     dblist_result = client.einfo()
 
-    assert "protein" in dblist_result.databases
-    assert 40 == len(dblist_result.databases)
+    assert "assembly" in dblist_result.databases  # noqa: S101
+    assert "protein" in dblist_result.databases  # noqa: S101
+    assert "snp" in dblist_result.databases  # noqa: S101
 
 
 @vcr.use_cassette
 def test_einfo_dbinfo(client):
     dbinfo_result = client.einfo(db="protein")
 
-    assert "1291933024" == dbinfo_result.count
-    assert "protein" == dbinfo_result.dbname
-    assert "Protein sequence record" == dbinfo_result.description
-    assert "Protein" == dbinfo_result.menuname
+    assert dbinfo_result.count == "1291933024"  # noqa: S101
+    assert dbinfo_result.dbname == "protein"  # noqa: S101
+    assert dbinfo_result.description == "Protein sequence record"  # noqa: S101
+    assert dbinfo_result.menuname == "Protein"  # noqa: S101

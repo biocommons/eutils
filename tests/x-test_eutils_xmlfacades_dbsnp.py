@@ -5,4 +5,4 @@ import vcr
 def test_two_snps(client):
     es = client.efetch(db="snp", id=[2031, 14181])
 
-    assert len(es) == 2
+    assert len(es) == 2  # noqa: PLR2004, S101
