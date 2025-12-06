@@ -6,19 +6,19 @@ library should support.
 """
 
 import unittest
+from unittest.mock import MagicMock, patch
 
-from lxml import etree
-from mock import patch, MagicMock
 import pytest
 import vcr
+from lxml import etree
 
-from biocommons.eutils._internal.queryservice import QueryService
 from biocommons.eutils._internal.exceptions import EutilsNCBIError, EutilsRequestError
+from biocommons.eutils._internal.queryservice import QueryService
 
 
 def assert_in_xml(xml, item):
     xml = xml.decode()
-    assert item in xml
+    assert item in xml  # noqa: S101
 
 
 def parse_related_pmids_result(xmlstr):
@@ -28,15 +28,15 @@ def parse_related_pmids_result(xmlstr):
     for linkset in dom.findall("LinkSet/LinkSetDb"):
         heading = linkset.find("LinkName").text.split("_")[-1]
         outd[heading] = []
-        for Id in linkset.findall("Link/Id"):
-            outd[heading].append(Id.text)
+        for link_id in linkset.findall("Link/Id"):
+            outd[heading].append(link_id.text)
     return outd
 
 
 def test_api_key():
     """tests that the API key is being used"""
     qs = QueryService()
-    assert b"DbName" in qs.einfo()
+    assert b"DbName" in qs.einfo()  # noqa: S101
 
     qs = QueryService(api_key="bogus")
     with pytest.raises(EutilsRequestError):
@@ -82,7 +82,7 @@ class TestEutilsQueries(unittest.TestCase):
         xmlstr = self.qs.elink({"dbfrom": "pubmed", "id": 1234567, "cmd": "neighbor"})
 
         resd = parse_related_pmids_result(xmlstr)
-        assert "pubmed" in resd.keys()
+        assert "pubmed" in resd  # noqa: S101
 
     @vcr.use_cassette
     def test_esummary(self):
@@ -101,6 +101,6 @@ class TestEutilsQueries(unittest.TestCase):
         post_return_value.test = "Bad XML"
         post_return_value.ok = False
         mock_requests.post.return_value = post_return_value
-        with self.assertRaises(EutilsNCBIError):
+        with pytest.raises(EutilsNCBIError):  # noqa: PT012
             pmid = 1234569
             self.qs.efetch(args={"db": "pubmed", "id": pmid})

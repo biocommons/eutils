@@ -8,6 +8,17 @@
 Net tests need to not use cache (easier when these are separated! -- #123)
 But... commit cache into repo for non-net tests
 
+* distinguish tests that use vcr-cached data (common) from live tests that
+  ensure that the package still works against current endpoints, which obviously
+  need to be less stringent about exact matches.
+
+* filter out unused headers in cassettes
+
+* reenable testing for dbsnp xmlfacade; see tests/x-test_eutils_xmlfacades_dbsnp.py
+
+* switch to pytest-vcr config
+
+* FIX xmlfacade for dbsnp
 
 * #122: implement TTL support in cache
 
@@ -32,4 +43,3 @@ use web history + iterators for chained searching
 ** provide uncached access
 ** support history
 ** default args is misplaced -- it should go in client instead
-
