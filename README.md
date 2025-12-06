@@ -1,38 +1,85 @@
-# biocommons.example
+# eutils -- simplified interface to NCBI E-Utilities
 
-[![Release](https://img.shields.io/github/v/release/biocommons/python-package)](https://img.shields.io/github/v/release/biocommons/python-package)
-[![Build status](https://img.shields.io/github/actions/workflow/status/biocommons/python-package/main.yml?branch=main)](https://github.com/biocommons/python-package/actions/workflows/main.yml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/biocommons/python-package/branch/main/graph/badge.svg)](https://codecov.io/gh/biocommons/python-package)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/biocommons/python-package)](https://img.shields.io/github/commit-activity/m/biocommons/python-package)
-[![License](https://img.shields.io/github/license/biocommons/python-package)](https://img.shields.io/github/license/biocommons/python-package)
+[![Release](https://img.shields.io/github/v/release/biocommons/eutils)](https://img.shields.io/github/v/release/biocommons/eutils)
+[![Build status](https://img.shields.io/github/actions/workflow/status/biocommons/eutils/main.yml?branch=main)](https://github.com/biocommons/eutils/actions/workflows/main.yml?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/biocommons/eutils/branch/main/graph/badge.svg)](https://codecov.io/gh/biocommons/eutils)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/biocommons/eutils)](https://img.shields.io/github/commit-activity/m/biocommons/eutils)
+[![License](https://img.shields.io/github/license/biocommons/eutils)](https://img.shields.io/github/license/biocommons/eutils)
 
-Package Description
+**eutils is a Python package to simplify searching, fetching, and
+parsing records from NCBI using their E-utilities_ interface**
 
-This project is a product of the [biocommons](https://biocommons.org/) community.
+## Features
 
-- **Github repository**: <https://github.com/biocommons/python-package/>
-- **Documentation** <https://biocommons.github.io/python-package/>
+* simple Pythonic interface for searching and fetching
+* Support for [NCBI API keys](https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/), and rate throttling when no key is available
+* optional sqlite-based caching of compressed replies
+* "façades" that facilitate access to essential attributes in XML replies
 
-## Python Package Installation
+- **Github repository**: <https://github.com/biocommons/eutils/>
+- **Documentation** <https://eutils.readthedocs.io/en/stable/>
 
-Install from PyPI with `pip install biocommons.example` or `uv pip install biocommons.example`, then try it:
+## Example Usage
 
-    $ source venv/bin/activate
-
-    $ python3 -m biocommons.example
-    Marvin says:
-    There's only one life-form as intelligent as me within thirty parsecs...
-
-    $ marvin-quote
-    Marvin says:
-    You think you've got problems? What are you supposed to do if you...
-
+    $ uv pip install eutils
+    $ export NCBI_API_KEY=8d4b...
     $ ipython
-    >>> from biocommons.example import __version__, get_quote_from_marvin
-    >>> __version__
-    '0.1.dev8+gd5519a8.d20211123'
-    >>> get_quote()
-    "The first ten million years were the worst, ...
+
+    >>> import os
+    >>> from biocommons.eutils import Client
+
+    # Initialize a client. This client handles all caching and query
+    # throttling.  For example:
+    >>> ec = Client(api_key=os.environ.get("NCBI_API_KEY", None))
+
+    # search for tumor necrosis factor genes
+    # any valid NCBI query may be used
+    >>> esr = ec.esearch(db='gene',term='tumor necrosis factor')
+
+    # esearch returns a list of entity IDs associated with your search. preview some of them:
+    >>> esr.ids[:5]
+    [136114222, 136113226, 136112112, 136111930, 136111620]
+
+    # fetch data for an ID (gene id 7157 is human TNF)
+    >>> egs = ec.efetch(db='gene', id=7157)
+
+    # One may fetch multiple genes at a time. These are returned as an
+    # EntrezgeneSet. We'll grab the first (and only) child, which returns
+    # an instance of the Entrezgene class.
+    >>> eg = egs.entrezgenes[0]
+
+    # Easily access some basic information about the gene
+    >>> eg.hgnc, eg.maploc, eg.description, eg.type, eg.genus_species
+    ('TP53', '17p13.1', 'tumor protein p53', 'protein-coding', 'Homo sapiens')
+
+    # get a list of genomic references
+    >>> sorted([(r.acv, r.label) for r in eg.references])
+    [('NC_000017.11', 'Chromosome 17 Reference GRCh38...'),
+    ('NC_018928.2', 'Chromosome 17 Alternate ...'),
+    ('NG_017013.2', 'RefSeqGene')]
+
+    # Get the first three products defined on GRCh38
+    >>> [p.acv for p in eg.references[0].products][:3]
+    ['NM_001126112.2', 'NM_001276761.1', 'NM_000546.5']
+
+    # As a sample, grab the first product defined on this reference (order is arbitrary)
+    >>> mrna = [i for i in eg.references[0].products if i.type == "mRNA"][0]
+    >>> str(mrna)
+    'GeneCommentary(acv=NM_001126112.2,type=mRNA,heading=Reference,label=transcript variant 2)'
+
+    # mrna.genomic_coords provides access to the exon definitions on this reference
+    >>> mrna.genomic_coords.gi, mrna.genomic_coords.strand
+    ('568815581', -1)
+
+    >>> mrna.genomic_coords.intervals
+    [(7687376, 7687549), (7676520, 7676618), (7676381, 7676402),
+    (7675993, 7676271), (7675052, 7675235), (7674858, 7674970),
+    (7674180, 7674289), (7673700, 7673836), (7673534, 7673607),
+    (7670608, 7670714), (7668401, 7669689)]
+
+    # and if the mrna has a product, the resulting protein:
+    >>> str(mrna.products[0])
+    'GeneCommentary(acv=NP_001119584.1,type=peptide,heading=Reference,label=isoform a)'
 
 
 ## Developer Setup
