@@ -36,6 +36,17 @@ from .sqlitecache import SQLiteCache
 
 _logger = logging.getLogger(__name__)
 
+def _redact_api_key(url):
+    # Redact api_key query parameter value in URL, if present.
+    from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+    parts = urlsplit(url)
+    query = dict(parse_qsl(parts.query))
+    if 'api_key' in query:
+        query["api_key"] = "<REDACTED>"
+        new_query = urlencode(query)
+        url = urlunsplit((parts.scheme, parts.netloc, parts.path, new_query, parts.fragment))
+    return url
+
 url_base = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 default_default_args = {"retmode": "xml", "usehistory": "y", "retmax": 250}
 default_tool = __package__
@@ -328,7 +339,9 @@ class QueryService:
         if self._cache and _cacheable(r.text):
             # N.B. we cache results even when skip_cache (read) is true
             self._cache[cache_key] = r.content
-            _logger.info(f"cached results for key {cache_key} ({url}, {sqas}) ")
+            _logger.info(
+                f"cached results for key {cache_key} ({_redact_api_key(url)}, {sqas}) "
+            )
 
         return r.content
 
