@@ -163,7 +163,7 @@ class GBFeature(Base):
     _root_tag = "GBFeature"
 
     def __init__(self, xml):
-        super(GBFeature, self).__init__(xml)
+        super().__init__(xml)
         loc = self._xml_root.findtext("GBFeature_location")
         if ".." in loc:
             s, e = loc.split("..")

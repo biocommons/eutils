@@ -50,7 +50,7 @@ class Test_SQLiteCache_AttrLookup(Test_SQLiteCacheBase):
 
 class Test_SQLiteCache_Dir(Test_SQLiteCacheBase):
     def setUp(self):
-        super(Test_SQLiteCache_Dir, self).setUp()
+        super().setUp()
         self.cache["a"] = "a"
         self.cache["b"] = "b"
         self.cache["b"] = "b2"
