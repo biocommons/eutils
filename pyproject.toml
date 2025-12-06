@@ -130,7 +130,7 @@ testpaths = ["src", "tests"]
 [tool.ruff]
 line-length = 100
 src = ["src", "tests"]
-target-version = "py314"
+target-version = "py313"
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -198,22 +198,37 @@ select = [
 # These warnings became visible with the adoption of ruff. They
 # should be addressed in separate issues.
 "src/**/*.py" = [
+  # "C416", # Unnecessary list comprehension (rewrite using `list()`)
+  "A001", # Variable `id` is shadowing a Python builtin
+  "A002", # Function argument `id` is shadowing a Python builtin
+  "B006", # Do not use mutable data structures for argument defaults
   "C416", # Unnecessary list comprehension (rewrite using `list()`)
   "E741", # Ambiguous variable name: `l`
   "EM101", # Exception must not use a string literal, assign to variable first
+  "EM102", # Exception must not use an f-string literal, assign to variable first
   "F522", # `.format` call has unused named argument(s): n
   "F524", # `.format` call is missing argument(s) for placeholder(s): n=n
   "F821", # Undefined name `pas`
+  "G003", # Logging statement uses `+`
+  "G004", # Logging statement uses f-string
   "PTH118", # `os.path.join()` should be replaced by `Path` with `/` operator
   "PTH120", # `os.path.dirname()` should be replaced by `Path.parent`
   "RET504", # Unnecessary assignment to `nodes` before `return` statement
   "S101", # Use of `assert` detected
+  "S108", # Probable insecure usage of temporary file or directory: "/tmp/SQLiteCache-test.db"
+  "S301", # `pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue
+  "SIM101", # Multiple `isinstance` calls for `xml`, merge into a single call
   "TRY003", # Avoid specifying long messages outside the exception class
   "UP008", # Use `super()` instead of `super(__class__, self)`
 ]
 "tests/**/*.py" = [
   "C405", # Unnecessary list literal (rewrite as a set literal)
+  "N801", # Class name (various) should use CapWords convention
+  "N802", # Function name (various) should be lowercase
+  "PLR2004", # Magic value used in comparison
+  "PTH107", # `os.remove()` should be replaced by `Path.unlink()`
   "S101", # Use of `assert` detected
+  "UP008", # Use `super()` instead of `super(__class__, self)`
 ]
 
 [tool.setuptools]

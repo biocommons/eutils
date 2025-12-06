@@ -18,7 +18,7 @@ from biocommons.eutils._internal.queryservice import QueryService
 
 def assert_in_xml(xml, item):
     xml = xml.decode()
-    assert item in xml  # noqa: S101
+    assert item in xml
 
 
 def parse_related_pmids_result(xmlstr):
@@ -36,7 +36,7 @@ def parse_related_pmids_result(xmlstr):
 def test_api_key():
     """tests that the API key is being used"""
     qs = QueryService()
-    assert b"DbName" in qs.einfo()  # noqa: S101
+    assert b"DbName" in qs.einfo()
 
     qs = QueryService(api_key="bogus")
     with pytest.raises(EutilsRequestError):
@@ -82,7 +82,7 @@ class TestEutilsQueries(unittest.TestCase):
         xmlstr = self.qs.elink({"dbfrom": "pubmed", "id": 1234567, "cmd": "neighbor"})
 
         resd = parse_related_pmids_result(xmlstr)
-        assert "pubmed" in resd  # noqa: S101
+        assert "pubmed" in resd
 
     @vcr.use_cassette
     def test_esummary(self):

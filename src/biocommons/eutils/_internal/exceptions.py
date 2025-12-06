@@ -1,13 +1,8 @@
-# -*- coding: utf-8 -*-
-
-
 class EutilsError(Exception):
     """Base class for all Eutils exceptions, and also used to raise
     general exception.
 
     """
-
-    pass
 
 
 class EutilsNCBIError(EutilsError):
@@ -16,8 +11,6 @@ class EutilsNCBIError(EutilsError):
 
     """
 
-    pass
-
 
 class EutilsNotFoundError(EutilsError):
     """Raised when the requested data is not available. (Used only by the
@@ -25,16 +18,12 @@ class EutilsNotFoundError(EutilsError):
 
     """
 
-    pass
-
 
 class EutilsRequestError(EutilsError):
     """Raised when NCBI responds with an error, such as when a non-existent
     database is specified.
 
     """
-
-    pass
 
 
 # <LICENSE>

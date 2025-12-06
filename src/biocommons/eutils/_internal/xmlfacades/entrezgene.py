@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import lxml.etree as le
 
 from .base import Base
@@ -10,9 +8,7 @@ class Entrezgene(Base):
     _root_tag = "Entrezgene"
 
     def __str__(self):
-        return "Entrezgene(id={self.gene_id};hgnc={self.hgnc};description={self.description};type={self.type})".format(
-            self=self
-        )
+        return f"Entrezgene(id={self.gene_id};hgnc={self.hgnc};description={self.description};type={self.type})"
 
     @property
     def common_tax(self):
@@ -85,6 +81,7 @@ class Entrezgene(Base):
 
 if __name__ == "__main__":
     import os
+
     from .xmlfacades.entrezgeneset import EntrezgeneSet
 
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")

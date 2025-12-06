@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from importlib.metadata import PackageNotFoundError, version
 
 from ._internal.client import Client

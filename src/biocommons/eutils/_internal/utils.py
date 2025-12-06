@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 def xml_get1(node, xpath):
     return node.xpath(xpath)[0]
 

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from .base import Base
 from .pubmedarticle import PubmedArticle
 
@@ -13,6 +11,7 @@ class PubmedArticleSet(Base):
 
 if __name__ == "__main__":
     import os
+
     import lxml.etree as le
 
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")

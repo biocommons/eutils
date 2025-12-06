@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """Provides support for parsing NCBI einfo queries as described here:
 
 http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo

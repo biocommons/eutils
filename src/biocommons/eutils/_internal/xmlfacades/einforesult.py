@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """Provides support for parsing NCBI einfo queries as described here:
 
 http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EInfo
@@ -17,7 +15,6 @@ reply.
 
 from ..exceptions import EutilsError
 from .base import Base
-
 from .dbinfo import DbInfo
 from .dblist import DbList
 
@@ -31,7 +28,7 @@ class EInfoResult(Base):
         childtag = self._xml_root[0].tag
         if childtag == "DbInfo":
             return "dbinfo"
-        elif childtag == "DbList":
+        if childtag == "DbList":
             return "dblist"
         raise RuntimeError("Shouldn't be here; EInfoResult contains neither a DbList nor a DbInfo")
 
@@ -53,6 +50,7 @@ class EInfoResult(Base):
 
 if __name__ == "__main__":
     import os
+
     import lxml.etree as le
 
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")

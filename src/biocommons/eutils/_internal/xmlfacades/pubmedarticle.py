@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from ..utils import xml_get_text_or_none
 from .base import Base
 from .medlinecitation import MedlineCitation
@@ -9,11 +7,7 @@ class PubmedArticle(Base):
     _root_tag = "PubmedArticle"
 
     def __str__(self):
-        return (
-            "{pma.__class__.__name__}({pma.pmid}; {pma.jrnl}; {pma.title}; {pma.authors})".format(
-                pma=self
-            )
-        )
+        return f"{self.__class__.__name__}({self.pmid}; {self.jrnl}; {self.title}; {self.authors})"
 
     @property
     def abstract(self):
@@ -92,9 +86,11 @@ class PubmedArticle(Base):
 
 
 if __name__ == "__main__":
-    from .xmlfacades.pubmedarticleset import PubmedArticleSet
-    import lxml.etree as le
     import os
+
+    import lxml.etree as le
+
+    from .xmlfacades.pubmedarticleset import PubmedArticleSet
 
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
     relpaths = [

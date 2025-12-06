@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # eutils documentation build configuration file, created by
 # sphinx-quickstart on Tue Aug 11 10:03:31 2015.
@@ -12,12 +11,10 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys
-import os
 
 import sphinx_rtd_theme
 
-import biocommons.eutils as eutils
+from biocommons import eutils
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -55,7 +52,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "eutils"
-copyright = "2018, eutils Committers"
+copyright = "2018, eutils Committers"  # noqa: A001
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

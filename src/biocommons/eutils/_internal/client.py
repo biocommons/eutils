@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-
 import logging
-import os
 
 import lxml.etree as le
 
@@ -15,11 +12,10 @@ from .xmlfacades.gbset import GBSet
 from .xmlfacades.pubmedarticleset import PubmedArticleSet
 from .xmlfacades.pubmedcentralarticleset import PubmedCentralArticleSet
 
-
 logger = logging.getLogger(__name__)
 
 
-class Client(object):
+class Client:
     """class-based access to NCBI E-Utilities, returning Python classes
     with rich data accessors
 
@@ -69,8 +65,8 @@ class Client(object):
         esr = ESearchResult(self._qs.esearch({"db": db, "term": term}))
         if esr.count > esr.retmax:
             logger.warning(
-                "NCBI found {esr.count} results, but we truncated the reply at {esr.retmax}"
-                " results; see https://github.com/biocommons/eutils/issues/124/".format(esr=esr)
+                f"NCBI found {esr.count} results, but we truncated the reply at {esr.retmax}"
+                " results; see https://github.com/biocommons/eutils/issues/124/"
             )
         return esr
 
@@ -90,7 +86,7 @@ class Client(object):
             return ExchangeSet(xml)
         if db in ["pmc"]:
             return PubmedCentralArticleSet(doc)
-        raise EutilsError("database {db} is not currently supported by eutils".format(db=db))
+        raise EutilsError(f"database {db} is not currently supported by eutils")
 
 
 # <LICENSE>

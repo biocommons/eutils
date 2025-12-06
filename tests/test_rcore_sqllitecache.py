@@ -1,5 +1,4 @@
 import atexit
-import collections
 import os
 import tempfile
 import time

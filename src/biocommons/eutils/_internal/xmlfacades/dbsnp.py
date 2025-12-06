@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import re
 
 from .base import Base
@@ -26,7 +24,7 @@ class ExchangeSet(Base):
         )
 
 
-class Rs(object):
+class Rs:
     _root_tag = "Rs"
 
     def __init__(self, rs_node):
