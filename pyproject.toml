@@ -201,7 +201,6 @@ select = [
   "A001", # Variable `id` is shadowing a Python builtin
   "A002", # Function argument `id` is shadowing a Python builtin
   "B006", # Do not use mutable data structures for argument defaults
-  "E741", # Ambiguous variable name: `l`
   "EM101", # Exception must not use a string literal, assign to variable first
   "EM102", # Exception must not use an f-string literal, assign to variable first
   "F522", # `.format` call has unused named argument(s): n
@@ -217,7 +216,6 @@ select = [
   "S301", # `pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue
   "SIM101", # Multiple `isinstance` calls for `xml`, merge into a single call
   "TRY003", # Avoid specifying long messages outside the exception class
-  # "UP008", # Use `super()` instead of `super(__class__, self)`
 ]
 "tests/**/*.py" = [
   "C405", # Unnecessary list literal (rewrite as a set literal)
@@ -226,7 +224,6 @@ select = [
   "PLR2004", # Magic value used in comparison
   "PTH107", # `os.remove()` should be replaced by `Path.unlink()`
   "S101", # Use of `assert` detected
-  # "UP008", # Use `super()` instead of `super(__class__, self)`
 ]
 
 [tool.setuptools]

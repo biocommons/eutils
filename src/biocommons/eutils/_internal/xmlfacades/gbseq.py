@@ -54,7 +54,7 @@ class GBSeq(Base):
     @property
     def gi(self):
         seqids = self._xml_root.xpath("GBSeq_other-seqids/GBSeqid/text()")
-        d = {t: l.rstrip("|").split("|") for t, _, l in [si.partition("|") for si in seqids]}
+        d = {t: l.rstrip("|").split("|") for t, _, l in [si.partition("|") for si in seqids]}  # noqa: E741
         gis = d["gi"]
         assert len(gis) == 1, "expected exactly one gi in XML"
         return int(gis[0])
@@ -79,7 +79,7 @@ class GBSeq(Base):
     def other_seqids(self):
         """returns a dictionary of sequence ids, like {'gi': ['319655736'], 'ref': ['NM_000551.3']}"""
         seqids = self._xml_root.xpath("GBSeq_other-seqids/GBSeqid/text()")
-        return {t: l.rstrip("|").split("|") for t, _, l in [si.partition("|") for si in seqids]}
+        return {t: l.rstrip("|").split("|") for t, _, l in [si.partition("|") for si in seqids]}  # noqa: E741
 
     @property
     def sequence(self):
