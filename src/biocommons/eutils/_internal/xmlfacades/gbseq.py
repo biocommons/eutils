@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import logging
 
 from .base import Base
@@ -11,7 +9,7 @@ class GBSeq(Base):
     _root_tag = "GBSeq"
 
     def __str__(self):
-        return "GBSeq({self.acv})".format(self=self)
+        return f"GBSeq({self.acv})"
 
     @property
     def acv(self):
@@ -157,7 +155,7 @@ class GBFeatureTable(Base):
         return GBFeature(nodes[0])
 
     def _get_nodes_with_key(self, key):
-        nodes = self._xml_root.xpath('GBFeature[GBFeature_key/text()="{key}"]'.format(key=key))
+        nodes = self._xml_root.xpath(f'GBFeature[GBFeature_key/text()="{key}"]')
         return nodes
 
 
@@ -194,10 +192,10 @@ class GBFeature(Base):
 
     def get_qualifier(self, name):
         nodes = self.get_qualifiers(name)
-        assert (
-            len(nodes) <= 1
-        ), "Node has {n=n} {key} features! (expected <= 1 when using get_qualifier)".format(
-            n=len(nodes), key=name
+        assert len(nodes) <= 1, (
+            "Node has {n=n} {key} features! (expected <= 1 when using get_qualifier)".format(
+                n=len(nodes), key=name
+            )
         )
         if not nodes:
             return None
@@ -230,7 +228,9 @@ class GBFeatureExon(GBFeature):
 
 if __name__ == "__main__":
     import os
+
     import lxml.etree as le
+
     from .xmlfacades.gbset import GBSet
 
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")

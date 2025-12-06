@@ -10,54 +10,48 @@ def test_eutils_xmlfacades_pubmedarticle_22528466(client):
         "Methods necessary for the successful transformation and regeneration of Aloe vera were developed and used to express the human protein, interferon alpha 2 (IFN\u03b12)."
     )
     assert set(pa.authors) == set(["Lowther W", "Lorick K", "Lawrence SD", "Yeow WS"])
-    assert set(pa.chemicals) == set(
-        [
-            "Antiviral Agents",
-            "IFNA2 protein, human",
-            "Interferon-alpha",
-            "Plant Extracts",
-            "Glucuronidase",
-        ]
-    )
+    assert set(pa.chemicals) == set([
+        "Antiviral Agents",
+        "IFNA2 protein, human",
+        "Interferon-alpha",
+        "Plant Extracts",
+        "Glucuronidase",
+    ])
     assert pa.doi == "10.1007/s11248-012-9616-0"
     assert pa.issue == "6"
     assert pa.jrnl == "Transgenic Res"
-    assert set(pa.mesh_headings) == set(
-        [
-            "Aloe",
-            "Antiviral Agents",
-            "Encephalomyocarditis virus",
-            "Genome, Plant",
-            "Glucuronidase",
-            "Humans",
-            "Immunoblotting",
-            "Interferon-alpha",
-            "Plant Extracts",
-            "Plant Leaves",
-            "Plants, Genetically Modified",
-            "Seeds",
-            "Signal Transduction",
-            "Transgenes",
-        ]
-    )
-    assert set(pa.mesh_qualifiers) == set(
-        [
-            "chemistry",
-            "genetics",
-            "pharmacology",
-            "drug effects",
-            "genetics",
-            "metabolism",
-            "genetics",
-            "metabolism",
-            "pharmacology",
-            "drug effects",
-            "genetics",
-            "chemistry",
-            "drug effects",
-            "physiology",
-        ]
-    )
+    assert set(pa.mesh_headings) == set([
+        "Aloe",
+        "Antiviral Agents",
+        "Encephalomyocarditis virus",
+        "Genome, Plant",
+        "Glucuronidase",
+        "Humans",
+        "Immunoblotting",
+        "Interferon-alpha",
+        "Plant Extracts",
+        "Plant Leaves",
+        "Plants, Genetically Modified",
+        "Seeds",
+        "Signal Transduction",
+        "Transgenes",
+    ])
+    assert set(pa.mesh_qualifiers) == set([
+        "chemistry",
+        "genetics",
+        "pharmacology",
+        "drug effects",
+        "genetics",
+        "metabolism",
+        "genetics",
+        "metabolism",
+        "pharmacology",
+        "drug effects",
+        "genetics",
+        "chemistry",
+        "drug effects",
+        "physiology",
+    ])
     assert pa.pages == "1349-57"
     assert pa.pii is None
     assert pa.pmc is None
@@ -80,17 +74,15 @@ def test_eutils_xmlfacades_pubmedarticle_20412080(client):
     assert pa.doi == "10.1111/j.1399-0004.2010.01436.x"
     assert pa.issue == "6"
     assert pa.jrnl == "Clin Genet"
-    assert set(pa.mesh_headings) == set(
-        [
-            "Algorithms",
-            "Computational Biology",
-            "Databases, Genetic",
-            "Gene Expression",
-            "Humans",
-            "Phenotype",
-            "Vocabulary, Controlled",
-        ]
-    )
+    assert set(pa.mesh_headings) == set([
+        "Algorithms",
+        "Computational Biology",
+        "Databases, Genetic",
+        "Gene Expression",
+        "Humans",
+        "Phenotype",
+        "Vocabulary, Controlled",
+    ])
     assert set(pa.mesh_qualifiers) == set(["methods"])
     assert pa.pages == "525-34"
     assert pa.pii == "CGE1436"
