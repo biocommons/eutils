@@ -208,10 +208,8 @@ select = [
   "S108", # Probable insecure usage of temporary file or directory: "/tmp/SQLiteCache-test.db"
   "S301", # `pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue
   "SIM101", # Multiple `isinstance` calls for `xml`, merge into a single call
-  "TRY003", # Avoid specifying long messages outside the exception class
 ]
 "tests/**/*.py" = [
-  "C405", # Unnecessary list literal (rewrite as a set literal)
   "N801", # Class name (various) should use CapWords convention
   "N802", # Function name (various) should be lowercase
   "PLR2004", # Magic value used in comparison

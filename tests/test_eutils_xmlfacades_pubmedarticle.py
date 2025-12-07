@@ -9,18 +9,18 @@ def test_eutils_xmlfacades_pubmedarticle_22528466(client):
     assert pa.abstract.startswith(
         "Methods necessary for the successful transformation and regeneration of Aloe vera were developed and used to express the human protein, interferon alpha 2 (IFN\u03b12)."
     )
-    assert set(pa.authors) == set(["Lowther W", "Lorick K", "Lawrence SD", "Yeow WS"])
-    assert set(pa.chemicals) == set([
+    assert set(pa.authors) == {"Lowther W", "Lorick K", "Lawrence SD", "Yeow WS"}
+    assert set(pa.chemicals) == {
         "Antiviral Agents",
         "IFNA2 protein, human",
         "Interferon-alpha",
         "Plant Extracts",
         "Glucuronidase",
-    ])
+    }
     assert pa.doi == "10.1007/s11248-012-9616-0"
     assert pa.issue == "6"
     assert pa.jrnl == "Transgenic Res"
-    assert set(pa.mesh_headings) == set([
+    assert set(pa.mesh_headings) == {
         "Aloe",
         "Antiviral Agents",
         "Encephalomyocarditis virus",
@@ -35,28 +35,20 @@ def test_eutils_xmlfacades_pubmedarticle_22528466(client):
         "Seeds",
         "Signal Transduction",
         "Transgenes",
-    ])
-    assert set(pa.mesh_qualifiers) == set([
+    }
+    assert set(pa.mesh_qualifiers) == {
         "chemistry",
         "genetics",
         "pharmacology",
         "drug effects",
-        "genetics",
         "metabolism",
-        "genetics",
-        "metabolism",
-        "pharmacology",
-        "drug effects",
-        "genetics",
-        "chemistry",
-        "drug effects",
         "physiology",
-    ])
+    }
     assert pa.pages == "1349-57"
     assert pa.pii is None
     assert pa.pmc is None
     assert pa.pmid == "22528466"
-    assert set(pa.pub_types) == set(["Journal Article", "Research Support, U.S. Gov't, Non-P.H.S."])
+    assert set(pa.pub_types) == {"Journal Article", "Research Support, U.S. Gov't, Non-P.H.S."}
     assert pa.title == "Expression of biologically active human interferon alpha 2 in Aloe vera."
     assert pa.volume == "21"
     assert pa.year == "2012"
@@ -69,12 +61,12 @@ def test_eutils_xmlfacades_pubmedarticle_20412080(client):
     pa = next(iter(pas))
 
     assert pa.abstract.startswith("A standardized, controlled vocabulary allows phenotypic")
-    assert set(pa.authors) == set(["Robinson PN", "Mundlos S"])
-    assert set(pa.chemicals) == set([])
+    assert set(pa.authors) == {"Robinson PN", "Mundlos S"}
+    assert set(pa.chemicals) == set()
     assert pa.doi == "10.1111/j.1399-0004.2010.01436.x"
     assert pa.issue == "6"
     assert pa.jrnl == "Clin Genet"
-    assert set(pa.mesh_headings) == set([
+    assert set(pa.mesh_headings) == {
         "Algorithms",
         "Computational Biology",
         "Databases, Genetic",
@@ -82,13 +74,13 @@ def test_eutils_xmlfacades_pubmedarticle_20412080(client):
         "Humans",
         "Phenotype",
         "Vocabulary, Controlled",
-    ])
-    assert set(pa.mesh_qualifiers) == set(["methods"])
+    }
+    assert set(pa.mesh_qualifiers) == {"methods"}
     assert pa.pages == "525-34"
     assert pa.pii == "CGE1436"
     assert pa.pmc is None
     assert pa.pmid == "20412080"
-    assert set(pa.pub_types) == set(["Journal Article", "Review"])
+    assert set(pa.pub_types) == {"Journal Article", "Review"}
     assert pa.title == "The human phenotype ontology."
     assert pa.volume == "77"
     assert pa.year == "2010"
