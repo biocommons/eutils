@@ -9,22 +9,22 @@ class PubmedCentralArticleSet(Base):
         return (PubmedCentralArticle(pmca_n) for pmca_n in self._xml_root.iterfind("article"))
 
 
-if __name__ == "__main__":
-    import os
+# if __name__ == "__main__":
+#     from pathlib import Path
 
-    import lxml.etree as le
+#     import lxml.etree as le
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
-    relpaths = [
-        "efetch.fcgi?db=pmc&id=3299399&rettype=xml.xml",
-        "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml",
-        "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml",
-    ]
+#     data_dir = Path(__file__).parent.parent.parent / "tests" / "data"
+#     relpaths = [
+#         "efetch.fcgi?db=pmc&id=3299399&rettype=xml.xml",
+#         "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml",
+#         "efetch.fcgi?db=pmc&id=3299399&retmode=xml.xml",
+#     ]
 
-    pmcasets = [
-        PubmedCentralArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot())
-        for relpath in relpaths
-    ]
+#     pmcasets = [
+#         PubmedCentralArticleSet(le.parse(data_dir / relpath).getroot())
+#         for relpath in relpaths
+#     ]
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

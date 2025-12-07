@@ -9,22 +9,22 @@ class PubmedArticleSet(Base):
         return (PubmedArticle(pa_n) for pa_n in self._xml_root.iterfind("PubmedArticle"))
 
 
-if __name__ == "__main__":
-    import os
+# if __name__ == "__main__":
+#     from pathlib import Path
 
-    import lxml.etree as le
+#     import lxml.etree as le
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
-    relpaths = [
-        "efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml",
-        "efetch.fcgi?db=pubmed&id=22351513&retmode=xml.xml",
-        "efetch.fcgi?db=pubmed&id=23121403&retmode=xml.xml",
-    ]
+#     data_dir = Path(__file__).parent.parent.parent / "tests" / "data"
+#     relpaths = [
+#         "efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml",
+#         "efetch.fcgi?db=pubmed&id=22351513&retmode=xml.xml",
+#         "efetch.fcgi?db=pubmed&id=23121403&retmode=xml.xml",
+#     ]
 
-    pmasets = [
-        PubmedArticleSet(le.parse(os.path.join(data_dir, relpath)).getroot())
-        for relpath in relpaths
-    ]
+#     pmasets = [
+#         PubmedArticleSet(le.parse(data_dir / relpath).getroot())
+#         for relpath in relpaths
+#     ]
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

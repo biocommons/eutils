@@ -18,7 +18,7 @@ class GBSeq(Base):
     @property
     def cds(self):
         cds = self.features.cds
-        return (cds.start_i, cds.end_i)
+        return (cds.start_i, cds.end_i)  # type: ignore
 
     @property
     def comment(self):
@@ -216,18 +216,18 @@ class GBFeatureExon(GBFeature):
         return self.get_qualifier("inference")
 
 
-if __name__ == "__main__":
-    import os
+# if __name__ == "__main__":
+#     from pathlib import Path
 
-    import lxml.etree as le
+#     import lxml.etree as le
 
-    from .xmlfacades.gbset import GBSet
+#     from .gbset import GBSet
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
-    relpath = "efetch.fcgi?db=nuccore&id=148536845&retmode=xml.xml"
-    path = os.path.join(data_dir, relpath)
-    gbset = GBSet(le.parse(path).getroot())
-    gbseq = next(iter(gbset))
+#     data_dir = Path(__file__).parent.parent.parent / "tests" / "data"
+#     relpath = "efetch.fcgi?db=nuccore&id=148536845&retmode=xml.xml"
+#     path = data_dir / relpath
+#     gbset = GBSet(le.parse(path).getroot())
+#     gbseq = next(iter(gbset))
 
 
 # <LICENSE>

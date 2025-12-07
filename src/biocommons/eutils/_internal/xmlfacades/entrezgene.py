@@ -1,5 +1,3 @@
-import lxml.etree as le
-
 from .base import Base
 from .genecommentary import GeneCommentary
 
@@ -80,14 +78,14 @@ class Entrezgene(Base):
         return self._xml_root.find("Entrezgene_type").get("value")
 
 
-if __name__ == "__main__":
-    import os
+# if __name__ == "__main__":
+#     from pathlib import Path
 
-    from .entrezgeneset import EntrezgeneSet
+#     from .entrezgeneset import EntrezgeneSet
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
-    data_file = os.path.join(data_dir, "entrezgeneset.xml.gz")
-    egs = EntrezgeneSet(le.parse(data_file).getroot())
+#     data_dir = Path(__file__).parent / ".." / ".." / "tests" / "data"
+#     data_file = data_dir / "entrezgeneset.xml.gz"
+#     egs = EntrezgeneSet(le.parse(data_file).getroot())
 
 
 # <LICENSE>

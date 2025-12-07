@@ -75,15 +75,15 @@ class MedlineCitation(Base):
         )
 
 
-if __name__ == "__main__":
-    import os
+# if __name__ == "__main__":
+#     from pathlib import Path
 
-    import lxml.etree as le
+#     import lxml.etree as le
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
-    path = os.path.join(data_dir, "medlinecitation-id=20412080.xml.gz")
+#     data_dir = Path(__file__).parent.parent.parent / "tests" / "data"
+#     path = data_dir / "medlinecitation-id=20412080.xml.gz"
 
-    mc = MedlineCitation(le.parse(path).getroot())
+#     mc = MedlineCitation(le.parse(path).getroot())
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

@@ -85,22 +85,22 @@ class PubmedArticle(Base):
         return MedlineCitation(self._xml_root.find("MedlineCitation"))
 
 
-if __name__ == "__main__":
-    import os
+# if __name__ == "__main__":
+#     from pathlib import Path
 
-    import lxml.etree as le
+#     import lxml.etree as le
 
-    from .xmlfacades.pubmedarticleset import PubmedArticleSet
+#     from .pubmedarticleset import PubmedArticleSet
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
-    relpaths = [
-        "efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml",
-        "efetch.fcgi?db=pubmed&id=22351513&retmode=xml.xml",
-        "efetch.fcgi?db=pubmed&id=23121403&retmode=xml.xml",
-    ]
-    path = os.path.join(data_dir, relpaths[0])
-    pas = PubmedArticleSet(le.parse(path).getroot())
-    pa = next(iter(pas))
+#     data_dir = Path(__file__).parent.parent.parent / "tests" / "data"
+#     relpaths = [
+#         "efetch.fcgi?db=pubmed&id=20412080&rettype=xml.xml",
+#         "efetch.fcgi?db=pubmed&id=22351513&retmode=xml.xml",
+#         "efetch.fcgi?db=pubmed&id=23121403&retmode=xml.xml",
+#     ]
+#     path = data_dir / relpaths[0]
+#     pas = PubmedArticleSet(le.parse(path).getroot())
+#     pa = next(iter(pas))
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

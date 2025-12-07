@@ -1,8 +1,8 @@
 import atexit
-import os
 import tempfile
 import time
 import unittest
+from pathlib import Path
 
 from biocommons.eutils._internal.sqlitecache import SQLiteCache
 
@@ -11,7 +11,7 @@ class Test_SQLiteCacheBase(unittest.TestCase):
     def setUp(self):
         _, self._fn = tempfile.mkstemp(suffix=".db")
 
-        atexit.register(lambda: os.remove(self._fn))
+        atexit.register(lambda: Path(self._fn).unlink())
 
         self.cache = SQLiteCache(self._fn)
 

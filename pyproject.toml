@@ -203,8 +203,6 @@ select = [
   "B006", # Do not use mutable data structures for argument defaults
   "G003", # Logging statement uses `+`
   "G004", # Logging statement uses f-string
-  "PTH118", # `os.path.join()` should be replaced by `Path` with `/` operator
-  "PTH120", # `os.path.dirname()` should be replaced by `Path.parent`
   "RET504", # Unnecessary assignment to `nodes` before `return` statement
   "S101", # Use of `assert` detected
   "S108", # Probable insecure usage of temporary file or directory: "/tmp/SQLiteCache-test.db"
@@ -217,7 +215,6 @@ select = [
   "N801", # Class name (various) should use CapWords convention
   "N802", # Function name (various) should be lowercase
   "PLR2004", # Magic value used in comparison
-  "PTH107", # `os.remove()` should be replaced by `Path.unlink()`
   "S101", # Use of `assert` detected
 ]
 

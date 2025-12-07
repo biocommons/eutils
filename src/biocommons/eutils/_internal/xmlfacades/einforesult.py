@@ -49,23 +49,23 @@ class EInfoResult(Base):
         raise EutilsError("EInfoResult does not contain a " + tag + " child node")
 
 
-if __name__ == "__main__":
-    import os
+# if __name__ == "__main__":
+#     import os
 
-    import lxml.etree as le
+#     import lxml.etree as le
 
-    from .einforesult import EInfoResult
+#     from .einforesult import EInfoResult
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
+#     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
 
-    dir_path = os.path.join(data_dir, "einfo.fcgi?db=protein&retmode=xml.xml.gz")
-    dlr_path = os.path.join(data_dir, "einfo.fcgi?retmode=xml.xml.gz")
+#     dir_path = os.path.join(data_dir, "einfo.fcgi?db=protein&retmode=xml.xml.gz")
+#     dlr_path = os.path.join(data_dir, "einfo.fcgi?retmode=xml.xml.gz")
 
-    eiinfo = EInfoResult(le.parse(dir_path).getroot())
-    eilist = EInfoResult(le.parse(dlr_path).getroot())
+#     eiinfo = EInfoResult(le.parse(dir_path).getroot())
+#     eilist = EInfoResult(le.parse(dlr_path).getroot())
 
-    dbinfo = eiinfo.dbinfo
-    dblist = eilist.dblist
+#     dbinfo = eiinfo.dbinfo
+#     dblist = eilist.dblist
 
 
 # <LICENSE>

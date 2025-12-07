@@ -16,15 +16,15 @@ class GBSet(Base):
         return (GBSeq(n) for n in self._xml_root.iterfind("GBSeq"))
 
 
-if __name__ == "__main__":
-    import os
+# if __name__ == "__main__":
+#     from pathlib import Path
 
-    import lxml.etree as le
+#     import lxml.etree as le
 
-    data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
-    relpath = "efetch.fcgi?db=nuccore&id=148536845&retmode=xml.xml"
-    path = os.path.join(data_dir, relpath)
-    gbset = GBSet(le.parse(path).getroot())
+#     data_dir = Path(__file__).parent.parent.parent / "tests" / "data"
+#     relpath = "efetch.fcgi?db=nuccore&id=148536845&retmode=xml.xml"
+#     path = data_dir / relpath
+#     gbset = GBSet(le.parse(str(path)).getroot())
 
 # <LICENSE>
 # Copyright 2015 eutils Committers
