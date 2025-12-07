@@ -28,7 +28,7 @@ class Rs:
     _root_tag = "Rs"
 
     def __init__(self, rs_node):
-        assert rs_node.tag == "{https://www.ncbi.nlm.nih.gov/SNP/docsum}Rs"
+        assert rs_node.tag == "{https://www.ncbi.nlm.nih.gov/SNP/docsum}Rs"  # noqa: S101
         self._n = rs_node
 
     # def __str__(self):

@@ -1,3 +1,5 @@
+# ruff: noqa: S101
+
 import logging
 
 from .base import Base

@@ -14,7 +14,7 @@ def key_to(obj):
 
 
 def key_from(pobj):
-    return pickle.loads(pobj)
+    return pickle.loads(pobj)  # noqa: S301
 
 
 def val_to(obj, compress):
@@ -23,7 +23,7 @@ def val_to(obj, compress):
 
 
 def val_from(pobj, compress):
-    return pickle.loads(zlib.decompress(pobj) if compress else pobj)
+    return pickle.loads(zlib.decompress(pobj) if compress else pobj)  # noqa: S301
 
 
 class SQLiteCache:
@@ -81,7 +81,7 @@ class SQLiteCache:
     ## Internal functions
 
     def _connect(self, db_path):
-        assert self._con is None, "already connected"
+        assert self._con is None, "already connected"  # noqa: S101
         self._con = sqlite3.connect(db_path, isolation_level=None, check_same_thread=False)
         self._con.text_factory = str
         self._db_path = db_path

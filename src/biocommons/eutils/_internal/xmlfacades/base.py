@@ -25,7 +25,7 @@ class Base:
     def __init__(self, xml):
         if isinstance(xml, lxml.etree._Element):
             self._xml_root = xml
-        elif isinstance(xml, str) or isinstance(xml, bytes):
+        elif isinstance(xml, str | bytes):
             self._xml_root = lxml.etree.XML(xml)
         else:
             raise EutilsError("Cannot create object from type " + type(xml).__name__)

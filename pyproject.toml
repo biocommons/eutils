@@ -161,10 +161,12 @@ ignore = [
   "E117",
   "E501",
   "E731",
+  "N801",
+  "N802",
   "PLR0913",
   "RET504",
   "S321",
-  "W191"
+  "W191",
 ]
 select = [
   "A", # https://docs.astral.sh/ruff/rules/#flake8-builtins-a
@@ -196,17 +198,7 @@ select = [
 ]
 
 [tool.ruff.lint.extend-per-file-ignores]
-# These warnings became visible with the adoption of ruff. They
-# should be addressed in separate issues.
-"src/**/*.py" = [
-  "S101", # Use of `assert` detected
-  "S108", # Probable insecure usage of temporary file or directory: "/tmp/SQLiteCache-test.db"
-  "S301", # `pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue
-  "SIM101", # Multiple `isinstance` calls for `xml`, merge into a single call
-]
 "tests/**/*.py" = [
-  "N801", # Class name (various) should use CapWords convention
-  "N802", # Function name (various) should be lowercase
   "PLR2004", # Magic value used in comparison
   "S101", # Use of `assert` detected
 ]
