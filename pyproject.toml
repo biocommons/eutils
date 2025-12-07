@@ -162,6 +162,7 @@ ignore = [
   "E501",
   "E731",
   "PLR0913",
+  "RET504",
   "S321",
   "W191"
 ]
@@ -203,7 +204,6 @@ select = [
   "B006", # Do not use mutable data structures for argument defaults
   "G003", # Logging statement uses `+`
   "G004", # Logging statement uses f-string
-  "RET504", # Unnecessary assignment to `nodes` before `return` statement
   "S101", # Use of `assert` detected
   "S108", # Probable insecure usage of temporary file or directory: "/tmp/SQLiteCache-test.db"
   "S301", # `pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue
