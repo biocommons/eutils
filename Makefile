@@ -56,7 +56,7 @@ cqa: ## Run code quality assessments
 .PHONY: test
 test: ## Test the code with pytest
 	@echo "🚀 Testing code: Running pytest"
-	uv run pytest --cov=. --cov-report=xml
+	uv run pytest
 
 ############################################################################
 #= DOCUMENTATION
