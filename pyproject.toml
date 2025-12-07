@@ -201,8 +201,6 @@ select = [
   "A001", # Variable `id` is shadowing a Python builtin
   "A002", # Function argument `id` is shadowing a Python builtin
   "B006", # Do not use mutable data structures for argument defaults
-  "F522", # `.format` call has unused named argument(s): n
-  "F524", # `.format` call is missing argument(s) for placeholder(s): n=n
   "F821", # Undefined name `pas`
   "G003", # Logging statement uses `+`
   "G004", # Logging statement uses f-string

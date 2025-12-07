@@ -126,9 +126,7 @@ class GBFeatureTable(Base):
     def cds(self):
         key = "CDS"
         nodes = self._get_nodes_with_key(key)
-        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(
-            n=len(nodes), key=key
-        )
+        assert len(nodes) == 1, f"Got n={len(nodes)} {key} features! (expected exactly 1)"
         return None if not nodes else GBFeatureCDS(nodes[0])
 
     @property
@@ -141,18 +139,14 @@ class GBFeatureTable(Base):
     def gene(self):
         key = "gene"
         nodes = self._get_nodes_with_key(key)
-        assert len(nodes) <= 1, "Node has {n=n} {key} features! (expected <= 1)".format(
-            n=len(nodes), key=key
-        )
+        assert len(nodes) == 1, f"Got n={len(nodes)} {key} features! (expected exactly 1)"
         return None if not nodes else GBFeature(nodes[0])
 
     @property
     def source(self):
         key = "source"
         nodes = self._get_nodes_with_key(key)
-        assert len(nodes) == 1, "Got {n=n} {key} features! (expected exactly 1)".format(
-            n=len(nodes), key=key
-        )
+        assert len(nodes) == 1, f"Got n={len(nodes)} {key} features! (expected exactly 1)"
         return GBFeature(nodes[0])
 
     def _get_nodes_with_key(self, key):
@@ -193,11 +187,6 @@ class GBFeature(Base):
 
     def get_qualifier(self, name):
         nodes = self.get_qualifiers(name)
-        assert len(nodes) <= 1, (
-            "Node has {n=n} {key} features! (expected <= 1 when using get_qualifier)".format(
-                n=len(nodes), key=name
-            )
-        )
         if not nodes:
             return None
         return self.get_qualifiers(name)[0]
