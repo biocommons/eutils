@@ -31,11 +31,11 @@ class Base:
             raise EutilsError("Cannot create object from type " + type(xml).__name__)
 
         if self._root_tag is None:
-            raise EutilsError(f"_root_tag not defined for class {type(self).__name__}")
+            msg = f"_root_tag not defined for class {type(self).__name__}"
+            raise EutilsError(msg)
         if self._root_tag != self._xml_root.tag:
-            raise EutilsError(
-                f"XML for {type(self).__name__} object must be a {self._root_tag} element (got {self._xml_root.tag})"
-            )
+            msg = f"XML for {type(self).__name__} object must be a {self._root_tag} element (got {self._xml_root.tag})"
+            raise EutilsError(msg)
 
 
 # <LICENSE>

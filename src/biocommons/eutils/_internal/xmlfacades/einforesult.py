@@ -30,7 +30,8 @@ class EInfoResult(Base):
             return "dbinfo"
         if childtag == "DbList":
             return "dblist"
-        raise RuntimeError("Shouldn't be here; EInfoResult contains neither a DbList nor a DbInfo")
+        msg = "Shouldn't be here; EInfoResult contains neither a DbList nor a DbInfo"
+        raise RuntimeError(msg)
 
     @property
     def dbinfo(self):

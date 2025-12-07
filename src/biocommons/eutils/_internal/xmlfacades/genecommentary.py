@@ -34,9 +34,8 @@ class GeneCommentary(Base):
     def genomic_coords(self):
         n = self._xml_root.find("Gene-commentary_genomic-coords")
         if n is None:
-            raise EutilsError(
-                f"this object (type={self.type}) does not have genomic coordinates defined (mRNA and peptide typically do)"
-            )
+            msg = f"this object (type={self.type}) does not have genomic coordinates defined (mRNA and peptide typically do)"
+            raise EutilsError(msg)
         return GeneCommentaryGenomicCoords(n)
 
     @property

@@ -49,7 +49,8 @@ class GBSeq(Base):
 
     @property
     def genes(self):
-        raise RuntimeError("The genes property is obsolete; use gene instead")
+        msg = "The genes property is obsolete; use gene instead"
+        raise RuntimeError(msg)
 
     @property
     def gi(self):

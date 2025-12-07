@@ -86,7 +86,8 @@ class Client:
             return ExchangeSet(xml)
         if db in ["pmc"]:
             return PubmedCentralArticleSet(doc)
-        raise EutilsError(f"database {db} is not currently supported by eutils")
+        msg = f"database {db} is not currently supported by eutils"
+        raise EutilsError(msg)
 
 
 # <LICENSE>
