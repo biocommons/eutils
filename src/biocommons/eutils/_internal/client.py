@@ -70,7 +70,7 @@ class Client:
             )
         return esr
 
-    def efetch(self, db, id):
+    def efetch(self, db, id):  # noqa: A002
         """query the efetch endpoint"""
         db = db.lower()
         xml = self._qs.efetch({"db": db, "id": str(id)})

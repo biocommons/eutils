@@ -103,13 +103,17 @@ class SQLiteCache:
             return None
         return self._fetch1v("SELECT value FROM meta WHERE key = ?", ["schema version"])
 
-    def _execute(self, query, params=[]):
+    def _execute(self, query, params=None):
+        if params is None:
+            params = []
         cur = self._con.cursor()
         self._logger.debug(f"executing query <{query}> with params <{len(params)} vars>")
         cur.execute(query, params)
         return cur
 
-    def _fetch1v(self, query, params=[]):
+    def _fetch1v(self, query, params=None):
+        if params is None:
+            params = []
         return self._execute(query, params).fetchone()[0]
 
 
