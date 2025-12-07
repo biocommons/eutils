@@ -1,0 +1,138 @@
+#!/usr/bin/env python3
+"""
+Fetch and display key information from a RefSeq accession using Biopython.
+Usage:
+    python refseq_info.py NM_152783.5
+    efetch -db nucleotide -id NM_152783.5 -format gb | ./archive/eutils-fetch-biopython
+
+» efetch -db nucleotide -id NM_152783.5 -format gb | ./archive/eutils-fetch-biopython
+Reading XML from stdin...
+
+# Example usage:
+» efetch -db nucleotide -id NM_152783.5 -format gb | ./archive/eutils-fetch-biopython
+============================================================
+Accession.Version: NM_152783.5
+Length: 2566 bp
+Molecule Type: mRNA
+Species: Homo sapiens
+Locus: NM_152783
+Gene Name(s): D2HGDH
+
+----------------------CDS Information:----------------------
+CDS Start: 159
+CDS End: 1724
+
+------------------------Exon Table:-------------------------
+Exon       Start      End
+------------------------------
+Exon 1    1          66
+Exon 2    67         450
+Exon 3    451        508
+Exon 4    509        648
+Exon 5    649        842
+Exon 6    843        1011
+Exon 7    1012       1155
+Exon 8    1156       1298
+Exon 9    1299       1464
+Exon 10   1465       2566
+============================================================
+
+"""
+
+import sys
+
+from Bio import Entrez, SeqIO
+
+# Always provide your email to NCBI
+Entrez.email = "user@example.com"
+
+
+def get_refseq_info(accession):
+    """Fetch and parse RefSeq record information from NCBI."""
+
+    # Fetch the record from NCBI
+    print(f"Fetching {accession} from NCBI...")
+    handle = Entrez.efetch(db="nucleotide", id=accession, rettype="gb", retmode="text")
+    record = SeqIO.read(handle, "genbank")
+    handle.close()
+
+    return record
+
+
+def display_record_info(record):
+    """Display information from a SeqRecord."""
+
+    # Extract basic information
+    print(f"\n{'=' * 60}")
+    print(f"Accession.Version: {record.id}")
+    print(f"Length: {len(record.seq)} bp")
+    print(f"Molecule Type: {record.annotations.get('molecule_type', 'N/A')}")
+    print(f"Species: {record.annotations.get('organism', 'N/A')}")
+    print(f"Locus: {record.name}")
+
+    # Extract gene names
+    gene_names = set()
+    for feature in record.features:
+        if feature.type == "gene" and "gene" in feature.qualifiers:
+            gene_names.update(feature.qualifiers["gene"])
+
+    if gene_names:
+        print(f"Gene Name(s): {', '.join(sorted(gene_names))}")
+    else:
+        print("Gene Name(s): N/A")
+
+    # Find CDS coordinates
+    print(f"\n{'CDS Information:':-^60}")
+    cds_found = False
+    for feature in record.features:
+        if feature.type == "CDS":
+            cds_found = True
+            # Handle compound locations (spliced CDS)
+            start = int(feature.location.start) + 1  # Convert to 1-based
+            end = int(feature.location.end)
+            print(f"CDS Start: {start}")
+            print(f"CDS End: {end}")
+            break
+
+    if not cds_found:
+        print("CDS: Not found")
+
+    # Extract exon information
+    print(f"\n{'Exon Table:':-^60}")
+    print(f"{'Exon':<10} {'Start':<10} {'End':<10}")
+    print("-" * 30)
+
+    exon_count = 0
+    for feature in record.features:
+        if feature.type == "exon":
+            exon_count += 1
+            start = int(feature.location.start) + 1  # Convert to 1-based
+            end = int(feature.location.end)
+            print(f"Exon {exon_count:<4} {start:<10} {end:<10}")
+
+    if exon_count == 0:
+        print("No exon features found in record")
+
+    print(f"{'=' * 60}\n")
+
+
+if __name__ == "__main__":
+    try:
+        if len(sys.argv) == 2:  # noqa: PLR2004
+            # Accession provided as argument
+            accession = sys.argv[1]
+            record = get_refseq_info(accession)
+        elif len(sys.argv) == 1:
+            # No argument - read XML from stdin
+            print("Reading XML from stdin...")
+            record = SeqIO.read(sys.stdin, "genbank")
+        else:
+            print("Usage: python refseq_info.py <RefSeq_accession>", file=sys.stderr)
+            print("   or: cat record.xml | python refseq_info.py", file=sys.stderr)
+            sys.exit(1)
+
+        display_record_info(record)
+
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)

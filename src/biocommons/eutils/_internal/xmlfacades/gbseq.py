@@ -36,7 +36,11 @@ class GBSeq(Base):
 
     @property
     def exons(self):
-        return [(f.start_i, f.end_i) for f in self.features.exons]
+        """This function is temporarily disabled because the XML schema changed
+        and this method no longer works."""
+        msg = "The exons property is no longer supported"
+        raise NotImplementedError(msg)
+        # return [(f.start_i, f.end_i) for f in self.features.exons]
 
     @property
     def features(self):
