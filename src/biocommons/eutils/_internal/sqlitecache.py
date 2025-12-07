@@ -50,7 +50,7 @@ class SQLiteCache:
         return [key_from(row[0]) for row in self._execute("SELECT key FROM cache", [])]
 
     def __getitem__(self, key):
-        self._logger.debug(f"__getitem__({key})")
+        self._logger.debug("__getitem__(%r)", key)
         cur = self._execute("SELECT value,value_compressed FROM cache WHERE key = ?", [key_to(key)])
         row = cur.fetchone()
         if row is None:
@@ -59,20 +59,20 @@ class SQLiteCache:
 
     def __setitem__(self, key, value):
         db_val = val_to(value, self.compress_values)
-        self._logger.debug(f"__setitem__({key},({len(db_val)} bytes))")
+        self._logger.debug("__setitem__(%r,(%d bytes))", key, len(db_val))
         self._execute(
             "INSERT OR REPLACE INTO cache (key,value_compressed,value) VALUES (?,?,?)",
             [key_to(key), self.compress_values, db_val],
         )
 
     def __delitem__(self, key):
-        self._logger.debug(f"__delitem__({key})")
+        self._logger.debug("__delitem__(%r)", key)
         cur = self._execute("DELETE FROM cache WHERE key = ?", [key_to(key)])
         if cur.rowcount == 0:
             raise KeyError(key)
 
     def __contains__(self, key):
-        self._logger.debug(f"__contains__({key})")
+        self._logger.debug("__contains__(%r)", key)
         return self._fetch1v(
             "SELECT EXISTS(SELECT 1 FROM cache WHERE key=? LIMIT 1)", [key_to(key)]
         )
@@ -85,9 +85,9 @@ class SQLiteCache:
         self._con = sqlite3.connect(db_path, isolation_level=None, check_same_thread=False)
         self._con.text_factory = str
         self._db_path = db_path
-        self._logger.info("opened " + db_path)
+        self._logger.info("opened %s", db_path)
         sver = self._get_schema_version()
-        self._logger.debug("schema version is " + str(sver))
+        self._logger.debug("schema version is %s", sver)
         if sver is None:
             self._execute(
                 "CREATE TABLE cache (key BLOB PRIMARY KEY, created INTEGER DEFAULT (strftime('%s','now')), value_compressed BOOL, value BLOB)"
@@ -106,8 +106,8 @@ class SQLiteCache:
     def _execute(self, query, params=None):
         if params is None:
             params = []
-        cur = self._con.cursor()
-        self._logger.debug(f"executing query <{query}> with params <{len(params)} vars>")
+        cur = self._con.cursor()  # type: ignore
+        self._logger.debug("executing query <%s> with params <%d vars>", query, len(params))
         cur.execute(query, params)
         return cur
 
@@ -117,9 +117,9 @@ class SQLiteCache:
         return self._execute(query, params).fetchone()[0]
 
 
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG)
-    c = SQLiteCache("/tmp/SQLiteCache-test.db")
+# if __name__ == "__main__":
+#     logging.basicConfig(level=logging.DEBUG)
+#     c = SQLiteCache("/tmp/SQLiteCache-test.db")
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

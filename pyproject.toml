@@ -199,8 +199,6 @@ select = [
 # These warnings became visible with the adoption of ruff. They
 # should be addressed in separate issues.
 "src/**/*.py" = [
-  "G003", # Logging statement uses `+`
-  "G004", # Logging statement uses f-string
   "S101", # Use of `assert` detected
   "S108", # Probable insecure usage of temporary file or directory: "/tmp/SQLiteCache-test.db"
   "S301", # `pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue
