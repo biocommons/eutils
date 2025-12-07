@@ -45,10 +45,11 @@ class Entrezgene(Base):
     def hgnc(self):
         return self._xml_root.findtext("Entrezgene_gene/Gene-ref/Gene-ref_locus")
 
-    @property
-    def locus(self):
-        n = self._xml_root.find("Entrezgene_locus")
-        return None if n is None else EntrezgeneLocus(n)
+    # Not implemented yet
+    # @property
+    # def locus(self):
+    #     n = self._xml_root.find("Entrezgene_locus")
+    #     return None if n is None else EntrezgeneLocus(n)
 
     @property
     def maploc(self):
@@ -82,7 +83,7 @@ class Entrezgene(Base):
 if __name__ == "__main__":
     import os
 
-    from .xmlfacades.entrezgeneset import EntrezgeneSet
+    from .entrezgeneset import EntrezgeneSet
 
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
     data_file = os.path.join(data_dir, "entrezgeneset.xml.gz")

@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
     import lxml.etree as le
 
-    from .xmlfacades.pubmedcentralarticleset import PubmedCentralArticleSet
+    from .pubmedcentralarticleset import PubmedCentralArticleSet
 
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
     relpaths = [
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     ]
     path = os.path.join(data_dir, relpaths[0])
     pmcas = PubmedCentralArticleSet(le.parse(path).getroot())
-    pmca = next(iter(pas))
+    pmca = next(iter(pmcas))
 
 # <LICENSE>
 # Copyright 2015 eutils Committers

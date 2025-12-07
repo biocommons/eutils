@@ -54,13 +54,15 @@ if __name__ == "__main__":
 
     import lxml.etree as le
 
+    from .einforesult import EInfoResult
+
     data_dir = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "data")
 
     dir_path = os.path.join(data_dir, "einfo.fcgi?db=protein&retmode=xml.xml.gz")
     dlr_path = os.path.join(data_dir, "einfo.fcgi?retmode=xml.xml.gz")
 
-    eiinfo = eutils.xmlfacades.einforesult.EInfoResult(le.parse(dir_path).getroot())
-    eilist = eutils.xmlfacades.einforesult.EInfoResult(le.parse(dlr_path).getroot())
+    eiinfo = EInfoResult(le.parse(dir_path).getroot())
+    eilist = EInfoResult(le.parse(dlr_path).getroot())
 
     dbinfo = eiinfo.dbinfo
     dblist = eilist.dblist
