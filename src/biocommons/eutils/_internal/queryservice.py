@@ -20,13 +20,13 @@ may be controlled upon instantiation by setting default_args.
 
 """
 
-# ruff: noqa
-
 import hashlib
 import logging
 import os
 import pickle
 import time
+from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 import lxml.etree
 import requests
@@ -39,7 +39,6 @@ _logger = logging.getLogger(__name__)
 
 def _redact_api_key(url):
     # Redact api_key query parameter value in URL, if present.
-    from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
     parts = urlsplit(url)
     query = dict(parse_qsl(parts.query))
@@ -54,7 +53,7 @@ url_base = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 default_default_args = {"retmode": "xml", "usehistory": "y", "retmax": 250}
 default_tool = __package__
 default_email = "biocommons-dev@googlegroups.com"
-default_cache_path = os.path.join(os.path.expanduser("~"), ".cache", "eutils-cache.db")
+default_cache_path = Path("~/.cache/eutils-cache.db").expanduser()
 
 
 class QueryService:
@@ -122,12 +121,14 @@ class QueryService:
         if self.api_key is None:
             requests_per_second = 3
             _logger.warning(
-                f"No NCBI API key provided; throttling to {requests_per_second} requests/second; see "
-                "https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/"
+                "No NCBI API key provided; throttling to %d requests/second; see https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/",
+                requests_per_second,
             )
         else:
             requests_per_second = 10
-            _logger.info(f"Using NCBI API key; throttling to {requests_per_second} requests/second")
+            _logger.info(
+                "Using NCBI API key; throttling to %d requests/second", requests_per_second
+            )
 
         self.request_interval = 1.0 / requests_per_second
 
@@ -245,7 +246,7 @@ class QueryService:
 
     ############################################################################
     ## Internals
-    def _query(self, path, args=None, skip_cache=False, skip_sleep=False):
+    def _query(self, path, args=None, skip_cache=False, skip_sleep=False):  # noqa: PLR0912, PLR0915
         """return results for a NCBI query, possibly from the cache
 
         :param: path: relative query path (e.g., "einfo.fcgi")
@@ -279,19 +280,19 @@ class QueryService:
         # next 3 lines converted by 2to3 -nm
         defining_args = dict(list(self.default_args.items()) + list(args.items()))
         full_args = dict(list(self._ident_args.items()) + list(defining_args.items()))
-        cache_key = hashlib.md5(pickle.dumps((url, sorted(defining_args.items())))).hexdigest()
+        cache_key = hashlib.md5(pickle.dumps((url, sorted(defining_args.items())))).hexdigest()  # noqa: S324
 
         sqas = ";".join([k + "=" + str(v) for k, v in sorted(args.items())])
         full_args_str = ";".join([k + "=" + str(v) for k, v in sorted(full_args.items())])
 
-        logging.debug("CACHE:" + str(skip_cache) + "//" + str(self._cache))
+        _logger.debug("CACHE: %s // %s", skip_cache, self._cache)
         if not skip_cache and self._cache:
             try:
                 v = self._cache[cache_key]
-                _logger.debug(f"cache hit for key {cache_key} ({url}, {sqas}) ")
-                return v
+                _logger.debug("cache hit for key %s (%s, %s) ", cache_key, url, sqas)
+                return v  # noqa: TRY300
             except KeyError:
-                _logger.debug(f"cache miss for key {cache_key} ({url}, {sqas}) ")
+                _logger.debug("cache miss for key %s (%s, %s) ", cache_key, url, sqas)
 
         if self.api_key:
             url += f"?api_key={self.api_key}"
@@ -302,47 +303,52 @@ class QueryService:
             req_int = self.request_interval
             sleep_time = req_int - (time.monotonic() - self._last_request_clock)
             if sleep_time > 0:
-                _logger.debug(f"sleeping {sleep_time:.3f}")
+                _logger.debug("sleeping %.3f", sleep_time)
                 time.sleep(sleep_time)
 
-        r = requests.post(url, full_args)
+        r = requests.post(url, full_args, timeout=10)
         self._last_request_clock = time.monotonic()
-        _logger.debug(f"post({url}, {full_args_str}): {r.status_code} {r.reason}, {len(r.text)})")
+        _logger.debug(
+            "post(%s, %s): %s %s, %d)", url, full_args_str, r.status_code, r.reason, len(r.text)
+        )
 
         if not r.ok:
             # TODO: discriminate between types of errors
             if r.headers["Content-Type"] == "application/json":
                 json = r.json()
-                raise EutilsRequestError(
-                    "{r.reason} ({r.status_code}): {error}".format(r=r, error=json["error"])
-                )
+                msg = "{r.reason} ({r.status_code}): {error}".format(r=r, error=json["error"])
+                raise EutilsRequestError(msg)
             try:
                 xml = lxml.etree.fromstring(r.text.encode("utf-8"))
                 errornode = xml.find("ERROR")
                 errormsg = errornode.text if errornode else "Unknown Error"
-                raise EutilsRequestError(f"{r.reason} ({r.status_code}): {errormsg}")
+                msg = f"{r.reason} ({r.status_code}): {errormsg}"
+                raise EutilsRequestError(msg)  # noqa: TRY301
             except Exception as ex:
-                raise EutilsNCBIError(f"Error parsing response object from NCBI: {ex}")
+                msg = f"Error parsing response object from NCBI: {ex}"
+                raise EutilsNCBIError(msg) from ex
 
-        if any(bad_word in r.text for bad_word in ["<error>", "<ERROR>"]):
-            if r.text is not None:
-                try:
-                    xml = lxml.etree.fromstring(r.text.encode("utf-8"))
-                    raise EutilsRequestError(
-                        "{r.reason} ({r.status_code}): {error}".format(
-                            r=r, error=xml.find("ERROR").text
-                        )
-                    )
-                except Exception as ex:
-                    raise EutilsNCBIError(f"Error parsing response object from NCBI: {ex}")
+        if r.text is not None and any(bad_word in r.text for bad_word in ["<error>", "<ERROR>"]):
+            try:
+                xml = lxml.etree.fromstring(r.text.encode("utf-8"))
+                msg = "{r.reason} ({r.status_code}): {error}".format(
+                    r=r, error=xml.find("ERROR").text
+                )
+                raise EutilsRequestError(msg)  # noqa: TRY301
+            except Exception as ex:
+                msg = f"Error parsing response object from NCBI: {ex}"
+                raise EutilsNCBIError(msg) from ex
 
         if '<h1 class="error">Access Denied</h1>' in r.text:
-            raise EutilsRequestError(f"Access Denied: {url}")
+            msg = f"Access Denied: {url}"
+            raise EutilsRequestError(msg)
 
         if self._cache and _cacheable(r.text):
             # N.B. we cache results even when skip_cache (read) is true
             self._cache[cache_key] = r.content
-            _logger.info(f"cached results for key {cache_key} ({_redact_api_key(url)}, {sqas}) ")
+            _logger.info(
+                "cached results for key %s (%s, %s) ", cache_key, _redact_api_key(url), sqas
+            )
 
         return r.content
 
