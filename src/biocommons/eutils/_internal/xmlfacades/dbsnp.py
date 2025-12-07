@@ -14,21 +14,23 @@ class ExchangeSet(Base):
         return (
             Rs(n)
             for n in self._xml_root.iterfind(
-                "docsum:Rs", namespaces={"docsum": self._xml_root.nsmap[None]}
+                "docsum:DocumentSummary", namespaces={"docsum": self._xml_root.nsmap[None]}
             )
         )
 
     def __len__(self):
         return len(
-            self._xml_root.findall("docsum:Rs", namespaces={"docsum": self._xml_root.nsmap[None]})
+            self._xml_root.findall(
+                "docsum:DocumentSummary", namespaces={"docsum": self._xml_root.nsmap[None]}
+            )
         )
 
 
 class Rs:
-    _root_tag = "Rs"
+    _root_tag = "DocumentSummary"
 
     def __init__(self, rs_node):
-        assert rs_node.tag == "{https://www.ncbi.nlm.nih.gov/SNP/docsum}Rs"  # noqa: S101
+        assert rs_node.tag == "{https://www.ncbi.nlm.nih.gov/SNP/docsum}DocumentSummary"  # noqa: S101
         self._n = rs_node
 
     # def __str__(self):
@@ -36,19 +38,25 @@ class Rs:
 
     @property
     def rs_id(self):
-        return "rs" + self._n.get("rsId")
+        ns = {"docsum": self._n.nsmap[None]}
+        snp_id = self._n.findtext("docsum:SNP_ID", namespaces=ns)
+        return "rs" + snp_id
 
     @property
     def withdrawn(self):
-        return "notwithdrawn" not in self._n.get("snpType")
+        # snpType is no longer available in DocumentSummary format
+        # This would need to be determined from other fields if available
+        return False
 
     @property
     def orient(self):
-        return self._n.get("orient")
+        # orient attribute is no longer available in DocumentSummary format
+        return None
 
     @property
     def strand(self):
-        return self._n.get("strand")
+        # strand attribute is no longer available in DocumentSummary format
+        return None
 
     @property
     def hgvs_tags(self):
