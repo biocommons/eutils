@@ -1,10 +1,10 @@
 # eutils -- simplified interface to NCBI E-Utilities
 
-[![Release](https://img.shields.io/github/v/release/biocommons/eutils)](https://img.shields.io/github/v/release/biocommons/eutils)
-[![Build status](https://img.shields.io/github/actions/workflow/status/biocommons/eutils/main.yml?branch=main)](https://github.com/biocommons/eutils/actions/workflows/main.yml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/biocommons/eutils/branch/main/graph/badge.svg)](https://codecov.io/gh/biocommons/eutils)
-[![Commit activity](https://img.shields.io/github/commit-activity/m/biocommons/eutils)](https://img.shields.io/github/commit-activity/m/biocommons/eutils)
-[![License](https://img.shields.io/github/license/biocommons/eutils)](https://img.shields.io/github/license/biocommons/eutils)
+[![Release](https://img.shields.io/github/v/release/eutils)](https://img.shields.io/github/v/release/eutils)
+[![Build status](https://img.shields.io/github/actions/workflow/status/eutils/main.yml?branch=main)](https://github.com/biocommons/eutils/actions/workflows/main.yml?query=branch%3Amain)
+[![codecov](https://codecov.io/gh/eutils/branch/main/graph/badge.svg)](https://codecov.io/gh/eutils)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/eutils)](https://img.shields.io/github/commit-activity/m/eutils)
+[![License](https://img.shields.io/github/license/eutils)](https://img.shields.io/github/license/eutils)
 
 **eutils is a Python package to simplify searching, fetching, and
 parsing records from NCBI using their E-utilities_ interface**
