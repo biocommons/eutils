@@ -15,6 +15,9 @@ class Test_SQLiteCacheBase(unittest.TestCase):
 
         self.cache = SQLiteCache(self._fn)
 
+    def tearDown(self):
+        self.cache.close()
+
 
 class Test_SQLiteCache_AttrLookup(Test_SQLiteCacheBase):
     def test_str_str(self):

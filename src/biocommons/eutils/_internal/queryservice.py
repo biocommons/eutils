@@ -144,6 +144,15 @@ class QueryService:
             cache_path = False
         self._cache = SQLiteCache(cache_path) if cache_path else None
 
+    def close(self):
+        """Close the cache connection."""
+        if self._cache is not None:
+            self._cache.close()
+
+    def __del__(self):
+        """Ensure cache connection is closed on object destruction."""
+        self.close()
+
     def efetch(self, args):
         """
         execute a cached, throttled efetch query

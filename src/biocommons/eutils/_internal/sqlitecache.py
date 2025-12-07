@@ -1,7 +1,4 @@
-"""simple key-value cache with transparent payload compression and expiration
-
-Taken from http://bitbucket.org/reece/rcore/
-"""
+"""simple key-value cache with transparent payload compression and expiration"""
 
 import logging
 import pickle
@@ -34,6 +31,26 @@ class SQLiteCache:
         self._con = None
         self._logger = logging.getLogger(__name__)
         self._connect(db_path)
+
+    def close(self):
+        """Close the database connection."""
+        if self._con is not None:
+            self._con.close()
+            self._logger.info("closed %s", self._db_path)
+            self._con = None
+
+    def __enter__(self):
+        """Context manager entry."""
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Context manager exit."""
+        self.close()
+        return False
+
+    def __del__(self):
+        """Ensure connection is closed on object destruction."""
+        self.close()
 
     def expire(self, age):
         cur = self._execute("DELETE FROM cache WHERE strftime('%s','now') - created > ?", [age])
