@@ -4,7 +4,7 @@ import time
 import unittest
 from pathlib import Path
 
-from biocommons.eutils._internal.sqlitecache import SQLiteCache
+from eutils._internal.sqlitecache import SQLiteCache
 
 
 class Test_SQLiteCacheBase(unittest.TestCase):

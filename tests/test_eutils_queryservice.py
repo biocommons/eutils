@@ -12,8 +12,8 @@ import pytest
 import vcr
 from lxml import etree
 
-from biocommons.eutils._internal.exceptions import EutilsNCBIError, EutilsRequestError
-from biocommons.eutils._internal.queryservice import QueryService
+from eutils._internal.exceptions import EutilsNCBIError, EutilsRequestError
+from eutils._internal.queryservice import QueryService
 
 
 def assert_in_xml(xml, item):
@@ -93,7 +93,7 @@ class TestEutilsQueries(unittest.TestCase):
         assert_in_xml(result, "ConceptId")
 
     @vcr.use_cassette
-    @patch("biocommons.eutils._internal.queryservice.requests")
+    @patch("eutils._internal.queryservice.requests")
     def test_handles_malformed_xml_errors(self, mock_requests):
         post_return_value = MagicMock()
         post_return_value.status_code = 404

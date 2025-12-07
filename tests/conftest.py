@@ -3,7 +3,7 @@ import os
 import pytest
 import vcr
 
-import biocommons.eutils
+import eutils
 
 test_dir = os.path.dirname(__file__)  # noqa: PTH120
 test_data_dir = os.path.join(test_dir, "data", "cassettes")  # noqa: PTH118
@@ -20,9 +20,9 @@ vcr.use_cassette = vcr.default_vcr.use_cassette
 
 @pytest.fixture(scope="session")
 def client():
-    return biocommons.eutils.Client()
+    return eutils.Client()
 
 
 @pytest.fixture(scope="session")
 def qs():
-    return biocommons.eutils.QueryService()
+    return eutils.QueryService()

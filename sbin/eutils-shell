@@ -2,48 +2,61 @@
 
 import gzip
 import logging
-import os
+from pathlib import Path
 
 import lxml.etree as le
 
-from biocommons.eutils import Client
+from eutils import Client
+from eutils._internal.xmlfacades.entrezgeneset import EntrezgeneSet
 
 # new style
-from biocommons.eutils._internal.xmlfacades.esearchresult import ESearchResult
-from biocommons.eutils._internal.xmlfacades.entrezgeneset import EntrezgeneSet
+from eutils._internal.xmlfacades.esearchresult import ESearchResult
 
 logging.basicConfig(level=logging.DEBUG)
-
-data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)),'..','tests','data')
+data_dir = Path(__file__).resolve().parent.parent / "tests" / "data"
 ec = Client()
 
 
 if True:
-    xml = gzip.open(os.path.join(data_dir,'esearch.fcgi?term=hart%20rk[author].xml.gz')).read()
+    with gzip.open(data_dir / "esearch.fcgi?term=hart%20rk[author].xml.gz") as f:
+        xml = f.read()
     doc = le.XML(xml)
     esr = ESearchResult(doc)
 
 
 if False:
-    xml = gzip.open(os.path.join(data_dir,'entrezgeneset.xml.gz')).read()
-    doc = lxml.etree.XML(xml)
+    with gzip.open(data_dir / "entrezgeneset.xml.gz") as f:
+        xml = f.read()
+    doc = le.XML(xml)
     egs = EntrezgeneSet(doc)
 
-    print("{} genes in EntrezgeneSet".format(len(egs.entrezgenes)))
+    print(f"{len(egs.entrezgenes)} genes in EntrezgeneSet")
     for eg in egs:
-        print("\t".join(map(str,[eg.gene_id,eg.maploc,eg.hgnc,
-                                eg.summary[:30] + "..." if eg.summary else None])))
+        print(
+            "\t".join(
+                map(
+                    str,
+                    [
+                        eg.gene_id,
+                        eg.maploc,
+                        eg.hgnc,
+                        eg.summary[:30] + "..." if eg.summary else None,
+                    ],
+                )
+            )
+        )
 
 if False:
-    esr = ec.esearch(db='gene',term='tumor necrosis factor')
-    egs = ec.efetch(db='gene',id=esr.ids[0])
+    esr = ec.esearch(db="gene", term="tumor necrosis factor")
+    egs = ec.efetch(db="gene", id=esr.ids[0])
     eg = egs.entrezgenes[0]
 
 if False:
-    esr = ec.esearch(db='nuccore',term='NM_000533.3')
-    gbset = ec.efetch(db='nuccore',id=esr.ids[0])
+    esr = ec.esearch(db="nuccore", term="NM_000533.3")
+    gbset = ec.efetch(db="nuccore", id=esr.ids[0])
     gbseq = gbset.gbseqs[0]
 
 
-import IPython; IPython.embed()
+import IPython  # noqa: E402
 
+IPython.embed()
