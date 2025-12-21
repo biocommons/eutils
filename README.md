@@ -1,5 +1,7 @@
 # eutils -- simplified interface to NCBI E-Utilities
 
+**eutils has been archived. See discussion in #205 for rationale.**
+
 [![Release](https://img.shields.io/github/v/release/biocommons/eutils)](https://img.shields.io/github/v/release/biocommons/eutils)
 [![Build status](https://img.shields.io/github/actions/workflow/status/biocommons/eutils/python-ci-cd.yml?branch=main)](https://github.com/biocommons/eutils/actions/workflows/python-ci-cd.yml?query=branch%3Amain)
 [![codecov](https://codecov.io/gh/biocommons/eutils/branch/main/graph/badge.svg)](https://codecov.io/gh/biocommons/eutils)
